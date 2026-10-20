@@ -1,0 +1,86 @@
+{
+  "observedAt": "2026-10-19T03:30:53.307Z",
+  "threshold": 0.7,
+  "eligibleSignals": 2,
+  "deployed": false,
+  "scores": [
+    {
+      "symbol": "sz300502",
+      "name": "新易盛",
+      "asOf": "2026-10-16",
+      "researchProbability": 0.7681409792507302
+    },
+    {
+      "symbol": "sz300308",
+      "name": "中际旭创",
+      "asOf": "2026-10-16",
+      "researchProbability": 0.7667809228487702
+    },
+    {
+      "symbol": "sz000977",
+      "name": "浪潮信息",
+      "asOf": "2026-10-16",
+      "researchProbability": 0.6724130081259392
+    },
+    {
+      "symbol": "sh603019",
+      "name": "中科曙光",
+      "asOf": "2026-10-16",
+      "researchProbability": 0.6028899533235116
+    },
+    {
+      "symbol": "sz002371",
+      "name": "北方华创",
+      "asOf": "2026-10-16",
+      "researchProbability": 0.5985937023401843
+    },
+    {
+      "symbol": "sh600570",
+      "name": "恒生电子",
+      "asOf": "2026-10-16",
+      "researchProbability": 0.5921505070278457
+    },
+    {
+      "symbol": "sh600703",
+      "name": "三安光电",
+      "asOf": "2026-10-16",
+      "researchProbability": 0.5901425554433513
+    },
+    {
+      "symbol": "sh688256",
+      "name": "寒武纪",
+      "asOf": "2026-10-16",
+      "researchProbability": 0.5728455441285026
+    },
+    {
+      "symbol": "sh688111",
+      "name": "金山办公",
+      "asOf": "2026-10-16",
+      "researchProbability": 0.5606835857632008
+    },
+    {
+      "symbol": "sz002230",
+      "name": "科大讯飞",
+      "asOf": "2026-10-16",
+      "researchProbability": 0.5541054679028156
+    },
+    {
+      "symbol": "sh688981",
+      "name": "中芯国际",
+      "asOf": "2026-10-16",
+      "researchProbability": 0.5486011713707271
+    },
+    {
+      "symbol": "sh600406",
+      "name": "国电南瑞",
+      "asOf": "2026-10-16",
+      "researchProbability": 0.5151928634595662
+    },
+    {
+      "symbol": "sz002415",
+      "name": "海康威视",
+      "asOf": "2026-10-16",
+      "researchProbability": 0.489261346457286
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "schema": 1,
+  "transport": "dotnet-desktop-http-v1",
+  "builtAt": "2026-10-20T02:42:35.2353392Z",
+  "path": "C:\\Users\\lqp07\\.codex\\worktrees\\audit-account-repair\\techno\\validation\\audit-repair\\market-transport.exe",
+  "sha256": "e0f80930a8fcd6f86e4ae4dfbd898104308e41e66aa24380730cb2926252e761",
+  "bytes": 15360,
+  "sourceHashes": {
+    "windows/DesktopServices.cs": "292ee994ae931d5b22c0ec13a62c97b5f7daf12b6c84aa19bd517380793df742",
+    "windows/MarketTransport.cs": "3fcf051cec577ccff061c7c0ab527d9af804a35e00929abdcdd0117aa81d64ae",
+    "scripts/build-market-transport.ps1": "253c188ac65088bc8339d100f9f93206b59611d360a050fa97458db1feb5b93b"
+  },
+  "compilerSha256": "46809206887326d2d24db1eff1f3064de972c3451abe766b49111450a5e08e00",
+  "policy": "DesktopPolicy.AllowedDataUrl",
+  "httpImplementation": "DesktopHttp",
+  "tls": "platform_certificate_validation_tls12",
+  "externalRuntime": "Windows .NET Framework",
+  "noRealOrders": true
+}

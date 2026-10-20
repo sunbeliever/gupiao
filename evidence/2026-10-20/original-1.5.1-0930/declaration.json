@@ -1,0 +1,45 @@
+{
+  "schema": 1,
+  "declaredAt": "2026-10-19T08:54:48.944Z",
+  "scheduledDate": "2026-10-20",
+  "expectedHistoryDate": "2026-10-19",
+  "earliestEntry": "2026-10-20T09:30:00+08:00",
+  "latestEntry": "2026-10-20T09:35:00+08:00",
+  "durationMs": 1800000,
+  "intervalMs": 30000,
+  "policy": {
+    "budget": 10000,
+    "positionLimit": 10000,
+    "allocationMode": "full",
+    "maxPositions": 3,
+    "minFee": 5,
+    "commissionRate": 0.0003,
+    "slippage": 0.001,
+    "stockTransferRate": 0.00001,
+    "stockSellStampRate": 0.0005
+  },
+  "files": {
+    "paper-engine.js": "9897303bc688c25778b66bfc4749a7863215bc9c7fa14475dfa3ec79c90a5fd9",
+    "corporate-actions.js": "4f794e21f8c864ee6852479e66fa2b9fdcf0e0960335918cc0986b4ceaaa13b2",
+    "corporate-events.js": "e9a71c9403f823e97a6f9ec679c456b9b9e2196bf55d368ef9ecb67d54bd311c",
+    "analysis.js": "e5640ffb7cb500ddfafb6cf3da7ad7d22b782f84f43b176f5791629da22e06e2",
+    "market.js": "00eeca1251527673424506a2bbdde90a1a46261ffbee1ab41317d70a1065fdad",
+    "seed.js": "04f00216b2ced31b2f5bf4f0cf66986723c7c6e0a9f493a06040b757b63b7387"
+  },
+  "allocationRule": "Allocate all available cash across1to3 qualifying choices, leaving lot/fee remainder; later entries use remaining cash and unused slots. Never force negative-net forecasts or count waiting cash as success.",
+  "exitRule": "Price reaches the frozen model expected 20-session target. New purchases cannot be sold the same day (T+1). No forced exit at the thirty-minute boundary. Each symbol bought at most once. No human discretionary trades.",
+  "notes": [
+    "All transactions virtual; no broker account or actual fills.",
+    "Source heartbeat is not a trade timestamp.",
+    "Cash zero is not a successful price forecast.",
+    "This added target-exit policy has no validated performance; it is not the old four fixed-holding observations.",
+    "The forecast horizon is twenty sessions, not thirty minutes.",
+    "Fixed commission assumption may differ from an actual contract. Last-price fills do not model order-book queues or liquidity."
+  ],
+  "ruleSources": [
+    "https://one.sse.com.cn/onething/gptz/",
+    "https://www.sse.com.cn/assortment/fund/etf/question/",
+    "https://www.sse.com.cn/assortment/fund/etf/home/c/c_20151111_4011009.shtml",
+    "https://www.kysec.cn/html/2023/gonggaoban_0828/6064.html"
+  ]
+}

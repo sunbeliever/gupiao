@@ -1,0 +1,23 @@
+{
+  "version": "1.6.0.1",
+  "branch": "fix/auditable-paper-account",
+  "commit": "47dac7aefdab867264f971918b390aa39ded1116",
+  "exe": "科技观察-持续账户审计版.exe",
+  "exeSha256": "0fc73902b2d509a32046ddfaea4740fb792fac6a0bd4dc2b6f0b564805334193",
+  "baselineCommit": "61443d4dbeb51efd18e0ef769c412b5f280dd2de",
+  "baselineExeSha256": "e68ee81a8a42b8c26baad12bf7ce1b6640d6e0742ed3a1284631ba7cf9fcb4c2",
+  "jsTests": 189,
+  "nativeStoreTests": 43,
+  "nativeChecks": 42,
+  "nativeExpectedAsOf": "2026-10-19",
+  "forwardId": "continuous-etf-audit-20261020-1100",
+  "unverifiedInvestmentPerformance": true,
+  "forwardBinding": {
+    "id": "continuous-etf-audit-20261020-1100",
+    "frozenExeSha256": "05a2ccca7cec4dd99073284e9d903b127e435ca2b443733b77c72b01efb1956c",
+    "deliveredExeSha256": "0fc73902b2d509a32046ddfaea4740fb792fac6a0bd4dc2b6f0b564805334193",
+    "allElevenRuntimeFilesByteEqual": true,
+    "distinctUiRelease": true,
+    "notClaimedAsDirectExePerformance": true
+  }
+}

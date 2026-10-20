@@ -1,0 +1,50 @@
+{
+  "verifiedAt": "2026-10-20T02:43:14.638Z",
+  "callerRuntime": "v24.18.0",
+  "helperSha256": "e0f80930a8fcd6f86e4ae4dfbd898104308e41e66aa24380730cb2926252e761",
+  "runs": [
+    {
+      "target": "1.688981",
+      "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=1.688981&klt=101&fqt=2&beg=20260101&end=20261231&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+      "ok": true,
+      "elapsedMs": 471,
+      "receivedAt": "2026-10-20T02:43:14.4871424Z",
+      "transport": "dotnet-desktop-http-v1",
+      "completedDataAsOf": "2026-10-19",
+      "bodySha256": "1a9efcf7f3b81e43db0f38e5a5666b8b3f4b16196572cacee37fcfe329870654",
+      "envelopeFile": "validation\\audit-repair\\native-network\\native-helper-response-1-688981.json"
+    },
+    {
+      "target": "0.159852",
+      "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.159852&klt=101&fqt=2&beg=20260101&end=20261231&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+      "ok": true,
+      "elapsedMs": 422,
+      "receivedAt": "2026-10-20T02:43:14.4935582Z",
+      "transport": "dotnet-desktop-http-v1",
+      "completedDataAsOf": "2026-10-19",
+      "bodySha256": "3b8ede6ff60fb27640dd76969a93be21258440f2e789e682f8b9f842e122e744",
+      "envelopeFile": "validation\\audit-repair\\native-network\\native-helper-response-0-159852.json"
+    }
+  ],
+  "rejected": [
+    {
+      "url": "https://example.com/",
+      "exitCode": 2,
+      "stdoutEmpty": true,
+      "error": "transport_url_rejected"
+    },
+    {
+      "url": "http://push2his.eastmoney.com/api/qt/stock/kline/get",
+      "exitCode": 2,
+      "stdoutEmpty": true,
+      "error": "transport_url_rejected"
+    },
+    {
+      "url": "https://qt.gtimg.cn/private",
+      "exitCode": 2,
+      "stdoutEmpty": true,
+      "error": "transport_url_rejected"
+    }
+  ],
+  "noFrozenExperimentChanged": true
+}

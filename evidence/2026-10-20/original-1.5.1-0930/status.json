@@ -1,0 +1,2865 @@
+{
+  "done": true,
+  "windowEnded": true,
+  "startedAt": "2026-10-20T01:30:05.393Z",
+  "plannedEndAt": "2026-10-20T02:00:05.393Z",
+  "observedAt": "2026-10-20T02:00:05.568Z",
+  "elapsedMs": 1800175,
+  "validObservations": 61,
+  "dataFailureTicks": 0,
+  "maxGapMs": 30328,
+  "failureReason": null,
+  "budget": 10000,
+  "equity": 9921.320743900003,
+  "unrealizedAndRealizedPnl": -78.67925609999656,
+  "realizedPnl": 0,
+  "cash": 1153.0207439000014,
+  "benchmarkEquity": 10013.481300000001,
+  "buyCount": 3,
+  "sellCount": 0,
+  "blockedExitCount": 0,
+  "horizonAccuracy": null,
+  "cashIsPredictionSuccess": false,
+  "pid": 54416,
+  "session": {
+    "schema": 1,
+    "budget": 10000,
+    "selection": "beginner_automatic_experiment",
+    "selectionPlan": {
+      "schema": 1,
+      "profile": "beginner",
+      "budget": 10000,
+      "positionLimit": 10000,
+      "maxPositions": 3,
+      "minFee": 5,
+      "feeRate": 0.0003,
+      "slippage": 0.001,
+      "generatedAt": "2026-10-20T01:30:05.393Z",
+      "rows": [
+        {
+          "symbol": "sz002230",
+          "name": "科大讯飞",
+          "type": "stock",
+          "expectedReturn": 0.008630707678992591,
+          "signalDate": "2026-10-19",
+          "sourceTime": "2026-10-20 09:30:03",
+          "price": 36.45,
+          "reasonCode": "minimum_lot",
+          "reason": "单只额度不足以买入最小股数并支付费用",
+          "minimumShares": 100,
+          "minimumBuyCost": 3653.68148645,
+          "selected": false
+        },
+        {
+          "symbol": "sz300308",
+          "name": "中际旭创",
+          "type": "stock",
+          "expectedReturn": 0.017531394683333215,
+          "signalDate": "2026-10-19",
+          "sourceTime": "2026-10-20 09:30:00",
+          "price": 651.97,
+          "reasonCode": "permission",
+          "reason": "新手模式未启用科创板 / 创业板个股权限",
+          "selected": false
+        },
+        {
+          "symbol": "sz300502",
+          "name": "新易盛",
+          "type": "stock",
+          "expectedReturn": 0.02045282825507149,
+          "signalDate": "2026-10-19",
+          "sourceTime": "2026-10-20 09:30:00",
+          "price": 302.5,
+          "reasonCode": "permission",
+          "reason": "新手模式未启用科创板 / 创业板个股权限",
+          "selected": false
+        },
+        {
+          "symbol": "sh688981",
+          "name": "中芯国际",
+          "type": "stock",
+          "expectedReturn": 0.017547647629180152,
+          "signalDate": "2026-10-19",
+          "sourceTime": "2026-10-20 09:30:02",
+          "price": 98.9,
+          "reasonCode": "permission",
+          "reason": "新手模式未启用科创板 / 创业板个股权限",
+          "selected": false
+        },
+        {
+          "symbol": "sh603019",
+          "name": "中科曙光",
+          "type": "stock",
+          "expectedReturn": 0.024507735230310242,
+          "signalDate": "2026-10-19",
+          "sourceTime": "2026-10-20 09:30:02",
+          "price": 73.32,
+          "reasonCode": "minimum_lot",
+          "reason": "单只额度不足以买入最小股数并支付费用",
+          "minimumShares": 100,
+          "minimumBuyCost": 7344.405393319998,
+          "selected": false
+        },
+        {
+          "symbol": "sz000977",
+          "name": "浪潮信息",
+          "type": "stock",
+          "expectedReturn": 0.012551269532739254,
+          "signalDate": "2026-10-19",
+          "sourceTime": "2026-10-20 09:30:03",
+          "price": 56.45,
+          "reasonCode": "minimum_lot",
+          "reason": "单只额度不足以买入最小股数并支付费用",
+          "minimumShares": 100,
+          "minimumBuyCost": 5655.701506449999,
+          "selected": false
+        },
+        {
+          "symbol": "sz002415",
+          "name": "海康威视",
+          "type": "stock",
+          "expectedReturn": 0.020638466513586903,
+          "signalDate": "2026-10-19",
+          "sourceTime": "2026-10-20 09:30:00",
+          "price": 33.11,
+          "reasonCode": null,
+          "reason": "符合小额模拟条件；不代表已验证的买入建议",
+          "minimumShares": 100,
+          "minimumBuyCost": 3319.344143109999,
+          "shares": 100,
+          "entryPrice": 33.14310999999999,
+          "entryFee": 5.03314311,
+          "buyCost": 3319.344143109999,
+          "roundTripFrictionRate": 0.005525809831460856,
+          "referenceEntryOpen": 33.14,
+          "referenceSignalDate": "2026-10-19",
+          "estimatedNetReturn": 0.015950754088577185,
+          "selected": true
+        },
+        {
+          "symbol": "sh688256",
+          "name": "寒武纪",
+          "type": "stock",
+          "expectedReturn": 0.01948486106173572,
+          "signalDate": "2026-10-19",
+          "sourceTime": "2026-10-20 09:30:03",
+          "price": 915,
+          "reasonCode": "permission",
+          "reason": "新手模式未启用科创板 / 创业板个股权限",
+          "selected": false
+        },
+        {
+          "symbol": "sh600406",
+          "name": "国电南瑞",
+          "type": "stock",
+          "expectedReturn": 0.01798768454244653,
+          "signalDate": "2026-10-19",
+          "sourceTime": "2026-10-20 09:30:02",
+          "price": 22.99,
+          "reasonCode": null,
+          "reason": "符合小额模拟条件；不代表已验证的买入建议",
+          "minimumShares": 100,
+          "minimumBuyCost": 2306.3220129899996,
+          "shares": 100,
+          "entryPrice": 23.012989999999995,
+          "entryFee": 5.02301299,
+          "buyCost": 2306.3220129899996,
+          "roundTripFrictionRate": 0.006847409169687389,
+          "referenceEntryOpen": 23,
+          "referenceSignalDate": "2026-10-19",
+          "estimatedNetReturn": 0.011496826626733625,
+          "selected": true
+        },
+        {
+          "symbol": "sz002371",
+          "name": "北方华创",
+          "type": "stock",
+          "expectedReturn": 0.016693136226669226,
+          "signalDate": "2026-10-19",
+          "sourceTime": "2026-10-20 09:30:03",
+          "price": 573.05,
+          "reasonCode": "minimum_lot",
+          "reason": "单只额度不足以买入最小股数并支付费用",
+          "minimumShares": 100,
+          "minimumBuyCost": 57380.08731454999,
+          "selected": false
+        },
+        {
+          "symbol": "sh600703",
+          "name": "三安光电",
+          "type": "stock",
+          "expectedReturn": 0.018509461894987173,
+          "signalDate": "2026-10-19",
+          "sourceTime": "2026-10-20 09:30:03",
+          "price": 9.68,
+          "reasonCode": "rank",
+          "reason": "通过额度检查，未进入本次研究排名前三",
+          "minimumShares": 100,
+          "minimumBuyCost": 973.9776896799999,
+          "shares": 300,
+          "entryPrice": 9.68968,
+          "entryFee": 5.02906904,
+          "buyCost": 2911.9330690399997,
+          "roundTripFrictionRate": 0.005946780914751122,
+          "referenceEntryOpen": 9.65,
+          "referenceSignalDate": "2026-10-19",
+          "estimatedNetReturn": 0.009341204997561992,
+          "selected": false
+        },
+        {
+          "symbol": "sh688111",
+          "name": "金山办公",
+          "type": "stock",
+          "expectedReturn": 0.01601529159511014,
+          "signalDate": "2026-10-19",
+          "sourceTime": "2026-10-20 09:30:03",
+          "price": 231,
+          "reasonCode": "permission",
+          "reason": "新手模式未启用科创板 / 创业板个股权限",
+          "selected": false
+        },
+        {
+          "symbol": "sh600570",
+          "name": "恒生电子",
+          "type": "stock",
+          "expectedReturn": 0.01666355344037772,
+          "signalDate": "2026-10-19",
+          "sourceTime": "2026-10-20 09:30:04",
+          "price": 20.12,
+          "reasonCode": "rank",
+          "reason": "通过额度检查，未进入本次研究排名前三",
+          "minimumShares": 100,
+          "minimumBuyCost": 2019.03214012,
+          "shares": 100,
+          "entryPrice": 20.14012,
+          "entryFee": 5.02014012,
+          "buyCost": 2019.03214012,
+          "roundTripFrictionRate": 0.007463592926809084,
+          "referenceEntryOpen": 20.1,
+          "referenceSignalDate": "2026-10-19",
+          "estimatedNetReturn": 0.008111296794387712,
+          "selected": false
+        },
+        {
+          "symbol": "sh588000",
+          "name": "科创50ETF",
+          "type": "etf",
+          "expectedReturn": 0.016284257644116208,
+          "signalDate": "2026-10-19",
+          "sourceTime": "2026-10-20 09:30:02",
+          "price": 1.397,
+          "reasonCode": null,
+          "reason": "符合小额模拟条件；不代表已验证的买入建议",
+          "minimumShares": 100,
+          "minimumBuyCost": 144.8397,
+          "shares": 2300,
+          "entryPrice": 1.398397,
+          "entryFee": 5,
+          "buyCost": 3221.3131,
+          "roundTripFrictionRate": 0.005099224909245823,
+          "referenceEntryOpen": 1.398,
+          "referenceSignalDate": "2026-10-19",
+          "estimatedNetReturn": 0.011852167250324838,
+          "selected": true
+        },
+        {
+          "symbol": "sh512760",
+          "name": "芯片ETF",
+          "type": "etf",
+          "expectedReturn": 0.01387259634966406,
+          "signalDate": "2026-10-19",
+          "sourceTime": "2026-10-20 09:30:04",
+          "price": 0.869,
+          "reasonCode": "rank",
+          "reason": "通过额度检查，未进入本次研究排名前三",
+          "minimumShares": 100,
+          "minimumBuyCost": 91.98689999999999,
+          "shares": 3800,
+          "entryPrice": 0.8698689999999999,
+          "entryFee": 5,
+          "buyCost": 3310.5021999999994,
+          "roundTripFrictionRate": 0.005015674056945111,
+          "referenceEntryOpen": 0.87,
+          "referenceSignalDate": "2026-10-19",
+          "estimatedNetReturn": 0.009970916415176306,
+          "selected": false
+        },
+        {
+          "symbol": "sh515070",
+          "name": "人工智能ETF",
+          "type": "etf",
+          "expectedReturn": 0.011914625431389925,
+          "signalDate": "2026-10-19",
+          "sourceTime": "2026-10-20 09:30:02",
+          "price": 0.915,
+          "reasonCode": "rank",
+          "reason": "通过额度检查，未进入本次研究排名前三",
+          "minimumShares": 100,
+          "minimumBuyCost": 96.5915,
+          "shares": 3600,
+          "entryPrice": 0.9159149999999999,
+          "entryFee": 5,
+          "buyCost": 3302.294,
+          "roundTripFrictionRate": 0.005023174799094126,
+          "referenceEntryOpen": 0.915,
+          "referenceSignalDate": "2026-10-19",
+          "estimatedNetReturn": 0.0068496413083836945,
+          "selected": false
+        },
+        {
+          "symbol": "sh512720",
+          "name": "计算机ETF",
+          "type": "etf",
+          "expectedReturn": 0.013732468151518119,
+          "signalDate": "2026-10-19",
+          "sourceTime": "2026-10-20 09:30:02",
+          "price": 1.018,
+          "reasonCode": "rank",
+          "reason": "通过额度检查，未进入本次研究排名前三",
+          "minimumShares": 100,
+          "minimumBuyCost": 106.9018,
+          "shares": 3200,
+          "entryPrice": 1.019018,
+          "entryFee": 5,
+          "buyCost": 3265.8576,
+          "roundTripFrictionRate": 0.005056925935778652,
+          "referenceEntryOpen": 1.018,
+          "referenceSignalDate": "2026-10-19",
+          "estimatedNetReturn": 0.008627122432446246,
+          "selected": false
+        },
+        {
+          "symbol": "sh515880",
+          "name": "通信ETF",
+          "type": "etf",
+          "expectedReturn": 0.015766118875442645,
+          "signalDate": "2026-10-19",
+          "sourceTime": "2026-10-20 09:30:03",
+          "price": 0.517,
+          "reasonCode": "rank",
+          "reason": "通过额度检查，未进入本次研究排名前三",
+          "minimumShares": 100,
+          "minimumBuyCost": 56.7517,
+          "shares": 6400,
+          "entryPrice": 0.517517,
+          "entryFee": 5,
+          "buyCost": 3317.1088,
+          "roundTripFrictionRate": 0.005009663837375363,
+          "referenceEntryOpen": 0.516,
+          "referenceSignalDate": "2026-10-19",
+          "estimatedNetReturn": 0.008743386693643355,
+          "selected": false
+        },
+        {
+          "symbol": "sz159852",
+          "name": "软件ETF",
+          "type": "etf",
+          "expectedReturn": 0.012134332277169336,
+          "signalDate": "2026-10-19",
+          "sourceTime": "2026-10-20 09:30:00",
+          "price": 0.619,
+          "reasonCode": "rank",
+          "reason": "通过额度检查，未进入本次研究排名前三",
+          "minimumShares": 100,
+          "minimumBuyCost": 66.96189999999999,
+          "shares": 5300,
+          "entryPrice": 0.6196189999999999,
+          "entryFee": 5,
+          "buyCost": 3288.9806999999996,
+          "roundTripFrictionRate": 0.005035420244332719,
+          "referenceEntryOpen": 0.618,
+          "referenceSignalDate": "2026-10-19",
+          "estimatedNetReturn": 0.00542689324650051,
+          "selected": false
+        }
+      ],
+      "selected": [
+        {
+          "symbol": "sz002415",
+          "name": "海康威视",
+          "type": "stock",
+          "expectedReturn": 0.020638466513586903,
+          "signalDate": "2026-10-19",
+          "sourceTime": "2026-10-20 09:30:00",
+          "price": 33.11,
+          "reasonCode": null,
+          "reason": "符合小额模拟条件；不代表已验证的买入建议",
+          "minimumShares": 100,
+          "minimumBuyCost": 3319.344143109999,
+          "shares": 100,
+          "entryPrice": 33.14310999999999,
+          "entryFee": 5.03314311,
+          "buyCost": 3319.344143109999,
+          "roundTripFrictionRate": 0.005525809831460856,
+          "referenceEntryOpen": 33.14,
+          "referenceSignalDate": "2026-10-19",
+          "estimatedNetReturn": 0.015950754088577185,
+          "selected": true
+        },
+        {
+          "symbol": "sh588000",
+          "name": "科创50ETF",
+          "type": "etf",
+          "expectedReturn": 0.016284257644116208,
+          "signalDate": "2026-10-19",
+          "sourceTime": "2026-10-20 09:30:02",
+          "price": 1.397,
+          "reasonCode": null,
+          "reason": "符合小额模拟条件；不代表已验证的买入建议",
+          "minimumShares": 100,
+          "minimumBuyCost": 144.8397,
+          "shares": 2300,
+          "entryPrice": 1.398397,
+          "entryFee": 5,
+          "buyCost": 3221.3131,
+          "roundTripFrictionRate": 0.005099224909245823,
+          "referenceEntryOpen": 1.398,
+          "referenceSignalDate": "2026-10-19",
+          "estimatedNetReturn": 0.011852167250324838,
+          "selected": true
+        },
+        {
+          "symbol": "sh600406",
+          "name": "国电南瑞",
+          "type": "stock",
+          "expectedReturn": 0.01798768454244653,
+          "signalDate": "2026-10-19",
+          "sourceTime": "2026-10-20 09:30:02",
+          "price": 22.99,
+          "reasonCode": null,
+          "reason": "符合小额模拟条件；不代表已验证的买入建议",
+          "minimumShares": 100,
+          "minimumBuyCost": 2306.3220129899996,
+          "shares": 100,
+          "entryPrice": 23.012989999999995,
+          "entryFee": 5.02301299,
+          "buyCost": 2306.3220129899996,
+          "roundTripFrictionRate": 0.006847409169687389,
+          "referenceEntryOpen": 23,
+          "referenceSignalDate": "2026-10-19",
+          "estimatedNetReturn": 0.011496826626733625,
+          "selected": true
+        }
+      ],
+      "note": "Declared paper costs include stock sell stamp duty 0.05% and stock transfer 0.001% per side; ETF secondary trades have neither. Commission is an assumption. No order-book fills.",
+      "allocationMode": "full",
+      "allocationCount": 3
+    },
+    "startedAt": "2026-10-20T01:30:05.393Z",
+    "observedAt": "2026-10-20T02:00:05.568Z",
+    "model": {
+      "schemaVersion": 1,
+      "kind": "standardized-ridge",
+      "version": "ridge-20-1-2026-09-30-28766",
+      "horizon": 20,
+      "alpha": 1,
+      "cutoff": "2026-09-30",
+      "sampleCount": 28766,
+      "eligible": true,
+      "featureNames": [
+        "ma5Gap",
+        "ma20Gap",
+        "ma60Gap",
+        "rsi14",
+        "momentum5",
+        "momentum20",
+        "momentum60",
+        "volatility20",
+        "volumeRatio",
+        "drawdown60",
+        "atr14"
+      ],
+      "means": [
+        0.001347469441806011,
+        0.0067334892942855756,
+        0.02121166269408386,
+        -0.001402233184985616,
+        0.005105558872155551,
+        0.02073860940956678,
+        0.06757632596220021,
+        0.3989884212719411,
+        -0.05812780663585264,
+        0.1845171513828664,
+        0.03764367335041628
+      ],
+      "scales": [
+        0.03201791558694715,
+        0.07449549699897845,
+        0.14014147136495306,
+        0.336943870168761,
+        0.06770148730253799,
+        0.14591444041709978,
+        0.30375025623910196,
+        0.1908816495547417,
+        0.4113786014419155,
+        0.08445853782842512,
+        0.017074624288159677
+      ],
+      "coefficients": [
+        -0.0005338321026557834,
+        0.0008299300267760822,
+        0.0016345657723127616,
+        0.0009537054201801867,
+        0.00013230546126192285,
+        0.0007410029184432415,
+        0.001973362791224167,
+        0.0013411985516849022,
+        0.004169063801606913,
+        0.0022808929022935945,
+        0.0020693066400804157
+      ],
+      "intercept": 0.01969183717561541,
+      "residualQuantiles": [
+        -0.14181483942557227,
+        0.15947078859141056
+      ],
+      "residualStd": 0.14488024817005232,
+      "labelEndMax": "2026-09-30",
+      "lastSignalDate": "2026-08-31",
+      "symbols": [
+        "sh512720",
+        "sh512760",
+        "sh515070",
+        "sh515880",
+        "sh588000",
+        "sh600406",
+        "sh600570",
+        "sh600703",
+        "sh603019",
+        "sh688111",
+        "sh688256",
+        "sh688981",
+        "sz000977",
+        "sz002230",
+        "sz002371",
+        "sz002415",
+        "sz159852",
+        "sz300308",
+        "sz300502"
+      ],
+      "trainingMae": 0.0999592521507099,
+      "notes": [
+        "预测目标为信号次日开盘至20交易日后开盘的后复权收益。",
+        "标准化仅拟合训练样本；RSI采用最近14次涨跌简单均值。",
+        "参考区间为训练残差10%至90%分位，不代表置信保证。"
+      ],
+      "validation": {
+        "year": 2024,
+        "candidates": [
+          {
+            "alpha": 0.01,
+            "mae": 0.12472803157111662,
+            "sampleCount": 4199
+          },
+          {
+            "alpha": 0.1,
+            "mae": 0.12138799573602732,
+            "sampleCount": 4199
+          },
+          {
+            "alpha": 1,
+            "mae": 0.12006246554242506,
+            "sampleCount": 4199
+          }
+        ],
+        "selectedAlpha": 1,
+        "criterion": "2024年冻结样本外平均绝对误差；未按2025/2026结果调参"
+      }
+    },
+    "feeRate": 0.0003,
+    "minFee": 5,
+    "slippage": 0.001,
+    "account": {
+      "cash": 1153.0207439000014,
+      "holdings": [
+        {
+          "symbol": "sz002415",
+          "name": "海康威视",
+          "shares": 100,
+          "entryPrice": 33.14310999999999,
+          "entryFee": 5.03314311,
+          "entrySourceTime": "2026-10-20 09:30:00",
+          "lastPrice": 32.63,
+          "lastSourceTime": "2026-10-20 10:00:03",
+          "predicted20DayReturn": 0.020638466513586903,
+          "signalDate": "2026-10-19",
+          "appliedCorporateActions": []
+        },
+        {
+          "symbol": "sh588000",
+          "name": "科创50ETF",
+          "shares": 2300,
+          "entryPrice": 1.398397,
+          "entryFee": 5,
+          "entrySourceTime": "2026-10-20 09:30:02",
+          "lastPrice": 1.401,
+          "lastSourceTime": "2026-10-20 10:00:02",
+          "predicted20DayReturn": 0.016284257644116208,
+          "signalDate": "2026-10-19",
+          "appliedCorporateActions": []
+        },
+        {
+          "symbol": "sh600406",
+          "name": "国电南瑞",
+          "shares": 100,
+          "entryPrice": 23.012989999999995,
+          "entryFee": 5.02301299,
+          "entrySourceTime": "2026-10-20 09:30:02",
+          "lastPrice": 22.83,
+          "lastSourceTime": "2026-10-20 10:00:02",
+          "predicted20DayReturn": 0.01798768454244653,
+          "signalDate": "2026-10-19",
+          "appliedCorporateActions": []
+        }
+      ],
+      "equity": 9921.320743900003,
+      "receivables": []
+    },
+    "benchmark": {
+      "cash": 66.38130000000092,
+      "holdings": [
+        {
+          "symbol": "sh588000",
+          "name": "科创50ETF",
+          "shares": 7100,
+          "entryPrice": 1.398397,
+          "entryFee": 5,
+          "entrySourceTime": "2026-10-20 09:30:02",
+          "lastPrice": 1.401,
+          "lastSourceTime": "2026-10-20 10:00:02",
+          "predicted20DayReturn": 0.016284257644116208,
+          "signalDate": "2026-10-19",
+          "appliedCorporateActions": []
+        }
+      ],
+      "equity": 10013.481300000001,
+      "receivables": []
+    },
+    "horizonAccuracy": null,
+    "realizedPnl": 0,
+    "curve": [
+      {
+        "observedAt": "2026-10-20T01:30:35.645Z",
+        "equity": 9979.3207439,
+        "benchmarkEquity": 9942.481300000001
+      },
+      {
+        "observedAt": "2026-10-20T01:31:05.810Z",
+        "equity": 9985.5207439,
+        "benchmarkEquity": 9970.881300000001
+      },
+      {
+        "observedAt": "2026-10-20T01:31:36.002Z",
+        "equity": 9972.920743900002,
+        "benchmarkEquity": 9956.6813
+      },
+      {
+        "observedAt": "2026-10-20T01:32:06.187Z",
+        "equity": 9959.0207439,
+        "benchmarkEquity": 9935.381300000001
+      },
+      {
+        "observedAt": "2026-10-20T01:32:36.356Z",
+        "equity": 9950.420743900002,
+        "benchmarkEquity": 9921.1813
+      },
+      {
+        "observedAt": "2026-10-20T01:33:06.518Z",
+        "equity": 9934.8207439,
+        "benchmarkEquity": 9906.9813
+      },
+      {
+        "observedAt": "2026-10-20T01:33:36.681Z",
+        "equity": 9937.5207439,
+        "benchmarkEquity": 9899.881300000001
+      },
+      {
+        "observedAt": "2026-10-20T01:34:06.835Z",
+        "equity": 9933.8207439,
+        "benchmarkEquity": 9906.9813
+      },
+      {
+        "observedAt": "2026-10-20T01:34:37.013Z",
+        "equity": 9930.120743900003,
+        "benchmarkEquity": 9914.081300000002
+      },
+      {
+        "observedAt": "2026-10-20T01:35:07.235Z",
+        "equity": 9932.8207439,
+        "benchmarkEquity": 9906.9813
+      },
+      {
+        "observedAt": "2026-10-20T01:35:37.401Z",
+        "equity": 9906.5207439,
+        "benchmarkEquity": 9899.881300000001
+      },
+      {
+        "observedAt": "2026-10-20T01:36:07.564Z",
+        "equity": 9914.420743900002,
+        "benchmarkEquity": 9921.1813
+      },
+      {
+        "observedAt": "2026-10-20T01:36:37.751Z",
+        "equity": 9911.720743900001,
+        "benchmarkEquity": 9928.2813
+      },
+      {
+        "observedAt": "2026-10-20T01:37:07.910Z",
+        "equity": 9911.0207439,
+        "benchmarkEquity": 9935.381300000001
+      },
+      {
+        "observedAt": "2026-10-20T01:37:38.125Z",
+        "equity": 9897.3207439,
+        "benchmarkEquity": 9942.481300000001
+      },
+      {
+        "observedAt": "2026-10-20T01:38:08.261Z",
+        "equity": 9901.620743900003,
+        "benchmarkEquity": 9949.5813
+      },
+      {
+        "observedAt": "2026-10-20T01:38:38.439Z",
+        "equity": 9904.220743900001,
+        "benchmarkEquity": 9963.7813
+      },
+      {
+        "observedAt": "2026-10-20T01:39:08.650Z",
+        "equity": 9920.720743900001,
+        "benchmarkEquity": 9999.2813
+      },
+      {
+        "observedAt": "2026-10-20T01:39:38.815Z",
+        "equity": 9912.420743900002,
+        "benchmarkEquity": 9992.1813
+      },
+      {
+        "observedAt": "2026-10-20T01:40:09.088Z",
+        "equity": 9911.420743900002,
+        "benchmarkEquity": 9992.1813
+      },
+      {
+        "observedAt": "2026-10-20T01:40:39.416Z",
+        "equity": 9910.420743900002,
+        "benchmarkEquity": 9992.1813
+      },
+      {
+        "observedAt": "2026-10-20T01:41:09.651Z",
+        "equity": 9910.120743900003,
+        "benchmarkEquity": 9985.081300000002
+      },
+      {
+        "observedAt": "2026-10-20T01:41:39.833Z",
+        "equity": 9896.220743900001,
+        "benchmarkEquity": 9963.7813
+      },
+      {
+        "observedAt": "2026-10-20T01:42:10.044Z",
+        "equity": 9900.8207439,
+        "benchmarkEquity": 9977.9813
+      },
+      {
+        "observedAt": "2026-10-20T01:42:40.290Z",
+        "equity": 9896.8207439,
+        "benchmarkEquity": 9977.9813
+      },
+      {
+        "observedAt": "2026-10-20T01:43:10.428Z",
+        "equity": 9900.420743900002,
+        "benchmarkEquity": 9992.1813
+      },
+      {
+        "observedAt": "2026-10-20T01:43:40.595Z",
+        "equity": 9903.420743900002,
+        "benchmarkEquity": 9992.1813
+      },
+      {
+        "observedAt": "2026-10-20T01:44:10.794Z",
+        "equity": 9921.920743900002,
+        "benchmarkEquity": 10027.6813
+      },
+      {
+        "observedAt": "2026-10-20T01:44:40.954Z",
+        "equity": 9917.620743900003,
+        "benchmarkEquity": 10020.5813
+      },
+      {
+        "observedAt": "2026-10-20T01:45:11.204Z",
+        "equity": 9922.220743900001,
+        "benchmarkEquity": 10034.7813
+      },
+      {
+        "observedAt": "2026-10-20T01:45:41.370Z",
+        "equity": 9922.8207439,
+        "benchmarkEquity": 10048.9813
+      },
+      {
+        "observedAt": "2026-10-20T01:46:11.551Z",
+        "equity": 9936.0207439,
+        "benchmarkEquity": 10077.381300000001
+      },
+      {
+        "observedAt": "2026-10-20T01:46:41.766Z",
+        "equity": 9936.3207439,
+        "benchmarkEquity": 10084.481300000001
+      },
+      {
+        "observedAt": "2026-10-20T01:47:11.966Z",
+        "equity": 9947.620743900003,
+        "benchmarkEquity": 10091.5813
+      },
+      {
+        "observedAt": "2026-10-20T01:47:42.248Z",
+        "equity": 9948.3207439,
+        "benchmarkEquity": 10084.481300000001
+      },
+      {
+        "observedAt": "2026-10-20T01:48:12.452Z",
+        "equity": 9950.3207439,
+        "benchmarkEquity": 10084.481300000001
+      },
+      {
+        "observedAt": "2026-10-20T01:48:42.623Z",
+        "equity": 9948.0207439,
+        "benchmarkEquity": 10077.381300000001
+      },
+      {
+        "observedAt": "2026-10-20T01:49:12.806Z",
+        "equity": 9942.720743900001,
+        "benchmarkEquity": 10070.2813
+      },
+      {
+        "observedAt": "2026-10-20T01:49:42.993Z",
+        "equity": 9942.0207439,
+        "benchmarkEquity": 10077.381300000001
+      },
+      {
+        "observedAt": "2026-10-20T01:50:13.202Z",
+        "equity": 9947.920743900002,
+        "benchmarkEquity": 10098.681300000002
+      },
+      {
+        "observedAt": "2026-10-20T01:50:43.450Z",
+        "equity": 9940.3207439,
+        "benchmarkEquity": 10084.481300000001
+      },
+      {
+        "observedAt": "2026-10-20T01:51:13.642Z",
+        "equity": 9940.3207439,
+        "benchmarkEquity": 10084.481300000001
+      },
+      {
+        "observedAt": "2026-10-20T01:51:43.853Z",
+        "equity": 9940.0207439,
+        "benchmarkEquity": 10077.381300000001
+      },
+      {
+        "observedAt": "2026-10-20T01:52:14.031Z",
+        "equity": 9932.120743900003,
+        "benchmarkEquity": 10056.081300000002
+      },
+      {
+        "observedAt": "2026-10-20T01:52:44.240Z",
+        "equity": 9940.0207439,
+        "benchmarkEquity": 10077.381300000001
+      },
+      {
+        "observedAt": "2026-10-20T01:53:14.420Z",
+        "equity": 9934.720743900001,
+        "benchmarkEquity": 10070.2813
+      },
+      {
+        "observedAt": "2026-10-20T01:53:44.576Z",
+        "equity": 9925.120743900003,
+        "benchmarkEquity": 10056.081300000002
+      },
+      {
+        "observedAt": "2026-10-20T01:54:14.811Z",
+        "equity": 9918.5207439,
+        "benchmarkEquity": 10041.881300000001
+      },
+      {
+        "observedAt": "2026-10-20T01:54:44.987Z",
+        "equity": 9912.220743900001,
+        "benchmarkEquity": 10034.7813
+      },
+      {
+        "observedAt": "2026-10-20T01:55:15.166Z",
+        "equity": 9911.920743900002,
+        "benchmarkEquity": 10027.6813
+      },
+      {
+        "observedAt": "2026-10-20T01:55:45.317Z",
+        "equity": 9914.920743900002,
+        "benchmarkEquity": 10027.6813
+      },
+      {
+        "observedAt": "2026-10-20T01:56:15.513Z",
+        "equity": 9914.620743899999,
+        "benchmarkEquity": 10020.5813
+      },
+      {
+        "observedAt": "2026-10-20T01:56:45.721Z",
+        "equity": 9917.920743900002,
+        "benchmarkEquity": 10027.6813
+      },
+      {
+        "observedAt": "2026-10-20T01:57:15.917Z",
+        "equity": 9914.620743900003,
+        "benchmarkEquity": 10020.5813
+      },
+      {
+        "observedAt": "2026-10-20T01:57:46.108Z",
+        "equity": 9911.0207439,
+        "benchmarkEquity": 10006.381300000001
+      },
+      {
+        "observedAt": "2026-10-20T01:58:16.261Z",
+        "equity": 9917.620743899999,
+        "benchmarkEquity": 10020.5813
+      },
+      {
+        "observedAt": "2026-10-20T01:58:46.448Z",
+        "equity": 9919.620743900003,
+        "benchmarkEquity": 10020.5813
+      },
+      {
+        "observedAt": "2026-10-20T01:59:16.641Z",
+        "equity": 9920.320743900003,
+        "benchmarkEquity": 10013.481300000001
+      },
+      {
+        "observedAt": "2026-10-20T01:59:46.831Z",
+        "equity": 9926.3207439,
+        "benchmarkEquity": 10013.481300000001
+      },
+      {
+        "observedAt": "2026-10-20T02:00:05.568Z",
+        "equity": 9921.320743900003,
+        "benchmarkEquity": 10013.481300000001
+      }
+    ],
+    "note": "Automatic paper experiment, frozen model and forecasts. Recheck the same entry plan; exit signal when price reaches the frozen 20-day estimated target, subject to T+1. No forced sale at thirty minutes. Last-price hypothetical execution, not broker fills. Cash is not prediction success.",
+    "automation": {
+      "version": "auto-target-v1",
+      "mode": "live_30s",
+      "durationMs": 1800000,
+      "plannedEndAt": "2026-10-20T02:00:05.393Z",
+      "done": true,
+      "windowEnded": true,
+      "elapsedMs": 1800175,
+      "universe": [
+        {
+          "symbol": "sz002230",
+          "name": "科大讯飞",
+          "sector": "人工智能",
+          "type": "stock"
+        },
+        {
+          "symbol": "sz300308",
+          "name": "中际旭创",
+          "sector": "光通信",
+          "type": "stock"
+        },
+        {
+          "symbol": "sz300502",
+          "name": "新易盛",
+          "sector": "光通信",
+          "type": "stock"
+        },
+        {
+          "symbol": "sh688981",
+          "name": "中芯国际",
+          "sector": "半导体",
+          "type": "stock"
+        },
+        {
+          "symbol": "sh603019",
+          "name": "中科曙光",
+          "sector": "算力",
+          "type": "stock"
+        },
+        {
+          "symbol": "sz000977",
+          "name": "浪潮信息",
+          "sector": "算力",
+          "type": "stock"
+        },
+        {
+          "symbol": "sz002415",
+          "name": "海康威视",
+          "sector": "人工智能",
+          "type": "stock"
+        },
+        {
+          "symbol": "sh688256",
+          "name": "寒武纪",
+          "sector": "AI芯片",
+          "type": "stock"
+        },
+        {
+          "symbol": "sh600406",
+          "name": "国电南瑞",
+          "sector": "工业软件",
+          "type": "stock"
+        },
+        {
+          "symbol": "sz002371",
+          "name": "北方华创",
+          "sector": "半导体设备",
+          "type": "stock"
+        },
+        {
+          "symbol": "sh600703",
+          "name": "三安光电",
+          "sector": "半导体",
+          "type": "stock"
+        },
+        {
+          "symbol": "sh688111",
+          "name": "金山办公",
+          "sector": "软件",
+          "type": "stock"
+        },
+        {
+          "symbol": "sh600570",
+          "name": "恒生电子",
+          "sector": "软件",
+          "type": "stock"
+        },
+        {
+          "symbol": "sh588000",
+          "name": "科创50ETF",
+          "sector": "科创",
+          "type": "etf"
+        },
+        {
+          "symbol": "sh512760",
+          "name": "芯片ETF",
+          "sector": "半导体",
+          "type": "etf"
+        },
+        {
+          "symbol": "sh515070",
+          "name": "人工智能ETF",
+          "sector": "人工智能",
+          "type": "etf"
+        },
+        {
+          "symbol": "sh512720",
+          "name": "计算机ETF",
+          "sector": "软件",
+          "type": "etf"
+        },
+        {
+          "symbol": "sh515880",
+          "name": "通信ETF",
+          "sector": "通信",
+          "type": "etf"
+        },
+        {
+          "symbol": "sz159852",
+          "name": "软件ETF",
+          "sector": "软件",
+          "type": "etf"
+        }
+      ],
+      "predictions": {
+        "sz002230": {
+          "expectedReturn": 0.008630707678992591,
+          "contributions": [
+            {
+              "name": "训练平均收益",
+              "value": 0.01969183717561541
+            },
+            {
+              "name": "距MA5",
+              "feature": "ma5Gap",
+              "value": 0.00014175589682443633
+            },
+            {
+              "name": "距MA20",
+              "feature": "ma20Gap",
+              "value": -0.000534551569209483
+            },
+            {
+              "name": "距MA60",
+              "feature": "ma60Gap",
+              "value": -0.0012737175711137036
+            },
+            {
+              "name": "RSI14",
+              "feature": "rsi14",
+              "value": -0.0016194863611155735
+            },
+            {
+              "name": "5日动量",
+              "feature": "momentum5",
+              "value": -0.00007648105170178352
+            },
+            {
+              "name": "20日动量",
+              "feature": "momentum20",
+              "value": -0.0004852658997987914
+            },
+            {
+              "name": "60日动量",
+              "feature": "momentum60",
+              "value": -0.001203907435401817
+            },
+            {
+              "name": "20日波动",
+              "feature": "volatility20",
+              "value": -0.0016187946360989892
+            },
+            {
+              "name": "量比",
+              "feature": "volumeRatio",
+              "value": -0.002248030909688146
+            },
+            {
+              "name": "60日回撤",
+              "feature": "drawdown60",
+              "value": -0.0001358232581598015
+            },
+            {
+              "name": "ATR14",
+              "feature": "atr14",
+              "value": -0.0020068267011591665
+            }
+          ],
+          "interval": [
+            -0.13318413174657967,
+            0.16810149627040316
+          ],
+          "asOf": "2026-10-19",
+          "eligible": true,
+          "reasons": [],
+          "risks": [
+            "技术因子无法保证收益，预测可能为负或失准。",
+            "参考区间来自训练残差，并非经过校准的置信区间。",
+            "固定研究池存在幸存者偏差；后复权价格不代表真实成交价格。"
+          ],
+          "indicators": {
+            "ma5": 487.17660000000006,
+            "ma20": 504.5008999999999,
+            "ma60": 530.3583166666667,
+            "momentum5": -0.03403024777774899,
+            "momentum20": -0.0748174274970067,
+            "momentum60": -0.11773536310872301,
+            "rsi": 21.32168340380548,
+            "volatility": 0.16859882680007193,
+            "drawdown": 0.17948779039194296,
+            "volumeRatio": 0.7558213621008147,
+            "atr": 10.198428571428574
+          }
+        },
+        "sz300308": {
+          "expectedReturn": 0.017531394683333215,
+          "contributions": [
+            {
+              "name": "训练平均收益",
+              "value": 0.01969183717561541
+            },
+            {
+              "name": "距MA5",
+              "feature": "ma5Gap",
+              "value": 0.0005661988539826123
+            },
+            {
+              "name": "距MA20",
+              "feature": "ma20Gap",
+              "value": -0.0021586197677438226
+            },
+            {
+              "name": "距MA60",
+              "feature": "ma60Gap",
+              "value": -0.0032131189932996266
+            },
+            {
+              "name": "RSI14",
+              "feature": "rsi14",
+              "value": -0.002417213185053956
+            },
+            {
+              "name": "5日动量",
+              "feature": "momentum5",
+              "value": -0.0001810499488663323
+            },
+            {
+              "name": "20日动量",
+              "feature": "momentum20",
+              "value": -0.0015493321093926176
+            },
+            {
+              "name": "60日动量",
+              "feature": "momentum60",
+              "value": -0.0025393722623827746
+            },
+            {
+              "name": "20日波动",
+              "feature": "volatility20",
+              "value": 0.0010932205978864743
+            },
+            {
+              "name": "量比",
+              "feature": "volumeRatio",
+              "value": -0.0015185632563571826
+            },
+            {
+              "name": "60日回撤",
+              "feature": "drawdown60",
+              "value": 0.006356702485067218
+            },
+            {
+              "name": "ATR14",
+              "feature": "atr14",
+              "value": 0.0034007050938778143
+            }
+          ],
+          "interval": [
+            -0.12428344474223905,
+            0.17700218327474376
+          ],
+          "asOf": "2026-10-19",
+          "eligible": true,
+          "reasons": [],
+          "risks": [
+            "技术因子无法保证收益，预测可能为负或失准。",
+            "参考区间来自训练残差，并非经过校准的置信区间。",
+            "固定研究池存在幸存者偏差；后复权价格不代表真实成交价格。"
+          ],
+          "indicators": {
+            "ma5": 4337.973800000001,
+            "ma20": 5161.922699999999,
+            "ma60": 5627.370816666665,
+            "momentum5": -0.08753877113046982,
+            "momentum20": -0.28434781081292637,
+            "momentum60": -0.32329704958510175,
+            "rsi": 7.229849714507097,
+            "volatility": 0.5545774284250125,
+            "drawdown": 0.4198976888729108,
+            "volumeRatio": 0.8122308647395226,
+            "atr": 275.72785714285726
+          }
+        },
+        "sz300502": {
+          "expectedReturn": 0.02045282825507149,
+          "contributions": [
+            {
+              "name": "训练平均收益",
+              "value": 0.01969183717561541
+            },
+            {
+              "name": "距MA5",
+              "feature": "ma5Gap",
+              "value": 0.0006753266264681967
+            },
+            {
+              "name": "距MA20",
+              "feature": "ma20Gap",
+              "value": -0.002376767825591217
+            },
+            {
+              "name": "距MA60",
+              "feature": "ma60Gap",
+              "value": -0.003239093706763729
+            },
+            {
+              "name": "RSI14",
+              "feature": "rsi14",
+              "value": -0.0026253115509652977
+            },
+            {
+              "name": "5日动量",
+              "feature": "momentum5",
+              "value": -0.0002317964539361473
+            },
+            {
+              "name": "20日动量",
+              "feature": "momentum20",
+              "value": -0.0014817868818442935
+            },
+            {
+              "name": "60日动量",
+              "feature": "momentum60",
+              "value": -0.0027856320511971907
+            },
+            {
+              "name": "20日波动",
+              "feature": "volatility20",
+              "value": 0.0014229190257333266
+            },
+            {
+              "name": "量比",
+              "feature": "volumeRatio",
+              "value": 0.0000357706551746106
+            },
+            {
+              "name": "60日回撤",
+              "feature": "drawdown60",
+              "value": 0.007017652313820472
+            },
+            {
+              "name": "ATR14",
+              "feature": "atr14",
+              "value": 0.004349710928557348
+            }
+          ],
+          "interval": [
+            -0.12136201117050077,
+            0.17992361684648206
+          ],
+          "asOf": "2026-10-19",
+          "eligible": true,
+          "reasons": [],
+          "risks": [
+            "技术因子无法保证收益，预测可能为负或失准。",
+            "参考区间来自训练残差，并非经过校准的置信区间。",
+            "固定研究池存在幸存者偏差；后复权价格不代表真实成交价格。"
+          ],
+          "indicators": {
+            "ma5": 5193.5016,
+            "ma20": 6289.62725,
+            "ma60": 6711.6514000000025,
+            "momentum5": -0.11350605801238345,
+            "momentum20": -0.27104715593660644,
+            "momentum60": -0.36120263607250236,
+            "rsi": 3.5537948603407585,
+            "volatility": 0.6015006671087637,
+            "drawdown": 0.44437181304520934,
+            "volumeRatio": 0.9468655509052694,
+            "atr": 366.9487857142858
+          }
+        },
+        "sh688981": {
+          "expectedReturn": 0.017547647629180152,
+          "contributions": [
+            {
+              "name": "训练平均收益",
+              "value": 0.01969183717561541
+            },
+            {
+              "name": "距MA5",
+              "feature": "ma5Gap",
+              "value": 0.0005676077631894051
+            },
+            {
+              "name": "距MA20",
+              "feature": "ma20Gap",
+              "value": -0.0013855236096595085
+            },
+            {
+              "name": "距MA60",
+              "feature": "ma60Gap",
+              "value": -0.0025031683547446773
+            },
+            {
+              "name": "RSI14",
+              "feature": "rsi14",
+              "value": -0.00200262507974966
+            },
+            {
+              "name": "5日动量",
+              "feature": "momentum5",
+              "value": -0.00013784261221821444
+            },
+            {
+              "name": "20日动量",
+              "feature": "momentum20",
+              "value": -0.0008713288748734611
+            },
+            {
+              "name": "60日动量",
+              "feature": "momentum60",
+              "value": -0.0023051621443007145
+            },
+            {
+              "name": "20日波动",
+              "feature": "volatility20",
+              "value": -0.00009370902256313892
+            },
+            {
+              "name": "量比",
+              "feature": "volumeRatio",
+              "value": 0.0005968016776976627
+            },
+            {
+              "name": "60日回撤",
+              "feature": "drawdown60",
+              "value": 0.0051948288816293245
+            },
+            {
+              "name": "ATR14",
+              "feature": "atr14",
+              "value": 0.0007959318291577253
+            }
+          ],
+          "interval": [
+            -0.12426719179639212,
+            0.1770184362205907
+          ],
+          "asOf": "2026-10-19",
+          "eligible": true,
+          "reasons": [],
+          "risks": [
+            "技术因子无法保证收益，预测可能为负或失准。",
+            "参考区间来自训练残差，并非经过校准的置信区间。",
+            "固定研究池存在幸存者偏差；后复权价格不代表真实成交价格。"
+          ],
+          "indicators": {
+            "ma5": 103.07000000000001,
+            "ma20": 112.99149999999997,
+            "ma60": 123.60533333333333,
+            "momentum5": -0.06542932133483315,
+            "momentum20": -0.15083894046503699,
+            "momentum60": -0.2872462110380326,
+            "rsi": 14.553543056879562,
+            "volatility": 0.38565159445942837,
+            "drawdown": 0.37687499999999996,
+            "volumeRatio": 1.0007613490315876,
+            "atr": 4.407857142857145
+          }
+        },
+        "sh603019": {
+          "expectedReturn": 0.024507735230310242,
+          "contributions": [
+            {
+              "name": "训练平均收益",
+              "value": 0.01969183717561541
+            },
+            {
+              "name": "距MA5",
+              "feature": "ma5Gap",
+              "value": -0.0007386647450450549
+            },
+            {
+              "name": "距MA20",
+              "feature": "ma20Gap",
+              "value": -0.0006880511965900884
+            },
+            {
+              "name": "距MA60",
+              "feature": "ma60Gap",
+              "value": -0.0016565503432626183
+            },
+            {
+              "name": "RSI14",
+              "feature": "rsi14",
+              "value": -0.001076692042086725
+            },
+            {
+              "name": "5日动量",
+              "feature": "momentum5",
+              "value": 0.000001957992670348457
+            },
+            {
+              "name": "20日动量",
+              "feature": "momentum20",
+              "value": -0.0006061515349903558
+            },
+            {
+              "name": "60日动量",
+              "feature": "momentum60",
+              "value": -0.0014479384933856845
+            },
+            {
+              "name": "20日波动",
+              "feature": "volatility20",
+              "value": -0.00009104410832241829
+            },
+            {
+              "name": "量比",
+              "feature": "volumeRatio",
+              "value": 0.006949071979869062
+            },
+            {
+              "name": "60日回撤",
+              "feature": "drawdown60",
+              "value": 0.004150616835813139
+            },
+            {
+              "name": "ATR14",
+              "feature": "atr14",
+              "value": 0.000019343710025225868
+            }
+          ],
+          "interval": [
+            -0.11730710419526202,
+            0.1839785238217208
+          ],
+          "asOf": "2026-10-19",
+          "eligible": true,
+          "reasons": [],
+          "risks": [
+            "技术因子无法保证收益，预测可能为负或失准。",
+            "参考区间来自训练残差，并非经过校准的置信区间。",
+            "固定研究池存在幸存者偏差；后复权价格不代表真实成交价格。"
+          ],
+          "indicators": {
+            "ma5": 284.04799999999994,
+            "ma20": 314.31049999999993,
+            "ma60": 337.82980000000003,
+            "momentum5": 0.006107475305881849,
+            "momentum20": -0.0986215979994659,
+            "momentum60": -0.15529789176414377,
+            "rsi": 30.910137799117777,
+            "volatility": 0.3860308695679137,
+            "drawdown": 0.3382091676482136,
+            "volumeRatio": 1.8730452615444888,
+            "atr": 11.228142857142855
+          }
+        },
+        "sz000977": {
+          "expectedReturn": 0.012551269532739254,
+          "contributions": [
+            {
+              "name": "训练平均收益",
+              "value": 0.01969183717561541
+            },
+            {
+              "name": "距MA5",
+              "feature": "ma5Gap",
+              "value": 0.0004046743843954758
+            },
+            {
+              "name": "距MA20",
+              "feature": "ma20Gap",
+              "value": -0.001636661180280008
+            },
+            {
+              "name": "距MA60",
+              "feature": "ma60Gap",
+              "value": -0.00300960229163966
+            },
+            {
+              "name": "RSI14",
+              "feature": "rsi14",
+              "value": -0.0024753919098115134
+            },
+            {
+              "name": "5日动量",
+              "feature": "momentum5",
+              "value": -0.00017471041625100414
+            },
+            {
+              "name": "20日动量",
+              "feature": "momentum20",
+              "value": -0.0011126281046286205
+            },
+            {
+              "name": "60日动量",
+              "feature": "momentum60",
+              "value": -0.0022038835801523877
+            },
+            {
+              "name": "20日波动",
+              "feature": "volatility20",
+              "value": -0.0003834267165730367
+            },
+            {
+              "name": "量比",
+              "feature": "volumeRatio",
+              "value": -0.002508521421198061
+            },
+            {
+              "name": "60日回撤",
+              "feature": "drawdown60",
+              "value": 0.00542194275126938
+            },
+            {
+              "name": "ATR14",
+              "feature": "atr14",
+              "value": 0.0005376408419932778
+            }
+          ],
+          "interval": [
+            -0.12926356989283302,
+            0.1720220581241498
+          ],
+          "asOf": "2026-10-19",
+          "eligible": true,
+          "reasons": [],
+          "risks": [
+            "技术因子无法保证收益，预测可能为负或失准。",
+            "参考区间来自训练残差，并非经过校准的置信区间。",
+            "固定研究池存在幸存者偏差；后复权价格不代表真实成交价格。"
+          ],
+          "indicators": {
+            "ma5": 429.05460000000005,
+            "ma20": 487.56325,
+            "ma60": 549.3057,
+            "momentum5": -0.08429479478386237,
+            "momentum20": -0.19835432968478695,
+            "momentum60": -0.2716568881074535,
+            "rsi": 6.202123318782583,
+            "volatility": 0.34441848153343285,
+            "drawdown": 0.38528473520986717,
+            "volumeRatio": 0.7366415343702991,
+            "atr": 17.640714285714285
+          }
+        },
+        "sz002415": {
+          "expectedReturn": 0.020638466513586903,
+          "contributions": [
+            {
+              "name": "训练平均收益",
+              "value": 0.01969183717561541
+            },
+            {
+              "name": "距MA5",
+              "feature": "ma5Gap",
+              "value": 0.00021460378727974642
+            },
+            {
+              "name": "距MA20",
+              "feature": "ma20Gap",
+              "value": -0.00002099265554963306
+            },
+            {
+              "name": "距MA60",
+              "feature": "ma60Gap",
+              "value": -0.0005973346460082951
+            },
+            {
+              "name": "RSI14",
+              "feature": "rsi14",
+              "value": 0.0003834369365567311
+            },
+            {
+              "name": "5日动量",
+              "feature": "momentum5",
+              "value": -0.000012309080891421698
+            },
+            {
+              "name": "20日动量",
+              "feature": "momentum20",
+              "value": -0.00011258652375483617
+            },
+            {
+              "name": "60日动量",
+              "feature": "momentum60",
+              "value": -0.0003461406337566073
+            },
+            {
+              "name": "20日波动",
+              "feature": "volatility20",
+              "value": -0.0018509034286503603
+            },
+            {
+              "name": "量比",
+              "feature": "volumeRatio",
+              "value": 0.00743509220212451
+            },
+            {
+              "name": "60日回撤",
+              "feature": "drawdown60",
+              "value": -0.0015342949745823621
+            },
+            {
+              "name": "ATR14",
+              "feature": "atr14",
+              "value": -0.002611941644795984
+            }
+          ],
+          "interval": [
+            -0.12117637291198537,
+            0.18010925510499748
+          ],
+          "asOf": "2026-10-19",
+          "eligible": true,
+          "reasons": [],
+          "risks": [
+            "技术因子无法保证收益，预测可能为负或失准。",
+            "参考区间来自训练残差，并非经过校准的置信区间。",
+            "固定研究池存在幸存者偏差；后复权价格不代表真实成交价格。"
+          ],
+          "indicators": {
+            "ma5": 762.24,
+            "ma20": 749.8199999999999,
+            "ma60": 776.7600000000002,
+            "momentum5": -0.0011930706456898532,
+            "momentum20": -0.0014313432361079403,
+            "momentum60": 0.014296560748267462,
+            "rsi": 56.70329670329673,
+            "volatility": 0.13556471030575737,
+            "drawdown": 0.12770417694622316,
+            "volumeRatio": 1.965060816008349,
+            "atr": 12.124285714285731
+          }
+        },
+        "sh688256": {
+          "expectedReturn": 0.01948486106173572,
+          "contributions": [
+            {
+              "name": "训练平均收益",
+              "value": 0.01969183717561541
+            },
+            {
+              "name": "距MA5",
+              "feature": "ma5Gap",
+              "value": 0.000035440743204668075
+            },
+            {
+              "name": "距MA20",
+              "feature": "ma20Gap",
+              "value": -0.0011518184720716038
+            },
+            {
+              "name": "距MA60",
+              "feature": "ma60Gap",
+              "value": -0.0019122618277793353
+            },
+            {
+              "name": "RSI14",
+              "feature": "rsi14",
+              "value": -0.0015547230772630595
+            },
+            {
+              "name": "5日动量",
+              "feature": "momentum5",
+              "value": -0.0000970948956041178
+            },
+            {
+              "name": "20日动量",
+              "feature": "momentum20",
+              "value": -0.0006491985301628386
+            },
+            {
+              "name": "60日动量",
+              "feature": "momentum60",
+              "value": -0.0018678541600197281
+            },
+            {
+              "name": "20日波动",
+              "feature": "volatility20",
+              "value": 0.00039932507344106553
+            },
+            {
+              "name": "量比",
+              "feature": "volumeRatio",
+              "value": 0.0006038140868793371
+            },
+            {
+              "name": "60日回撤",
+              "feature": "drawdown60",
+              "value": 0.0040690739404617895
+            },
+            {
+              "name": "ATR14",
+              "feature": "atr14",
+              "value": 0.0019183210050341328
+            }
+          ],
+          "interval": [
+            -0.12232997836383655,
+            0.17895564965314628
+          ],
+          "asOf": "2026-10-19",
+          "eligible": true,
+          "reasons": [],
+          "risks": [
+            "技术因子无法保证收益，预测可能为负或失准。",
+            "参考区间来自训练残差，并非经过校准的置信区间。",
+            "固定研究池存在幸存者偏差；后复权价格不代表真实成交价格。"
+          ],
+          "indicators": {
+            "ma5": 1386.0585999999998,
+            "ma20": 1533.1685499999999,
+            "ma60": 1615.5862166666666,
+            "momentum5": -0.044578473662752804,
+            "momentum20": -0.10709818838243823,
+            "momentum60": -0.2199334934417143,
+            "rsi": 22.465725947989682,
+            "volatility": 0.4558210420880325,
+            "drawdown": 0.33518973885138326,
+            "volumeRatio": 1.001454058608203,
+            "atr": 74.05828571428576
+          }
+        },
+        "sh600406": {
+          "expectedReturn": 0.01798768454244653,
+          "contributions": [
+            {
+              "name": "训练平均收益",
+              "value": 0.01969183717561541
+            },
+            {
+              "name": "距MA5",
+              "feature": "ma5Gap",
+              "value": -0.00024129896660230745
+            },
+            {
+              "name": "距MA20",
+              "feature": "ma20Gap",
+              "value": 0.0002183743819565299
+            },
+            {
+              "name": "距MA60",
+              "feature": "ma60Gap",
+              "value": -0.0002505757717049627
+            },
+            {
+              "name": "RSI14",
+              "feature": "rsi14",
+              "value": 0.0007453896720701866
+            },
+            {
+              "name": "5日动量",
+              "feature": "momentum5",
+              "value": 0.000003888028909616886
+            },
+            {
+              "name": "20日动量",
+              "feature": "momentum20",
+              "value": 0.0000603531418229044
+            },
+            {
+              "name": "60日动量",
+              "feature": "momentum60",
+              "value": -0.0002012936527529651
+            },
+            {
+              "name": "20日波动",
+              "feature": "volatility20",
+              "value": -0.0017278362139616062
+            },
+            {
+              "name": "量比",
+              "feature": "volumeRatio",
+              "value": 0.004238190553355337
+            },
+            {
+              "name": "60日回撤",
+              "feature": "drawdown60",
+              "value": -0.0020672184222948844
+            },
+            {
+              "name": "ATR14",
+              "feature": "atr14",
+              "value": -0.0024821253839667316
+            }
+          ],
+          "interval": [
+            -0.12382715488312573,
+            0.1774584731338571
+          ],
+          "asOf": "2026-10-19",
+          "eligible": true,
+          "reasons": [],
+          "risks": [
+            "技术因子无法保证收益，预测可能为负或失准。",
+            "参考区间来自训练残差，并非经过校准的置信区间。",
+            "固定研究池存在幸存者偏差；后复权价格不代表真实成交价格。"
+          ],
+          "indicators": {
+            "ma5": 1064.0596,
+            "ma20": 1053.15805,
+            "ma60": 1081.1868166666668,
+            "momentum5": 0.007095086268422479,
+            "momentum20": 0.032623036174044495,
+            "momentum60": 0.03659216082291117,
+            "rsi": 63.097186941386795,
+            "volatility": 0.1530798447475487,
+            "drawdown": 0.10797070540837839,
+            "volumeRatio": 1.433432352146908,
+            "atr": 18.551071428571372
+          }
+        },
+        "sz002371": {
+          "expectedReturn": 0.016693136226669226,
+          "contributions": [
+            {
+              "name": "训练平均收益",
+              "value": 0.01969183717561541
+            },
+            {
+              "name": "距MA5",
+              "feature": "ma5Gap",
+              "value": 0.0005224122138957428
+            },
+            {
+              "name": "距MA20",
+              "feature": "ma20Gap",
+              "value": -0.0010488025366644476
+            },
+            {
+              "name": "距MA60",
+              "feature": "ma60Gap",
+              "value": -0.002086991415587957
+            },
+            {
+              "name": "RSI14",
+              "feature": "rsi14",
+              "value": -0.0018749583017079363
+            },
+            {
+              "name": "5日动量",
+              "feature": "momentum5",
+              "value": -0.00005918439776248036
+            },
+            {
+              "name": "20日动量",
+              "feature": "momentum20",
+              "value": -0.0005908448321753773
+            },
+            {
+              "name": "60日动量",
+              "feature": "momentum60",
+              "value": -0.0014317025161219839
+            },
+            {
+              "name": "20日波动",
+              "feature": "volatility20",
+              "value": -0.0004382058527664237
+            },
+            {
+              "name": "量比",
+              "feature": "volumeRatio",
+              "value": 0.0009439019678032912
+            },
+            {
+              "name": "60日回撤",
+              "feature": "drawdown60",
+              "value": 0.0020767683253799657
+            },
+            {
+              "name": "ATR14",
+              "feature": "atr14",
+              "value": 0.0009889063967614198
+            }
+          ],
+          "interval": [
+            -0.12512170319890303,
+            0.1761639248180798
+          ],
+          "asOf": "2026-10-19",
+          "eligible": true,
+          "reasons": [],
+          "risks": [
+            "技术因子无法保证收益，预测可能为负或失准。",
+            "参考区间来自训练残差，并非经过校准的置信区间。",
+            "固定研究池存在幸存者偏差；后复权价格不代表真实成交价格。"
+          ],
+          "indicators": {
+            "ma5": 3752.179,
+            "ma20": 3988.276299999999,
+            "ma60": 4321.204316666668,
+            "momentum5": -0.02517944762272062,
+            "momentum20": -0.09560748169804745,
+            "momentum60": -0.15279876576659623,
+            "rsi": 16.80877498568769,
+            "volatility": 0.33662222208725195,
+            "drawdown": 0.2614172180162455,
+            "volumeRatio": 1.0356309625994002,
+            "atr": 166.70957142857148
+          }
+        },
+        "sh600703": {
+          "expectedReturn": 0.018509461894987173,
+          "contributions": [
+            {
+              "name": "训练平均收益",
+              "value": 0.01969183717561541
+            },
+            {
+              "name": "距MA5",
+              "feature": "ma5Gap",
+              "value": 0.0013707368118908996
+            },
+            {
+              "name": "距MA20",
+              "feature": "ma20Gap",
+              "value": -0.001889257383247609
+            },
+            {
+              "name": "距MA60",
+              "feature": "ma60Gap",
+              "value": -0.0026577531030819185
+            },
+            {
+              "name": "RSI14",
+              "feature": "rsi14",
+              "value": -0.0021188829134313855
+            },
+            {
+              "name": "5日动量",
+              "feature": "momentum5",
+              "value": -0.0002784321005014293
+            },
+            {
+              "name": "20日动量",
+              "feature": "momentum20",
+              "value": -0.0010946542351206352
+            },
+            {
+              "name": "60日动量",
+              "feature": "momentum60",
+              "value": -0.001712054524249833
+            },
+            {
+              "name": "20日波动",
+              "feature": "volatility20",
+              "value": -0.00015646084340129637
+            },
+            {
+              "name": "量比",
+              "feature": "volumeRatio",
+              "value": 0.0026674711433982874
+            },
+            {
+              "name": "60日回撤",
+              "feature": "drawdown60",
+              "value": 0.0034379319836677987
+            },
+            {
+              "name": "ATR14",
+              "feature": "atr14",
+              "value": 0.0012489798834488764
+            }
+          ],
+          "interval": [
+            -0.1233053775305851,
+            0.17798025048639773
+          ],
+          "asOf": "2026-10-19",
+          "eligible": true,
+          "reasons": [],
+          "risks": [
+            "技术因子无法保证收益，预测可能为负或失准。",
+            "参考区间来自训练残差，并非经过校准的置信区间。",
+            "固定研究池存在幸存者偏差；后复权价格不代表真实成交价格。"
+          ],
+          "indicators": {
+            "ma5": 234.17039999999997,
+            "ma20": 257.10280000000006,
+            "ma60": 271.2990333333334,
+            "momentum5": -0.13736979427595786,
+            "momentum20": -0.194815008791291,
+            "momentum60": -0.19595200382534883,
+            "rsi": 12.499849977796728,
+            "volatility": 0.37672064903072705,
+            "drawdown": 0.31181936193478654,
+            "volumeRatio": 1.2276263360576922,
+            "atr": 10.320357142857146
+          }
+        },
+        "sh688111": {
+          "expectedReturn": 0.01601529159511014,
+          "contributions": [
+            {
+              "name": "训练平均收益",
+              "value": 0.01969183717561541
+            },
+            {
+              "name": "距MA5",
+              "feature": "ma5Gap",
+              "value": -0.0000021708628407819026
+            },
+            {
+              "name": "距MA20",
+              "feature": "ma20Gap",
+              "value": 0.00021171858912998366
+            },
+            {
+              "name": "距MA60",
+              "feature": "ma60Gap",
+              "value": -0.0006536382121699488
+            },
+            {
+              "name": "RSI14",
+              "feature": "rsi14",
+              "value": 0.0004904354993355499
+            },
+            {
+              "name": "5日动量",
+              "feature": "momentum5",
+              "value": 0.000024821075032637613
+            },
+            {
+              "name": "20日动量",
+              "feature": "momentum20",
+              "value": -0.000039609969197372714
+            },
+            {
+              "name": "60日动量",
+              "feature": "momentum60",
+              "value": -0.00020198758689812964
+            },
+            {
+              "name": "20日波动",
+              "feature": "volatility20",
+              "value": -0.0009509340550925522
+            },
+            {
+              "name": "量比",
+              "feature": "volumeRatio",
+              "value": -0.002534993983455047
+            },
+            {
+              "name": "60日回撤",
+              "feature": "drawdown60",
+              "value": 0.0009257908655153369
+            },
+            {
+              "name": "ATR14",
+              "feature": "atr14",
+              "value": -0.0009459769398649519
+            }
+          ],
+          "interval": [
+            -0.12579954783046213,
+            0.1754860801865207
+          ],
+          "asOf": "2026-10-19",
+          "eligible": true,
+          "reasons": [],
+          "risks": [
+            "技术因子无法保证收益，预测可能为负或失准。",
+            "参考区间来自训练残差，并非经过校准的置信区间。",
+            "固定研究池存在幸存者偏差；后复权价格不代表真实成交价格。"
+          ],
+          "indicators": {
+            "ma5": 236.859,
+            "ma20": 231.257,
+            "ma60": 245.7688333333334,
+            "momentum5": 0.01780664981828628,
+            "momentum20": 0.012938820304126297,
+            "momentum60": 0.03648534687296534,
+            "rsi": 58.5934248855597,
+            "volatility": 0.2636498758896681,
+            "drawdown": 0.21879799936030153,
+            "volumeRatio": 0.73471982265618,
+            "atr": 7.077857142857139
+          }
+        },
+        "sh600570": {
+          "expectedReturn": 0.01666355344037772,
+          "contributions": [
+            {
+              "name": "训练平均收益",
+              "value": 0.01969183717561541
+            },
+            {
+              "name": "距MA5",
+              "feature": "ma5Gap",
+              "value": -0.0001752917137675599
+            },
+            {
+              "name": "距MA20",
+              "feature": "ma20Gap",
+              "value": 0.00008350514928658583
+            },
+            {
+              "name": "距MA60",
+              "feature": "ma60Gap",
+              "value": -0.0007703563918465402
+            },
+            {
+              "name": "RSI14",
+              "feature": "rsi14",
+              "value": -0.00017668280163531003
+            },
+            {
+              "name": "5日动量",
+              "feature": "momentum5",
+              "value": 0.00003807286925432916
+            },
+            {
+              "name": "20日动量",
+              "feature": "momentum20",
+              "value": -0.00017009959236534766
+            },
+            {
+              "name": "60日动量",
+              "feature": "momentum60",
+              "value": -0.0003998111182658482
+            },
+            {
+              "name": "20日波动",
+              "feature": "volatility20",
+              "value": -0.0013401538161694727
+            },
+            {
+              "name": "量比",
+              "feature": "volumeRatio",
+              "value": 0.001784776509782079
+            },
+            {
+              "name": "60日回撤",
+              "feature": "drawdown60",
+              "value": -0.00008462528469671298
+            },
+            {
+              "name": "ATR14",
+              "feature": "atr14",
+              "value": -0.0018176175448138892
+            }
+          ],
+          "interval": [
+            -0.12515128598519454,
+            0.1761343420317883
+          ],
+          "asOf": "2026-10-19",
+          "eligible": true,
+          "reasons": [],
+          "risks": [
+            "技术因子无法保证收益，预测可能为负或失准。",
+            "参考区间来自训练残差，并非经过校准的置信区间。",
+            "固定研究池存在幸存者偏差；后复权价格不代表真实成交价格。"
+          ],
+          "indicators": {
+            "ma5": 845.7614,
+            "ma20": 843.7867500000002,
+            "ma60": 895.9642500000001,
+            "momentum5": 0.02458767132471973,
+            "momentum20": -0.012756517556073654,
+            "momentum60": 0.006035320851246029,
+            "rsi": 46.80878900988956,
+            "volatility": 0.20825546024529473,
+            "drawdown": 0.18138358566322588,
+            "volumeRatio": 1.1252254345855113,
+            "atr": 19.38014285714285
+          }
+        },
+        "sh588000": {
+          "expectedReturn": 0.016284257644116208,
+          "contributions": [
+            {
+              "name": "训练平均收益",
+              "value": 0.01969183717561541
+            },
+            {
+              "name": "距MA5",
+              "feature": "ma5Gap",
+              "value": 0.0005132363286846653
+            },
+            {
+              "name": "距MA20",
+              "feature": "ma20Gap",
+              "value": -0.00146516469058212
+            },
+            {
+              "name": "距MA60",
+              "feature": "ma60Gap",
+              "value": -0.0023650971779525702
+            },
+            {
+              "name": "RSI14",
+              "feature": "rsi14",
+              "value": -0.002420688474018914
+            },
+            {
+              "name": "5日动量",
+              "feature": "momentum5",
+              "value": -0.00014075890600303352
+            },
+            {
+              "name": "20日动量",
+              "feature": "momentum20",
+              "value": -0.0008282445981214721
+            },
+            {
+              "name": "60日动量",
+              "feature": "momentum60",
+              "value": -0.0018832984380062043
+            },
+            {
+              "name": "20日波动",
+              "feature": "volatility20",
+              "value": -0.00035642560486072683
+            },
+            {
+              "name": "量比",
+              "feature": "volumeRatio",
+              "value": 0.0021244494725284257
+            },
+            {
+              "name": "60日回撤",
+              "feature": "drawdown60",
+              "value": 0.0031958976978680043
+            },
+            {
+              "name": "ATR14",
+              "feature": "atr14",
+              "value": 0.0002185148589647412
+            }
+          ],
+          "interval": [
+            -0.12553058178145607,
+            0.17575504623552676
+          ],
+          "asOf": "2026-10-19",
+          "eligible": true,
+          "reasons": [],
+          "risks": [
+            "技术因子无法保证收益，预测可能为负或失准。",
+            "参考区间来自训练残差，并非经过校准的置信区间。",
+            "固定研究池存在幸存者偏差；后复权价格不代表真实成交价格。"
+          ],
+          "indicators": {
+            "ma5": 1.0055999999999998,
+            "ma20": 1.1151499999999999,
+            "ma60": 1.1925166666666664,
+            "momentum5": -0.06692160611854692,
+            "momentum20": -0.1423550087873462,
+            "momentum60": -0.22231075697211156,
+            "rsi": 7.16845878136202,
+            "volatility": 0.3482613254859429,
+            "drawdown": 0.3028571428571428,
+            "volumeRatio": 1.1635786792585385,
+            "atr": 0.03850000000000002
+          }
+        },
+        "sh512760": {
+          "expectedReturn": 0.01387259634966406,
+          "contributions": [
+            {
+              "name": "训练平均收益",
+              "value": 0.01969183717561541
+            },
+            {
+              "name": "距MA5",
+              "feature": "ma5Gap",
+              "value": 0.000585840046329974
+            },
+            {
+              "name": "距MA20",
+              "feature": "ma20Gap",
+              "value": -0.0015483223386509434
+            },
+            {
+              "name": "距MA60",
+              "feature": "ma60Gap",
+              "value": -0.002446448004398529
+            },
+            {
+              "name": "RSI14",
+              "feature": "rsi14",
+              "value": -0.0024577702354110936
+            },
+            {
+              "name": "5日动量",
+              "feature": "momentum5",
+              "value": -0.0001566493769613259
+            },
+            {
+              "name": "20日动量",
+              "feature": "momentum20",
+              "value": -0.0008357636249383629
+            },
+            {
+              "name": "60日动量",
+              "feature": "momentum60",
+              "value": -0.002013968957545849
+            },
+            {
+              "name": "20日波动",
+              "feature": "volatility20",
+              "value": -0.0002572337113706974
+            },
+            {
+              "name": "量比",
+              "feature": "volumeRatio",
+              "value": -0.00044938577097177276
+            },
+            {
+              "name": "60日回撤",
+              "feature": "drawdown60",
+              "value": 0.003118737507421248
+            },
+            {
+              "name": "ATR14",
+              "feature": "atr14",
+              "value": 0.000641723640546
+            }
+          ],
+          "interval": [
+            -0.1279422430759082,
+            0.17334338494107462
+          ],
+          "asOf": "2026-10-19",
+          "eligible": true,
+          "reasons": [],
+          "risks": [
+            "技术因子无法保证收益，预测可能为负或失准。",
+            "参考区间来自训练残差，并非经过校准的置信区间。",
+            "固定研究池存在幸存者偏差；后复权价格不代表真实成交价格。"
+          ],
+          "indicators": {
+            "ma5": 3.6224,
+            "ma20": 4.033399999999999,
+            "ma60": 4.3132,
+            "momentum5": -0.07505285412262153,
+            "momentum20": -0.14383561643835618,
+            "momentum60": -0.24242424242424243,
+            "rsi": 6.513409961685866,
+            "volatility": 0.36237848377548104,
+            "drawdown": 0.30000000000000004,
+            "volumeRatio": 0.9026047389196712,
+            "atr": 0.1502857142857142
+          }
+        },
+        "sh515070": {
+          "expectedReturn": 0.011914625431389925,
+          "contributions": [
+            {
+              "name": "训练平均收益",
+              "value": 0.01969183717561541
+            },
+            {
+              "name": "距MA5",
+              "feature": "ma5Gap",
+              "value": 0.0002899462271264406
+            },
+            {
+              "name": "距MA20",
+              "feature": "ma20Gap",
+              "value": -0.0013500431432426892
+            },
+            {
+              "name": "距MA60",
+              "feature": "ma60Gap",
+              "value": -0.0021765104951185885
+            },
+            {
+              "name": "RSI14",
+              "feature": "rsi14",
+              "value": -0.0021904309393195286
+            },
+            {
+              "name": "5日动量",
+              "feature": "momentum5",
+              "value": -0.00013708305303420572
+            },
+            {
+              "name": "20日动量",
+              "feature": "momentum20",
+              "value": -0.0008253805979785016
+            },
+            {
+              "name": "60日动量",
+              "feature": "momentum60",
+              "value": -0.001738352987760548
+            },
+            {
+              "name": "20日波动",
+              "feature": "volatility20",
+              "value": -0.00045815638872424565
+            },
+            {
+              "name": "量比",
+              "feature": "volumeRatio",
+              "value": -0.0019010689367738478
+            },
+            {
+              "name": "60日回撤",
+              "feature": "drawdown60",
+              "value": 0.00261436888665225
+            },
+            {
+              "name": "ATR14",
+              "feature": "atr14",
+              "value": 0.00009549968394797721
+            }
+          ],
+          "interval": [
+            -0.12990021399418233,
+            0.1713854140228005
+          ],
+          "asOf": "2026-10-19",
+          "eligible": true,
+          "reasons": [],
+          "risks": [
+            "技术因子无法保证收益，预测可能为负或失准。",
+            "参考区间来自训练残差，并非经过校准的置信区间。",
+            "固定研究池存在幸存者偏差；后复权价格不代表真实成交价格。"
+          ],
+          "indicators": {
+            "ma5": 1.8699999999999999,
+            "ma20": 2.0778,
+            "ma60": 2.204633333333334,
+            "momentum5": -0.06504065040650397,
+            "momentum20": -0.14179104477611937,
+            "momentum60": -0.19999999999999996,
+            "rsi": 11.23595505617979,
+            "volatility": 0.33378282801815895,
+            "drawdown": 0.2813238770685579,
+            "volumeRatio": 0.7821458356312226,
+            "atr": 0.07071428571428573
+          }
+        },
+        "sh512720": {
+          "expectedReturn": 0.013732468151518119,
+          "contributions": [
+            {
+              "name": "训练平均收益",
+              "value": 0.01969183717561541
+            },
+            {
+              "name": "距MA5",
+              "feature": "ma5Gap",
+              "value": 0.00009703207432465974
+            },
+            {
+              "name": "距MA20",
+              "feature": "ma20Gap",
+              "value": -0.0007120299886015526
+            },
+            {
+              "name": "距MA60",
+              "feature": "ma60Gap",
+              "value": -0.0014954711052637178
+            },
+            {
+              "name": "RSI14",
+              "feature": "rsi14",
+              "value": -0.0016570978477214514
+            },
+            {
+              "name": "5日动量",
+              "feature": "momentum5",
+              "value": -0.00007120721178347873
+            },
+            {
+              "name": "20日动量",
+              "feature": "momentum20",
+              "value": -0.0005008137990166905
+            },
+            {
+              "name": "60日动量",
+              "feature": "momentum60",
+              "value": -0.001047421329674991
+            },
+            {
+              "name": "20日波动",
+              "feature": "volatility20",
+              "value": -0.0013592643772371816
+            },
+            {
+              "name": "量比",
+              "feature": "volumeRatio",
+              "value": 0.002566078408354248
+            },
+            {
+              "name": "60日回撤",
+              "feature": "drawdown60",
+              "value": -0.00019591884135178295
+            },
+            {
+              "name": "ATR14",
+              "feature": "atr14",
+              "value": -0.0015832550061253507
+            }
+          ],
+          "interval": [
+            -0.12808237127405414,
+            0.1732032567429287
+          ],
+          "asOf": "2026-10-19",
+          "eligible": true,
+          "reasons": [],
+          "risks": [
+            "技术因子无法保证收益，预测可能为负或失准。",
+            "参考区间来自训练残差，并非经过校准的置信区间。",
+            "固定研究池存在幸存者偏差；后复权价格不代表真实成交价格。"
+          ],
+          "indicators": {
+            "ma5": 1.1179999999999999,
+            "ma20": 1.1804999999999999,
+            "ma60": 1.2463666666666664,
+            "momentum5": -0.031331592689295085,
+            "momentum20": -0.07787903893951953,
+            "momentum60": -0.09364820846905542,
+            "rsi": 20.65727699530511,
+            "volatility": 0.20553561282528504,
+            "drawdown": 0.17726252804786824,
+            "volumeRatio": 1.2154053716427233,
+            "atr": 0.027357142857142826
+          }
+        },
+        "sh515880": {
+          "expectedReturn": 0.015766118875442645,
+          "contributions": [
+            {
+              "name": "训练平均收益",
+              "value": 0.01969183717561541
+            },
+            {
+              "name": "距MA5",
+              "feature": "ma5Gap",
+              "value": 0.0004631874791595141
+            },
+            {
+              "name": "距MA20",
+              "feature": "ma20Gap",
+              "value": -0.0018931735608407807
+            },
+            {
+              "name": "距MA60",
+              "feature": "ma60Gap",
+              "value": -0.0024469573331646274
+            },
+            {
+              "name": "RSI14",
+              "feature": "rsi14",
+              "value": -0.002461268514787716
+            },
+            {
+              "name": "5日动量",
+              "feature": "momentum5",
+              "value": -0.0001455925645472749
+            },
+            {
+              "name": "20日动量",
+              "feature": "momentum20",
+              "value": -0.0012488842707304233
+            },
+            {
+              "name": "60日动量",
+              "feature": "momentum60",
+              "value": -0.0017797581182745774
+            },
+            {
+              "name": "20日波动",
+              "feature": "volatility20",
+              "value": 0.0005705710970782674
+            },
+            {
+              "name": "量比",
+              "feature": "volumeRatio",
+              "value": 0.0005202027892364181
+            },
+            {
+              "name": "60日回撤",
+              "feature": "drawdown60",
+              "value": 0.0024539150041977915
+            },
+            {
+              "name": "ATR14",
+              "feature": "atr14",
+              "value": 0.00204203969250064
+            }
+          ],
+          "interval": [
+            -0.1260487205501296,
+            0.17523690746685322
+          ],
+          "asOf": "2026-10-19",
+          "eligible": true,
+          "reasons": [],
+          "risks": [
+            "技术因子无法保证收益，预测可能为负或失准。",
+            "参考区间来自训练残差，并非经过校准的置信区间。",
+            "固定研究池存在幸存者偏差；后复权价格不代表真实成交价格。"
+          ],
+          "indicators": {
+            "ma5": 3.2232,
+            "ma20": 3.750000000000001,
+            "ma60": 3.8673000000000006,
+            "momentum5": -0.06939501779359425,
+            "momentum20": -0.22518518518518515,
+            "momentum60": -0.2063732928679819,
+            "rsi": 6.451612903225822,
+            "volatility": 0.4801930662230831,
+            "drawdown": 0.2753824756606398,
+            "volumeRatio": 0.9932257824493661,
+            "atr": 0.17100000000000012
+          }
+        },
+        "sz159852": {
+          "expectedReturn": 0.012134332277169336,
+          "contributions": [
+            {
+              "name": "训练平均收益",
+              "value": 0.01969183717561541
+            },
+            {
+              "name": "距MA5",
+              "feature": "ma5Gap",
+              "value": 0.00010249625804714659
+            },
+            {
+              "name": "距MA20",
+              "feature": "ma20Gap",
+              "value": -0.0004262785783314389
+            },
+            {
+              "name": "距MA60",
+              "feature": "ma60Gap",
+              "value": -0.0011355507530267216
+            },
+            {
+              "name": "RSI14",
+              "feature": "rsi14",
+              "value": -0.0009697085362896142
+            },
+            {
+              "name": "5日动量",
+              "feature": "momentum5",
+              "value": -0.00006196846022717398
+            },
+            {
+              "name": "20日动量",
+              "feature": "momentum20",
+              "value": -0.0003015440494894182
+            },
+            {
+              "name": "60日动量",
+              "feature": "momentum60",
+              "value": -0.0007851136715168004
+            },
+            {
+              "name": "20日波动",
+              "feature": "volatility20",
+              "value": -0.0011485390912424258
+            },
+            {
+              "name": "量比",
+              "feature": "volumeRatio",
+              "value": -0.0011674216978226565
+            },
+            {
+              "name": "60日回撤",
+              "feature": "drawdown60",
+              "value": -0.00024707883221410115
+            },
+            {
+              "name": "ATR14",
+              "feature": "atr14",
+              "value": -0.001416797486332872
+            }
+          ],
+          "interval": [
+            -0.12968050714840293,
+            0.1716051208685799
+          ],
+          "asOf": "2026-10-19",
+          "eligible": true,
+          "reasons": [],
+          "risks": [
+            "技术因子无法保证收益，预测可能为负或失准。",
+            "参考区间来自训练残差，并非经过校准的置信区间。",
+            "固定研究池存在幸存者偏差；后复权价格不代表真实成交价格。"
+          ],
+          "indicators": {
+            "ma5": 0.625,
+            "ma20": 0.64225,
+            "ma60": 0.6732666666666666,
+            "momentum5": -0.026604068857590035,
+            "momentum20": -0.03863987635239574,
+            "momentum60": -0.05327245053272456,
+            "rsi": 32.8,
+            "volatility": 0.23552639244776688,
+            "drawdown": 0.17536813922356087,
+            "volumeRatio": 0.8408667387922638,
+            "atr": 0.016142857142857157
+          }
+        }
+      },
+      "referenceOpens": {
+        "sz002230": 36.4,
+        "sz300308": 650.7,
+        "sz300502": 302.75,
+        "sh688981": 98.99,
+        "sh603019": 73.39,
+        "sz000977": 56.45,
+        "sz002415": 33.14,
+        "sh688256": 915.93,
+        "sh600406": 23,
+        "sz002371": 574.98,
+        "sh600703": 9.65,
+        "sh688111": 230.04,
+        "sh600570": 20.1,
+        "sh588000": 1.398,
+        "sh512760": 0.87,
+        "sh515070": 0.915,
+        "sh512720": 1.018,
+        "sh515880": 0.516,
+        "sz159852": 0.618
+      },
+      "settings": {
+        "budget": 10000,
+        "positionLimit": 10000,
+        "maxPositions": 3,
+        "minFee": 5,
+        "allocationMode": "full"
+      },
+      "lastEvaluatedAt": "2026-10-20T02:00:05.568Z",
+      "lastQuoteTimes": {
+        "sz002230": 1792461585000,
+        "sz300308": 1792461582000,
+        "sz300502": 1792461582000,
+        "sh688981": 1792461584000,
+        "sh603019": 1792461583000,
+        "sz000977": 1792461585000,
+        "sz002415": 1792461585000,
+        "sh688256": 1792461585000,
+        "sh600406": 1792461584000,
+        "sz002371": 1792461585000,
+        "sh600703": 1792461582000,
+        "sh688111": 1792461582000,
+        "sh600570": 1792461583000,
+        "sh588000": 1792461584000,
+        "sh512760": 1792461583000,
+        "sh515070": 1792461584000,
+        "sh512720": 1792461584000,
+        "sh515880": 1792461585000,
+        "sz159852": 1792461585000
+      },
+      "boughtSymbols": [
+        "sz002415",
+        "sh588000",
+        "sh600406"
+      ],
+      "events": [
+        {
+          "observedAt": "2026-10-20T01:30:05.393Z",
+          "sourceTime": "2026-10-20 09:30:00",
+          "action": "buy",
+          "symbol": "sz002415",
+          "shares": 100,
+          "price": 33.14310999999999,
+          "fee": 5.03314311,
+          "reason": "software_plan"
+        },
+        {
+          "observedAt": "2026-10-20T01:30:05.393Z",
+          "sourceTime": "2026-10-20 09:30:02",
+          "action": "buy",
+          "symbol": "sh588000",
+          "shares": 2300,
+          "price": 1.398397,
+          "fee": 5,
+          "reason": "software_plan"
+        },
+        {
+          "observedAt": "2026-10-20T01:30:05.393Z",
+          "sourceTime": "2026-10-20 09:30:02",
+          "action": "buy",
+          "symbol": "sh600406",
+          "shares": 100,
+          "price": 23.012989999999995,
+          "fee": 5.02301299,
+          "reason": "software_plan"
+        }
+      ],
+      "evaluations": 61,
+      "validObservations": 61,
+      "dataFailureTicks": 0,
+      "maxGapMs": 30328,
+      "lastPlan": {
+        "allocationMode": "full",
+        "budget": 1153.0207439000014,
+        "maxPositions": 0,
+        "allocationCount": 0,
+        "generatedAt": "2026-10-20T01:59:46.831Z",
+        "rows": [],
+        "selected": [],
+        "note": "No remaining cash, unused slots, or new unbought quotes; existing lots are not topped up."
+      },
+      "historicalComplete": false,
+      "failureReason": null
+    }
+  }
+}

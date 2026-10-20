@@ -1,0 +1,602 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>持续模拟账户核对</title><style>body{font:15px/1.7 "Microsoft YaHei",sans-serif;background:#f3f5f7;color:#152331;margin:0;padding:28px}main{max-width:1440px;margin:auto}h1{margin:0}h2{font-size:19px}p{margin:8px 0}.note{background:#fff1d4;padding:16px;border-left:4px solid #b17606}article,.box{background:white;padding:18px;margin:18px 0;border:1px solid #dde4e8;border-radius:8px}.table{overflow-x:auto}table{width:100%;border-collapse:collapse;white-space:nowrap}th,td{padding:10px;border-bottom:1px solid #e1e7eb;text-align:right}th:first-child,td:first-child{text-align:left}thead{background:#eaf0f4}pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:12px}.muted{color:#526274}summary{cursor:pointer}</style><main><h1>独立模拟账户 · 只读核对报告</h1><p>实验 continuous-etf-audit-20261020-1100 · 截至 2026-10-20T02:55:31.309Z · 前瞻采集记录，未创建投资账户</p><div class="note">所有交易均为虚拟模拟。20日准确率仍未评分，不以半小时浮盈或空仓证明赚钱能力。已知历史研究不属于新的盲测。不同账户独立核算，不能将其收益合并。</div><p class="muted">本报告只读完整追加记录中的末个快照，不读取另一个可能正在更新的 state.json。完整记录 16 条；忽略末尾未完成内容 0 字节。哈希链核对：通过。</p><section class="box"><h2>同本金、同费率版本的独立对照</h2><div class="table"><table><thead><tr><th>账户</th><th>初始本金</th><th>实际 / 上限只数</th><th>总权益</th><th>扣费净盈亏 / 收益</th><th>已实现</th><th>未实现</th><th>已付费用</th><th>观测回撤</th><th>双边总换手</th><th>当前 / 样本均值暴露</th></tr></thead><tbody><tr><td colspan="11">尚未形成合格投资账户，仅有采集记录；没有现金策略成功可报告。</td></tr></tbody></table></div><p>各账户的仓位上限、笔数、已付费用和实际风险暴露不同，不能声称风险限制完全相同。双边总换手 = 已模拟成交买入和卖出的金额合计 ÷ 初始本金，拒单、拆分和分红不计。暴露 = 持仓市值 ÷ 权益；均值按采集样本计算，含过期价格并单独标明，不能替代时间加权平均。回撤只覆盖已采集估值。</p></section><section class="box"><h2>逐日收盘后 / 盘中快照</h2><div class="table"><table><thead><tr><th>日期</th><th>截止时间</th><th>性质</th><th>日线</th><th>估值输入</th><th>模型权益</th><th>模型净盈亏</th><th>累计观测回撤</th><th>累计双边换手</th></tr></thead><tbody></tbody></table></div></section><section class="box"><h2>完整模拟订单（含拒单）</h2><div class="table"><table><thead><tr><th>订单ID</th><th>账户</th><th>源时刻</th><th>实际接收</th><th>决策时刻</th><th>代码</th><th>方向</th><th>份额</th><th>模拟成交价</th><th>费用</th><th>状态</th><th>原因</th></tr></thead><tbody></tbody></table></div></section><section class="box"><h2>账本截止与发布指纹</h2><pre>{
+  &quot;snapshot&quot;: {
+    &quot;sequence&quot;: 16,
+    &quot;decisionAt&quot;: &quot;2026-10-20T02:55:31.309Z&quot;,
+    &quot;tickHash&quot;: &quot;fd6ea450bec46e11cccfed989d32b7e2768514296aa6429bd12a34c4a8cdb056&quot;,
+    &quot;checkpointDigest&quot;: &quot;df50f52959f18470171786e9904bfa07677866b80832f35d300f6d073b182039&quot;,
+    &quot;sessionIntegrityHash&quot;: null,
+    &quot;partialTailBytes&quot;: 0,
+    &quot;completePrefixBytes&quot;: 1013183,
+    &quot;cutoff&quot;: &quot;last fully captured newline-terminated tick and its embedded account checkpoint; separate state.json is never used&quot;,
+    &quot;tailIgnored&quot;: false
+  },
+  &quot;fingerprints&quot;: {
+    &quot;manifestHash&quot;: &quot;ca57134dc1ddc15dab9f5112ad8c77ebe1858c972a6043cff3f1d96d73e2c430&quot;,
+    &quot;lastTickHash&quot;: &quot;fd6ea450bec46e11cccfed989d32b7e2768514296aa6429bd12a34c4a8cdb056&quot;,
+    &quot;sourceHashes&quot;: {
+      &quot;paper-engine.js&quot;: &quot;9d3963e8eeeeb38b6363bbd7680fbb9dcecad142bc36f55963ab9f248464264f&quot;,
+      &quot;paper-account.js&quot;: &quot;0810c7701346a3e9c9bd416707ebe1119ea8bc81984bc389643e8895cd5e7e1e&quot;,
+      &quot;trading-calendar.js&quot;: &quot;0e4e80be62ff1a1ac308445f22f057368bc0fc726d8f8d77472573b1a7b416c2&quot;,
+      &quot;fee-profile.js&quot;: &quot;52de02c0ccd6939e906acd4094c477632f07bf983f6e9f7e64b2fa32ab2d8abf&quot;,
+      &quot;audit-identity.js&quot;: &quot;2e2c5de43e45287e991062dee4476a46f861aa0e058fc4a90770756a80557859&quot;,
+      &quot;corporate-actions.js&quot;: &quot;a9e2d9b53f24d2c3ca45f1afff8a5393694c0ed3745498e639e56c6a308b0f4b&quot;,
+      &quot;corporate-events.js&quot;: &quot;e01116e00bb34620f8fa07446990048c49c08c5f3a0bda202ab5d8b9270f3550&quot;,
+      &quot;analysis.js&quot;: &quot;ecbb66231d2276de365b6e1a3d657e2931ade29049c590ef6e5701a4dc7255cd&quot;,
+      &quot;market.js&quot;: &quot;9a1da1a3114a47f0786270da30db3da5792a43ae3f4ce47342b14d71282ab199&quot;,
+      &quot;news-facts.js&quot;: &quot;3f7d886eeb1a3a2d5a354fd1a40043894d6127d7c25ed975e9fb3d3666154990&quot;,
+      &quot;seed.js&quot;: &quot;56847db2db3968fb391568e6af244595323c0b442c083babae315641fbdb3e84&quot;
+    },
+    &quot;exeSha256&quot;: &quot;05a2ccca7cec4dd99073284e9d903b127e435ca2b443733b77c72b01efb1956c&quot;,
+    &quot;driverHash&quot;: &quot;4dff33b3722884d6829dcb72221df7760a1ba669ae9cb763548c0c24c2cc644e&quot;,
+    &quot;strategy&quot;: null,
+    &quot;comparisons&quot;: {}
+  },
+  &quot;collection&quot;: {
+    &quot;tickCount&quot;: 16,
+    &quot;collectionFailures&quot;: 0,
+    &quot;lastRunStatus&quot;: &quot;collecting_before_declared_entry&quot;,
+    &quot;lastCollectionReason&quot;: &quot;before_declared_entry&quot;,
+    &quot;lastDataHealth&quot;: {
+      &quot;ok&quot;: true,
+      &quot;collectionOk&quot;: true,
+      &quot;historyOk&quot;: true,
+      &quot;entryQuoteComplete&quot;: true,
+      &quot;valuationQuoteComplete&quot;: true,
+      &quot;quotePoolComplete&quot;: true,
+      &quot;expectedAsOf&quot;: &quot;2026-10-19&quot;,
+      &quot;history&quot;: {
+        &quot;ok&quot;: true,
+        &quot;expectedAsOf&quot;: &quot;2026-10-19&quot;,
+        &quot;rows&quot;: [
+          {
+            &quot;symbol&quot;: &quot;sz002230&quot;,
+            &quot;dataAsOf&quot;: &quot;2026-10-19&quot;,
+            &quot;expectedAsOf&quot;: &quot;2026-10-19&quot;,
+            &quot;stale&quot;: false,
+            &quot;reason&quot;: null
+          },
+          {
+            &quot;symbol&quot;: &quot;sz300308&quot;,
+            &quot;dataAsOf&quot;: &quot;2026-10-19&quot;,
+            &quot;expectedAsOf&quot;: &quot;2026-10-19&quot;,
+            &quot;stale&quot;: false,
+            &quot;reason&quot;: null
+          },
+          {
+            &quot;symbol&quot;: &quot;sz300502&quot;,
+            &quot;dataAsOf&quot;: &quot;2026-10-19&quot;,
+            &quot;expectedAsOf&quot;: &quot;2026-10-19&quot;,
+            &quot;stale&quot;: false,
+            &quot;reason&quot;: null
+          },
+          {
+            &quot;symbol&quot;: &quot;sh688981&quot;,
+            &quot;dataAsOf&quot;: &quot;2026-10-19&quot;,
+            &quot;expectedAsOf&quot;: &quot;2026-10-19&quot;,
+            &quot;stale&quot;: false,
+            &quot;reason&quot;: null
+          },
+          {
+            &quot;symbol&quot;: &quot;sh603019&quot;,
+            &quot;dataAsOf&quot;: &quot;2026-10-19&quot;,
+            &quot;expectedAsOf&quot;: &quot;2026-10-19&quot;,
+            &quot;stale&quot;: false,
+            &quot;reason&quot;: null
+          },
+          {
+            &quot;symbol&quot;: &quot;sz000977&quot;,
+            &quot;dataAsOf&quot;: &quot;2026-10-19&quot;,
+            &quot;expectedAsOf&quot;: &quot;2026-10-19&quot;,
+            &quot;stale&quot;: false,
+            &quot;reason&quot;: null
+          },
+          {
+            &quot;symbol&quot;: &quot;sz002415&quot;,
+            &quot;dataAsOf&quot;: &quot;2026-10-19&quot;,
+            &quot;expectedAsOf&quot;: &quot;2026-10-19&quot;,
+            &quot;stale&quot;: false,
+            &quot;reason&quot;: null
+          },
+          {
+            &quot;symbol&quot;: &quot;sh688256&quot;,
+            &quot;dataAsOf&quot;: &quot;2026-10-19&quot;,
+            &quot;expectedAsOf&quot;: &quot;2026-10-19&quot;,
+            &quot;stale&quot;: false,
+            &quot;reason&quot;: null
+          },
+          {
+            &quot;symbol&quot;: &quot;sh600406&quot;,
+            &quot;dataAsOf&quot;: &quot;2026-10-19&quot;,
+            &quot;expectedAsOf&quot;: &quot;2026-10-19&quot;,
+            &quot;stale&quot;: false,
+            &quot;reason&quot;: null
+          },
+          {
+            &quot;symbol&quot;: &quot;sz002371&quot;,
+            &quot;dataAsOf&quot;: &quot;2026-10-19&quot;,
+            &quot;expectedAsOf&quot;: &quot;2026-10-19&quot;,
+            &quot;stale&quot;: false,
+            &quot;reason&quot;: null
+          },
+          {
+            &quot;symbol&quot;: &quot;sh600703&quot;,
+            &quot;dataAsOf&quot;: &quot;2026-10-19&quot;,
+            &quot;expectedAsOf&quot;: &quot;2026-10-19&quot;,
+            &quot;stale&quot;: false,
+            &quot;reason&quot;: null
+          },
+          {
+            &quot;symbol&quot;: &quot;sh688111&quot;,
+            &quot;dataAsOf&quot;: &quot;2026-10-19&quot;,
+            &quot;expectedAsOf&quot;: &quot;2026-10-19&quot;,
+            &quot;stale&quot;: false,
+            &quot;reason&quot;: null
+          },
+          {
+            &quot;symbol&quot;: &quot;sh600570&quot;,
+            &quot;dataAsOf&quot;: &quot;2026-10-19&quot;,
+            &quot;expectedAsOf&quot;: &quot;2026-10-19&quot;,
+            &quot;stale&quot;: false,
+            &quot;reason&quot;: null
+          },
+          {
+            &quot;symbol&quot;: &quot;sh588000&quot;,
+            &quot;dataAsOf&quot;: &quot;2026-10-19&quot;,
+            &quot;expectedAsOf&quot;: &quot;2026-10-19&quot;,
+            &quot;stale&quot;: false,
+            &quot;reason&quot;: null
+          },
+          {
+            &quot;symbol&quot;: &quot;sh512760&quot;,
+            &quot;dataAsOf&quot;: &quot;2026-10-19&quot;,
+            &quot;expectedAsOf&quot;: &quot;2026-10-19&quot;,
+            &quot;stale&quot;: false,
+            &quot;reason&quot;: null
+          },
+          {
+            &quot;symbol&quot;: &quot;sh515070&quot;,
+            &quot;dataAsOf&quot;: &quot;2026-10-19&quot;,
+            &quot;expectedAsOf&quot;: &quot;2026-10-19&quot;,
+            &quot;stale&quot;: false,
+            &quot;reason&quot;: null
+          },
+          {
+            &quot;symbol&quot;: &quot;sh512720&quot;,
+            &quot;dataAsOf&quot;: &quot;2026-10-19&quot;,
+            &quot;expectedAsOf&quot;: &quot;2026-10-19&quot;,
+            &quot;stale&quot;: false,
+            &quot;reason&quot;: null
+          },
+          {
+            &quot;symbol&quot;: &quot;sh515880&quot;,
+            &quot;dataAsOf&quot;: &quot;2026-10-19&quot;,
+            &quot;expectedAsOf&quot;: &quot;2026-10-19&quot;,
+            &quot;stale&quot;: false,
+            &quot;reason&quot;: null
+          },
+          {
+            &quot;symbol&quot;: &quot;sz159852&quot;,
+            &quot;dataAsOf&quot;: &quot;2026-10-19&quot;,
+            &quot;expectedAsOf&quot;: &quot;2026-10-19&quot;,
+            &quot;stale&quot;: false,
+            &quot;reason&quot;: null
+          }
+        ],
+        &quot;reason&quot;: null,
+        &quot;calendarVersion&quot;: &quot;sse-sessions-2023-2026-v1&quot;
+      },
+      &quot;historyStatuses&quot;: [
+        {
+          &quot;symbol&quot;: &quot;sz002230&quot;,
+          &quot;ok&quot;: true,
+          &quot;stale&quot;: false,
+          &quot;dataAsOf&quot;: &quot;2026-10-19&quot;,
+          &quot;expectedAsOf&quot;: &quot;2026-10-19&quot;,
+          &quot;fetchedAt&quot;: &quot;2026-10-20T02:47:50.424Z&quot;,
+          &quot;sourceTime&quot;: null,
+          &quot;source&quot;: &quot;腾讯公开日线&quot;,
+          &quot;errors&quot;: [],
+          &quot;reason&quot;: null,
+          &quot;calendarVersion&quot;: &quot;sse-sessions-2023-2026-v1&quot;
+        },
+        {
+          &quot;symbol&quot;: &quot;sz300308&quot;,
+          &quot;ok&quot;: true,
+          &quot;stale&quot;: false,
+          &quot;dataAsOf&quot;: &quot;2026-10-19&quot;,
+          &quot;expectedAsOf&quot;: &quot;2026-10-19&quot;,
+          &quot;fetchedAt&quot;: &quot;2026-10-20T02:47:50.433Z&quot;,
+          &quot;sourceTime&quot;: null,
+          &quot;source&quot;: &quot;腾讯公开日线&quot;,
+          &quot;errors&quot;: [],
+          &quot;reason&quot;: null,
+          &quot;calendarVersion&quot;: &quot;sse-sessions-2023-2026-v1&quot;
+        },
+        {
+          &quot;symbol&quot;: &quot;sz300502&quot;,
+          &quot;ok&quot;: true,
+          &quot;stale&quot;: false,
+          &quot;dataAsOf&quot;: &quot;2026-10-19&quot;,
+          &quot;expectedAsOf&quot;: &quot;2026-10-19&quot;,
+          &quot;fetchedAt&quot;: &quot;2026-10-20T02:47:50.416Z&quot;,
+          &quot;sourceTime&quot;: null,
+          &quot;source&quot;: &quot;腾讯公开日线&quot;,
+          &quot;errors&quot;: [],
+          &quot;reason&quot;: null,
+          &quot;calendarVersion&quot;: &quot;sse-sessions-2023-2026-v1&quot;
+        },
+        {
+          &quot;symbol&quot;: &quot;sh688981&quot;,
+          &quot;ok&quot;: true,
+          &quot;stale&quot;: false,
+          &quot;dataAsOf&quot;: &quot;2026-10-19&quot;,
+          &quot;expectedAsOf&quot;: &quot;2026-10-19&quot;,
+          &quot;fetchedAt&quot;: &quot;2026-10-20T02:47:51.164Z&quot;,
+          &quot;sourceTime&quot;: null,
+          &quot;source&quot;: &quot;东方财富公开日线&quot;,
+          &quot;errors&quot;: [
+            &quot;sh688981 2026 腾讯日线失败: 复权日线字段缺失&quot;
+          ],
+          &quot;reason&quot;: null,
+          &quot;calendarVersion&quot;: &quot;sse-sessions-2023-2026-v1&quot;
+        },
+        {
+          &quot;symbol&quot;: &quot;sh603019&quot;,
+          &quot;ok&quot;: true,
+          &quot;stale&quot;: false,
+          &quot;dataAsOf&quot;: &quot;2026-10-19&quot;,
+          &quot;expectedAsOf&quot;: &quot;2026-10-19&quot;,
+          &quot;fetchedAt&quot;: &quot;2026-10-20T02:47:50.717Z&quot;,
+          &quot;sourceTime&quot;: null,
+          &quot;source&quot;: &quot;腾讯公开日线&quot;,
+          &quot;errors&quot;: [],
+          &quot;reason&quot;: null,
+          &quot;calendarVersion&quot;: &quot;sse-sessions-2023-2026-v1&quot;
+        },
+        {
+          &quot;symbol&quot;: &quot;sz000977&quot;,
+          &quot;ok&quot;: true,
+          &quot;stale&quot;: false,
+          &quot;dataAsOf&quot;: &quot;2026-10-19&quot;,
+          &quot;expectedAsOf&quot;: &quot;2026-10-19&quot;,
+          &quot;fetchedAt&quot;: &quot;2026-10-20T02:47:50.709Z&quot;,
+          &quot;sourceTime&quot;: null,
+          &quot;source&quot;: &quot;腾讯公开日线&quot;,
+          &quot;errors&quot;: [],
+          &quot;reason&quot;: null,
+          &quot;calendarVersion&quot;: &quot;sse-sessions-2023-2026-v1&quot;
+        },
+        {
+          &quot;symbol&quot;: &quot;sz002415&quot;,
+          &quot;ok&quot;: true,
+          &quot;stale&quot;: false,
+          &quot;dataAsOf&quot;: &quot;2026-10-19&quot;,
+          &quot;expectedAsOf&quot;: &quot;2026-10-19&quot;,
+          &quot;fetchedAt&quot;: &quot;2026-10-20T02:47:51.023Z&quot;,
+          &quot;sourceTime&quot;: null,
+          &quot;source&quot;: &quot;腾讯公开日线&quot;,
+          &quot;errors&quot;: [],
+          &quot;reason&quot;: null,
+          &quot;calendarVersion&quot;: &quot;sse-sessions-2023-2026-v1&quot;
+        },
+        {
+          &quot;symbol&quot;: &quot;sh688256&quot;,
+          &quot;ok&quot;: true,
+          &quot;stale&quot;: false,
+          &quot;dataAsOf&quot;: &quot;2026-10-19&quot;,
+          &quot;expectedAsOf&quot;: &quot;2026-10-19&quot;,
+          &quot;fetchedAt&quot;: &quot;2026-10-20T02:47:51.015Z&quot;,
+          &quot;sourceTime&quot;: null,
+          &quot;source&quot;: &quot;腾讯公开日线&quot;,
+          &quot;errors&quot;: [],
+          &quot;reason&quot;: null,
+          &quot;calendarVersion&quot;: &quot;sse-sessions-2023-2026-v1&quot;
+        },
+        {
+          &quot;symbol&quot;: &quot;sh600406&quot;,
+          &quot;ok&quot;: true,
+          &quot;stale&quot;: false,
+          &quot;dataAsOf&quot;: &quot;2026-10-19&quot;,
+          &quot;expectedAsOf&quot;: &quot;2026-10-19&quot;,
+          &quot;fetchedAt&quot;: &quot;2026-10-20T02:47:51.284Z&quot;,
+          &quot;sourceTime&quot;: null,
+          &quot;source&quot;: &quot;腾讯公开日线&quot;,
+          &quot;errors&quot;: [],
+          &quot;reason&quot;: null,
+          &quot;calendarVersion&quot;: &quot;sse-sessions-2023-2026-v1&quot;
+        },
+        {
+          &quot;symbol&quot;: &quot;sz002371&quot;,
+          &quot;ok&quot;: true,
+          &quot;stale&quot;: false,
+          &quot;dataAsOf&quot;: &quot;2026-10-19&quot;,
+          &quot;expectedAsOf&quot;: &quot;2026-10-19&quot;,
+          &quot;fetchedAt&quot;: &quot;2026-10-20T02:47:51.293Z&quot;,
+          &quot;sourceTime&quot;: null,
+          &quot;source&quot;: &quot;腾讯公开日线&quot;,
+          &quot;errors&quot;: [],
+          &quot;reason&quot;: null,
+          &quot;calendarVersion&quot;: &quot;sse-sessions-2023-2026-v1&quot;
+        },
+        {
+          &quot;symbol&quot;: &quot;sh600703&quot;,
+          &quot;ok&quot;: true,
+          &quot;stale&quot;: false,
+          &quot;dataAsOf&quot;: &quot;2026-10-19&quot;,
+          &quot;expectedAsOf&quot;: &quot;2026-10-19&quot;,
+          &quot;fetchedAt&quot;: &quot;2026-10-20T02:47:51.505Z&quot;,
+          &quot;sourceTime&quot;: null,
+          &quot;source&quot;: &quot;腾讯公开日线&quot;,
+          &quot;errors&quot;: [],
+          &quot;reason&quot;: null,
+          &quot;calendarVersion&quot;: &quot;sse-sessions-2023-2026-v1&quot;
+        },
+        {
+          &quot;symbol&quot;: &quot;sh688111&quot;,
+          &quot;ok&quot;: true,
+          &quot;stale&quot;: false,
+          &quot;dataAsOf&quot;: &quot;2026-10-19&quot;,
+          &quot;expectedAsOf&quot;: &quot;2026-10-19&quot;,
+          &quot;fetchedAt&quot;: &quot;2026-10-20T02:47:51.597Z&quot;,
+          &quot;sourceTime&quot;: null,
+          &quot;source&quot;: &quot;腾讯公开日线&quot;,
+          &quot;errors&quot;: [],
+          &quot;reason&quot;: null,
+          &quot;calendarVersion&quot;: &quot;sse-sessions-2023-2026-v1&quot;
+        },
+        {
+          &quot;symbol&quot;: &quot;sh600570&quot;,
+          &quot;ok&quot;: true,
+          &quot;stale&quot;: false,
+          &quot;dataAsOf&quot;: &quot;2026-10-19&quot;,
+          &quot;expectedAsOf&quot;: &quot;2026-10-19&quot;,
+          &quot;fetchedAt&quot;: &quot;2026-10-20T02:47:51.589Z&quot;,
+          &quot;sourceTime&quot;: null,
+          &quot;source&quot;: &quot;腾讯公开日线&quot;,
+          &quot;errors&quot;: [],
+          &quot;reason&quot;: null,
+          &quot;calendarVersion&quot;: &quot;sse-sessions-2023-2026-v1&quot;
+        },
+        {
+          &quot;symbol&quot;: &quot;sh588000&quot;,
+          &quot;ok&quot;: true,
+          &quot;stale&quot;: false,
+          &quot;dataAsOf&quot;: &quot;2026-10-19&quot;,
+          &quot;expectedAsOf&quot;: &quot;2026-10-19&quot;,
+          &quot;fetchedAt&quot;: &quot;2026-10-20T02:47:51.814Z&quot;,
+          &quot;sourceTime&quot;: null,
+          &quot;source&quot;: &quot;腾讯公开日线&quot;,
+          &quot;errors&quot;: [],
+          &quot;reason&quot;: null,
+          &quot;calendarVersion&quot;: &quot;sse-sessions-2023-2026-v1&quot;
+        },
+        {
+          &quot;symbol&quot;: &quot;sh512760&quot;,
+          &quot;ok&quot;: true,
+          &quot;stale&quot;: false,
+          &quot;dataAsOf&quot;: &quot;2026-10-19&quot;,
+          &quot;expectedAsOf&quot;: &quot;2026-10-19&quot;,
+          &quot;fetchedAt&quot;: &quot;2026-10-20T02:47:51.889Z&quot;,
+          &quot;sourceTime&quot;: null,
+          &quot;source&quot;: &quot;腾讯公开日线&quot;,
+          &quot;errors&quot;: [],
+          &quot;reason&quot;: null,
+          &quot;calendarVersion&quot;: &quot;sse-sessions-2023-2026-v1&quot;
+        },
+        {
+          &quot;symbol&quot;: &quot;sh515070&quot;,
+          &quot;ok&quot;: true,
+          &quot;stale&quot;: false,
+          &quot;dataAsOf&quot;: &quot;2026-10-19&quot;,
+          &quot;expectedAsOf&quot;: &quot;2026-10-19&quot;,
+          &quot;fetchedAt&quot;: &quot;2026-10-20T02:47:51.879Z&quot;,
+          &quot;sourceTime&quot;: null,
+          &quot;source&quot;: &quot;腾讯公开日线&quot;,
+          &quot;errors&quot;: [],
+          &quot;reason&quot;: null,
+          &quot;calendarVersion&quot;: &quot;sse-sessions-2023-2026-v1&quot;
+        },
+        {
+          &quot;symbol&quot;: &quot;sh512720&quot;,
+          &quot;ok&quot;: true,
+          &quot;stale&quot;: false,
+          &quot;dataAsOf&quot;: &quot;2026-10-19&quot;,
+          &quot;expectedAsOf&quot;: &quot;2026-10-19&quot;,
+          &quot;fetchedAt&quot;: &quot;2026-10-20T02:47:52.231Z&quot;,
+          &quot;sourceTime&quot;: null,
+          &quot;source&quot;: &quot;腾讯公开日线&quot;,
+          &quot;errors&quot;: [],
+          &quot;reason&quot;: null,
+          &quot;calendarVersion&quot;: &quot;sse-sessions-2023-2026-v1&quot;
+        },
+        {
+          &quot;symbol&quot;: &quot;sh515880&quot;,
+          &quot;ok&quot;: true,
+          &quot;stale&quot;: false,
+          &quot;dataAsOf&quot;: &quot;2026-10-19&quot;,
+          &quot;expectedAsOf&quot;: &quot;2026-10-19&quot;,
+          &quot;fetchedAt&quot;: &quot;2026-10-20T02:47:52.315Z&quot;,
+          &quot;sourceTime&quot;: null,
+          &quot;source&quot;: &quot;腾讯公开日线&quot;,
+          &quot;errors&quot;: [],
+          &quot;reason&quot;: null,
+          &quot;calendarVersion&quot;: &quot;sse-sessions-2023-2026-v1&quot;
+        },
+        {
+          &quot;symbol&quot;: &quot;sz159852&quot;,
+          &quot;ok&quot;: true,
+          &quot;stale&quot;: false,
+          &quot;dataAsOf&quot;: &quot;2026-10-19&quot;,
+          &quot;expectedAsOf&quot;: &quot;2026-10-19&quot;,
+          &quot;fetchedAt&quot;: &quot;2026-10-20T02:47:52.890Z&quot;,
+          &quot;sourceTime&quot;: null,
+          &quot;source&quot;: &quot;东方财富公开日线&quot;,
+          &quot;errors&quot;: [
+            &quot;sz159852 2026 腾讯日线失败: 复权日线字段缺失&quot;
+          ],
+          &quot;reason&quot;: null,
+          &quot;calendarVersion&quot;: &quot;sse-sessions-2023-2026-v1&quot;
+        }
+      ],
+      &quot;quoteRows&quot;: [
+        {
+          &quot;symbol&quot;: &quot;sz002230&quot;,
+          &quot;ok&quot;: true,
+          &quot;entryOk&quot;: true,
+          &quot;valuationOk&quot;: true,
+          &quot;mode&quot;: &quot;continuous&quot;,
+          &quot;reason&quot;: null
+        },
+        {
+          &quot;symbol&quot;: &quot;sz300308&quot;,
+          &quot;ok&quot;: true,
+          &quot;entryOk&quot;: true,
+          &quot;valuationOk&quot;: true,
+          &quot;mode&quot;: &quot;continuous&quot;,
+          &quot;reason&quot;: null
+        },
+        {
+          &quot;symbol&quot;: &quot;sz300502&quot;,
+          &quot;ok&quot;: true,
+          &quot;entryOk&quot;: true,
+          &quot;valuationOk&quot;: true,
+          &quot;mode&quot;: &quot;continuous&quot;,
+          &quot;reason&quot;: null
+        },
+        {
+          &quot;symbol&quot;: &quot;sh688981&quot;,
+          &quot;ok&quot;: true,
+          &quot;entryOk&quot;: true,
+          &quot;valuationOk&quot;: true,
+          &quot;mode&quot;: &quot;continuous&quot;,
+          &quot;reason&quot;: null
+        },
+        {
+          &quot;symbol&quot;: &quot;sh603019&quot;,
+          &quot;ok&quot;: true,
+          &quot;entryOk&quot;: true,
+          &quot;valuationOk&quot;: true,
+          &quot;mode&quot;: &quot;continuous&quot;,
+          &quot;reason&quot;: null
+        },
+        {
+          &quot;symbol&quot;: &quot;sz000977&quot;,
+          &quot;ok&quot;: true,
+          &quot;entryOk&quot;: true,
+          &quot;valuationOk&quot;: true,
+          &quot;mode&quot;: &quot;continuous&quot;,
+          &quot;reason&quot;: null
+        },
+        {
+          &quot;symbol&quot;: &quot;sz002415&quot;,
+          &quot;ok&quot;: true,
+          &quot;entryOk&quot;: true,
+          &quot;valuationOk&quot;: true,
+          &quot;mode&quot;: &quot;continuous&quot;,
+          &quot;reason&quot;: null
+        },
+        {
+          &quot;symbol&quot;: &quot;sh688256&quot;,
+          &quot;ok&quot;: true,
+          &quot;entryOk&quot;: true,
+          &quot;valuationOk&quot;: true,
+          &quot;mode&quot;: &quot;continuous&quot;,
+          &quot;reason&quot;: null
+        },
+        {
+          &quot;symbol&quot;: &quot;sh600406&quot;,
+          &quot;ok&quot;: true,
+          &quot;entryOk&quot;: true,
+          &quot;valuationOk&quot;: true,
+          &quot;mode&quot;: &quot;continuous&quot;,
+          &quot;reason&quot;: null
+        },
+        {
+          &quot;symbol&quot;: &quot;sz002371&quot;,
+          &quot;ok&quot;: true,
+          &quot;entryOk&quot;: true,
+          &quot;valuationOk&quot;: true,
+          &quot;mode&quot;: &quot;continuous&quot;,
+          &quot;reason&quot;: null
+        },
+        {
+          &quot;symbol&quot;: &quot;sh600703&quot;,
+          &quot;ok&quot;: true,
+          &quot;entryOk&quot;: true,
+          &quot;valuationOk&quot;: true,
+          &quot;mode&quot;: &quot;continuous&quot;,
+          &quot;reason&quot;: null
+        },
+        {
+          &quot;symbol&quot;: &quot;sh688111&quot;,
+          &quot;ok&quot;: true,
+          &quot;entryOk&quot;: true,
+          &quot;valuationOk&quot;: true,
+          &quot;mode&quot;: &quot;continuous&quot;,
+          &quot;reason&quot;: null
+        },
+        {
+          &quot;symbol&quot;: &quot;sh600570&quot;,
+          &quot;ok&quot;: true,
+          &quot;entryOk&quot;: true,
+          &quot;valuationOk&quot;: true,
+          &quot;mode&quot;: &quot;continuous&quot;,
+          &quot;reason&quot;: null
+        },
+        {
+          &quot;symbol&quot;: &quot;sh588000&quot;,
+          &quot;ok&quot;: true,
+          &quot;entryOk&quot;: true,
+          &quot;valuationOk&quot;: true,
+          &quot;mode&quot;: &quot;continuous&quot;,
+          &quot;reason&quot;: null
+        },
+        {
+          &quot;symbol&quot;: &quot;sh512760&quot;,
+          &quot;ok&quot;: true,
+          &quot;entryOk&quot;: true,
+          &quot;valuationOk&quot;: true,
+          &quot;mode&quot;: &quot;continuous&quot;,
+          &quot;reason&quot;: null
+        },
+        {
+          &quot;symbol&quot;: &quot;sh515070&quot;,
+          &quot;ok&quot;: true,
+          &quot;entryOk&quot;: true,
+          &quot;valuationOk&quot;: true,
+          &quot;mode&quot;: &quot;continuous&quot;,
+          &quot;reason&quot;: null
+        },
+        {
+          &quot;symbol&quot;: &quot;sh512720&quot;,
+          &quot;ok&quot;: true,
+          &quot;entryOk&quot;: true,
+          &quot;valuationOk&quot;: true,
+          &quot;mode&quot;: &quot;continuous&quot;,
+          &quot;reason&quot;: null
+        },
+        {
+          &quot;symbol&quot;: &quot;sh515880&quot;,
+          &quot;ok&quot;: true,
+          &quot;entryOk&quot;: true,
+          &quot;valuationOk&quot;: true,
+          &quot;mode&quot;: &quot;continuous&quot;,
+          &quot;reason&quot;: null
+        },
+        {
+          &quot;symbol&quot;: &quot;sz159852&quot;,
+          &quot;ok&quot;: true,
+          &quot;entryOk&quot;: true,
+          &quot;valuationOk&quot;: true,
+          &quot;mode&quot;: &quot;continuous&quot;,
+          &quot;reason&quot;: null
+        }
+      ],
+      &quot;reason&quot;: null
+    },
+    &quot;firstPredictionPublishedAt&quot;: &quot;2026-10-20T02:47:53.234Z&quot;,
+    &quot;firstPredictionReceivedAt&quot;: &quot;2026-10-20T02:47:53.234Z&quot;
+  },
+  &quot;attemptOutcome&quot;: &quot;collection_only_no_account&quot;,
+  &quot;supplementalControlRecords&quot;: []
+}</pre><p>完整事件链、各账户逐日指标及逐笔指纹同时保存在同名JSON中。本报告不会改变任何模拟决定、成交、本金或旧记录。</p></section></main></html>

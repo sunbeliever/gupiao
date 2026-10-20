@@ -1,0 +1,5 @@
+# Preserve exact bytes in immutable evidence and delivered binaries.
+evidence/** -text
+releases/** -text
+validation/audit-repair/baseline/embedded/assets/** -text
+validation/ml-research/current-scores.json -text

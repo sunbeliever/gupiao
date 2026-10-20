@@ -1,0 +1,17 @@
+/* Desktop overrides; the shared analysis UI remains the authoritative implementation. */
+@media (min-width:900px){
+ html,body{background:#f4f7fc;font-size:15px}
+ .app-shell{max-width:1500px;padding:0 36px 20px 214px;background:#fff;min-height:100vh}
+ .app-header{padding:26px 0 16px}.brand{font-size:24px}.brand small{font-size:12px}
+ .connection-line{margin:0;padding-bottom:14px;font-size:12px}
+ #main-content{padding:28px 0 48px}.page{padding:0}
+ .bottom-nav{position:fixed;top:0;bottom:0;left:0;right:auto;width:178px;max-width:none;transform:none;display:flex;flex-direction:column;justify-content:flex-start;gap:12px;padding:128px 14px 26px;background:#142747;border:0;border-right:1px solid #253e63;border-radius:0;z-index:20}
+ .bottom-nav:before{content:'科技研究工作台';position:absolute;left:24px;top:58px;font-size:14px;font-weight:600;color:#d6e4fb;letter-spacing:1px}
+ .bottom-nav button{flex:none;display:flex;flex-direction:row;align-items:center;justify-content:flex-start;gap:15px;height:54px;padding:0 20px;border-radius:8px;color:#c4d3eb;font-size:15px}
+ .bottom-nav button svg{width:22px;height:22px;margin:0}.bottom-nav button.active{background:#294872;color:white}.bottom-nav button:after{display:none}
+ .page-lead{margin-top:0}h1{font-size:30px}.page-lead p{font-size:14px}
+ .instrument-row{padding-top:17px;padding-bottom:17px}.instrument-name{font-size:16px}
+ .instrument-price b,.instrument-prediction b{font-size:22px}
+ .instrument-code,.instrument-row small{font-size:12px}
+ .toast{bottom:28px;max-width:620px}.chart-canvas{min-height:300px}
+}

@@ -1,0 +1,818 @@
+{
+  "schema": "continuous-account-report-v1",
+  "generatedAt": "2026-10-20T02:55:49.228Z",
+  "experimentId": "continuous-etf-audit-20261020-1100",
+  "evidenceKind": "unclassified_requires_review",
+  "forwardDeclarationValid": false,
+  "accountStarted": false,
+  "attemptOutcome": "collection_only_no_account",
+  "accountId": null,
+  "accountContinues": false,
+  "readOnlyDerivation": true,
+  "hashChainVerified": true,
+  "accountingVerified": false,
+  "twentyDayScoring": null,
+  "strategySuccess": false,
+  "profitabilityStatus": "unproven",
+  "snapshot": {
+    "sequence": 16,
+    "decisionAt": "2026-10-20T02:55:31.309Z",
+    "tickHash": "fd6ea450bec46e11cccfed989d32b7e2768514296aa6429bd12a34c4a8cdb056",
+    "checkpointDigest": "df50f52959f18470171786e9904bfa07677866b80832f35d300f6d073b182039",
+    "sessionIntegrityHash": null,
+    "partialTailBytes": 0,
+    "completePrefixBytes": 1013183,
+    "cutoff": "last fully captured newline-terminated tick and its embedded account checkpoint; separate state.json is never used",
+    "tailIgnored": false
+  },
+  "fingerprints": {
+    "manifestHash": "ca57134dc1ddc15dab9f5112ad8c77ebe1858c972a6043cff3f1d96d73e2c430",
+    "lastTickHash": "fd6ea450bec46e11cccfed989d32b7e2768514296aa6429bd12a34c4a8cdb056",
+    "sourceHashes": {
+      "paper-engine.js": "9d3963e8eeeeb38b6363bbd7680fbb9dcecad142bc36f55963ab9f248464264f",
+      "paper-account.js": "0810c7701346a3e9c9bd416707ebe1119ea8bc81984bc389643e8895cd5e7e1e",
+      "trading-calendar.js": "0e4e80be62ff1a1ac308445f22f057368bc0fc726d8f8d77472573b1a7b416c2",
+      "fee-profile.js": "52de02c0ccd6939e906acd4094c477632f07bf983f6e9f7e64b2fa32ab2d8abf",
+      "audit-identity.js": "2e2c5de43e45287e991062dee4476a46f861aa0e058fc4a90770756a80557859",
+      "corporate-actions.js": "a9e2d9b53f24d2c3ca45f1afff8a5393694c0ed3745498e639e56c6a308b0f4b",
+      "corporate-events.js": "e01116e00bb34620f8fa07446990048c49c08c5f3a0bda202ab5d8b9270f3550",
+      "analysis.js": "ecbb66231d2276de365b6e1a3d657e2931ade29049c590ef6e5701a4dc7255cd",
+      "market.js": "9a1da1a3114a47f0786270da30db3da5792a43ae3f4ce47342b14d71282ab199",
+      "news-facts.js": "3f7d886eeb1a3a2d5a354fd1a40043894d6127d7c25ed975e9fb3d3666154990",
+      "seed.js": "56847db2db3968fb391568e6af244595323c0b442c083babae315641fbdb3e84"
+    },
+    "exeSha256": "05a2ccca7cec4dd99073284e9d903b127e435ca2b443733b77c72b01efb1956c",
+    "driverHash": "4dff33b3722884d6829dcb72221df7760a1ba669ae9cb763548c0c24c2cc644e",
+    "strategy": null,
+    "comparisons": {}
+  },
+  "manifest": {
+    "schema": 1,
+    "id": "continuous-etf-audit-20261020-1100",
+    "declaredAt": "2026-10-20T02:46:47.278Z",
+    "entryAfter": "2026-10-20T03:00:00.000Z",
+    "latestEntry": "2026-10-20T03:05:00.000Z",
+    "executionMode": "continuous_forward_native_http",
+    "intervalMs": 30000,
+    "historyRefreshMs": 300000,
+    "universe": [
+      {
+        "symbol": "sz002230",
+        "name": "科大讯飞",
+        "sector": "人工智能",
+        "type": "stock"
+      },
+      {
+        "symbol": "sz300308",
+        "name": "中际旭创",
+        "sector": "光通信",
+        "type": "stock"
+      },
+      {
+        "symbol": "sz300502",
+        "name": "新易盛",
+        "sector": "光通信",
+        "type": "stock"
+      },
+      {
+        "symbol": "sh688981",
+        "name": "中芯国际",
+        "sector": "半导体",
+        "type": "stock"
+      },
+      {
+        "symbol": "sh603019",
+        "name": "中科曙光",
+        "sector": "算力",
+        "type": "stock"
+      },
+      {
+        "symbol": "sz000977",
+        "name": "浪潮信息",
+        "sector": "算力",
+        "type": "stock"
+      },
+      {
+        "symbol": "sz002415",
+        "name": "海康威视",
+        "sector": "人工智能",
+        "type": "stock"
+      },
+      {
+        "symbol": "sh688256",
+        "name": "寒武纪",
+        "sector": "AI芯片",
+        "type": "stock"
+      },
+      {
+        "symbol": "sh600406",
+        "name": "国电南瑞",
+        "sector": "工业软件",
+        "type": "stock"
+      },
+      {
+        "symbol": "sz002371",
+        "name": "北方华创",
+        "sector": "半导体设备",
+        "type": "stock"
+      },
+      {
+        "symbol": "sh600703",
+        "name": "三安光电",
+        "sector": "半导体",
+        "type": "stock"
+      },
+      {
+        "symbol": "sh688111",
+        "name": "金山办公",
+        "sector": "软件",
+        "type": "stock"
+      },
+      {
+        "symbol": "sh600570",
+        "name": "恒生电子",
+        "sector": "软件",
+        "type": "stock"
+      },
+      {
+        "symbol": "sh588000",
+        "name": "科创50ETF",
+        "sector": "科创",
+        "type": "etf"
+      },
+      {
+        "symbol": "sh512760",
+        "name": "芯片ETF",
+        "sector": "半导体",
+        "type": "etf"
+      },
+      {
+        "symbol": "sh515070",
+        "name": "人工智能ETF",
+        "sector": "人工智能",
+        "type": "etf"
+      },
+      {
+        "symbol": "sh512720",
+        "name": "计算机ETF",
+        "sector": "软件",
+        "type": "etf"
+      },
+      {
+        "symbol": "sh515880",
+        "name": "通信ETF",
+        "sector": "通信",
+        "type": "etf"
+      },
+      {
+        "symbol": "sz159852",
+        "name": "软件ETF",
+        "sector": "软件",
+        "type": "etf"
+      }
+    ],
+    "executionSymbols": [
+      "sh588000",
+      "sh512760",
+      "sh515070",
+      "sh512720",
+      "sh515880",
+      "sz159852"
+    ],
+    "policy": {
+      "budget": 10000,
+      "preset": "full_capital",
+      "allocationMode": "full",
+      "feeProfile": {
+        "version": "cn-paper-fees-v1",
+        "commissionRate": 0.0003,
+        "minFee": 5,
+        "slippage": 0.001,
+        "stockSellStampRate": 0.0005,
+        "stockTransferRate": 0.00001,
+        "assumptionLabel": "最低5元为模拟假设，以合同为准"
+      },
+      "riskLimits": {
+        "investableLimit": 10000,
+        "maxExposure": 1,
+        "maxPositions": 3,
+        "maxThemeWeight": 1
+      },
+      "stopLossRate": 0.08
+    },
+    "files": {
+      "paper-engine.js": "9d3963e8eeeeb38b6363bbd7680fbb9dcecad142bc36f55963ab9f248464264f",
+      "paper-account.js": "0810c7701346a3e9c9bd416707ebe1119ea8bc81984bc389643e8895cd5e7e1e",
+      "trading-calendar.js": "0e4e80be62ff1a1ac308445f22f057368bc0fc726d8f8d77472573b1a7b416c2",
+      "fee-profile.js": "52de02c0ccd6939e906acd4094c477632f07bf983f6e9f7e64b2fa32ab2d8abf",
+      "audit-identity.js": "2e2c5de43e45287e991062dee4476a46f861aa0e058fc4a90770756a80557859",
+      "corporate-actions.js": "a9e2d9b53f24d2c3ca45f1afff8a5393694c0ed3745498e639e56c6a308b0f4b",
+      "corporate-events.js": "e01116e00bb34620f8fa07446990048c49c08c5f3a0bda202ab5d8b9270f3550",
+      "analysis.js": "ecbb66231d2276de365b6e1a3d657e2931ade29049c590ef6e5701a4dc7255cd",
+      "market.js": "9a1da1a3114a47f0786270da30db3da5792a43ae3f4ce47342b14d71282ab199",
+      "news-facts.js": "3f7d886eeb1a3a2d5a354fd1a40043894d6127d7c25ed975e9fb3d3666154990",
+      "seed.js": "56847db2db3968fb391568e6af244595323c0b442c083babae315641fbdb3e84"
+    },
+    "exeSha256": "05a2ccca7cec4dd99073284e9d903b127e435ca2b443733b77c72b01efb1956c",
+    "releaseVerificationHash": "ee27a1afab5a1da0a89f2ac571b5ea2552d5b2c74614bbe5bd8a17434f9f4273",
+    "driverHash": "4dff33b3722884d6829dcb72221df7760a1ba669ae9cb763548c0c24c2cc644e",
+    "nativeRuntimeCaveat": true,
+    "notes": [
+      "All orders virtual; separate account from the Windows UI, never merge their returns.",
+      "Same frozen account rules and model as the verified EXE; transport availability does not prove permanent native connectivity.",
+      "Thirty minutes measures engineering only. Twenty-session profitability remains unproven.",
+      "Known 2023-2026 historical exploration is not a blind test. Only actual forward timestamps are recorded.",
+      "No added capital, commission waiver, human stock picking, training or automatic model promotion.",
+      "Frozen .NET helper uses the verified DesktopHttp service and URL whitelist; it is a separate collector, not the UI account."
+    ],
+    "nativeTransport": {
+      "kind": "dotnet-desktop-http-v1",
+      "exeSha256": "e0f80930a8fcd6f86e4ae4dfbd898104308e41e66aa24380730cb2926252e761",
+      "sourceHashes": {
+        "DesktopServices.cs": "292ee994ae931d5b22c0ec13a62c97b5f7daf12b6c84aa19bd517380793df742",
+        "MarketTransport.cs": "3fcf051cec577ccff061c7c0ab527d9af804a35e00929abdcdd0117aa81d64ae"
+      }
+    }
+  },
+  "collection": {
+    "tickCount": 16,
+    "collectionFailures": 0,
+    "lastRunStatus": "collecting_before_declared_entry",
+    "lastCollectionReason": "before_declared_entry",
+    "lastDataHealth": {
+      "ok": true,
+      "collectionOk": true,
+      "historyOk": true,
+      "entryQuoteComplete": true,
+      "valuationQuoteComplete": true,
+      "quotePoolComplete": true,
+      "expectedAsOf": "2026-10-19",
+      "history": {
+        "ok": true,
+        "expectedAsOf": "2026-10-19",
+        "rows": [
+          {
+            "symbol": "sz002230",
+            "dataAsOf": "2026-10-19",
+            "expectedAsOf": "2026-10-19",
+            "stale": false,
+            "reason": null
+          },
+          {
+            "symbol": "sz300308",
+            "dataAsOf": "2026-10-19",
+            "expectedAsOf": "2026-10-19",
+            "stale": false,
+            "reason": null
+          },
+          {
+            "symbol": "sz300502",
+            "dataAsOf": "2026-10-19",
+            "expectedAsOf": "2026-10-19",
+            "stale": false,
+            "reason": null
+          },
+          {
+            "symbol": "sh688981",
+            "dataAsOf": "2026-10-19",
+            "expectedAsOf": "2026-10-19",
+            "stale": false,
+            "reason": null
+          },
+          {
+            "symbol": "sh603019",
+            "dataAsOf": "2026-10-19",
+            "expectedAsOf": "2026-10-19",
+            "stale": false,
+            "reason": null
+          },
+          {
+            "symbol": "sz000977",
+            "dataAsOf": "2026-10-19",
+            "expectedAsOf": "2026-10-19",
+            "stale": false,
+            "reason": null
+          },
+          {
+            "symbol": "sz002415",
+            "dataAsOf": "2026-10-19",
+            "expectedAsOf": "2026-10-19",
+            "stale": false,
+            "reason": null
+          },
+          {
+            "symbol": "sh688256",
+            "dataAsOf": "2026-10-19",
+            "expectedAsOf": "2026-10-19",
+            "stale": false,
+            "reason": null
+          },
+          {
+            "symbol": "sh600406",
+            "dataAsOf": "2026-10-19",
+            "expectedAsOf": "2026-10-19",
+            "stale": false,
+            "reason": null
+          },
+          {
+            "symbol": "sz002371",
+            "dataAsOf": "2026-10-19",
+            "expectedAsOf": "2026-10-19",
+            "stale": false,
+            "reason": null
+          },
+          {
+            "symbol": "sh600703",
+            "dataAsOf": "2026-10-19",
+            "expectedAsOf": "2026-10-19",
+            "stale": false,
+            "reason": null
+          },
+          {
+            "symbol": "sh688111",
+            "dataAsOf": "2026-10-19",
+            "expectedAsOf": "2026-10-19",
+            "stale": false,
+            "reason": null
+          },
+          {
+            "symbol": "sh600570",
+            "dataAsOf": "2026-10-19",
+            "expectedAsOf": "2026-10-19",
+            "stale": false,
+            "reason": null
+          },
+          {
+            "symbol": "sh588000",
+            "dataAsOf": "2026-10-19",
+            "expectedAsOf": "2026-10-19",
+            "stale": false,
+            "reason": null
+          },
+          {
+            "symbol": "sh512760",
+            "dataAsOf": "2026-10-19",
+            "expectedAsOf": "2026-10-19",
+            "stale": false,
+            "reason": null
+          },
+          {
+            "symbol": "sh515070",
+            "dataAsOf": "2026-10-19",
+            "expectedAsOf": "2026-10-19",
+            "stale": false,
+            "reason": null
+          },
+          {
+            "symbol": "sh512720",
+            "dataAsOf": "2026-10-19",
+            "expectedAsOf": "2026-10-19",
+            "stale": false,
+            "reason": null
+          },
+          {
+            "symbol": "sh515880",
+            "dataAsOf": "2026-10-19",
+            "expectedAsOf": "2026-10-19",
+            "stale": false,
+            "reason": null
+          },
+          {
+            "symbol": "sz159852",
+            "dataAsOf": "2026-10-19",
+            "expectedAsOf": "2026-10-19",
+            "stale": false,
+            "reason": null
+          }
+        ],
+        "reason": null,
+        "calendarVersion": "sse-sessions-2023-2026-v1"
+      },
+      "historyStatuses": [
+        {
+          "symbol": "sz002230",
+          "ok": true,
+          "stale": false,
+          "dataAsOf": "2026-10-19",
+          "expectedAsOf": "2026-10-19",
+          "fetchedAt": "2026-10-20T02:47:50.424Z",
+          "sourceTime": null,
+          "source": "腾讯公开日线",
+          "errors": [],
+          "reason": null,
+          "calendarVersion": "sse-sessions-2023-2026-v1"
+        },
+        {
+          "symbol": "sz300308",
+          "ok": true,
+          "stale": false,
+          "dataAsOf": "2026-10-19",
+          "expectedAsOf": "2026-10-19",
+          "fetchedAt": "2026-10-20T02:47:50.433Z",
+          "sourceTime": null,
+          "source": "腾讯公开日线",
+          "errors": [],
+          "reason": null,
+          "calendarVersion": "sse-sessions-2023-2026-v1"
+        },
+        {
+          "symbol": "sz300502",
+          "ok": true,
+          "stale": false,
+          "dataAsOf": "2026-10-19",
+          "expectedAsOf": "2026-10-19",
+          "fetchedAt": "2026-10-20T02:47:50.416Z",
+          "sourceTime": null,
+          "source": "腾讯公开日线",
+          "errors": [],
+          "reason": null,
+          "calendarVersion": "sse-sessions-2023-2026-v1"
+        },
+        {
+          "symbol": "sh688981",
+          "ok": true,
+          "stale": false,
+          "dataAsOf": "2026-10-19",
+          "expectedAsOf": "2026-10-19",
+          "fetchedAt": "2026-10-20T02:47:51.164Z",
+          "sourceTime": null,
+          "source": "东方财富公开日线",
+          "errors": [
+            "sh688981 2026 腾讯日线失败: 复权日线字段缺失"
+          ],
+          "reason": null,
+          "calendarVersion": "sse-sessions-2023-2026-v1"
+        },
+        {
+          "symbol": "sh603019",
+          "ok": true,
+          "stale": false,
+          "dataAsOf": "2026-10-19",
+          "expectedAsOf": "2026-10-19",
+          "fetchedAt": "2026-10-20T02:47:50.717Z",
+          "sourceTime": null,
+          "source": "腾讯公开日线",
+          "errors": [],
+          "reason": null,
+          "calendarVersion": "sse-sessions-2023-2026-v1"
+        },
+        {
+          "symbol": "sz000977",
+          "ok": true,
+          "stale": false,
+          "dataAsOf": "2026-10-19",
+          "expectedAsOf": "2026-10-19",
+          "fetchedAt": "2026-10-20T02:47:50.709Z",
+          "sourceTime": null,
+          "source": "腾讯公开日线",
+          "errors": [],
+          "reason": null,
+          "calendarVersion": "sse-sessions-2023-2026-v1"
+        },
+        {
+          "symbol": "sz002415",
+          "ok": true,
+          "stale": false,
+          "dataAsOf": "2026-10-19",
+          "expectedAsOf": "2026-10-19",
+          "fetchedAt": "2026-10-20T02:47:51.023Z",
+          "sourceTime": null,
+          "source": "腾讯公开日线",
+          "errors": [],
+          "reason": null,
+          "calendarVersion": "sse-sessions-2023-2026-v1"
+        },
+        {
+          "symbol": "sh688256",
+          "ok": true,
+          "stale": false,
+          "dataAsOf": "2026-10-19",
+          "expectedAsOf": "2026-10-19",
+          "fetchedAt": "2026-10-20T02:47:51.015Z",
+          "sourceTime": null,
+          "source": "腾讯公开日线",
+          "errors": [],
+          "reason": null,
+          "calendarVersion": "sse-sessions-2023-2026-v1"
+        },
+        {
+          "symbol": "sh600406",
+          "ok": true,
+          "stale": false,
+          "dataAsOf": "2026-10-19",
+          "expectedAsOf": "2026-10-19",
+          "fetchedAt": "2026-10-20T02:47:51.284Z",
+          "sourceTime": null,
+          "source": "腾讯公开日线",
+          "errors": [],
+          "reason": null,
+          "calendarVersion": "sse-sessions-2023-2026-v1"
+        },
+        {
+          "symbol": "sz002371",
+          "ok": true,
+          "stale": false,
+          "dataAsOf": "2026-10-19",
+          "expectedAsOf": "2026-10-19",
+          "fetchedAt": "2026-10-20T02:47:51.293Z",
+          "sourceTime": null,
+          "source": "腾讯公开日线",
+          "errors": [],
+          "reason": null,
+          "calendarVersion": "sse-sessions-2023-2026-v1"
+        },
+        {
+          "symbol": "sh600703",
+          "ok": true,
+          "stale": false,
+          "dataAsOf": "2026-10-19",
+          "expectedAsOf": "2026-10-19",
+          "fetchedAt": "2026-10-20T02:47:51.505Z",
+          "sourceTime": null,
+          "source": "腾讯公开日线",
+          "errors": [],
+          "reason": null,
+          "calendarVersion": "sse-sessions-2023-2026-v1"
+        },
+        {
+          "symbol": "sh688111",
+          "ok": true,
+          "stale": false,
+          "dataAsOf": "2026-10-19",
+          "expectedAsOf": "2026-10-19",
+          "fetchedAt": "2026-10-20T02:47:51.597Z",
+          "sourceTime": null,
+          "source": "腾讯公开日线",
+          "errors": [],
+          "reason": null,
+          "calendarVersion": "sse-sessions-2023-2026-v1"
+        },
+        {
+          "symbol": "sh600570",
+          "ok": true,
+          "stale": false,
+          "dataAsOf": "2026-10-19",
+          "expectedAsOf": "2026-10-19",
+          "fetchedAt": "2026-10-20T02:47:51.589Z",
+          "sourceTime": null,
+          "source": "腾讯公开日线",
+          "errors": [],
+          "reason": null,
+          "calendarVersion": "sse-sessions-2023-2026-v1"
+        },
+        {
+          "symbol": "sh588000",
+          "ok": true,
+          "stale": false,
+          "dataAsOf": "2026-10-19",
+          "expectedAsOf": "2026-10-19",
+          "fetchedAt": "2026-10-20T02:47:51.814Z",
+          "sourceTime": null,
+          "source": "腾讯公开日线",
+          "errors": [],
+          "reason": null,
+          "calendarVersion": "sse-sessions-2023-2026-v1"
+        },
+        {
+          "symbol": "sh512760",
+          "ok": true,
+          "stale": false,
+          "dataAsOf": "2026-10-19",
+          "expectedAsOf": "2026-10-19",
+          "fetchedAt": "2026-10-20T02:47:51.889Z",
+          "sourceTime": null,
+          "source": "腾讯公开日线",
+          "errors": [],
+          "reason": null,
+          "calendarVersion": "sse-sessions-2023-2026-v1"
+        },
+        {
+          "symbol": "sh515070",
+          "ok": true,
+          "stale": false,
+          "dataAsOf": "2026-10-19",
+          "expectedAsOf": "2026-10-19",
+          "fetchedAt": "2026-10-20T02:47:51.879Z",
+          "sourceTime": null,
+          "source": "腾讯公开日线",
+          "errors": [],
+          "reason": null,
+          "calendarVersion": "sse-sessions-2023-2026-v1"
+        },
+        {
+          "symbol": "sh512720",
+          "ok": true,
+          "stale": false,
+          "dataAsOf": "2026-10-19",
+          "expectedAsOf": "2026-10-19",
+          "fetchedAt": "2026-10-20T02:47:52.231Z",
+          "sourceTime": null,
+          "source": "腾讯公开日线",
+          "errors": [],
+          "reason": null,
+          "calendarVersion": "sse-sessions-2023-2026-v1"
+        },
+        {
+          "symbol": "sh515880",
+          "ok": true,
+          "stale": false,
+          "dataAsOf": "2026-10-19",
+          "expectedAsOf": "2026-10-19",
+          "fetchedAt": "2026-10-20T02:47:52.315Z",
+          "sourceTime": null,
+          "source": "腾讯公开日线",
+          "errors": [],
+          "reason": null,
+          "calendarVersion": "sse-sessions-2023-2026-v1"
+        },
+        {
+          "symbol": "sz159852",
+          "ok": true,
+          "stale": false,
+          "dataAsOf": "2026-10-19",
+          "expectedAsOf": "2026-10-19",
+          "fetchedAt": "2026-10-20T02:47:52.890Z",
+          "sourceTime": null,
+          "source": "东方财富公开日线",
+          "errors": [
+            "sz159852 2026 腾讯日线失败: 复权日线字段缺失"
+          ],
+          "reason": null,
+          "calendarVersion": "sse-sessions-2023-2026-v1"
+        }
+      ],
+      "quoteRows": [
+        {
+          "symbol": "sz002230",
+          "ok": true,
+          "entryOk": true,
+          "valuationOk": true,
+          "mode": "continuous",
+          "reason": null
+        },
+        {
+          "symbol": "sz300308",
+          "ok": true,
+          "entryOk": true,
+          "valuationOk": true,
+          "mode": "continuous",
+          "reason": null
+        },
+        {
+          "symbol": "sz300502",
+          "ok": true,
+          "entryOk": true,
+          "valuationOk": true,
+          "mode": "continuous",
+          "reason": null
+        },
+        {
+          "symbol": "sh688981",
+          "ok": true,
+          "entryOk": true,
+          "valuationOk": true,
+          "mode": "continuous",
+          "reason": null
+        },
+        {
+          "symbol": "sh603019",
+          "ok": true,
+          "entryOk": true,
+          "valuationOk": true,
+          "mode": "continuous",
+          "reason": null
+        },
+        {
+          "symbol": "sz000977",
+          "ok": true,
+          "entryOk": true,
+          "valuationOk": true,
+          "mode": "continuous",
+          "reason": null
+        },
+        {
+          "symbol": "sz002415",
+          "ok": true,
+          "entryOk": true,
+          "valuationOk": true,
+          "mode": "continuous",
+          "reason": null
+        },
+        {
+          "symbol": "sh688256",
+          "ok": true,
+          "entryOk": true,
+          "valuationOk": true,
+          "mode": "continuous",
+          "reason": null
+        },
+        {
+          "symbol": "sh600406",
+          "ok": true,
+          "entryOk": true,
+          "valuationOk": true,
+          "mode": "continuous",
+          "reason": null
+        },
+        {
+          "symbol": "sz002371",
+          "ok": true,
+          "entryOk": true,
+          "valuationOk": true,
+          "mode": "continuous",
+          "reason": null
+        },
+        {
+          "symbol": "sh600703",
+          "ok": true,
+          "entryOk": true,
+          "valuationOk": true,
+          "mode": "continuous",
+          "reason": null
+        },
+        {
+          "symbol": "sh688111",
+          "ok": true,
+          "entryOk": true,
+          "valuationOk": true,
+          "mode": "continuous",
+          "reason": null
+        },
+        {
+          "symbol": "sh600570",
+          "ok": true,
+          "entryOk": true,
+          "valuationOk": true,
+          "mode": "continuous",
+          "reason": null
+        },
+        {
+          "symbol": "sh588000",
+          "ok": true,
+          "entryOk": true,
+          "valuationOk": true,
+          "mode": "continuous",
+          "reason": null
+        },
+        {
+          "symbol": "sh512760",
+          "ok": true,
+          "entryOk": true,
+          "valuationOk": true,
+          "mode": "continuous",
+          "reason": null
+        },
+        {
+          "symbol": "sh515070",
+          "ok": true,
+          "entryOk": true,
+          "valuationOk": true,
+          "mode": "continuous",
+          "reason": null
+        },
+        {
+          "symbol": "sh512720",
+          "ok": true,
+          "entryOk": true,
+          "valuationOk": true,
+          "mode": "continuous",
+          "reason": null
+        },
+        {
+          "symbol": "sh515880",
+          "ok": true,
+          "entryOk": true,
+          "valuationOk": true,
+          "mode": "continuous",
+          "reason": null
+        },
+        {
+          "symbol": "sz159852",
+          "ok": true,
+          "entryOk": true,
+          "valuationOk": true,
+          "mode": "continuous",
+          "reason": null
+        }
+      ],
+      "reason": null
+    },
+    "firstPredictionPublishedAt": "2026-10-20T02:47:53.234Z",
+    "firstPredictionReceivedAt": "2026-10-20T02:47:53.234Z"
+  },
+  "accounts": {},
+  "daily": [],
+  "orders": [],
+  "ledger": [],
+  "closedPositions": [],
+  "limitations": [
+    "Only captured observation prices are available; maximum drawdown excludes unobserved prices.",
+    "Exposure average is the arithmetic mean of captured samples, not a time-weighted average. Stale values remain explicitly flagged.",
+    "Hypothetical fills and slippage are unverified execution assumptions. No real orders were sent.",
+    "Comparisons share initial capital and the fee-rate version, but position limits (model up to3, single ETF1, equal-weight ETF6), turnover, paid fees and risk exposure differ; never merge accounts.",
+    "Twenty-session accuracy remains null; engineering completion or cash zero is not forecasting success.",
+    "Known historical exploration is not new blind or forward evidence. News is not a prediction input.",
+    "The latest incomplete JSONL tail is excluded and identified; a later report may have a different cutoff."
+  ],
+  "supplementalControlRecords": []
+}

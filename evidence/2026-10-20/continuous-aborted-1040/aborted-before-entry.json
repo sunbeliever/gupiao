@@ -1,0 +1,9 @@
+{
+  "at": "2026-10-20T02:37:43.4443532Z",
+  "reason": "background_node_fallback_network_failure_before_entry",
+  "preservedAllTicks": true,
+  "accountEverCreated": false,
+  "noCapitalReset": true,
+  "outcome": "invalid_collection_not_successful_cash",
+  "replacementMustUseNewId": true
+}

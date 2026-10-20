@@ -1,0 +1,75 @@
+{
+  "schema": "continuous-release-gate-v1",
+  "generatedAt": "2026-10-20T02:46:47.176738+00:00",
+  "exeSha256": "05a2ccca7cec4dd99073284e9d903b127e435ca2b443733b77c72b01efb1956c",
+  "runtimeFiles": {
+    "paper-engine.js": "9d3963e8eeeeb38b6363bbd7680fbb9dcecad142bc36f55963ab9f248464264f",
+    "paper-account.js": "0810c7701346a3e9c9bd416707ebe1119ea8bc81984bc389643e8895cd5e7e1e",
+    "trading-calendar.js": "0e4e80be62ff1a1ac308445f22f057368bc0fc726d8f8d77472573b1a7b416c2",
+    "fee-profile.js": "52de02c0ccd6939e906acd4094c477632f07bf983f6e9f7e64b2fa32ab2d8abf",
+    "audit-identity.js": "2e2c5de43e45287e991062dee4476a46f861aa0e058fc4a90770756a80557859",
+    "corporate-actions.js": "a9e2d9b53f24d2c3ca45f1afff8a5393694c0ed3745498e639e56c6a308b0f4b",
+    "corporate-events.js": "e01116e00bb34620f8fa07446990048c49c08c5f3a0bda202ab5d8b9270f3550",
+    "analysis.js": "ecbb66231d2276de365b6e1a3d657e2931ade29049c590ef6e5701a4dc7255cd",
+    "market.js": "9a1da1a3114a47f0786270da30db3da5792a43ae3f4ce47342b14d71282ab199",
+    "news-facts.js": "3f7d886eeb1a3a2d5a354fd1a40043894d6127d7c25ed975e9fb3d3666154990",
+    "seed.js": "56847db2db3968fb391568e6af244595323c0b442c083babae315641fbdb3e84"
+  },
+  "tests": {
+    "passed": true,
+    "failed": 0,
+    "count": 188,
+    "sourceHashes": {
+      "paper-engine.js": "9d3963e8eeeeb38b6363bbd7680fbb9dcecad142bc36f55963ab9f248464264f",
+      "paper-account.js": "0810c7701346a3e9c9bd416707ebe1119ea8bc81984bc389643e8895cd5e7e1e",
+      "trading-calendar.js": "0e4e80be62ff1a1ac308445f22f057368bc0fc726d8f8d77472573b1a7b416c2",
+      "fee-profile.js": "52de02c0ccd6939e906acd4094c477632f07bf983f6e9f7e64b2fa32ab2d8abf",
+      "audit-identity.js": "2e2c5de43e45287e991062dee4476a46f861aa0e058fc4a90770756a80557859",
+      "corporate-actions.js": "a9e2d9b53f24d2c3ca45f1afff8a5393694c0ed3745498e639e56c6a308b0f4b",
+      "corporate-events.js": "e01116e00bb34620f8fa07446990048c49c08c5f3a0bda202ab5d8b9270f3550",
+      "analysis.js": "ecbb66231d2276de365b6e1a3d657e2931ade29049c590ef6e5701a4dc7255cd",
+      "market.js": "9a1da1a3114a47f0786270da30db3da5792a43ae3f4ce47342b14d71282ab199",
+      "news-facts.js": "3f7d886eeb1a3a2d5a354fd1a40043894d6127d7c25ed975e9fb3d3666154990",
+      "seed.js": "56847db2db3968fb391568e6af244595323c0b442c083babae315641fbdb3e84"
+    }
+  },
+  "native": {
+    "passed": true,
+    "persistencePassed": true,
+    "networkPassed": true,
+    "allHistoriesCurrent": true,
+    "checks": 42,
+    "reportSha256": "e9f87c8bb237717c11f475f636e50937fac6527af43ea80cf4965d53671d101d",
+    "nativeServicesSourceSha256": "292ee994ae931d5b22c0ec13a62c97b5f7daf12b6c84aa19bd517380793df742"
+  },
+  "sourceAssets": {
+    "assets/analysis.js": "ecbb66231d2276de365b6e1a3d657e2931ade29049c590ef6e5701a4dc7255cd",
+    "assets/assurance-ui.js": "809a0c8e7e1d822b97eb3804cf6eb87f209004249d254caa86166e4b788f7f67",
+    "assets/audit-identity.js": "2e2c5de43e45287e991062dee4476a46f861aa0e058fc4a90770756a80557859",
+    "assets/corporate-actions.js": "a9e2d9b53f24d2c3ca45f1afff8a5393694c0ed3745498e639e56c6a308b0f4b",
+    "assets/corporate-events.js": "e01116e00bb34620f8fa07446990048c49c08c5f3a0bda202ab5d8b9270f3550",
+    "assets/desktop.css": "e91e4e8bec42d83fc20d5517602a73c4d161a7f4b679f8e694b9d1894412ef7f",
+    "assets/fee-profile.js": "52de02c0ccd6939e906acd4094c477632f07bf983f6e9f7e64b2fa32ab2d8abf",
+    "assets/forecast-journal.js": "38a32628a209209accf63e1b09cf920e81f5bff92b48e906cf2c4fe8ec9d0aeb",
+    "assets/index.html": "08ed59c6a19b204d4ed98232c40c97ca51d51ebbc93ae53400abf303f60debd6",
+    "assets/market.js": "9a1da1a3114a47f0786270da30db3da5792a43ae3f4ce47342b14d71282ab199",
+    "assets/news-facts.js": "3f7d886eeb1a3a2d5a354fd1a40043894d6127d7c25ed975e9fb3d3666154990",
+    "assets/paper-account.js": "0810c7701346a3e9c9bd416707ebe1119ea8bc81984bc389643e8895cd5e7e1e",
+    "assets/paper-engine.js": "9d3963e8eeeeb38b6363bbd7680fbb9dcecad142bc36f55963ab9f248464264f",
+    "assets/research-results.js": "cf086b442a9a457f95beb9e3215fad17cacba3e49decf64830450747add43d0b",
+    "assets/seed.js": "56847db2db3968fb391568e6af244595323c0b442c083babae315641fbdb3e84",
+    "assets/style.css": "9a776e08ed32913e99688e7c55726b297c639773d4b8d9f2d640200c4c3ec7bb",
+    "assets/trading-calendar.js": "0e4e80be62ff1a1ac308445f22f057368bc0fc726d8f8d77472573b1a7b416c2",
+    "assets/ui.js": "58b0af49e4994020e9e2f4c2bd6a22765c83b0ac9f916bb0440d778fe93178f7"
+  },
+  "baselineUnchanged": true,
+  "originalReviewScriptsProvided": false,
+  "nativeTransport": {
+    "kind": "dotnet-desktop-http-v1",
+    "exeSha256": "e0f80930a8fcd6f86e4ae4dfbd898104308e41e66aa24380730cb2926252e761",
+    "sourceHashes": {
+      "DesktopServices.cs": "292ee994ae931d5b22c0ec13a62c97b5f7daf12b6c84aa19bd517380793df742",
+      "MarketTransport.cs": "3fcf051cec577ccff061c7c0ab527d9af804a35e00929abdcdd0117aa81d64ae"
+    }
+  }
+}

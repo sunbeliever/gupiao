@@ -1,0 +1,15 @@
+{
+  "evidenceType": "recorded_command_result_no_rerun",
+  "source": "Tool execution chunk 115a16",
+  "command": "C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319\\csc.exe /nologo /target:exe /codepage:65001 /out:validation\\audit-repair\\native-network\\DesktopPolicyTests.exe /reference:System.Net.Http.dll windows\\DesktopServices.cs tests\\DesktopPolicyTests.cs ; validation\\audit-repair\\native-network\\DesktopPolicyTests.exe validation\\audit-repair\\native-store-green",
+  "exitCode": 0,
+  "output": "PASS 43 desktop security/cache behaviors",
+  "compiledAtUtc": "2026-10-20T02:23:46.6766413Z",
+  "compiledTestExecutableSha256": "66f1b0008b53f631ab0901bf725af363c58858c7bd7b19dcde792e746a58b400",
+  "sources": {
+    "testSourceSha256": "1b6c9d701cc385a63f603cbfd2935f40af39d952d7c2b46e296dde325142b892",
+    "desktopServicesSha256": "292ee994ae931d5b22c0ec13a62c97b5f7daf12b6c84aa19bd517380793df742"
+  },
+  "fixtureRoot": "C:\\Users\\lqp07\\.codex\\worktrees\\audit-account-repair\\techno\\validation\\audit-repair\\native-store-green",
+  "note": "Output transcribed from successful tool result; no new execution. Fixture files are isolated test artifacts, never original account data."
+}

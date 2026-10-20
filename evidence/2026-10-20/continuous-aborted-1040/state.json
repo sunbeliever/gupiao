@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "experimentId": "continuous-etf-audit-20261020-1040",
+  "manifestHash": "293f5d1c4d0d6ca0b159a18af9701f393a28c9cc4340fde5b45fcf6dc41f2f01",
+  "sequence": 11,
+  "lastTickHash": "489f95d9531bcd1c8ac93e04a0c39ef34a87f4d5ede62bf9cfc03ca04ff61f30",
+  "entryClosed": false,
+  "session": null,
+  "research": null,
+  "lastDecisionAt": "2026-10-20T02:37:35.479Z",
+  "runStatus": "collecting_before_declared_entry",
+  "collectionFailures": 11,
+  "stateHash": "a8e9bbb5d70dd8c28775ecd970aa34ac7bbc42ae03ce8a256518045ec1e7c4b7"
+}

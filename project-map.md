@@ -1,3 +1,19 @@
+# 1.6.0.1 专项审计修复（2026-10-20，当前权威入口）
+
+- 独立分支 `fix/auditable-paper-account`；原1.5.1源码基线 `61443d4dbeb51efd18e0ef769c412b5f280dd2de`，原EXE/模拟目录仍在 `D:/techno`，不覆盖。以下旧版小节是历史，不是当前规则。
+- Windows仍为 `Program → DesktopForm → assets/index.html` 五页。`paper-engine.js`是公开决策入口，`paper-account.js`为schema2持续账务；新键 `paper.continuous.current`，原 `paper.current`只读保留。`Market.readState`和原生严格Read区分缺失/损坏/读取失败，禁止损坏重建本金。
+- `trading-calendar.js`统一2023—2026交易所日历、16:00日线完成界限、T+1和20日到期。`market.js`保存fetchedAt/sourceTime/dataAsOf/expectedAsOf/stale及备用源错误，全池共同落后不得入场。
+- `fee-profile.js`统一可执行筛选/订单/持续回放/对照费用；`audit-identity.js`对策略、模型、池、规则、数据、费用、资金约束和模式计算SHA256。股票保留研究；持续模拟仅执行6只科技ETF，使用原19只池11因子部署模型，不换成研究候选。
+- `startAuto/stepAuto`现为持续账户；30分钟只结束工程观察。全池失败阻止新仓，持仓仍独立估值；退出前冻结目标/8%风险/20交易日到期规则，T+1或拒单保留仓位与退出意图。本金不重置。`legacyStartAuto/legacyStepAuto`仅供明确标注的旧独立半小时研究兼容。
+- `Analysis.evaluate`仍为独立区间研究，显式非可执行账户，不用全天H/L/V判断开盘成交；未成交退出不转现金。可执行历史/实时规则一致性由 `Paper.replay` 和 `scripts/continuous-replay-check.js` 逐笔证明，当前8场景是人工夹具，不是市场收益证据。
+- `scripts/continuous-paper-monitor.js`冻结11模块/seed/EXE/门槛/驱动到新ID，未来时段才入场；append-only ticks+快照+永久claim+进程租约，可 `--resume` 跨日，不加本金。后台前瞻与UI是同引擎的独立账户，不能合并收益。
+- 1040未开户采集失败保留；1100使用冻结1.6.0.0快照、同DesktopHttp原生helper，事前声明11:00—11:05入场。最终1.6.0.1只修UI同输入重复生成预测的缓存，金融核心11模块字节一致，原前瞻绑定不改。`continuous-account-report.js`只读哈希链完整前缀，输出净收益/费用/观测回撤/换手/暴露及风险限制差别。正式前瞻是否入场看实际ticks。
+- `ui.js`同步不自动训练，手动训练只保存研究候选，不自动部署。`news-facts.js`仅字面事实/风险，保存原文、披露与首次接收时间；全文/财报核验/大模型/新闻入预测未覆盖。
+- 回归：`node --test tests/*.test.js`；原生安全缓存 `tests/DesktopPolicyTests.cs`；`scripts/test-desktop.ps1 -Live`真实新EXE两进程恢复及原生全19池联网。`scripts/build-windows.ps1`单文件构建。交付矩阵见 `docs/audit-repair-2026-10-20.json`。
+- 证据：`validation/audit-repair/baseline` 精确旧EXE提取、8个重建行为复现、内置2025/26重算；`offline-replay-ledger.json`人工跨日账本；`desktop-final`真实新EXE。审查原始两份JS脚本未随附件提供，重建脚本不冒充原脚本。
+
+## 旧版项目地图（仅供历史追溯）
+
 # 科技观察项目地图
 
 - 1.5.1日线新鲜度修复：`Market.fetchYear`按应已完成的日期核查主源，过旧即试同复权备用来源，选更新日期，备用失败保留原日期；sourcePolicy使旧缓存重新核查。`check-history-freshness.js`独立Node健康检查19只均到2026-10-19，但最终Windows原生联网仍不完整（日期混有10-16与10-19，allHistoriesCurrent=false），不得将独立检查当EXE数据完整性通过。严格失败证据`validation/desktop/full-capital-freshness-failure.json`；最终功能检查及限制`dist/Windows-full-capital-verification.json`。原日常失败及claim保留，不重跑或重写预测日记。v2/v3未启动快照均已被v4替代。
@@ -32,16 +48,3 @@
 - 下一次一次性真实自动半小时：`automatic-paper-monitor.js --run`使用`validation/auto-30m-2026-10-20`冻结源码/内置模型，09:30至09:35允许实际入场，之后1800000ms结束。2026-10-19 15:31只做19源报价预检，没有开新仓。启动跟进名“半小时软件模拟启动”(automation,09:28)、结果跟进名“半小时软件模拟结果复核”(automation-2,10:10)，均COUNT=1；这是新建任务，不能误当此前同ID的已删除四轮跟进。规则见`docs/automatic-validation.md`，不得重开claim或补挑盈利窗口。
 - 关键限制：当前手选研究池存在幸存者偏差；教学日线模拟不能证明实际成交；新闻无完整历史快照所以不回填训练；训练残差区间不是独立测试置信区间；后台不是全天逐秒保证。
 - 实施记录：`docs/superpowers/specs/`、`docs/superpowers/plans/`。本工作目录开始为空，无既有Git分支；Serena初始配置无JS语言服务，当前导航采用限定文件/函数检索。
-# 1.6.0.1 专项审计修复（2026-10-20，当前权威入口）
-
-- 独立分支 `fix/auditable-paper-account`；原1.5.1源码基线 `61443d4dbeb51efd18e0ef769c412b5f280dd2de`，原EXE/模拟目录仍在 `D:/techno`，不覆盖。以下旧版小节是历史，不是当前规则。
-- Windows仍为 `Program → DesktopForm → assets/index.html` 五页。`paper-engine.js`是公开决策入口，`paper-account.js`为schema2持续账务；新键 `paper.continuous.current`，原 `paper.current`只读保留。`Market.readState`和原生严格Read区分缺失/损坏/读取失败，禁止损坏重建本金。
-- `trading-calendar.js`统一2023—2026交易所日历、16:00日线完成界限、T+1和20日到期。`market.js`保存fetchedAt/sourceTime/dataAsOf/expectedAsOf/stale及备用源错误，全池共同落后不得入场。
-- `fee-profile.js`统一可执行筛选/订单/持续回放/对照费用；`audit-identity.js`对策略、模型、池、规则、数据、费用、资金约束和模式计算SHA256。股票保留研究；持续模拟仅执行6只科技ETF，使用原19只池11因子部署模型，不换成研究候选。
-- `startAuto/stepAuto`现为持续账户；30分钟只结束工程观察。全池失败阻止新仓，持仓仍独立估值；退出前冻结目标/8%风险/20交易日到期规则，T+1或拒单保留仓位与退出意图。本金不重置。`legacyStartAuto/legacyStepAuto`仅供明确标注的旧独立半小时研究兼容。
-- `Analysis.evaluate`仍为独立区间研究，显式非可执行账户，不用全天H/L/V判断开盘成交；未成交退出不转现金。可执行历史/实时规则一致性由 `Paper.replay` 和 `scripts/continuous-replay-check.js` 逐笔证明，当前8场景是人工夹具，不是市场收益证据。
-- `scripts/continuous-paper-monitor.js`冻结11模块/seed/EXE/门槛/驱动到新ID，未来时段才入场；append-only ticks+快照+永久claim+进程租约，可 `--resume` 跨日，不加本金。后台前瞻与UI是同引擎的独立账户，不能合并收益。
-- 1040未开户采集失败保留；1100使用冻结1.6.0.0快照、同DesktopHttp原生helper，事前声明11:00—11:05入场。最终1.6.0.1只修UI同输入重复生成预测的缓存，金融核心11模块字节一致，原前瞻绑定不改。`continuous-account-report.js`只读哈希链完整前缀，输出净收益/费用/观测回撤/换手/暴露及风险限制差别。正式前瞻是否入场看实际ticks。
-- `ui.js`同步不自动训练，手动训练只保存研究候选，不自动部署。`news-facts.js`仅字面事实/风险，保存原文、披露与首次接收时间；全文/财报核验/大模型/新闻入预测未覆盖。
-- 回归：`node --test tests/*.test.js`；原生安全缓存 `tests/DesktopPolicyTests.cs`；`scripts/test-desktop.ps1 -Live`真实新EXE两进程恢复及原生全19池联网。`scripts/build-windows.ps1`单文件构建。交付矩阵见 `docs/audit-repair-2026-10-20.json`。
-- 证据：`validation/audit-repair/baseline` 精确旧EXE提取、8个重建行为复现、内置2025/26重算；`offline-replay-ledger.json`人工跨日账本；`desktop-final`真实新EXE。审查原始两份JS脚本未随附件提供，重建脚本不冒充原脚本。

@@ -1,0 +1,8 @@
+科技观察1.6.0.1 持续账户审计版
+EXE SHA256: 0fc73902b2d509a32046ddfaea4740fb792fac6a0bd4dc2b6f0b564805334193
+ZIP SHA256: 38a8a6d6c188c7841dbaa7394aa645171d7f0ad9fdf154212667efe0323b53d5
+源码分支: fix/auditable-paper-account
+提交: 47dac7aefdab867264f971918b390aa39ded1116
+原1.5.1 EXE及账本未覆盖。
+1100观察冻结旧1.6.0.0 UI快照；与交付版11个金融核心模块字节一致，模式/账户分别记账。
+当前投资优势尚未验证。

@@ -1,0 +1,28 @@
+{
+  "sourceCommit": "47dac7aefdab867264f971918b390aa39ded1116",
+  "jsTests": 189,
+  "packageTests": 2,
+  "zipCrcPassed": true,
+  "namedExeSha256Passed": true,
+  "forwardStateEqualsLastCompleteTick": true,
+  "allElevenFrozenSourcesEqual": true,
+  "forwardSnapshotCutoff": "2026-10-20T03:04:40.824Z",
+  "checks": [
+    {
+      "check": "js",
+      "exitCode": 0,
+      "log": "C:\\Users\\lqp07\\.codex\\worktrees\\audit-account-repair\\techno\\validation\\audit-repair\\delivery-qa-5oy55ue9\\js.log"
+    },
+    {
+      "check": "package",
+      "exitCode": 0,
+      "log": "C:\\Users\\lqp07\\.codex\\worktrees\\audit-account-repair\\techno\\validation\\audit-repair\\delivery-qa-5oy55ue9\\package.log"
+    },
+    {
+      "check": "frozen-report",
+      "exitCode": 0,
+      "log": "C:\\Users\\lqp07\\.codex\\worktrees\\audit-account-repair\\techno\\validation\\audit-repair\\delivery-qa-5oy55ue9\\frozen-report.log"
+    }
+  ],
+  "completedAt": "2026-10-20T03:06:23.704238+00:00"
+}

@@ -1,0 +1,86 @@
+{
+  "exeSha256": "e68ee81a8a42b8c26baad12bf7ce1b6640d6e0742ed3a1284631ba7cf9fcb4c2",
+  "baselineCommit": "61443d4dbeb51efd18e0ef769c412b5f280dd2de",
+  "files": [
+    {
+      "path": "assets/analysis.js",
+      "releaseSha256": "e5640ffb7cb500ddfafb6cf3da7ad7d22b782f84f43b176f5791629da22e06e2",
+      "sourceSha256": "e5640ffb7cb500ddfafb6cf3da7ad7d22b782f84f43b176f5791629da22e06e2",
+      "normalizedEqual": true
+    },
+    {
+      "path": "assets/assurance-ui.js",
+      "releaseSha256": "39974d77b92b8998ce18cdd56f4b7b172f1b01433a400652979710cbf798fcd9",
+      "sourceSha256": "39974d77b92b8998ce18cdd56f4b7b172f1b01433a400652979710cbf798fcd9",
+      "normalizedEqual": true
+    },
+    {
+      "path": "assets/corporate-actions.js",
+      "releaseSha256": "4f794e21f8c864ee6852479e66fa2b9fdcf0e0960335918cc0986b4ceaaa13b2",
+      "sourceSha256": "4f794e21f8c864ee6852479e66fa2b9fdcf0e0960335918cc0986b4ceaaa13b2",
+      "normalizedEqual": true
+    },
+    {
+      "path": "assets/corporate-events.js",
+      "releaseSha256": "e9a71c9403f823e97a6f9ec679c456b9b9e2196bf55d368ef9ecb67d54bd311c",
+      "sourceSha256": "e9a71c9403f823e97a6f9ec679c456b9b9e2196bf55d368ef9ecb67d54bd311c",
+      "normalizedEqual": true
+    },
+    {
+      "path": "assets/desktop.css",
+      "releaseSha256": "717994b1c4a5c04d66b0e151f103736189c9360c3697a1b0568ce89cd184886e",
+      "sourceSha256": null,
+      "normalizedEqual": false
+    },
+    {
+      "path": "assets/forecast-journal.js",
+      "releaseSha256": "a2e5203d1df09afe32b22ee257289cd25a9d13cebf8345c245472e90c976e9d9",
+      "sourceSha256": "a2e5203d1df09afe32b22ee257289cd25a9d13cebf8345c245472e90c976e9d9",
+      "normalizedEqual": true
+    },
+    {
+      "path": "assets/index.html",
+      "releaseSha256": "442e88247e256b8229145d5d4f18cc38fab6c43e8e5bfda4d9e147b7745a3882",
+      "sourceSha256": "2d1e999b6ab51207205a8542600010ef0234dac6980788b08ac97cb70a76f4e7",
+      "normalizedEqual": false
+    },
+    {
+      "path": "assets/market.js",
+      "releaseSha256": "00eeca1251527673424506a2bbdde90a1a46261ffbee1ab41317d70a1065fdad",
+      "sourceSha256": "00eeca1251527673424506a2bbdde90a1a46261ffbee1ab41317d70a1065fdad",
+      "normalizedEqual": true
+    },
+    {
+      "path": "assets/paper-engine.js",
+      "releaseSha256": "9897303bc688c25778b66bfc4749a7863215bc9c7fa14475dfa3ec79c90a5fd9",
+      "sourceSha256": "9897303bc688c25778b66bfc4749a7863215bc9c7fa14475dfa3ec79c90a5fd9",
+      "normalizedEqual": true
+    },
+    {
+      "path": "assets/research-results.js",
+      "releaseSha256": "2966dab7ef1d9a2935fab8c17d82d972a3ea166db440e9e6de2eb9d73bf4c1c5",
+      "sourceSha256": "2966dab7ef1d9a2935fab8c17d82d972a3ea166db440e9e6de2eb9d73bf4c1c5",
+      "normalizedEqual": true
+    },
+    {
+      "path": "assets/seed.js",
+      "releaseSha256": "04f00216b2ced31b2f5bf4f0cf66986723c7c6e0a9f493a06040b757b63b7387",
+      "sourceSha256": "04f00216b2ced31b2f5bf4f0cf66986723c7c6e0a9f493a06040b757b63b7387",
+      "normalizedEqual": true
+    },
+    {
+      "path": "assets/style.css",
+      "releaseSha256": "b4ebfa07ec57f5a73db458ab500bf098bb885256fbcf465e49eb9dab4adc8715",
+      "sourceSha256": "b4ebfa07ec57f5a73db458ab500bf098bb885256fbcf465e49eb9dab4adc8715",
+      "normalizedEqual": true
+    },
+    {
+      "path": "assets/ui.js",
+      "releaseSha256": "2525039499b134f632db8f9e223223593aea7c59581e6153c793966897a01a62",
+      "sourceSha256": "2525039499b134f632db8f9e223223593aea7c59581e6153c793966897a01a62",
+      "normalizedEqual": true
+    }
+  ],
+  "auditOriginalScriptsAttached": false,
+  "originalLiveExperimentUntouched": "D:/techno/validation/auto-full-v4-30m-2026-10-20"
+}

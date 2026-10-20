@@ -1,0 +1,244 @@
+{
+  "generatedAt": "2026-10-20T01:43:05.548Z",
+  "scope": "Reconstructed artificial offline behavior checks, NOT original review scripts, original 88 tests, market performance or forward evidence",
+  "originalReviewScriptsProvided": false,
+  "exeSha256": "e68ee81a8a42b8c26baad12bf7ce1b6640d6e0742ed3a1284631ba7cf9fcb4c2",
+  "frozenModules": {
+    "paper-engine.js": "9897303bc688c25778b66bfc4749a7863215bc9c7fa14475dfa3ec79c90a5fd9",
+    "analysis.js": "e5640ffb7cb500ddfafb6cf3da7ad7d22b782f84f43b176f5791629da22e06e2",
+    "market.js": "00eeca1251527673424506a2bbdde90a1a46261ffbee1ab41317d70a1065fdad",
+    "seed.js": "04f00216b2ced31b2f5bf4f0cf66986723c7c6e0a9f493a06040b757b63b7387"
+  },
+  "triggered": 8,
+  "total": 8,
+  "checks": [
+    {
+      "id": "A01",
+      "title": "30-minute observation freezes later valuation and exits",
+      "fixture": {
+        "initialAt": "2026-10-20 09:30:00",
+        "durationMs": 1800000,
+        "nextAt": "2026-10-21 09:31:00",
+        "nextFixturePrice": 2
+      },
+      "triggered": true,
+      "windowEnded": true,
+      "engineeringDone": true,
+      "priorObservedAt": "2026-10-20T02:00:00.000Z",
+      "laterObservedAt": "2026-10-20T02:00:00.000Z",
+      "priorEquity": 9989.2,
+      "laterEquity": 9989.2,
+      "sellCount": 0
+    },
+    {
+      "id": "A02",
+      "title": "Unrelated research quote failure prevents valid held mark",
+      "fixture": {
+        "missingSymbol": "sh600703",
+        "heldSymbol": "sh588000",
+        "newFixturePrice": 1.2
+      },
+      "triggered": true,
+      "observedLastPrice": 1,
+      "validDirectMarkPrice": 1.2,
+      "dataFailureTicks": 1
+    },
+    {
+      "id": "A03",
+      "title": "Stale successful primary and failed fallback record today with empty errors",
+      "fixture": {
+        "fakeNow": "2026-10-20 09:31:00",
+        "expectedCompletedDate": "2026-10-19",
+        "primaryLastDate": "2026-10-16",
+        "fallback": "throw synthetic offline"
+      },
+      "triggered": true,
+      "dataAsOf": "2026-10-16",
+      "fetchedDate": "2026-10-20",
+      "fetchedAt": "2026-10-20T01:31:00.000Z",
+      "errors": [],
+      "fallbackAttempted": true
+    },
+    {
+      "id": "A04",
+      "title": "Identical stock is selected only when stock taxes omitted",
+      "fixture": {
+        "stock": "sh600703",
+        "price": 1,
+        "referenceOpen": 1,
+        "forecastReturn": 0.0032,
+        "budget": 10000,
+        "positionLimit": 10000,
+        "minFee": 5,
+        "maxPositions": 1
+      },
+      "triggered": true,
+      "normalRow": {
+        "symbol": "sh600703",
+        "name": "synthetic stock",
+        "type": "stock",
+        "expectedReturn": 0.0032,
+        "signalDate": "2026-10-19",
+        "sourceTime": "2026-10-20 09:30:00",
+        "price": 1,
+        "reasonCode": null,
+        "reason": "符合小额模拟条件；不代表已验证的买入建议",
+        "minimumShares": 100,
+        "minimumBuyCost": 105.1,
+        "shares": 9900,
+        "entryPrice": 1.001,
+        "entryFee": 5,
+        "buyCost": 9914.9,
+        "roundTripFrictionRate": 0.0030055774642204435,
+        "referenceEntryOpen": 1,
+        "referenceSignalDate": "2026-10-19",
+        "estimatedNetReturn": 0.00018641842076077091,
+        "selected": true
+      },
+      "autoCostRow": {
+        "symbol": "sh600703",
+        "name": "synthetic stock",
+        "type": "stock",
+        "expectedReturn": 0.0032,
+        "signalDate": "2026-10-19",
+        "sourceTime": "2026-10-20 09:30:00",
+        "price": 1,
+        "reasonCode": "cost",
+        "reason": "研究收益估计不足以覆盖模拟双边佣金与滑点",
+        "minimumShares": 100,
+        "minimumBuyCost": 105.101001,
+        "shares": 9900,
+        "entryPrice": 1.001,
+        "entryFee": 5.099099,
+        "buyCost": 9914.999098999999,
+        "roundTripFrictionRate": 0.003524261540631169,
+        "referenceEntryOpen": 1,
+        "referenceSignalDate": "2026-10-19",
+        "estimatedNetReturn": -0.0003339254608234465,
+        "selected": false
+      }
+    },
+    {
+      "id": "A05",
+      "title": "National Day is accepted by weekday-only trading check",
+      "fixture": {
+        "at": "2026-10-01 09:31:00",
+        "exchangeHoliday": true
+      },
+      "triggered": true,
+      "oldTrading": true
+    },
+    {
+      "id": "A06",
+      "title": "Later entry-day full-session H/L/V decide opening eligibility",
+      "fixture": {
+        "history": "one synthetic geometrically growing instrument, 800 weekdays from 2023-01-02",
+        "onlyChange": "first 2025 entry date high=low=open=close; separately daily volume=0",
+        "sameEntryOpen": true,
+        "modelAndSignalPrefixUnchanged": true
+      },
+      "triggered": true,
+      "originalFirstTrade": {
+        "symbol": "A",
+        "signalDate": "2025-01-01",
+        "entryDate": "2025-01-02",
+        "exitDate": "2025-01-30",
+        "expectedReturn": 0.22019003994796577,
+        "trainingCutoff": "2024-12-31",
+        "labelEndMax": "2024-12-31",
+        "entered": true,
+        "exitExecutable": true,
+        "entryPrice": 18200.29755660051,
+        "exitMark": 22207.821802653267,
+        "netReturn": 0.2165322152557132,
+        "note": "独立20日区间估值模拟，非券商成交记录。"
+      },
+      "flatRangeFirstTrade": {
+        "symbol": "A",
+        "signalDate": "2025-01-01",
+        "entryDate": "2025-01-02",
+        "exitDate": "2025-01-30",
+        "expectedReturn": 0.22019003994796577,
+        "trainingCutoff": "2024-12-31",
+        "labelEndMax": "2024-12-31",
+        "entered": false,
+        "exitExecutable": true,
+        "entryPrice": null,
+        "exitMark": null,
+        "netReturn": 0,
+        "note": "次日缺少有效开盘成交条件；该份额保留现金，不换成事后赢家。"
+      },
+      "zeroVolumeFirstTrade": {
+        "symbol": "A",
+        "signalDate": "2025-01-01",
+        "entryDate": "2025-01-02",
+        "exitDate": "2025-01-30",
+        "expectedReturn": 0.22019003994796577,
+        "trainingCutoff": "2024-12-31",
+        "labelEndMax": "2024-12-31",
+        "entered": false,
+        "exitExecutable": true,
+        "entryPrice": null,
+        "exitMark": null,
+        "netReturn": 0,
+        "note": "次日缺少有效开盘成交条件；该份额保留现金，不换成事后赢家。"
+      }
+    },
+    {
+      "id": "A07",
+      "title": "Old forecast is translated to a later current open",
+      "fixture": {
+        "signalDate": "2025-01-02",
+        "quoteDate": "2026-10-20",
+        "currentOpen": 1,
+        "forecastReturn": 0.06,
+        "horizon": 20
+      },
+      "triggered": true,
+      "row": {
+        "symbol": "sh588000",
+        "name": "fixture benchmark",
+        "type": "etf",
+        "expectedReturn": 0.06,
+        "signalDate": "2025-01-02",
+        "sourceTime": "2026-10-20 09:30:00",
+        "price": 1,
+        "reasonCode": null,
+        "reason": "符合小额模拟条件；不代表已验证的买入建议",
+        "minimumShares": 100,
+        "minimumBuyCost": 105.1,
+        "shares": 9900,
+        "entryPrice": 1.001,
+        "entryFee": 5,
+        "buyCost": 9914.9,
+        "roundTripFrictionRate": 0.0030055774642204435,
+        "referenceEntryOpen": 1,
+        "referenceSignalDate": "2025-01-02",
+        "estimatedNetReturn": 0.05684434537917677,
+        "selected": true
+      },
+      "signalContractMissingFields": [
+        "entrySession",
+        "horizon",
+        "maturitySession"
+      ]
+    },
+    {
+      "id": "A08",
+      "title": "Literal negative expectation title is labeled positive",
+      "fixture": {
+        "title": "业绩增长不及预期",
+        "contentProvided": false
+      },
+      "triggered": true,
+      "parsed": {
+        "title": "业绩增长不及预期",
+        "url": "https://finance.eastmoney.com/a/fixture.html",
+        "publishedAt": "2026-10-19",
+        "source": "fixture",
+        "sector": "synthetic",
+        "sentiment": "偏积极"
+      }
+    }
+  ]
+}

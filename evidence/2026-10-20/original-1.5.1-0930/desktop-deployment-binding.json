@@ -1,0 +1,24 @@
+{
+  "boundAt": "2026-10-19T08:59:21.023Z",
+  "executable": "科技观察-全额资金研究版.exe",
+  "version": "1.5.1.0",
+  "sha256": "e68ee81a8a42b8c26baad12bf7ce1b6640d6e0742ed3a1284631ba7cf9fcb4c2",
+  "desktopVerifiedAt": "2026-10-19T08:58:51.8931077Z",
+  "sourceFiles": {
+    "paper-engine.js": "9897303bc688c25778b66bfc4749a7863215bc9c7fa14475dfa3ec79c90a5fd9",
+    "corporate-actions.js": "4f794e21f8c864ee6852479e66fa2b9fdcf0e0960335918cc0986b4ceaaa13b2",
+    "corporate-events.js": "e9a71c9403f823e97a6f9ec679c456b9b9e2196bf55d368ef9ecb67d54bd311c",
+    "analysis.js": "e5640ffb7cb500ddfafb6cf3da7ad7d22b782f84f43b176f5791629da22e06e2",
+    "market.js": "00eeca1251527673424506a2bbdde90a1a46261ffbee1ab41317d70a1065fdad",
+    "seed.js": "04f00216b2ced31b2f5bf4f0cf66986723c7c6e0a9f493a06040b757b63b7387"
+  },
+  "model": "ridge-20-1-2026-09-30-28766",
+  "allocationMode": "full",
+  "budget": 10000,
+  "maxPositions": 3,
+  "verifiedSameSharedSources": true,
+  "realTimeTestStarted": false,
+  "nativeAllHistoriesCurrent": false,
+  "independentNodeDataHealthPassed": true,
+  "investmentReadiness": "unproven"
+}
