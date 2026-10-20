@@ -1,14 +1,24 @@
 (function (root, factory) {
   'use strict';
-  var api = factory();
+  var api = factory(root);
   if (typeof module === 'object' && module.exports) module.exports = api;
   else root.Analysis = api;
-}(typeof globalThis !== 'undefined' ? globalThis : this, function () {
+}(typeof globalThis !== 'undefined' ? globalThis : this, function (root) {
   'use strict';
   var FEATURES = ['ma5Gap', 'ma20Gap', 'ma60Gap', 'rsi14', 'momentum5', 'momentum20', 'momentum60', 'volatility20', 'volumeRatio', 'drawdown60', 'atr14'];
   var NAMES = ['距MA5', '距MA20', '距MA60', 'RSI14', '5日动量', '20日动量', '60日动量', '20日波动', '量比', '60日回撤', 'ATR14'];
   var MIN_SAMPLES = 40;
   var RISKS = ['技术因子无法保证收益，预测可能为负或失准。', '参考区间来自训练残差，并非经过校准的置信区间。', '固定研究池存在幸存者偏差；后复权价格不代表真实成交价格。'];
+  function tradingCalendar() {
+    if (root.TradingCalendar) return root.TradingCalendar;
+    if (typeof require === 'function') { try { return require('./trading-calendar.js'); } catch (_) { return null; } }
+    return null;
+  }
+  function auditIdentity() {
+    if (root.AuditIdentity) return root.AuditIdentity;
+    if (typeof require === 'function') { try { return require('./audit-identity.js'); } catch (_) { return null; } }
+    return null;
+  }
   function finite(x) { return typeof x === 'number' && Number.isFinite(x); }
   function validDate(x) {
     if (typeof x !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(x)) return false;
@@ -165,7 +175,19 @@
   function tradeable(bar) {
     return !!bar && bar.volume > 0 && (bar.high - bar.low) > bar.close * 1e-8;
   }
-  function predict(model, input) {
+  // Completed signal-day bars may use volume/range. An opening order may not.
+  function openingAssessment(bar, side) {
+    var reason = null;
+    if (!bar || !finite(bar.open) || bar.open <= 0) reason = 'missing_open';
+    else if (bar.halted === true || bar.suspended === true || bar.tradeStatus === 'suspended') reason = 'halted';
+    else if (bar.openTradable === false) reason = 'open_not_tradable';
+    else if (bar.orderRejected === true || bar.openOrderRejected === true) reason = 'order_rejected';
+    else if (side === 'buy' && (bar.buyLimitBlocked === true || bar.openBuyTradable === false || bar.limitUpBlocked === true || bar.tradeStatus === 'limit_up')) reason = 'buy_limit_blocked';
+    else if (side === 'sell' && (bar.sellLimitBlocked === true || bar.openSellTradable === false || bar.limitDownBlocked === true || bar.tradeStatus === 'limit_down')) reason = 'sell_limit_blocked';
+    return { allowed: !reason, reason: reason, assumption: reason ? 'opening_order_rejected' : 'opening_price_hypothetical', verified: false,
+      priceBasis: 'daily_open', limitation: '日线开盘价假设，缺少订单簿、排队及真实成交确认。' };
+  }
+  function predict(model, input, metadata) {
     var bars = normalize(input), last = bars[bars.length - 1], reasons = [], x = vector(bars);
     if (!validModel(model)) reasons.push('模型成熟样本不足或模型参数无效。');
     if (!x) reasons.push('至少需要61根有效完整日线。');
@@ -181,7 +203,19 @@
     }
     var risks = RISKS.slice();
     if (x && validModel(model) && x.some(function (v, j) { return Math.abs((v - model.means[j]) / model.scales[j]) > 4; })) risks.push('当前参数远离训练分布，参考价值下降。');
-    return { expectedReturn: value, contributions: contributions, interval: interval, asOf: last ? last.date : null,
+    var cal = tradingCalendar(), signalDate = last ? last.date : null, horizon = model && Number.isInteger(model.horizon) ? model.horizon : 20;
+    var entrySession = null, maturitySession = null;
+    if (cal && signalDate) {
+      try { entrySession = cal.nextSession(signalDate); maturitySession = cal.maturitySession(entrySession, horizon); }
+      catch (e) { if (e.code !== 'calendar_uncovered') throw e; entrySession = null; maturitySession = null; }
+    }
+    metadata = metadata || {};
+    return { expectedReturn: value, contributions: contributions, interval: interval, asOf: signalDate,
+      signalDate: signalDate, horizon: horizon, entrySession: entrySession, maturitySession: maturitySession, referenceOpen: null,
+      publishedAt: metadata.publishedAt || null, firstReceivedAt: metadata.firstReceivedAt || null,
+      signalContract: { status: entrySession && maturitySession ? 'available' : 'unavailable', referenceOpenStatus: 'awaiting_entry_session_open',
+        calendarVersion: cal ? cal.version : null,
+        reason: entrySession && maturitySession ? null : '交易所日历未覆盖完整信号周期，不推算自然日或旧信号起点。' },
       eligible: reasons.length === 0, reasons: reasons, risks: risks, indicators: summarize(bars) };
   }
   function priorMonth(date) {
@@ -200,12 +234,48 @@
   }
   function evaluate(histories, year, opts) {
     var ctx = context(histories), opt = options(opts, ctx); opts = opts || {};
+    var openingMaps = {}, observedDates = {};
+    Object.keys(histories || {}).forEach(function (symbol) {
+      openingMaps[symbol] = {};
+      (Array.isArray(histories[symbol]) ? histories[symbol] : []).forEach(function (b) {
+        if (b && validDate(b.date)) { openingMaps[symbol][b.date] = b; observedDates[b.date] = true; }
+      });
+    });
     if (!Number.isInteger(year) || year < 2000 || year > 2100) throw new Error('year must be an integer');
     var fee = opts.feeRate === undefined ? .0015 : opts.feeRate;
     if (!finite(fee) || fee < 0 || fee > .1) throw new Error('feeRate must be between 0 and 0.1');
     var yearEnd = year + '-12-31';
-    var dates = ctx.calendar.filter(function (d) { return d <= yearEnd && (!opt.cutoff || d <= opt.cutoff); });
+    var dates = Object.keys(observedDates).sort().filter(function (d) { return d <= yearEnd && (!opt.cutoff || d <= opt.cutoff); });
     var asOf = dates.length ? dates[dates.length - 1] : null, models = {};
+    var audit = auditIdentity(), signalIdentities = {};
+    var legacyFees = { version: 'legacy-interval-rate-v1', ratePerSide: fee, minimumCommissionIncluded: false, stockTaxesIncluded: false, scope: 'independent_interval_research_only' };
+    var researchRules = { version: 'causal-independent-interval-v2', horizon: opt.horizon, alpha: opt.alpha,
+      modelSchedule: year >= 2026 ? 'mature_labels_prior_month' : 'mature_labels_prior_year_frozen',
+      ranking: 'positive_prediction_top3_equal_weight', execution: 'daily_open_hypothetical',
+      openingData: 'open_and_explicit_opening_controls_only', unresolvedExit: 'retain_mark_and_stop_reinvestment',
+      account: 'normalized_research_index_not_cash_account' };
+    function historicalInput(cutoff) {
+      var data = {}, controls = ['halted', 'suspended', 'openTradable', 'orderRejected', 'openOrderRejected', 'buyLimitBlocked', 'sellLimitBlocked', 'openBuyTradable', 'openSellTradable', 'limitUpBlocked', 'limitDownBlocked', 'tradeStatus'];
+      ctx.symbols.forEach(function (symbol) {
+        data[symbol] = Object.keys(openingMaps[symbol]).sort().filter(function (date) { return cutoff && date <= cutoff; }).map(function (date) {
+          var bar = openingMaps[symbol][date], row = { date: date };
+          ['open', 'close', 'high', 'low', 'volume'].forEach(function (key) { row[key] = finite(bar[key]) ? bar[key] : null; });
+          controls.forEach(function (key) { if (typeof bar[key] === 'boolean' || typeof bar[key] === 'string') row[key] = bar[key]; });
+          return row;
+        });
+      });
+      return data;
+    }
+    function fingerprint(model, cutoff) {
+      if (!audit) return { identityStatus: 'unavailable', strategy_id: 'ridge11-independent-interval-causal-v2',
+        execution_mode: 'independent_interval_research', model_hash: null, rules_hash: null, data_hash: null,
+        universe_version: null, budget: null, risk_limits: { notExecutable: true }, fee_profile: legacyFees, universeBias: 'survivorship_bias' };
+      var identity = audit.fingerprint({ strategyId: 'ridge11-independent-interval-causal-v2', model: model,
+        universe: { symbols: ctx.symbols.slice().sort(), selection: 'caller_supplied_fixed_research_pool', survivorshipBias: true },
+        rules: researchRules, data: historicalInput(cutoff), feeProfile: legacyFees, budget: null,
+        riskLimits: { notExecutable: true, maxCandidates: 3, normalizedIndex: true }, executionMode: 'independent_interval_research' });
+      identity.identityStatus = 'available'; identity.universeBias = 'survivorship_bias'; return identity;
+    }
     function modelFor(date) {
       var cutoff = year >= 2026 ? priorMonth(date) : (year - 1) + '-12-31';
       if (!models[cutoff]) models[cutoff] = fit(records(ctx, opt.horizon, cutoff), { horizon: opt.horizon, alpha: opt.alpha, cutoff: cutoff }, ctx.symbols);
@@ -220,7 +290,7 @@
       zeroErrors.push(Math.abs(r.y)); meanErrors.push(Math.abs(model.intercept - r.y));
       meanDirections.push((model.intercept >= 0) === (r.y >= 0) ? 1 : 0); upDirections.push(r.y >= 0 ? 1 : 0); signalDates[r.date] = true;
     });
-    var curve = [], trades = [], strategy = 1, benchmark = 1;
+    var curve = [], trades = [], strategy = 1, benchmark = 1, openPositions = [], benchmarkOpenPositions = [], continuationStopReason = null;
     var start = dates.findIndex(function (d) { return Number(d.slice(0, 4)) === year; });
     function append(date, s, b) {
       var p = { date: date, strategy: s, benchmark: b };
@@ -228,15 +298,24 @@
     }
     function positions(candidates, entryDate, exitDate, model, recordTrades) {
       return candidates.map(function (c) {
-        var entry = ctx.maps[c.symbol][entryDate], exit = ctx.maps[c.symbol][exitDate], entered = tradeable(entry);
-        var p = { symbol: c.symbol, entry: entry, entered: entered };
+        var entry = openingMaps[c.symbol][entryDate], exit = openingMaps[c.symbol][exitDate];
+        var entryExecution = openingAssessment(entry, 'buy'), exitExecution = openingAssessment(exit, 'sell'), entered = entryExecution.allowed;
+        var p = { symbol: c.symbol, entry: entry, entryDate: entryDate, exitDate: exitDate, entered: entered, exit: exit, exitExecution: exitExecution };
         if (recordTrades) {
           var exitPrice = entered ? mark(ctx, c.symbol, exitDate, true) : null;
-          trades.push({ symbol: c.symbol, signalDate: c.date, entryDate: entryDate, exitDate: exitDate, expectedReturn: c.expected,
-            trainingCutoff: model.cutoff, labelEndMax: model.labelEndMax, entered: entered, exitExecutable: tradeable(exit),
+          var trade = { symbol: c.symbol, signalDate: c.date, entryDate: entryDate, exitDate: exitDate, expectedReturn: c.expected,
+            trainingCutoff: model.cutoff, labelEndMax: model.labelEndMax, entered: entered, exitExecutable: false,
+            entryExecution: entryExecution, exitExecution: exitExecution, executionVerified: false,
+            exitHypotheticallyFilled: entered && exitExecution.allowed, exitFeeCharged: entered && exitExecution.allowed,
+            positionState: !entered ? 'entry_rejected' : exitExecution.allowed ? 'hypothetically_closed' : 'open_exit_blocked',
             entryPrice: entered ? entry.open : null, exitMark: exitPrice,
-            netReturn: entered ? (exitPrice / entry.open) * (1 - fee) * (1 - fee) - 1 : 0,
-            note: entered ? (tradeable(exit) ? '独立20日区间估值模拟，非券商成交记录。' : '区间末无法确认成交，按已有价格估值，不代表完成卖出。') : '次日缺少有效开盘成交条件；该份额保留现金，不换成事后赢家。' });
+            netReturn: !entered ? 0 : exitExecution.allowed ? (exitPrice / entry.open) * (1 - fee) * (1 - fee) - 1 : null,
+            unrealizedReturn: entered && !exitExecution.allowed ? (exitPrice / entry.open) * (1 - fee) - 1 : null,
+            note: entered ? (exitExecution.allowed ? '独立20日区间开盘价假设，未验证真实成交。' : '退出被拒，继续保留持仓及估值；未收取卖出费或将市值转成可用现金。') : '开盘缺价或明确交易限制；该份额保留现金，不换成事后赢家。' };
+          if (!signalIdentities[c.date]) signalIdentities[c.date] = fingerprint(model, c.date);
+          Object.assign(trade, JSON.parse(JSON.stringify(signalIdentities[c.date])));
+          trade.fingerprintScope = 'frozen_signal_inputs_before_entry';
+          trades.push(trade); p.trade = trade;
         }
         return p;
       });
@@ -245,8 +324,9 @@
       if (!pos.length) return 1;
       return mean(pos.map(function (p) {
         if (!p.entered) return 1;
+        if (date >= p.exitDate && p.exitExecution.allowed) return (p.exit.open / p.entry.open) * (1 - fee) * (1 - fee);
         var price = mark(ctx, p.symbol, date, isExit);
-        return (price / p.entry.open) * (1 - fee) * (isExit ? 1 - fee : 1);
+        return (price / p.entry.open) * (1 - fee);
       }));
     }
     if (start >= 0) for (var t = start; t + opt.horizon + 1 < dates.length && Number(dates[t].slice(0, 4)) === year; t += opt.horizon) {
@@ -262,11 +342,33 @@
       var holdings = positions(chosen, entryDate, exitDate, model, true), base = positions(candidates, entryDate, exitDate, model, false);
       if (!curve.length) append(signalDate, strategy, benchmark);
       for (var day = t + 1; day <= t + opt.horizon + 1; day++) append(dates[day], strategy * basketValue(holdings, dates[day], day === t + opt.horizon + 1), benchmark * basketValue(base, dates[day], day === t + opt.horizon + 1));
+      var blocked = holdings.filter(function (p) { return p.entered && !p.exitExecution.allowed; });
+      var baseBlocked = base.filter(function (p) { return p.entered && !p.exitExecution.allowed; });
+      if (blocked.length || baseBlocked.length) {
+        continuationStopReason = 'unresolved_exit_no_reinvestment';
+        for (var later = t + opt.horizon + 2; later < dates.length; later++) append(dates[later], strategy * basketValue(holdings, dates[later], false), benchmark * basketValue(base, dates[later], false));
+        function remaining(p) {
+          var lastMark = mark(ctx, p.symbol, asOf, false);
+          var lastBar = ctx.series[p.symbol].filter(function (bar) { return bar.date <= asOf; }).slice(-1)[0];
+          var row = { symbol: p.symbol, entryDate: p.entryDate, attemptedExitDate: p.exitDate, entryPrice: p.entry.open, mark: lastMark,
+            markAsOf: lastBar ? lastBar.date : null, stale: !lastBar || lastBar.date < asOf,
+            positionState: 'open_exit_blocked', reason: p.exitExecution.reason, cashProceeds: 0,
+            unrealizedReturn: (lastMark / p.entry.open) * (1 - fee) - 1 };
+          if (p.trade) { p.trade.unrealizedReturn = row.unrealizedReturn; p.trade.lastMark = lastMark; p.trade.markAsOf = row.markAsOf; p.trade.stale = row.stale; }
+          return row;
+        }
+        openPositions = blocked.map(remaining); benchmarkOpenPositions = baseBlocked.map(remaining);
+        strategy *= basketValue(holdings, asOf, false); benchmark *= basketValue(base, asOf, false);
+        break;
+      }
       strategy *= basketValue(holdings, exitDate, true); benchmark *= basketValue(base, exitDate, true);
     }
     var peak = 1, maxDrawdown = 0;
     curve.forEach(function (p) { peak = Math.max(peak, p.strategy); maxDrawdown = Math.max(maxDrawdown, 1 - p.strategy / peak); });
-    return { year: year, asOf: asOf, sampleCount: errors.length, mae: errors.length ? mean(errors) : null, directionAccuracy: directions.length ? mean(directions) : null,
+    var report = { year: year, asOf: asOf, executionMode: 'independent_interval_research', executableAccount: false, executionVerified: false,
+      availableCash: null, accountBudget: null, openPositions: openPositions, benchmarkOpenPositions: benchmarkOpenPositions, continuationStopReason: continuationStopReason,
+      fee_profile: legacyFees,
+      sampleCount: errors.length, mae: errors.length ? mean(errors) : null, directionAccuracy: directions.length ? mean(directions) : null,
       signalDayCount: Object.keys(signalDates).length,
       baselines: { zeroReturn: { mae: zeroErrors.length ? mean(zeroErrors) : null },
         trainingMean: { mae: meanErrors.length ? mean(meanErrors) : null, directionAccuracy: meanDirections.length ? mean(meanDirections) : null },
@@ -277,10 +379,14 @@
         '固定研究池存在幸存者偏差；仅为后复权日线的独立区间组合模拟，非真实券商回测。',
         '前3名正预测等权；基准为同一信号日可分析研究池等权。区间内以收盘估值，区间末以开盘估值。',
         '每边费用约' + (fee * 100).toFixed(3) + '%；可修改，忽略最低佣金与品种税费差异，不代表实际收费。',
-        '只过滤缺量或一字价格；后复权日线不能可靠判断实际涨跌停、排队成交或冲击成本。',
-        '区间末未能确认成交时仅估值，下一独立区间重新模拟；不表示持仓成功清算。',
+        '开盘下单仅用开盘价及明确的停牌、拒单、买卖侧限制；不得使用当天最高、最低或全天成交量。未知盘口仅为开盘价假设，非成交验证。',
+        '明确退出受阻时保留持仓、持续估值并停止后续区间开仓；未实现估值不转成现金。正常区间形成研究指数，非可执行1万元持续账户。',
         '未成熟的区间不纳入统计；预测标签按日产生、重叠且相关，样本数不是独立证据。组合模拟使用独立20日区间。',
         '指标中的收益误差与方向命中为样本外预测统计；净值回撤基于日线估值，不含盘中风险。'] };
+    var foldModels = Object.keys(models).sort().map(function (cutoff) { return { cutoff: cutoff, model: models[cutoff] }; });
+    Object.assign(report, fingerprint({ family: 'standardized-ridge-11', folds: foldModels }, asOf));
+    report.fingerprintScope = 'retrospective_report_inputs_through_asof';
+    return report;
   }
   function updateChampion(histories, oldModel, opts) {
     var ctx = context(histories), opt = options(opts, ctx), all = records(ctx, opt.horizon, opt.cutoff);

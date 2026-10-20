@@ -1,0 +1,35 @@
+{
+  "title": "科技观察1.6.0.1 持续模拟账户专项修复验收",
+  "reviewedVersion": "1.5.1.0",
+  "reviewedExeSha256": "e68ee81a8a42b8c26baad12bf7ce1b6640d6e0742ed3a1284631ba7cf9fcb4c2",
+  "baselineCommit": "61443d4dbeb51efd18e0ef769c412b5f280dd2de",
+  "repairBranch": "fix/auditable-paper-account",
+  "scope": "科技股票/ETF数据分析与可审计持续虚拟账户；投资优势尚未验证；没有券商连接、真实下单、购买服务或追加风险资金。",
+  "matrix": [
+    {"id":"A01","issue":"半小时窗口结束冻结账户","evidence":"精确旧EXE资产重建夹具复现；behavior-reproduction.json A01","change":"工程观察与schema2持续账户分离；观察结束后继续估值、跨日持有/退出；新观察不重置本金","regression":"continuous-account、continuous-lifecycle、account-audit-regressions、原生跨日夹具","uncovered":"真实20交易日持仓结果尚未成熟；离线跨日是人工夹具"},
+    {"id":"A02","issue":"研究池缺价导致有效持仓也不估值","evidence":"旧A02复现","change":"入场完整性、持仓逐只估值、对照完整性和工程观察分别记录；缺价保留末次价并标过期","regression":"continuous-account/lifecycle、account-audit-regressions、原生pool outage检查","uncovered":"免费报价缺乏交易所逐笔盘口，估值不是保证成交"},
+    {"id":"A03","issue":"旧日线主源+失败备用被记为今日成功","evidence":"旧A03复现；旧原生全池同步失败记录保留","change":"以交易所expectedCompletedSession核对每只及全池；记录请求/接收/来源日期、数据截至、期望截至、stale及错误","regression":"market-freshness、market、calendar；新EXE原生19只截至2026-10-19","uncovered":"日线提供方没有逐条首次发布日期，sourceTime保持null；不伪造历史首次接收"},
+    {"id":"A04","issue":"普通筛选与自动模拟股票税费不一致","evidence":"旧A04同输入选股差异复现","change":"FeeProfile统一执行计划、买卖、回放、对照；股票卖出印花税及双边过户费，ETF免这两项；默认最低5元明确为假设","regression":"fee-profile、small-budget、auto-paper、order-provenance及原生统一费用夹具","uncovered":"旧独立区间归一化研究保留legacy-interval-rate-v1标记，不能解释为1万元可执行账；真实合同未接入"},
+    {"id":"A05","issue":"仅工作日判断，忽略休市/午休/完成时间","evidence":"旧国庆入场A05复现","change":"2023—2026官方交易所休市日历统一交易时段、最近完整日、T+1及到期；闭市不成交","regression":"calendar、continuous-lifecycle节假日/T+1、原生calendar检查","uncovered":"2027以后尚未发布/核实的日历失败关闭；跨年新仓需先补官方日历"},
+    {"id":"A06","issue":"用买入日全天H/L/V判定开盘可成交","evidence":"旧A06夹具改变未来日内数据改变入场","change":"仅用当时可知开盘价及明确开盘状态；未知盘口是假设成交；拒单/缺价/涨跌停/退出失败保留且不释放虚构现金","regression":"causal-analysis和analysis；continuous-lifecycle退出失败/持续风险；逐笔回放一致","uncovered":"独立区间报告仍是历史探索；未具备历史盘口/队列，不能证明真实可成交"},
+    {"id":"A07","issue":"旧预测错误平移到今天开盘","evidence":"旧A07复现","change":"保存并校验signalDate/entrySession/referenceOpen/horizon/maturitySession；仅信号后下一交易日入场；拒未发布或未接收信号","regression":"continuous-account、account-audit-regressions、原生旧信号/开盘不匹配检查","uncovered":"模型估计仍未校准为盈利概率；缺少原始历史实时发布时间的记录不能算新盲测"},
+    {"id":"A08","issue":"不及预期等否定标题被判积极","evidence":"旧A08复现","change":"字面否定优先；原文事实/数值/事件/风险证据与来源时间单独面板，明确未输入预测","regression":"news-facts；真实新EXE资讯/公告联网及首次接收保存","uncovered":"只覆盖标题字面信息；新闻全文、财报核验、宏观因果、大模型均未接入"},
+    {"id":"S01","issue":"资金/主题/池/候选策略身份混用","evidence":"旧6ETF、25因子和概率候选不是原19只池部署模型","change":"每条信号/订单/对照保存策略、模型、池、规则、数据、费用、预算、风险限制和模式指纹；全额与小额学习明确命名；本金/可投资额度/最大仓位/主题上限分别冻结","regression":"audit-identity、order-provenance、continuous-lifecycle风险限制和同本金对照","uncovered":"主题按预定义板块标签，未做ETF穿透重仓关联；对照20日后持现金，长期对比须披露暴露差异"},
+    {"id":"S02","issue":"损坏/空截断/读取失败可能当未开户重建本金","evidence":"只读复核补充：原Market.read吞JSON解析异常，if(saved)绕过恢复","change":"Market.readState与原生持续账户严格Read区分missing/corrupt/read_failure；损坏不写、不重建、不消除亏损","regression":"account-storage、paper-ui；DesktopPolicyTests空/坏/独占锁/超限/非法UTF8读取前后字节hash不变；真实两进程保存亏损恢复","uncovered":"本机哈希链不是第三方防篡改认证；人为删除全部副本无法由本地软件证明"},
+    {"id":"S03","issue":"同步或MAE改善2%被当自动部署门槛","evidence":"原ui训练可直接替换model.current","change":"自动同步不训练；手动训练仅保存researchCandidate；部署仍原seed/model.approved，不因MAE自动升级","regression":"deployment-policy正式调用实际trainModel；原生未验证状态保留","uncovered":"尚无可执行账户净收益/回撤/稳定性部署门槛的合格候选，本次没有新模型训练或部署"},
+    {"id":"S04","issue":"持续前瞻可能重开、回填、并发或崩溃丢失亏损","evidence":"新账户驱动须显式审计，不继承旧30分钟状态","change":"未来时段新ID；冻结源/EXE/费用/驱动；永久claim+进程租约；append-only逐tick订单和完整快照，跨日--resume；旧基线原样保留","regression":"continuous-monitor正式回归；同输入Paper.replay逐笔完全一致","uncovered":"后台Node账户与Windows UI账户独立；同引擎不等于同一个账户；离线不补造实时成交"},
+    {"id":"S05","issue":"桌面仅刷新报价也重新发布相同日线预测，可能增加重复信号记录","evidence":"新增夹具20次quote-only render实际调用21次predict，且首次时间可重复生成","change":"1.6.0.1仅在模型或闭合历史实际变化时产生新的桌面预测；相同输入复用首次对象和时间；不改11个冻结金融核心模块","regression":"paper-ui quote-only refresh正式先红后绿；新EXE另行两进程及原生联网复验","uncovered":"1100观察保持原1.6.0.0 EXE绑定不改，虽11个核心模块字节一致，也不称为1.6.0.1 UI进程直接收益；重启后的再次计算不抹去原账本首次记录"}
+  ],
+  "classification": [
+    "baseline/embedded：旧发布快照与内置历史复现，不是开发源、不是新盲测。",
+    "offline-replay-ledger：人工构造跨日、费用、公司行动等正确性夹具，不是投资收益。",
+    "desktop-final：真实EXE联网、UI与进程持久化验收；人工运行时夹具及desktop_ui_verification账户不计正式策略前瞻。",
+    "D:/techno/validation/auto-full-v4-30m-2026-10-20：原1.5.1冻结工程观察，09:30:05至10:00:05，未回写新规则；61采样，权益9921.3207439、亏78.6792561、3买0卖、20日未评分。",
+    "validation/continuous/continuous-etf-audit-20261020-1040：10:32至10:37的真实前瞻采集，11个失败tick、没有开户；2只备用日线连接失败，入场前已停止并保留aborted-before-entry.json/claim。不是成功空仓，不重开这个ID。",
+    "validation/continuous/continuous-etf-audit-20261020-1100：10:46:47事前冻结11:00—11:05入场窗，10:47:53首次真实预测，采集时全19只日线截至10/19；是否最终有效入场以实际ticks为准，不冒称已完成20日。复用EXE同源DesktopHttp的冻结helper；全网/全时段稳定性仍不保证。",
+    "1100绑定1.6.0.0 EXE SHA05a2ccca7cec4dd99073284e9d903b127e435ca2b443733b77c72b01efb1956c。最终交付1.6.0.1只修桌面相同输入预测缓存，11个分析/决策/账务模块与1100快照完全相同；EXE hash分别列示，不覆盖观察或冒称其为新UI直接收益。"
+  ],
+  "reviewScriptLimit": "本次只收到两份审查文字。原tests/reproduce.js及reproduce_embedded_reports.js没有随附件提供；本项目重建8项行为并复算旧内置2025/26，不能声称运行过原审查脚本。原适用回归保留并维护，未用重建脚本替代。",
+  "modelPolicy": "保留原19只池11因子岭回归ridge-20-1-2026-09-30-28766，仅ETF执行。没有训练大语言模型，没有重训来凑本轮盈利。2023—2026已查看结果均为历史探索，未来比较须预登记，按交易日/已成熟收益区间隔离。",
+  "acceptanceLimit": "工程验收不等于证明可依靠投资。当前没有70%盈利概率或10%至20%年收益证据；须等待真实20交易日标签与合法完整退出，按同本金/费用/暴露对照净收益、回撤、换手与稳定性。"
+}

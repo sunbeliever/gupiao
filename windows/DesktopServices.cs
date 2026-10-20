@@ -37,7 +37,19 @@ namespace TechScope.Desktop {
  public sealed class DesktopStore {
   private readonly string folder;private readonly object gate=new object();
   public DesktopStore(string folder){this.folder=Path.GetFullPath(folder);Directory.CreateDirectory(this.folder);}
-  public string Read(string key){if(!DesktopPolicy.AllowedKey(key))return "";lock(gate){try{string f=Path.Combine(folder,key+".json");if(!File.Exists(f)||new FileInfo(f).Length>16*1024*1024)return "";return File.ReadAllText(f,Encoding.UTF8);}catch{return "";}}}
+  public string Read(string key){if(!DesktopPolicy.AllowedKey(key))return "";lock(gate){
+   if(key=="paper.continuous.current")return ReadContinuousAccount(Path.Combine(folder,key+".json"));
+   try{string f=Path.Combine(folder,key+".json");if(!File.Exists(f)||new FileInfo(f).Length>16*1024*1024)return "";return File.ReadAllText(f,Encoding.UTF8);}catch{return "";}
+  }}
+  static string ReadContinuousAccount(string file){
+   // A damaged/locked/oversized existing ledger must never look like a missing
+   // account and authorize replacement capital. Do not use File.Exists here:
+   // it can hide access/IO errors. Missing is the only null result.
+   try{using(var stream=new FileStream(file,FileMode.Open,FileAccess.Read,FileShare.Read)){
+    if(stream.Length>16*1024*1024)throw new InvalidDataException("持续账户文件超过读取上限；保留原账本，禁止重建本金");
+    using(var reader=new StreamReader(stream,new UTF8Encoding(false,true),true))return reader.ReadToEnd();
+   }}catch(FileNotFoundException){return null;}catch(DirectoryNotFoundException){return null;}
+  }
   public bool Write(string key,string value){if(!DesktopPolicy.AllowedKey(key)||value==null)return false;byte[] bytes=Encoding.UTF8.GetBytes(value);if(bytes.Length>8*1024*1024)return false;lock(gate){string f=Path.Combine(folder,key+".json"),tmp=f+".pending";try{using(var stream=new FileStream(tmp,FileMode.Create,FileAccess.Write,FileShare.None)){stream.Write(bytes,0,bytes.Length);stream.Flush(true);}if(File.Exists(f))File.Replace(tmp,f,null);else File.Move(tmp,f);return true;}catch{try{File.Delete(tmp);}catch{}return false;}}}
  }
 

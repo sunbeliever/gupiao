@@ -89,10 +89,10 @@ test('fees reduce interval performance and benchmarks use the same instrument po
   assert.ok(paid.strategyReturn < free.strategyReturn); assert.ok(paid.benchmarkReturn < free.benchmarkReturn);
   assert.ok(paid.notes.some(s => s.includes('幸存者'))); assert.ok(paid.notes.some(s => s.includes('每边'))); assert.ok(Number.isFinite(paid.maxDrawdown));
 });
-test('one-price or missing-volume entry remains cash and is not replaced using future outcomes', () => {
+test('explicit opening halt remains cash and is not replaced using future outcomes', () => {
   const data = histories(); const base = Analysis.evaluate(data, 2025);
   const entryDate = base.trades[0].entryDate;
-  for (const b of Object.values(data).flat()) if (b.date === entryDate) { b.high = b.low = b.open = b.close; b.volume = 0; }
+  for (const b of Object.values(data).flat()) if (b.date === entryDate) b.halted = true;
   const blocked = Analysis.evaluate(data, 2025);
   assert.ok(blocked.trades.some(t => t.entryDate === entryDate && !t.entered));
 });

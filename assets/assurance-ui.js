@@ -1,8 +1,8 @@
 (function () {
   'use strict';
-  var journal, lastPredictions, lastHistories, currentState, announcementState = {};
-  var paperSession, paperLoaded = false, lastPaperQuotes, paperError = '', startingPaper = false;
-  var smallSettings = { budget: 10000, positionLimit: 10000, minFee: 5, allocationMode: 'full' };
+  var journal, lastPredictions, lastHistories, currentState, accountResearch, announcementState = {};
+  var paperSession, legacySession, paperRestoreBlocked = false, paperLoaded = false, lastPaperQuotes, paperError = '', startingPaper = false;
+  var smallSettings = { budget: 10000, positionLimit: 10000, investableLimit:10000,maxExposure:1,maxThemeWeight:1,minFee: 5,commissionRate:.0003,slippage:.001,allocationMode: 'full' };
   var esc = function (x) { return String(x == null ? '' : x).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); };
   var pc = function (x) { return typeof x === 'number' && Number.isFinite(x) ? (x * 100).toFixed(2) + '%' : '—'; };
   var pp = function (x) { return typeof x === 'number' && Number.isFinite(x) ? (x * 100).toFixed(2) + ' pp' : '—'; };
@@ -43,10 +43,10 @@
   function smallPreview(state) {
     try {
       var p = Paper.plan({ universe: Market.UNIVERSE, quotes: state.quotes, predictions: state.predictions, budget: smallSettings.budget, positionLimit: smallSettings.positionLimit, minFee: smallSettings.minFee, allocationMode: 'full' });
-      return '<details><summary>查看小额筛选：当前' + p.selected.length + '只满足模拟条件</summary><p>先将信号后开盘起算的20日估计换算到盘中买入价，再扣模拟双边佣金与滑点进行研究排序，最多3只；不能负担、无权限或估计不足以覆盖费用时排除。这仍是原模型的研究估计，不是盘中新训练的预测，也不代表实盘优势；点击开始时联网重新计算并冻结。</p><div class="research-table-wrap"><table class="research-table"><thead><tr><th>标的</th><th>最小买入估算</th><th>当前研究检查</th></tr></thead><tbody>' + p.rows.map(function (r) { return '<tr><td>' + esc(r.name) + '<small>' + esc(r.symbol) + '</small></td><td>' + (Number.isFinite(r.minimumBuyCost) ? '¥' + r.minimumBuyCost.toFixed(2) : '—') + '</td><td>' + esc(r.selected ? '小额模拟候选；非实盘推荐' : r.reason) + '</td></tr>'; }).join('') + '</tbody></table></div><p class="footnote">本次成本门槛暂未计印花税与过户费，股票实际成本可能更高；输入的最低佣金只控制本次新模拟，不能回改旧持仓费用。免费行情可能延迟，来源过旧时不入选。</p></details>';
+      return '<details><summary>查看小额筛选：当前' + p.selected.length + '只满足模拟条件</summary><p>先将信号后开盘起算的20日估计换算到盘中买入价，再扣模拟双边佣金与滑点进行研究排序，最多3只；不能负担、无权限或估计不足以覆盖费用时排除。这仍是原模型的研究估计，不是盘中新训练的预测，也不代表实盘优势；点击开始时联网重新计算并冻结。</p><div class="research-table-wrap"><table class="research-table"><thead><tr><th>标的</th><th>最小买入估算</th><th>当前研究检查</th></tr></thead><tbody>' + p.rows.map(function (r) { return '<tr><td>' + esc(r.name) + '<small>' + esc(r.symbol) + '</small></td><td>' + (Number.isFinite(r.minimumBuyCost) ? '¥' + r.minimumBuyCost.toFixed(2) : '—') + '</td><td>' + esc(r.selected ? '小额模拟候选；非实盘推荐' : r.reason) + '</td></tr>'; }).join('') + '</tbody></table></div><p class="footnote">当前筛选与模拟共用同版费用，股票计入卖出印花税及双边过户费；输入的最低佣金只控制本次新模拟，不能回改旧持仓费用。免费行情可能延迟，来源过旧时不入选。</p></details>';
     } catch (e) { return '<p class="research-warning">小额设置有误：总预算至少1000元，单只额度100元至总预算，最低佣金0至100元。</p>'; }
   }
-  function paperMarkup(state) {
+  function legacyPaperMarkup(state) {
     var s = paperSession, history = window.RESEARCH_RESULTS && RESEARCH_RESULTS.historical;
     var html = '<div class="research-eyebrow">全额资金模拟 · 软件选择并冻结 · 无真实下单</div><h2>用1万元配置1至3只合格标的</h2><p>总本金用于组合投资，按实际入选数量均分，余款仅来自整手和手续费；无合格候选则明确保留现金。买价增加0.1%滑点，佣金按0.03%和最低额较高者估算。70%扣费后盈利机会、账户年收益10%至20%是待验证目标，当前未达到，也不能保证真实成交或盈利。</p>' +
       '<div class="small-settings"><label>虚拟投资总本金（元）<input id="small-budget" type="number" min="1000" max="10000000" step="100" value="' + smallSettings.budget + '"></label><label>单只上限（按入选数自动分配）<input id="small-position" type="number" disabled value="' + smallSettings.budget + '"></label><label>模拟单边最低佣金（元）<input id="small-min-fee" type="number" min="0" max="100" step="0.01" value="' + smallSettings.minFee + '"></label></div>' + smallPreview(state) + beginnerGuide() +
@@ -76,27 +76,52 @@
     if (live) html += '<details><summary>制作期间一小时实时实验记录</summary><p>实际开始 ' + esc(localTime(live.startedAt)) + '，观察结束 ' + esc(localTime(live.observedAt)) + '；' + live.ticks + '次采样，' + live.exceptionTicks + '次异常，' + live.cachedResponseTicks + '次全缓存；持仓价格在采样间变化 ' + live.priceChangedTicks + '次。</p><p>模型组合浮动收益 ' + pc(live.session.account.equity / live.session.budget - 1) + '，科创50 ETF对照 ' + pc(live.session.benchmark.equity / live.session.budget - 1) + '。本次只检验连通性与浮动估值，不能评定20日预测准确度。跨午间休市，来源快照时间为 ' + esc(live.lastSourceTime) + '，即使休市也可能更新，并非最近成交时间。</p></details>';
     return html;
   }
+  function continuousMarkup(state) {
+    var s=paperSession,locked=!!s,disabled=locked?' disabled':'',settings=s?s.settings:smallSettings;
+    var html='<div class="research-eyebrow">持续模拟账户 · 科技ETF执行 · 股票仅研究</div><h2>同一账户跨日持有与退出</h2><p>30分钟只检查刷新和执行，结束后持仓仍继续估值。新观察不重置本金、现金或亏损；退出规则、费用和模型在开户时冻结。当前仍未证明投资优势。</p>'+
+      '<div class="small-settings"><label>命名方案<select id="paper-preset"'+disabled+'><option value="full"'+(settings.allocationMode==='full'?' selected':'')+'>全额资金配置</option><option value="capped"'+(settings.allocationMode!=='full'?' selected':'')+'>小额学习（每只500元）</option></select></label><label>账户本金<input id="small-budget" type="number" min="1000" value="'+(s?s.budget:smallSettings.budget)+'"'+disabled+'></label><label>单只额度<input id="small-position" type="number" disabled value="'+(settings.allocationMode==='full'?(s?s.budget:smallSettings.budget):500)+'"></label><label>单边最低佣金假设<input id="small-min-fee" type="number" min="0" max="100" step="0.01" value="'+(s?s.minFee:smallSettings.minFee)+'"'+disabled+'></label></div>'+
+      '<div class="small-settings"><label>可投资额度上限<input id="paper-investable" type="number" min="0" value="'+(s?s.riskLimits.investableLimit:smallSettings.investableLimit)+'"'+disabled+'></label><label>最大仓位（%）<input id="paper-exposure" type="number" min="1" max="100" value="'+100*(s?s.riskLimits.maxExposure:smallSettings.maxExposure)+'"'+disabled+'></label><label>单主题上限（%）<input id="paper-theme" type="number" min="1" max="100" value="'+100*(s?s.riskLimits.maxThemeWeight:smallSettings.maxThemeWeight)+'"'+disabled+'></label><label>佣金率（%）<input id="paper-commission" type="number" min="0" step="0.005" value="'+100*(s?s.feeProfile.commissionRate:smallSettings.commissionRate)+'"'+disabled+'></label><label>假设滑点（%）<input id="paper-slippage" type="number" min="0" step="0.05" value="'+100*(s?s.feeProfile.slippage:smallSettings.slippage)+'"'+disabled+'></label></div>'+
+      '<p>账户本金、可投资额度、最大仓位与单主题约束分别保存，按更严格者执行；最多3只。全额方案留整手及费用余款，小额学习默认可投资1500元以内。主题按声明板块分类，未做穿透持仓。账户不会自动追加风险本金；已开户后配置冻结。最低5元为模拟假设，按实际合同填写；股票研究同版计卖出印花税及双边过户费，ETF免这两项。</p>'+
+      '<button id="start-paper" class="primary-button"'+(startingPaper||paperRestoreBlocked?' disabled':'')+'>'+(startingPaper?'正在核对完整日线…':s?'联网更新并继续同一账户':'核对数据并建立持续模拟账户')+'</button><button id="start-auto-paper" class="secondary-button"'+(startingPaper||paperRestoreBlocked||s&&!s.automation.windowEnded?' disabled':'')+'>开始30分钟工程观察（不重置资金）</button>'+
+      '<p class="footnote">每20交易日到期请求退出，另有入场成本下方8%风险阈值、冻结预测目标价退出；受T+1、停牌、涨跌停或缺价阻止时保留仓位和退出意图。只使用盘中最新价加减声明滑点的假设成交，没有盘口队列验证。拆分和现金分红调整总收益阈值，当前公司行动覆盖仍有限。关闭软件停止采集，重开恢复账本。</p>';
+    if(paperError)html+='<p class="research-warning">'+esc(paperError)+'</p>';
+    if(s){var a=s.account,o=s.automation;
+      html+='<div id="continuous-account-status"><h3>'+esc(s.accountId)+'</h3><p>工程窗口：'+(o.windowEnded?(o.done?'采集检查完成':'采集检查不完整'):'观察中')+'；投资账户：'+esc(s.investmentStatus)+'。窗口结束不代表策略通过。日线应截至 '+esc(s.entryHealth.expectedAsOf)+'；新开仓条件 '+(s.entryHealth.ok?'有效':'暂停：'+esc(s.entryHealth.reason||'交易时段限制'))+'。</p><div class="research-counts"><span><b>¥'+a.equity.toFixed(2)+'</b>总权益</span><span><b>¥'+a.cash.toFixed(2)+'</b>现金</span><span><b>¥'+a.receivableValue.toFixed(2)+'</b>应收分红</span></div><p>现金 '+a.cash.toFixed(2)+' + 市值 '+a.marketValue.toFixed(2)+' + 应收 '+a.receivableValue.toFixed(2)+' = '+a.equity.toFixed(2)+'；冻结资金 '+a.frozenFunds.toFixed(2)+'。已实现 '+a.realizedPnl.toFixed(2)+'；未实现 '+a.unrealizedPnl.toFixed(2)+'；累计费用 '+a.feesPaid.toFixed(2)+'。入场费用已计入盈亏，未退出部分未预扣未来卖费。</p>'+
+        '<div class="research-table-wrap"><table id="continuous-holdings" class="research-table"><thead><tr><th>持仓</th><th>份额 / 成本</th><th>末次价 / 估值状态</th><th>T+1可卖 / 到期</th><th>退出计划</th></tr></thead><tbody>'+a.holdings.map(function(h){return '<tr><td>'+esc(h.name)+'<small>'+esc(h.symbol)+'</small></td><td>'+h.shares+' / '+h.entryPrice.toFixed(3)+'</td><td>'+h.lastPrice.toFixed(3)+'<small>'+esc(h.lastSourceTime)+' · '+(h.stale?'过期，保留末次价':'来源有效')+'</small></td><td>'+esc(h.sellableSession)+'<small>'+esc(h.maturitySession)+'</small></td><td>'+esc(h.pendingExit?h.pendingExit.reason:'按冻结规则等待')+'</td></tr>';}).join('')+'</tbody></table></div>'+
+        '<h3>同一时点、同一1万元的预设对照</h3><div class="research-table-wrap"><table id="continuous-comparisons" class="research-table"><thead><tr><th>方案</th><th>权益 / 净盈亏</th><th>实际风险暴露</th><th>费用 / 估值完整</th></tr></thead><tbody>'+Object.keys(s.comparisons).map(function(k){var b=s.comparisons[k],names={cash:'现金',hold_etf:'科创50ETF持有',equal_weight:'科技ETF等权'};return '<tr><td>'+esc(names[k])+'</td><td>'+b.equity.toFixed(2)+' / '+(b.equity-s.budget).toFixed(2)+'</td><td>'+pc(b.equity?b.marketValue/b.equity:0)+'</td><td>'+b.feesPaid.toFixed(2)+' / '+(b.valuationComplete===false?'过期或不完整':'完整')+'</td></tr>';}).join('')+'</tbody></table></div><p>对照均使用同版费用和真实整手约束；持有/等权对照持有20交易日，不使用模型目标或8%止损，须结合各自暴露比较，不能把多留现金称为预测优势。</p>'+
+        '<details><summary>逐笔订单和被拒原因（最近80笔；完整账本保存在本机）</summary><div class="research-table-wrap"><table id="continuous-orders" class="research-table"><thead><tr><th>决策 / 来源 / 接收</th><th>账户 / 标的</th><th>订单</th><th>假设成交或拒绝原因</th></tr></thead><tbody>'+s.orders.slice(-80).map(function(r){return '<tr><td>'+esc(localTime(r.decisionAt))+'<small>'+esc(r.sourceTime)+' / '+esc(r.receivedAt)+'</small></td><td>'+esc(r.account)+' / '+esc(r.symbol)+'</td><td>'+esc(r.side)+' '+r.shares+'</td><td>'+esc(r.status)+'<small>'+esc(r.rejectionReason||r.reason)+' · '+(r.fees?'费用 '+r.fees.total.toFixed(2):'未收成交费用')+'</small></td></tr>';}).join('')+'</tbody></table></div></details><details><summary>模型、数据、规则与费用指纹</summary><p>'+esc(JSON.stringify(s.fingerprint))+'</p><p>账本链和快照校验只能辅助本机审计，不是第三方防篡改认证。</p></details></div>';
+    }
+    if(legacySession)html+='<details><summary>原版本机账户封存记录（不改写、不并入新收益）</summary><p>原本金 '+esc(legacySession.budget)+'；末次估值 '+esc(legacySession.observedAt)+'；原键 paper.current 保留。</p></details>';
+    var old=legacyPaperMarkup(state),begin=old.indexOf('<details><summary>2023年');if(begin>=0)html+='<details><summary>保留的旧独立研究与亏损记录</summary>'+old.slice(begin)+'</details>';
+    return html;
+  }
+  function paperMarkup(state){return continuousMarkup(state);}
+  function accountContext(state,model){
+    var at=new Date().toISOString();
+    if(!accountResearch||accountResearch.model!==model||accountResearch.histories!==state.histories){
+      var key=AuditIdentity.hash({model:model,histories:state.histories});
+      if(!accountResearch||accountResearch.key!==key){var predictions={};Market.UNIVERSE.forEach(function(u){predictions[u.symbol]=Analysis.predict(model,state.histories[u.symbol]||[],{publishedAt:at,firstReceivedAt:at});});accountResearch={key:key,predictions:predictions};}
+      accountResearch.model=model;accountResearch.histories=state.histories;
+    }
+    return {predictions:accountResearch.predictions,model:model,dataHealth:Market.validateHistoryPool(state.histories,{at:at}),now:at};
+  }
   async function startPaper(state, symbols, automatic) {
     if (startingPaper) return;
-    if (paperSession && paperSession.automation && !paperSession.automation.windowEnded) { paperError = '已有30分钟自动观察尚未结束，保留原模型和交易记录。'; window.TechScopeUI.switchTab('model'); return; }
+    if(paperRestoreBlocked){paperError='本机账户校验失败，已保留原记录；禁止重建本金覆盖。';return;}
+    if(symbols&&symbols.length){paperError='本阶段仅由冻结策略执行科技ETF；个股参数和权限筛选继续供研究。';window.TechScopeUI.switchTab('model');return;}
     if (state.busy || state.training || state.evaluating) { paperError = '请等待当前同步、训练或回测结束，再建立模拟持仓。'; window.TechScopeUI.switchTab('model'); return; }
     startingPaper = true; paperError = ''; window.TechScopeUI.switchTab('model');
     try {
       var synced = await window.TechScopeUI.refresh(false);
       if (synced !== true) throw new Error('完整日线同步未成功；未建立新的模拟持仓');
+      var dataHealth=Market.validateHistoryPool(state.histories,{at:new Date().toISOString()});
+      if(!dataHealth.ok)throw new Error('日线未达到交易所最近完整交易日 '+dataHealth.expectedAsOf+'；仅保留采集，不放行入场');
       var freshQuotes = await Market.quotes();
       if (Market.UNIVERSE.some(function (u) { var q = freshQuotes[u.symbol]; return !q || q.cached || Market.isStale(q); })) throw new Error('研究池报价不完整或过旧；不把数据失败记录成策略空仓');
-      var next = (automatic ? Paper.startAuto : Paper.start)({ universe: Market.UNIVERSE, quotes: freshQuotes, predictions: state.predictions, model: state.model, budget: smallSettings.budget, positionLimit: smallSettings.budget, minFee: smallSettings.minFee, profile: 'beginner', allocationMode: 'full', symbols: symbols });
-      var dataDates = Object.keys(state.histories).map(function (s) { var bars = state.histories[s]; return bars && bars.length ? bars[bars.length - 1].date : ''; }).sort(), latest = dataDates.pop();
-      var today = new Date(Date.now() + 8 * 3600000).toISOString().slice(0, 10);
-      if (!latest || Date.now() - Date.parse(latest + 'T15:00:00+08:00') > 12 * 86400000 || next.account.holdings.some(function (h) {
-        var cache = Market.read('hist_' + h.symbol), p = state.predictions[h.symbol];
-        return !cache || cache.fetchedDate !== today || cache.errors && cache.errors.length || !p || p.asOf !== latest;
-      })) throw new Error('所选标的完整日线尚未成功更新到共同日期，未建立新的模拟持仓');
-      if (Market.UNIVERSE.some(function (u) { var cache = Market.read('hist_' + u.symbol), p = state.predictions[u.symbol]; return !cache || cache.fetchedDate !== today || cache.errors && cache.errors.length || !p || p.asOf !== latest; })) throw new Error('研究池日线更新不完整；不把数据失败记录成策略空仓');
-      var archive = Market.read('paper.archive') || [];
-      if (paperSession && !Market.write('paper.archive', archive.concat(paperSession).slice(-10))) throw new Error('旧模拟记录归档失败，未新建组合');
-      if (!Market.write('paper.current', next)) throw new Error('模拟持仓保存失败');
+      var ctx=accountContext(state,paperSession?paperSession.model:state.model),next;
+      if(paperSession){next=Paper.stepAuto(paperSession,freshQuotes,ctx.now,ctx);if(automatic&&next.automation.windowEnded)next=Paper.observe(next,{now:ctx.now});}
+      else next=Paper.startContinuous({universe:Market.UNIVERSE,quotes:freshQuotes,predictions:ctx.predictions,model:state.model,dataHealth:dataHealth,historyHash:typeof AuditIdentity!=='undefined'?AuditIdentity.hash(state.histories):null,budget:smallSettings.budget,positionLimit:smallSettings.allocationMode==='full'?smallSettings.budget:500,minFee:smallSettings.minFee,feeProfile:{commissionRate:smallSettings.commissionRate,slippage:smallSettings.slippage},riskLimits:{investableLimit:smallSettings.investableLimit,maxExposure:smallSettings.maxExposure,maxThemeWeight:smallSettings.maxThemeWeight,maxPositions:3},profile:'beginner',allocationMode:smallSettings.allocationMode,executionMode:Market.read('app.verification')?'desktop_ui_verification':'continuous_paper',now:ctx.now});
+      if (!Market.write('paper.continuous.current', next)) throw new Error('持续账本保存失败；未替换原已存账户');
       paperSession = next; state.quotes = freshQuotes; lastPaperQuotes = freshQuotes;
       state.autoSync = true; Market.write('ui.autoSync', true); Market.setBackground(true);
     } catch (e) { var msg = String(e.message); paperError = '模拟未建立：' + (msg.includes('continuous') ? '需要至少还剩30分钟的连续交易时段；当前不能开始。' : msg.includes('trading') ? '需要在交易时段操作。' : msg.includes('fresh') ? '没有足够新的源报价，请检查网络后重试。' : msg.includes('No positive') ? '当前没有可用的正预测或选定标的。' : msg.includes('insufficient') ? '虚拟现金不足以买入最小股数。' : msg); }
@@ -106,7 +131,9 @@
     var node = insert(document.getElementById('page-model'), 'research-paper', paperMarkup(state));
     node.querySelector('#start-paper').onclick = function () { startPaper(state); };
     node.querySelector('#start-auto-paper').onclick = function () { startPaper(state, undefined, true); };
-    [['#small-budget', 'budget'], ['#small-position', 'positionLimit'], ['#small-min-fee', 'minFee']].forEach(function (pair) { node.querySelector(pair[0]).onchange = function () { smallSettings[pair[1]] = Number(this.value); try { Paper.plan(Object.assign({ universe: [], quotes: {}, predictions: {} }, smallSettings)); if (!Market.write('paper.settings', smallSettings)) paperError = '小额设置未能保存，请检查磁盘空间'; } catch (e) { paperError = '设置超出范围，尚未保存；请修正后再开始。'; } paperCard(state); }; });
+    node.querySelector('#paper-preset').onchange=function(){if(paperSession)return;smallSettings.allocationMode=this.value;smallSettings.positionLimit=this.value==='full'?smallSettings.budget:500;smallSettings.investableLimit=this.value==='full'?smallSettings.budget:Math.min(1500,smallSettings.budget);Market.write('paper.continuous.settings',smallSettings);paperCard(state);};
+    [['#paper-investable','investableLimit',1],['#paper-exposure','maxExposure',100],['#paper-theme','maxThemeWeight',100],['#paper-commission','commissionRate',100],['#paper-slippage','slippage',100]].forEach(function(pair){node.querySelector(pair[0]).onchange=function(){if(paperSession)return;var prior=smallSettings[pair[1]];smallSettings[pair[1]]=Number(this.value)/pair[2];if(!Number.isFinite(smallSettings[pair[1]])||smallSettings[pair[1]]<0||pair[1]==='investableLimit'&&smallSettings[pair[1]]>smallSettings.budget||/Weight|Exposure/.test(pair[1])&&(smallSettings[pair[1]]<=0||smallSettings[pair[1]]>1)){smallSettings[pair[1]]=prior;paperError='约束超出范围，保留原设置。';}Market.write('paper.continuous.settings',smallSettings);paperCard(state);};});
+    [['#small-budget', 'budget'], ['#small-min-fee', 'minFee']].forEach(function (pair) { node.querySelector(pair[0]).onchange = function () { if(paperSession)return;smallSettings[pair[1]] = Number(this.value);smallSettings.positionLimit=smallSettings.allocationMode==='full'?smallSettings.budget:Math.min(500,smallSettings.budget);smallSettings.investableLimit=Math.min(smallSettings.investableLimit,smallSettings.budget);try { Paper.plan(Object.assign({ universe: [], quotes: {}, predictions: {} }, smallSettings)); if (!Market.write('paper.continuous.settings', smallSettings)) paperError = '设置未能保存，请检查磁盘空间'; } catch (e) { paperError = '设置超出范围，尚未保存；请修正后再开始。'; } paperCard(state); }; });
   }
   function costOptimizationCard() {
     var c=window.RESEARCH_RESULTS&&RESEARCH_RESULTS.costOptimization;if(!c)return '';
@@ -115,7 +142,7 @@
   }
   function fullCapitalCard() {
     var f=window.RESEARCH_RESULTS&&RESEARCH_RESULTS.fullCapitalOptimization;if(!f)return '';
-    return '<div class="research-eyebrow">已按总投资本金1万元重新训练与检验</div><h2>全额本金方案与70%目标</h2><p>有合格候选时，全部可投资现金按实际1至3只分配，仅留整手和费用余款；没有合格候选则明确等待。目标为20个交易日扣费后约70%盈利机会、总账户年收益10%至20%，当前没有证明达到。</p><div class="research-table-wrap"><table id="full-capital-table" class="research-table"><thead><tr><th>年份 / 历史方法</th><th>1万元净盈亏</th><th>账户收益</th><th>最大回撤</th><th>平均仓位</th><th>完整交易 / 盈利占比</th></tr></thead><tbody>'+f.rows.map(function(r){return '<tr><td>'+r.year+' · '+(r.model==='trend-baseline'?'趋势候选':'11因子对照')+'</td><td>¥'+r.netPnl.toFixed(2)+'</td><td>'+pc(r.netReturn)+'</td><td>'+pc(r.maxDrawdown)+'</td><td>'+pc(r.averageExposure)+'</td><td>'+r.closedPositions+' / '+pc(r.winRate)+'</td></tr>';}).join('')+'</tbody></table></div><p class="research-warning">趋势候选历史收益较好，但单笔盈利占比未稳定达到70%，曾有约20%回撤；概率分类器也未通过后续年份校准，所以不给当前标的标注可靠的70%机会，也未替换部署预测模型。</p><details><summary>实际训练的盈利概率模型检验</summary><div class="research-table-wrap"><table id="profit-probability-table" class="research-table"><thead><tr><th>年份 / 模型</th><th>声称≥70%的已到期标签</th><th>实际盈利占比</th><th>单标的不重叠案例 / 盈利占比</th><th>概率误差 / 常数对照（越低越好）</th></tr></thead><tbody>'+f.probability.map(function(p){return '<tr><td>'+p.year+' · '+p.model+'</td><td>'+p.thresholdLabels+'</td><td>'+pc(p.actualWinFraction)+'</td><td>'+p.nonoverlapCases+' / '+pc(p.nonoverlapWinFraction)+'</td><td>'+p.brier.toFixed(3)+' / '+p.priorBrier.toFixed(3)+'</td></tr>';}).join('')+'</tbody></table></div><p>只用更早年份训练、前一年校准，再冻结检验；相邻日期标签会重叠，不是独立胜率样本，ETF之间也相关。0.7输出未被证明等于70%真实赚钱概率。</p></details><p class="footnote">这是6只科技ETF、完整20日持仓的历史研究；有信号时接近全额投入，等待期及年末停止新开仓使平均仓位低于100%。按真实开盘价、整手、双边费用与核实的分红拆分。各年独立1万元；2026仅截至9月30日，不是全年或年化成绩。历史年份已被研究，不能作为新盲测。11因子为同6只ETF重训对照，不是原19只池的部署权重；上方历史趋势也不是当前部署预测模型。现有30分钟模拟只验证执行与估值，不评分20日准确率。</p>';
+    return '<div class="research-eyebrow">保留的6只ETF历史探索 · 未部署 · 已查看年份</div><h2>历史全额本金研究（不代表当前软件收益）</h2><p>有合格候选时，全部可投资现金按实际1至3只分配，仅留整手和费用余款；没有合格候选则明确等待。目标为20个交易日扣费后约70%盈利机会、总账户年收益10%至20%，当前没有证明达到。</p><div class="research-table-wrap"><table id="full-capital-table" class="research-table"><thead><tr><th>年份 / 历史方法</th><th>1万元净盈亏</th><th>账户收益</th><th>最大回撤</th><th>平均仓位</th><th>完整交易 / 盈利占比</th></tr></thead><tbody>'+f.rows.map(function(r){return '<tr><td>'+r.year+' · '+(r.model==='trend-baseline'?'趋势候选':'11因子对照')+'</td><td>¥'+r.netPnl.toFixed(2)+'</td><td>'+pc(r.netReturn)+'</td><td>'+pc(r.maxDrawdown)+'</td><td>'+pc(r.averageExposure)+'</td><td>'+r.closedPositions+' / '+pc(r.winRate)+'</td></tr>';}).join('')+'</tbody></table></div><p class="research-warning">趋势候选历史收益较好，但单笔盈利占比未稳定达到70%，曾有约20%回撤；概率分类器也未通过后续年份校准，所以不给当前标的标注可靠的70%机会，也未替换部署预测模型。</p><details><summary>实际训练的盈利概率模型检验</summary><div class="research-table-wrap"><table id="profit-probability-table" class="research-table"><thead><tr><th>年份 / 模型</th><th>声称≥70%的已到期标签</th><th>实际盈利占比</th><th>单标的不重叠案例 / 盈利占比</th><th>概率误差 / 常数对照（越低越好）</th></tr></thead><tbody>'+f.probability.map(function(p){return '<tr><td>'+p.year+' · '+p.model+'</td><td>'+p.thresholdLabels+'</td><td>'+pc(p.actualWinFraction)+'</td><td>'+p.nonoverlapCases+' / '+pc(p.nonoverlapWinFraction)+'</td><td>'+p.brier.toFixed(3)+' / '+p.priorBrier.toFixed(3)+'</td></tr>';}).join('')+'</tbody></table></div><p>只用更早年份训练、前一年校准，再冻结检验；相邻日期标签会重叠，不是独立胜率样本，ETF之间也相关。0.7输出未被证明等于70%真实赚钱概率。</p></details><p class="footnote">这是6只科技ETF、完整20日持仓的历史研究；有信号时接近全额投入，等待期及年末停止新开仓使平均仓位低于100%。按真实开盘价、整手、双边费用与核实的分红拆分。各年独立1万元；2026仅截至9月30日，不是全年或年化成绩。历史年份已被研究，不能作为新盲测。11因子为同6只ETF重训对照，不是原19只池的部署权重；上方历史趋势也不是当前部署预测模型。现有30分钟模拟只验证执行与估值，不评分20日准确率。</p>';
   }
   function journalCard() {
     var s = journal.summary(), list = journal.records().slice(-12).reverse();
@@ -167,11 +194,9 @@
     currentState = state;
     if (!state.initialized) return;
     if (!journal) journal = ForecastJournal.create({ read: Market.read, write: Market.write }, Analysis);
-    if (!paperLoaded) { paperSession = Market.read('paper.current'); var savedSettings = Market.read('paper.settings'); if (savedSettings && Number.isFinite(savedSettings.budget) && Number.isFinite(savedSettings.minFee)) smallSettings = {budget:savedSettings.budget,positionLimit:savedSettings.budget,minFee:savedSettings.minFee,allocationMode:'full'}; paperLoaded = true; }
+    if (!paperLoaded) { legacySession=Market.read('paper.current');var stored=Market.readState('paper.continuous.current');if(stored.status!=='missing')try{if(stored.status!=='valid')throw Error(stored.status);paperSession=Paper.resume(stored.value);}catch(e){paperRestoreBlocked=true;paperError='持续账户无法读取或校验失败，原始数据保留，禁止重建本金覆盖。请先备份并检查本机账本。';}var savedSettings=Market.read('paper.continuous.settings');if(savedSettings&&Number.isFinite(savedSettings.budget)&&Number.isFinite(savedSettings.minFee))smallSettings=Object.assign({},smallSettings,savedSettings,{investableLimit:Math.min(savedSettings.investableLimit===undefined?smallSettings.investableLimit:savedSettings.investableLimit,savedSettings.budget)});paperLoaded=true; }
     if (paperSession && lastPaperQuotes !== state.quotes) {
-      var marked = paperSession.automation ? Paper.stepAuto(paperSession, state.quotes) : Paper.mark(paperSession, state.quotes);
-      if (Market.write('paper.current', marked)) { paperSession = marked; lastPaperQuotes = state.quotes; }
-      else paperError = '最新模拟估值未能保存，保留上次已存记录。';
+      try{var ctx=accountContext(state,paperSession.model),marked=Paper.stepAuto(paperSession,state.quotes,ctx.now,ctx);if(Market.write('paper.continuous.current',marked)){paperSession=marked;lastPaperQuotes=state.quotes;}else paperError='持续账本未能保存，保留上次已存记录，不重建本金。';}catch(e){paperError='账户更新暂停：'+String(e.message);}
     }
     if (lastPredictions !== state.predictions || lastHistories !== state.histories) {
       var result = journal.refresh({ histories: state.histories, predictions: state.predictions, model: state.model });
@@ -179,6 +204,10 @@
     }
     if (state.tab === 'observe') { var card = insert(document.getElementById('page-observe'), 'research-readiness', readiness(state)); card.querySelector('#open-paper').onclick = function () { window.TechScopeUI.switchTab('model'); }; }
     else if (state.tab === 'detail') showAnnouncements(state);
+    else if(state.tab==='news'&&typeof NewsFacts!=='undefined'){
+      var seen=Market.read('news_archive')||[],facts=(state.news||[]).slice(0,6).map(function(item){var prior=seen.find(function(n){return n.url===item.url;});return NewsFacts.analyze(Object.assign({},item,{firstSeenAt:prior?prior.firstSeenAt:item.firstSeenAt}));});
+      insert(document.getElementById('page-news'),'research-facts','<div class="research-eyebrow">原文事实与风险 · 未输入价格预测</div><h2>有来源的资讯核对</h2><p>当前覆盖标题字面信息，新闻全文、财报正文、宏观解释与大模型提取均未接入；不据此补写历史推荐原因。</p>'+facts.map(function(f){return '<article><strong>'+esc(f.title)+'</strong><p>披露 '+esc(f.publishedAt||'未提供')+'；首次接收 '+esc(f.firstSeenAt||'未记录')+'；原文覆盖 '+esc(f.coverage)+'</p><p>'+esc(f.originalText)+'</p><p>字面风险：'+esc(JSON.stringify(f.risks))+'</p></article>';}).join(''));
+    }
     else if (state.tab === 'backtest') insert(document.getElementById('page-backtest'), 'research-baselines', '<div class="research-eyebrow">预测能力对照</div><h2>比“始终上涨”更好吗？</h2>' + compare(state.reports[state.year]) + '<p class="footnote">回顾性结果仍未证明可实盘使用。即便历史收益很高，也受固定研究池幸存者偏差、市场行情和成交模拟假设影响。</p>');
     else if (state.tab === 'model') {
       insert(document.getElementById('page-model'), 'research-journal', journalCard());
@@ -187,9 +216,9 @@
         mr.querySelectorAll('[data-method-source]').forEach(function (button) { button.onclick = function () { var item = review.methods[Number(button.dataset.methodSource)]; if (item) Market.openUrl(item.source); }; });
         mr.querySelectorAll('[data-budget-source]').forEach(function (button) { button.onclick = function () { var item = review.costs[button.dataset.budgetSource]; if (item) Market.openUrl(item.source); }; });
       }
-      paperCard(state);
       var optimized=costOptimizationCard();if(optimized)insert(document.getElementById('page-model'),'research-cost-optimization','<details><summary>旧500元单笔方案：账务修复与候选训练记录</summary>'+optimized+'</details>');
-      var full=fullCapitalCard();if(full)insert(document.getElementById('page-model'),'research-full-capital',full);
+      var full=fullCapitalCard();if(full)insert(document.getElementById('page-model'),'research-full-capital','<details><summary>历史6只ETF研究（非当前部署策略，非前瞻收益）</summary>'+full+'</details>');
+      paperCard(state);
     }
   }
   window.ResearchUI = { render: render, summary: function () { return journal ? journal.summary() : null; } };

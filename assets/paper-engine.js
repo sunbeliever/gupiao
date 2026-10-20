@@ -1,19 +1,31 @@
 (function(root,factory){if(typeof module==='object'&&module.exports)module.exports=factory(root);else root.Paper=factory(root);})(typeof globalThis!=='undefined'?globalThis:this,function(root){
  'use strict';
  const Corporate=typeof module==='object'&&module.exports?require('./corporate-actions.js'):root.CorporateActions,corporateData=typeof module==='object'&&module.exports?require('./corporate-events.js'):root.CorporateEvents;
+ const Calendar=typeof module==='object'&&module.exports?require('./trading-calendar.js'):root.TradingCalendar,Fee=typeof module==='object'&&module.exports?require('./fee-profile.js'):root.FeeProfile,Continuous=typeof module==='object'&&module.exports?require('./paper-account.js'):root.PaperAccount;
  function copy(x){return JSON.parse(JSON.stringify(x));}
- function sourceMs(q){return q&&Date.parse(String(q.sourceTime).replace(' ','T')+'+08:00');}
- function trading(now){const d=new Date(now+8*3600000),m=d.getUTCHours()*60+d.getUTCMinutes();return d.getUTCDay()>0&&d.getUTCDay()<6&&(m>=570&&m<690||m>=780&&m<900);}
- function fresh(q,now){const t=sourceMs(q);return q&&Number.isFinite(q.price)&&q.price>0&&!q.cached&&Number.isFinite(t)&&now-t>=-30000&&now-t<=180000;}
+ function sourceMs(q){if(!q?.sourceTime)return NaN;const value=String(q.sourceTime).replace(' ','T');return Date.parse(/[zZ]|[+-]\d{2}:\d{2}$/.test(value)?value:value+'+08:00');}
+ function trading(now){try{return Calendar.isTradingTime(now);}catch(e){return false;}}
+ function fresh(q,now){const t=sourceMs(q),received=q?.receivedAt?Date.parse(q.receivedAt):now;return !!(q&&Number.isFinite(q.price)&&q.price>0&&!q.cached&&Number.isFinite(t)&&Number.isFinite(received)&&received<=now&&now-t>=-30000&&now-t<=180000&&trading(t));}
  function recalc(account){account.equity=account.cash+account.holdings.reduce((n,h)=>n+h.shares*h.lastPrice,0)+(Corporate?Corporate.receivableValue(account):0);return account;}
- function costs(u,value,minFee,side,full){
-  const commission=Math.max(minFee,value*.0003),transferFee=full&&u.type==='stock'?value*.00001:0,tax=full&&u.type==='stock'&&side==='sell'?value*.0005:0;
-  return {commission,transferFee,tax,total:commission+transferFee+tax};
+ function costs(u,value,minFee,side,full,profile){
+  return Fee.costs(u,value,side,Fee.resolve({minFee,feeProfile:profile}));
  }
- function size(u,q,allocation,minFee,full){
-  const entry=q.price*1.001,minimum=u.symbol.startsWith('sh688')?200:100;let shares=Math.floor((allocation-minFee)/entry/100)*100;
-  while(shares>=minimum&&shares*entry+costs(u,shares*entry,minFee,'buy',full).total>allocation)shares-=100;
-  return {entry,minimum,shares:shares>=minimum?shares:0,fee:shares>=minimum?costs(u,shares*entry,minFee,'buy',full).total:0};
+ function size(u,q,allocation,minFee,full,profile){
+  const fees=Fee.resolve({minFee,feeProfile:profile}),entry=Fee.executionPrice(q.price,'buy',fees),minimum=u.symbol.startsWith('sh688')?200:100;let shares=Math.floor((allocation-minFee)/entry/100)*100;
+  while(shares>=minimum&&shares*entry+Fee.costs(u,shares*entry,'buy',fees).total>allocation)shares-=100;
+  return {entry,minimum,shares:shares>=minimum?shares:0,fee:shares>=minimum?Fee.costs(u,shares*entry,'buy',fees).total:0};
+ }
+ function bindSignal(p,q,at){
+  if(!p?.asOf&&!p?.signalDate)throw new Error('signal_session');
+  const signalDate=p.signalDate||p.asOf,entrySession=Calendar.nextSession(signalDate),today=Calendar.sessionOf(at),horizon=p.horizon===undefined?20:p.horizon;
+  if(signalDate!==p.asOf&&p.asOf||entrySession!==today||String(q?.sourceTime).slice(0,10)!==entrySession||p.entrySession&&p.entrySession!==entrySession)throw new Error('signal_session');
+  if(!Number.isInteger(horizon)||horizon!==20)throw new Error('signal_horizon');
+  if(p.publishedAt&&(!Number.isFinite(Date.parse(p.publishedAt))||Date.parse(p.publishedAt)>at))throw new Error('signal_unpublished');
+  if(p.firstReceivedAt!==null&&p.firstReceivedAt!==undefined&&(!Number.isFinite(Date.parse(p.firstReceivedAt))||Date.parse(p.firstReceivedAt)>at))throw new Error('signal_unreceived');
+  const maturitySession=Calendar.maturitySession(entrySession,horizon),referenceOpen=q?.open;
+  if(!Number.isFinite(referenceOpen)||referenceOpen<=0)throw new Error('reference_open');
+  if(p.referenceOpen!==null&&p.referenceOpen!==undefined&&Math.abs(p.referenceOpen-referenceOpen)>1e-8||p.maturitySession&&p.maturitySession!==maturitySession)throw new Error('signal_reference');
+  return {signalDate,entrySession,referenceOpen,horizon,maturitySession,publishedAt:p.publishedAt||null,firstReceivedAt:p.firstReceivedAt||null};
  }
  function plan(input){
   if(input.allocationMode==='full'){
@@ -22,31 +34,29 @@
    let result;for(let k=max;k>=1;k--){result=plan({...input,allocationMode:undefined,positionLimit:budget,maxPositions:k});if(result.selected.length===k)break;}
    return {...result,allocationMode:'full',allocationCount:result.selected.length,maxPositions:max,positionLimit:budget};
   }
-  const now=input.now===undefined?Date.now():Date.parse(input.now),budget=input.budget===undefined?10000:input.budget,positionLimit=input.positionLimit===undefined?500:input.positionLimit,minFee=input.minFee===undefined?5:input.minFee,maxPositions=input.maxPositions===undefined?3:input.maxPositions;
+  const now=input.now===undefined?Date.now():typeof input.now==='number'?input.now:Date.parse(input.now),budget=input.budget===undefined?10000:input.budget,positionLimit=input.positionLimit===undefined?500:input.positionLimit,feeProfile=Fee.resolve(input),minFee=feeProfile.minFee,maxPositions=input.maxPositions===undefined?3:input.maxPositions;
   if(!Number.isFinite(now)||!Number.isFinite(budget)||budget<(input.remainingAllocation===true?100:1000)||budget>10000000||!Number.isFinite(positionLimit)||positionLimit<100||positionLimit>budget||!Number.isFinite(minFee)||minFee<0||minFee>100||!Number.isInteger(maxPositions)||maxPositions<1||maxPositions>3)throw new Error('Invalid small-budget settings');
   const rows=(input.universe||[]).map(u=>{
    const q=(input.quotes||{})[u.symbol],p=(input.predictions||{})[u.symbol],r={symbol:u.symbol,name:u.name,type:u.type,expectedReturn:p?.expectedReturn??null,signalDate:p?.asOf||null,sourceTime:q?.sourceTime||null,price:q?.price??null,reasonCode:null,reason:null};
    const reject=(code,reason)=>({...r,reasonCode:code,reason,selected:false});
    if(u.type==='stock'&&/^(sh688|sz30)/.test(u.symbol))return reject('permission','新手模式未启用科创板 / 创业板个股权限');
    if(!fresh(q,now))return reject('quote','缺少足够新的来源报价');
-   const z=size(u,q,Math.min(positionLimit,budget/maxPositions),minFee,input.includeStockTaxes);r.minimumShares=z.minimum;r.minimumBuyCost=z.minimum*z.entry+costs(u,z.minimum*z.entry,minFee,'buy',input.includeStockTaxes).total;
+   const z=size(u,q,Math.min(positionLimit,budget/maxPositions),minFee,true,feeProfile);r.minimumShares=z.minimum;r.minimumBuyCost=z.minimum*z.entry+costs(u,z.minimum*z.entry,minFee,'buy',true,feeProfile).total;
    if(!z.shares)return reject('minimum_lot','单只额度不足以买入最小股数并支付费用');
    r.shares=z.shares;r.entryPrice=z.entry;r.entryFee=z.fee;r.buyCost=z.shares*z.entry+z.fee;
-   const flatSale=z.shares*q.price*.999;r.roundTripFrictionRate=(r.buyCost-flatSale+costs(u,flatSale,minFee,'sell',input.includeStockTaxes).total)/r.buyCost;
+   const flatSale=z.shares*Fee.executionPrice(q.price,'sell',feeProfile);r.roundTripFrictionRate=(r.buyCost-flatSale+costs(u,flatSale,minFee,'sell',true,feeProfile).total)/r.buyCost;
    if(!p?.eligible||!Number.isFinite(p.expectedReturn)||p.expectedReturn<=0)return reject('forecast','没有可用的正收益研究预测');
-   const quoteDate=String(q.sourceTime).slice(0,10);
-   if(!p.asOf||p.asOf>=quoteDate)return reject('forecast_date','尚无已完成信号日的次日开盘参考');
-   if(!Number.isFinite(q.open)||q.open<=0)return reject('reference_open','缺少当前交易日开盘价，不能换算盘中起点');
+   try{Object.assign(r,bindSignal(p,q,now));}catch(e){return reject(e.message,'预测起点、交易日历或到期日不匹配；拒绝平移旧预测');}
    r.referenceEntryOpen=q.open;r.referenceSignalDate=p.asOf;
    // The forecast starts at the signal-next-session open, not at the later paper entry.
-   const estimatedSale=z.shares*q.open*(1+p.expectedReturn)*.999;r.estimatedNetReturn=(estimatedSale-costs(u,estimatedSale,minFee,'sell',input.includeStockTaxes).total-r.buyCost)/r.buyCost;
+   const estimatedSale=z.shares*Fee.executionPrice(r.referenceOpen*(1+p.expectedReturn),'sell',feeProfile);r.estimatedNetReturn=(estimatedSale-costs(u,estimatedSale,minFee,'sell',true,feeProfile).total-r.buyCost)/r.buyCost;
    if(r.estimatedNetReturn<=0)return reject('cost','研究收益估计不足以覆盖模拟双边佣金与滑点');
    if(Array.isArray(input.symbols)&&input.symbols.length&&!input.symbols.includes(u.symbol))return reject('not_selected','本次仅核查手动指定标的');
    return {...r,reason:'符合小额模拟条件；不代表已验证的买入建议',selected:false};
   });
   const selected=rows.filter(r=>!r.reasonCode).sort((a,b)=>b.estimatedNetReturn-a.estimatedNetReturn||a.symbol.localeCompare(b.symbol)).slice(0,maxPositions);
   for(const r of rows){r.selected=selected.includes(r);if(!r.reasonCode&&!r.selected){r.reasonCode='rank';r.reason='通过额度检查，未进入本次研究排名前三';}}
-  return {schema:1,profile:'beginner',budget,positionLimit,maxPositions,minFee,feeRate:.0003,slippage:.001,generatedAt:new Date(now).toISOString(),rows,selected,note:input.includeStockTaxes?'Declared paper costs include stock sell stamp duty 0.05% and stock transfer 0.001% per side; ETF secondary trades have neither. Commission is an assumption. No order-book fills.':'Model-selected paper experiment only. Cost estimates exclude taxes and transfer fees; use actual broker terms. Cash is valid when no candidate passes. ETF theme overlap is not full diversification.'};
+  return {schema:2,profile:'beginner',budget,positionLimit,maxPositions,minFee,feeRate:feeProfile.commissionRate,slippage:feeProfile.slippage,feeProfile,generatedAt:new Date(now).toISOString(),rows,selected,note:'Unified versioned fees include stock taxes/transfer. Minimum5 is a contract assumption, not a guaranteed broker tariff. Hypothetical price execution only.'};
  }
  function start(input){
   const now=input.now===undefined?Date.now():Date.parse(input.now),budget=input.budget===undefined?(input.profile==='beginner'?10000:100000):input.budget;
@@ -59,15 +69,15 @@
   if(!small&&!chosen.length)throw new Error('No positive model forecasts or valid selected symbols');
   if(!small&&!chosen.some(u=>fresh(quotes[u.symbol],now)))throw new Error('No eligible fresh quotes for paper entry');
   const benchmark=universe.find(u=>u.symbol==='sh588000');if(!benchmark||!fresh(quotes[benchmark.symbol],now))throw new Error('No fresh benchmark quote');
-  const feeRate=.0003,minFee=small?selectionPlan.minFee:5,slippage=.001;
+  const feeProfile=Fee.resolve(input),feeRate=feeProfile.commissionRate,minFee=feeProfile.minFee,slippage=feeProfile.slippage;
   function account(items,limit,rows){const a={cash:budget,holdings:[]};const allocation=limit===undefined?budget/items.length:limit;
-   for(const u of items){const q=quotes[u.symbol];if(!fresh(q,now))continue;const row=rows?.find(r=>r.symbol===u.symbol),z=row?{entry:row.entryPrice,shares:row.shares,fee:row.entryFee}:size(u,q,allocation,minFee,input.includeStockTaxes),entry=z.entry,shares=z.shares,fee=z.fee;
+   for(const u of items){const q=quotes[u.symbol];if(!fresh(q,now))continue;const row=rows?.find(r=>r.symbol===u.symbol),z=row?{entry:row.entryPrice,shares:row.shares,fee:row.entryFee}:size(u,q,allocation,minFee,true,feeProfile),entry=z.entry,shares=z.shares,fee=z.fee;
     if(!shares)continue;a.cash-=shares*entry+fee;
     a.holdings.push({symbol:u.symbol,name:u.name,shares,entryPrice:entry,entryFee:fee,entrySourceTime:q.sourceTime,lastPrice:q.price,lastSourceTime:q.sourceTime,predicted20DayReturn:pred[u.symbol]?.expectedReturn??null,signalDate:pred[u.symbol]?.asOf||null});
    }return recalc(a);
   }
   const a=account(chosen,small?Math.min(selectionPlan.positionLimit,budget/selectionPlan.maxPositions):undefined,small?selectionPlan.selected:undefined);if(!small&&!a.holdings.length)throw new Error('Paper cash insufficient for minimum lots');
-  return {schema:1,budget,selection:small?(manual?'beginner_manual':'beginner_model_experiment'):manual?'manual':'model_experiment',selectionPlan:selectionPlan?copy(selectionPlan):null,startedAt:new Date(now).toISOString(),observedAt:new Date(now).toISOString(),model:copy(input.model||{}),feeRate,minFee,slippage,
+  return {schema:1,budget,feeProfile,executionMode:'fixed_holding_research',selection:small?(manual?'beginner_manual':'beginner_model_experiment'):manual?'manual':'model_experiment',selectionPlan:selectionPlan?copy(selectionPlan):null,startedAt:new Date(now).toISOString(),observedAt:new Date(now).toISOString(),model:copy(input.model||{}),feeRate,minFee,slippage,
    account:a,benchmark:account([benchmark]),horizonAccuracy:null,realizedPnl:0,curve:[],note:'Last-price hypothetical buys with adverse slippage and entry fees; unrealized valuation only, no broker fills. A-shares are not sold in this intraday observation.'};
  }
  function mark(session,quotes,at){
@@ -79,7 +89,7 @@
   }
   s.curve.push({observedAt:s.observedAt,equity:s.account.equity,benchmarkEquity:s.benchmark.equity});s.curve=s.curve.slice(-2000);return s;
  }
- function startAuto(input){
+ function legacyStartAuto(input){
   if(input.symbols&&input.symbols.length)throw new Error('Automatic paper mode cannot accept manual symbols');
   const now=input.now===undefined?Date.now():Date.parse(input.now),cn=new Date(now+8*3600000),minute=cn.getUTCHours()*60+cn.getUTCMinutes()+cn.getUTCSeconds()/60;
   if(!trading(now)||!((minute>=570&&minute<=660)||(minute>=780&&minute<=870)))throw new Error('Thirty minutes of continuous trading are required');
@@ -96,7 +106,7 @@
   s.note='Automatic paper experiment, frozen model and forecasts. Recheck the same entry plan; exit signal when price reaches the frozen 20-day estimated target, subject to T+1. No forced sale at thirty minutes. Last-price hypothetical execution, not broker fills. Cash is not prediction success.';
   return s;
  }
- function stepAuto(session,quotes,at){
+ function legacyStepAuto(session,quotes,at){
   if(!session.automation)throw new Error('Not an automatic paper session');
   if(session.automation.windowEnded)return copy(session);
   const now=at===undefined?Date.now():Date.parse(at),previous=Date.parse(session.automation.lastEvaluatedAt);
@@ -149,5 +159,8 @@
   if(s.curve.length)s.curve[s.curve.length-1].equity=s.account.equity;
   return s;
  }
- return {start,mark,trading,sourceMs,plan,startAuto,stepAuto};
+ const core={plan,size,sourceMs,fresh,trading,bindSignal};
+ function startAuto(input){return Continuous.create(input,core);}
+ function stepAuto(session,quotes,at,context){return Continuous.step(session,quotes,at,context||{},core);}
+ return {start,mark,trading,sourceMs,plan,bindSignal,startAuto,stepAuto,startContinuous:startAuto,resume:Continuous.resume,observe:Continuous.observe,replay:(session,ticks)=>ticks.reduce((s,t)=>stepAuto(s,t.quotes,t.at,t.context),Continuous.resume(session)),legacyStartAuto,legacyStepAuto};
 });

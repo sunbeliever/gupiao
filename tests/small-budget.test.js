@@ -42,5 +42,5 @@ test('cost comparison translates the signal-next-open estimate to the actual int
  const missing=structuredClone(quotes);delete missing.sh588000.open;
  assert.equal(Paper.plan(input({quotes:missing})).rows.find(r=>r.symbol==='sh588000').reasonCode,'reference_open');
  const future=structuredClone(predictions);future.sh588000.asOf='2026-10-19';
- assert.equal(Paper.plan(input({predictions:future})).rows.find(r=>r.symbol==='sh588000').reasonCode,'forecast_date');
+ assert.equal(Paper.plan(input({predictions:future})).rows.find(r=>r.symbol==='sh588000').reasonCode,'signal_session');
 });

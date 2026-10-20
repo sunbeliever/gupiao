@@ -1,0 +1,3 @@
+'use strict';
+const test=require('node:test'),assert=require('node:assert/strict'),Market=require('../assets/market.js');
+test('critical account reads distinguish missing, empty, corrupt and storage failures without rewriting bytes',()=>{const prior=global.Native;try{for(const raw of [null,undefined,'','{invalid-json','null','false','{"schema":2}']){let writes=0;global.Native={read:()=>raw,write:()=>writes++};const result=Market.readState('paper.continuous.current');assert.equal(result.status,raw==null?'missing':raw==='{"schema":2}'?'valid':'corrupt');assert.equal(writes,0);}global.Native={read:()=>{throw Error('disk locked');}};assert.equal(Market.readState('paper.continuous.current').status,'read_failure');}finally{global.Native=prior;}});

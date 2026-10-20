@@ -244,13 +244,13 @@
     var m = state.model || {}, validation = m.validation || m.metrics || {}, count = firstValue(m, ['sampleCount', 'samples', 'trainingSamples', 'nSamples']);
     var alpha = firstValue(m, ['alpha', 'regularization']), validationMae = firstValue(validation, ['mae', 'validationMae', 'candidateMae']);
     var comparison = state.upgrade && state.upgrade.comparison;
-    $('page-model').innerHTML = '<div class="page-lead"><div><h1 id="model-heading">模型，接受新的检验。</h1><p>新数据带来候选模型，验证改善后才升级。</p></div></div>' +
+    $('page-model').innerHTML = '<div class="page-lead"><div><h1 id="model-heading">持续模拟与模型研究</h1><p>当前模型保持冻结；历史研究与前瞻账本分别记录，投资效果尚未验证。</p></div></div>' +
       '<div class="model-stamp"><div><div class="version number">' + escapeHtml(modelVersion()) + '</div><p>标准化岭回归 · ' + horizon() + '个交易日收益估计</p></div><div class="stamp-symbol"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7l5-4 5 4v10l-5 4-5-4zM3 9h4M17 9h4M3 15h4M17 15h4M10 9h4v6h-4z"/></svg></div></div>' +
       '<dl class="definition-list"><div><dt>训练截止日</dt><dd>' + escapeHtml(shortDate(modelCutoff())) + '</dd></div><div><dt>训练样本</dt><dd class="number">' + (finite(count) ? fmt(count, 0) + '条' : '—') + '</dd></div><div><dt>正则参数 α</dt><dd class="number">' + fmt(alpha, 4) + '</dd></div><div><dt>验证平均绝对误差</dt><dd class="number">' + (finite(validationMae) ? fmt(Number(validationMae) * 100, 2) + '个百分点' : '见模型升级比较') + '</dd></div><div><dt>历史覆盖至</dt><dd>' + escapeHtml(latestDate() || '—') + '</dd></div></dl>' +
-      '<div class="setting-row"><div><strong>自动同步与验证</strong><small>前台定时更新行情；新日线到达后比较候选模型。</small></div><label class="toggle"><input id="auto-sync-toggle" type="checkbox"' + (state.autoSync ? ' checked' : '') + ' aria-label="自动同步与验证"><i></i></label></div>' +
-      '<div class="model-actions"><button id="train-model" class="primary-button"' + (state.training || state.busy || state.evaluating ? ' disabled' : '') + '>' + (state.training ? '正在验证候选…' : '重新训练并验证') + '</button><button id="sync-model-data" class="secondary-button"' + (state.training || state.busy ? ' disabled' : '') + '>同步完整日线</button></div>' +
+      '<div class="setting-row"><div><strong>自动同步与验证</strong><small>前台定时更新行情与持仓估值；候选训练需手动启动且不会自动部署。</small></div><label class="toggle"><input id="auto-sync-toggle" type="checkbox"' + (state.autoSync ? ' checked' : '') + ' aria-label="自动同步与验证"><i></i></label></div>' +
+      '<div class="model-actions"><button id="train-model" class="primary-button"' + (state.training || state.busy || state.evaluating ? ' disabled' : '') + '>' + (state.training ? '正在验证候选…' : '训练研究候选（不自动部署）') + '</button><button id="sync-model-data" class="secondary-button"' + (state.training || state.busy ? ' disabled' : '') + '>同步完整日线</button></div>' +
       (state.busy || state.training ? '<div class="progress"><div style="width:' + Math.min(100, Math.max(0, state.progress)).toFixed(1) + '%"></div></div><p class="progress-label">' + escapeHtml(state.progressLabel || '正在处理') + '</p>' : '') +
-      (state.upgrade ? '<div class="upgrade-result"><strong>' + (state.upgrade.accepted ? '已升级模型' : '继续使用当前模型') + '</strong>' + escapeHtml(state.upgrade.reason || '已完成同窗口比较') + (comparison ? '<p>验证期 ' + escapeHtml(comparison.validationStart || '—') + ' 至 ' + escapeHtml(comparison.validationEnd || '—') + '，' + escapeHtml(comparison.sampleCount || 0) + '个标签。当前误差 ' + (finite(comparison.championMae) ? fmt(Number(comparison.championMae) * 100, 2) + 'pp' : '—') + '；候选误差 ' + (finite(comparison.candidateMae) ? fmt(Number(comparison.candidateMae) * 100, 2) + 'pp' : '—') + '。</p>' : '') + '</div>' : '') +
+      (state.upgrade ? '<div class="upgrade-result"><strong>' + (state.upgrade.deployed ? '经独立批准部署' : '研究比较，部署模型不变') + '</strong>' + escapeHtml(state.upgrade.reason || '已完成同窗口比较') + (comparison ? '<p>验证期 ' + escapeHtml(comparison.validationStart || '—') + ' 至 ' + escapeHtml(comparison.validationEnd || '—') + '，' + escapeHtml(comparison.sampleCount || 0) + '个标签。当前误差 ' + (finite(comparison.championMae) ? fmt(Number(comparison.championMae) * 100, 2) + 'pp' : '—') + '；候选误差 ' + (finite(comparison.candidateMae) ? fmt(Number(comparison.candidateMae) * 100, 2) + 'pp' : '—') + '。</p>' : '') + '</div>' : '') +
       '<p class="last-sync">最近日线同步：' + escapeHtml(state.lastSync ? readableTime(state.lastSync) : '使用内置真实历史样本') + '</p>' +
       '<div class="section-heading bar-separator"><h2>每一次升级都有依据</h2></div><div class="model-method"><p>当前是11个技术因子的标准化岭回归，没有训练或接入大语言模型。新闻、公告、财务指标尚未进入收益预测。</p><p>升级需积累当前模型之后60个已成熟信号日与至少60个标签。候选在同窗口的平均误差改善至少2%，方向命中下降不超过2个百分点，否则保留当前模型；通过此比较也不等于实盘有效。</p><p>自动同步不保证持续改善。Windows前台约30秒取报价、5分钟取资讯，最小化约5分钟尝试采集报价与资讯，受来源和网络影响；关闭软件后停止。新完整日线到达后才比较候选模型，盘中报价不是训练样本。</p></div>' +
       '<div class="model-footer">科技观察是参数研究工具，无交易功能。模型、回测及关键词情绪均不能替代对来源和风险的独立核对。行情接口没有延迟或可用性保证。</div>';
@@ -352,7 +352,7 @@
     } catch (e) { state.connection = 'offline'; if (manual) showToast('同步未完成，保留已有真实样本。' + safeError(e)); }
     finally { state.busy = false; state.progressLabel = ''; renderActive(); }
     if (success && (manual || state.autoSync)) {
-      await trainModel(false);
+      // Synchronizing new data never promotes or retrains the deployed model.
       if (manual) showToast('日线已同步，候选模型比较已完成');
     }
     return success;
@@ -366,14 +366,13 @@
       var cutoff = latestDate() || today();
       if (state.model && Analysis.updateChampion) {
         var result = await Promise.resolve(Analysis.updateChampion(state.histories, state.model, { cutoff: cutoff, horizon: 20, alpha: finite(state.model.alpha) ? Number(state.model.alpha) : state.backtestAlpha }));
-        state.upgrade = result || { accepted: false, reason: '未取得验证比较结果' };
-        if (result && result.model) state.model = result.model;
+        if(result&&result.model)safeStorageWrite('model.researchCandidate',result.model);
+        state.upgrade={accepted:false,deployed:false,researchAccepted:!!(result&&result.accepted),reason:'仅保存研究候选，未通过同账户、费用、风险及前瞻检验，不自动部署。'+(result&&result.reason||''),comparison:result&&result.comparison||null};
       } else {
-        state.model = await Promise.resolve(Analysis.train(state.histories, { cutoff: cutoff, horizon: 20, alpha: state.backtestAlpha }));
-        state.upgrade = { accepted: !!state.model, reason: state.model ? '已使用已实现标签建立初始模型' : '样本不足，未建立模型' };
+        var candidate=await Promise.resolve(Analysis.train(state.histories,{cutoff:cutoff,horizon:20,alpha:state.backtestAlpha}));if(candidate)safeStorageWrite('model.researchCandidate',candidate);
+        state.upgrade={accepted:false,deployed:false,reason:'初始候选仅研究，不自动发布投资模型'};
       }
-      if (state.model) safeStorageWrite('model.current', state.model);
-      safeStorageWrite('model.lastUpgrade', state.upgrade); recomputePredictions();
+      safeStorageWrite('model.researchComparison', state.upgrade); recomputePredictions();
       if (manual) showToast(state.upgrade.accepted ? '模型验证通过，已保存新版本' : state.upgrade.reason || '未满足升级条件，保留当前模型');
     } catch (e) { if (manual) showToast('训练未完成，保留当前模型。' + safeError(e)); state.upgrade = { accepted: false, reason: safeError(e) }; }
     finally { state.training = false; state.progressLabel = ''; renderActive(); }
@@ -408,14 +407,14 @@
     var seedAlpha = firstValue(seed.model && seed.model.validation, ['selectedAlpha']);
     if (!finite(seedAlpha)) seedAlpha = firstValue(seed.model, ['alpha']);
     state.backtestAlpha = finite(seedAlpha) ? Number(seedAlpha) : 0.1;
-    state.generatedAt = seed.generatedAt || ''; state.model = safeStorageRead('model.current') || seed.model || null;
+    state.generatedAt = seed.generatedAt || ''; state.model = safeStorageRead('model.approved') || seed.model || null;
     state.quotes = safeStorageRead('ui.quotes') || seed.quoteSnapshot || {};
     Object.keys(state.quotes).forEach(function (k) { state.quotes[k] = Object.assign({}, state.quotes[k], { cached: true }); });
     state.news = safeStorageRead('ui.news') || seed.newsSnapshot || []; state.sectors = seed.sectorSnapshot || [];
     if (Array.isArray(seed.reports)) seed.reports.forEach(function (r) { if (r && r.year) state.reports[r.year] = r; });
     else state.reports = seed.reports || {};
     [2025, 2026].forEach(function (year) { var cached = safeStorageRead('report.' + year); if (cached && cached.baselines) state.reports[year] = cached; });
-    state.lastSync = safeStorageRead('ui.lastSync') || ''; state.upgrade = safeStorageRead('model.lastUpgrade');
+    state.lastSync = safeStorageRead('ui.lastSync') || ''; state.upgrade = safeStorageRead('model.researchComparison');
     if (Market.setBackground) { try { Market.setBackground(state.autoSync); } catch (_) {} }
     state.initialized = true; recomputePredictions(); renderActive();
     await Promise.allSettled([refreshQuotes(false), refreshNews(false), refreshSectors()]);

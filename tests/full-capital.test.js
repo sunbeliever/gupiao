@@ -6,22 +6,24 @@ test('full mode still leaves cash when no forecast covers fees instead of forcin
 test('automatic later entries retain full-allocation mode and the capital setting is frozen',()=>{const i=input(),s=Paper.startAuto(i);assert.equal(s.automation.settings.allocationMode,'full');assert.ok(s.account.cash<400);i.budget=50000;assert.equal(s.budget,10000);});
 
 test('later full-capital entries divide only remaining cash across the unused slots',()=>{
- const i=input(3),stock=i.universe[2];stock.type='stock';stock.symbol='sh600000';
- i.quotes=Object.fromEntries(i.universe.map(u=>[u.symbol,{price:u===stock?60:1,open:u===stock?60:1,sourceTime:'2026-10-20 09:30:00'}]));
- i.predictions=Object.fromEntries(i.universe.map(u=>[u.symbol,{eligible:true,expectedReturn:u===stock?.03:.001,asOf:'2026-10-19'}]));
+ const i=input(3),expensiveETF=i.universe[2];
+ i.quotes=Object.fromEntries(i.universe.map(u=>[u.symbol,{price:u===expensiveETF?60:1,open:u===expensiveETF?60:1,sourceTime:'2026-10-20 09:30:00'}]));
+ i.predictions=Object.fromEntries(i.universe.map(u=>[u.symbol,{eligible:true,expectedReturn:u===expensiveETF?.03:.001,asOf:'2026-10-19'}]));
  const s=Paper.startAuto(i);assert.equal(s.account.holdings.length,1);assert.ok(s.account.cash>3900);
- const q=Object.fromEntries(i.universe.map(u=>[u.symbol,{...i.quotes[u.symbol],price:u===stock?60:.95,sourceTime:'2026-10-20 09:31:00'}]));
+ const q=Object.fromEntries(i.universe.map(u=>[u.symbol,{...i.quotes[u.symbol],price:u===expensiveETF?60:.95,sourceTime:'2026-10-20 09:31:00'}]));
  const next=Paper.stepAuto(s,q,'2026-10-20T01:31:00Z');
  assert.equal(next.account.holdings.length,3);assert.ok(next.account.cash>=0&&next.account.cash<200);
- assert.equal(next.account.holdings.find(h=>h.symbol===stock.symbol).shares,100);assert.equal(next.automation.settings.budget,10000);
- assert.equal(next.automation.lastPlan.budget,s.account.cash);
+ assert.equal(next.account.holdings.find(h=>h.symbol===expensiveETF.symbol).shares,100);assert.equal(next.automation.settings.budget,10000);
+ assert.ok(Math.abs(next.automation.lastPlan.budget-s.account.cash)<1e-8,'replanning uses remaining cash, allowing sub-cent floating-point noise');
 });
 
 test('residual allocation can use less than1000 without allowing a smaller initial account',()=>{
  const i=input(2);i.quotes.sh588000.price=93;i.quotes.sh588000.open=93;
- i.predictions[i.universe[1].symbol].expectedReturn=-.1;
+ // A frozen small positive forecast fails fees at 1.00 but becomes viable at
+ // 0.95; no stored signal or integrity hash is edited after account creation.
+ i.predictions[i.universe[1].symbol].expectedReturn=.001;
  const s=Paper.startAuto(i);assert.ok(s.account.cash>600&&s.account.cash<1000);
- const symbol=i.universe[1].symbol;s.automation.predictions[symbol].expectedReturn=.001;
+ const symbol=i.universe[1].symbol;
  const q=Object.fromEntries(i.universe.map(u=>[u.symbol,{...i.quotes[u.symbol],price:u.symbol===symbol?.95:93,sourceTime:'2026-10-20 09:31:00'}]));
  const next=Paper.stepAuto(s,q,'2026-10-20T01:31:00Z');assert.equal(next.account.holdings.length,2);assert.ok(next.account.cash>=0&&next.account.cash<101);
  assert.throws(()=>Paper.start({...input(1),budget:700}),/Invalid paper budget/);
