@@ -1,0 +1,28 @@
+{
+  "repository": "https://github.com/sunbeliever/gupiao",
+  "verifiedSourceCommit": "2389084ca0f5ef615d9e327a178422fa3324887e",
+  "verifiedAt": "2026-10-20T03:32:37.5250641Z",
+  "verifiedAccount": "sunbeliever",
+  "repositoryPermissions": {
+    "push": true,
+    "admin": true
+  },
+  "pushTransport": "SSH using existing local authentication",
+  "defaultBranch": "main",
+  "retainedBranches": [
+    "fix/auditable-paper-account",
+    "baseline/techscope-1.5.1"
+  ],
+  "releaseTag": "v1.6.0.1",
+  "freshGitHubCloneTests": {
+    "packagePassed": 2,
+    "packageFailed": 0,
+    "javascriptFailed": 0,
+    "javascriptPassed": 189
+  },
+  "downloadedExeSha256": "0fc73902b2d509a32046ddfaea4740fb792fac6a0bd4dc2b6f0b564805334193",
+  "downloadedZipSha256": "38a8a6d6c188c7841dbaa7394aa645171d7f0ad9fdf154212667efe0323b53d5",
+  "immutableEvidenceBytesPreserved": true,
+  "investmentAdvantageVerified": false,
+  "note": "Publication proof only. Prior native desktop checks are separately archived; this does not reclassify research or simulated returns as investment success."
+}
