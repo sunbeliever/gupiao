@@ -28,6 +28,8 @@
   return {signalDate,entrySession,referenceOpen,horizon,maturitySession,publishedAt:p.publishedAt||null,firstReceivedAt:p.firstReceivedAt||null};
  }
  function plan(input){
+  const minEstimatedNetReturn=input.minEstimatedNetReturn===undefined?0:input.minEstimatedNetReturn;
+  if(typeof minEstimatedNetReturn!=='number'||!Number.isFinite(minEstimatedNetReturn)||minEstimatedNetReturn<0||minEstimatedNetReturn>1)throw new Error('Invalid minimum estimated net return');
   if(input.allocationMode==='full'){
    const budget=input.budget===undefined?10000:input.budget,max=input.maxPositions===undefined?3:input.maxPositions;
    if(!Number.isInteger(max)||max<1||max>3)throw new Error('Invalid full-budget settings');
@@ -51,6 +53,7 @@
    // The forecast starts at the signal-next-session open, not at the later paper entry.
    const estimatedSale=z.shares*Fee.executionPrice(r.referenceOpen*(1+p.expectedReturn),'sell',feeProfile);r.estimatedNetReturn=(estimatedSale-costs(u,estimatedSale,minFee,'sell',true,feeProfile).total-r.buyCost)/r.buyCost;
    if(r.estimatedNetReturn<=0)return reject('cost','研究收益估计不足以覆盖模拟双边佣金与滑点');
+   if(r.estimatedNetReturn<minEstimatedNetReturn)return reject('net_margin','扣费后的预计净收益未达到冻结入场余量');
    if(Array.isArray(input.symbols)&&input.symbols.length&&!input.symbols.includes(u.symbol))return reject('not_selected','本次仅核查手动指定标的');
    return {...r,reason:'符合小额模拟条件；不代表已验证的买入建议',selected:false};
   });

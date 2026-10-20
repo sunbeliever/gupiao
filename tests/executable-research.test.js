@@ -46,3 +46,28 @@ test('deterministic baselines use explicit selector identities and never report 
  assert.ok(r.summary.fingerprint.model_hash);assert.ok(r.summary.researchIdentity.rules_hash);
  assert.equal(r.summary.budget,10000);assert.equal(r.summary.engineStrategyLabel,'ridge11-tech-etf-continuous-v1');
 });
+
+test('entry-exit declaration fixes exactly the two registered candidates and refuses replacement',()=>{
+ const fs=require('node:fs'),os=require('node:os'),path=require('node:path'),root=fs.mkdtempSync(path.join(os.tmpdir(),'techscope-entry-exit-'));
+ try{
+  const Market=require('../assets/market.js'),prices={raw:{},histories:{}};for(const u of Market.UNIVERSE.filter(u=>u.type==='etf')){prices.raw[u.symbol]=[];prices.histories[u.symbol]=[];}
+  fs.mkdirSync(path.join(root,'assets'));fs.mkdirSync(path.join(root,'scripts'));
+  for(const name of ['paper-engine.js','paper-account.js','analysis.js','trading-calendar.js','fee-profile.js','audit-identity.js','corporate-actions.js','corporate-events.js'])fs.copyFileSync(path.join(__dirname,'../assets',name),path.join(root,'assets',name));
+  fs.copyFileSync(path.join(__dirname,'../scripts/executable-research.js'),path.join(root,'scripts/executable-research.js'));
+  const file=path.join(root,'prices.json');fs.writeFileSync(file,JSON.stringify(prices));
+  const args=['--declare','--entry-exit','--id','fixture-entry-exit','--prices',file];Research.cli(args,root);
+  const manifestFile=path.join(root,'validation/executable-research/fixture-entry-exit/manifest.json'),bytes=fs.readFileSync(manifestFile),m=JSON.parse(bytes);
+  assert.deepEqual(m.candidates.map(c=>[c.id,c.alpha,c.selector,c.ruleOverrides]),[
+   ['no-target-exit',1,'ridge',{targetExitEnabled:false,minEstimatedNetReturn:0}],
+   ['no-target-net1pct',1,'ridge',{targetExitEnabled:false,minEstimatedNetReturn:.01}]
+  ]);
+  assert.equal(m.policy.budget,10000);assert.equal(m.policy.trainCutoff,'2024-12-31');assert.equal(m.evidenceKind,'already_seen_historical_exploration');
+  assert.throws(()=>Research.cli(args,root),/prior declaration/);assert.deepEqual(fs.readFileSync(manifestFile),bytes);
+ }finally{fs.rmSync(root,{recursive:true,force:true});}
+});
+
+test('research replay passes the frozen net margin and exit switch to the actual account',()=>{
+ const f=fixture();f.policy={...f.policy,targetExitEnabled:false,minEstimatedNetReturn:.01};f.model.intercept=.012;
+ const r=Research.runReplay({...f,selector:'ridge'});assert.equal(r.summary.buyCount,0);assert.equal(r.summary.netReturn,0);
+ assert.equal(r.session.rules.targetExitEnabled,false);assert.equal(r.session.rules.minEstimatedNetReturn,.01);assert.equal(r.summary.strategySuccess,false);assert.equal(r.summary.parityVerified,true);
+});
