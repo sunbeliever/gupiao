@@ -9,6 +9,9 @@ def sha(data): return hashlib.sha256(data).hexdigest()
 def read_json(file): return json.loads(file.read_text(encoding='utf-8-sig'))
 def write_json(file, data): file.write_text(json.dumps(data,ensure_ascii=False,indent=2),encoding='utf-8')
 def git(*args): return subprocess.check_output(['git',*args],cwd=ROOT).decode('utf-8').strip()
+def verify_archive(archive,exe_name,expected_sha):
+    with zipfile.ZipFile(archive) as z:
+        assert z.testzip() is None and sha(z.read(exe_name))==expected_sha
 def validate():
     exe = ROOT / 'dist/TechScope-Windows.exe'
     binary = exe.read_bytes()
@@ -66,8 +69,9 @@ def package(exe,gate,native,forward_id=None):
     assert branch == 'fix/auditable-paper-account'
     assert not git('status','--porcelain'), 'Commit the reviewed repair before packaging'
     name = '科技观察-持续账户审计版.exe'; output = ROOT/'dist'/name
-    assert not output.exists(), 'Never overwrite a released named EXE'
-    output.write_bytes(exe.read_bytes())
+    if output.exists():
+        assert sha(output.read_bytes())==gate['exeSha256'], 'Never overwrite a released named EXE'
+    else: output.write_bytes(exe.read_bytes())
     matrix = read_json(ROOT/'docs/audit-repair-2026-10-20.json')
     def esc(x): return html.escape(str(x))
     rows = ''.join('<tr>'+''.join('<td>'+esc(row[key])+'</td>' for key in ['id','issue','evidence','change','regression','uncovered'])+'</tr>' for row in matrix['matrix'])
@@ -145,8 +149,7 @@ def package(exe,gate,native,forward_id=None):
             if experiment and (reports/experiment).is_dir():
                 for file in (reports/experiment).glob('*'):
                     if file.is_file() and file.suffix in ('.json','.html'): z.write(file,'evidence/derived-reports/'+experiment+'/'+file.name)
-    with zipfile.ZipFile(archive) as z:
-        assert z.testzip() is None and sha(z.read(name))==gate['exeSha256']
+    verify_archive(archive,output.name,gate['exeSha256'])
     return dict(exe=str(output),sha256=gate['exeSha256'],zip=str(archive),zipSha256=sha(archive.read_bytes()),report=str(report_file),commit=commit)
 
 if __name__ == '__main__':
