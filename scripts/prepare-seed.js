@@ -1,0 +1,15 @@
+'use strict';
+const fs=require('node:fs');
+const path=require('node:path');
+const Market=require('../assets/market.js');
+const root=path.resolve(__dirname,'..');
+const dataDir=path.join(root,'data');fs.mkdirSync(dataDir,{recursive:true});
+function progress(s){fs.writeFileSync(path.join(dataDir,'seed-progress.json'),JSON.stringify(s,null,2));console.log(JSON.stringify(s));}
+const now=new Date().toLocaleDateString('en-CA',{timeZone:'Asia/Shanghai'}),year=Number(now.slice(0,4));
+async function req(url){for(let attempt=0;attempt<3;attempt++){try{const r=await fetch(url,{signal:AbortSignal.timeout(20000),headers:{'User-Agent':'Mozilla/5.0','Referer':'https://gu.qq.com/'}});if(!r.ok)throw new Error('HTTP '+r.status);const b=await r.arrayBuffer();return new TextDecoder(url.includes('qt.gtimg.cn')?'gb18030':'utf-8').decode(b);}catch(e){if(attempt===2)throw e;await new Promise(r=>setTimeout(r,600*(attempt+1)));}}}
+async function fetchBars(symbol,y,adjust){const file=path.join(dataDir,symbol+'_'+y+'_'+(adjust||'raw')+'.json');if(fs.existsSync(file))return JSON.parse(fs.readFileSync(file,'utf8'));const text=await req('https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param='+symbol+',day,'+y+'-01-01,'+y+'-12-31,320,'+adjust);const bars=Market.parseHistory(text,symbol,adjust).filter(x=>x.date.startsWith(String(y))&&x.date<now);fs.writeFileSync(file,JSON.stringify(bars));return bars;}
+async function main(){const histories={},rawHistories={},errors=[];let cursor=0,done=0;await Promise.all(Array.from({length:3},async()=>{while(cursor<Market.UNIVERSE.length){const s=Market.UNIVERSE[cursor++];let bars=[],raw=[];for(let y=2020;y<=year;y++){try{bars=Market.cleanBars(bars.concat(await fetchBars(s.symbol,y,'hfq')));}catch(e){errors.push(s.symbol+' '+y+' '+e.message);}}for(let y=year-1;y<=year;y++){try{raw=Market.cleanBars(raw.concat(await fetchBars(s.symbol,y,'')));}catch(e){errors.push('raw '+s.symbol+' '+y+' '+e.message);}}if(bars.length)histories[s.symbol]=bars;if(raw.length)rawHistories[s.symbol]=raw;done++;progress({phase:'history',done,total:Market.UNIVERSE.length,symbol:s.symbol,bars:bars.length,errors:errors.length});}}));
+ let quoteSnapshot={},newsSnapshot=[],sectorSnapshot=[];Market.setTransport(req);try{quoteSnapshot=await Market.quotes();}catch(e){errors.push('quotes '+e.message);}try{newsSnapshot=await Market.news();}catch(e){errors.push('news '+e.message);}try{sectorSnapshot=await Market.sectors();}catch(e){errors.push('sectors '+e.message);}
+ const seed={generatedAt:new Date().toISOString(),histories,rawHistories,model:null,reports:{},quoteSnapshot,newsSnapshot,sectorSnapshot,errors,methodology:{pool:'当前人工选择科技研究池，存在幸存者偏差',prices:'预测采用后复权日线；K线采用未复权价格',news:'标题关键词观察不进入历史训练',horizon:20}};
+ fs.writeFileSync(path.join(dataDir,'seed-data.json'),JSON.stringify(seed));progress({phase:'downloaded',symbols:Object.keys(histories).length,bars:Object.values(histories).reduce((n,a)=>n+a.length,0),quotes:Object.keys(quoteSnapshot).length,news:newsSnapshot.length,errors});}
+main().catch(e=>{progress({phase:'failed',error:e.message});process.exitCode=1;});

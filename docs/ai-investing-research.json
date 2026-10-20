@@ -1,0 +1,30 @@
+{
+  "checkedOn": "2026-10-19",
+  "monthlyBudgetYuan": 100,
+  "paidServicesEnabled": false,
+  "methods": [
+    {"name":"Qlib","source":"https://github.com/microsoft/qlib/blob/main/examples/benchmarks/README.md","finding":"用统一数据和流程比较因子、线性模型、树模型与深度模型，同时评估预测排序和组合结果。公开基准不是当前A股实盘收益证明。","action":"先比较简单基准与固定候选，按时间隔离检验；本次已研究18个价格与市场相对特征，没有稳定改善就不部署。"},
+    {"name":"TradingAgents","source":"https://github.com/TauricResearch/TradingAgents","finding":"把基本面、新闻、技术分析和风险判断分工协作。项目说明定位为研究，效果取决于模型、数据和测试期间。","action":"借鉴信息分工与证据核对。后续由模型提取事实、程序检查费用与仓位；多角色讨论次数不是赚钱概率。"},
+    {"name":"FinGPT","source":"https://github.com/AI4Finance-Foundation/FinGPT","finding":"主要展示金融文本任务、新闻情绪及低成本微调。情绪分类成绩与投资收益是不同指标。","action":"先核查公告中的公司、披露时间、事件与数字出处，无法证实时保留未知；先评估现成模型调用，暂不从头训练大模型。"},
+    {"name":"QuantConnect 研究规范","source":"https://www.quantconnect.com/docs/v2/writing-algorithms/key-concepts/research-guide","finding":"回测须处理未来数据泄漏及幸存者偏差，历史选股范围应使用当时可知的信息。","action":"补历史成分、退市样本和披露版本。目前19只手选研究池不能代表历史完整科技市场，付费数据也须逐项核实时间口径。"}
+  ],
+  "costs": {
+    "tushare": {"name":"Tushare 约2000积分基础档","upfrontYuan":200,"termMonths":12,"source":"https://tushare.pro/document/2?doc_id=290","note":"官网个人基础档标价200元/年，具体数据还须满足各接口权限；分钟、新闻、公告等可有独立权限，不包含在基础档中。一次付200元超过当前单月100元上限，尚未购买。"},
+    "qwen": {"name":"qwen-plus-2025-12-01","inputPerMillionYuan":0.8,"outputPerMillionYuan":2,"source":"https://help.aliyun.com/zh/model-studio/model-pricing","note":"参考中国内地北京、非思考模式、单次输入不超过128K的公布价格。额外搜索、重试、上下文增长及价格变化须另计。不是训练报价，未接入。"},
+    "deepseek": {"name":"deepseek-flash","offPeakInputPerMillionYuan":1,"offPeakOutputPerMillionYuan":4,"peakInputPerMillionYuan":2,"peakOutputPerMillionYuan":8,"source":"https://api-docs.deepseek.com/zh-cn/quick_start/pricing/","note":"参考缓存未命中的人民币单价；高峰时段较高，搜索与抓取另计。本次没有调用付费接口。"},
+    "workloadAssumption": {"articlesPerDay":50,"daysPerMonth":30,"inputTokensPerArticle":2000,"outputTokensPerArticle":500,"proposedLlmMonthlyCapYuan":20},
+    "recommendation":"首阶段继续用免费数据做有界研究，模型信息抽取可先留0至20元/月预算，不必花满100元。年付数据需在核实接口覆盖和实际付款安排后决定；暂不采购高频数据。"
+  },
+  "priorities": [
+    {"priority":1,"item":"补可追溯的数据","current":"当前19只手选存续标的，新闻/公告以有限标题为主。","next":"核查历史指数成分、退市/停牌、财报真实披露时间与修订版本；没有完整历史文本时从现在积累首次接收记录。","validation":"覆盖率、缺失率、复权/单位核对及时间可用性合格后，再加入研究。"},
+    {"priority":2,"item":"把文本变成有出处的事实","current":"未接入大模型新闻理解，新闻尚未参与预测。","next":"结构化提取公司、事件、日期、数字和原文位置，去重；拿不到正文时不从标题编造财报数字。","validation":"先核对一批中文公告的实体、时间和数字，再做带/不带新闻的同样本对照，等待真实后续收益。"},
+    {"priority":3,"item":"候选模型与简单基准竞争","current":"新18特征相对收益候选已训练，未稳定胜过简单基准。","next":"冻结研究假设与参数，保留全部不利年份；只用已成熟标签，另设真实未来检验。","validation":"误差、排序、扣费后收益与回撤分别看；当前不按这次回顾性实验部署候选。"},
+    {"priority":4,"item":"针对1万元改善执行与费用评估","current":"默认每只500元、最多3只，低佣金是否可用尚无实际券商合同。","next":"核实实际佣金、ETF流动性/价差及溢价数据来源，评估主题重叠；昨天净值不能冒充当前IOPV。","validation":"同一时段比较现金、满仓ETF及相近风险暴露的对照，计入适用税费；不能只看胜率或某次浮盈。"}
+  ],
+  "researchLimitations": [
+    "本轮是已经查看过年份的回顾性探索，不是新的盲测。",
+    "当前只评估可观察标签的误差与排序相关性，不评估真实1万元账户或成交收益。",
+    "早期研究曾计算前三名价格窗口，发现其受到未来缺失标签影响后撤下；旧输出留档且不作为交易证据。",
+    "没有购买数据、开通模型账户、绑定券商或真实下单；月预算100元是上限，不是已发生费用。"
+  ]
+}

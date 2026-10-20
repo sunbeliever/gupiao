@@ -1,0 +1,21 @@
+{
+  "experiment": "automatic-paper-5minute-replay-v1",
+  "declaredOn": "2026-10-19",
+  "seed": 20261019,
+  "sampling": "LCG1664525/1013904223 shuffle then first24 nonoverlapping date/windows; only windows wholly after deployed model cutoff. Enumerate dates and start times from the benchmark timestamps, never future target availability or returns. Keep missing instrument windows unresolved, never silently drop or replace them.",
+  "windowStartsChina": ["09:35:00", "10:05:00", "10:35:00", "13:05:00", "13:35:00", "14:05:00"],
+  "durationMs": 1800000,
+  "maxWindows": 24,
+  "budget": 10000,
+  "positionLimit": 500,
+  "maxPositions": 3,
+  "minCommission": 5,
+  "priceSlippage": 0.001,
+  "commissionRate": 0.0003,
+  "model": "Frozen deployed seed ridge. Do not change parameters from outcomes. Daily feature input restricted to dates before the replay day. Retrain only in a separately named challenger with predeclared train/validation/test periods, never overwrite the baseline.",
+  "decisionEngine": "Paper.startAuto / Paper.stepAuto, shared with the new desktop version. Recheck only five-minute closing snapshots in historical mode. The coarser cadence must be labeled and must not be passed off as a live30-second observation.",
+  "tradeClock": "A five-minute bar timestamp is the bar end. Enter at that close with adverse slippage; do not use the high, low or future close to decide. Daily open reference comes from the same day opening bar (09:35) or an independently obtained raw daily open, never a later daily close. Frozen20-day target exit, T+1 enforced; no forced liquidation.",
+  "news": "Current model has no news factor. Do not invent historical news or causal explanations. A future text model requires point-in-time publication/receipt evidence and a separate untouched test.",
+  "metrics": ["all sampled windows including cash/loss/unresolved", "currency and percentage PnL per window", "realized vs unrealized", "buy/sell/blocked exit counts", "exposed-window win fraction, with denominator", "no compounding overlapping/independent ten-thousand accounts", "same-time full-ETF control labeled different risk"],
+  "limitations": ["Retrospective exploratory test, not new prospective evidence", "Current surviving manually chosen19-asset research pool", "Five-minute snapshots miss intrabar execution signals", "Latest-price hypothetical fills lack queue/liquidity validation", "Thirty minutes does not score a twenty-session forecast"]
+}

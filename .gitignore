@@ -1,0 +1,14 @@
+tools/
+build/
+*.p12
+*.jks
+*password*.txt
+node_modules/
+validation/browser/
+.worktrees/
+dist/
+validation/
+data/
+.serena/
+.codex/
+.agents/

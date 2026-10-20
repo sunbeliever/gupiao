@@ -1,0 +1,11 @@
+{
+ "declaredOn":"2026-10-19",
+ "userTarget":{"netProfitableProbability":0.7,"holdingSessions":20,"annualAccountReturnRange":[0.10,0.20],"targetOnly":true,"achieved":false},
+ "input":"After user clarified all10000 capital is for investment, use frozen corrected25-feature labels for conservative3333 allocation (three simultaneous names),100-lot, both-side-fee, split/dividend-aware labels in validation/full-capital-optimization/dataset.json. The prior500-yuan research remains separate.",
+ "models":["standardized-logistic-C1","histogram-classifier-same160-tree-parameters"],
+ "protocol":"For yearY fit labels fully matured byY-2 Dec31. Platt-calibrate only prior-year signals whose labels/payments matured byY-1 Dec31. Freeze forY. No shuffled split, no early stopping, no threshold optimization. No changing10k/500/max3/minfee5 to make return targets pass.",
+ "signal":"Trade only calibrated probability>=0.7 AND estimated net expectation>0, expectation uses positive/negative outcome means from the past calibration period, not later outcomes. Ranking by estimated net expectation. Probability is an experimental estimate, not an established70%chance.",
+ "tests":["Brier score and log loss vs constant past calibration prior", "reliability bins count/mean probability/actual frequency", "threshold0.7 observed labels plus unresolved/maturity coverage", "non-overlapping20-session cases, avoid calling overlapping daily labels independent", "same fixed20-session/fees account backtest, all-cash no success"],
+ "promotion":"No model promotion from examined2023-2026 years alone. Need calibration, adequate effective sample, drawdown and net-return evidence plus new prospective validation. No claim of70%or10%-20%achievement.",
+ "limitations":["Retrospective development, previously examined years", "Six surviving current tech ETFs", "Regime changes can break past calibration", "Annual target belongs to total account, not merely invested positions", "No large language model or paid service"]
+}

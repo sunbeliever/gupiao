@@ -1,0 +1,19 @@
+{
+ "experiment":"cost-aware-etf-20session-v1",
+ "declaredOn":"2026-10-19",
+ "reason":"Optimize the user's original weeks-to-one-month horizon, not repeated thirty-minute mark-to-market profits. Prior24 intraday replay stays unchanged.",
+ "budget":10000,"positionLimit":500,"maxPositions":3,"minFee":5,"feeRate":0.0003,"slippage":0.001,"horizon":20,
+ "universe":["sh588000","sh512760","sh515070","sh512720","sh515880","sz159852"],
+ "data":"Seed HFQ technical history and actual raw daily OHLC. Six currently chosen surviving tech ETFs, not historical unbiased constituents. Signals only from completed prior-session daily data. Entry and scheduled exit at actual next-session open, 100-share lots; raw price net PnL, commission and adverse slippage on both sides. Dividend cash is not invented: adjustment events during a holding period are flagged and exclude deployment eligibility.",
+ "models":["original11-ridge","robust25-huber","net25-histogram-tree","trend-baseline"],
+ "training":"Annual models use only labels whose20-session exit occurred by priorDec31. No shuffled split or automatic early stopping. Fit2023 on labels matured by2022-12-31; choose strategy only from2023 net account returns/drawdown/trade count. Freeze selected policy before opening2024-2026 portfolio outcomes. All these broad years have been examined before, so retrospective development evidence, never claim a new blind test.",
+ "featureAdditions":["relative momentum and benchmark trend", "ETF breadth", "5/20day volatility ratio", "20day downside volatility", "20day positive-return-day fraction", "lagged overnight gap", "signed volume imbalance", "120day momentum"],
+ "treeParameters":{"max_iter":160,"max_leaf_nodes":7,"max_depth":3,"min_samples_leaf":100,"learning_rate":0.03,"l2_regularization":20,"early_stopping":false,"random_state":20261019},
+ "huberParameters":{"epsilon":1.35,"alpha":1.0,"max_iter":500},
+ "candidatePolicies":{"netMargins":[0,0.02],"trendFilters":[false,true],"maxPositions":3},
+ "selectionCriterion":"From2023, choose a trained candidate with positive net account return, >=9 closed positions, positive profit factor, and not all-cash. Maximize net return minus1.5*max drawdown; keep the old baseline regardless. Freeze the single chosen policy before test outcomes. If none qualifies, explicitly reject all; do not expand grid in this experiment.",
+ "deploymentGate":"No automatic deployment solely from these reused historical years. Require positive evidence on net returns, drawdown, nonzero closed trades, cost-matched simple baselines and prospective validation. All cash does not count as prediction success. If model candidates fail, retain their losses and improve the evidence/decision interface without claiming improved prediction.",
+ "costSource":"https://one.sse.com.cn/onething/gptz/",
+ "methodSources":["https://qlib.readthedocs.io/en/latest/component/strategy.html","https://scikit-learn.org/stable/modules/cross_validation.html#time-series-split"],
+ "limitations":["Historical development, not new untouched forward performance", "Survivor-biased current tech ETF pool", "Daily opens do not verify limit order queues or slippage", "Price-only labels exclude actual cash distributions; adjustment periods must be disclosed", "Scores are not calibrated probability or70% profit assurance"]
+}
