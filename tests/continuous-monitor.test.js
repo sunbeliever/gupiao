@@ -112,6 +112,14 @@ test('lunch retains the latest morning valuation without treating the scheduled 
  const result=Monitor.advanceTick(first.state,t,f.runtime,f.manifest);assert.equal(result.tick.dataHealth.entryQuoteComplete,false);assert.equal(result.tick.dataHealth.valuationQuoteComplete,true);assert.equal(result.state.collectionFailures,0);assert.equal(result.tick.orders.length,0);
 });
 
+test('provider clock advancing inside lunch is not a legal trade or verified 11:30 closing quote',()=>{
+ const f=runtimeFixture(),first=Monitor.advanceTick(Monitor.initialState(f.manifest),tick(f),f.runtime,f.manifest);
+ const t=tick(f,'2026-10-20T03:45:00Z',1.01),result=Monitor.advanceTick(first.state,t,f.runtime,f.manifest);
+ assert.equal(result.tick.dataHealth.entryQuoteComplete,false);assert.equal(result.tick.dataHealth.valuationQuoteComplete,false);
+ assert.equal(result.tick.orders.length,0);assert.equal(result.state.collectionFailures,1);
+ assert.ok(result.state.session.account.holdings.every(h=>h.stale));assert.equal(result.tick.strategySuccess,false);
+});
+
 test('a transport failure pauses later new purchases while valid existing holdings keep their valuations',()=>{
  const f=runtimeFixture(),initialTick=tick(f);for(const u of f.manifest.universe)if(u.type==='etf'){initialTick.quotes[u.symbol].price=100;initialTick.quotes[u.symbol].open=100;}
  const first=Monitor.advanceTick(Monitor.initialState(f.manifest),initialTick,f.runtime,f.manifest);assert.equal(first.state.session.account.holdings.length,0);
