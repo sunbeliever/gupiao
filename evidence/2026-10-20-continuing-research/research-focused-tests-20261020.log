@@ -1,0 +1,47 @@
+✔ prepare freezes new sources release and policy only after strict native/test gates (124.5651ms)
+✔ prepare rejects past starts mismatched hashes and path-like IDs (111.7928ms)
+✔ native transport prepare binds the helper to the verified desktop service and freezes both C# sources (248.6147ms)
+✔ native transport prepare rejects helper source and desktop verification binding mismatches before declaring an experiment (414.8263ms)
+✔ frozen native helper and source tampering fail validation and cannot run (761.1843ms)
+✔ native transport executes the frozen helper as a single URL argument without a shell (0.763ms)
+✔ native transport fails on execFile errors or mismatched malformed payloads and never retries through another transport (0.8344ms)
+✔ missing daily status prevents entry and is collection failure rather than successful cash (10.6199ms)
+✔ a first valid tick uses the frozen model ETF execution and all-10000 named capital profile (55.2972ms)
+✔ late first entry is permanently closed and cannot be backfilled on another day (17.3581ms)
+✔ after the engineering window and during unrelated outage the same account keeps marking without resetting losses (2642.6511ms)
+✔ append-only checkpoint recovery resumes the identical account and detects tick tampering (201.2597ms)
+✔ lease blocks concurrent processes and only explicit resume may reclaim a dead lease (5.7754ms)
+✔ a persistent claim without state or ticks fails instead of recreating the initial capital (0.8303ms)
+✔ a crash after append but before checkpoint recovers the latest loss from the unchanged tick ledger (150.6858ms)
+✔ closed quotes are valid valuations without entry or collection failure and the 16:00 daily boundary pauses stale history (205.0554ms)
+✔ missing cached malformed and transport-error inputs count real collection failures independently of market phase (204.4861ms)
+✔ lunch retains the latest morning valuation without treating the scheduled pause as a quote outage (77.5325ms)
+✔ provider clock advancing inside lunch is not a legal trade or verified 11:30 closing quote (82.2975ms)
+✔ a transport failure pauses later new purchases while valid existing holdings keep their valuations (127.5223ms)
+✔ report uses the same capital and complete costs, equity identity, exposure and gross filled-notional turnover for each strategy (163.2506ms)
+✔ later legal fills, failed exits, fees and realized losses remain in report orders instead of resetting intervals (324.9966ms)
+✔ missing prices stay visible and stale exposure observations are retained in the sample mean (121.7621ms)
+✔ snapshot parsing accepts only the complete append prefix and identifies a torn trailing tick (124.4199ms)
+✔ tick or snapshot tampering is rejected before financial metrics are trusted (59.4924ms)
+✔ a collection-only attempt is never reported as a successful cash investment (12.9413ms)
+✔ reports are unique derived JSON/HTML and never write the source ledger or state (67.444ms)
+✔ the ETF equal-weight baseline exposes six positions while the model cap is three and single hold cap is one (64.0679ms)
+✔ an aborted pre-entry collection reports no investment account and ignores a conflicting external state file (82.3789ms)
+✔ a tail ending inside a Chinese UTF8 character reports its actual byte cutoff without decoding it as a complete line (0.1965ms)
+✔ frozen native HTTP forward records are classified as forward paper evidence, with execution still unverified (55.963ms)
+✔ read-only native provenance verification rejects missing or changed helper and service source (6.6113ms)
+✔ entry economics exposes thin net target margin after both fees, separately from stop scenario and probability (57.8918ms)
+✔ opening input excludes today close high low and volume; future candle edits cannot change opening orders (4.56ms)
+✔ missing previous completed bar blocks entry rather than rolling an older signal forward (445.2143ms)
+✔ incremental replay and public Paper.replay preserve identical trades equity and hashes across 20 sessions (616.2432ms)
+✔ end of sample keeps ownership and marks at the actual close; never fabricates liquidation cash (28.1158ms)
+✔ research training consumes only bars through declared cutoff, including mature-label isolation (3.3651ms)
+✔ deterministic baselines use explicit selector identities and never report synthetic scores as price forecasts (366.8101ms)
+ℹ tests 39
+ℹ suites 0
+ℹ pass 39
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 5523.4844

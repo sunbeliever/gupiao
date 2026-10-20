@@ -1,0 +1,5293 @@
+{
+  "schema": "continuous-account-report-v1",
+  "generatedAt": "2026-10-20T03:52:33.067Z",
+  "experimentId": "continuous-etf-audit-20261020-1100",
+  "evidenceKind": "forward_paper_record_unverified_execution",
+  "forwardDeclarationValid": true,
+  "accountStarted": true,
+  "attemptOutcome": "ongoing_paper_account",
+  "accountId": "continuous-etf-audit-20261020-1100",
+  "accountContinues": true,
+  "readOnlyDerivation": true,
+  "hashChainVerified": true,
+  "accountingVerified": true,
+  "twentyDayScoring": null,
+  "strategySuccess": false,
+  "profitabilityStatus": "unproven",
+  "snapshot": {
+    "sequence": 127,
+    "decisionAt": "2026-10-20T03:52:11.238Z",
+    "tickHash": "ecf66ad46fea29ce2d8aa6d70efcc15f44915aa0eb51f81b2726f5432c5b4ceb",
+    "checkpointDigest": "8d19f68a8af99959d806e4350f8ddd1deaec9dd47e6f94cc125f4c74df6c2047",
+    "sessionIntegrityHash": "0e8dc125c0f8d73bd20130b259321b1a6a55c9383970319c9148a4da637e282d",
+    "partialTailBytes": 0,
+    "completePrefixBytes": 23998565,
+    "cutoff": "last fully captured newline-terminated tick and its embedded account checkpoint; separate state.json is never used",
+    "tailIgnored": false
+  },
+  "fingerprints": {
+    "manifestHash": "ca57134dc1ddc15dab9f5112ad8c77ebe1858c972a6043cff3f1d96d73e2c430",
+    "lastTickHash": "ecf66ad46fea29ce2d8aa6d70efcc15f44915aa0eb51f81b2726f5432c5b4ceb",
+    "sourceHashes": {
+      "paper-engine.js": "9d3963e8eeeeb38b6363bbd7680fbb9dcecad142bc36f55963ab9f248464264f",
+      "paper-account.js": "0810c7701346a3e9c9bd416707ebe1119ea8bc81984bc389643e8895cd5e7e1e",
+      "trading-calendar.js": "0e4e80be62ff1a1ac308445f22f057368bc0fc726d8f8d77472573b1a7b416c2",
+      "fee-profile.js": "52de02c0ccd6939e906acd4094c477632f07bf983f6e9f7e64b2fa32ab2d8abf",
+      "audit-identity.js": "2e2c5de43e45287e991062dee4476a46f861aa0e058fc4a90770756a80557859",
+      "corporate-actions.js": "a9e2d9b53f24d2c3ca45f1afff8a5393694c0ed3745498e639e56c6a308b0f4b",
+      "corporate-events.js": "e01116e00bb34620f8fa07446990048c49c08c5f3a0bda202ab5d8b9270f3550",
+      "analysis.js": "ecbb66231d2276de365b6e1a3d657e2931ade29049c590ef6e5701a4dc7255cd",
+      "market.js": "9a1da1a3114a47f0786270da30db3da5792a43ae3f4ce47342b14d71282ab199",
+      "news-facts.js": "3f7d886eeb1a3a2d5a354fd1a40043894d6127d7c25ed975e9fb3d3666154990",
+      "seed.js": "56847db2db3968fb391568e6af244595323c0b442c083babae315641fbdb3e84"
+    },
+    "exeSha256": "05a2ccca7cec4dd99073284e9d903b127e435ca2b443733b77c72b01efb1956c",
+    "driverHash": "4dff33b3722884d6829dcb72221df7760a1ba669ae9cb763548c0c24c2cc644e",
+    "strategy": {
+      "strategy_id": "ridge11-tech-etf-continuous-v1",
+      "model_hash": "786a236dd6e4207ed2724ef8f91e7d1f131794dcc57817e5d68615b295b79127",
+      "universe_version": "sha256:59014dc1bd250b69beefce3306f8f4d1b3f682b94daff9146616371244149d4e",
+      "rules_hash": "1df270dd373a2ab8fa811e86e0273a369a30425c7862df1311e6343c4ed161a2",
+      "data_hash": "eccd26c9f4373bd3cba2dbb6a119cfd2c1069880a0fcdf04484a65f62e2180c1",
+      "fee_profile": {
+        "assumptionLabel": "最低5元为模拟假设，以合同为准",
+        "commissionRate": 0.0003,
+        "minFee": 5,
+        "slippage": 0.001,
+        "stockSellStampRate": 0.0005,
+        "stockTransferRate": 0.00001,
+        "version": "cn-paper-fees-v1"
+      },
+      "budget": 10000,
+      "risk_limits": {
+        "investableLimit": 10000,
+        "maxExposure": 1,
+        "maxPositions": 3,
+        "maxThemeWeight": 1
+      },
+      "execution_mode": "continuous_forward_native_http"
+    },
+    "comparisons": {
+      "cash": {
+        "strategy_id": "cash-hold-v1",
+        "model_hash": "793f5f8573a4dc3b5b48e0b547d8885d5a7b846fdb222b7a605f4626909b662c",
+        "universe_version": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "rules_hash": "9b699e026cecf88afc444b7c3302d53729d81c6056d5d50c298147833b19444e",
+        "data_hash": "0c371e1f4ec46625ee3d96506d1942bf9c1a243a70b601c2067700987c9943ef",
+        "fee_profile": {
+          "assumptionLabel": "最低5元为模拟假设，以合同为准",
+          "commissionRate": 0.0003,
+          "minFee": 5,
+          "slippage": 0.001,
+          "stockSellStampRate": 0.0005,
+          "stockTransferRate": 0.00001,
+          "version": "cn-paper-fees-v1"
+        },
+        "budget": 10000,
+        "risk_limits": {
+          "investableLimit": 0,
+          "maxExposure": 0
+        },
+        "execution_mode": "continuous_forward_native_http"
+      },
+      "hold_etf": {
+        "strategy_id": "technology-hold_etf-hold20-v1",
+        "model_hash": "bff67ea03d52eb354ab0c0e0cfbcc1ba6fb2ce6c9f4ce6c08e6cb98a2055211d",
+        "universe_version": "sha256:e08874867a29c2f9acc1446c9800d3c94a14cb043cf9360e2536553c4b08739f",
+        "rules_hash": "60492b7e3534f4e4082cf74c9f50ed6f8ec09a591f39292529b737fe1e172b70",
+        "data_hash": "3b534203bd17fd35c92507752e175829877116eced20ea2eafa2d02eb0761f19",
+        "fee_profile": {
+          "assumptionLabel": "最低5元为模拟假设，以合同为准",
+          "commissionRate": 0.0003,
+          "minFee": 5,
+          "slippage": 0.001,
+          "stockSellStampRate": 0.0005,
+          "stockTransferRate": 0.00001,
+          "version": "cn-paper-fees-v1"
+        },
+        "budget": 10000,
+        "risk_limits": {
+          "investableLimit": 10000,
+          "maxExposure": 1,
+          "maxPositions": 1,
+          "maxThemeWeight": 1
+        },
+        "execution_mode": "continuous_forward_native_http"
+      },
+      "equal_weight": {
+        "strategy_id": "technology-equal_weight-hold20-v1",
+        "model_hash": "d99a2047372a90c9632218eeb685bc313efa0db79b58b499b2fac80005462d6e",
+        "universe_version": "sha256:a5f1c542f33c4f24cd4ee4ae5468a02fa7c0285c7d7580585775351afe182e8c",
+        "rules_hash": "9d56d59c67cfc565e581915b5da7d105ea69a3aa1917ff1a333de887dd24d4a7",
+        "data_hash": "3b534203bd17fd35c92507752e175829877116eced20ea2eafa2d02eb0761f19",
+        "fee_profile": {
+          "assumptionLabel": "最低5元为模拟假设，以合同为准",
+          "commissionRate": 0.0003,
+          "minFee": 5,
+          "slippage": 0.001,
+          "stockSellStampRate": 0.0005,
+          "stockTransferRate": 0.00001,
+          "version": "cn-paper-fees-v1"
+        },
+        "budget": 10000,
+        "risk_limits": {
+          "investableLimit": 10000,
+          "maxExposure": 1,
+          "maxPositions": 6,
+          "maxThemeWeight": 1
+        },
+        "execution_mode": "continuous_forward_native_http"
+      }
+    }
+  },
+  "manifest": {
+    "schema": 1,
+    "id": "continuous-etf-audit-20261020-1100",
+    "declaredAt": "2026-10-20T02:46:47.278Z",
+    "entryAfter": "2026-10-20T03:00:00.000Z",
+    "latestEntry": "2026-10-20T03:05:00.000Z",
+    "executionMode": "continuous_forward_native_http",
+    "intervalMs": 30000,
+    "historyRefreshMs": 300000,
+    "universe": [
+      {
+        "symbol": "sz002230",
+        "name": "科大讯飞",
+        "sector": "人工智能",
+        "type": "stock"
+      },
+      {
+        "symbol": "sz300308",
+        "name": "中际旭创",
+        "sector": "光通信",
+        "type": "stock"
+      },
+      {
+        "symbol": "sz300502",
+        "name": "新易盛",
+        "sector": "光通信",
+        "type": "stock"
+      },
+      {
+        "symbol": "sh688981",
+        "name": "中芯国际",
+        "sector": "半导体",
+        "type": "stock"
+      },
+      {
+        "symbol": "sh603019",
+        "name": "中科曙光",
+        "sector": "算力",
+        "type": "stock"
+      },
+      {
+        "symbol": "sz000977",
+        "name": "浪潮信息",
+        "sector": "算力",
+        "type": "stock"
+      },
+      {
+        "symbol": "sz002415",
+        "name": "海康威视",
+        "sector": "人工智能",
+        "type": "stock"
+      },
+      {
+        "symbol": "sh688256",
+        "name": "寒武纪",
+        "sector": "AI芯片",
+        "type": "stock"
+      },
+      {
+        "symbol": "sh600406",
+        "name": "国电南瑞",
+        "sector": "工业软件",
+        "type": "stock"
+      },
+      {
+        "symbol": "sz002371",
+        "name": "北方华创",
+        "sector": "半导体设备",
+        "type": "stock"
+      },
+      {
+        "symbol": "sh600703",
+        "name": "三安光电",
+        "sector": "半导体",
+        "type": "stock"
+      },
+      {
+        "symbol": "sh688111",
+        "name": "金山办公",
+        "sector": "软件",
+        "type": "stock"
+      },
+      {
+        "symbol": "sh600570",
+        "name": "恒生电子",
+        "sector": "软件",
+        "type": "stock"
+      },
+      {
+        "symbol": "sh588000",
+        "name": "科创50ETF",
+        "sector": "科创",
+        "type": "etf"
+      },
+      {
+        "symbol": "sh512760",
+        "name": "芯片ETF",
+        "sector": "半导体",
+        "type": "etf"
+      },
+      {
+        "symbol": "sh515070",
+        "name": "人工智能ETF",
+        "sector": "人工智能",
+        "type": "etf"
+      },
+      {
+        "symbol": "sh512720",
+        "name": "计算机ETF",
+        "sector": "软件",
+        "type": "etf"
+      },
+      {
+        "symbol": "sh515880",
+        "name": "通信ETF",
+        "sector": "通信",
+        "type": "etf"
+      },
+      {
+        "symbol": "sz159852",
+        "name": "软件ETF",
+        "sector": "软件",
+        "type": "etf"
+      }
+    ],
+    "executionSymbols": [
+      "sh588000",
+      "sh512760",
+      "sh515070",
+      "sh512720",
+      "sh515880",
+      "sz159852"
+    ],
+    "policy": {
+      "budget": 10000,
+      "preset": "full_capital",
+      "allocationMode": "full",
+      "feeProfile": {
+        "version": "cn-paper-fees-v1",
+        "commissionRate": 0.0003,
+        "minFee": 5,
+        "slippage": 0.001,
+        "stockSellStampRate": 0.0005,
+        "stockTransferRate": 0.00001,
+        "assumptionLabel": "最低5元为模拟假设，以合同为准"
+      },
+      "riskLimits": {
+        "investableLimit": 10000,
+        "maxExposure": 1,
+        "maxPositions": 3,
+        "maxThemeWeight": 1
+      },
+      "stopLossRate": 0.08
+    },
+    "files": {
+      "paper-engine.js": "9d3963e8eeeeb38b6363bbd7680fbb9dcecad142bc36f55963ab9f248464264f",
+      "paper-account.js": "0810c7701346a3e9c9bd416707ebe1119ea8bc81984bc389643e8895cd5e7e1e",
+      "trading-calendar.js": "0e4e80be62ff1a1ac308445f22f057368bc0fc726d8f8d77472573b1a7b416c2",
+      "fee-profile.js": "52de02c0ccd6939e906acd4094c477632f07bf983f6e9f7e64b2fa32ab2d8abf",
+      "audit-identity.js": "2e2c5de43e45287e991062dee4476a46f861aa0e058fc4a90770756a80557859",
+      "corporate-actions.js": "a9e2d9b53f24d2c3ca45f1afff8a5393694c0ed3745498e639e56c6a308b0f4b",
+      "corporate-events.js": "e01116e00bb34620f8fa07446990048c49c08c5f3a0bda202ab5d8b9270f3550",
+      "analysis.js": "ecbb66231d2276de365b6e1a3d657e2931ade29049c590ef6e5701a4dc7255cd",
+      "market.js": "9a1da1a3114a47f0786270da30db3da5792a43ae3f4ce47342b14d71282ab199",
+      "news-facts.js": "3f7d886eeb1a3a2d5a354fd1a40043894d6127d7c25ed975e9fb3d3666154990",
+      "seed.js": "56847db2db3968fb391568e6af244595323c0b442c083babae315641fbdb3e84"
+    },
+    "exeSha256": "05a2ccca7cec4dd99073284e9d903b127e435ca2b443733b77c72b01efb1956c",
+    "releaseVerificationHash": "ee27a1afab5a1da0a89f2ac571b5ea2552d5b2c74614bbe5bd8a17434f9f4273",
+    "driverHash": "4dff33b3722884d6829dcb72221df7760a1ba669ae9cb763548c0c24c2cc644e",
+    "nativeRuntimeCaveat": true,
+    "notes": [
+      "All orders virtual; separate account from the Windows UI, never merge their returns.",
+      "Same frozen account rules and model as the verified EXE; transport availability does not prove permanent native connectivity.",
+      "Thirty minutes measures engineering only. Twenty-session profitability remains unproven.",
+      "Known 2023-2026 historical exploration is not a blind test. Only actual forward timestamps are recorded.",
+      "No added capital, commission waiver, human stock picking, training or automatic model promotion.",
+      "Frozen .NET helper uses the verified DesktopHttp service and URL whitelist; it is a separate collector, not the UI account."
+    ],
+    "nativeTransport": {
+      "kind": "dotnet-desktop-http-v1",
+      "exeSha256": "e0f80930a8fcd6f86e4ae4dfbd898104308e41e66aa24380730cb2926252e761",
+      "sourceHashes": {
+        "DesktopServices.cs": "292ee994ae931d5b22c0ec13a62c97b5f7daf12b6c84aa19bd517380793df742",
+        "MarketTransport.cs": "3fcf051cec577ccff061c7c0ab527d9af804a35e00929abdcdd0117aa81d64ae"
+      }
+    }
+  },
+  "collection": {
+    "tickCount": 127,
+    "collectionFailures": 43,
+    "lastRunStatus": "account_continues",
+    "lastCollectionReason": "quote_collection_incomplete",
+    "lastDataHealth": {
+      "ok": false,
+      "collectionOk": false,
+      "historyOk": true,
+      "entryQuoteComplete": false,
+      "valuationQuoteComplete": false,
+      "quotePoolComplete": false,
+      "expectedAsOf": "2026-10-19",
+      "history": {
+        "ok": true,
+        "expectedAsOf": "2026-10-19",
+        "rows": [
+          {
+            "symbol": "sz002230",
+            "dataAsOf": "2026-10-19",
+            "expectedAsOf": "2026-10-19",
+            "stale": false,
+            "reason": null
+          },
+          {
+            "symbol": "sz300308",
+            "dataAsOf": "2026-10-19",
+            "expectedAsOf": "2026-10-19",
+            "stale": false,
+            "reason": null
+          },
+          {
+            "symbol": "sz300502",
+            "dataAsOf": "2026-10-19",
+            "expectedAsOf": "2026-10-19",
+            "stale": false,
+            "reason": null
+          },
+          {
+            "symbol": "sh688981",
+            "dataAsOf": "2026-10-19",
+            "expectedAsOf": "2026-10-19",
+            "stale": false,
+            "reason": null
+          },
+          {
+            "symbol": "sh603019",
+            "dataAsOf": "2026-10-19",
+            "expectedAsOf": "2026-10-19",
+            "stale": false,
+            "reason": null
+          },
+          {
+            "symbol": "sz000977",
+            "dataAsOf": "2026-10-19",
+            "expectedAsOf": "2026-10-19",
+            "stale": false,
+            "reason": null
+          },
+          {
+            "symbol": "sz002415",
+            "dataAsOf": "2026-10-19",
+            "expectedAsOf": "2026-10-19",
+            "stale": false,
+            "reason": null
+          },
+          {
+            "symbol": "sh688256",
+            "dataAsOf": "2026-10-19",
+            "expectedAsOf": "2026-10-19",
+            "stale": false,
+            "reason": null
+          },
+          {
+            "symbol": "sh600406",
+            "dataAsOf": "2026-10-19",
+            "expectedAsOf": "2026-10-19",
+            "stale": false,
+            "reason": null
+          },
+          {
+            "symbol": "sz002371",
+            "dataAsOf": "2026-10-19",
+            "expectedAsOf": "2026-10-19",
+            "stale": false,
+            "reason": null
+          },
+          {
+            "symbol": "sh600703",
+            "dataAsOf": "2026-10-19",
+            "expectedAsOf": "2026-10-19",
+            "stale": false,
+            "reason": null
+          },
+          {
+            "symbol": "sh688111",
+            "dataAsOf": "2026-10-19",
+            "expectedAsOf": "2026-10-19",
+            "stale": false,
+            "reason": null
+          },
+          {
+            "symbol": "sh600570",
+            "dataAsOf": "2026-10-19",
+            "expectedAsOf": "2026-10-19",
+            "stale": false,
+            "reason": null
+          },
+          {
+            "symbol": "sh588000",
+            "dataAsOf": "2026-10-19",
+            "expectedAsOf": "2026-10-19",
+            "stale": false,
+            "reason": null
+          },
+          {
+            "symbol": "sh512760",
+            "dataAsOf": "2026-10-19",
+            "expectedAsOf": "2026-10-19",
+            "stale": false,
+            "reason": null
+          },
+          {
+            "symbol": "sh515070",
+            "dataAsOf": "2026-10-19",
+            "expectedAsOf": "2026-10-19",
+            "stale": false,
+            "reason": null
+          },
+          {
+            "symbol": "sh512720",
+            "dataAsOf": "2026-10-19",
+            "expectedAsOf": "2026-10-19",
+            "stale": false,
+            "reason": null
+          },
+          {
+            "symbol": "sh515880",
+            "dataAsOf": "2026-10-19",
+            "expectedAsOf": "2026-10-19",
+            "stale": false,
+            "reason": null
+          },
+          {
+            "symbol": "sz159852",
+            "dataAsOf": "2026-10-19",
+            "expectedAsOf": "2026-10-19",
+            "stale": false,
+            "reason": null
+          }
+        ],
+        "reason": null,
+        "calendarVersion": "sse-sessions-2023-2026-v1"
+      },
+      "historyStatuses": [
+        {
+          "symbol": "sz002230",
+          "ok": true,
+          "stale": false,
+          "dataAsOf": "2026-10-19",
+          "expectedAsOf": "2026-10-19",
+          "fetchedAt": "2026-10-20T03:49:04.613Z",
+          "sourceTime": null,
+          "source": "腾讯公开日线",
+          "errors": [],
+          "reason": null,
+          "calendarVersion": "sse-sessions-2023-2026-v1"
+        },
+        {
+          "symbol": "sz300308",
+          "ok": true,
+          "stale": false,
+          "dataAsOf": "2026-10-19",
+          "expectedAsOf": "2026-10-19",
+          "fetchedAt": "2026-10-20T03:49:04.603Z",
+          "sourceTime": null,
+          "source": "腾讯公开日线",
+          "errors": [],
+          "reason": null,
+          "calendarVersion": "sse-sessions-2023-2026-v1"
+        },
+        {
+          "symbol": "sz300502",
+          "ok": true,
+          "stale": false,
+          "dataAsOf": "2026-10-19",
+          "expectedAsOf": "2026-10-19",
+          "fetchedAt": "2026-10-20T03:49:04.622Z",
+          "sourceTime": null,
+          "source": "腾讯公开日线",
+          "errors": [],
+          "reason": null,
+          "calendarVersion": "sse-sessions-2023-2026-v1"
+        },
+        {
+          "symbol": "sh688981",
+          "ok": true,
+          "stale": false,
+          "dataAsOf": "2026-10-19",
+          "expectedAsOf": "2026-10-19",
+          "fetchedAt": "2026-10-20T03:49:05.513Z",
+          "sourceTime": null,
+          "source": "东方财富公开日线",
+          "errors": [
+            "sh688981 2026 腾讯日线失败: 复权日线字段缺失"
+          ],
+          "reason": null,
+          "calendarVersion": "sse-sessions-2023-2026-v1"
+        },
+        {
+          "symbol": "sh603019",
+          "ok": true,
+          "stale": false,
+          "dataAsOf": "2026-10-19",
+          "expectedAsOf": "2026-10-19",
+          "fetchedAt": "2026-10-20T03:49:04.924Z",
+          "sourceTime": null,
+          "source": "腾讯公开日线",
+          "errors": [],
+          "reason": null,
+          "calendarVersion": "sse-sessions-2023-2026-v1"
+        },
+        {
+          "symbol": "sz000977",
+          "ok": true,
+          "stale": false,
+          "dataAsOf": "2026-10-19",
+          "expectedAsOf": "2026-10-19",
+          "fetchedAt": "2026-10-20T03:49:04.935Z",
+          "sourceTime": null,
+          "source": "腾讯公开日线",
+          "errors": [],
+          "reason": null,
+          "calendarVersion": "sse-sessions-2023-2026-v1"
+        },
+        {
+          "symbol": "sz002415",
+          "ok": true,
+          "stale": false,
+          "dataAsOf": "2026-10-19",
+          "expectedAsOf": "2026-10-19",
+          "fetchedAt": "2026-10-20T03:49:05.201Z",
+          "sourceTime": null,
+          "source": "腾讯公开日线",
+          "errors": [],
+          "reason": null,
+          "calendarVersion": "sse-sessions-2023-2026-v1"
+        },
+        {
+          "symbol": "sh688256",
+          "ok": true,
+          "stale": false,
+          "dataAsOf": "2026-10-19",
+          "expectedAsOf": "2026-10-19",
+          "fetchedAt": "2026-10-20T03:49:05.208Z",
+          "sourceTime": null,
+          "source": "腾讯公开日线",
+          "errors": [],
+          "reason": null,
+          "calendarVersion": "sse-sessions-2023-2026-v1"
+        },
+        {
+          "symbol": "sh600406",
+          "ok": true,
+          "stale": false,
+          "dataAsOf": "2026-10-19",
+          "expectedAsOf": "2026-10-19",
+          "fetchedAt": "2026-10-20T03:49:05.484Z",
+          "sourceTime": null,
+          "source": "腾讯公开日线",
+          "errors": [],
+          "reason": null,
+          "calendarVersion": "sse-sessions-2023-2026-v1"
+        },
+        {
+          "symbol": "sz002371",
+          "ok": true,
+          "stale": false,
+          "dataAsOf": "2026-10-19",
+          "expectedAsOf": "2026-10-19",
+          "fetchedAt": "2026-10-20T03:49:05.496Z",
+          "sourceTime": null,
+          "source": "腾讯公开日线",
+          "errors": [],
+          "reason": null,
+          "calendarVersion": "sse-sessions-2023-2026-v1"
+        },
+        {
+          "symbol": "sh600703",
+          "ok": true,
+          "stale": false,
+          "dataAsOf": "2026-10-19",
+          "expectedAsOf": "2026-10-19",
+          "fetchedAt": "2026-10-20T03:49:05.768Z",
+          "sourceTime": null,
+          "source": "腾讯公开日线",
+          "errors": [],
+          "reason": null,
+          "calendarVersion": "sse-sessions-2023-2026-v1"
+        },
+        {
+          "symbol": "sh688111",
+          "ok": true,
+          "stale": false,
+          "dataAsOf": "2026-10-19",
+          "expectedAsOf": "2026-10-19",
+          "fetchedAt": "2026-10-20T03:49:05.779Z",
+          "sourceTime": null,
+          "source": "腾讯公开日线",
+          "errors": [],
+          "reason": null,
+          "calendarVersion": "sse-sessions-2023-2026-v1"
+        },
+        {
+          "symbol": "sh600570",
+          "ok": true,
+          "stale": false,
+          "dataAsOf": "2026-10-19",
+          "expectedAsOf": "2026-10-19",
+          "fetchedAt": "2026-10-20T03:49:05.807Z",
+          "sourceTime": null,
+          "source": "腾讯公开日线",
+          "errors": [],
+          "reason": null,
+          "calendarVersion": "sse-sessions-2023-2026-v1"
+        },
+        {
+          "symbol": "sh588000",
+          "ok": true,
+          "stale": false,
+          "dataAsOf": "2026-10-19",
+          "expectedAsOf": "2026-10-19",
+          "fetchedAt": "2026-10-20T03:49:06.045Z",
+          "sourceTime": null,
+          "source": "腾讯公开日线",
+          "errors": [],
+          "reason": null,
+          "calendarVersion": "sse-sessions-2023-2026-v1"
+        },
+        {
+          "symbol": "sh512760",
+          "ok": true,
+          "stale": false,
+          "dataAsOf": "2026-10-19",
+          "expectedAsOf": "2026-10-19",
+          "fetchedAt": "2026-10-20T03:49:06.060Z",
+          "sourceTime": null,
+          "source": "腾讯公开日线",
+          "errors": [],
+          "reason": null,
+          "calendarVersion": "sse-sessions-2023-2026-v1"
+        },
+        {
+          "symbol": "sh515070",
+          "ok": true,
+          "stale": false,
+          "dataAsOf": "2026-10-19",
+          "expectedAsOf": "2026-10-19",
+          "fetchedAt": "2026-10-20T03:49:06.087Z",
+          "sourceTime": null,
+          "source": "腾讯公开日线",
+          "errors": [],
+          "reason": null,
+          "calendarVersion": "sse-sessions-2023-2026-v1"
+        },
+        {
+          "symbol": "sh512720",
+          "ok": true,
+          "stale": false,
+          "dataAsOf": "2026-10-19",
+          "expectedAsOf": "2026-10-19",
+          "fetchedAt": "2026-10-20T03:49:06.319Z",
+          "sourceTime": null,
+          "source": "腾讯公开日线",
+          "errors": [],
+          "reason": null,
+          "calendarVersion": "sse-sessions-2023-2026-v1"
+        },
+        {
+          "symbol": "sh515880",
+          "ok": true,
+          "stale": false,
+          "dataAsOf": "2026-10-19",
+          "expectedAsOf": "2026-10-19",
+          "fetchedAt": "2026-10-20T03:49:06.364Z",
+          "sourceTime": null,
+          "source": "腾讯公开日线",
+          "errors": [],
+          "reason": null,
+          "calendarVersion": "sse-sessions-2023-2026-v1"
+        },
+        {
+          "symbol": "sz159852",
+          "ok": true,
+          "stale": false,
+          "dataAsOf": "2026-10-19",
+          "expectedAsOf": "2026-10-19",
+          "fetchedAt": "2026-10-20T03:49:07.085Z",
+          "sourceTime": null,
+          "source": "东方财富公开日线",
+          "errors": [
+            "sz159852 2026 腾讯日线失败: 复权日线字段缺失"
+          ],
+          "reason": null,
+          "calendarVersion": "sse-sessions-2023-2026-v1"
+        }
+      ],
+      "quoteRows": [
+        {
+          "symbol": "sz002230",
+          "ok": false,
+          "entryOk": false,
+          "valuationOk": false,
+          "mode": null,
+          "reason": "quote_expired_or_invalid_phase"
+        },
+        {
+          "symbol": "sz300308",
+          "ok": false,
+          "entryOk": false,
+          "valuationOk": false,
+          "mode": null,
+          "reason": "quote_expired_or_invalid_phase"
+        },
+        {
+          "symbol": "sz300502",
+          "ok": false,
+          "entryOk": false,
+          "valuationOk": false,
+          "mode": null,
+          "reason": "quote_expired_or_invalid_phase"
+        },
+        {
+          "symbol": "sh688981",
+          "ok": false,
+          "entryOk": false,
+          "valuationOk": false,
+          "mode": null,
+          "reason": "quote_expired_or_invalid_phase"
+        },
+        {
+          "symbol": "sh603019",
+          "ok": false,
+          "entryOk": false,
+          "valuationOk": false,
+          "mode": null,
+          "reason": "quote_expired_or_invalid_phase"
+        },
+        {
+          "symbol": "sz000977",
+          "ok": false,
+          "entryOk": false,
+          "valuationOk": false,
+          "mode": null,
+          "reason": "quote_expired_or_invalid_phase"
+        },
+        {
+          "symbol": "sz002415",
+          "ok": false,
+          "entryOk": false,
+          "valuationOk": false,
+          "mode": null,
+          "reason": "quote_expired_or_invalid_phase"
+        },
+        {
+          "symbol": "sh688256",
+          "ok": false,
+          "entryOk": false,
+          "valuationOk": false,
+          "mode": null,
+          "reason": "quote_expired_or_invalid_phase"
+        },
+        {
+          "symbol": "sh600406",
+          "ok": false,
+          "entryOk": false,
+          "valuationOk": false,
+          "mode": null,
+          "reason": "quote_expired_or_invalid_phase"
+        },
+        {
+          "symbol": "sz002371",
+          "ok": false,
+          "entryOk": false,
+          "valuationOk": false,
+          "mode": null,
+          "reason": "quote_expired_or_invalid_phase"
+        },
+        {
+          "symbol": "sh600703",
+          "ok": false,
+          "entryOk": false,
+          "valuationOk": false,
+          "mode": null,
+          "reason": "quote_expired_or_invalid_phase"
+        },
+        {
+          "symbol": "sh688111",
+          "ok": false,
+          "entryOk": false,
+          "valuationOk": false,
+          "mode": null,
+          "reason": "quote_expired_or_invalid_phase"
+        },
+        {
+          "symbol": "sh600570",
+          "ok": false,
+          "entryOk": false,
+          "valuationOk": false,
+          "mode": null,
+          "reason": "quote_expired_or_invalid_phase"
+        },
+        {
+          "symbol": "sh588000",
+          "ok": false,
+          "entryOk": false,
+          "valuationOk": false,
+          "mode": null,
+          "reason": "quote_expired_or_invalid_phase"
+        },
+        {
+          "symbol": "sh512760",
+          "ok": false,
+          "entryOk": false,
+          "valuationOk": false,
+          "mode": null,
+          "reason": "quote_expired_or_invalid_phase"
+        },
+        {
+          "symbol": "sh515070",
+          "ok": false,
+          "entryOk": false,
+          "valuationOk": false,
+          "mode": null,
+          "reason": "quote_expired_or_invalid_phase"
+        },
+        {
+          "symbol": "sh512720",
+          "ok": false,
+          "entryOk": false,
+          "valuationOk": false,
+          "mode": null,
+          "reason": "quote_expired_or_invalid_phase"
+        },
+        {
+          "symbol": "sh515880",
+          "ok": false,
+          "entryOk": false,
+          "valuationOk": false,
+          "mode": null,
+          "reason": "quote_expired_or_invalid_phase"
+        },
+        {
+          "symbol": "sz159852",
+          "ok": false,
+          "entryOk": false,
+          "valuationOk": false,
+          "mode": null,
+          "reason": "quote_expired_or_invalid_phase"
+        }
+      ],
+      "reason": "quote_collection_incomplete"
+    },
+    "firstPredictionPublishedAt": "2026-10-20T02:47:53.234Z",
+    "firstPredictionReceivedAt": "2026-10-20T02:47:53.234Z"
+  },
+  "accounts": {
+    "model": {
+      "account": "model",
+      "budget": 10000,
+      "equity": 9917.128400000001,
+      "netPnl": -82.87159999999858,
+      "netReturn": -0.008287159999999858,
+      "realizedPnl": 0,
+      "unrealizedPnl": -82.87159999999858,
+      "cash": 13.428400000002512,
+      "marketValue": 9903.699999999999,
+      "receivables": 0,
+      "frozenFunds": 0,
+      "availableCash": 13.428400000002512,
+      "feesPaid": 5,
+      "commission": 5,
+      "tax": 0,
+      "transferFee": 0,
+      "slippageCost": 9.971599999998126,
+      "paidDividends": 0,
+      "accountingBalanced": true,
+      "pnlBalanced": true,
+      "holdingCount": 1,
+      "positionCount": 1,
+      "riskLimits": {
+        "investableLimit": 10000,
+        "maxExposure": 1,
+        "maxPositions": 3,
+        "maxThemeWeight": 1
+      },
+      "maximumPositions": 3,
+      "holdings": [
+        {
+          "symbol": "sh512720",
+          "name": "计算机ETF",
+          "type": "etf",
+          "theme": "软件",
+          "shares": 9700,
+          "entryPrice": 1.0290279999999998,
+          "entryFee": 5,
+          "entryCosts": {
+            "commission": 5,
+            "tax": 0,
+            "transferFee": 0,
+            "total": 5
+          },
+          "entrySourceTime": "2026-10-20 11:00:02",
+          "entryDate": "2026-10-20",
+          "lastPrice": 1.021,
+          "lastSourceTime": "2026-10-20 11:51:47",
+          "lastReceivedAt": "2026-10-20T03:52:11.230Z",
+          "stale": true,
+          "signalDate": "2026-10-19",
+          "entrySession": "2026-10-20",
+          "referenceOpen": 1.018,
+          "horizon": 20,
+          "maturitySession": "2026-11-17",
+          "sellableSession": "2026-10-21",
+          "predicted20DayReturn": 0.013732468151518119,
+          "exitPlan": {
+            "version": "expiry-risk-target-v1",
+            "maturitySession": "2026-11-17",
+            "stopLossRate": 0.08,
+            "stopPrice": 0.9467057599999998,
+            "targetPrice": 1.0319796525782454,
+            "ruleFrozenAt": "2026-10-20T03:00:06.056Z",
+            "dividendPolicy": "total_return_threshold_adjustment",
+            "unfilledPolicy": "retain_position_and_retry_on_next_legal_fresh_quote"
+          },
+          "pendingExit": null,
+          "appliedCorporateActions": [],
+          "staleReason": "expired_quote",
+          "valuationAgeMs": 24238
+        }
+      ],
+      "pendingExits": [],
+      "stalePositions": [
+        {
+          "symbol": "sh512720",
+          "shares": 9700,
+          "price": 1.021,
+          "sourceTime": "2026-10-20 11:51:47",
+          "receivedAt": "2026-10-20T03:52:11.230Z",
+          "valuationAgeMs": 24238,
+          "reason": "expired_quote"
+        }
+      ],
+      "actualExposure": 0.9986459386771677,
+      "sampleMeanExposure": 0.9986512375633411,
+      "observationCount": 103,
+      "staleObservationCount": 44,
+      "exposureMethod": "arithmetic sample mean of observed last-price market value / equity; stale samples retained and separately counted; not time-weighted",
+      "observedMaxDrawdown": 0.008726135718058692,
+      "drawdownMethod": "maximum observed equity drawdown from running peak including initial cash; excludes unobserved intraday extrema",
+      "grossFilledNotional": 9981.571599999997,
+      "grossTurnoverRate": 0.9981571599999998,
+      "turnoverMethod": "sum of buy and sell hypothetical filled notional / initial capital; double-sided gross turnover, excludes rejected orders, cash dividends and splits",
+      "buyCount": 1,
+      "sellCount": 0,
+      "rejectionCount": 0,
+      "rejectionReasons": {},
+      "blockedReasons": {},
+      "rejectedOrders": [],
+      "blockedExits": [],
+      "policyRejections": [],
+      "fingerprint": {
+        "strategy_id": "ridge11-tech-etf-continuous-v1",
+        "model_hash": "786a236dd6e4207ed2724ef8f91e7d1f131794dcc57817e5d68615b295b79127",
+        "universe_version": "sha256:59014dc1bd250b69beefce3306f8f4d1b3f682b94daff9146616371244149d4e",
+        "rules_hash": "1df270dd373a2ab8fa811e86e0273a369a30425c7862df1311e6343c4ed161a2",
+        "data_hash": "eccd26c9f4373bd3cba2dbb6a119cfd2c1069880a0fcdf04484a65f62e2180c1",
+        "fee_profile": {
+          "assumptionLabel": "最低5元为模拟假设，以合同为准",
+          "commissionRate": 0.0003,
+          "minFee": 5,
+          "slippage": 0.001,
+          "stockSellStampRate": 0.0005,
+          "stockTransferRate": 0.00001,
+          "version": "cn-paper-fees-v1"
+        },
+        "budget": 10000,
+        "risk_limits": {
+          "investableLimit": 10000,
+          "maxExposure": 1,
+          "maxPositions": 3,
+          "maxThemeWeight": 1
+        },
+        "execution_mode": "continuous_forward_native_http"
+      },
+      "entryComplete": null,
+      "valuationComplete": false
+    },
+    "cash": {
+      "account": "cash",
+      "budget": 10000,
+      "equity": 10000,
+      "netPnl": 0,
+      "netReturn": 0,
+      "realizedPnl": 0,
+      "unrealizedPnl": 0,
+      "cash": 10000,
+      "marketValue": 0,
+      "receivables": 0,
+      "frozenFunds": 0,
+      "availableCash": 10000,
+      "feesPaid": 0,
+      "commission": 0,
+      "tax": 0,
+      "transferFee": 0,
+      "slippageCost": 0,
+      "paidDividends": 0,
+      "accountingBalanced": true,
+      "pnlBalanced": true,
+      "holdingCount": 0,
+      "positionCount": 0,
+      "riskLimits": {
+        "investableLimit": 0,
+        "maxExposure": 0
+      },
+      "maximumPositions": null,
+      "holdings": [],
+      "pendingExits": [],
+      "stalePositions": [],
+      "actualExposure": 0,
+      "sampleMeanExposure": 0,
+      "observationCount": 103,
+      "staleObservationCount": 0,
+      "exposureMethod": "arithmetic sample mean of observed last-price market value / equity; stale samples retained and separately counted; not time-weighted",
+      "observedMaxDrawdown": 0,
+      "drawdownMethod": "maximum observed equity drawdown from running peak including initial cash; excludes unobserved intraday extrema",
+      "grossFilledNotional": 0,
+      "grossTurnoverRate": 0,
+      "turnoverMethod": "sum of buy and sell hypothetical filled notional / initial capital; double-sided gross turnover, excludes rejected orders, cash dividends and splits",
+      "buyCount": 0,
+      "sellCount": 0,
+      "rejectionCount": 0,
+      "rejectionReasons": {},
+      "blockedReasons": {},
+      "rejectedOrders": [],
+      "blockedExits": [],
+      "policyRejections": [],
+      "fingerprint": {
+        "strategy_id": "cash-hold-v1",
+        "model_hash": "793f5f8573a4dc3b5b48e0b547d8885d5a7b846fdb222b7a605f4626909b662c",
+        "universe_version": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "rules_hash": "9b699e026cecf88afc444b7c3302d53729d81c6056d5d50c298147833b19444e",
+        "data_hash": "0c371e1f4ec46625ee3d96506d1942bf9c1a243a70b601c2067700987c9943ef",
+        "fee_profile": {
+          "assumptionLabel": "最低5元为模拟假设，以合同为准",
+          "commissionRate": 0.0003,
+          "minFee": 5,
+          "slippage": 0.001,
+          "stockSellStampRate": 0.0005,
+          "stockTransferRate": 0.00001,
+          "version": "cn-paper-fees-v1"
+        },
+        "budget": 10000,
+        "risk_limits": {
+          "investableLimit": 0,
+          "maxExposure": 0
+        },
+        "execution_mode": "continuous_forward_native_http"
+      },
+      "entryComplete": true,
+      "valuationComplete": true
+    },
+    "hold_etf": {
+      "account": "hold_etf",
+      "budget": 10000,
+      "equity": 9936.039,
+      "netPnl": -63.96099999999933,
+      "netReturn": -0.006396099999999933,
+      "realizedPnl": 0,
+      "unrealizedPnl": -63.96099999999933,
+      "cash": 24.03900000000067,
+      "marketValue": 9912,
+      "receivables": 0,
+      "frozenFunds": 0,
+      "availableCash": 24.03900000000067,
+      "feesPaid": 5,
+      "commission": 5,
+      "tax": 0,
+      "transferFee": 0,
+      "slippageCost": 9.960999999999665,
+      "paidDividends": 0,
+      "accountingBalanced": true,
+      "pnlBalanced": true,
+      "holdingCount": 1,
+      "positionCount": 1,
+      "riskLimits": {
+        "investableLimit": 10000,
+        "maxExposure": 1,
+        "maxPositions": 1,
+        "maxThemeWeight": 1
+      },
+      "maximumPositions": 1,
+      "holdings": [
+        {
+          "symbol": "sh588000",
+          "name": "科创50ETF",
+          "type": "etf",
+          "theme": "科创",
+          "shares": 7000,
+          "entryPrice": 1.424423,
+          "entryFee": 5,
+          "entryCosts": {
+            "commission": 5,
+            "tax": 0,
+            "transferFee": 0,
+            "total": 5
+          },
+          "entrySourceTime": "2026-10-20 11:00:02",
+          "entryDate": "2026-10-20",
+          "lastPrice": 1.416,
+          "lastSourceTime": "2026-10-20 11:52:08",
+          "lastReceivedAt": "2026-10-20T03:52:11.230Z",
+          "stale": true,
+          "signalDate": null,
+          "entrySession": "2026-10-20",
+          "referenceOpen": 1.398,
+          "horizon": 20,
+          "maturitySession": "2026-11-17",
+          "sellableSession": "2026-10-21",
+          "predicted20DayReturn": null,
+          "exitPlan": {
+            "version": "expiry-risk-target-v1",
+            "maturitySession": "2026-11-17",
+            "stopLossRate": 0,
+            "stopPrice": 0,
+            "targetPrice": 1.7976931348623157e+308,
+            "ruleFrozenAt": "2026-10-20T03:00:06.056Z",
+            "dividendPolicy": "total_return_threshold_adjustment",
+            "unfilledPolicy": "retain_position_and_retry_on_next_legal_fresh_quote"
+          },
+          "pendingExit": null,
+          "appliedCorporateActions": [],
+          "staleReason": "expired_quote",
+          "valuationAgeMs": 3238
+        }
+      ],
+      "pendingExits": [],
+      "stalePositions": [
+        {
+          "symbol": "sh588000",
+          "shares": 7000,
+          "price": 1.416,
+          "sourceTime": "2026-10-20 11:52:08",
+          "receivedAt": "2026-10-20T03:52:11.230Z",
+          "valuationAgeMs": 3238,
+          "reason": "expired_quote"
+        }
+      ],
+      "actualExposure": 0.9975806254383662,
+      "sampleMeanExposure": 0.9975845638361397,
+      "observationCount": 103,
+      "staleObservationCount": 44,
+      "exposureMethod": "arithmetic sample mean of observed last-price market value / equity; stale samples retained and separately counted; not time-weighted",
+      "observedMaxDrawdown": 0.007695352776458275,
+      "drawdownMethod": "maximum observed equity drawdown from running peak including initial cash; excludes unobserved intraday extrema",
+      "grossFilledNotional": 9970.961,
+      "grossTurnoverRate": 0.9970960999999999,
+      "turnoverMethod": "sum of buy and sell hypothetical filled notional / initial capital; double-sided gross turnover, excludes rejected orders, cash dividends and splits",
+      "buyCount": 1,
+      "sellCount": 0,
+      "rejectionCount": 0,
+      "rejectionReasons": {},
+      "blockedReasons": {},
+      "rejectedOrders": [],
+      "blockedExits": [],
+      "policyRejections": [],
+      "fingerprint": {
+        "strategy_id": "technology-hold_etf-hold20-v1",
+        "model_hash": "bff67ea03d52eb354ab0c0e0cfbcc1ba6fb2ce6c9f4ce6c08e6cb98a2055211d",
+        "universe_version": "sha256:e08874867a29c2f9acc1446c9800d3c94a14cb043cf9360e2536553c4b08739f",
+        "rules_hash": "60492b7e3534f4e4082cf74c9f50ed6f8ec09a591f39292529b737fe1e172b70",
+        "data_hash": "3b534203bd17fd35c92507752e175829877116eced20ea2eafa2d02eb0761f19",
+        "fee_profile": {
+          "assumptionLabel": "最低5元为模拟假设，以合同为准",
+          "commissionRate": 0.0003,
+          "minFee": 5,
+          "slippage": 0.001,
+          "stockSellStampRate": 0.0005,
+          "stockTransferRate": 0.00001,
+          "version": "cn-paper-fees-v1"
+        },
+        "budget": 10000,
+        "risk_limits": {
+          "investableLimit": 10000,
+          "maxExposure": 1,
+          "maxPositions": 1,
+          "maxThemeWeight": 1
+        },
+        "execution_mode": "continuous_forward_native_http"
+      },
+      "entryComplete": true,
+      "valuationComplete": false
+    },
+    "equal_weight": {
+      "account": "equal_weight",
+      "budget": 10000,
+      "equity": 9909.799,
+      "netPnl": -90.20099999999911,
+      "netReturn": -0.009020099999999911,
+      "realizedPnl": 0,
+      "unrealizedPnl": -90.20099999999911,
+      "cash": 259.2990000000009,
+      "marketValue": 9650.5,
+      "receivables": 0,
+      "frozenFunds": 0,
+      "availableCash": 259.2990000000009,
+      "feesPaid": 30,
+      "commission": 30,
+      "tax": 0,
+      "transferFee": 0,
+      "slippageCost": 9.700999999998892,
+      "paidDividends": 0,
+      "accountingBalanced": true,
+      "pnlBalanced": true,
+      "holdingCount": 6,
+      "positionCount": 6,
+      "riskLimits": {
+        "investableLimit": 10000,
+        "maxExposure": 1,
+        "maxPositions": 6,
+        "maxThemeWeight": 1
+      },
+      "maximumPositions": 6,
+      "holdings": [
+        {
+          "symbol": "sh588000",
+          "name": "科创50ETF",
+          "type": "etf",
+          "theme": "科创",
+          "shares": 1100,
+          "entryPrice": 1.424423,
+          "entryFee": 5,
+          "entryCosts": {
+            "commission": 5,
+            "tax": 0,
+            "transferFee": 0,
+            "total": 5
+          },
+          "entrySourceTime": "2026-10-20 11:00:02",
+          "entryDate": "2026-10-20",
+          "lastPrice": 1.416,
+          "lastSourceTime": "2026-10-20 11:52:08",
+          "lastReceivedAt": "2026-10-20T03:52:11.230Z",
+          "stale": true,
+          "signalDate": null,
+          "entrySession": "2026-10-20",
+          "referenceOpen": 1.398,
+          "horizon": 20,
+          "maturitySession": "2026-11-17",
+          "sellableSession": "2026-10-21",
+          "predicted20DayReturn": null,
+          "exitPlan": {
+            "version": "expiry-risk-target-v1",
+            "maturitySession": "2026-11-17",
+            "stopLossRate": 0,
+            "stopPrice": 0,
+            "targetPrice": 1.7976931348623157e+308,
+            "ruleFrozenAt": "2026-10-20T03:00:06.056Z",
+            "dividendPolicy": "total_return_threshold_adjustment",
+            "unfilledPolicy": "retain_position_and_retry_on_next_legal_fresh_quote"
+          },
+          "pendingExit": null,
+          "appliedCorporateActions": [],
+          "staleReason": "expired_quote",
+          "valuationAgeMs": 3238
+        },
+        {
+          "symbol": "sh512760",
+          "name": "芯片ETF",
+          "type": "etf",
+          "theme": "半导体",
+          "shares": 1800,
+          "entryPrice": 0.89089,
+          "entryFee": 5,
+          "entryCosts": {
+            "commission": 5,
+            "tax": 0,
+            "transferFee": 0,
+            "total": 5
+          },
+          "entrySourceTime": "2026-10-20 11:00:01",
+          "entryDate": "2026-10-20",
+          "lastPrice": 0.885,
+          "lastSourceTime": "2026-10-20 11:52:10",
+          "lastReceivedAt": "2026-10-20T03:52:11.230Z",
+          "stale": true,
+          "signalDate": null,
+          "entrySession": "2026-10-20",
+          "referenceOpen": 0.87,
+          "horizon": 20,
+          "maturitySession": "2026-11-17",
+          "sellableSession": "2026-10-21",
+          "predicted20DayReturn": null,
+          "exitPlan": {
+            "version": "expiry-risk-target-v1",
+            "maturitySession": "2026-11-17",
+            "stopLossRate": 0,
+            "stopPrice": 0,
+            "targetPrice": 1.7976931348623157e+308,
+            "ruleFrozenAt": "2026-10-20T03:00:06.056Z",
+            "dividendPolicy": "total_return_threshold_adjustment",
+            "unfilledPolicy": "retain_position_and_retry_on_next_legal_fresh_quote"
+          },
+          "pendingExit": null,
+          "appliedCorporateActions": [],
+          "staleReason": "expired_quote",
+          "valuationAgeMs": 1238
+        },
+        {
+          "symbol": "sh515070",
+          "name": "人工智能ETF",
+          "type": "etf",
+          "theme": "人工智能",
+          "shares": 1700,
+          "entryPrice": 0.9379369999999999,
+          "entryFee": 5,
+          "entryCosts": {
+            "commission": 5,
+            "tax": 0,
+            "transferFee": 0,
+            "total": 5
+          },
+          "entrySourceTime": "2026-10-20 11:00:02",
+          "entryDate": "2026-10-20",
+          "lastPrice": 0.931,
+          "lastSourceTime": "2026-10-20 11:51:53",
+          "lastReceivedAt": "2026-10-20T03:52:11.230Z",
+          "stale": true,
+          "signalDate": null,
+          "entrySession": "2026-10-20",
+          "referenceOpen": 0.915,
+          "horizon": 20,
+          "maturitySession": "2026-11-17",
+          "sellableSession": "2026-10-21",
+          "predicted20DayReturn": null,
+          "exitPlan": {
+            "version": "expiry-risk-target-v1",
+            "maturitySession": "2026-11-17",
+            "stopLossRate": 0,
+            "stopPrice": 0,
+            "targetPrice": 1.7976931348623157e+308,
+            "ruleFrozenAt": "2026-10-20T03:00:06.056Z",
+            "dividendPolicy": "total_return_threshold_adjustment",
+            "unfilledPolicy": "retain_position_and_retry_on_next_legal_fresh_quote"
+          },
+          "pendingExit": null,
+          "appliedCorporateActions": [],
+          "staleReason": "expired_quote",
+          "valuationAgeMs": 18238
+        },
+        {
+          "symbol": "sh512720",
+          "name": "计算机ETF",
+          "type": "etf",
+          "theme": "软件",
+          "shares": 1600,
+          "entryPrice": 1.0290279999999998,
+          "entryFee": 5,
+          "entryCosts": {
+            "commission": 5,
+            "tax": 0,
+            "transferFee": 0,
+            "total": 5
+          },
+          "entrySourceTime": "2026-10-20 11:00:02",
+          "entryDate": "2026-10-20",
+          "lastPrice": 1.021,
+          "lastSourceTime": "2026-10-20 11:51:47",
+          "lastReceivedAt": "2026-10-20T03:52:11.230Z",
+          "stale": true,
+          "signalDate": null,
+          "entrySession": "2026-10-20",
+          "referenceOpen": 1.018,
+          "horizon": 20,
+          "maturitySession": "2026-11-17",
+          "sellableSession": "2026-10-21",
+          "predicted20DayReturn": null,
+          "exitPlan": {
+            "version": "expiry-risk-target-v1",
+            "maturitySession": "2026-11-17",
+            "stopLossRate": 0,
+            "stopPrice": 0,
+            "targetPrice": 1.7976931348623157e+308,
+            "ruleFrozenAt": "2026-10-20T03:00:06.056Z",
+            "dividendPolicy": "total_return_threshold_adjustment",
+            "unfilledPolicy": "retain_position_and_retry_on_next_legal_fresh_quote"
+          },
+          "pendingExit": null,
+          "appliedCorporateActions": [],
+          "staleReason": "expired_quote",
+          "valuationAgeMs": 24238
+        },
+        {
+          "symbol": "sh515880",
+          "name": "通信ETF",
+          "type": "etf",
+          "theme": "通信",
+          "shares": 3100,
+          "entryPrice": 0.534534,
+          "entryFee": 5,
+          "entryCosts": {
+            "commission": 5,
+            "tax": 0,
+            "transferFee": 0,
+            "total": 5
+          },
+          "entrySourceTime": "2026-10-20 11:00:03",
+          "entryDate": "2026-10-20",
+          "lastPrice": 0.53,
+          "lastSourceTime": "2026-10-20 11:51:42",
+          "lastReceivedAt": "2026-10-20T03:52:11.230Z",
+          "stale": true,
+          "signalDate": null,
+          "entrySession": "2026-10-20",
+          "referenceOpen": 0.516,
+          "horizon": 20,
+          "maturitySession": "2026-11-17",
+          "sellableSession": "2026-10-21",
+          "predicted20DayReturn": null,
+          "exitPlan": {
+            "version": "expiry-risk-target-v1",
+            "maturitySession": "2026-11-17",
+            "stopLossRate": 0,
+            "stopPrice": 0,
+            "targetPrice": 1.7976931348623157e+308,
+            "ruleFrozenAt": "2026-10-20T03:00:06.056Z",
+            "dividendPolicy": "total_return_threshold_adjustment",
+            "unfilledPolicy": "retain_position_and_retry_on_next_legal_fresh_quote"
+          },
+          "pendingExit": null,
+          "appliedCorporateActions": [],
+          "staleReason": "expired_quote",
+          "valuationAgeMs": 29238
+        },
+        {
+          "symbol": "sz159852",
+          "name": "软件ETF",
+          "type": "etf",
+          "theme": "软件",
+          "shares": 2600,
+          "entryPrice": 0.6316309999999999,
+          "entryFee": 5,
+          "entryCosts": {
+            "commission": 5,
+            "tax": 0,
+            "transferFee": 0,
+            "total": 5
+          },
+          "entrySourceTime": "2026-10-20 11:00:03",
+          "entryDate": "2026-10-20",
+          "lastPrice": 0.631,
+          "lastSourceTime": "2026-10-20 11:51:54",
+          "lastReceivedAt": "2026-10-20T03:52:11.230Z",
+          "stale": true,
+          "signalDate": null,
+          "entrySession": "2026-10-20",
+          "referenceOpen": 0.618,
+          "horizon": 20,
+          "maturitySession": "2026-11-17",
+          "sellableSession": "2026-10-21",
+          "predicted20DayReturn": null,
+          "exitPlan": {
+            "version": "expiry-risk-target-v1",
+            "maturitySession": "2026-11-17",
+            "stopLossRate": 0,
+            "stopPrice": 0,
+            "targetPrice": 1.7976931348623157e+308,
+            "ruleFrozenAt": "2026-10-20T03:00:06.056Z",
+            "dividendPolicy": "total_return_threshold_adjustment",
+            "unfilledPolicy": "retain_position_and_retry_on_next_legal_fresh_quote"
+          },
+          "pendingExit": null,
+          "appliedCorporateActions": [],
+          "staleReason": "expired_quote",
+          "valuationAgeMs": 17238
+        }
+      ],
+      "pendingExits": [],
+      "stalePositions": [
+        {
+          "symbol": "sh588000",
+          "shares": 1100,
+          "price": 1.416,
+          "sourceTime": "2026-10-20 11:52:08",
+          "receivedAt": "2026-10-20T03:52:11.230Z",
+          "valuationAgeMs": 3238,
+          "reason": "expired_quote"
+        },
+        {
+          "symbol": "sh512760",
+          "shares": 1800,
+          "price": 0.885,
+          "sourceTime": "2026-10-20 11:52:10",
+          "receivedAt": "2026-10-20T03:52:11.230Z",
+          "valuationAgeMs": 1238,
+          "reason": "expired_quote"
+        },
+        {
+          "symbol": "sh515070",
+          "shares": 1700,
+          "price": 0.931,
+          "sourceTime": "2026-10-20 11:51:53",
+          "receivedAt": "2026-10-20T03:52:11.230Z",
+          "valuationAgeMs": 18238,
+          "reason": "expired_quote"
+        },
+        {
+          "symbol": "sh512720",
+          "shares": 1600,
+          "price": 1.021,
+          "sourceTime": "2026-10-20 11:51:47",
+          "receivedAt": "2026-10-20T03:52:11.230Z",
+          "valuationAgeMs": 24238,
+          "reason": "expired_quote"
+        },
+        {
+          "symbol": "sh515880",
+          "shares": 3100,
+          "price": 0.53,
+          "sourceTime": "2026-10-20 11:51:42",
+          "receivedAt": "2026-10-20T03:52:11.230Z",
+          "valuationAgeMs": 29238,
+          "reason": "expired_quote"
+        },
+        {
+          "symbol": "sz159852",
+          "shares": 2600,
+          "price": 0.631,
+          "sourceTime": "2026-10-20 11:51:54",
+          "receivedAt": "2026-10-20T03:52:11.230Z",
+          "valuationAgeMs": 17238,
+          "reason": "expired_quote"
+        }
+      ],
+      "actualExposure": 0.9738340807921532,
+      "sampleMeanExposure": 0.9738895703496869,
+      "observationCount": 103,
+      "staleObservationCount": 44,
+      "exposureMethod": "arithmetic sample mean of observed last-price market value / equity; stale samples retained and separately counted; not time-weighted",
+      "observedMaxDrawdown": 0.009020099999999864,
+      "drawdownMethod": "maximum observed equity drawdown from running peak including initial cash; excludes unobserved intraday extrema",
+      "grossFilledNotional": 9710.701,
+      "grossTurnoverRate": 0.9710700999999999,
+      "turnoverMethod": "sum of buy and sell hypothetical filled notional / initial capital; double-sided gross turnover, excludes rejected orders, cash dividends and splits",
+      "buyCount": 6,
+      "sellCount": 0,
+      "rejectionCount": 0,
+      "rejectionReasons": {},
+      "blockedReasons": {},
+      "rejectedOrders": [],
+      "blockedExits": [],
+      "policyRejections": [],
+      "fingerprint": {
+        "strategy_id": "technology-equal_weight-hold20-v1",
+        "model_hash": "d99a2047372a90c9632218eeb685bc313efa0db79b58b499b2fac80005462d6e",
+        "universe_version": "sha256:a5f1c542f33c4f24cd4ee4ae5468a02fa7c0285c7d7580585775351afe182e8c",
+        "rules_hash": "9d56d59c67cfc565e581915b5da7d105ea69a3aa1917ff1a333de887dd24d4a7",
+        "data_hash": "3b534203bd17fd35c92507752e175829877116eced20ea2eafa2d02eb0761f19",
+        "fee_profile": {
+          "assumptionLabel": "最低5元为模拟假设，以合同为准",
+          "commissionRate": 0.0003,
+          "minFee": 5,
+          "slippage": 0.001,
+          "stockSellStampRate": 0.0005,
+          "stockTransferRate": 0.00001,
+          "version": "cn-paper-fees-v1"
+        },
+        "budget": 10000,
+        "risk_limits": {
+          "investableLimit": 10000,
+          "maxExposure": 1,
+          "maxPositions": 6,
+          "maxThemeWeight": 1
+        },
+        "execution_mode": "continuous_forward_native_http"
+      },
+      "entryComplete": true,
+      "valuationComplete": false
+    }
+  },
+  "daily": [
+    {
+      "date": "2026-10-20",
+      "asOf": "2026-10-20T03:52:11.238Z",
+      "snapshotTickHash": "ecf66ad46fea29ce2d8aa6d70efcc15f44915aa0eb51f81b2726f5432c5b4ceb",
+      "kind": "intraday_as_of",
+      "historyCurrent": true,
+      "valuationInputComplete": false,
+      "accounts": {
+        "model": {
+          "account": "model",
+          "budget": 10000,
+          "equity": 9917.128400000001,
+          "netPnl": -82.87159999999858,
+          "netReturn": -0.008287159999999858,
+          "realizedPnl": 0,
+          "unrealizedPnl": -82.87159999999858,
+          "cash": 13.428400000002512,
+          "marketValue": 9903.699999999999,
+          "receivables": 0,
+          "frozenFunds": 0,
+          "availableCash": 13.428400000002512,
+          "feesPaid": 5,
+          "commission": 5,
+          "tax": 0,
+          "transferFee": 0,
+          "slippageCost": 9.971599999998126,
+          "paidDividends": 0,
+          "accountingBalanced": true,
+          "pnlBalanced": true,
+          "holdingCount": 1,
+          "positionCount": 1,
+          "riskLimits": {
+            "investableLimit": 10000,
+            "maxExposure": 1,
+            "maxPositions": 3,
+            "maxThemeWeight": 1
+          },
+          "maximumPositions": 3,
+          "holdings": [
+            {
+              "symbol": "sh512720",
+              "name": "计算机ETF",
+              "type": "etf",
+              "theme": "软件",
+              "shares": 9700,
+              "entryPrice": 1.0290279999999998,
+              "entryFee": 5,
+              "entryCosts": {
+                "commission": 5,
+                "tax": 0,
+                "transferFee": 0,
+                "total": 5
+              },
+              "entrySourceTime": "2026-10-20 11:00:02",
+              "entryDate": "2026-10-20",
+              "lastPrice": 1.021,
+              "lastSourceTime": "2026-10-20 11:51:47",
+              "lastReceivedAt": "2026-10-20T03:52:11.230Z",
+              "stale": true,
+              "signalDate": "2026-10-19",
+              "entrySession": "2026-10-20",
+              "referenceOpen": 1.018,
+              "horizon": 20,
+              "maturitySession": "2026-11-17",
+              "sellableSession": "2026-10-21",
+              "predicted20DayReturn": 0.013732468151518119,
+              "exitPlan": {
+                "version": "expiry-risk-target-v1",
+                "maturitySession": "2026-11-17",
+                "stopLossRate": 0.08,
+                "stopPrice": 0.9467057599999998,
+                "targetPrice": 1.0319796525782454,
+                "ruleFrozenAt": "2026-10-20T03:00:06.056Z",
+                "dividendPolicy": "total_return_threshold_adjustment",
+                "unfilledPolicy": "retain_position_and_retry_on_next_legal_fresh_quote"
+              },
+              "pendingExit": null,
+              "appliedCorporateActions": [],
+              "staleReason": "expired_quote",
+              "valuationAgeMs": 24238
+            }
+          ],
+          "pendingExits": [],
+          "stalePositions": [
+            {
+              "symbol": "sh512720",
+              "shares": 9700,
+              "price": 1.021,
+              "sourceTime": "2026-10-20 11:51:47",
+              "receivedAt": "2026-10-20T03:52:11.230Z",
+              "valuationAgeMs": 24238,
+              "reason": "expired_quote"
+            }
+          ],
+          "actualExposure": 0.9986459386771677,
+          "sampleMeanExposure": 0.9986512375633411,
+          "observationCount": 103,
+          "staleObservationCount": 44,
+          "exposureMethod": "arithmetic sample mean of observed last-price market value / equity; stale samples retained and separately counted; not time-weighted",
+          "observedMaxDrawdown": 0.008726135718058692,
+          "drawdownMethod": "maximum observed equity drawdown from running peak including initial cash; excludes unobserved intraday extrema",
+          "grossFilledNotional": 9981.571599999997,
+          "grossTurnoverRate": 0.9981571599999998,
+          "turnoverMethod": "sum of buy and sell hypothetical filled notional / initial capital; double-sided gross turnover, excludes rejected orders, cash dividends and splits",
+          "buyCount": 1,
+          "sellCount": 0,
+          "rejectionCount": 0,
+          "rejectionReasons": {},
+          "blockedReasons": {},
+          "rejectedOrders": [],
+          "blockedExits": [],
+          "policyRejections": [],
+          "fingerprint": {
+            "strategy_id": "ridge11-tech-etf-continuous-v1",
+            "model_hash": "786a236dd6e4207ed2724ef8f91e7d1f131794dcc57817e5d68615b295b79127",
+            "universe_version": "sha256:59014dc1bd250b69beefce3306f8f4d1b3f682b94daff9146616371244149d4e",
+            "rules_hash": "1df270dd373a2ab8fa811e86e0273a369a30425c7862df1311e6343c4ed161a2",
+            "data_hash": "eccd26c9f4373bd3cba2dbb6a119cfd2c1069880a0fcdf04484a65f62e2180c1",
+            "fee_profile": {
+              "assumptionLabel": "最低5元为模拟假设，以合同为准",
+              "commissionRate": 0.0003,
+              "minFee": 5,
+              "slippage": 0.001,
+              "stockSellStampRate": 0.0005,
+              "stockTransferRate": 0.00001,
+              "version": "cn-paper-fees-v1"
+            },
+            "budget": 10000,
+            "risk_limits": {
+              "investableLimit": 10000,
+              "maxExposure": 1,
+              "maxPositions": 3,
+              "maxThemeWeight": 1
+            },
+            "execution_mode": "continuous_forward_native_http"
+          },
+          "entryComplete": null,
+          "valuationComplete": false
+        },
+        "cash": {
+          "account": "cash",
+          "budget": 10000,
+          "equity": 10000,
+          "netPnl": 0,
+          "netReturn": 0,
+          "realizedPnl": 0,
+          "unrealizedPnl": 0,
+          "cash": 10000,
+          "marketValue": 0,
+          "receivables": 0,
+          "frozenFunds": 0,
+          "availableCash": 10000,
+          "feesPaid": 0,
+          "commission": 0,
+          "tax": 0,
+          "transferFee": 0,
+          "slippageCost": 0,
+          "paidDividends": 0,
+          "accountingBalanced": true,
+          "pnlBalanced": true,
+          "holdingCount": 0,
+          "positionCount": 0,
+          "riskLimits": {
+            "investableLimit": 0,
+            "maxExposure": 0
+          },
+          "maximumPositions": null,
+          "holdings": [],
+          "pendingExits": [],
+          "stalePositions": [],
+          "actualExposure": 0,
+          "sampleMeanExposure": 0,
+          "observationCount": 103,
+          "staleObservationCount": 0,
+          "exposureMethod": "arithmetic sample mean of observed last-price market value / equity; stale samples retained and separately counted; not time-weighted",
+          "observedMaxDrawdown": 0,
+          "drawdownMethod": "maximum observed equity drawdown from running peak including initial cash; excludes unobserved intraday extrema",
+          "grossFilledNotional": 0,
+          "grossTurnoverRate": 0,
+          "turnoverMethod": "sum of buy and sell hypothetical filled notional / initial capital; double-sided gross turnover, excludes rejected orders, cash dividends and splits",
+          "buyCount": 0,
+          "sellCount": 0,
+          "rejectionCount": 0,
+          "rejectionReasons": {},
+          "blockedReasons": {},
+          "rejectedOrders": [],
+          "blockedExits": [],
+          "policyRejections": [],
+          "fingerprint": {
+            "strategy_id": "cash-hold-v1",
+            "model_hash": "793f5f8573a4dc3b5b48e0b547d8885d5a7b846fdb222b7a605f4626909b662c",
+            "universe_version": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "rules_hash": "9b699e026cecf88afc444b7c3302d53729d81c6056d5d50c298147833b19444e",
+            "data_hash": "0c371e1f4ec46625ee3d96506d1942bf9c1a243a70b601c2067700987c9943ef",
+            "fee_profile": {
+              "assumptionLabel": "最低5元为模拟假设，以合同为准",
+              "commissionRate": 0.0003,
+              "minFee": 5,
+              "slippage": 0.001,
+              "stockSellStampRate": 0.0005,
+              "stockTransferRate": 0.00001,
+              "version": "cn-paper-fees-v1"
+            },
+            "budget": 10000,
+            "risk_limits": {
+              "investableLimit": 0,
+              "maxExposure": 0
+            },
+            "execution_mode": "continuous_forward_native_http"
+          },
+          "entryComplete": true,
+          "valuationComplete": true
+        },
+        "hold_etf": {
+          "account": "hold_etf",
+          "budget": 10000,
+          "equity": 9936.039,
+          "netPnl": -63.96099999999933,
+          "netReturn": -0.006396099999999933,
+          "realizedPnl": 0,
+          "unrealizedPnl": -63.96099999999933,
+          "cash": 24.03900000000067,
+          "marketValue": 9912,
+          "receivables": 0,
+          "frozenFunds": 0,
+          "availableCash": 24.03900000000067,
+          "feesPaid": 5,
+          "commission": 5,
+          "tax": 0,
+          "transferFee": 0,
+          "slippageCost": 9.960999999999665,
+          "paidDividends": 0,
+          "accountingBalanced": true,
+          "pnlBalanced": true,
+          "holdingCount": 1,
+          "positionCount": 1,
+          "riskLimits": {
+            "investableLimit": 10000,
+            "maxExposure": 1,
+            "maxPositions": 1,
+            "maxThemeWeight": 1
+          },
+          "maximumPositions": 1,
+          "holdings": [
+            {
+              "symbol": "sh588000",
+              "name": "科创50ETF",
+              "type": "etf",
+              "theme": "科创",
+              "shares": 7000,
+              "entryPrice": 1.424423,
+              "entryFee": 5,
+              "entryCosts": {
+                "commission": 5,
+                "tax": 0,
+                "transferFee": 0,
+                "total": 5
+              },
+              "entrySourceTime": "2026-10-20 11:00:02",
+              "entryDate": "2026-10-20",
+              "lastPrice": 1.416,
+              "lastSourceTime": "2026-10-20 11:52:08",
+              "lastReceivedAt": "2026-10-20T03:52:11.230Z",
+              "stale": true,
+              "signalDate": null,
+              "entrySession": "2026-10-20",
+              "referenceOpen": 1.398,
+              "horizon": 20,
+              "maturitySession": "2026-11-17",
+              "sellableSession": "2026-10-21",
+              "predicted20DayReturn": null,
+              "exitPlan": {
+                "version": "expiry-risk-target-v1",
+                "maturitySession": "2026-11-17",
+                "stopLossRate": 0,
+                "stopPrice": 0,
+                "targetPrice": 1.7976931348623157e+308,
+                "ruleFrozenAt": "2026-10-20T03:00:06.056Z",
+                "dividendPolicy": "total_return_threshold_adjustment",
+                "unfilledPolicy": "retain_position_and_retry_on_next_legal_fresh_quote"
+              },
+              "pendingExit": null,
+              "appliedCorporateActions": [],
+              "staleReason": "expired_quote",
+              "valuationAgeMs": 3238
+            }
+          ],
+          "pendingExits": [],
+          "stalePositions": [
+            {
+              "symbol": "sh588000",
+              "shares": 7000,
+              "price": 1.416,
+              "sourceTime": "2026-10-20 11:52:08",
+              "receivedAt": "2026-10-20T03:52:11.230Z",
+              "valuationAgeMs": 3238,
+              "reason": "expired_quote"
+            }
+          ],
+          "actualExposure": 0.9975806254383662,
+          "sampleMeanExposure": 0.9975845638361397,
+          "observationCount": 103,
+          "staleObservationCount": 44,
+          "exposureMethod": "arithmetic sample mean of observed last-price market value / equity; stale samples retained and separately counted; not time-weighted",
+          "observedMaxDrawdown": 0.007695352776458275,
+          "drawdownMethod": "maximum observed equity drawdown from running peak including initial cash; excludes unobserved intraday extrema",
+          "grossFilledNotional": 9970.961,
+          "grossTurnoverRate": 0.9970960999999999,
+          "turnoverMethod": "sum of buy and sell hypothetical filled notional / initial capital; double-sided gross turnover, excludes rejected orders, cash dividends and splits",
+          "buyCount": 1,
+          "sellCount": 0,
+          "rejectionCount": 0,
+          "rejectionReasons": {},
+          "blockedReasons": {},
+          "rejectedOrders": [],
+          "blockedExits": [],
+          "policyRejections": [],
+          "fingerprint": {
+            "strategy_id": "technology-hold_etf-hold20-v1",
+            "model_hash": "bff67ea03d52eb354ab0c0e0cfbcc1ba6fb2ce6c9f4ce6c08e6cb98a2055211d",
+            "universe_version": "sha256:e08874867a29c2f9acc1446c9800d3c94a14cb043cf9360e2536553c4b08739f",
+            "rules_hash": "60492b7e3534f4e4082cf74c9f50ed6f8ec09a591f39292529b737fe1e172b70",
+            "data_hash": "3b534203bd17fd35c92507752e175829877116eced20ea2eafa2d02eb0761f19",
+            "fee_profile": {
+              "assumptionLabel": "最低5元为模拟假设，以合同为准",
+              "commissionRate": 0.0003,
+              "minFee": 5,
+              "slippage": 0.001,
+              "stockSellStampRate": 0.0005,
+              "stockTransferRate": 0.00001,
+              "version": "cn-paper-fees-v1"
+            },
+            "budget": 10000,
+            "risk_limits": {
+              "investableLimit": 10000,
+              "maxExposure": 1,
+              "maxPositions": 1,
+              "maxThemeWeight": 1
+            },
+            "execution_mode": "continuous_forward_native_http"
+          },
+          "entryComplete": true,
+          "valuationComplete": false
+        },
+        "equal_weight": {
+          "account": "equal_weight",
+          "budget": 10000,
+          "equity": 9909.799,
+          "netPnl": -90.20099999999911,
+          "netReturn": -0.009020099999999911,
+          "realizedPnl": 0,
+          "unrealizedPnl": -90.20099999999911,
+          "cash": 259.2990000000009,
+          "marketValue": 9650.5,
+          "receivables": 0,
+          "frozenFunds": 0,
+          "availableCash": 259.2990000000009,
+          "feesPaid": 30,
+          "commission": 30,
+          "tax": 0,
+          "transferFee": 0,
+          "slippageCost": 9.700999999998892,
+          "paidDividends": 0,
+          "accountingBalanced": true,
+          "pnlBalanced": true,
+          "holdingCount": 6,
+          "positionCount": 6,
+          "riskLimits": {
+            "investableLimit": 10000,
+            "maxExposure": 1,
+            "maxPositions": 6,
+            "maxThemeWeight": 1
+          },
+          "maximumPositions": 6,
+          "holdings": [
+            {
+              "symbol": "sh588000",
+              "name": "科创50ETF",
+              "type": "etf",
+              "theme": "科创",
+              "shares": 1100,
+              "entryPrice": 1.424423,
+              "entryFee": 5,
+              "entryCosts": {
+                "commission": 5,
+                "tax": 0,
+                "transferFee": 0,
+                "total": 5
+              },
+              "entrySourceTime": "2026-10-20 11:00:02",
+              "entryDate": "2026-10-20",
+              "lastPrice": 1.416,
+              "lastSourceTime": "2026-10-20 11:52:08",
+              "lastReceivedAt": "2026-10-20T03:52:11.230Z",
+              "stale": true,
+              "signalDate": null,
+              "entrySession": "2026-10-20",
+              "referenceOpen": 1.398,
+              "horizon": 20,
+              "maturitySession": "2026-11-17",
+              "sellableSession": "2026-10-21",
+              "predicted20DayReturn": null,
+              "exitPlan": {
+                "version": "expiry-risk-target-v1",
+                "maturitySession": "2026-11-17",
+                "stopLossRate": 0,
+                "stopPrice": 0,
+                "targetPrice": 1.7976931348623157e+308,
+                "ruleFrozenAt": "2026-10-20T03:00:06.056Z",
+                "dividendPolicy": "total_return_threshold_adjustment",
+                "unfilledPolicy": "retain_position_and_retry_on_next_legal_fresh_quote"
+              },
+              "pendingExit": null,
+              "appliedCorporateActions": [],
+              "staleReason": "expired_quote",
+              "valuationAgeMs": 3238
+            },
+            {
+              "symbol": "sh512760",
+              "name": "芯片ETF",
+              "type": "etf",
+              "theme": "半导体",
+              "shares": 1800,
+              "entryPrice": 0.89089,
+              "entryFee": 5,
+              "entryCosts": {
+                "commission": 5,
+                "tax": 0,
+                "transferFee": 0,
+                "total": 5
+              },
+              "entrySourceTime": "2026-10-20 11:00:01",
+              "entryDate": "2026-10-20",
+              "lastPrice": 0.885,
+              "lastSourceTime": "2026-10-20 11:52:10",
+              "lastReceivedAt": "2026-10-20T03:52:11.230Z",
+              "stale": true,
+              "signalDate": null,
+              "entrySession": "2026-10-20",
+              "referenceOpen": 0.87,
+              "horizon": 20,
+              "maturitySession": "2026-11-17",
+              "sellableSession": "2026-10-21",
+              "predicted20DayReturn": null,
+              "exitPlan": {
+                "version": "expiry-risk-target-v1",
+                "maturitySession": "2026-11-17",
+                "stopLossRate": 0,
+                "stopPrice": 0,
+                "targetPrice": 1.7976931348623157e+308,
+                "ruleFrozenAt": "2026-10-20T03:00:06.056Z",
+                "dividendPolicy": "total_return_threshold_adjustment",
+                "unfilledPolicy": "retain_position_and_retry_on_next_legal_fresh_quote"
+              },
+              "pendingExit": null,
+              "appliedCorporateActions": [],
+              "staleReason": "expired_quote",
+              "valuationAgeMs": 1238
+            },
+            {
+              "symbol": "sh515070",
+              "name": "人工智能ETF",
+              "type": "etf",
+              "theme": "人工智能",
+              "shares": 1700,
+              "entryPrice": 0.9379369999999999,
+              "entryFee": 5,
+              "entryCosts": {
+                "commission": 5,
+                "tax": 0,
+                "transferFee": 0,
+                "total": 5
+              },
+              "entrySourceTime": "2026-10-20 11:00:02",
+              "entryDate": "2026-10-20",
+              "lastPrice": 0.931,
+              "lastSourceTime": "2026-10-20 11:51:53",
+              "lastReceivedAt": "2026-10-20T03:52:11.230Z",
+              "stale": true,
+              "signalDate": null,
+              "entrySession": "2026-10-20",
+              "referenceOpen": 0.915,
+              "horizon": 20,
+              "maturitySession": "2026-11-17",
+              "sellableSession": "2026-10-21",
+              "predicted20DayReturn": null,
+              "exitPlan": {
+                "version": "expiry-risk-target-v1",
+                "maturitySession": "2026-11-17",
+                "stopLossRate": 0,
+                "stopPrice": 0,
+                "targetPrice": 1.7976931348623157e+308,
+                "ruleFrozenAt": "2026-10-20T03:00:06.056Z",
+                "dividendPolicy": "total_return_threshold_adjustment",
+                "unfilledPolicy": "retain_position_and_retry_on_next_legal_fresh_quote"
+              },
+              "pendingExit": null,
+              "appliedCorporateActions": [],
+              "staleReason": "expired_quote",
+              "valuationAgeMs": 18238
+            },
+            {
+              "symbol": "sh512720",
+              "name": "计算机ETF",
+              "type": "etf",
+              "theme": "软件",
+              "shares": 1600,
+              "entryPrice": 1.0290279999999998,
+              "entryFee": 5,
+              "entryCosts": {
+                "commission": 5,
+                "tax": 0,
+                "transferFee": 0,
+                "total": 5
+              },
+              "entrySourceTime": "2026-10-20 11:00:02",
+              "entryDate": "2026-10-20",
+              "lastPrice": 1.021,
+              "lastSourceTime": "2026-10-20 11:51:47",
+              "lastReceivedAt": "2026-10-20T03:52:11.230Z",
+              "stale": true,
+              "signalDate": null,
+              "entrySession": "2026-10-20",
+              "referenceOpen": 1.018,
+              "horizon": 20,
+              "maturitySession": "2026-11-17",
+              "sellableSession": "2026-10-21",
+              "predicted20DayReturn": null,
+              "exitPlan": {
+                "version": "expiry-risk-target-v1",
+                "maturitySession": "2026-11-17",
+                "stopLossRate": 0,
+                "stopPrice": 0,
+                "targetPrice": 1.7976931348623157e+308,
+                "ruleFrozenAt": "2026-10-20T03:00:06.056Z",
+                "dividendPolicy": "total_return_threshold_adjustment",
+                "unfilledPolicy": "retain_position_and_retry_on_next_legal_fresh_quote"
+              },
+              "pendingExit": null,
+              "appliedCorporateActions": [],
+              "staleReason": "expired_quote",
+              "valuationAgeMs": 24238
+            },
+            {
+              "symbol": "sh515880",
+              "name": "通信ETF",
+              "type": "etf",
+              "theme": "通信",
+              "shares": 3100,
+              "entryPrice": 0.534534,
+              "entryFee": 5,
+              "entryCosts": {
+                "commission": 5,
+                "tax": 0,
+                "transferFee": 0,
+                "total": 5
+              },
+              "entrySourceTime": "2026-10-20 11:00:03",
+              "entryDate": "2026-10-20",
+              "lastPrice": 0.53,
+              "lastSourceTime": "2026-10-20 11:51:42",
+              "lastReceivedAt": "2026-10-20T03:52:11.230Z",
+              "stale": true,
+              "signalDate": null,
+              "entrySession": "2026-10-20",
+              "referenceOpen": 0.516,
+              "horizon": 20,
+              "maturitySession": "2026-11-17",
+              "sellableSession": "2026-10-21",
+              "predicted20DayReturn": null,
+              "exitPlan": {
+                "version": "expiry-risk-target-v1",
+                "maturitySession": "2026-11-17",
+                "stopLossRate": 0,
+                "stopPrice": 0,
+                "targetPrice": 1.7976931348623157e+308,
+                "ruleFrozenAt": "2026-10-20T03:00:06.056Z",
+                "dividendPolicy": "total_return_threshold_adjustment",
+                "unfilledPolicy": "retain_position_and_retry_on_next_legal_fresh_quote"
+              },
+              "pendingExit": null,
+              "appliedCorporateActions": [],
+              "staleReason": "expired_quote",
+              "valuationAgeMs": 29238
+            },
+            {
+              "symbol": "sz159852",
+              "name": "软件ETF",
+              "type": "etf",
+              "theme": "软件",
+              "shares": 2600,
+              "entryPrice": 0.6316309999999999,
+              "entryFee": 5,
+              "entryCosts": {
+                "commission": 5,
+                "tax": 0,
+                "transferFee": 0,
+                "total": 5
+              },
+              "entrySourceTime": "2026-10-20 11:00:03",
+              "entryDate": "2026-10-20",
+              "lastPrice": 0.631,
+              "lastSourceTime": "2026-10-20 11:51:54",
+              "lastReceivedAt": "2026-10-20T03:52:11.230Z",
+              "stale": true,
+              "signalDate": null,
+              "entrySession": "2026-10-20",
+              "referenceOpen": 0.618,
+              "horizon": 20,
+              "maturitySession": "2026-11-17",
+              "sellableSession": "2026-10-21",
+              "predicted20DayReturn": null,
+              "exitPlan": {
+                "version": "expiry-risk-target-v1",
+                "maturitySession": "2026-11-17",
+                "stopLossRate": 0,
+                "stopPrice": 0,
+                "targetPrice": 1.7976931348623157e+308,
+                "ruleFrozenAt": "2026-10-20T03:00:06.056Z",
+                "dividendPolicy": "total_return_threshold_adjustment",
+                "unfilledPolicy": "retain_position_and_retry_on_next_legal_fresh_quote"
+              },
+              "pendingExit": null,
+              "appliedCorporateActions": [],
+              "staleReason": "expired_quote",
+              "valuationAgeMs": 17238
+            }
+          ],
+          "pendingExits": [],
+          "stalePositions": [
+            {
+              "symbol": "sh588000",
+              "shares": 1100,
+              "price": 1.416,
+              "sourceTime": "2026-10-20 11:52:08",
+              "receivedAt": "2026-10-20T03:52:11.230Z",
+              "valuationAgeMs": 3238,
+              "reason": "expired_quote"
+            },
+            {
+              "symbol": "sh512760",
+              "shares": 1800,
+              "price": 0.885,
+              "sourceTime": "2026-10-20 11:52:10",
+              "receivedAt": "2026-10-20T03:52:11.230Z",
+              "valuationAgeMs": 1238,
+              "reason": "expired_quote"
+            },
+            {
+              "symbol": "sh515070",
+              "shares": 1700,
+              "price": 0.931,
+              "sourceTime": "2026-10-20 11:51:53",
+              "receivedAt": "2026-10-20T03:52:11.230Z",
+              "valuationAgeMs": 18238,
+              "reason": "expired_quote"
+            },
+            {
+              "symbol": "sh512720",
+              "shares": 1600,
+              "price": 1.021,
+              "sourceTime": "2026-10-20 11:51:47",
+              "receivedAt": "2026-10-20T03:52:11.230Z",
+              "valuationAgeMs": 24238,
+              "reason": "expired_quote"
+            },
+            {
+              "symbol": "sh515880",
+              "shares": 3100,
+              "price": 0.53,
+              "sourceTime": "2026-10-20 11:51:42",
+              "receivedAt": "2026-10-20T03:52:11.230Z",
+              "valuationAgeMs": 29238,
+              "reason": "expired_quote"
+            },
+            {
+              "symbol": "sz159852",
+              "shares": 2600,
+              "price": 0.631,
+              "sourceTime": "2026-10-20 11:51:54",
+              "receivedAt": "2026-10-20T03:52:11.230Z",
+              "valuationAgeMs": 17238,
+              "reason": "expired_quote"
+            }
+          ],
+          "actualExposure": 0.9738340807921532,
+          "sampleMeanExposure": 0.9738895703496869,
+          "observationCount": 103,
+          "staleObservationCount": 44,
+          "exposureMethod": "arithmetic sample mean of observed last-price market value / equity; stale samples retained and separately counted; not time-weighted",
+          "observedMaxDrawdown": 0.009020099999999864,
+          "drawdownMethod": "maximum observed equity drawdown from running peak including initial cash; excludes unobserved intraday extrema",
+          "grossFilledNotional": 9710.701,
+          "grossTurnoverRate": 0.9710700999999999,
+          "turnoverMethod": "sum of buy and sell hypothetical filled notional / initial capital; double-sided gross turnover, excludes rejected orders, cash dividends and splits",
+          "buyCount": 6,
+          "sellCount": 0,
+          "rejectionCount": 0,
+          "rejectionReasons": {},
+          "blockedReasons": {},
+          "rejectedOrders": [],
+          "blockedExits": [],
+          "policyRejections": [],
+          "fingerprint": {
+            "strategy_id": "technology-equal_weight-hold20-v1",
+            "model_hash": "d99a2047372a90c9632218eeb685bc313efa0db79b58b499b2fac80005462d6e",
+            "universe_version": "sha256:a5f1c542f33c4f24cd4ee4ae5468a02fa7c0285c7d7580585775351afe182e8c",
+            "rules_hash": "9d56d59c67cfc565e581915b5da7d105ea69a3aa1917ff1a333de887dd24d4a7",
+            "data_hash": "3b534203bd17fd35c92507752e175829877116eced20ea2eafa2d02eb0761f19",
+            "fee_profile": {
+              "assumptionLabel": "最低5元为模拟假设，以合同为准",
+              "commissionRate": 0.0003,
+              "minFee": 5,
+              "slippage": 0.001,
+              "stockSellStampRate": 0.0005,
+              "stockTransferRate": 0.00001,
+              "version": "cn-paper-fees-v1"
+            },
+            "budget": 10000,
+            "risk_limits": {
+              "investableLimit": 10000,
+              "maxExposure": 1,
+              "maxPositions": 6,
+              "maxThemeWeight": 1
+            },
+            "execution_mode": "continuous_forward_native_http"
+          },
+          "entryComplete": true,
+          "valuationComplete": false
+        }
+      }
+    }
+  ],
+  "entryEconomics": [
+    {
+      "symbol": "sh512720",
+      "shares": 9700,
+      "entryCashCost": 9986.571599999997,
+      "targetPrice": 1.0319796525782454,
+      "stopPrice": 0.9467057599999998,
+      "netPnlAtTarget": 8.620827378974354,
+      "netReturnAtTarget": 0.0008632419336956795,
+      "netPnlAtStop": -817.7087738719983,
+      "netReturnAtStop": -0.08188083024128105,
+      "targetToStopPayoffRatio": 0.010542662197634476,
+      "lastValuationStale": true,
+      "warnings": [
+        "thin_net_target_margin"
+      ],
+      "profitProbability": null,
+      "assumption": "scenario_only_not_forecast_or_guaranteed_fill",
+      "limitation": "Uses frozen entry/exit levels and fee profile; excludes unknown future distributions, gaps, queue failure and later strategy changes. It is not expected portfolio profit."
+    }
+  ],
+  "orders": [
+    {
+      "id": "continuous-etf-audit-20261020-1100:1",
+      "account": "model",
+      "symbol": "sh512720",
+      "side": "buy",
+      "shares": 9700,
+      "reason": "frozen_software_selection",
+      "sourceTime": "2026-10-20 11:00:02",
+      "receivedAt": "2026-10-20T03:00:06.055Z",
+      "decisionAt": "2026-10-20T03:00:06.056Z",
+      "orderAt": "2026-10-20T03:00:06.056Z",
+      "fillAssumption": "last_price_adverse_slippage_unverified",
+      "status": "hypothetical_fill",
+      "fingerprint": {
+        "strategy_id": "ridge11-tech-etf-continuous-v1",
+        "model_hash": "786a236dd6e4207ed2724ef8f91e7d1f131794dcc57817e5d68615b295b79127",
+        "universe_version": "sha256:59014dc1bd250b69beefce3306f8f4d1b3f682b94daff9146616371244149d4e",
+        "rules_hash": "1df270dd373a2ab8fa811e86e0273a369a30425c7862df1311e6343c4ed161a2",
+        "data_hash": "e3ab7d7450ae61a1118113df7fc1bc6ff04c2ef04a0b6ddbfc6d1fa968fb31f1",
+        "fee_profile": {
+          "assumptionLabel": "最低5元为模拟假设，以合同为准",
+          "commissionRate": 0.0003,
+          "minFee": 5,
+          "slippage": 0.001,
+          "stockSellStampRate": 0.0005,
+          "stockTransferRate": 0.00001,
+          "version": "cn-paper-fees-v1"
+        },
+        "budget": 10000,
+        "risk_limits": {
+          "investableLimit": 10000,
+          "maxExposure": 1,
+          "maxPositions": 3,
+          "maxThemeWeight": 1
+        },
+        "execution_mode": "continuous_forward_native_http"
+      },
+      "fillAt": "2026-10-20T03:00:06.056Z",
+      "price": 1.0290279999999998,
+      "notional": 9981.571599999997,
+      "fees": {
+        "commission": 5,
+        "tax": 0,
+        "transferFee": 0,
+        "total": 5
+      },
+      "executionVerified": false
+    },
+    {
+      "id": "continuous-etf-audit-20261020-1100:2",
+      "account": "hold_etf",
+      "symbol": "sh588000",
+      "side": "buy",
+      "shares": 7000,
+      "reason": "frozen_software_selection",
+      "sourceTime": "2026-10-20 11:00:02",
+      "receivedAt": "2026-10-20T03:00:06.055Z",
+      "decisionAt": "2026-10-20T03:00:06.056Z",
+      "orderAt": "2026-10-20T03:00:06.056Z",
+      "fillAssumption": "last_price_adverse_slippage_unverified",
+      "status": "hypothetical_fill",
+      "fingerprint": {
+        "strategy_id": "technology-hold_etf-hold20-v1",
+        "model_hash": "3dc3720319dc41f44a2b9c971442f0e2b2ef76c5dcac119eecf4aab4792f9c7c",
+        "universe_version": "sha256:e08874867a29c2f9acc1446c9800d3c94a14cb043cf9360e2536553c4b08739f",
+        "rules_hash": "60492b7e3534f4e4082cf74c9f50ed6f8ec09a591f39292529b737fe1e172b70",
+        "data_hash": "93298d6416d3a216c69fe3c41cb51693303798cb610a347d972f07362e42c969",
+        "fee_profile": {
+          "assumptionLabel": "最低5元为模拟假设，以合同为准",
+          "commissionRate": 0.0003,
+          "minFee": 5,
+          "slippage": 0.001,
+          "stockSellStampRate": 0.0005,
+          "stockTransferRate": 0.00001,
+          "version": "cn-paper-fees-v1"
+        },
+        "budget": 10000,
+        "risk_limits": {
+          "investableLimit": 10000,
+          "maxExposure": 1,
+          "maxPositions": 1,
+          "maxThemeWeight": 1
+        },
+        "execution_mode": "continuous_forward_native_http"
+      },
+      "fillAt": "2026-10-20T03:00:06.056Z",
+      "price": 1.424423,
+      "notional": 9970.961,
+      "fees": {
+        "commission": 5,
+        "tax": 0,
+        "transferFee": 0,
+        "total": 5
+      },
+      "executionVerified": false
+    },
+    {
+      "id": "continuous-etf-audit-20261020-1100:3",
+      "account": "equal_weight",
+      "symbol": "sh588000",
+      "side": "buy",
+      "shares": 1100,
+      "reason": "frozen_software_selection",
+      "sourceTime": "2026-10-20 11:00:02",
+      "receivedAt": "2026-10-20T03:00:06.055Z",
+      "decisionAt": "2026-10-20T03:00:06.056Z",
+      "orderAt": "2026-10-20T03:00:06.056Z",
+      "fillAssumption": "last_price_adverse_slippage_unverified",
+      "status": "hypothetical_fill",
+      "fingerprint": {
+        "strategy_id": "technology-equal_weight-hold20-v1",
+        "model_hash": "df700eb0c8152e058a5ad16f11c863f7bad2a9cd61432e7afc318b43c83a0135",
+        "universe_version": "sha256:a5f1c542f33c4f24cd4ee4ae5468a02fa7c0285c7d7580585775351afe182e8c",
+        "rules_hash": "9d56d59c67cfc565e581915b5da7d105ea69a3aa1917ff1a333de887dd24d4a7",
+        "data_hash": "c427c1de937dea9fb82ce928692267e8a5ba61c372308258f27be3f0971833d6",
+        "fee_profile": {
+          "assumptionLabel": "最低5元为模拟假设，以合同为准",
+          "commissionRate": 0.0003,
+          "minFee": 5,
+          "slippage": 0.001,
+          "stockSellStampRate": 0.0005,
+          "stockTransferRate": 0.00001,
+          "version": "cn-paper-fees-v1"
+        },
+        "budget": 10000,
+        "risk_limits": {
+          "investableLimit": 10000,
+          "maxExposure": 1,
+          "maxPositions": 6,
+          "maxThemeWeight": 1
+        },
+        "execution_mode": "continuous_forward_native_http"
+      },
+      "fillAt": "2026-10-20T03:00:06.056Z",
+      "price": 1.424423,
+      "notional": 1566.8653,
+      "fees": {
+        "commission": 5,
+        "tax": 0,
+        "transferFee": 0,
+        "total": 5
+      },
+      "executionVerified": false
+    },
+    {
+      "id": "continuous-etf-audit-20261020-1100:4",
+      "account": "equal_weight",
+      "symbol": "sh512760",
+      "side": "buy",
+      "shares": 1800,
+      "reason": "frozen_software_selection",
+      "sourceTime": "2026-10-20 11:00:01",
+      "receivedAt": "2026-10-20T03:00:06.055Z",
+      "decisionAt": "2026-10-20T03:00:06.056Z",
+      "orderAt": "2026-10-20T03:00:06.056Z",
+      "fillAssumption": "last_price_adverse_slippage_unverified",
+      "status": "hypothetical_fill",
+      "fingerprint": {
+        "strategy_id": "technology-equal_weight-hold20-v1",
+        "model_hash": "df700eb0c8152e058a5ad16f11c863f7bad2a9cd61432e7afc318b43c83a0135",
+        "universe_version": "sha256:a5f1c542f33c4f24cd4ee4ae5468a02fa7c0285c7d7580585775351afe182e8c",
+        "rules_hash": "9d56d59c67cfc565e581915b5da7d105ea69a3aa1917ff1a333de887dd24d4a7",
+        "data_hash": "8911cb127bb507015e91798ba7e0b197373c6ef4208ee1a61a001cf25eb6799f",
+        "fee_profile": {
+          "assumptionLabel": "最低5元为模拟假设，以合同为准",
+          "commissionRate": 0.0003,
+          "minFee": 5,
+          "slippage": 0.001,
+          "stockSellStampRate": 0.0005,
+          "stockTransferRate": 0.00001,
+          "version": "cn-paper-fees-v1"
+        },
+        "budget": 10000,
+        "risk_limits": {
+          "investableLimit": 10000,
+          "maxExposure": 1,
+          "maxPositions": 6,
+          "maxThemeWeight": 1
+        },
+        "execution_mode": "continuous_forward_native_http"
+      },
+      "fillAt": "2026-10-20T03:00:06.056Z",
+      "price": 0.89089,
+      "notional": 1603.6019999999999,
+      "fees": {
+        "commission": 5,
+        "tax": 0,
+        "transferFee": 0,
+        "total": 5
+      },
+      "executionVerified": false
+    },
+    {
+      "id": "continuous-etf-audit-20261020-1100:5",
+      "account": "equal_weight",
+      "symbol": "sh515070",
+      "side": "buy",
+      "shares": 1700,
+      "reason": "frozen_software_selection",
+      "sourceTime": "2026-10-20 11:00:02",
+      "receivedAt": "2026-10-20T03:00:06.055Z",
+      "decisionAt": "2026-10-20T03:00:06.056Z",
+      "orderAt": "2026-10-20T03:00:06.056Z",
+      "fillAssumption": "last_price_adverse_slippage_unverified",
+      "status": "hypothetical_fill",
+      "fingerprint": {
+        "strategy_id": "technology-equal_weight-hold20-v1",
+        "model_hash": "df700eb0c8152e058a5ad16f11c863f7bad2a9cd61432e7afc318b43c83a0135",
+        "universe_version": "sha256:a5f1c542f33c4f24cd4ee4ae5468a02fa7c0285c7d7580585775351afe182e8c",
+        "rules_hash": "9d56d59c67cfc565e581915b5da7d105ea69a3aa1917ff1a333de887dd24d4a7",
+        "data_hash": "7e96f120d9154a4d23e3abadadb2a0a41fce03ef0d572a266aee05280ed50227",
+        "fee_profile": {
+          "assumptionLabel": "最低5元为模拟假设，以合同为准",
+          "commissionRate": 0.0003,
+          "minFee": 5,
+          "slippage": 0.001,
+          "stockSellStampRate": 0.0005,
+          "stockTransferRate": 0.00001,
+          "version": "cn-paper-fees-v1"
+        },
+        "budget": 10000,
+        "risk_limits": {
+          "investableLimit": 10000,
+          "maxExposure": 1,
+          "maxPositions": 6,
+          "maxThemeWeight": 1
+        },
+        "execution_mode": "continuous_forward_native_http"
+      },
+      "fillAt": "2026-10-20T03:00:06.056Z",
+      "price": 0.9379369999999999,
+      "notional": 1594.4928999999997,
+      "fees": {
+        "commission": 5,
+        "tax": 0,
+        "transferFee": 0,
+        "total": 5
+      },
+      "executionVerified": false
+    },
+    {
+      "id": "continuous-etf-audit-20261020-1100:6",
+      "account": "equal_weight",
+      "symbol": "sh512720",
+      "side": "buy",
+      "shares": 1600,
+      "reason": "frozen_software_selection",
+      "sourceTime": "2026-10-20 11:00:02",
+      "receivedAt": "2026-10-20T03:00:06.055Z",
+      "decisionAt": "2026-10-20T03:00:06.056Z",
+      "orderAt": "2026-10-20T03:00:06.056Z",
+      "fillAssumption": "last_price_adverse_slippage_unverified",
+      "status": "hypothetical_fill",
+      "fingerprint": {
+        "strategy_id": "technology-equal_weight-hold20-v1",
+        "model_hash": "df700eb0c8152e058a5ad16f11c863f7bad2a9cd61432e7afc318b43c83a0135",
+        "universe_version": "sha256:a5f1c542f33c4f24cd4ee4ae5468a02fa7c0285c7d7580585775351afe182e8c",
+        "rules_hash": "9d56d59c67cfc565e581915b5da7d105ea69a3aa1917ff1a333de887dd24d4a7",
+        "data_hash": "2849f860d701249d0fa7c942eb36c17bdbfd4ba02ba46a56b74cd9922f473cba",
+        "fee_profile": {
+          "assumptionLabel": "最低5元为模拟假设，以合同为准",
+          "commissionRate": 0.0003,
+          "minFee": 5,
+          "slippage": 0.001,
+          "stockSellStampRate": 0.0005,
+          "stockTransferRate": 0.00001,
+          "version": "cn-paper-fees-v1"
+        },
+        "budget": 10000,
+        "risk_limits": {
+          "investableLimit": 10000,
+          "maxExposure": 1,
+          "maxPositions": 6,
+          "maxThemeWeight": 1
+        },
+        "execution_mode": "continuous_forward_native_http"
+      },
+      "fillAt": "2026-10-20T03:00:06.056Z",
+      "price": 1.0290279999999998,
+      "notional": 1646.4447999999998,
+      "fees": {
+        "commission": 5,
+        "tax": 0,
+        "transferFee": 0,
+        "total": 5
+      },
+      "executionVerified": false
+    },
+    {
+      "id": "continuous-etf-audit-20261020-1100:7",
+      "account": "equal_weight",
+      "symbol": "sh515880",
+      "side": "buy",
+      "shares": 3100,
+      "reason": "frozen_software_selection",
+      "sourceTime": "2026-10-20 11:00:03",
+      "receivedAt": "2026-10-20T03:00:06.055Z",
+      "decisionAt": "2026-10-20T03:00:06.056Z",
+      "orderAt": "2026-10-20T03:00:06.056Z",
+      "fillAssumption": "last_price_adverse_slippage_unverified",
+      "status": "hypothetical_fill",
+      "fingerprint": {
+        "strategy_id": "technology-equal_weight-hold20-v1",
+        "model_hash": "df700eb0c8152e058a5ad16f11c863f7bad2a9cd61432e7afc318b43c83a0135",
+        "universe_version": "sha256:a5f1c542f33c4f24cd4ee4ae5468a02fa7c0285c7d7580585775351afe182e8c",
+        "rules_hash": "9d56d59c67cfc565e581915b5da7d105ea69a3aa1917ff1a333de887dd24d4a7",
+        "data_hash": "a281d19032122ab767739a5297bf9e59df198a1e8904e9146a638a09e59342c3",
+        "fee_profile": {
+          "assumptionLabel": "最低5元为模拟假设，以合同为准",
+          "commissionRate": 0.0003,
+          "minFee": 5,
+          "slippage": 0.001,
+          "stockSellStampRate": 0.0005,
+          "stockTransferRate": 0.00001,
+          "version": "cn-paper-fees-v1"
+        },
+        "budget": 10000,
+        "risk_limits": {
+          "investableLimit": 10000,
+          "maxExposure": 1,
+          "maxPositions": 6,
+          "maxThemeWeight": 1
+        },
+        "execution_mode": "continuous_forward_native_http"
+      },
+      "fillAt": "2026-10-20T03:00:06.056Z",
+      "price": 0.534534,
+      "notional": 1657.0554,
+      "fees": {
+        "commission": 5,
+        "tax": 0,
+        "transferFee": 0,
+        "total": 5
+      },
+      "executionVerified": false
+    },
+    {
+      "id": "continuous-etf-audit-20261020-1100:8",
+      "account": "equal_weight",
+      "symbol": "sz159852",
+      "side": "buy",
+      "shares": 2600,
+      "reason": "frozen_software_selection",
+      "sourceTime": "2026-10-20 11:00:03",
+      "receivedAt": "2026-10-20T03:00:06.055Z",
+      "decisionAt": "2026-10-20T03:00:06.056Z",
+      "orderAt": "2026-10-20T03:00:06.056Z",
+      "fillAssumption": "last_price_adverse_slippage_unverified",
+      "status": "hypothetical_fill",
+      "fingerprint": {
+        "strategy_id": "technology-equal_weight-hold20-v1",
+        "model_hash": "df700eb0c8152e058a5ad16f11c863f7bad2a9cd61432e7afc318b43c83a0135",
+        "universe_version": "sha256:a5f1c542f33c4f24cd4ee4ae5468a02fa7c0285c7d7580585775351afe182e8c",
+        "rules_hash": "9d56d59c67cfc565e581915b5da7d105ea69a3aa1917ff1a333de887dd24d4a7",
+        "data_hash": "6fc576a91f60bf05b1f557ef43deb277cfcbe44d004631fc14ec54519dad4a0d",
+        "fee_profile": {
+          "assumptionLabel": "最低5元为模拟假设，以合同为准",
+          "commissionRate": 0.0003,
+          "minFee": 5,
+          "slippage": 0.001,
+          "stockSellStampRate": 0.0005,
+          "stockTransferRate": 0.00001,
+          "version": "cn-paper-fees-v1"
+        },
+        "budget": 10000,
+        "risk_limits": {
+          "investableLimit": 10000,
+          "maxExposure": 1,
+          "maxPositions": 6,
+          "maxThemeWeight": 1
+        },
+        "execution_mode": "continuous_forward_native_http"
+      },
+      "fillAt": "2026-10-20T03:00:06.056Z",
+      "price": 0.6316309999999999,
+      "notional": 1642.2405999999999,
+      "fees": {
+        "commission": 5,
+        "tax": 0,
+        "transferFee": 0,
+        "total": 5
+      },
+      "executionVerified": false
+    }
+  ],
+  "ledger": [
+    {
+      "sequence": 1,
+      "previousHash": null,
+      "decisionAt": "2026-10-20T03:00:06.056Z",
+      "type": "account_created",
+      "initialCapital": 10000,
+      "preset": "full_capital",
+      "fingerprint": {
+        "strategy_id": "ridge11-tech-etf-continuous-v1",
+        "model_hash": "786a236dd6e4207ed2724ef8f91e7d1f131794dcc57817e5d68615b295b79127",
+        "universe_version": "sha256:59014dc1bd250b69beefce3306f8f4d1b3f682b94daff9146616371244149d4e",
+        "rules_hash": "1df270dd373a2ab8fa811e86e0273a369a30425c7862df1311e6343c4ed161a2",
+        "data_hash": "eccd26c9f4373bd3cba2dbb6a119cfd2c1069880a0fcdf04484a65f62e2180c1",
+        "fee_profile": {
+          "assumptionLabel": "最低5元为模拟假设，以合同为准",
+          "commissionRate": 0.0003,
+          "minFee": 5,
+          "slippage": 0.001,
+          "stockSellStampRate": 0.0005,
+          "stockTransferRate": 0.00001,
+          "version": "cn-paper-fees-v1"
+        },
+        "budget": 10000,
+        "risk_limits": {
+          "investableLimit": 10000,
+          "maxExposure": 1,
+          "maxPositions": 3,
+          "maxThemeWeight": 1
+        },
+        "execution_mode": "continuous_forward_native_http"
+      },
+      "riskLimits": {
+        "investableLimit": 10000,
+        "maxExposure": 1,
+        "maxPositions": 3,
+        "maxThemeWeight": 1
+      },
+      "rules": {
+        "version": "continuous-etf-v1",
+        "horizon": 20,
+        "stopLossRate": 0.08,
+        "benchmarkSymbol": "sh588000",
+        "reinvestedCapitalLimit": 10000,
+        "signalPolicy": "next_exchange_session_only",
+        "fillAssumption": "last_price_adverse_slippage_unverified",
+        "calendarVersion": "sse-sessions-2023-2026-v1",
+        "positionLimit": 10000,
+        "allocationMode": "full",
+        "executionSymbols": [
+          "sh512720",
+          "sh512760",
+          "sh515070",
+          "sh515880",
+          "sh588000",
+          "sz159852"
+        ],
+        "themeDefinition": "declared-sector-not-look-through"
+      },
+      "eventHash": "79214ec6cae9e0c087658b9bb715f520f8005148755233036c9c079737180cd4"
+    },
+    {
+      "sequence": 2,
+      "previousHash": "79214ec6cae9e0c087658b9bb715f520f8005148755233036c9c079737180cd4",
+      "decisionAt": "2026-10-20T03:00:06.056Z",
+      "type": "signal_snapshot",
+      "expectedAsOf": "2026-10-19",
+      "predictions": {
+        "sz002230": {
+          "expectedReturn": 0.008630707678992591,
+          "contributions": [
+            {
+              "name": "训练平均收益",
+              "value": 0.01969183717561541
+            },
+            {
+              "name": "距MA5",
+              "feature": "ma5Gap",
+              "value": 0.00014175589682443633
+            },
+            {
+              "name": "距MA20",
+              "feature": "ma20Gap",
+              "value": -0.000534551569209483
+            },
+            {
+              "name": "距MA60",
+              "feature": "ma60Gap",
+              "value": -0.0012737175711137036
+            },
+            {
+              "name": "RSI14",
+              "feature": "rsi14",
+              "value": -0.0016194863611155735
+            },
+            {
+              "name": "5日动量",
+              "feature": "momentum5",
+              "value": -0.00007648105170178352
+            },
+            {
+              "name": "20日动量",
+              "feature": "momentum20",
+              "value": -0.0004852658997987914
+            },
+            {
+              "name": "60日动量",
+              "feature": "momentum60",
+              "value": -0.001203907435401817
+            },
+            {
+              "name": "20日波动",
+              "feature": "volatility20",
+              "value": -0.0016187946360989892
+            },
+            {
+              "name": "量比",
+              "feature": "volumeRatio",
+              "value": -0.002248030909688146
+            },
+            {
+              "name": "60日回撤",
+              "feature": "drawdown60",
+              "value": -0.0001358232581598015
+            },
+            {
+              "name": "ATR14",
+              "feature": "atr14",
+              "value": -0.0020068267011591665
+            }
+          ],
+          "interval": [
+            -0.13318413174657967,
+            0.16810149627040316
+          ],
+          "asOf": "2026-10-19",
+          "signalDate": "2026-10-19",
+          "horizon": 20,
+          "entrySession": "2026-10-20",
+          "maturitySession": "2026-11-17",
+          "referenceOpen": null,
+          "publishedAt": "2026-10-20T02:47:53.234Z",
+          "firstReceivedAt": "2026-10-20T02:47:53.234Z",
+          "signalContract": {
+            "status": "available",
+            "referenceOpenStatus": "awaiting_entry_session_open",
+            "calendarVersion": "sse-sessions-2023-2026-v1",
+            "reason": null
+          },
+          "eligible": true,
+          "reasons": [],
+          "risks": [
+            "技术因子无法保证收益，预测可能为负或失准。",
+            "参考区间来自训练残差，并非经过校准的置信区间。",
+            "固定研究池存在幸存者偏差；后复权价格不代表真实成交价格。"
+          ],
+          "indicators": {
+            "ma5": 487.17660000000006,
+            "ma20": 504.5008999999999,
+            "ma60": 530.3583166666667,
+            "momentum5": -0.03403024777774899,
+            "momentum20": -0.0748174274970067,
+            "momentum60": -0.11773536310872301,
+            "rsi": 21.32168340380548,
+            "volatility": 0.16859882680007193,
+            "drawdown": 0.17948779039194296,
+            "volumeRatio": 0.7558213621008147,
+            "atr": 10.198428571428574
+          }
+        },
+        "sz300308": {
+          "expectedReturn": 0.017531394683333215,
+          "contributions": [
+            {
+              "name": "训练平均收益",
+              "value": 0.01969183717561541
+            },
+            {
+              "name": "距MA5",
+              "feature": "ma5Gap",
+              "value": 0.0005661988539826123
+            },
+            {
+              "name": "距MA20",
+              "feature": "ma20Gap",
+              "value": -0.0021586197677438226
+            },
+            {
+              "name": "距MA60",
+              "feature": "ma60Gap",
+              "value": -0.0032131189932996266
+            },
+            {
+              "name": "RSI14",
+              "feature": "rsi14",
+              "value": -0.002417213185053956
+            },
+            {
+              "name": "5日动量",
+              "feature": "momentum5",
+              "value": -0.0001810499488663323
+            },
+            {
+              "name": "20日动量",
+              "feature": "momentum20",
+              "value": -0.0015493321093926176
+            },
+            {
+              "name": "60日动量",
+              "feature": "momentum60",
+              "value": -0.0025393722623827746
+            },
+            {
+              "name": "20日波动",
+              "feature": "volatility20",
+              "value": 0.0010932205978864743
+            },
+            {
+              "name": "量比",
+              "feature": "volumeRatio",
+              "value": -0.0015185632563571826
+            },
+            {
+              "name": "60日回撤",
+              "feature": "drawdown60",
+              "value": 0.006356702485067218
+            },
+            {
+              "name": "ATR14",
+              "feature": "atr14",
+              "value": 0.0034007050938778143
+            }
+          ],
+          "interval": [
+            -0.12428344474223905,
+            0.17700218327474376
+          ],
+          "asOf": "2026-10-19",
+          "signalDate": "2026-10-19",
+          "horizon": 20,
+          "entrySession": "2026-10-20",
+          "maturitySession": "2026-11-17",
+          "referenceOpen": null,
+          "publishedAt": "2026-10-20T02:47:53.234Z",
+          "firstReceivedAt": "2026-10-20T02:47:53.234Z",
+          "signalContract": {
+            "status": "available",
+            "referenceOpenStatus": "awaiting_entry_session_open",
+            "calendarVersion": "sse-sessions-2023-2026-v1",
+            "reason": null
+          },
+          "eligible": true,
+          "reasons": [],
+          "risks": [
+            "技术因子无法保证收益，预测可能为负或失准。",
+            "参考区间来自训练残差，并非经过校准的置信区间。",
+            "固定研究池存在幸存者偏差；后复权价格不代表真实成交价格。"
+          ],
+          "indicators": {
+            "ma5": 4337.973800000001,
+            "ma20": 5161.922699999999,
+            "ma60": 5627.370816666665,
+            "momentum5": -0.08753877113046982,
+            "momentum20": -0.28434781081292637,
+            "momentum60": -0.32329704958510175,
+            "rsi": 7.229849714507097,
+            "volatility": 0.5545774284250125,
+            "drawdown": 0.4198976888729108,
+            "volumeRatio": 0.8122308647395226,
+            "atr": 275.72785714285726
+          }
+        },
+        "sz300502": {
+          "expectedReturn": 0.02045282825507149,
+          "contributions": [
+            {
+              "name": "训练平均收益",
+              "value": 0.01969183717561541
+            },
+            {
+              "name": "距MA5",
+              "feature": "ma5Gap",
+              "value": 0.0006753266264681967
+            },
+            {
+              "name": "距MA20",
+              "feature": "ma20Gap",
+              "value": -0.002376767825591217
+            },
+            {
+              "name": "距MA60",
+              "feature": "ma60Gap",
+              "value": -0.003239093706763729
+            },
+            {
+              "name": "RSI14",
+              "feature": "rsi14",
+              "value": -0.0026253115509652977
+            },
+            {
+              "name": "5日动量",
+              "feature": "momentum5",
+              "value": -0.0002317964539361473
+            },
+            {
+              "name": "20日动量",
+              "feature": "momentum20",
+              "value": -0.0014817868818442935
+            },
+            {
+              "name": "60日动量",
+              "feature": "momentum60",
+              "value": -0.0027856320511971907
+            },
+            {
+              "name": "20日波动",
+              "feature": "volatility20",
+              "value": 0.0014229190257333266
+            },
+            {
+              "name": "量比",
+              "feature": "volumeRatio",
+              "value": 0.0000357706551746106
+            },
+            {
+              "name": "60日回撤",
+              "feature": "drawdown60",
+              "value": 0.007017652313820472
+            },
+            {
+              "name": "ATR14",
+              "feature": "atr14",
+              "value": 0.004349710928557348
+            }
+          ],
+          "interval": [
+            -0.12136201117050077,
+            0.17992361684648206
+          ],
+          "asOf": "2026-10-19",
+          "signalDate": "2026-10-19",
+          "horizon": 20,
+          "entrySession": "2026-10-20",
+          "maturitySession": "2026-11-17",
+          "referenceOpen": null,
+          "publishedAt": "2026-10-20T02:47:53.234Z",
+          "firstReceivedAt": "2026-10-20T02:47:53.234Z",
+          "signalContract": {
+            "status": "available",
+            "referenceOpenStatus": "awaiting_entry_session_open",
+            "calendarVersion": "sse-sessions-2023-2026-v1",
+            "reason": null
+          },
+          "eligible": true,
+          "reasons": [],
+          "risks": [
+            "技术因子无法保证收益，预测可能为负或失准。",
+            "参考区间来自训练残差，并非经过校准的置信区间。",
+            "固定研究池存在幸存者偏差；后复权价格不代表真实成交价格。"
+          ],
+          "indicators": {
+            "ma5": 5193.5016,
+            "ma20": 6289.62725,
+            "ma60": 6711.6514000000025,
+            "momentum5": -0.11350605801238345,
+            "momentum20": -0.27104715593660644,
+            "momentum60": -0.36120263607250236,
+            "rsi": 3.5537948603407585,
+            "volatility": 0.6015006671087637,
+            "drawdown": 0.44437181304520934,
+            "volumeRatio": 0.9468655509052694,
+            "atr": 366.9487857142858
+          }
+        },
+        "sh688981": {
+          "expectedReturn": 0.017547647629180152,
+          "contributions": [
+            {
+              "name": "训练平均收益",
+              "value": 0.01969183717561541
+            },
+            {
+              "name": "距MA5",
+              "feature": "ma5Gap",
+              "value": 0.0005676077631894051
+            },
+            {
+              "name": "距MA20",
+              "feature": "ma20Gap",
+              "value": -0.0013855236096595085
+            },
+            {
+              "name": "距MA60",
+              "feature": "ma60Gap",
+              "value": -0.0025031683547446773
+            },
+            {
+              "name": "RSI14",
+              "feature": "rsi14",
+              "value": -0.00200262507974966
+            },
+            {
+              "name": "5日动量",
+              "feature": "momentum5",
+              "value": -0.00013784261221821444
+            },
+            {
+              "name": "20日动量",
+              "feature": "momentum20",
+              "value": -0.0008713288748734611
+            },
+            {
+              "name": "60日动量",
+              "feature": "momentum60",
+              "value": -0.0023051621443007145
+            },
+            {
+              "name": "20日波动",
+              "feature": "volatility20",
+              "value": -0.00009370902256313892
+            },
+            {
+              "name": "量比",
+              "feature": "volumeRatio",
+              "value": 0.0005968016776976627
+            },
+            {
+              "name": "60日回撤",
+              "feature": "drawdown60",
+              "value": 0.0051948288816293245
+            },
+            {
+              "name": "ATR14",
+              "feature": "atr14",
+              "value": 0.0007959318291577253
+            }
+          ],
+          "interval": [
+            -0.12426719179639212,
+            0.1770184362205907
+          ],
+          "asOf": "2026-10-19",
+          "signalDate": "2026-10-19",
+          "horizon": 20,
+          "entrySession": "2026-10-20",
+          "maturitySession": "2026-11-17",
+          "referenceOpen": null,
+          "publishedAt": "2026-10-20T02:47:53.234Z",
+          "firstReceivedAt": "2026-10-20T02:47:53.234Z",
+          "signalContract": {
+            "status": "available",
+            "referenceOpenStatus": "awaiting_entry_session_open",
+            "calendarVersion": "sse-sessions-2023-2026-v1",
+            "reason": null
+          },
+          "eligible": true,
+          "reasons": [],
+          "risks": [
+            "技术因子无法保证收益，预测可能为负或失准。",
+            "参考区间来自训练残差，并非经过校准的置信区间。",
+            "固定研究池存在幸存者偏差；后复权价格不代表真实成交价格。"
+          ],
+          "indicators": {
+            "ma5": 103.07000000000001,
+            "ma20": 112.99149999999997,
+            "ma60": 123.60533333333333,
+            "momentum5": -0.06542932133483315,
+            "momentum20": -0.15083894046503699,
+            "momentum60": -0.2872462110380326,
+            "rsi": 14.553543056879562,
+            "volatility": 0.38565159445942837,
+            "drawdown": 0.37687499999999996,
+            "volumeRatio": 1.0007613490315876,
+            "atr": 4.407857142857145
+          }
+        },
+        "sh603019": {
+          "expectedReturn": 0.024507735230310242,
+          "contributions": [
+            {
+              "name": "训练平均收益",
+              "value": 0.01969183717561541
+            },
+            {
+              "name": "距MA5",
+              "feature": "ma5Gap",
+              "value": -0.0007386647450450549
+            },
+            {
+              "name": "距MA20",
+              "feature": "ma20Gap",
+              "value": -0.0006880511965900884
+            },
+            {
+              "name": "距MA60",
+              "feature": "ma60Gap",
+              "value": -0.0016565503432626183
+            },
+            {
+              "name": "RSI14",
+              "feature": "rsi14",
+              "value": -0.001076692042086725
+            },
+            {
+              "name": "5日动量",
+              "feature": "momentum5",
+              "value": 0.000001957992670348457
+            },
+            {
+              "name": "20日动量",
+              "feature": "momentum20",
+              "value": -0.0006061515349903558
+            },
+            {
+              "name": "60日动量",
+              "feature": "momentum60",
+              "value": -0.0014479384933856845
+            },
+            {
+              "name": "20日波动",
+              "feature": "volatility20",
+              "value": -0.00009104410832241829
+            },
+            {
+              "name": "量比",
+              "feature": "volumeRatio",
+              "value": 0.006949071979869062
+            },
+            {
+              "name": "60日回撤",
+              "feature": "drawdown60",
+              "value": 0.004150616835813139
+            },
+            {
+              "name": "ATR14",
+              "feature": "atr14",
+              "value": 0.000019343710025225868
+            }
+          ],
+          "interval": [
+            -0.11730710419526202,
+            0.1839785238217208
+          ],
+          "asOf": "2026-10-19",
+          "signalDate": "2026-10-19",
+          "horizon": 20,
+          "entrySession": "2026-10-20",
+          "maturitySession": "2026-11-17",
+          "referenceOpen": null,
+          "publishedAt": "2026-10-20T02:47:53.234Z",
+          "firstReceivedAt": "2026-10-20T02:47:53.234Z",
+          "signalContract": {
+            "status": "available",
+            "referenceOpenStatus": "awaiting_entry_session_open",
+            "calendarVersion": "sse-sessions-2023-2026-v1",
+            "reason": null
+          },
+          "eligible": true,
+          "reasons": [],
+          "risks": [
+            "技术因子无法保证收益，预测可能为负或失准。",
+            "参考区间来自训练残差，并非经过校准的置信区间。",
+            "固定研究池存在幸存者偏差；后复权价格不代表真实成交价格。"
+          ],
+          "indicators": {
+            "ma5": 284.04799999999994,
+            "ma20": 314.31049999999993,
+            "ma60": 337.82980000000003,
+            "momentum5": 0.006107475305881849,
+            "momentum20": -0.0986215979994659,
+            "momentum60": -0.15529789176414377,
+            "rsi": 30.910137799117777,
+            "volatility": 0.3860308695679137,
+            "drawdown": 0.3382091676482136,
+            "volumeRatio": 1.8730452615444888,
+            "atr": 11.228142857142855
+          }
+        },
+        "sz000977": {
+          "expectedReturn": 0.012551269532739254,
+          "contributions": [
+            {
+              "name": "训练平均收益",
+              "value": 0.01969183717561541
+            },
+            {
+              "name": "距MA5",
+              "feature": "ma5Gap",
+              "value": 0.0004046743843954758
+            },
+            {
+              "name": "距MA20",
+              "feature": "ma20Gap",
+              "value": -0.001636661180280008
+            },
+            {
+              "name": "距MA60",
+              "feature": "ma60Gap",
+              "value": -0.00300960229163966
+            },
+            {
+              "name": "RSI14",
+              "feature": "rsi14",
+              "value": -0.0024753919098115134
+            },
+            {
+              "name": "5日动量",
+              "feature": "momentum5",
+              "value": -0.00017471041625100414
+            },
+            {
+              "name": "20日动量",
+              "feature": "momentum20",
+              "value": -0.0011126281046286205
+            },
+            {
+              "name": "60日动量",
+              "feature": "momentum60",
+              "value": -0.0022038835801523877
+            },
+            {
+              "name": "20日波动",
+              "feature": "volatility20",
+              "value": -0.0003834267165730367
+            },
+            {
+              "name": "量比",
+              "feature": "volumeRatio",
+              "value": -0.002508521421198061
+            },
+            {
+              "name": "60日回撤",
+              "feature": "drawdown60",
+              "value": 0.00542194275126938
+            },
+            {
+              "name": "ATR14",
+              "feature": "atr14",
+              "value": 0.0005376408419932778
+            }
+          ],
+          "interval": [
+            -0.12926356989283302,
+            0.1720220581241498
+          ],
+          "asOf": "2026-10-19",
+          "signalDate": "2026-10-19",
+          "horizon": 20,
+          "entrySession": "2026-10-20",
+          "maturitySession": "2026-11-17",
+          "referenceOpen": null,
+          "publishedAt": "2026-10-20T02:47:53.234Z",
+          "firstReceivedAt": "2026-10-20T02:47:53.234Z",
+          "signalContract": {
+            "status": "available",
+            "referenceOpenStatus": "awaiting_entry_session_open",
+            "calendarVersion": "sse-sessions-2023-2026-v1",
+            "reason": null
+          },
+          "eligible": true,
+          "reasons": [],
+          "risks": [
+            "技术因子无法保证收益，预测可能为负或失准。",
+            "参考区间来自训练残差，并非经过校准的置信区间。",
+            "固定研究池存在幸存者偏差；后复权价格不代表真实成交价格。"
+          ],
+          "indicators": {
+            "ma5": 429.05460000000005,
+            "ma20": 487.56325,
+            "ma60": 549.3057,
+            "momentum5": -0.08429479478386237,
+            "momentum20": -0.19835432968478695,
+            "momentum60": -0.2716568881074535,
+            "rsi": 6.202123318782583,
+            "volatility": 0.34441848153343285,
+            "drawdown": 0.38528473520986717,
+            "volumeRatio": 0.7366415343702991,
+            "atr": 17.640714285714285
+          }
+        },
+        "sz002415": {
+          "expectedReturn": 0.020638466513586903,
+          "contributions": [
+            {
+              "name": "训练平均收益",
+              "value": 0.01969183717561541
+            },
+            {
+              "name": "距MA5",
+              "feature": "ma5Gap",
+              "value": 0.00021460378727974642
+            },
+            {
+              "name": "距MA20",
+              "feature": "ma20Gap",
+              "value": -0.00002099265554963306
+            },
+            {
+              "name": "距MA60",
+              "feature": "ma60Gap",
+              "value": -0.0005973346460082951
+            },
+            {
+              "name": "RSI14",
+              "feature": "rsi14",
+              "value": 0.0003834369365567311
+            },
+            {
+              "name": "5日动量",
+              "feature": "momentum5",
+              "value": -0.000012309080891421698
+            },
+            {
+              "name": "20日动量",
+              "feature": "momentum20",
+              "value": -0.00011258652375483617
+            },
+            {
+              "name": "60日动量",
+              "feature": "momentum60",
+              "value": -0.0003461406337566073
+            },
+            {
+              "name": "20日波动",
+              "feature": "volatility20",
+              "value": -0.0018509034286503603
+            },
+            {
+              "name": "量比",
+              "feature": "volumeRatio",
+              "value": 0.00743509220212451
+            },
+            {
+              "name": "60日回撤",
+              "feature": "drawdown60",
+              "value": -0.0015342949745823621
+            },
+            {
+              "name": "ATR14",
+              "feature": "atr14",
+              "value": -0.002611941644795984
+            }
+          ],
+          "interval": [
+            -0.12117637291198537,
+            0.18010925510499748
+          ],
+          "asOf": "2026-10-19",
+          "signalDate": "2026-10-19",
+          "horizon": 20,
+          "entrySession": "2026-10-20",
+          "maturitySession": "2026-11-17",
+          "referenceOpen": null,
+          "publishedAt": "2026-10-20T02:47:53.234Z",
+          "firstReceivedAt": "2026-10-20T02:47:53.234Z",
+          "signalContract": {
+            "status": "available",
+            "referenceOpenStatus": "awaiting_entry_session_open",
+            "calendarVersion": "sse-sessions-2023-2026-v1",
+            "reason": null
+          },
+          "eligible": true,
+          "reasons": [],
+          "risks": [
+            "技术因子无法保证收益，预测可能为负或失准。",
+            "参考区间来自训练残差，并非经过校准的置信区间。",
+            "固定研究池存在幸存者偏差；后复权价格不代表真实成交价格。"
+          ],
+          "indicators": {
+            "ma5": 762.24,
+            "ma20": 749.8199999999999,
+            "ma60": 776.7600000000002,
+            "momentum5": -0.0011930706456898532,
+            "momentum20": -0.0014313432361079403,
+            "momentum60": 0.014296560748267462,
+            "rsi": 56.70329670329673,
+            "volatility": 0.13556471030575737,
+            "drawdown": 0.12770417694622316,
+            "volumeRatio": 1.965060816008349,
+            "atr": 12.124285714285731
+          }
+        },
+        "sh688256": {
+          "expectedReturn": 0.01948486106173572,
+          "contributions": [
+            {
+              "name": "训练平均收益",
+              "value": 0.01969183717561541
+            },
+            {
+              "name": "距MA5",
+              "feature": "ma5Gap",
+              "value": 0.000035440743204668075
+            },
+            {
+              "name": "距MA20",
+              "feature": "ma20Gap",
+              "value": -0.0011518184720716038
+            },
+            {
+              "name": "距MA60",
+              "feature": "ma60Gap",
+              "value": -0.0019122618277793353
+            },
+            {
+              "name": "RSI14",
+              "feature": "rsi14",
+              "value": -0.0015547230772630595
+            },
+            {
+              "name": "5日动量",
+              "feature": "momentum5",
+              "value": -0.0000970948956041178
+            },
+            {
+              "name": "20日动量",
+              "feature": "momentum20",
+              "value": -0.0006491985301628386
+            },
+            {
+              "name": "60日动量",
+              "feature": "momentum60",
+              "value": -0.0018678541600197281
+            },
+            {
+              "name": "20日波动",
+              "feature": "volatility20",
+              "value": 0.00039932507344106553
+            },
+            {
+              "name": "量比",
+              "feature": "volumeRatio",
+              "value": 0.0006038140868793371
+            },
+            {
+              "name": "60日回撤",
+              "feature": "drawdown60",
+              "value": 0.0040690739404617895
+            },
+            {
+              "name": "ATR14",
+              "feature": "atr14",
+              "value": 0.0019183210050341328
+            }
+          ],
+          "interval": [
+            -0.12232997836383655,
+            0.17895564965314628
+          ],
+          "asOf": "2026-10-19",
+          "signalDate": "2026-10-19",
+          "horizon": 20,
+          "entrySession": "2026-10-20",
+          "maturitySession": "2026-11-17",
+          "referenceOpen": null,
+          "publishedAt": "2026-10-20T02:47:53.234Z",
+          "firstReceivedAt": "2026-10-20T02:47:53.234Z",
+          "signalContract": {
+            "status": "available",
+            "referenceOpenStatus": "awaiting_entry_session_open",
+            "calendarVersion": "sse-sessions-2023-2026-v1",
+            "reason": null
+          },
+          "eligible": true,
+          "reasons": [],
+          "risks": [
+            "技术因子无法保证收益，预测可能为负或失准。",
+            "参考区间来自训练残差，并非经过校准的置信区间。",
+            "固定研究池存在幸存者偏差；后复权价格不代表真实成交价格。"
+          ],
+          "indicators": {
+            "ma5": 1386.0585999999998,
+            "ma20": 1533.1685499999999,
+            "ma60": 1615.5862166666666,
+            "momentum5": -0.044578473662752804,
+            "momentum20": -0.10709818838243823,
+            "momentum60": -0.2199334934417143,
+            "rsi": 22.465725947989682,
+            "volatility": 0.4558210420880325,
+            "drawdown": 0.33518973885138326,
+            "volumeRatio": 1.001454058608203,
+            "atr": 74.05828571428576
+          }
+        },
+        "sh600406": {
+          "expectedReturn": 0.01798768454244653,
+          "contributions": [
+            {
+              "name": "训练平均收益",
+              "value": 0.01969183717561541
+            },
+            {
+              "name": "距MA5",
+              "feature": "ma5Gap",
+              "value": -0.00024129896660230745
+            },
+            {
+              "name": "距MA20",
+              "feature": "ma20Gap",
+              "value": 0.0002183743819565299
+            },
+            {
+              "name": "距MA60",
+              "feature": "ma60Gap",
+              "value": -0.0002505757717049627
+            },
+            {
+              "name": "RSI14",
+              "feature": "rsi14",
+              "value": 0.0007453896720701866
+            },
+            {
+              "name": "5日动量",
+              "feature": "momentum5",
+              "value": 0.000003888028909616886
+            },
+            {
+              "name": "20日动量",
+              "feature": "momentum20",
+              "value": 0.0000603531418229044
+            },
+            {
+              "name": "60日动量",
+              "feature": "momentum60",
+              "value": -0.0002012936527529651
+            },
+            {
+              "name": "20日波动",
+              "feature": "volatility20",
+              "value": -0.0017278362139616062
+            },
+            {
+              "name": "量比",
+              "feature": "volumeRatio",
+              "value": 0.004238190553355337
+            },
+            {
+              "name": "60日回撤",
+              "feature": "drawdown60",
+              "value": -0.0020672184222948844
+            },
+            {
+              "name": "ATR14",
+              "feature": "atr14",
+              "value": -0.0024821253839667316
+            }
+          ],
+          "interval": [
+            -0.12382715488312573,
+            0.1774584731338571
+          ],
+          "asOf": "2026-10-19",
+          "signalDate": "2026-10-19",
+          "horizon": 20,
+          "entrySession": "2026-10-20",
+          "maturitySession": "2026-11-17",
+          "referenceOpen": null,
+          "publishedAt": "2026-10-20T02:47:53.234Z",
+          "firstReceivedAt": "2026-10-20T02:47:53.234Z",
+          "signalContract": {
+            "status": "available",
+            "referenceOpenStatus": "awaiting_entry_session_open",
+            "calendarVersion": "sse-sessions-2023-2026-v1",
+            "reason": null
+          },
+          "eligible": true,
+          "reasons": [],
+          "risks": [
+            "技术因子无法保证收益，预测可能为负或失准。",
+            "参考区间来自训练残差，并非经过校准的置信区间。",
+            "固定研究池存在幸存者偏差；后复权价格不代表真实成交价格。"
+          ],
+          "indicators": {
+            "ma5": 1064.0596,
+            "ma20": 1053.15805,
+            "ma60": 1081.1868166666668,
+            "momentum5": 0.007095086268422479,
+            "momentum20": 0.032623036174044495,
+            "momentum60": 0.03659216082291117,
+            "rsi": 63.097186941386795,
+            "volatility": 0.1530798447475487,
+            "drawdown": 0.10797070540837839,
+            "volumeRatio": 1.433432352146908,
+            "atr": 18.551071428571372
+          }
+        },
+        "sz002371": {
+          "expectedReturn": 0.016693136226669226,
+          "contributions": [
+            {
+              "name": "训练平均收益",
+              "value": 0.01969183717561541
+            },
+            {
+              "name": "距MA5",
+              "feature": "ma5Gap",
+              "value": 0.0005224122138957428
+            },
+            {
+              "name": "距MA20",
+              "feature": "ma20Gap",
+              "value": -0.0010488025366644476
+            },
+            {
+              "name": "距MA60",
+              "feature": "ma60Gap",
+              "value": -0.002086991415587957
+            },
+            {
+              "name": "RSI14",
+              "feature": "rsi14",
+              "value": -0.0018749583017079363
+            },
+            {
+              "name": "5日动量",
+              "feature": "momentum5",
+              "value": -0.00005918439776248036
+            },
+            {
+              "name": "20日动量",
+              "feature": "momentum20",
+              "value": -0.0005908448321753773
+            },
+            {
+              "name": "60日动量",
+              "feature": "momentum60",
+              "value": -0.0014317025161219839
+            },
+            {
+              "name": "20日波动",
+              "feature": "volatility20",
+              "value": -0.0004382058527664237
+            },
+            {
+              "name": "量比",
+              "feature": "volumeRatio",
+              "value": 0.0009439019678032912
+            },
+            {
+              "name": "60日回撤",
+              "feature": "drawdown60",
+              "value": 0.0020767683253799657
+            },
+            {
+              "name": "ATR14",
+              "feature": "atr14",
+              "value": 0.0009889063967614198
+            }
+          ],
+          "interval": [
+            -0.12512170319890303,
+            0.1761639248180798
+          ],
+          "asOf": "2026-10-19",
+          "signalDate": "2026-10-19",
+          "horizon": 20,
+          "entrySession": "2026-10-20",
+          "maturitySession": "2026-11-17",
+          "referenceOpen": null,
+          "publishedAt": "2026-10-20T02:47:53.234Z",
+          "firstReceivedAt": "2026-10-20T02:47:53.234Z",
+          "signalContract": {
+            "status": "available",
+            "referenceOpenStatus": "awaiting_entry_session_open",
+            "calendarVersion": "sse-sessions-2023-2026-v1",
+            "reason": null
+          },
+          "eligible": true,
+          "reasons": [],
+          "risks": [
+            "技术因子无法保证收益，预测可能为负或失准。",
+            "参考区间来自训练残差，并非经过校准的置信区间。",
+            "固定研究池存在幸存者偏差；后复权价格不代表真实成交价格。"
+          ],
+          "indicators": {
+            "ma5": 3752.179,
+            "ma20": 3988.276299999999,
+            "ma60": 4321.204316666668,
+            "momentum5": -0.02517944762272062,
+            "momentum20": -0.09560748169804745,
+            "momentum60": -0.15279876576659623,
+            "rsi": 16.80877498568769,
+            "volatility": 0.33662222208725195,
+            "drawdown": 0.2614172180162455,
+            "volumeRatio": 1.0356309625994002,
+            "atr": 166.70957142857148
+          }
+        },
+        "sh600703": {
+          "expectedReturn": 0.018509461894987173,
+          "contributions": [
+            {
+              "name": "训练平均收益",
+              "value": 0.01969183717561541
+            },
+            {
+              "name": "距MA5",
+              "feature": "ma5Gap",
+              "value": 0.0013707368118908996
+            },
+            {
+              "name": "距MA20",
+              "feature": "ma20Gap",
+              "value": -0.001889257383247609
+            },
+            {
+              "name": "距MA60",
+              "feature": "ma60Gap",
+              "value": -0.0026577531030819185
+            },
+            {
+              "name": "RSI14",
+              "feature": "rsi14",
+              "value": -0.0021188829134313855
+            },
+            {
+              "name": "5日动量",
+              "feature": "momentum5",
+              "value": -0.0002784321005014293
+            },
+            {
+              "name": "20日动量",
+              "feature": "momentum20",
+              "value": -0.0010946542351206352
+            },
+            {
+              "name": "60日动量",
+              "feature": "momentum60",
+              "value": -0.001712054524249833
+            },
+            {
+              "name": "20日波动",
+              "feature": "volatility20",
+              "value": -0.00015646084340129637
+            },
+            {
+              "name": "量比",
+              "feature": "volumeRatio",
+              "value": 0.0026674711433982874
+            },
+            {
+              "name": "60日回撤",
+              "feature": "drawdown60",
+              "value": 0.0034379319836677987
+            },
+            {
+              "name": "ATR14",
+              "feature": "atr14",
+              "value": 0.0012489798834488764
+            }
+          ],
+          "interval": [
+            -0.1233053775305851,
+            0.17798025048639773
+          ],
+          "asOf": "2026-10-19",
+          "signalDate": "2026-10-19",
+          "horizon": 20,
+          "entrySession": "2026-10-20",
+          "maturitySession": "2026-11-17",
+          "referenceOpen": null,
+          "publishedAt": "2026-10-20T02:47:53.234Z",
+          "firstReceivedAt": "2026-10-20T02:47:53.234Z",
+          "signalContract": {
+            "status": "available",
+            "referenceOpenStatus": "awaiting_entry_session_open",
+            "calendarVersion": "sse-sessions-2023-2026-v1",
+            "reason": null
+          },
+          "eligible": true,
+          "reasons": [],
+          "risks": [
+            "技术因子无法保证收益，预测可能为负或失准。",
+            "参考区间来自训练残差，并非经过校准的置信区间。",
+            "固定研究池存在幸存者偏差；后复权价格不代表真实成交价格。"
+          ],
+          "indicators": {
+            "ma5": 234.17039999999997,
+            "ma20": 257.10280000000006,
+            "ma60": 271.2990333333334,
+            "momentum5": -0.13736979427595786,
+            "momentum20": -0.194815008791291,
+            "momentum60": -0.19595200382534883,
+            "rsi": 12.499849977796728,
+            "volatility": 0.37672064903072705,
+            "drawdown": 0.31181936193478654,
+            "volumeRatio": 1.2276263360576922,
+            "atr": 10.320357142857146
+          }
+        },
+        "sh688111": {
+          "expectedReturn": 0.01601529159511014,
+          "contributions": [
+            {
+              "name": "训练平均收益",
+              "value": 0.01969183717561541
+            },
+            {
+              "name": "距MA5",
+              "feature": "ma5Gap",
+              "value": -0.0000021708628407819026
+            },
+            {
+              "name": "距MA20",
+              "feature": "ma20Gap",
+              "value": 0.00021171858912998366
+            },
+            {
+              "name": "距MA60",
+              "feature": "ma60Gap",
+              "value": -0.0006536382121699488
+            },
+            {
+              "name": "RSI14",
+              "feature": "rsi14",
+              "value": 0.0004904354993355499
+            },
+            {
+              "name": "5日动量",
+              "feature": "momentum5",
+              "value": 0.000024821075032637613
+            },
+            {
+              "name": "20日动量",
+              "feature": "momentum20",
+              "value": -0.000039609969197372714
+            },
+            {
+              "name": "60日动量",
+              "feature": "momentum60",
+              "value": -0.00020198758689812964
+            },
+            {
+              "name": "20日波动",
+              "feature": "volatility20",
+              "value": -0.0009509340550925522
+            },
+            {
+              "name": "量比",
+              "feature": "volumeRatio",
+              "value": -0.002534993983455047
+            },
+            {
+              "name": "60日回撤",
+              "feature": "drawdown60",
+              "value": 0.0009257908655153369
+            },
+            {
+              "name": "ATR14",
+              "feature": "atr14",
+              "value": -0.0009459769398649519
+            }
+          ],
+          "interval": [
+            -0.12579954783046213,
+            0.1754860801865207
+          ],
+          "asOf": "2026-10-19",
+          "signalDate": "2026-10-19",
+          "horizon": 20,
+          "entrySession": "2026-10-20",
+          "maturitySession": "2026-11-17",
+          "referenceOpen": null,
+          "publishedAt": "2026-10-20T02:47:53.234Z",
+          "firstReceivedAt": "2026-10-20T02:47:53.234Z",
+          "signalContract": {
+            "status": "available",
+            "referenceOpenStatus": "awaiting_entry_session_open",
+            "calendarVersion": "sse-sessions-2023-2026-v1",
+            "reason": null
+          },
+          "eligible": true,
+          "reasons": [],
+          "risks": [
+            "技术因子无法保证收益，预测可能为负或失准。",
+            "参考区间来自训练残差，并非经过校准的置信区间。",
+            "固定研究池存在幸存者偏差；后复权价格不代表真实成交价格。"
+          ],
+          "indicators": {
+            "ma5": 236.859,
+            "ma20": 231.257,
+            "ma60": 245.7688333333334,
+            "momentum5": 0.01780664981828628,
+            "momentum20": 0.012938820304126297,
+            "momentum60": 0.03648534687296534,
+            "rsi": 58.5934248855597,
+            "volatility": 0.2636498758896681,
+            "drawdown": 0.21879799936030153,
+            "volumeRatio": 0.73471982265618,
+            "atr": 7.077857142857139
+          }
+        },
+        "sh600570": {
+          "expectedReturn": 0.01666355344037772,
+          "contributions": [
+            {
+              "name": "训练平均收益",
+              "value": 0.01969183717561541
+            },
+            {
+              "name": "距MA5",
+              "feature": "ma5Gap",
+              "value": -0.0001752917137675599
+            },
+            {
+              "name": "距MA20",
+              "feature": "ma20Gap",
+              "value": 0.00008350514928658583
+            },
+            {
+              "name": "距MA60",
+              "feature": "ma60Gap",
+              "value": -0.0007703563918465402
+            },
+            {
+              "name": "RSI14",
+              "feature": "rsi14",
+              "value": -0.00017668280163531003
+            },
+            {
+              "name": "5日动量",
+              "feature": "momentum5",
+              "value": 0.00003807286925432916
+            },
+            {
+              "name": "20日动量",
+              "feature": "momentum20",
+              "value": -0.00017009959236534766
+            },
+            {
+              "name": "60日动量",
+              "feature": "momentum60",
+              "value": -0.0003998111182658482
+            },
+            {
+              "name": "20日波动",
+              "feature": "volatility20",
+              "value": -0.0013401538161694727
+            },
+            {
+              "name": "量比",
+              "feature": "volumeRatio",
+              "value": 0.001784776509782079
+            },
+            {
+              "name": "60日回撤",
+              "feature": "drawdown60",
+              "value": -0.00008462528469671298
+            },
+            {
+              "name": "ATR14",
+              "feature": "atr14",
+              "value": -0.0018176175448138892
+            }
+          ],
+          "interval": [
+            -0.12515128598519454,
+            0.1761343420317883
+          ],
+          "asOf": "2026-10-19",
+          "signalDate": "2026-10-19",
+          "horizon": 20,
+          "entrySession": "2026-10-20",
+          "maturitySession": "2026-11-17",
+          "referenceOpen": null,
+          "publishedAt": "2026-10-20T02:47:53.234Z",
+          "firstReceivedAt": "2026-10-20T02:47:53.234Z",
+          "signalContract": {
+            "status": "available",
+            "referenceOpenStatus": "awaiting_entry_session_open",
+            "calendarVersion": "sse-sessions-2023-2026-v1",
+            "reason": null
+          },
+          "eligible": true,
+          "reasons": [],
+          "risks": [
+            "技术因子无法保证收益，预测可能为负或失准。",
+            "参考区间来自训练残差，并非经过校准的置信区间。",
+            "固定研究池存在幸存者偏差；后复权价格不代表真实成交价格。"
+          ],
+          "indicators": {
+            "ma5": 845.7614,
+            "ma20": 843.7867500000002,
+            "ma60": 895.9642500000001,
+            "momentum5": 0.02458767132471973,
+            "momentum20": -0.012756517556073654,
+            "momentum60": 0.006035320851246029,
+            "rsi": 46.80878900988956,
+            "volatility": 0.20825546024529473,
+            "drawdown": 0.18138358566322588,
+            "volumeRatio": 1.1252254345855113,
+            "atr": 19.38014285714285
+          }
+        },
+        "sh588000": {
+          "expectedReturn": 0.016284257644116208,
+          "contributions": [
+            {
+              "name": "训练平均收益",
+              "value": 0.01969183717561541
+            },
+            {
+              "name": "距MA5",
+              "feature": "ma5Gap",
+              "value": 0.0005132363286846653
+            },
+            {
+              "name": "距MA20",
+              "feature": "ma20Gap",
+              "value": -0.00146516469058212
+            },
+            {
+              "name": "距MA60",
+              "feature": "ma60Gap",
+              "value": -0.0023650971779525702
+            },
+            {
+              "name": "RSI14",
+              "feature": "rsi14",
+              "value": -0.002420688474018914
+            },
+            {
+              "name": "5日动量",
+              "feature": "momentum5",
+              "value": -0.00014075890600303352
+            },
+            {
+              "name": "20日动量",
+              "feature": "momentum20",
+              "value": -0.0008282445981214721
+            },
+            {
+              "name": "60日动量",
+              "feature": "momentum60",
+              "value": -0.0018832984380062043
+            },
+            {
+              "name": "20日波动",
+              "feature": "volatility20",
+              "value": -0.00035642560486072683
+            },
+            {
+              "name": "量比",
+              "feature": "volumeRatio",
+              "value": 0.0021244494725284257
+            },
+            {
+              "name": "60日回撤",
+              "feature": "drawdown60",
+              "value": 0.0031958976978680043
+            },
+            {
+              "name": "ATR14",
+              "feature": "atr14",
+              "value": 0.0002185148589647412
+            }
+          ],
+          "interval": [
+            -0.12553058178145607,
+            0.17575504623552676
+          ],
+          "asOf": "2026-10-19",
+          "signalDate": "2026-10-19",
+          "horizon": 20,
+          "entrySession": "2026-10-20",
+          "maturitySession": "2026-11-17",
+          "referenceOpen": null,
+          "publishedAt": "2026-10-20T02:47:53.234Z",
+          "firstReceivedAt": "2026-10-20T02:47:53.234Z",
+          "signalContract": {
+            "status": "available",
+            "referenceOpenStatus": "awaiting_entry_session_open",
+            "calendarVersion": "sse-sessions-2023-2026-v1",
+            "reason": null
+          },
+          "eligible": true,
+          "reasons": [],
+          "risks": [
+            "技术因子无法保证收益，预测可能为负或失准。",
+            "参考区间来自训练残差，并非经过校准的置信区间。",
+            "固定研究池存在幸存者偏差；后复权价格不代表真实成交价格。"
+          ],
+          "indicators": {
+            "ma5": 1.0055999999999998,
+            "ma20": 1.1151499999999999,
+            "ma60": 1.1925166666666664,
+            "momentum5": -0.06692160611854692,
+            "momentum20": -0.1423550087873462,
+            "momentum60": -0.22231075697211156,
+            "rsi": 7.16845878136202,
+            "volatility": 0.3482613254859429,
+            "drawdown": 0.3028571428571428,
+            "volumeRatio": 1.1635786792585385,
+            "atr": 0.03850000000000002
+          }
+        },
+        "sh512760": {
+          "expectedReturn": 0.01387259634966406,
+          "contributions": [
+            {
+              "name": "训练平均收益",
+              "value": 0.01969183717561541
+            },
+            {
+              "name": "距MA5",
+              "feature": "ma5Gap",
+              "value": 0.000585840046329974
+            },
+            {
+              "name": "距MA20",
+              "feature": "ma20Gap",
+              "value": -0.0015483223386509434
+            },
+            {
+              "name": "距MA60",
+              "feature": "ma60Gap",
+              "value": -0.002446448004398529
+            },
+            {
+              "name": "RSI14",
+              "feature": "rsi14",
+              "value": -0.0024577702354110936
+            },
+            {
+              "name": "5日动量",
+              "feature": "momentum5",
+              "value": -0.0001566493769613259
+            },
+            {
+              "name": "20日动量",
+              "feature": "momentum20",
+              "value": -0.0008357636249383629
+            },
+            {
+              "name": "60日动量",
+              "feature": "momentum60",
+              "value": -0.002013968957545849
+            },
+            {
+              "name": "20日波动",
+              "feature": "volatility20",
+              "value": -0.0002572337113706974
+            },
+            {
+              "name": "量比",
+              "feature": "volumeRatio",
+              "value": -0.00044938577097177276
+            },
+            {
+              "name": "60日回撤",
+              "feature": "drawdown60",
+              "value": 0.003118737507421248
+            },
+            {
+              "name": "ATR14",
+              "feature": "atr14",
+              "value": 0.000641723640546
+            }
+          ],
+          "interval": [
+            -0.1279422430759082,
+            0.17334338494107462
+          ],
+          "asOf": "2026-10-19",
+          "signalDate": "2026-10-19",
+          "horizon": 20,
+          "entrySession": "2026-10-20",
+          "maturitySession": "2026-11-17",
+          "referenceOpen": null,
+          "publishedAt": "2026-10-20T02:47:53.234Z",
+          "firstReceivedAt": "2026-10-20T02:47:53.234Z",
+          "signalContract": {
+            "status": "available",
+            "referenceOpenStatus": "awaiting_entry_session_open",
+            "calendarVersion": "sse-sessions-2023-2026-v1",
+            "reason": null
+          },
+          "eligible": true,
+          "reasons": [],
+          "risks": [
+            "技术因子无法保证收益，预测可能为负或失准。",
+            "参考区间来自训练残差，并非经过校准的置信区间。",
+            "固定研究池存在幸存者偏差；后复权价格不代表真实成交价格。"
+          ],
+          "indicators": {
+            "ma5": 3.6224,
+            "ma20": 4.033399999999999,
+            "ma60": 4.3132,
+            "momentum5": -0.07505285412262153,
+            "momentum20": -0.14383561643835618,
+            "momentum60": -0.24242424242424243,
+            "rsi": 6.513409961685866,
+            "volatility": 0.36237848377548104,
+            "drawdown": 0.30000000000000004,
+            "volumeRatio": 0.9026047389196712,
+            "atr": 0.1502857142857142
+          }
+        },
+        "sh515070": {
+          "expectedReturn": 0.011914625431389925,
+          "contributions": [
+            {
+              "name": "训练平均收益",
+              "value": 0.01969183717561541
+            },
+            {
+              "name": "距MA5",
+              "feature": "ma5Gap",
+              "value": 0.0002899462271264406
+            },
+            {
+              "name": "距MA20",
+              "feature": "ma20Gap",
+              "value": -0.0013500431432426892
+            },
+            {
+              "name": "距MA60",
+              "feature": "ma60Gap",
+              "value": -0.0021765104951185885
+            },
+            {
+              "name": "RSI14",
+              "feature": "rsi14",
+              "value": -0.0021904309393195286
+            },
+            {
+              "name": "5日动量",
+              "feature": "momentum5",
+              "value": -0.00013708305303420572
+            },
+            {
+              "name": "20日动量",
+              "feature": "momentum20",
+              "value": -0.0008253805979785016
+            },
+            {
+              "name": "60日动量",
+              "feature": "momentum60",
+              "value": -0.001738352987760548
+            },
+            {
+              "name": "20日波动",
+              "feature": "volatility20",
+              "value": -0.00045815638872424565
+            },
+            {
+              "name": "量比",
+              "feature": "volumeRatio",
+              "value": -0.0019010689367738478
+            },
+            {
+              "name": "60日回撤",
+              "feature": "drawdown60",
+              "value": 0.00261436888665225
+            },
+            {
+              "name": "ATR14",
+              "feature": "atr14",
+              "value": 0.00009549968394797721
+            }
+          ],
+          "interval": [
+            -0.12990021399418233,
+            0.1713854140228005
+          ],
+          "asOf": "2026-10-19",
+          "signalDate": "2026-10-19",
+          "horizon": 20,
+          "entrySession": "2026-10-20",
+          "maturitySession": "2026-11-17",
+          "referenceOpen": null,
+          "publishedAt": "2026-10-20T02:47:53.234Z",
+          "firstReceivedAt": "2026-10-20T02:47:53.234Z",
+          "signalContract": {
+            "status": "available",
+            "referenceOpenStatus": "awaiting_entry_session_open",
+            "calendarVersion": "sse-sessions-2023-2026-v1",
+            "reason": null
+          },
+          "eligible": true,
+          "reasons": [],
+          "risks": [
+            "技术因子无法保证收益，预测可能为负或失准。",
+            "参考区间来自训练残差，并非经过校准的置信区间。",
+            "固定研究池存在幸存者偏差；后复权价格不代表真实成交价格。"
+          ],
+          "indicators": {
+            "ma5": 1.8699999999999999,
+            "ma20": 2.0778,
+            "ma60": 2.204633333333334,
+            "momentum5": -0.06504065040650397,
+            "momentum20": -0.14179104477611937,
+            "momentum60": -0.19999999999999996,
+            "rsi": 11.23595505617979,
+            "volatility": 0.33378282801815895,
+            "drawdown": 0.2813238770685579,
+            "volumeRatio": 0.7821458356312226,
+            "atr": 0.07071428571428573
+          }
+        },
+        "sh512720": {
+          "expectedReturn": 0.013732468151518119,
+          "contributions": [
+            {
+              "name": "训练平均收益",
+              "value": 0.01969183717561541
+            },
+            {
+              "name": "距MA5",
+              "feature": "ma5Gap",
+              "value": 0.00009703207432465974
+            },
+            {
+              "name": "距MA20",
+              "feature": "ma20Gap",
+              "value": -0.0007120299886015526
+            },
+            {
+              "name": "距MA60",
+              "feature": "ma60Gap",
+              "value": -0.0014954711052637178
+            },
+            {
+              "name": "RSI14",
+              "feature": "rsi14",
+              "value": -0.0016570978477214514
+            },
+            {
+              "name": "5日动量",
+              "feature": "momentum5",
+              "value": -0.00007120721178347873
+            },
+            {
+              "name": "20日动量",
+              "feature": "momentum20",
+              "value": -0.0005008137990166905
+            },
+            {
+              "name": "60日动量",
+              "feature": "momentum60",
+              "value": -0.001047421329674991
+            },
+            {
+              "name": "20日波动",
+              "feature": "volatility20",
+              "value": -0.0013592643772371816
+            },
+            {
+              "name": "量比",
+              "feature": "volumeRatio",
+              "value": 0.002566078408354248
+            },
+            {
+              "name": "60日回撤",
+              "feature": "drawdown60",
+              "value": -0.00019591884135178295
+            },
+            {
+              "name": "ATR14",
+              "feature": "atr14",
+              "value": -0.0015832550061253507
+            }
+          ],
+          "interval": [
+            -0.12808237127405414,
+            0.1732032567429287
+          ],
+          "asOf": "2026-10-19",
+          "signalDate": "2026-10-19",
+          "horizon": 20,
+          "entrySession": "2026-10-20",
+          "maturitySession": "2026-11-17",
+          "referenceOpen": null,
+          "publishedAt": "2026-10-20T02:47:53.234Z",
+          "firstReceivedAt": "2026-10-20T02:47:53.234Z",
+          "signalContract": {
+            "status": "available",
+            "referenceOpenStatus": "awaiting_entry_session_open",
+            "calendarVersion": "sse-sessions-2023-2026-v1",
+            "reason": null
+          },
+          "eligible": true,
+          "reasons": [],
+          "risks": [
+            "技术因子无法保证收益，预测可能为负或失准。",
+            "参考区间来自训练残差，并非经过校准的置信区间。",
+            "固定研究池存在幸存者偏差；后复权价格不代表真实成交价格。"
+          ],
+          "indicators": {
+            "ma5": 1.1179999999999999,
+            "ma20": 1.1804999999999999,
+            "ma60": 1.2463666666666664,
+            "momentum5": -0.031331592689295085,
+            "momentum20": -0.07787903893951953,
+            "momentum60": -0.09364820846905542,
+            "rsi": 20.65727699530511,
+            "volatility": 0.20553561282528504,
+            "drawdown": 0.17726252804786824,
+            "volumeRatio": 1.2154053716427233,
+            "atr": 0.027357142857142826
+          }
+        },
+        "sh515880": {
+          "expectedReturn": 0.015766118875442645,
+          "contributions": [
+            {
+              "name": "训练平均收益",
+              "value": 0.01969183717561541
+            },
+            {
+              "name": "距MA5",
+              "feature": "ma5Gap",
+              "value": 0.0004631874791595141
+            },
+            {
+              "name": "距MA20",
+              "feature": "ma20Gap",
+              "value": -0.0018931735608407807
+            },
+            {
+              "name": "距MA60",
+              "feature": "ma60Gap",
+              "value": -0.0024469573331646274
+            },
+            {
+              "name": "RSI14",
+              "feature": "rsi14",
+              "value": -0.002461268514787716
+            },
+            {
+              "name": "5日动量",
+              "feature": "momentum5",
+              "value": -0.0001455925645472749
+            },
+            {
+              "name": "20日动量",
+              "feature": "momentum20",
+              "value": -0.0012488842707304233
+            },
+            {
+              "name": "60日动量",
+              "feature": "momentum60",
+              "value": -0.0017797581182745774
+            },
+            {
+              "name": "20日波动",
+              "feature": "volatility20",
+              "value": 0.0005705710970782674
+            },
+            {
+              "name": "量比",
+              "feature": "volumeRatio",
+              "value": 0.0005202027892364181
+            },
+            {
+              "name": "60日回撤",
+              "feature": "drawdown60",
+              "value": 0.0024539150041977915
+            },
+            {
+              "name": "ATR14",
+              "feature": "atr14",
+              "value": 0.00204203969250064
+            }
+          ],
+          "interval": [
+            -0.1260487205501296,
+            0.17523690746685322
+          ],
+          "asOf": "2026-10-19",
+          "signalDate": "2026-10-19",
+          "horizon": 20,
+          "entrySession": "2026-10-20",
+          "maturitySession": "2026-11-17",
+          "referenceOpen": null,
+          "publishedAt": "2026-10-20T02:47:53.234Z",
+          "firstReceivedAt": "2026-10-20T02:47:53.234Z",
+          "signalContract": {
+            "status": "available",
+            "referenceOpenStatus": "awaiting_entry_session_open",
+            "calendarVersion": "sse-sessions-2023-2026-v1",
+            "reason": null
+          },
+          "eligible": true,
+          "reasons": [],
+          "risks": [
+            "技术因子无法保证收益，预测可能为负或失准。",
+            "参考区间来自训练残差，并非经过校准的置信区间。",
+            "固定研究池存在幸存者偏差；后复权价格不代表真实成交价格。"
+          ],
+          "indicators": {
+            "ma5": 3.2232,
+            "ma20": 3.750000000000001,
+            "ma60": 3.8673000000000006,
+            "momentum5": -0.06939501779359425,
+            "momentum20": -0.22518518518518515,
+            "momentum60": -0.2063732928679819,
+            "rsi": 6.451612903225822,
+            "volatility": 0.4801930662230831,
+            "drawdown": 0.2753824756606398,
+            "volumeRatio": 0.9932257824493661,
+            "atr": 0.17100000000000012
+          }
+        },
+        "sz159852": {
+          "expectedReturn": 0.012134332277169336,
+          "contributions": [
+            {
+              "name": "训练平均收益",
+              "value": 0.01969183717561541
+            },
+            {
+              "name": "距MA5",
+              "feature": "ma5Gap",
+              "value": 0.00010249625804714659
+            },
+            {
+              "name": "距MA20",
+              "feature": "ma20Gap",
+              "value": -0.0004262785783314389
+            },
+            {
+              "name": "距MA60",
+              "feature": "ma60Gap",
+              "value": -0.0011355507530267216
+            },
+            {
+              "name": "RSI14",
+              "feature": "rsi14",
+              "value": -0.0009697085362896142
+            },
+            {
+              "name": "5日动量",
+              "feature": "momentum5",
+              "value": -0.00006196846022717398
+            },
+            {
+              "name": "20日动量",
+              "feature": "momentum20",
+              "value": -0.0003015440494894182
+            },
+            {
+              "name": "60日动量",
+              "feature": "momentum60",
+              "value": -0.0007851136715168004
+            },
+            {
+              "name": "20日波动",
+              "feature": "volatility20",
+              "value": -0.0011485390912424258
+            },
+            {
+              "name": "量比",
+              "feature": "volumeRatio",
+              "value": -0.0011674216978226565
+            },
+            {
+              "name": "60日回撤",
+              "feature": "drawdown60",
+              "value": -0.00024707883221410115
+            },
+            {
+              "name": "ATR14",
+              "feature": "atr14",
+              "value": -0.001416797486332872
+            }
+          ],
+          "interval": [
+            -0.12968050714840293,
+            0.1716051208685799
+          ],
+          "asOf": "2026-10-19",
+          "signalDate": "2026-10-19",
+          "horizon": 20,
+          "entrySession": "2026-10-20",
+          "maturitySession": "2026-11-17",
+          "referenceOpen": null,
+          "publishedAt": "2026-10-20T02:47:53.234Z",
+          "firstReceivedAt": "2026-10-20T02:47:53.234Z",
+          "signalContract": {
+            "status": "available",
+            "referenceOpenStatus": "awaiting_entry_session_open",
+            "calendarVersion": "sse-sessions-2023-2026-v1",
+            "reason": null
+          },
+          "eligible": true,
+          "reasons": [],
+          "risks": [
+            "技术因子无法保证收益，预测可能为负或失准。",
+            "参考区间来自训练残差，并非经过校准的置信区间。",
+            "固定研究池存在幸存者偏差；后复权价格不代表真实成交价格。"
+          ],
+          "indicators": {
+            "ma5": 0.625,
+            "ma20": 0.64225,
+            "ma60": 0.6732666666666666,
+            "momentum5": -0.026604068857590035,
+            "momentum20": -0.03863987635239574,
+            "momentum60": -0.05327245053272456,
+            "rsi": 32.8,
+            "volatility": 0.23552639244776688,
+            "drawdown": 0.17536813922356087,
+            "volumeRatio": 0.8408667387922638,
+            "atr": 0.016142857142857157
+          }
+        }
+      },
+      "fingerprint": {
+        "strategy_id": "ridge11-tech-etf-continuous-v1",
+        "model_hash": "786a236dd6e4207ed2724ef8f91e7d1f131794dcc57817e5d68615b295b79127",
+        "universe_version": "sha256:59014dc1bd250b69beefce3306f8f4d1b3f682b94daff9146616371244149d4e",
+        "rules_hash": "1df270dd373a2ab8fa811e86e0273a369a30425c7862df1311e6343c4ed161a2",
+        "data_hash": "e8ce593a96842d34db461cab6f8b54a85ce732e8d6d6f1a1f78b593e38b055b7",
+        "fee_profile": {
+          "assumptionLabel": "最低5元为模拟假设，以合同为准",
+          "commissionRate": 0.0003,
+          "minFee": 5,
+          "slippage": 0.001,
+          "stockSellStampRate": 0.0005,
+          "stockTransferRate": 0.00001,
+          "version": "cn-paper-fees-v1"
+        },
+        "budget": 10000,
+        "risk_limits": {
+          "investableLimit": 10000,
+          "maxExposure": 1,
+          "maxPositions": 3,
+          "maxThemeWeight": 1
+        },
+        "execution_mode": "continuous_forward_native_http"
+      },
+      "eventHash": "b58fb73116d4d1e6157ffb01c1c9d1722efd8bde1d99e6c18cbde49660eaa6d0"
+    },
+    {
+      "sequence": 3,
+      "previousHash": "b58fb73116d4d1e6157ffb01c1c9d1722efd8bde1d99e6c18cbde49660eaa6d0",
+      "decisionAt": "2026-10-20T03:00:06.056Z",
+      "type": "hypothetical_fill",
+      "account": "model",
+      "symbol": "sh512720",
+      "order": {
+        "id": "continuous-etf-audit-20261020-1100:1",
+        "account": "model",
+        "symbol": "sh512720",
+        "side": "buy",
+        "shares": 9700,
+        "reason": "frozen_software_selection",
+        "sourceTime": "2026-10-20 11:00:02",
+        "receivedAt": "2026-10-20T03:00:06.055Z",
+        "decisionAt": "2026-10-20T03:00:06.056Z",
+        "orderAt": "2026-10-20T03:00:06.056Z",
+        "fillAssumption": "last_price_adverse_slippage_unverified",
+        "status": "hypothetical_fill",
+        "fingerprint": {
+          "strategy_id": "ridge11-tech-etf-continuous-v1",
+          "model_hash": "786a236dd6e4207ed2724ef8f91e7d1f131794dcc57817e5d68615b295b79127",
+          "universe_version": "sha256:59014dc1bd250b69beefce3306f8f4d1b3f682b94daff9146616371244149d4e",
+          "rules_hash": "1df270dd373a2ab8fa811e86e0273a369a30425c7862df1311e6343c4ed161a2",
+          "data_hash": "e3ab7d7450ae61a1118113df7fc1bc6ff04c2ef04a0b6ddbfc6d1fa968fb31f1",
+          "fee_profile": {
+            "assumptionLabel": "最低5元为模拟假设，以合同为准",
+            "commissionRate": 0.0003,
+            "minFee": 5,
+            "slippage": 0.001,
+            "stockSellStampRate": 0.0005,
+            "stockTransferRate": 0.00001,
+            "version": "cn-paper-fees-v1"
+          },
+          "budget": 10000,
+          "risk_limits": {
+            "investableLimit": 10000,
+            "maxExposure": 1,
+            "maxPositions": 3,
+            "maxThemeWeight": 1
+          },
+          "execution_mode": "continuous_forward_native_http"
+        },
+        "fillAt": "2026-10-20T03:00:06.056Z",
+        "price": 1.0290279999999998,
+        "notional": 9981.571599999997,
+        "fees": {
+          "commission": 5,
+          "tax": 0,
+          "transferFee": 0,
+          "total": 5
+        },
+        "executionVerified": false
+      },
+      "eventHash": "5ff5a498d9ad29a8fd8431954257bc58c94a7593f87f2577fb29d71493db6bc8"
+    },
+    {
+      "sequence": 4,
+      "previousHash": "5ff5a498d9ad29a8fd8431954257bc58c94a7593f87f2577fb29d71493db6bc8",
+      "decisionAt": "2026-10-20T03:00:06.056Z",
+      "type": "hypothetical_fill",
+      "account": "hold_etf",
+      "symbol": "sh588000",
+      "order": {
+        "id": "continuous-etf-audit-20261020-1100:2",
+        "account": "hold_etf",
+        "symbol": "sh588000",
+        "side": "buy",
+        "shares": 7000,
+        "reason": "frozen_software_selection",
+        "sourceTime": "2026-10-20 11:00:02",
+        "receivedAt": "2026-10-20T03:00:06.055Z",
+        "decisionAt": "2026-10-20T03:00:06.056Z",
+        "orderAt": "2026-10-20T03:00:06.056Z",
+        "fillAssumption": "last_price_adverse_slippage_unverified",
+        "status": "hypothetical_fill",
+        "fingerprint": {
+          "strategy_id": "technology-hold_etf-hold20-v1",
+          "model_hash": "3dc3720319dc41f44a2b9c971442f0e2b2ef76c5dcac119eecf4aab4792f9c7c",
+          "universe_version": "sha256:e08874867a29c2f9acc1446c9800d3c94a14cb043cf9360e2536553c4b08739f",
+          "rules_hash": "60492b7e3534f4e4082cf74c9f50ed6f8ec09a591f39292529b737fe1e172b70",
+          "data_hash": "93298d6416d3a216c69fe3c41cb51693303798cb610a347d972f07362e42c969",
+          "fee_profile": {
+            "assumptionLabel": "最低5元为模拟假设，以合同为准",
+            "commissionRate": 0.0003,
+            "minFee": 5,
+            "slippage": 0.001,
+            "stockSellStampRate": 0.0005,
+            "stockTransferRate": 0.00001,
+            "version": "cn-paper-fees-v1"
+          },
+          "budget": 10000,
+          "risk_limits": {
+            "investableLimit": 10000,
+            "maxExposure": 1,
+            "maxPositions": 1,
+            "maxThemeWeight": 1
+          },
+          "execution_mode": "continuous_forward_native_http"
+        },
+        "fillAt": "2026-10-20T03:00:06.056Z",
+        "price": 1.424423,
+        "notional": 9970.961,
+        "fees": {
+          "commission": 5,
+          "tax": 0,
+          "transferFee": 0,
+          "total": 5
+        },
+        "executionVerified": false
+      },
+      "eventHash": "4dae6ce4d3659e760e20f630dbfdfb58efdf9d5e2ed50c9d8b9f1f7bf31c3fe0"
+    },
+    {
+      "sequence": 5,
+      "previousHash": "4dae6ce4d3659e760e20f630dbfdfb58efdf9d5e2ed50c9d8b9f1f7bf31c3fe0",
+      "decisionAt": "2026-10-20T03:00:06.056Z",
+      "type": "hypothetical_fill",
+      "account": "equal_weight",
+      "symbol": "sh588000",
+      "order": {
+        "id": "continuous-etf-audit-20261020-1100:3",
+        "account": "equal_weight",
+        "symbol": "sh588000",
+        "side": "buy",
+        "shares": 1100,
+        "reason": "frozen_software_selection",
+        "sourceTime": "2026-10-20 11:00:02",
+        "receivedAt": "2026-10-20T03:00:06.055Z",
+        "decisionAt": "2026-10-20T03:00:06.056Z",
+        "orderAt": "2026-10-20T03:00:06.056Z",
+        "fillAssumption": "last_price_adverse_slippage_unverified",
+        "status": "hypothetical_fill",
+        "fingerprint": {
+          "strategy_id": "technology-equal_weight-hold20-v1",
+          "model_hash": "df700eb0c8152e058a5ad16f11c863f7bad2a9cd61432e7afc318b43c83a0135",
+          "universe_version": "sha256:a5f1c542f33c4f24cd4ee4ae5468a02fa7c0285c7d7580585775351afe182e8c",
+          "rules_hash": "9d56d59c67cfc565e581915b5da7d105ea69a3aa1917ff1a333de887dd24d4a7",
+          "data_hash": "c427c1de937dea9fb82ce928692267e8a5ba61c372308258f27be3f0971833d6",
+          "fee_profile": {
+            "assumptionLabel": "最低5元为模拟假设，以合同为准",
+            "commissionRate": 0.0003,
+            "minFee": 5,
+            "slippage": 0.001,
+            "stockSellStampRate": 0.0005,
+            "stockTransferRate": 0.00001,
+            "version": "cn-paper-fees-v1"
+          },
+          "budget": 10000,
+          "risk_limits": {
+            "investableLimit": 10000,
+            "maxExposure": 1,
+            "maxPositions": 6,
+            "maxThemeWeight": 1
+          },
+          "execution_mode": "continuous_forward_native_http"
+        },
+        "fillAt": "2026-10-20T03:00:06.056Z",
+        "price": 1.424423,
+        "notional": 1566.8653,
+        "fees": {
+          "commission": 5,
+          "tax": 0,
+          "transferFee": 0,
+          "total": 5
+        },
+        "executionVerified": false
+      },
+      "eventHash": "f5c131a767a8156ce5701fcbc3d49115cee674146c2ab438747a364bf61b1b9e"
+    },
+    {
+      "sequence": 6,
+      "previousHash": "f5c131a767a8156ce5701fcbc3d49115cee674146c2ab438747a364bf61b1b9e",
+      "decisionAt": "2026-10-20T03:00:06.056Z",
+      "type": "hypothetical_fill",
+      "account": "equal_weight",
+      "symbol": "sh512760",
+      "order": {
+        "id": "continuous-etf-audit-20261020-1100:4",
+        "account": "equal_weight",
+        "symbol": "sh512760",
+        "side": "buy",
+        "shares": 1800,
+        "reason": "frozen_software_selection",
+        "sourceTime": "2026-10-20 11:00:01",
+        "receivedAt": "2026-10-20T03:00:06.055Z",
+        "decisionAt": "2026-10-20T03:00:06.056Z",
+        "orderAt": "2026-10-20T03:00:06.056Z",
+        "fillAssumption": "last_price_adverse_slippage_unverified",
+        "status": "hypothetical_fill",
+        "fingerprint": {
+          "strategy_id": "technology-equal_weight-hold20-v1",
+          "model_hash": "df700eb0c8152e058a5ad16f11c863f7bad2a9cd61432e7afc318b43c83a0135",
+          "universe_version": "sha256:a5f1c542f33c4f24cd4ee4ae5468a02fa7c0285c7d7580585775351afe182e8c",
+          "rules_hash": "9d56d59c67cfc565e581915b5da7d105ea69a3aa1917ff1a333de887dd24d4a7",
+          "data_hash": "8911cb127bb507015e91798ba7e0b197373c6ef4208ee1a61a001cf25eb6799f",
+          "fee_profile": {
+            "assumptionLabel": "最低5元为模拟假设，以合同为准",
+            "commissionRate": 0.0003,
+            "minFee": 5,
+            "slippage": 0.001,
+            "stockSellStampRate": 0.0005,
+            "stockTransferRate": 0.00001,
+            "version": "cn-paper-fees-v1"
+          },
+          "budget": 10000,
+          "risk_limits": {
+            "investableLimit": 10000,
+            "maxExposure": 1,
+            "maxPositions": 6,
+            "maxThemeWeight": 1
+          },
+          "execution_mode": "continuous_forward_native_http"
+        },
+        "fillAt": "2026-10-20T03:00:06.056Z",
+        "price": 0.89089,
+        "notional": 1603.6019999999999,
+        "fees": {
+          "commission": 5,
+          "tax": 0,
+          "transferFee": 0,
+          "total": 5
+        },
+        "executionVerified": false
+      },
+      "eventHash": "6ad9873992c3cde980fb3c5b429e18cd3c2788a5a33e6f695b0ab3a0ff2868c5"
+    },
+    {
+      "sequence": 7,
+      "previousHash": "6ad9873992c3cde980fb3c5b429e18cd3c2788a5a33e6f695b0ab3a0ff2868c5",
+      "decisionAt": "2026-10-20T03:00:06.056Z",
+      "type": "hypothetical_fill",
+      "account": "equal_weight",
+      "symbol": "sh515070",
+      "order": {
+        "id": "continuous-etf-audit-20261020-1100:5",
+        "account": "equal_weight",
+        "symbol": "sh515070",
+        "side": "buy",
+        "shares": 1700,
+        "reason": "frozen_software_selection",
+        "sourceTime": "2026-10-20 11:00:02",
+        "receivedAt": "2026-10-20T03:00:06.055Z",
+        "decisionAt": "2026-10-20T03:00:06.056Z",
+        "orderAt": "2026-10-20T03:00:06.056Z",
+        "fillAssumption": "last_price_adverse_slippage_unverified",
+        "status": "hypothetical_fill",
+        "fingerprint": {
+          "strategy_id": "technology-equal_weight-hold20-v1",
+          "model_hash": "df700eb0c8152e058a5ad16f11c863f7bad2a9cd61432e7afc318b43c83a0135",
+          "universe_version": "sha256:a5f1c542f33c4f24cd4ee4ae5468a02fa7c0285c7d7580585775351afe182e8c",
+          "rules_hash": "9d56d59c67cfc565e581915b5da7d105ea69a3aa1917ff1a333de887dd24d4a7",
+          "data_hash": "7e96f120d9154a4d23e3abadadb2a0a41fce03ef0d572a266aee05280ed50227",
+          "fee_profile": {
+            "assumptionLabel": "最低5元为模拟假设，以合同为准",
+            "commissionRate": 0.0003,
+            "minFee": 5,
+            "slippage": 0.001,
+            "stockSellStampRate": 0.0005,
+            "stockTransferRate": 0.00001,
+            "version": "cn-paper-fees-v1"
+          },
+          "budget": 10000,
+          "risk_limits": {
+            "investableLimit": 10000,
+            "maxExposure": 1,
+            "maxPositions": 6,
+            "maxThemeWeight": 1
+          },
+          "execution_mode": "continuous_forward_native_http"
+        },
+        "fillAt": "2026-10-20T03:00:06.056Z",
+        "price": 0.9379369999999999,
+        "notional": 1594.4928999999997,
+        "fees": {
+          "commission": 5,
+          "tax": 0,
+          "transferFee": 0,
+          "total": 5
+        },
+        "executionVerified": false
+      },
+      "eventHash": "67f4f8da875718e79b122d1dec5f589e757b538b010de0515902c405db98d603"
+    },
+    {
+      "sequence": 8,
+      "previousHash": "67f4f8da875718e79b122d1dec5f589e757b538b010de0515902c405db98d603",
+      "decisionAt": "2026-10-20T03:00:06.056Z",
+      "type": "hypothetical_fill",
+      "account": "equal_weight",
+      "symbol": "sh512720",
+      "order": {
+        "id": "continuous-etf-audit-20261020-1100:6",
+        "account": "equal_weight",
+        "symbol": "sh512720",
+        "side": "buy",
+        "shares": 1600,
+        "reason": "frozen_software_selection",
+        "sourceTime": "2026-10-20 11:00:02",
+        "receivedAt": "2026-10-20T03:00:06.055Z",
+        "decisionAt": "2026-10-20T03:00:06.056Z",
+        "orderAt": "2026-10-20T03:00:06.056Z",
+        "fillAssumption": "last_price_adverse_slippage_unverified",
+        "status": "hypothetical_fill",
+        "fingerprint": {
+          "strategy_id": "technology-equal_weight-hold20-v1",
+          "model_hash": "df700eb0c8152e058a5ad16f11c863f7bad2a9cd61432e7afc318b43c83a0135",
+          "universe_version": "sha256:a5f1c542f33c4f24cd4ee4ae5468a02fa7c0285c7d7580585775351afe182e8c",
+          "rules_hash": "9d56d59c67cfc565e581915b5da7d105ea69a3aa1917ff1a333de887dd24d4a7",
+          "data_hash": "2849f860d701249d0fa7c942eb36c17bdbfd4ba02ba46a56b74cd9922f473cba",
+          "fee_profile": {
+            "assumptionLabel": "最低5元为模拟假设，以合同为准",
+            "commissionRate": 0.0003,
+            "minFee": 5,
+            "slippage": 0.001,
+            "stockSellStampRate": 0.0005,
+            "stockTransferRate": 0.00001,
+            "version": "cn-paper-fees-v1"
+          },
+          "budget": 10000,
+          "risk_limits": {
+            "investableLimit": 10000,
+            "maxExposure": 1,
+            "maxPositions": 6,
+            "maxThemeWeight": 1
+          },
+          "execution_mode": "continuous_forward_native_http"
+        },
+        "fillAt": "2026-10-20T03:00:06.056Z",
+        "price": 1.0290279999999998,
+        "notional": 1646.4447999999998,
+        "fees": {
+          "commission": 5,
+          "tax": 0,
+          "transferFee": 0,
+          "total": 5
+        },
+        "executionVerified": false
+      },
+      "eventHash": "9b0ca31806def24f2e0ccd66909e8bbc7920c967500ed976ba50b4caebc8bb82"
+    },
+    {
+      "sequence": 9,
+      "previousHash": "9b0ca31806def24f2e0ccd66909e8bbc7920c967500ed976ba50b4caebc8bb82",
+      "decisionAt": "2026-10-20T03:00:06.056Z",
+      "type": "hypothetical_fill",
+      "account": "equal_weight",
+      "symbol": "sh515880",
+      "order": {
+        "id": "continuous-etf-audit-20261020-1100:7",
+        "account": "equal_weight",
+        "symbol": "sh515880",
+        "side": "buy",
+        "shares": 3100,
+        "reason": "frozen_software_selection",
+        "sourceTime": "2026-10-20 11:00:03",
+        "receivedAt": "2026-10-20T03:00:06.055Z",
+        "decisionAt": "2026-10-20T03:00:06.056Z",
+        "orderAt": "2026-10-20T03:00:06.056Z",
+        "fillAssumption": "last_price_adverse_slippage_unverified",
+        "status": "hypothetical_fill",
+        "fingerprint": {
+          "strategy_id": "technology-equal_weight-hold20-v1",
+          "model_hash": "df700eb0c8152e058a5ad16f11c863f7bad2a9cd61432e7afc318b43c83a0135",
+          "universe_version": "sha256:a5f1c542f33c4f24cd4ee4ae5468a02fa7c0285c7d7580585775351afe182e8c",
+          "rules_hash": "9d56d59c67cfc565e581915b5da7d105ea69a3aa1917ff1a333de887dd24d4a7",
+          "data_hash": "a281d19032122ab767739a5297bf9e59df198a1e8904e9146a638a09e59342c3",
+          "fee_profile": {
+            "assumptionLabel": "最低5元为模拟假设，以合同为准",
+            "commissionRate": 0.0003,
+            "minFee": 5,
+            "slippage": 0.001,
+            "stockSellStampRate": 0.0005,
+            "stockTransferRate": 0.00001,
+            "version": "cn-paper-fees-v1"
+          },
+          "budget": 10000,
+          "risk_limits": {
+            "investableLimit": 10000,
+            "maxExposure": 1,
+            "maxPositions": 6,
+            "maxThemeWeight": 1
+          },
+          "execution_mode": "continuous_forward_native_http"
+        },
+        "fillAt": "2026-10-20T03:00:06.056Z",
+        "price": 0.534534,
+        "notional": 1657.0554,
+        "fees": {
+          "commission": 5,
+          "tax": 0,
+          "transferFee": 0,
+          "total": 5
+        },
+        "executionVerified": false
+      },
+      "eventHash": "200f96bc321b7d1d9bfded9d1b62466c9634c5d496bdfb81bbcbf652c2e20a91"
+    },
+    {
+      "sequence": 10,
+      "previousHash": "200f96bc321b7d1d9bfded9d1b62466c9634c5d496bdfb81bbcbf652c2e20a91",
+      "decisionAt": "2026-10-20T03:00:06.056Z",
+      "type": "hypothetical_fill",
+      "account": "equal_weight",
+      "symbol": "sz159852",
+      "order": {
+        "id": "continuous-etf-audit-20261020-1100:8",
+        "account": "equal_weight",
+        "symbol": "sz159852",
+        "side": "buy",
+        "shares": 2600,
+        "reason": "frozen_software_selection",
+        "sourceTime": "2026-10-20 11:00:03",
+        "receivedAt": "2026-10-20T03:00:06.055Z",
+        "decisionAt": "2026-10-20T03:00:06.056Z",
+        "orderAt": "2026-10-20T03:00:06.056Z",
+        "fillAssumption": "last_price_adverse_slippage_unverified",
+        "status": "hypothetical_fill",
+        "fingerprint": {
+          "strategy_id": "technology-equal_weight-hold20-v1",
+          "model_hash": "df700eb0c8152e058a5ad16f11c863f7bad2a9cd61432e7afc318b43c83a0135",
+          "universe_version": "sha256:a5f1c542f33c4f24cd4ee4ae5468a02fa7c0285c7d7580585775351afe182e8c",
+          "rules_hash": "9d56d59c67cfc565e581915b5da7d105ea69a3aa1917ff1a333de887dd24d4a7",
+          "data_hash": "6fc576a91f60bf05b1f557ef43deb277cfcbe44d004631fc14ec54519dad4a0d",
+          "fee_profile": {
+            "assumptionLabel": "最低5元为模拟假设，以合同为准",
+            "commissionRate": 0.0003,
+            "minFee": 5,
+            "slippage": 0.001,
+            "stockSellStampRate": 0.0005,
+            "stockTransferRate": 0.00001,
+            "version": "cn-paper-fees-v1"
+          },
+          "budget": 10000,
+          "risk_limits": {
+            "investableLimit": 10000,
+            "maxExposure": 1,
+            "maxPositions": 6,
+            "maxThemeWeight": 1
+          },
+          "execution_mode": "continuous_forward_native_http"
+        },
+        "fillAt": "2026-10-20T03:00:06.056Z",
+        "price": 0.6316309999999999,
+        "notional": 1642.2405999999999,
+        "fees": {
+          "commission": 5,
+          "tax": 0,
+          "transferFee": 0,
+          "total": 5
+        },
+        "executionVerified": false
+      },
+      "eventHash": "6da2e4d6d4b5635c5124c2fb833c4aa26cbe18537feb0b7802a7911992b44cdf"
+    },
+    {
+      "sequence": 11,
+      "previousHash": "6da2e4d6d4b5635c5124c2fb833c4aa26cbe18537feb0b7802a7911992b44cdf",
+      "decisionAt": "2026-10-20T03:30:11.530Z",
+      "type": "observation_ended",
+      "complete": true,
+      "elapsedMs": 1805474,
+      "eventHash": "aab372a0247802edd6cb2d211be097f55532e4d5bf15937d3ca35449fe20b2cc"
+    },
+    {
+      "sequence": 12,
+      "previousHash": "aab372a0247802edd6cb2d211be097f55532e4d5bf15937d3ca35449fe20b2cc",
+      "decisionAt": "2026-10-20T03:30:11.530Z",
+      "type": "entry_paused",
+      "reason": "history_incomplete_or_stale",
+      "expectedAsOf": "2026-10-19",
+      "eventHash": "1cc663b5f0a1c18c168dc0af9068175d64d4b2ab5aba22e653115652dfc66270"
+    }
+  ],
+  "closedPositions": [],
+  "limitations": [
+    "Only captured observation prices are available; maximum drawdown excludes unobserved prices.",
+    "Exposure average is the arithmetic mean of captured samples, not a time-weighted average. Stale values remain explicitly flagged.",
+    "Hypothetical fills and slippage are unverified execution assumptions. No real orders were sent.",
+    "Comparisons share initial capital and the fee-rate version, but position limits (model up to3, single ETF1, equal-weight ETF6), turnover, paid fees and risk exposure differ; never merge accounts.",
+    "Twenty-session accuracy remains null; engineering completion or cash zero is not forecasting success.",
+    "Known historical exploration is not new blind or forward evidence. News is not a prediction input.",
+    "The latest incomplete JSONL tail is excluded and identified; a later report may have a different cutoff."
+  ],
+  "nativeTransportEvidence": {
+    "verified": true,
+    "required": true,
+    "descriptor": {
+      "kind": "dotnet-desktop-http-v1",
+      "exeSha256": "e0f80930a8fcd6f86e4ae4dfbd898104308e41e66aa24380730cb2926252e761",
+      "sourceHashes": {
+        "DesktopServices.cs": "292ee994ae931d5b22c0ec13a62c97b5f7daf12b6c84aa19bd517380793df742",
+        "MarketTransport.cs": "3fcf051cec577ccff061c7c0ab527d9af804a35e00929abdcdd0117aa81d64ae"
+      }
+    }
+  },
+  "supplementalControlRecords": []
+}

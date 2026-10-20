@@ -1,0 +1,48 @@
+{
+  "checkedAt": "2026-10-20T04:06:32.138Z",
+  "manifestHash": "75ded91448c31b6dc39059c7afc6fb765bfbc0c4d2e213be519d828e5bf89068",
+  "allFourPassed": true,
+  "checks": [
+    {
+      "id": "ridge-alpha1",
+      "events": 848,
+      "sessions": 424,
+      "orders": 369,
+      "parityVerified": true,
+      "finalStateHash": "4531a895ac1d1c52341bd9c429b68d4b2d248b9a558895c5d7964341331c806d"
+    },
+    {
+      "id": "ridge-alpha10",
+      "events": 848,
+      "sessions": 424,
+      "orders": 467,
+      "parityVerified": true,
+      "finalStateHash": "c4302db2934145130c518d98b1f736a0e01d3247888b9cf7f88c2fd13909532b"
+    },
+    {
+      "id": "preselected-etf",
+      "events": 848,
+      "sessions": 424,
+      "orders": 65,
+      "parityVerified": true,
+      "finalStateHash": "e363aa0bae27cb581ea06932b7190438c75814101d3475c6d44da2ff29f86ef4"
+    },
+    {
+      "id": "equal-three",
+      "events": 848,
+      "sessions": 424,
+      "orders": 167,
+      "parityVerified": true,
+      "finalStateHash": "d4865a0bcf511a1b16f4bf1cf2a6df0ed7d6ddc7802f1c6140c8ae993a834026"
+    }
+  ],
+  "jsTests": {
+    "passed": 199,
+    "failed": 0
+  },
+  "packageTests": {
+    "passed": 2,
+    "failed": 0
+  },
+  "deploymentChanged": false
+}

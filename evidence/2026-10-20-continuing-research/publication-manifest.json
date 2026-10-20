@@ -1,0 +1,48 @@
+{
+  "cutoff": "forward:2026-10-20 11:52:11 Beijing; historical:2026-09-30",
+  "historicalManifestHash": "75ded91448c31b6dc39059c7afc6fb765bfbc0c4d2e213be519d828e5bf89068",
+  "files": {
+    "forward-account-1152-complete.zip": {
+      "sha256": "58dd1a5f8bea5c945acab7f96355a158b4d7948a6dfdbcac2e9d9b5cd0719e1c",
+      "bytes": 6274675
+    },
+    "historical-shared-account-evidence.zip": {
+      "sha256": "b39de7ee9c9e291442cb0ae536edb17cc2215b5133406d392531e004a868e2d1",
+      "bytes": 4553143
+    },
+    "historical-comparison.json": {
+      "sha256": "84ada78664ceb3e180abdc5931b4b6833c3b771914036197b1f00bab901e02b4",
+      "bytes": 34869
+    },
+    "artifact-verification.json": {
+      "sha256": "4ad5d00c4a785484991014fa220e666125630cbb0493e9ed97aacc01c0be88e4",
+      "bytes": 1227
+    },
+    "account-1152-report.json": {
+      "sha256": "f695475b676534ba9602b820dc3a2a18a4b907e228b4168f00a64f3cd9728f92",
+      "bytes": 186164
+    },
+    "account-1152-report.html": {
+      "sha256": "6de985e92610bb2afb9ac95f3b022f24c9f83af0fd1548725e9b08e5ab326d0c",
+      "bytes": 48357
+    },
+    "historical-report.html": {
+      "sha256": "710cbf040c0d65e14bc181b90a86a339f4f944adbfce0857a650a139b5a6407e",
+      "bytes": 5229
+    },
+    "research-focused-tests-20261020.log": {
+      "sha256": "f21e625b88b581d44c3cd179cd6f8417989f4957f52c647c096dbc7e42a1448b",
+      "bytes": 4553
+    },
+    "research-full-tests-20261020.log": {
+      "sha256": "2d67d6adacae73aaec0bbdd4f33a095547a5ea106176cdb959a9b3a1aa976256",
+      "bytes": 20073
+    }
+  },
+  "exeChanged": false,
+  "financialRuntimeChanged": false,
+  "readiness": "unproven",
+  "autoDeployment": false,
+  "researchCompletedAt": "2026-10-20T04:05:22.161Z",
+  "preparedAt": "2026-10-20T04:09:12.061351+00:00"
+}
