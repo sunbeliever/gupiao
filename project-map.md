@@ -1,3 +1,8 @@
+# 最新自动复核：双账户准备核心（2026-10-20 17点后）
+- 新增scripts/paired-forward-core.js：单一市场输入同时推进候选/固定三ETF对照，共同统计起点、1250元/.125新增仓位、同费用、T+1/8%/20日；仅候选1%净余量，均无预测止盈。保留历史maxThemeWeight=1。
+- 单tick包含双账户；claim/租约/追加账本/亏损恢复/旧checkpoint逐点核对/双腿Paper.replay一致。新12项人工夹具，全245项通过，独立审查无重要问题。来源兼容核对使用保存的六ETF alpha1模型（f0b16e0c…），没有重训/重跑。
+- 仍为准备核心：无实际采集器、CLI或发布冻结认证，未创建新前瞻manifest/claim/账户。下一项仅接续这些缺口并做原生门槛，不能误称已启动或立即开启10/21计划。
+- 本轮证据D:/techno/validation/paired-forward-preparation-20261020；原1100只读628tick/16:09:51权益9975.3284，亏24.6716，链/账务/helper通过、392次原采集失败保留；今日原进程已结束，不收盘后重开。完整接续看docs/forward-capital-preservation-plan-2026-10-20.md末节。
 # 今日交付：1.7.0.0 买卖计划测试版（2026-10-20 17:00前）
 - 用户目标是给新手清楚的选股、入场/资金/费用与退出信息，并要求今日更新和真实模拟数据；仍以1万元最多500元回撤、最好不亏为偏好，不能把界面有推荐等同已证明赚钱。
 - 新增assets/trade-guidance.js：默认1250元/12.5%预案；个股观察、ETF模拟。Paper.inspectExecution只读复用paper-account的poolHealth/fresh/blocked；原成交语义与冻结1100账户不改。assurance-ui给出等待/模拟候选/冻结持仓退出，旧账户不迁移。
