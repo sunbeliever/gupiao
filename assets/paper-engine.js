@@ -165,5 +165,10 @@
  const core={plan,size,sourceMs,fresh,trading,bindSignal};
  function startAuto(input){return Continuous.create(input,core);}
  function stepAuto(session,quotes,at,context){return Continuous.step(session,quotes,at,context||{},core);}
- return {start,mark,trading,sourceMs,plan,bindSignal,startAuto,stepAuto,startContinuous:startAuto,resume:Continuous.resume,observe:Continuous.observe,replay:(session,ticks)=>ticks.reduce((s,t)=>stepAuto(s,t.quotes,t.at,t.context),Continuous.resume(session)),legacyStartAuto,legacyStepAuto};
+ function inspectExecution(input){
+  const now=input.now===undefined?Date.now():typeof input.now==='number'?input.now:Date.parse(input.now);
+  const s={universe:input.universe||[],quoteWatermarks:input.quoteWatermarks||{},model:input.model||{},signals:input.predictions||{}};
+  return Continuous.inspect(s,input.quotes||{},now,{predictions:s.signals,dataHealth:input.dataHealth,model:s.model},core);
+ }
+ return {inspectExecution,start,mark,trading,sourceMs,plan,bindSignal,startAuto,stepAuto,startContinuous:startAuto,resume:Continuous.resume,observe:Continuous.observe,replay:(session,ticks)=>ticks.reduce((s,t)=>stepAuto(s,t.quotes,t.at,t.context),Continuous.resume(session)),legacyStartAuto,legacyStepAuto};
 });

@@ -1,3 +1,14 @@
+# 今日交付：1.7.0.0 买卖计划测试版（2026-10-20 17:00前）
+- 用户目标是给新手清楚的选股、入场/资金/费用与退出信息，并要求今日更新和真实模拟数据；仍以1万元最多500元回撤、最好不亏为偏好，不能把界面有推荐等同已证明赚钱。
+- 新增assets/trade-guidance.js：默认1250元/12.5%预案；个股观察、ETF模拟。Paper.inspectExecution只读复用paper-account的poolHealth/fresh/blocked；原成交语义与冻结1100账户不改。assurance-ui给出等待/模拟候选/冻结持仓退出，旧账户不迁移。
+- 回归233项通过；独立审查后补交易限制和普通持仓路径；最终Windows42项、真实双进程恢复/重复启动抑制/全19联网核验通过。最终EXE SHA256 1bed04ff2a942fb0bd9365e82c4f4a7ecf7aa0ac6f0b690e548e299f838576b5。
+- 最终实际联网检查D:/techno/validation/today-guidance/after-close-2026-10-20T08-27-39-896Z：12次/228报价/369.244秒，12次休市拒绝开户、0单、收益不评分，verify-today-guidance逐次重算/哈希链/当前金融源码一致通过。早两轮开发与首次原生失败保留。
+- 原账户只读至16:09:51/628tick，权益9975.33、账面亏24.67、持有512720共9700份；周期未完成。不得重开原ID/本金。报告在D:/techno/validation/today-update-20261020/original-forward-report.json。
+- assets/today-evidence.js来自prepare-today-evidence.js：展示四个完整历史路径、原前瞻、实际采样及网络事实，不把六ETF历史模型收益冒充19池当前部署。新闻/财报未直接入预测。人工核对资料在docs/network-review-2026-10-20.json。
+- 原生16:39全19日线到10/20，但独立右侧缓存16:43仍12/19并暂停新仓；后续须统一多源/缓存可用性，不能把一次原生通过当所有实例就绪。
+- 交付EXE/报告在D:/techno/dist；右侧http://127.0.0.1:58658由稳定D:/techno/validation/right-panel-preview/app-20261020部署，独立缓存不绑定原模拟账户，server-release.cjs与原helper另存稳定目录。
+- 今日工程更新完成，投资适用性/70%概率仍未验证；下一步仍是低仓位同输入前瞻驱动、行情/缓存一致性、完整持有退出，不因盈利升级。详见docs/今日更新与测试结果-2026-10-20.md及既有forward-capital-preservation-plan。
+
 # 当前用户风险偏好（2026-10-20更新）
 
 - 用户确认1万元最多接受500元（5%）回撤，随后补充最好一点不亏：保本金优先，5%为上限而非保证；原候选15.33%回撤不符合要求，当前不能称适合用户实投。

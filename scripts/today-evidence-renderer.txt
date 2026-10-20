@@ -1,0 +1,14 @@
+const esc=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const pc=x=>Number.isFinite(x)?(x*100).toFixed(2)+'%':'—',money=x=>Number.isFinite(x)?x.toFixed(2):'—';
+function render(){
+ let h='<details open><summary>今日实际模拟测试数据 · 2026-10-20</summary><p>'+esc(data.history.kind)+'；区间 '+esc(data.history.period)+'。1万元持续账户，未重置本金；手续费已扣。</p><div class="research-table-wrap"><table class="research-table"><thead><tr><th>固定方案</th><th>累计净收益 / 金额</th><th>观测回撤 / 峰谷金额</th><th>20日区间：赚 / 亏 / 现金</th></tr></thead><tbody>';
+ const names={'net1-risk25':'25%仓位模型候选','equal-three-risk25':'25%仓位三ETF对照','net1-risk12_5':'12.5%仓位模型候选','equal-three-risk12_5':'12.5%仓位三ETF对照'};
+ h+=data.history.results.map(r=>'<tr><td>'+esc(names[r.candidate])+'</td><td>'+pc(r.netReturn)+' / ¥'+money(r.netPnl)+'</td><td>'+pc(r.maxDrawdown)+' / ¥'+money(r.maxPeakCashDrawdown)+'<small>相对初始本金最大亏损 ¥'+money(r.maxInitialLoss)+'</small></td><td>'+r.positive+' / '+r.negative+' / '+r.cashOnly+'<small>共'+r.blocks+'段；现金0收益不算赢</small></td></tr>').join('');
+ h+='</tbody></table></div><p>25%候选回撤4.40%对应峰谷约520.12元，仍超过500元；本金亏损与相对高点回撤是不同指标。低仓位模型候选只有8笔完整退出，20日正收益区间9/21；不能当作70%赚钱概率。收益好看也仍有亏损，未获准作为实盘推荐。</p>';
+ if(data.forward){const f=data.forward;h+='<h3>原独立前瞻账户：仍在持有</h3><p>截至 '+esc(f.asOf)+'；1万元原全额账户权益 ¥'+money(f.equity)+'，账面盈亏 ¥'+money(f.netPnl)+'，已付费用 ¥'+money(f.fees)+'；持仓 '+f.holdingCount+'只，尚未完成20交易日，不评分胜率。它与本页1250元新预案是不同账户 / 规则。</p><p>哈希链与账务核验 '+(f.chainVerified&&f.accountingVerified?'通过':'未通过')+'；未预扣将来的卖费。收盘后来源时间仅为行情快照，不能当作确认的最近成交或官方收盘价。</p>';}
+ if(data.live){const l=data.live;h+='<h3>今日联网实测：收盘后模拟决策检查</h3><p>'+esc(l.startedAt)+' 至 '+esc(l.finishedAt||'采集中')+'；实际样本 '+l.samples+'，报价记录 '+l.quoteRows+'。休市实际买卖单 '+l.orders+'；收益未评分，不把无交易视作成功。</p><p>决策统计 '+esc(JSON.stringify(l.actionCounts))+'；完整日线核验 '+(l.historyHealth?.ok?'通过':'未通过，等待补全')+'；拒绝收盘后开户 '+l.accountCreationRejected+'次；异常可执行候选 '+l.unexpectedEntries+'。</p>';}
+ else h+='<p>新功能实际联网采样正在准备；完成前不显示虚构的实时收益。</p>';
+ h+='<details><summary>今日公告与财报核对：事实和判断分开</summary><p>'+esc(data.network.predictionImpact)+'</p>'+data.network.items.map(n=>'<article><strong>'+esc(n.name)+'</strong><p>查到的事实：'+esc(n.fact)+'</p><p>分析判断：'+esc(n.interpretation)+'</p><p>核对范围：'+esc(n.coverage)+'；<a href="'+esc(n.source)+'" target="_blank" rel="noopener">原文来源</a></p></article>').join('')+'</details>';
+ return h+'<p class="footnote">历史与今日联网数据分开；本机证据含原始响应、源码指纹和决策记录。没有撮合队列或真实券商成交验证。</p></details>';
+}
+root.TodayEvidence={data,render};

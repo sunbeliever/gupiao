@@ -1,0 +1,20 @@
+'use strict';
+const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto');
+const dir=path.resolve(process.argv[2]||''),root=path.resolve(__dirname,'..'),sha=x=>crypto.createHash('sha256').update(x).digest('hex'),fh=p=>sha(fs.readFileSync(p));
+if(!process.argv[2])throw Error('Provide observation directory');
+const manifest=JSON.parse(fs.readFileSync(path.join(dir,'manifest.json'))),report=JSON.parse(fs.readFileSync(path.join(dir,'report.json'))),input=JSON.parse(fs.readFileSync(path.join(dir,'history-input.json')));
+const Guidance=require(path.join(dir,'sources/trade-guidance.js')),Market=require(path.join(dir,'sources/market.js'));
+const raw=fs.readFileSync(path.join(dir,'ticks.jsonl'),'utf8');if(!raw.endsWith('\n'))throw Error('Incomplete tick tail');const ticks=raw.trim().split('\n').map(JSON.parse);
+let previous=sha(JSON.stringify(manifest)),quoteRows=0;
+for(let i=0;i<ticks.length;i++){const t=ticks[i],{eventHash,...body}=t;if(t.sequence!==i+1||t.previousHash!==previous||sha(JSON.stringify(body))!==eventHash)throw Error('Tick chain mismatch '+i);previous=eventHash;quoteRows+=Object.keys(t.quotes).length;
+ const replay=Guidance.build({now:t.at,universe:Market.UNIVERSE,quotes:t.quotes,predictions:input.predictions,dataHealth:input.health});
+ if(JSON.stringify(replay)!==JSON.stringify(t.guidance))throw Error('Guidance replay mismatch '+i);
+ if(t.guidance.entries.length||t.guidance.action!=='wait_session'||!/current trading session/.test(t.accountCreationRejection))throw Error('Unexpected after-close order eligibility');
+}
+const frozenIntegrity=Object.entries(manifest.sources).every(([n,h])=>fh(path.join(dir,'sources',n))===h),currentSourceMatch=Object.entries(manifest.sources).every(([n,h])=>fh(path.join(root,'assets',n))===h);
+const elapsedSeconds=(Date.parse(ticks.at(-1)?.at)-Date.parse(ticks[0]?.at))/1000;
+const result={directory:dir,verifiedAt:new Date().toISOString(),status:report.status,samples:ticks.length,quoteRows,elapsedSeconds,hashChainVerified:previous===report.lastHash,guidanceReplayVerified:true,frozenIntegrity,currentSourceMatch,nativeHelperVerified:fh(path.join(dir,'market-transport.exe'))===manifest.helperHash,accountCreationRejected:report.accountCreationRejected,orders:0,netProfit:null,historyHealth:report.historyHealth,reportHash:fh(path.join(dir,'report.json'))};
+result.ok=report.status==='completed'&&ticks.length===manifest.expectedSamples&&quoteRows===report.quoteRows&&elapsedSeconds>=(manifest.expectedSamples-1)*manifest.intervalMs/1000&&result.hashChainVerified&&frozenIntegrity&&currentSourceMatch&&result.nativeHelperVerified;
+fs.writeFileSync(path.join(dir,'verification.json'),JSON.stringify(result,null,2));
+console.log(JSON.stringify({...result,historyHealth:{ok:result.historyHealth?.ok,expectedAsOf:result.historyHealth?.expectedAsOf}}));
+if(!result.ok)process.exitCode=1;

@@ -128,5 +128,9 @@
   entries(s,quotes,now,context,core);watermarks(s,quotes,now,core);sync(s,now);return seal(s);
  }
  function observe(value,input={}){const s=resume(value),now=input.now===undefined?Date.now():ms(input.now);if(now<ms(s.observedAt))throw Error('Observation cannot move backward');s.observedAt=iso(now);s.observationHistory=s.observationHistory||[];s.observationHistory.push(clone(s.automation));s.automation={...s.automation,windowEnded:false,done:false,historicalComplete:false,observationStartedAt:iso(now),elapsedMs:0,validObservations:0,dataFailureTicks:0,maxGapMs:0,lastEvaluatedAt:iso(now),plannedEndAt:iso(now+1800000)};record(s,{type:'observation_started',equity:s.account.equity,cash:s.account.cash,noCapitalReset:true});return seal(s);}
- return {create,step,resume,observe};
+ function inspect(s,quotes,now,context,core){
+  const health=poolHealth(s,quotes,now,context,core),rows=s.universe.map(u=>{const q=quotes[u.symbol],valid=fresh(q,now,core)&&core.sourceMs(q)>=(s.quoteWatermarks[u.symbol]||0);return {symbol:u.symbol,valid,buyBlock:blocked(q,'buy'),sellBlock:blocked(q,'sell')};});
+  return {health,rows};
+ }
+ return {create,step,resume,observe,inspect};
 });

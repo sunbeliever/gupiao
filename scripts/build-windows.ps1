@@ -6,7 +6,7 @@ $build=Join-Path $root 'build\windows'
 $stage=Join-Path $build 'payload'
 $assetDir=Join-Path $stage 'assets'
 New-Item -ItemType Directory -Path $assetDir -Force | Out-Null
-foreach($name in @('index.html','style.css','seed.js','trading-calendar.js','fee-profile.js','audit-identity.js','news-facts.js','analysis.js','market.js','forecast-journal.js','corporate-actions.js','corporate-events.js','paper-account.js','paper-engine.js','research-results.js','assurance-ui.js','ui.js')){Copy-Item -LiteralPath (Join-Path $root ('assets\'+$name)) -Destination (Join-Path $assetDir $name) -Force}
+foreach($name in @('index.html','style.css','seed.js','trading-calendar.js','fee-profile.js','audit-identity.js','news-facts.js','analysis.js','market.js','forecast-journal.js','corporate-actions.js','corporate-events.js','paper-account.js','paper-engine.js','research-results.js','trade-guidance.js','today-evidence.js','assurance-ui.js','ui.js')){Copy-Item -LiteralPath (Join-Path $root ('assets\'+$name)) -Destination (Join-Path $assetDir $name) -Force}
 Copy-Item -LiteralPath (Join-Path $root 'windows\desktop.css') -Destination (Join-Path $assetDir 'desktop.css') -Force
 $html=Get-Content -LiteralPath (Join-Path $assetDir 'index.html') -Raw
 $policy="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; frame-src 'none'; form-action 'none'"
@@ -21,6 +21,7 @@ if(Test-Path -LiteralPath $zip){Remove-Item -LiteralPath $zip}
 Add-Type -AssemblyName System.IO.Compression.FileSystem
 [IO.Compression.ZipFile]::CreateFromDirectory($stage,$zip,[IO.Compression.CompressionLevel]::Optimal,$false)
 $csc='C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe'
+New-Item -ItemType Directory -Path (Join-Path $root 'dist') -Force | Out-Null
 $exe=Join-Path $root 'dist\TechScope-Windows.exe'
 $args=@('/nologo','/target:winexe','/platform:x64','/optimize+','/codepage:65001',('/out:'+$exe),('/resource:'+$zip+',TechScope.Payload.zip'),'/reference:System.Windows.Forms.dll','/reference:System.Drawing.dll','/reference:System.Net.Http.dll','/reference:System.Web.Extensions.dll','/reference:System.IO.Compression.dll','/reference:System.IO.Compression.FileSystem.dll',('/reference:'+(Join-Path $stage 'Microsoft.Web.WebView2.Core.dll')),('/reference:'+(Join-Path $stage 'Microsoft.Web.WebView2.WinForms.dll')),(Join-Path $root 'windows\Program.cs'),(Join-Path $root 'windows\DesktopServices.cs'),(Join-Path $root 'windows\DesktopForm.cs'),(Join-Path $root 'windows\AssemblyInfo.cs'))
 & $csc @args
