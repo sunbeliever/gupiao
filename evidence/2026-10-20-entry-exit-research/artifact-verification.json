@@ -1,0 +1,26 @@
+{
+  "verifiedAt": "2026-10-20T06:47:54.423Z",
+  "allCandidatesComplete": true,
+  "dailySessionsEach": 424,
+  "inputsEach": 848,
+  "publicReplayParity": true,
+  "finalStatesVerified": true,
+  "allInputHashesVerified": true,
+  "defaultFullStateParityCheckpoints": 3,
+  "tests": {
+    "passed": 208,
+    "failed": 0
+  },
+  "review": "Independent read-only code review found no important issue; focused 15 tests passed.",
+  "sameControlData": true,
+  "sameAlpha1Model": true,
+  "automaticDeployment": false,
+  "fileHashes": {
+    "manifest.json": "60546a071332f864d319b55da5588dbb7a225c3ea301dfed167b70abfd0c4dfb",
+    "prices.json": "60df9c0756f441325486aa14dfd9bbd3f51fd7cdcd312f603b665c875c612568",
+    "experiment.claim": "46c669c1b3a8459ab92b102b03327a85a23b1ce3042d029d21ca38eb7f037e59",
+    "comparison.json": "97cb69f87528ea1066da9b2083e317a4c7d9fa306e37b29f0552fccf8b2698a2",
+    "no-target-exit.json": "7064cdb1ba87e312e4d70b207ffbdd4232f442e466a2ea2c67768dc4215f5301",
+    "no-target-net1pct.json": "58af3f20f7ccdabe1d97117f891d348c5e72ccb3aaf078edae5ebea4b9d6fe5b"
+  }
+}

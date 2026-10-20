@@ -4,7 +4,7 @@
 - 冻结前瞻运行目录仍是 `C:/Users/lqp07/.codex/worktrees/audit-account-repair/techno`，归档后缺失源码/声明已恢复；此目录不是Git工作区，只用于原1100账户采集和只读报告。原PID38248在恢复时仍运行。不得重复开户。
 - 归档恢复记录：原账户目录 `archive-recovery-2026-10-20T06-24-11-206Z.json`。完整tick链、账务、EXE、11模块及原生helper指纹验证通过；现存账本/状态/日志未被覆盖。丢失claim/lease从已验证manifest与完整链重建并显式标记，原始claim时间和租约token未知。后续按原PID核查及显式死进程租约恢复，不假称元数据原件仍在。
 - 独立迁移恢复备份：`D:/techno/validation/thread-transfer-recovery/verification-root-2026-10-20T06-37-20-837Z/validation/continuous/continuous-etf-audit-20261020-1100`，完整核验至449条，包含明确标记的恢复claim/lease。静态证据，严禁与原PID并行运行。
-- 新历史ID `entry-exit-research-20261020-b` 已声明并单次运行；先看其comparison/failure/run.log与主机进程（启动PID26948，不当作永久状态），禁止重复--run。原四路径结果以已发布evidence ZIP为准，不在新工作区重开旧ID。
+- 新历史ID `entry-exit-research-20261020-b` 已全部完成，候选1累计+3.13%/观测回撤25.31%，候选2累计+68.47%/观测回撤15.33%（收益主要集中2025，2026至9月+2.09%）；详见`docs/入场退出研究结果-2026-10-20.md`，禁止重复--run。原四路径结果以已发布evidence ZIP为准，不在新工作区重开旧ID。
 - 新规则见 `docs/next-entry-exit-research.md`；历史样本仍是已查看探索。
 
 # 1.6.0.1 专项审计修复（2026-10-20，当前权威入口）

@@ -28,6 +28,6 @@
 
 独立开发工作区 `C:/Users/lqp07/.codex/worktrees/stock-entry-exit/techno`，分支 `codex/entry-exit-research`。已实现开户冻结的 `targetExitEnabled` 与 `minEstimatedNetReturn`，默认缺省保持原完整状态行为；原快照未包含字段时继续启用目标退出及原正净收益门槛。新候选关闭目标退出仍保留风险退出、T+1、缺价/拒单重试和20交易日到期。入场余量按实际分配、整手、双边费用和滑点计算，后续输入不能覆盖开户规则。
 
-208项JavaScript回归通过；新增9项覆盖规则与声明/回放集成。默认API与旧源码在3个连续检查点的完整状态逐字一致。日志在 `validation/entry-exit-checks/`。新研究使用 `--declare --entry-exit` 冻结恰好两个已登记候选；运行仍用 `--run --id`，不允许运行时改变参数。历史收益尚未计算，未改EXE或1100冻结账户。
+208项JavaScript回归通过；新增9项覆盖规则与声明/回放集成。默认API与旧源码在3个连续检查点的完整状态逐字一致。日志在 `validation/entry-exit-checks/`。新研究使用 `--declare --entry-exit` 冻结恰好两个已登记候选；运行仍用 `--run --id`，不允许运行时改变参数。历史计算已完成，完整结果见[结果报告](入场退出研究结果-2026-10-20.md)；未改EXE或1100冻结账户。
 
-新历史研究 `entry-exit-research-20261020-b` 已声明并单次启动。两个候选的数据及alpha1模型hash与原控制完全一致，源文件原字节保存在 `declared-sources/`；独立只读审查未发现重要问题。比较计算进行中，已有claim禁止再次运行。
+新历史研究 `entry-exit-research-20261020-b` 已声明并单次启动。两个候选的数据及alpha1模型hash与原控制完全一致，源文件原字节保存在 `declared-sources/`；独立只读审查未发现重要问题。两候选及逐笔一致性校验均完成，已有claim禁止再次运行。
