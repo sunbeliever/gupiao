@@ -102,6 +102,7 @@ def package(exe,gate,native,forward_id=None):
         evidence_files += list((directory/'sources').glob('*.js'))
         evidence_files += list((directory/'sources').glob('*.cs'))
         evidence_files += [directory/'market-transport.exe'] if (directory/'market-transport.exe').is_file() else []
+        evidence_files += [directory/'release.exe',directory/'driver-source.js']
         evidence_files += [directory/'experiment.claim'] if (directory/'experiment.claim').is_file() else []
     with zipfile.ZipFile(archive,'w',zipfile.ZIP_DEFLATED) as z:
         z.write(output,name);z.write(report_file,report_file.name);z.write(ROOT/'docs/release-usage-1.6.txt','使用与制作说明.txt')
