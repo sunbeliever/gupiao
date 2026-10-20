@@ -13,3 +13,5 @@ data/
 .codex/
 .agents/
 reports/
+__pycache__/
+*.py[cod]
