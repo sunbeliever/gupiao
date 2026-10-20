@@ -71,3 +71,53 @@ test('research replay passes the frozen net margin and exit switch to the actual
  const r=Research.runReplay({...f,selector:'ridge'});assert.equal(r.summary.buyCount,0);assert.equal(r.summary.netReturn,0);
  assert.equal(r.session.rules.targetExitEnabled,false);assert.equal(r.session.rules.minEstimatedNetReturn,.01);assert.equal(r.summary.strategySuccess,false);assert.equal(r.summary.parityVerified,true);
 });
+
+test('cash-buffer research binds actual risk limits to identity and preserves most principal as cash',()=>{
+ const f=fixture();f.policy={...f.policy,targetExitEnabled:false,minEstimatedNetReturn:.01,maxDrawdownLimit:.05,riskLimits:{investableLimit:2500,maxExposure:.25,maxPositions:3,maxThemeWeight:1}};
+ const r=Research.runReplay({...f,selector:'ridge'});
+ assert.deepEqual(r.summary.researchIdentity.risk_limits,r.session.fingerprint.risk_limits);
+ assert.equal(r.summary.researchIdentity.risk_limits.investableLimit,2500);assert.equal(r.summary.researchIdentity.risk_limits.maxExposure,.25);
+ assert.ok(r.initialSession.account.cash>=7500);assert.ok(r.summary.dailyMeanExposure<.26);
+ assert.ok(r.summary.minimumObservedEquity<=10000);assert.ok(r.summary.maxLossFromInitialCapital>0);assert.ok(r.summary.daysBelowInitialCapital>0);
+ assert.equal(r.summary.riskScreen.zeroLossObserved,false);assert.equal(r.summary.riskScreen.investmentReady,false);assert.equal(r.summary.riskScreen.verifiedProfitProbability,null);
+});
+
+test('untraded cash cannot pass the historical capital-preservation screen',()=>{
+ const f=fixture();f.policy={...f.policy,targetExitEnabled:false,minEstimatedNetReturn:.01,maxDrawdownLimit:.05,riskLimits:{investableLimit:1250,maxExposure:.125,maxPositions:3,maxThemeWeight:1}};f.model.intercept=.012;
+ const r=Research.runReplay({...f,selector:'ridge'});assert.equal(r.summary.buyCount,0);assert.equal(r.summary.netReturn,0);
+ assert.equal(r.summary.riskScreen.zeroLossObserved,true);assert.equal(r.summary.riskScreen.historicalRiskScreenPassed,false);
+ assert.ok(r.summary.riskScreen.reasons.includes('no_executed_model_trades'));assert.equal(r.summary.riskScreen.investmentReady,false);
+});
+
+test('capital-preservation declaration fixes two cash buffers and two matched baseline controls before results',()=>{
+ const fs=require('node:fs'),os=require('node:os'),path=require('node:path'),root=fs.mkdtempSync(path.join(os.tmpdir(),'techscope-capital-'));
+ try{
+  const Market=require('../assets/market.js'),prices={raw:{},histories:{}};for(const u of Market.UNIVERSE.filter(u=>u.type==='etf')){prices.raw[u.symbol]=[];prices.histories[u.symbol]=[];}
+  fs.mkdirSync(path.join(root,'assets'));fs.mkdirSync(path.join(root,'scripts'));
+  for(const name of ['paper-engine.js','paper-account.js','analysis.js','trading-calendar.js','fee-profile.js','audit-identity.js','corporate-actions.js','corporate-events.js'])fs.copyFileSync(path.join(__dirname,'../assets',name),path.join(root,'assets',name));
+  fs.copyFileSync(path.join(__dirname,'../scripts/executable-research.js'),path.join(root,'scripts/executable-research.js'));
+  const file=path.join(root,'prices.json');fs.writeFileSync(file,JSON.stringify(prices));
+  Research.cli(['--declare','--capital-preservation','--id','fixture-capital','--prices',file],root);
+  const m=JSON.parse(fs.readFileSync(path.join(root,'validation/executable-research/fixture-capital/manifest.json')));
+  assert.equal(m.policy.maxDrawdownLimit,.05);assert.equal(m.candidates.length,4);
+  assert.deepEqual(m.candidates.filter(c=>c.selector==='ridge').map(c=>[c.alpha,c.ruleOverrides.riskLimits.maxExposure,c.ruleOverrides.riskLimits.investableLimit,c.ruleOverrides.minEstimatedNetReturn]),[[1,.25,2500,.01],[1,.125,1250,.01]]);
+  assert.deepEqual(m.candidates.filter(c=>c.selector==='equal_three').map(c=>[c.ruleOverrides.riskLimits.maxExposure,c.ruleOverrides.riskLimits.investableLimit,c.ruleOverrides.minEstimatedNetReturn]),[[.25,2500,0],[.125,1250,0]]);
+  assert.ok(m.candidates.every(c=>c.ruleOverrides.targetExitEnabled===false));
+  assert.throws(()=>Research.cli(['--declare','--entry-exit','--capital-preservation','--id','ambiguous','--prices',file],root),/one research family/);
+ }finally{assert.equal(path.dirname(root),os.tmpdir());assert.ok(path.basename(root).startsWith('techscope-capital-'));fs.rmSync(root,{recursive:true,force:true});}
+});
+
+test('a gap through the stop rejects the five-percent screen rather than claiming entry caps guarantee drawdown',()=>{
+ const f=fixture();f.policy={...f.policy,targetExitEnabled:false,minEstimatedNetReturn:.01,maxDrawdownLimit:.05,riskLimits:{investableLimit:2500,maxExposure:.25,maxPositions:3,maxThemeWeight:1}};
+ for(const list of [f.data.histories.sh588000,f.data.raw.sh588000])for(const b of list)if(b.date>='2024-01-03')Object.assign(b,{open:.2,close:.2,high:.21,low:.19});
+ const r=Research.runReplay({...f,selector:'ridge'});assert.ok(r.summary.observedDailyMaxDrawdown>.05);assert.equal(r.summary.riskScreen.historicalRiskScreenPassed,false);
+ assert.ok(r.summary.riskScreen.reasons.includes('drawdown_exceeds_declared_limit'));assert.ok(r.summary.riskScreen.reasons.includes('negative_annual_account_change'));
+ assert.equal(r.summary.riskScreen.investmentReady,false);
+});
+
+test('retained appreciated positions disclose exposure beyond an entry cap without pretending to rebalance',()=>{
+ const f=fixture();f.policy={...f.policy,targetExitEnabled:false,minEstimatedNetReturn:.01,maxDrawdownLimit:.05,riskLimits:{investableLimit:2500,maxExposure:.25,maxPositions:3,maxThemeWeight:1}};
+ for(const list of [f.data.histories.sh588000,f.data.raw.sh588000])for(const b of list)if(b.date>='2024-01-03')Object.assign(b,{open:2,close:2,high:2.01,low:1.99});
+ const r=Research.runReplay({...f,selector:'ridge'});assert.ok(r.summary.maxObservedDailyExposure>.25);assert.equal(r.summary.riskScreen.investmentReady,false);
+ assert.match(r.summary.riskScreen.note,/do not rebalance/);
+});

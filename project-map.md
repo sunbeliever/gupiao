@@ -1,3 +1,8 @@
+# 当前用户风险偏好（2026-10-20更新）
+
+- 用户确认1万元最多接受500元（5%）回撤，随后补充最好一点不亏：保本金优先，5%为上限而非保证；原候选15.33%回撤不符合要求，当前不能称适合用户实投。
+- 先按`docs/capital-preservation-research-2026-10-20.md`验证固定25%/12.5%投资上限及各自等仓位三ETF对照，保留同模型/1%净余量/退出规则，不直接启动原全额候选前瞻。
+
 # 本聊天接续（2026-10-20）
 
 - 开发工作区：`C:/Users/lqp07/.codex/worktrees/stock-entry-exit/techno`，分支 `codex/entry-exit-research`。旧聊天已归档。
@@ -10,7 +15,7 @@
 # 1.6.0.1 专项审计修复（2026-10-20，当前权威入口）
 
 - 2026-10-20后续研究：`scripts/executable-research.js`将两个固定岭回归候选与指定ETF/三ETF等权选择器，通过同一个Paper持续账户回放2025—2026/09。先声明/后单次claim；每日真实开盘假设+16:00收盘估值，逐笔/最终哈希与Paper.replay一致。协议`docs/executable-research-2026-10-20.md`。仅历史探索，六ETF重拟合不等于EXE19池，合成可用时刻不是实际首次接收；不自动部署。
-- 只读报告新增原生helper及C#源的冻结指纹核验、原生前瞻类型识别、冻结目标/风险退出的双边扣费场景与薄净空间提示。`entryEconomics`不是盈利概率。午休源时钟递增仍不得当合法报价，原失败计数保留。`docs/next-entry-exit-research.md`为下一轮两个入场/退出候选登记，尚未实现，不修改1100账户。
+- 只读报告新增原生helper及C#源的冻结指纹核验、原生前瞻类型识别、冻结目标/风险退出的双边扣费场景与薄净空间提示。`entryEconomics`不是盈利概率。午休源时钟递增仍不得当合法报价，原失败计数保留。`docs/next-entry-exit-research.md`为已完成两个入场/退出候选登记；实现及结果见最新接续段，不修改1100账户。
 
 - 独立分支 `fix/auditable-paper-account`；原1.5.1源码基线 `61443d4dbeb51efd18e0ef769c412b5f280dd2de`，原EXE/模拟目录仍在 `D:/techno`，不覆盖。以下旧版小节是历史，不是当前规则。
 - Windows仍为 `Program → DesktopForm → assets/index.html` 五页。`paper-engine.js`是公开决策入口，`paper-account.js`为schema2持续账务；新键 `paper.continuous.current`，原 `paper.current`只读保留。`Market.readState`和原生严格Read区分缺失/损坏/读取失败，禁止损坏重建本金。
