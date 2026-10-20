@@ -1,0 +1,214 @@
+{
+  "schema": "read-only-native-preflight-v1",
+  "at": "2026-10-20T07:08:15.385Z",
+  "noAccountCreated": true,
+  "noOrders": true,
+  "nativeDescriptor": {
+    "kind": "dotnet-desktop-http-v1",
+    "exeSha256": "e0f80930a8fcd6f86e4ae4dfbd898104308e41e66aa24380730cb2926252e761",
+    "sourceHashes": {
+      "DesktopServices.cs": "292ee994ae931d5b22c0ec13a62c97b5f7daf12b6c84aa19bd517380793df742",
+      "MarketTransport.cs": "3fcf051cec577ccff061c7c0ab527d9af804a35e00929abdcdd0117aa81d64ae"
+    }
+  },
+  "inputHealth": {
+    "ok": false,
+    "collectionOk": false,
+    "historyOk": true,
+    "entryQuoteComplete": false,
+    "valuationQuoteComplete": false,
+    "quotePoolComplete": false,
+    "expectedAsOf": "2026-10-19",
+    "history": {
+      "ok": true,
+      "expectedAsOf": "2026-10-19",
+      "rows": [
+        {
+          "symbol": "sh588000",
+          "dataAsOf": "2026-10-19",
+          "expectedAsOf": "2026-10-19",
+          "stale": false,
+          "reason": null
+        },
+        {
+          "symbol": "sh512760",
+          "dataAsOf": "2026-10-19",
+          "expectedAsOf": "2026-10-19",
+          "stale": false,
+          "reason": null
+        },
+        {
+          "symbol": "sh515070",
+          "dataAsOf": "2026-10-19",
+          "expectedAsOf": "2026-10-19",
+          "stale": false,
+          "reason": null
+        },
+        {
+          "symbol": "sh512720",
+          "dataAsOf": "2026-10-19",
+          "expectedAsOf": "2026-10-19",
+          "stale": false,
+          "reason": null
+        },
+        {
+          "symbol": "sh515880",
+          "dataAsOf": "2026-10-19",
+          "expectedAsOf": "2026-10-19",
+          "stale": false,
+          "reason": null
+        },
+        {
+          "symbol": "sz159852",
+          "dataAsOf": "2026-10-19",
+          "expectedAsOf": "2026-10-19",
+          "stale": false,
+          "reason": null
+        }
+      ],
+      "reason": null,
+      "calendarVersion": "sse-sessions-2023-2026-v1"
+    },
+    "historyStatuses": [
+      {
+        "symbol": "sh588000",
+        "ok": true,
+        "stale": false,
+        "dataAsOf": "2026-10-19",
+        "expectedAsOf": "2026-10-19",
+        "fetchedAt": "2026-10-20T07:08:14.471Z",
+        "sourceTime": null,
+        "source": "腾讯公开日线",
+        "errors": [],
+        "reason": null,
+        "calendarVersion": "sse-sessions-2023-2026-v1"
+      },
+      {
+        "symbol": "sh512760",
+        "ok": true,
+        "stale": false,
+        "dataAsOf": "2026-10-19",
+        "expectedAsOf": "2026-10-19",
+        "fetchedAt": "2026-10-20T07:08:14.484Z",
+        "sourceTime": null,
+        "source": "腾讯公开日线",
+        "errors": [],
+        "reason": null,
+        "calendarVersion": "sse-sessions-2023-2026-v1"
+      },
+      {
+        "symbol": "sh515070",
+        "ok": true,
+        "stale": false,
+        "dataAsOf": "2026-10-19",
+        "expectedAsOf": "2026-10-19",
+        "fetchedAt": "2026-10-20T07:08:14.477Z",
+        "sourceTime": null,
+        "source": "腾讯公开日线",
+        "errors": [],
+        "reason": null,
+        "calendarVersion": "sse-sessions-2023-2026-v1"
+      },
+      {
+        "symbol": "sh512720",
+        "ok": true,
+        "stale": false,
+        "dataAsOf": "2026-10-19",
+        "expectedAsOf": "2026-10-19",
+        "fetchedAt": "2026-10-20T07:08:14.788Z",
+        "sourceTime": null,
+        "source": "腾讯公开日线",
+        "errors": [],
+        "reason": null,
+        "calendarVersion": "sse-sessions-2023-2026-v1"
+      },
+      {
+        "symbol": "sh515880",
+        "ok": true,
+        "stale": false,
+        "dataAsOf": "2026-10-19",
+        "expectedAsOf": "2026-10-19",
+        "fetchedAt": "2026-10-20T07:08:14.789Z",
+        "sourceTime": null,
+        "source": "腾讯公开日线",
+        "errors": [],
+        "reason": null,
+        "calendarVersion": "sse-sessions-2023-2026-v1"
+      },
+      {
+        "symbol": "sz159852",
+        "ok": true,
+        "stale": false,
+        "dataAsOf": "2026-10-19",
+        "expectedAsOf": "2026-10-19",
+        "fetchedAt": "2026-10-20T07:08:15.066Z",
+        "sourceTime": null,
+        "source": "东方财富公开日线",
+        "errors": [
+          "sz159852 2026 腾讯日线失败: 复权日线字段缺失"
+        ],
+        "reason": null,
+        "calendarVersion": "sse-sessions-2023-2026-v1"
+      }
+    ],
+    "quoteRows": [
+      {
+        "symbol": "sh588000",
+        "ok": false,
+        "entryOk": false,
+        "valuationOk": false,
+        "mode": null,
+        "reason": "quote_expired_or_invalid_phase"
+      },
+      {
+        "symbol": "sh512760",
+        "ok": false,
+        "entryOk": false,
+        "valuationOk": false,
+        "mode": null,
+        "reason": "quote_expired_or_invalid_phase"
+      },
+      {
+        "symbol": "sh515070",
+        "ok": false,
+        "entryOk": false,
+        "valuationOk": false,
+        "mode": null,
+        "reason": "quote_expired_or_invalid_phase"
+      },
+      {
+        "symbol": "sh512720",
+        "ok": false,
+        "entryOk": false,
+        "valuationOk": false,
+        "mode": null,
+        "reason": "quote_expired_or_invalid_phase"
+      },
+      {
+        "symbol": "sh515880",
+        "ok": false,
+        "entryOk": false,
+        "valuationOk": false,
+        "mode": null,
+        "reason": "quote_expired_or_invalid_phase"
+      },
+      {
+        "symbol": "sz159852",
+        "ok": false,
+        "entryOk": false,
+        "valuationOk": false,
+        "mode": null,
+        "reason": "quote_expired_or_invalid_phase"
+      }
+    ],
+    "reason": "quote_collection_incomplete"
+  },
+  "errors": [],
+  "historyHash": "50f8f474696e220d96e53b9fcb4243afeb2395286a0e8e2fedaaf874e8967ee4",
+  "quoteHash": "146a40a9c77221d0922965f0378edf59caeeab9580aa8a703fe7925f3567d02d",
+  "sourceHashes": {
+    "market.js": "9a1da1a3114a47f0786270da30db3da5792a43ae3f4ce47342b14d71282ab199",
+    "paper-engine.js": "92ecc40335b74a3e517b927864c40a573c8e43eb5215d6adbb2732030a93aa81",
+    "trading-calendar.js": "9fc9f436ddc2980cf062cb85cc48ddfb1b99e1674db085c9d01d84cf6dfb9619"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "verifiedAt": "2026-10-20T07:25:07.729Z",
+  "allFourFixedPathsComplete": true,
+  "eachTradingDays": 424,
+  "eachInputs": 848,
+  "incrementalAndPublicReplayParity": true,
+  "finalStateHashesVerified": true,
+  "allInputHashesVerified": true,
+  "riskIdentityMatchesActualAccount": true,
+  "sameAlpha1ModelAndData": true,
+  "testsPassed": 218,
+  "testsFailed": 0,
+  "review": "Independent review of risk rules passed; stale-boundary finding in derived block analyzer reproduced and fixed with regression.",
+  "automaticDeployment": false,
+  "fileHashes": {
+    "manifest.json": "2121250de94ccd7362ed89808928585a7f0a0b7a43150484f223210b4baf6fbd",
+    "prices.json": "60df9c0756f441325486aa14dfd9bbd3f51fd7cdcd312f603b665c875c612568",
+    "experiment.claim": "4be04dfd463f531b60ef28a95662424986afcc4a98c0f8808494d73b464a666e",
+    "comparison.json": "e71ccf24df28490e2bd731beb1494bac92e586c6987b1f2ae3484d30b245993f",
+    "net1-risk25.json": "7835945e08cf33969184b3d439959b1830a1c7cd63fc314548baa9b19f001724",
+    "equal-three-risk25.json": "4603e91f6ed081ac69d06ed2f273cfb20aa67d09111239b54000a8e4c925f26c",
+    "net1-risk12_5.json": "37c7070a34cdd77a7beb1b51aa3fc6500d423125920d42cde30eb60121cd87d3",
+    "equal-three-risk12_5.json": "7e3b931c9a904eda1e42fa244da476e6e9cbddfbcd4307bdc555ddecde544677"
+  }
+}
