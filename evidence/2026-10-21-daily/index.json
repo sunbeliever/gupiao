@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-21",
+  "timezone": "Asia/Shanghai",
+  "kind": "immutable daily paper-trading evidence",
+  "sourceCommit": "d2e5588325baf7bc10644f6ea4e076744a629384",
+  "artifacts": [
+    {
+      "name": "closing-audit.zip",
+      "original": "科技观察-收盘核验与报告修复证据-20261021.zip",
+      "sha256": "ecd896ea70a863ca7f8d17056c127c43e506eb25b0a102c0ed3837b6cd6adaf2",
+      "bytes": 1133705
+    },
+    {
+      "name": "live-view-entry.zip",
+      "original": "科技观察-5万元账户查看与入场证据-20261021.zip",
+      "sha256": "750fa5356b5b79f9c8f04c12a376660ff174fa1af55c8be4b8c2c5c41b2b1bb6",
+      "bytes": 5123566
+    },
+    {
+      "name": "preparation-training.zip",
+      "original": "科技观察-5万元模拟准备与训练证据-20261021.zip",
+      "sha256": "6106d6c191b3a60687556cbf4ebe6216cecc1789a04242a7393d79c9146e6ca3",
+      "bytes": 3122009
+    }
+  ],
+  "scope": "Static evidence only. Never run or resume copied account records. Runtime journals and credentials are not published.",
+  "result": {
+    "budget": 50000,
+    "entrySpendIncludingBuyFees": 12335.6083,
+    "endingEquityReference": 49976.2917,
+    "netPnlReference": -23.7083,
+    "matchedControlNetPnlReference": -49.0457,
+    "maxObservedPeakToTroughYuan": 174.6,
+    "maxObservedLossFromInitialYuan": 94.7083,
+    "warningYuan": 500,
+    "closedCandidateTrades": 0,
+    "earliestLegalSellDate": "2026-10-22",
+    "maturityDate": "2026-11-18",
+    "profitProbability": null,
+    "realInvestmentSuitability": "not established",
+    "valuationBasis": "Independent raw/unadjusted daily closing reference; not certified executions. Future exit fees have not occurred."
+  },
+  "verification": {
+    "recordedFullJsTests": 277,
+    "recordedFullJsFailures": 0,
+    "capital50kReplayedTicks": 369,
+    "lowcapReplayedTicks": 764,
+    "originalAccountCheckedTicks": 1468,
+    "originalAccountIndependentFullStepReplay": false,
+    "reportReaderChunkBytes": 65536,
+    "completeAllRuntimeJournalsIncluded": false
+  },
+  "training": {
+    "matureSamples": 8903,
+    "cutoff": "2026-10-20",
+    "modelHash": "a39d5f70f5e0f0eaf92190ffe71a53cc4605a4a68c0ef559f757cddc82cd2ae9",
+    "deployed": false
+  },
+  "limitations": [
+    "One afternoon with open positions does not establish profitability or a 70% success probability.",
+    "500 yuan is a monitoring warning, not a guaranteed loss cap. T+1, price gaps and fees may exceed intended risk.",
+    "Only six technology ETFs are covered; complete news and financial-report features are not integrated.",
+    "The rejected adjusted-price valuation is retained as rejected evidence; accepted reference is daily-close-reference-raw.json."
+  ]
+}
