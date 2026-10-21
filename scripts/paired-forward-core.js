@@ -68,31 +68,44 @@ function advance(value,input,protocol,runtime){
  return {state,tick};
 }
 function replay(inputs,protocol,runtime){return inputs.reduce((state,input)=>advance(state,input,protocol,runtime).state,initialState(protocol));}
-function claim(directory,protocol){
+function claim(directory,protocol,metadata={}){
  validateProtocol(protocol);fs.mkdirSync(directory,{recursive:true});
  if(fs.existsSync(path.join(directory,'ticks.jsonl'))||fs.existsSync(path.join(directory,'state.json')))throw Error('Existing ledger or state forbids a new claim');
- const record={schema:'paired-preparation-claim-v1',id:protocol.id,protocolHash:Audit.hash(protocol),claimedAt:new Date().toISOString()};
+ const record={schema:'paired-preparation-claim-v1',id:protocol.id,protocolHash:Audit.hash(protocol),claimedAt:new Date().toISOString(),...(metadata.collectorManifestHash?{collectorManifestHash:metadata.collectorManifestHash}:{})};
  fs.writeFileSync(path.join(directory,'experiment.claim'),JSON.stringify(record),{flag:'wx'});return record;
 }
 function checkClaim(directory,protocol){const c=JSON.parse(fs.readFileSync(path.join(directory,'experiment.claim'),'utf8'));if(c.protocolHash!==Audit.hash(protocol)||c.id!==protocol.id)throw Error('Claim protocol mismatch');}
-function readLines(directory){const file=path.join(directory,'ticks.jsonl');if(!fs.existsSync(file))return [];const text=fs.readFileSync(file,'utf8');if(text&&!text.endsWith('\n'))throw Error('Incomplete tick tail; preserved for explicit recovery');return text.trim()?text.trim().split('\n').map(line=>JSON.parse(line)):[];}
+function inflateTick(record,directory,cache=new Map()){
+ if(record.inputHistorySnapshot){const hash=record.inputHistorySnapshot.sha256;if(typeof hash!=='string'||!/^[a-f0-9]{64}$/.test(hash)||record.input.histories!==undefined)throw Error('Invalid history snapshot reference');
+  if(!cache.has(hash)){const h=JSON.parse(fs.readFileSync(path.join(directory,'histories',hash+'.json'),'utf8'));if(Audit.hash(h)!==hash)throw Error('History snapshot hash mismatch');cache.set(hash,h);}record.input.histories=cache.get(hash);delete record.inputHistorySnapshot;
+ }return record;
+}
+function* storedTicks(directory,{inflateHistories=true}={}){
+ const file=path.join(directory,'ticks.jsonl');if(!fs.existsSync(file))return;const fd=fs.openSync(file,'r'),cache=new Map(),buffer=Buffer.alloc(65536);let pending=Buffer.alloc(0),offset=0;
+ try{let length;while((length=fs.readSync(fd,buffer,0,buffer.length,offset))>0){offset+=length;const data=Buffer.concat([pending,buffer.subarray(0,length)]);let start=0,split;while((split=data.indexOf(10,start))>=0){const line=data.subarray(start,split).toString('utf8');if(!line.trim())throw Error('Empty tick inside append-only ledger');const record=JSON.parse(line);yield inflateHistories?inflateTick(record,directory,cache):record;start=split+1;}pending=Buffer.from(data.subarray(start));}if(pending.length)throw Error('Incomplete tick tail; preserved for explicit recovery');}
+ finally{fs.closeSync(fd);}
+}
+function lastTick(directory){
+ const file=path.join(directory,'ticks.jsonl');if(!fs.existsSync(file))return null;const fd=fs.openSync(file,'r');try{const size=fs.fstatSync(fd).size;if(!size)return null;const end=Buffer.alloc(1);fs.readSync(fd,end,0,1,size-1);if(end[0]!==10)throw Error('Incomplete tick tail; never overwrite it');let pos=size-1,parts=[];
+  while(pos>0){const start=Math.max(0,pos-65536),part=Buffer.alloc(pos-start);fs.readSync(fd,part,0,part.length,start);const split=part.lastIndexOf(10);if(split>=0){parts.unshift(part.subarray(split+1));return inflateTick(JSON.parse(Buffer.concat(parts).toString('utf8')),directory);}parts.unshift(part);pos=start;}
+  return inflateTick(JSON.parse(Buffer.concat(parts).toString('utf8')),directory);
+ }finally{fs.closeSync(fd);}
+}
 function checkTick(tick){const body=copy(tick);delete body.state;delete body.tickHash;if(Audit.hash(body)!==tick.tickHash||Audit.hash(tick.input)!==tick.inputHash||tick.state.lastTickHash!==tick.tickHash||tick.state.stateHash!==tick.checkpointDigest||seal(copy(tick.state)).stateHash!==tick.checkpointDigest)throw Error('Tick hash or checkpoint integrity mismatch');}
 function persist(directory,result,protocol,owner){
  checkClaim(directory,protocol);const lease=JSON.parse(fs.readFileSync(path.join(directory,'monitor.lease'),'utf8'));
  if(!owner?.lease||owner.lease.token!==lease.token||owner.lease.pid!==lease.pid)throw Error('Current writer lease is required');
  checkTick(result.tick);if(Audit.hash(result.state)!==Audit.hash(result.tick.state)||result.state.protocolHash!==Audit.hash(protocol))throw Error('Checkpoint protocol mismatch');
- const previous=readLines(directory);if(result.tick.sequence!==previous.length+1||result.tick.previousHash!==(previous.at(-1)?.tickHash||null))throw Error('Append-only sequence or predecessor mismatch');
- const fd=fs.openSync(path.join(directory,'ticks.jsonl'),'a');try{fs.writeSync(fd,JSON.stringify(result.tick)+'\n');fs.fsyncSync(fd);}finally{fs.closeSync(fd);}
+ const previous=lastTick(directory);if(previous)checkTick(previous);if(result.tick.sequence!==(previous?.sequence||0)+1||result.tick.previousHash!==(previous?.tickHash||null))throw Error('Append-only sequence or predecessor mismatch');
+ const disk=copy(result.tick),historyHash=Audit.hash(disk.input.histories||{}),historyDir=path.join(directory,'histories'),historyFile=path.join(historyDir,historyHash+'.json');fs.mkdirSync(historyDir,{recursive:true});if(fs.existsSync(historyFile)){if(Audit.hash(JSON.parse(fs.readFileSync(historyFile,'utf8')))!==historyHash)throw Error('History snapshot hash mismatch');}else fs.writeFileSync(historyFile,JSON.stringify(disk.input.histories||{}),{flag:'wx'});delete disk.input.histories;disk.inputHistorySnapshot={sha256:historyHash};
+ const fd=fs.openSync(path.join(directory,'ticks.jsonl'),'a');try{fs.writeSync(fd,JSON.stringify(disk)+'\n');fs.fsyncSync(fd);}finally{fs.closeSync(fd);}
  const destination=path.join(directory,'state.json'),temporary=destination+'.'+process.pid+'.tmp';fs.writeFileSync(temporary,JSON.stringify(result.state));fs.renameSync(temporary,destination);
 }
 function recover(directory,protocol,runtime){
- checkClaim(directory,protocol);const ticks=readLines(directory),checkpoint=path.join(directory,'state.json');
- const saved=fs.existsSync(checkpoint)?JSON.parse(fs.readFileSync(checkpoint,'utf8')):null;
- if(saved)validateState(saved,protocol,runtime);
- if(!ticks.length)throw Error('Permanent claim has no committed paired ledger; never reset accounts');
- let state=initialState(protocol);
- for(const tick of ticks){checkTick(tick);if(tick.sequence!==state.sequence+1||tick.previousHash!==state.lastTickHash)throw Error('Tick sequence or chain mismatch');const rebuilt=advance(state,tick.input,protocol,runtime);if(Audit.hash(rebuilt.tick)!==Audit.hash(tick))throw Error('Paired replay integrity mismatch');state=rebuilt.state;}
- if(saved){const committed=saved.sequence===0?initialState(protocol):ticks[saved.sequence-1]?.state;if(!committed||Audit.hash(saved)!==Audit.hash(committed))throw Error('Checkpoint ahead of or inconsistent with committed ledger');}
- return state;
+ checkClaim(directory,protocol);const checkpoint=path.join(directory,'state.json'),saved=fs.existsSync(checkpoint)?JSON.parse(fs.readFileSync(checkpoint,'utf8')):null;
+ if(saved)validateState(saved,protocol,runtime);let state=initialState(protocol),savedMatches=!saved||(saved.sequence===0&&Audit.hash(saved)===Audit.hash(state));
+ for(const tick of storedTicks(directory)){checkTick(tick);if(tick.sequence!==state.sequence+1||tick.previousHash!==state.lastTickHash)throw Error('Tick sequence or chain mismatch');const rebuilt=advance(state,tick.input,protocol,runtime);if(Audit.hash(rebuilt.tick)!==Audit.hash(tick))throw Error('Paired replay integrity mismatch');state=rebuilt.state;if(saved?.sequence===state.sequence)savedMatches=Audit.hash(saved)===Audit.hash(state);}
+ if(!state.sequence)throw Error('Permanent claim has no committed paired ledger; never reset accounts');
+ if(!savedMatches)throw Error('Checkpoint ahead of or inconsistent with committed ledger');return state;
 }
-module.exports={defineProtocol,initialState,advance,replay,claim,persist,recover,acquireLease:Monitor.acquireLease};
+module.exports={defineProtocol,initialState,advance,replay,claim,persist,recover,storedTicks,acquireLease:Monitor.acquireLease};

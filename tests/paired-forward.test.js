@@ -75,3 +75,12 @@ test('samples before the declared observation or received after decision are rej
  const f=fixture(),state=Pair.initialState(f.protocol);assert.throws(()=>Pair.advance(state,f.input('2026-10-19T07:00:00Z'),f.protocol,runtime),/declar/);
  const input=f.input();input.responseReceivedAt='2026-10-20T01:31:00Z';assert.throws(()=>Pair.advance(state,input,f.protocol,runtime),/received/);
 });
+test('shared histories are stored once by hash and modified history snapshots cannot be replayed',()=>{
+ const f=fixture(),dir=temp();Pair.claim(dir,f.protocol);const owner=Pair.acquireLease(dir),a=Pair.advance(Pair.initialState(f.protocol),f.input(),f.protocol,runtime);Pair.persist(dir,a,f.protocol,owner);const b=Pair.advance(a.state,f.input('2026-10-20T02:00:00Z',.8),f.protocol,runtime);Pair.persist(dir,b,f.protocol,owner);
+ const records=fs.readFileSync(path.join(dir,'ticks.jsonl'),'utf8').trim().split('\n').map(JSON.parse);assert.ok(records[0].input.histories===undefined);assert.deepEqual(records[0].inputHistorySnapshot,records[1].inputHistorySnapshot);assert.equal(fs.readdirSync(path.join(dir,'histories')).length,1);assert.deepEqual(Pair.recover(dir,f.protocol,runtime),b.state);
+ const file=path.join(dir,'histories',records[0].inputHistorySnapshot.sha256+'.json');fs.writeFileSync(file,'{}');assert.throws(()=>Pair.recover(dir,f.protocol,runtime),/history|snapshot|hash/i);
+});
+test('recovery streams the append-only ledger rather than reading its full contents into memory',()=>{
+ const f=fixture(),dir=temp();Pair.claim(dir,f.protocol);const owner=Pair.acquireLease(dir),a=Pair.advance(Pair.initialState(f.protocol),f.input(),f.protocol,runtime);Pair.persist(dir,a,f.protocol,owner);const originalRead=fs.readFileSync;
+ try{fs.readFileSync=function(file,...args){if(path.basename(String(file))==='ticks.jsonl')throw Error('Full ledger reads forbidden by memory regression');return originalRead.call(this,file,...args);};assert.deepEqual(Pair.recover(dir,f.protocol,runtime),a.state);}finally{fs.readFileSync=originalRead;owner.release();}
+});

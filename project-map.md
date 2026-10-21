@@ -1,3 +1,12 @@
+# 2026-10-21 09:15当前接续：先恢复开盘准备器，禁止重复旧版启动
+- 原1100已在08:50按原冻结规则由主机PID62444恢复至今日16:10；每次重新核CIM命令行。无新资本、原亏损/claim/恢复来源保留。09:08:56已到664tick，开盘前估值仍9975.3284，未评分。
+- 新scripts/paired-forward-monitor.js已实现固定模型来源/源码/测试/helper及原始响应冻结、未来窗口声明、单次实际采集双Paper账户、跨进程claim/lease/resume。SOURCE_FILES是JS/测试/seed；实际helper对应的旧C#另存native-sources，初次Current MarketTransport.cs不匹配的失败保留。
+- 独立审查的频率可篡改及原始响应缺校验已修，claim绑定整个manifest，固定30000/300000，原始响应/共享日线hash实际字节在恢复时核验。25个配对目标测试、全258项通过，源码前后指纹一致。
+- 最后又复现并修复恢复一次读完整日志导致长期内存增长的问题：Core.storedTicks以64KB流式读，双账户逐笔回放/旧checkpoint/断尾拒绝语义相同；Driver响应核验也改流式。全258项通过；已发给现有review_entry_exit快速复审，注意接收其结论。
+- 最新正确冻结准备副本：D:/techno/validation/daily-20261021/native-preopen-stream-final，真实09:14:32预检6只日线都到10/20、开盘前报价仍不合法，nativeEntryReady=false，不代表已开户。正式来源验证formal-test-verification-stream-final.json，日志full-tests-stream-final.log。
+- 旧准备器PID16648已在开盘前停止，startup-v1-superseded.json及原readiness-scheduler.claim保留。原startup-once.cjs/staging native-preopen-final是旧版；不要重新运行旧启动claim、不要使用旧完整日志恢复代码声明新实验。
+- 下一轮09:20先收流式读取审查结论，独立运行最新冻结source内两个paired测试（25项）。然后另存startup-once-v2.cjs/startup-policy-v2.json/startup-manifest-v2.json/readiness-scheduler-v2.claim（保留v1），改staging为native-preopen-stream-final、testVerification为formal-test-verification-stream-final.json，重算bootstrap/policy/source hashes，再隐藏启动并核主机PID/stderr。使用原bootstrap模板；旧未来声明/monitor-launch尚不存在。
+- 固定计划不变：09:30:05/09:30:35/09:31:05最多3次仅数据健康预检；09:32前通过才真正声明paired-lowcap-20261021-open-a，09:33—09:35入场，到16:10。否则保留未就绪，不补开或按收益择时。原账户始终独立。全部运行资料存D:/techno/validation/forward-comparison稳定目录。详见docs/paired-forward-native-2026-10-21.md。
 # 最新自动复核：双账户准备核心（2026-10-20 17点后）
 - 新增scripts/paired-forward-core.js：单一市场输入同时推进候选/固定三ETF对照，共同统计起点、1250元/.125新增仓位、同费用、T+1/8%/20日；仅候选1%净余量，均无预测止盈。保留历史maxThemeWeight=1。
 - 单tick包含双账户；claim/租约/追加账本/亏损恢复/旧checkpoint逐点核对/双腿Paper.replay一致。新12项人工夹具，全245项通过，独立审查无重要问题。来源兼容核对使用保存的六ETF alpha1模型（f0b16e0c…），没有重训/重跑。
