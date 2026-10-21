@@ -1,0 +1,11 @@
+'use strict';
+const http=require('node:http'),path=require('node:path'),fs=require('node:fs'),View=require('./research-account-view.js');
+function createServer({read}){return http.createServer((req,res)=>{
+ res.setHeader('Cache-Control','no-store');res.setHeader('X-Content-Type-Options','nosniff');res.setHeader('Content-Security-Policy',"default-src 'none'; style-src 'unsafe-inline'; frame-ancestors 'none'");res.setHeader('Referrer-Policy','no-referrer');
+ if(!/^(127\.0\.0\.1|localhost)(:\d+)?$/.test(req.headers.host||'')){res.writeHead(403);res.end();return;}
+ if(req.method!=='GET'&&req.method!=='HEAD'){res.writeHead(405,{'Allow':'GET, HEAD'});res.end();return;}
+ let u;try{u=new URL(req.url,'http://127.0.0.1');}catch(e){res.writeHead(400);res.end();return;}if(u.pathname!=='/'&&u.pathname!=='/api/view'){res.writeHead(404);res.end();return;}
+ try{const v=read();res.writeHead(200,{'Content-Type':u.pathname==='/api/view'?'application/json; charset=utf-8':'text/html; charset=utf-8'});res.end(u.pathname==='/api/view'?JSON.stringify(v):View.render(v));}catch(e){res.writeHead(503,{'Content-Type':u.pathname==='/api/view'?'application/json; charset=utf-8':'text/html; charset=utf-8'});res.end(u.pathname==='/api/view'?JSON.stringify({available:false,message:'账户快照暂时无法核对，暂停买卖提示。'}):'<!doctype html><meta charset="utf-8"><meta http-equiv="refresh" content="15"><title>账户快照待核对</title><h1>账户快照暂时无法核对</h1><p>暂停买卖提示，15秒后重新检查。不会重建或重置账户。</p>');}
+ });}
+if(require.main===module){const directory=path.resolve(process.argv[2]||''),port=Number(process.argv[3]||58659);if(!process.argv[2]||!Number.isInteger(port)||port<1024||port>65535)throw Error('Account directory and valid local port required');const Driver=require(path.join(directory,'source/scripts/paired-forward-monitor.js'));Driver.validateFrozen(directory);const claim=JSON.parse(fs.readFileSync(path.join(directory,'experiment.claim'),'utf8'));if(!claim.collectorManifestHash)throw Error('Original claimed account required');View.read(directory);createServer({read:()=>View.read(directory)}).listen(port,'127.0.0.1',()=>console.log(JSON.stringify({url:'http://127.0.0.1:'+port,account:directory,readOnly:true,startedAt:new Date().toISOString()})));}
+module.exports={createServer};
