@@ -15,3 +15,14 @@
 稳定准备副本及预检：D:/techno/validation/daily-20261021/native-preopen-final。实际采样、原账户恢复和失败证据在D:/techno/validation/daily-20261021。原账户已由PID62444显式resume至16:10，原资金和持仓规则不改。
 
 09:15接续：原准备器PID16648已停止并标记superseded，未执行开盘探测或声明账户。最后复现了整日志一次读取问题，已改为64KB流式恢复和来源核验；全258项通过。最新冻结准备副本native-preopen-stream-final，真实09:14:32日线6/6到10/20、开盘前报价不合法。旧native-preopen-final/source及启动器不能用于新实验。09:20接收review_entry_exit的流式恢复复审、独立运行最新副本的25项目标测试后，另存v2启动脚本/策略/manifest/准备claim，更新staging与formal-test-verification-stream-final.json并重算全部指纹；固定09:30三探测及09:33—09:35窗口不变。未及时完成门槛则保留未启动，不补开。
+
+09:19更新：最新稳定副本25项目标测试独立通过，原始8个预检响应指纹核验通过；v2准备器已隐藏启动，主机PID11824，准备claim时间01:18:58.733Z。使用native-preopen-stream-final及formal-test-verification-stream-final.json，v2策略和bootstrap的hash写入startup-manifest-v2.json。原PID16648停止且v1记录保留。旧账户PID62444继续原规则。接下来只核真实09:30后探测/声明/09:33实际入场，不重复启动准备器。
+
+# 2026-10-21 09:41最新状态（覆盖下文旧启动计划）
+- 原1100独立进程PID62444；09:33:50只读报告完整链/账务通过，9700份512720于09:30:42模拟目标退出，累计扣费净收益18.5083元、现金10018.5083元、总费用10元。仅一笔完整退出，未证明70%或可实投；后续仍按冻结规则运行，不与新账户合并。
+- 09:30实际首个探测六ETF数据有效，但旧A准备因非空公司行动列表规范化缺陷失败，未生成claim/ticks或任何资金账户。paired-lowcap-20261021-open-a及startup-failure全部保留，严禁重跑。v2准备器PID11824已结束，不能重启。
+- 一行修复validateProtocol保留两腿原公司行动；两项新增回归先红后绿，正式260项、独立冻结副本27项目标通过，review_entry_exit最终独立复审无重要问题。原1100及失败A源不改。
+- 新未来窗已在09:33:15登记：paired-lowcap-20261021-1000-b，10:00—10:05入场，至16:10。09:34:22原生门槛通过；09:35:57正式声明，PID13812从稳定目录冻结副本采集。09:39快照sequence7、startedAt=null、尚未创建资金账户，不能冒称成交。
+- B运行根D:/techno/validation/forward-comparison/paired-lowcap-20261021-1000-b。先核CIM命令行和claim/manifest/完整hash链；活进程不重复恢复。以后仅其冻结source/scripts/paired-forward-monitor.js --resume --directory 原B目录 --until 当天16:10显式北京时间；错过入场窗保留现金/失败，不重开ID或补造成交。
+- 模型/1250元与12.5%新增入场约束/1%净空间/无目标止盈保持，未知公司行动覆盖仍单列；没有保本或70%证据。69MB/300tick合成流式恢复仅工程压力测试，非市场收益。
+- 静态审计快照D:/techno/validation/daily-20261021/opening-evidence-snapshot：B的7tick前缀/原始响应/冻结源离线恢复hash一致；原1100是已验证只读报告，未复制完整原账户账本。静态副本严禁run/resume。

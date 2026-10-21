@@ -84,3 +84,6 @@ test('recovery streams the append-only ledger rather than reading its full conte
  const f=fixture(),dir=temp();Pair.claim(dir,f.protocol);const owner=Pair.acquireLease(dir),a=Pair.advance(Pair.initialState(f.protocol),f.input(),f.protocol,runtime);Pair.persist(dir,a,f.protocol,owner);const originalRead=fs.readFileSync;
  try{fs.readFileSync=function(file,...args){if(path.basename(String(file))==='ticks.jsonl')throw Error('Full ledger reads forbidden by memory regression');return originalRead.call(this,file,...args);};assert.deepEqual(Pair.recover(dir,f.protocol,runtime),a.state);}finally{fs.readFileSync=originalRead;owner.release();}
 });
+test('non-empty frozen corporate actions survive canonical validation before and after serialization',()=>{
+ const f=fixture(),event={id:'fixture-dividend',symbol:'sh588000',type:'dividend',recordDate:'2026-10-19',exDate:'2026-10-20',payDate:'2026-10-21',cashPerShare:.01,announcedAt:'2026-10-16',source:'https://example.invalid/synthetic-fixture-only'};f.args.corporateEvents=[event];const protocol=Pair.defineProtocol(f.args);assert.doesNotThrow(()=>Pair.initialState(protocol));assert.doesNotThrow(()=>Pair.initialState(JSON.parse(JSON.stringify(protocol))));assert.deepEqual(protocol.legs.candidate.policy.corporateEvents,[event]);assert.deepEqual(protocol.legs.control.policy.corporateEvents,[event]);
+});

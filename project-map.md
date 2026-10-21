@@ -1,3 +1,17 @@
+# 2026-10-21 09:41最新状态（覆盖下文旧启动计划）
+- 原1100独立进程PID62444；09:33:50只读报告完整链/账务通过，9700份512720于09:30:42模拟目标退出，累计扣费净收益18.5083元、现金10018.5083元、总费用10元。仅一笔完整退出，未证明70%或可实投；后续仍按冻结规则运行，不与新账户合并。
+- 09:30实际首个探测六ETF数据有效，但旧A准备因非空公司行动列表规范化缺陷失败，未生成claim/ticks或任何资金账户。paired-lowcap-20261021-open-a及startup-failure全部保留，严禁重跑。v2准备器PID11824已结束，不能重启。
+- 一行修复validateProtocol保留两腿原公司行动；两项新增回归先红后绿，正式260项、独立冻结副本27项目标通过，review_entry_exit最终独立复审无重要问题。原1100及失败A源不改。
+- 新未来窗已在09:33:15登记：paired-lowcap-20261021-1000-b，10:00—10:05入场，至16:10。09:34:22原生门槛通过；09:35:57正式声明，PID13812从稳定目录冻结副本采集。09:39快照sequence7、startedAt=null、尚未创建资金账户，不能冒称成交。
+- B运行根D:/techno/validation/forward-comparison/paired-lowcap-20261021-1000-b。先核CIM命令行和claim/manifest/完整hash链；活进程不重复恢复。以后仅其冻结source/scripts/paired-forward-monitor.js --resume --directory 原B目录 --until 当天16:10显式北京时间；错过入场窗保留现金/失败，不重开ID或补造成交。
+- 模型/1250元与12.5%新增入场约束/1%净空间/无目标止盈保持，未知公司行动覆盖仍单列；没有保本或70%证据。69MB/300tick合成流式恢复仅工程压力测试，非市场收益。
+- 静态审计快照D:/techno/validation/daily-20261021/opening-evidence-snapshot：B的7tick前缀/原始响应/冻结源离线恢复hash一致；原1100是已验证只读报告，未复制完整原账户账本。静态副本严禁run/resume。
+
+# 2026-10-21 09:19：修复版开盘准备器已启动
+- 独立最新稳定副本的25项目标测试再次通过；原始预检8个响应文件hash通过，6只ETF日线均截至10/20；开盘前nativeEntryReady=false，未创建真正前瞻目录。
+- startup-once-v2.cjs已隐藏启动，主机PID11824；readiness-scheduler-v2.claim记录2026-10-21T01:18:58.733Z。source staging为native-preopen-stream-final，testVerification指向stream-final；v1停止记录和旧claim保留。重复复核先核主机进程，不再创建/重启v2。
+- v2策略hash c41e31dbea3cd49c814ab1f245d7c5fe5d4dd78c7d52217235915d8453becfd4；bootstrap hash d02b2e497274ff5a2d3c5097da09532e567efc5aad14edd5d61caccac9dc0a6a。固定09:30三探测/09:32截止/09:33—09:35入场/16:10停止不变。
+- 原1100 PID62444仍独立采集。25项流式恢复改动已获review_entry_exit最终复审无重要问题。当前正在观察真实开盘结果；不得把准备器启动当作账户已入场。
 # 2026-10-21 09:15当前接续：先恢复开盘准备器，禁止重复旧版启动
 - 原1100已在08:50按原冻结规则由主机PID62444恢复至今日16:10；每次重新核CIM命令行。无新资本、原亏损/claim/恢复来源保留。09:08:56已到664tick，开盘前估值仍9975.3284，未评分。
 - 新scripts/paired-forward-monitor.js已实现固定模型来源/源码/测试/helper及原始响应冻结、未来窗口声明、单次实际采集双Paper账户、跨进程claim/lease/resume。SOURCE_FILES是JS/测试/seed；实际helper对应的旧C#另存native-sources，初次Current MarketTransport.cs不匹配的失败保留。

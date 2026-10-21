@@ -57,3 +57,6 @@ test('frozen collection intervals and helper provenance cannot be changed after 
 test('raw network response references require the preserved matching bytes',()=>{
  const dir=fs.mkdtempSync(path.join(os.tmpdir(),'paired-raw-'));fs.mkdirSync(path.join(dir,'responses'));const file='1700000000000-aabbccddeeff.json',location=path.join(dir,'responses',file);fs.writeFileSync(location,'{"actual":"native response"}');const input={responses:[{file,sha256:Driver.fileHash(location)}]};assert.doesNotThrow(()=>Driver.verifyResponses(dir,input));fs.writeFileSync(location,'{}');assert.throws(()=>Driver.verifyResponses(dir,input),/response|hash/i);assert.throws(()=>Driver.verifyResponses(dir,{responses:[{file:'../elsewhere',sha256:'x'}]}),/response|path/i);
 });
+test('the saved research seven-event corporate action list survives a complete native declaration round trip',()=>{
+ const f=fixture(),artifact=JSON.parse(fs.readFileSync(f.modelArtifact));artifact.initialSession.corporateEvents=require('../assets/corporate-events.js').events;assert.ok(artifact.initialSession.corporateEvents.length>0);fs.writeFileSync(f.modelArtifact,JSON.stringify(artifact));const p=Driver.prepare(f);assert.doesNotThrow(()=>Driver.validateFrozen(p.directory));assert.deepEqual(p.manifest.protocol.legs.candidate.policy.corporateEvents,artifact.initialSession.corporateEvents);
+});

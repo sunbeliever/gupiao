@@ -17,7 +17,7 @@ function defineProtocol({id,declaredAt,entryAfter,latestEntry,universe,model,sou
  return {schema:'paired-forward-preparation-v1',id,declaredAt,entryAfter,latestEntry,universe:copy(universe),model:copy(model),sourceModelHash,executionMode:'paired_forward_research',requiresNativeCollectorAndFrozenReleaseGate:true,legs:{candidate:{selector:'ridge',policy:{...copy(policy),minEstimatedNetReturn:.01}},control:{selector:'equal_three',signalMeaning:'deterministic_order_priority_not_return_forecast',policy:{...copy(policy),minEstimatedNetReturn:0}}}};
 }
 function validateProtocol(protocol){
- const canonical=defineProtocol(protocol);
+ const canonical=defineProtocol({...protocol,corporateEvents:protocol.legs?.candidate?.policy?.corporateEvents||[]});
  if(Audit.hash(canonical)!==Audit.hash(protocol))throw Error('Protocol fields or fixed rules changed');
 }
 function seal(state){const body=copy(state);delete body.stateHash;delete body.lastTickHash;state.stateHash=Audit.hash(body);return state;}
