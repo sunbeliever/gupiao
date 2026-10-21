@@ -6,26 +6,29 @@ const Monitor=require('./continuous-paper-monitor.js');
 const copy=value=>JSON.parse(JSON.stringify(value));
 const IDS=['candidate','control'],SYMBOLS=['sh588000','sh512760','sh515070','sh512720','sh515880','sz159852'],FIXED=SYMBOLS.slice(0,3);
 function explicit(value){if(typeof value!=='string'||!/(Z|[+-]\d{2}:\d{2})$/.test(value)||!Number.isFinite(Date.parse(value)))throw Error('Explicit timezone required');return Date.parse(value);}
-function defineProtocol({id,declaredAt,entryAfter,latestEntry,universe,model,sourceModelHash,corporateEvents=[]}){
+function defineProtocol({id,declaredAt,entryAfter,latestEntry,universe,model,sourceModelHash,corporateEvents=[],capitalProfile}){
  if(typeof id!=='string'||!/^[a-z0-9][a-z0-9_-]{0,79}$/.test(id))throw Error('Invalid protocol id');
  const declared=explicit(declaredAt),start=explicit(entryAfter),end=explicit(latestEntry);
  if(start<=declared)throw Error('Entry window must be future to declaration');
  if(end<start||end-start>300000||!Calendar.isTradingTime(start)||!Calendar.isTradingTime(end)||Calendar.sessionOf(start)!==Calendar.sessionOf(end))throw Error('Invalid trading entry window');
  if(!Array.isArray(universe)||universe.length!==6||new Set(universe.map(u=>u.symbol)).size!==6||universe.some(u=>u.type!=='etf'||!SYMBOLS.includes(u.symbol)))throw Error('Exactly the fixed six ETF pool is required');
  if(!model||Audit.hash(model)!==sourceModelHash||model.cutoff!=='2024-12-31'||model.horizon!==20)throw Error('Frozen historical model hash or training cutoff mismatch');
- const policy={budget:10000,preset:'full_capital',allocationMode:'full',feeProfile:Fee.resolve({}),corporateEvents:copy(corporateEvents),stopLossRate:.08,targetExitEnabled:false,riskLimits:{investableLimit:1250,maxExposure:.125,maxPositions:3,maxThemeWeight:1}};
- return {schema:'paired-forward-preparation-v1',id,declaredAt,entryAfter,latestEntry,universe:copy(universe),model:copy(model),sourceModelHash,executionMode:'paired_forward_research',requiresNativeCollectorAndFrozenReleaseGate:true,legs:{candidate:{selector:'ridge',policy:{...copy(policy),minEstimatedNetReturn:.01}},control:{selector:'equal_three',signalMeaning:'deterministic_order_priority_not_return_forecast',policy:{...copy(policy),minEstimatedNetReturn:0}}}};
+ if(capitalProfile!==undefined&&capitalProfile!=='capital50k-risk500-v1')throw Error('Unknown capital profile');
+ const enlarged=capitalProfile==='capital50k-risk500-v1';
+ const policy={budget:enlarged?50000:10000,preset:'full_capital',allocationMode:'full',feeProfile:Fee.resolve({}),corporateEvents:copy(corporateEvents),stopLossRate:enlarged?.04:.08,targetExitEnabled:false,riskLimits:{investableLimit:enlarged?12500:1250,maxExposure:enlarged?.25:.125,maxPositions:3,maxThemeWeight:1}};
+ return {schema:'paired-forward-preparation-v1',...(capitalProfile?{capitalProfile}:{}),id,declaredAt,entryAfter,latestEntry,universe:copy(universe),model:copy(model),sourceModelHash,executionMode:'paired_forward_research',requiresNativeCollectorAndFrozenReleaseGate:true,legs:{candidate:{selector:'ridge',policy:{...copy(policy),minEstimatedNetReturn:.01}},control:{selector:'equal_three',signalMeaning:'deterministic_order_priority_not_return_forecast',policy:{...copy(policy),minEstimatedNetReturn:0}}}};
 }
 function validateProtocol(protocol){
  const canonical=defineProtocol({...protocol,corporateEvents:protocol.legs?.candidate?.policy?.corporateEvents||[]});
  if(Audit.hash(canonical)!==Audit.hash(protocol))throw Error('Protocol fields or fixed rules changed');
 }
 function seal(state){const body=copy(state);delete body.stateHash;delete body.lastTickHash;state.stateHash=Audit.hash(body);return state;}
-function initialState(protocol){validateProtocol(protocol);return seal({schema:'paired-forward-state-v1',protocolHash:Audit.hash(protocol),experimentId:protocol.id,sequence:0,lastTickHash:null,lastDecisionAt:null,startedAt:null,entryClosed:false,historyHash:null,collectionFailures:0,legs:{candidate:{session:null,predictions:null},control:{session:null,predictions:null}},cashBenchmark:{initialCapital:10000,equity:10000,netPnl:0,countsAsSuccess:false},strategySuccess:false,verifiedProfitProbability:null});}
+function initialState(protocol){validateProtocol(protocol);return seal({schema:'paired-forward-state-v1',protocolHash:Audit.hash(protocol),experimentId:protocol.id,sequence:0,lastTickHash:null,lastDecisionAt:null,startedAt:null,entryClosed:false,historyHash:null,collectionFailures:0,...(protocol.capitalProfile?{riskPeaks:{candidate:50000,control:50000}}:{}),legs:{candidate:{session:null,predictions:null},control:{session:null,predictions:null}},cashBenchmark:{initialCapital:protocol.legs.candidate.policy.budget,equity:protocol.legs.candidate.policy.budget,netPnl:0,countsAsSuccess:false},strategySuccess:false,verifiedProfitProbability:null});}
 function validateState(state,protocol,runtime){
  validateProtocol(protocol);
  if(state.schema!=='paired-forward-state-v1'||state.protocolHash!==Audit.hash(protocol)||state.experimentId!==protocol.id||seal(copy(state)).stateHash!==state.stateHash)throw Error('Paired state integrity or protocol mismatch');
  if(!Number.isInteger(state.sequence)||state.sequence<0||IDS.some(id=>!state.legs[id]))throw Error('Invalid paired state');
+ if(protocol.capitalProfile&&IDS.some(id=>!Number.isFinite(state.riskPeaks?.[id])||state.riskPeaks[id]<50000))throw Error('Invalid lifetime risk peak');
  const sessions=IDS.map(id=>state.legs[id].session);
  if(sessions.some(Boolean)!==sessions.every(Boolean)||!!state.startedAt!==sessions.every(Boolean))throw Error('Accounts must share one start');
  for(const id of IDS){const session=state.legs[id].session;if(session){runtime.Paper.resume(session);if(session.accountId!==protocol.id+'-'+id)throw Error('Wrong leg account identity');}}
@@ -60,10 +63,12 @@ function advance(value,input,protocol,runtime){
   if(summaries[id]&&!summaries[id].accountingBalanced)throw Error('Paired account reconciliation failed');
   orders[id]=leg.session?copy(leg.session.orders.slice(orderCount)):[];
  }
+ if(protocol.capitalProfile)for(const id of IDS)state.riskPeaks[id]=Math.max(state.riskPeaks[id],summaries[id]?.equity??50000);
  if(mayStart)state.startedAt=sample.at;
  state.sequence++;state.lastDecisionAt=sample.at;if(!health.collectionOk)state.collectionFailures++;
  seal(state);
  const tick={schema:'paired-forward-tick-v1',experimentId:protocol.id,protocolHash:state.protocolHash,sequence:state.sequence,previousHash:value.lastTickHash,decisionAt:sample.at,inputHash,input:sample,dataHealth:health,reason,accountCreated:mayStart,events,orders,summaries,strategySuccess:false,checkpointDigest:state.stateHash};
+ if(protocol.capitalProfile==='capital50k-risk500-v1')tick.riskMonitoring=Object.fromEntries(IDS.map(id=>{const session=state.legs[id].session,summary=summaries[id],equity=summary?.equity??50000,peak=state.riskPeaks[id],loss=Math.max(0,50000-equity),drawdown=Math.max(0,peak-equity);return [id,{initialCapital:50000,plannedMinimumInvested:10000,maximumNewInvestment:12500,currentMarketExposure:summary?.marketValue??0,minimumAllocationMet:(summary?.marketValue??0)>=10000,initialCapitalLoss:loss,observedDrawdown:drawdown,lossWarningAmount:500,lossWarningTriggered:loss>=500||drawdown>=500,guaranteedLossCap:false,valuationComplete:summary?.valuationComplete??false,countsAsSuccess:false}];}));
  tick.tickHash=Audit.hash(tick);state.lastTickHash=tick.tickHash;tick.state=copy(state);
  return {state,tick};
 }

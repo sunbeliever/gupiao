@@ -60,3 +60,7 @@ test('raw network response references require the preserved matching bytes',()=>
 test('the saved research seven-event corporate action list survives a complete native declaration round trip',()=>{
  const f=fixture(),artifact=JSON.parse(fs.readFileSync(f.modelArtifact));artifact.initialSession.corporateEvents=require('../assets/corporate-events.js').events;assert.ok(artifact.initialSession.corporateEvents.length>0);fs.writeFileSync(f.modelArtifact,JSON.stringify(artifact));const p=Driver.prepare(f);assert.doesNotThrow(()=>Driver.validateFrozen(p.directory));assert.deepEqual(p.manifest.protocol.legs.candidate.policy.corporateEvents,artifact.initialSession.corporateEvents);
 });
+
+test('50k declaration freezes requested profile and preserves native gates',()=>{
+ const f=fixture(),p=Driver.prepare({...f,capitalProfile:'capital50k-risk500-v1'});assert.equal(p.manifest.protocol.capitalProfile,'capital50k-risk500-v1');assert.equal(p.manifest.protocol.legs.candidate.policy.budget,50000);assert.equal(Core.initialState(p.manifest.protocol).cashBenchmark.equity,50000);assert.ok(Driver.validateFrozen(p.directory));const g=fixture();assert.throws(()=>Driver.prepare({...g,capitalProfile:'invalid'}),/profile/i);
+});

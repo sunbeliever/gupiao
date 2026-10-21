@@ -87,3 +87,29 @@ test('recovery streams the append-only ledger rather than reading its full conte
 test('non-empty frozen corporate actions survive canonical validation before and after serialization',()=>{
  const f=fixture(),event={id:'fixture-dividend',symbol:'sh588000',type:'dividend',recordDate:'2026-10-19',exDate:'2026-10-20',payDate:'2026-10-21',cashPerShare:.01,announcedAt:'2026-10-16',source:'https://example.invalid/synthetic-fixture-only'};f.args.corporateEvents=[event];const protocol=Pair.defineProtocol(f.args);assert.doesNotThrow(()=>Pair.initialState(protocol));assert.doesNotThrow(()=>Pair.initialState(JSON.parse(JSON.stringify(protocol))));assert.deepEqual(protocol.legs.candidate.policy.corporateEvents,[event]);assert.deepEqual(protocol.legs.control.policy.corporateEvents,[event]);
 });
+
+test('50k profile scales both accounts and cash, and binds 500 warning without claiming a guaranteed loss cap',()=>{
+ const f=fixture(),protocol=Pair.defineProtocol({...f.args,capitalProfile:'capital50k-risk500-v1'}),initial=Pair.initialState(protocol);
+ assert.equal(initial.cashBenchmark.equity,50000);for(const l of Object.values(protocol.legs)){assert.equal(l.policy.budget,50000);assert.equal(l.policy.riskLimits.investableLimit,12500);assert.equal(l.policy.riskLimits.maxExposure,.25);assert.equal(l.policy.stopLossRate,.04);}
+ const a=Pair.advance(initial,f.input(),protocol,runtime);for(const [id,l] of Object.entries(a.state.legs)){assert.ok(l.session.account.marketValue>=10000);assert.ok(l.session.account.marketValue<=12500);assert.equal(a.tick.riskMonitoring[id].lossWarningAmount,500);assert.equal(a.tick.riskMonitoring[id].guaranteedLossCap,false);}
+ const b=Pair.advance(a.state,f.input('2026-10-20T02:00:00Z',.8),protocol,runtime);assert.ok(b.tick.riskMonitoring.candidate.lossWarningTriggered);assert.ok(b.state.legs.candidate.session.account.holdings.some(h=>h.pendingExit));assert.ok(b.tick.riskMonitoring.candidate.initialCapitalLoss>500);
+ assert.throws(()=>Pair.defineProtocol({...f.args,capitalProfile:'typo'}),/profile/i);const changed=structuredClone(protocol);changed.legs.control.policy.budget=10000;assert.throws(()=>Pair.initialState(changed),/Protocol/);
+});
+test('50k profile leaves a no-signal candidate in cash and recovers losses without changing the legacy protocol',()=>{
+ const f=fixture(),legacy=Audit.hash(f.protocol);f.args.model.intercept=-.5;f.args.sourceModelHash=Audit.hash(f.args.model);const protocol=Pair.defineProtocol({...f.args,capitalProfile:'capital50k-risk500-v1'}),a=Pair.advance(Pair.initialState(protocol),f.input(),protocol,runtime);assert.equal(a.state.legs.candidate.session.account.equity,50000);assert.equal(a.state.legs.candidate.session.account.holdings.length,0);assert.equal(a.tick.riskMonitoring.candidate.minimumAllocationMet,false);assert.equal(a.tick.riskMonitoring.candidate.countsAsSuccess,false);assert.equal(f.protocol.capitalProfile,undefined);assert.equal(Audit.hash(f.protocol),legacy);
+ const dir=temp();Pair.claim(dir,protocol);const owner=Pair.acquireLease(dir);try{Pair.persist(dir,a,protocol,owner);assert.deepEqual(Pair.recover(dir,protocol,runtime),a.state);}finally{owner.release();}
+});
+
+test('50k warning keeps lifetime peaks after the Paper chart drops its oldest observations',()=>{
+ const f=fixture(),protocol=Pair.defineProtocol({...f.args,capitalProfile:'capital50k-risk500-v1'});let state=Pair.advance(Pair.initialState(protocol),f.input(),protocol,runtime).state;
+ const high=Pair.advance(state,f.input('2026-10-20T01:31:00Z',1.2),protocol,runtime);state=high.state;const firstPeak=high.tick.summaries.candidate.equity;
+ // A valid serialized boundary fixture: the oldest of 2000 chart points is the earlier peak.
+ for(const leg of Object.values(state.legs)){const x=leg.session,peak=x.account.equity; x.curve=Array.from({length:2000},(_,n)=>({observedAt:new Date(Date.parse('2026-10-20T01:31:00Z')+n).toISOString(),equity:n===0?peak:peak-1000,benchmarkEquity:x.benchmark.equity}));delete x.integrityHash;x.integrityHash=Audit.hash(x);}
+ const body=structuredClone(state);delete body.stateHash;delete body.lastTickHash;state.stateHash=Audit.hash(body);
+ const r=Pair.advance(state,f.input('2026-10-20T01:32:00Z',1.15),protocol,runtime);assert.equal(r.state.legs.candidate.session.curve.length,2000);assert.ok(r.tick.summaries.candidate.equity>50000);assert.ok(r.tick.riskMonitoring.candidate.observedDrawdown>=firstPeak-r.tick.summaries.candidate.equity);assert.equal(r.tick.riskMonitoring.candidate.lossWarningTriggered,true);
+});
+
+test('50k lifetime risk peak survives append replay and an explicit recovered state',()=>{
+ const f=fixture(),protocol=Pair.defineProtocol({...f.args,capitalProfile:'capital50k-risk500-v1'}),dir=temp();Pair.claim(dir,protocol);const owner=Pair.acquireLease(dir);let state=Pair.initialState(protocol),peak;
+ try{for(const [at,price] of [['2026-10-20T01:30:00Z',1],['2026-10-20T01:31:00Z',1.2],['2026-10-20T01:32:00Z',1.15]]){const r=Pair.advance(state,f.input(at,price),protocol,runtime);Pair.persist(dir,r,protocol,owner);state=r.state;if(price===1.2)peak=state.riskPeaks.candidate;}const recovered=Pair.recover(dir,protocol,runtime);assert.deepEqual(recovered,state);assert.equal(recovered.riskPeaks.candidate,peak);assert.ok(peak>recovered.legs.candidate.session.account.equity);}finally{owner.release();}
+});
