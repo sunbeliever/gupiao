@@ -1,0 +1,322 @@
+{
+  "generatedAt": "2026-10-22T08:37:05.568Z",
+  "date": "2026-10-22",
+  "kind": "independent_raw_daily_close_reference_not_execution",
+  "accepted": true,
+  "adjustment": "none_raw",
+  "accountWrites": false,
+  "profitProbability": null,
+  "investmentReady": false,
+  "sourceProof": "native-raw-close/raw-close-history-proof.json",
+  "legs": {
+    "capital50k": {
+      "candidate": {
+        "budget": 50000,
+        "equity": 49484.5324,
+        "netPnl": -515.4676000000036,
+        "cash": 37287.0324,
+        "marketValue": 12197.5,
+        "feesPaid": 25,
+        "realizedPnl": -179.7618999999995,
+        "unrealizedPnl": -335.7057000000041,
+        "terminalRecordedEquity": 49484.5324,
+        "referenceDifference": 0,
+        "holdings": [
+          {
+            "symbol": "sh588000",
+            "name": "科创50ETF",
+            "shares": 2900,
+            "dailyClose": 1.377
+          },
+          {
+            "symbol": "sh512760",
+            "name": "芯片ETF",
+            "shares": 4600,
+            "dailyClose": 0.865
+          },
+          {
+            "symbol": "sh515880",
+            "name": "通信ETF",
+            "shares": 8400,
+            "dailyClose": 0.503
+          }
+        ],
+        "orders": [
+          {
+            "symbol": "sh588000",
+            "side": "buy",
+            "shares": 2900,
+            "price": 1.422421,
+            "reason": "frozen_software_selection"
+          },
+          {
+            "symbol": "sh512760",
+            "side": "buy",
+            "shares": 4600,
+            "price": 0.886886,
+            "reason": "frozen_software_selection"
+          },
+          {
+            "symbol": "sh515880",
+            "side": "buy",
+            "shares": 7700,
+            "price": 0.534534,
+            "reason": "frozen_software_selection"
+          },
+          {
+            "symbol": "sh515880",
+            "side": "sell",
+            "shares": 7700,
+            "price": 0.512487,
+            "reason": "risk_stop",
+            "realizedPnl": -179.7618999999995
+          },
+          {
+            "symbol": "sh515880",
+            "side": "buy",
+            "shares": 8400,
+            "price": 0.513513,
+            "reason": "frozen_software_selection"
+          }
+        ]
+      },
+      "control": {
+        "budget": 50000,
+        "equity": 49594.4543,
+        "netPnl": -405.5457000000024,
+        "cash": 37626.9543,
+        "marketValue": 11967.5,
+        "feesPaid": 15,
+        "realizedPnl": 0,
+        "unrealizedPnl": -405.5457000000024,
+        "terminalRecordedEquity": 49594.4543,
+        "referenceDifference": 0,
+        "holdings": [
+          {
+            "symbol": "sh512760",
+            "name": "芯片ETF",
+            "shares": 4600,
+            "dailyClose": 0.865
+          },
+          {
+            "symbol": "sh588000",
+            "name": "科创50ETF",
+            "shares": 2900,
+            "dailyClose": 1.377
+          },
+          {
+            "symbol": "sh515070",
+            "name": "人工智能ETF",
+            "shares": 4400,
+            "dailyClose": 0.908
+          }
+        ],
+        "orders": [
+          {
+            "symbol": "sh512760",
+            "side": "buy",
+            "shares": 4600,
+            "price": 0.886886,
+            "reason": "frozen_software_selection"
+          },
+          {
+            "symbol": "sh588000",
+            "side": "buy",
+            "shares": 2900,
+            "price": 1.422421,
+            "reason": "frozen_software_selection"
+          },
+          {
+            "symbol": "sh515070",
+            "side": "buy",
+            "shares": 4400,
+            "price": 0.9439429999999999,
+            "reason": "frozen_software_selection"
+          }
+        ]
+      }
+    },
+    "lowcap": {
+      "candidate": {
+        "budget": 10000,
+        "equity": 9943.448,
+        "netPnl": -56.55199999999968,
+        "cash": 8841.848,
+        "marketValue": 1101.6,
+        "feesPaid": 5,
+        "realizedPnl": 0,
+        "unrealizedPnl": -56.55199999999968,
+        "terminalRecordedEquity": 9943.448,
+        "referenceDifference": 0,
+        "holdings": [
+          {
+            "symbol": "sh588000",
+            "name": "科创50ETF",
+            "shares": 800,
+            "dailyClose": 1.377
+          }
+        ],
+        "orders": [
+          {
+            "symbol": "sh588000",
+            "side": "buy",
+            "shares": 800,
+            "price": 1.4414399999999998,
+            "reason": "frozen_software_selection"
+          }
+        ]
+      },
+      "control": {
+        "budget": 10000,
+        "equity": 9940.171600000001,
+        "netPnl": -59.82839999999851,
+        "cash": 8955.571600000001,
+        "marketValue": 984.5999999999999,
+        "feesPaid": 15,
+        "realizedPnl": 0,
+        "unrealizedPnl": -59.82839999999851,
+        "terminalRecordedEquity": 9940.171600000001,
+        "referenceDifference": 0,
+        "holdings": [
+          {
+            "symbol": "sh512760",
+            "name": "芯片ETF",
+            "shares": 400,
+            "dailyClose": 0.865
+          },
+          {
+            "symbol": "sh588000",
+            "name": "科创50ETF",
+            "shares": 200,
+            "dailyClose": 1.377
+          },
+          {
+            "symbol": "sh515070",
+            "name": "人工智能ETF",
+            "shares": 400,
+            "dailyClose": 0.908
+          }
+        ],
+        "orders": [
+          {
+            "symbol": "sh512760",
+            "side": "buy",
+            "shares": 400,
+            "price": 0.901901,
+            "reason": "frozen_software_selection"
+          },
+          {
+            "symbol": "sh588000",
+            "side": "buy",
+            "shares": 200,
+            "price": 1.4414399999999998,
+            "reason": "frozen_software_selection"
+          },
+          {
+            "symbol": "sh515070",
+            "side": "buy",
+            "shares": 400,
+            "price": 0.9509499999999999,
+            "reason": "frozen_software_selection"
+          }
+        ]
+      }
+    }
+  },
+  "stats": {
+    "capital50k": {
+      "candidate": {
+        "observations": 1154,
+        "healthy": 674,
+        "stale": 440,
+        "peak": 50079.89169999999,
+        "minimumEquity": 49475.4324,
+        "maxDrawdown": 604.459299999995,
+        "maxDrawdownRate": 0.012069900302919287,
+        "maxLossFromInitial": 524.5676000000021,
+        "maxExposure": 0.25098063056516573,
+        "warningSnapshots": 284,
+        "firstWarning": "2026-10-22T02:50:13.787Z",
+        "lastWarning": "2026-10-22T08:09:57.102Z",
+        "dailyStartEquity": 49983.99169999999,
+        "dailyLastEquity": 49484.5324,
+        "maxDrawdownAt": "2026-10-22T05:48:33.705Z"
+      },
+      "control": {
+        "observations": 1154,
+        "healthy": 674,
+        "stale": 440,
+        "peak": 50058.9543,
+        "minimumEquity": 49572.9543,
+        "maxDrawdown": 486,
+        "maxDrawdownRate": 0.009708552781335268,
+        "maxLossFromInitial": 427.0457000000024,
+        "maxExposure": 0.24834717732008238,
+        "warningSnapshots": 0,
+        "firstWarning": null,
+        "lastWarning": null,
+        "dailyStartEquity": 49950.9543,
+        "dailyLastEquity": 49594.4543,
+        "maxDrawdownAt": "2026-10-22T05:48:33.705Z"
+      },
+      "verifiedSequence": 1164,
+      "stateHash": "d5221b7fd166e359676f1b9f2a210c8618c66c11ce8a33b3b0845725c2507d59",
+      "lastTickHash": "8c6a0cb218ed0391879c20f3fb97bc1857c64baacd2afbcb8a826a2f731d425d",
+      "latestHealth": {
+        "ok": false,
+        "reason": "quote_collection_incomplete",
+        "historyOk": true
+      }
+    },
+    "lowcap": {
+      "candidate": {
+        "observations": 1504,
+        "healthy": 858,
+        "stale": 607,
+        "peak": 10000,
+        "minimumEquity": 9943.448,
+        "maxDrawdown": 56.55199999999968,
+        "maxDrawdownRate": 0.005655199999999968,
+        "maxLossFromInitial": 56.55199999999968,
+        "maxExposure": 0.11534173089437467,
+        "warningSnapshots": 0,
+        "firstWarning": null,
+        "lastWarning": null,
+        "dailyStartEquity": 9976.248,
+        "dailyLastEquity": 9943.448,
+        "maxDrawdownAt": "2026-10-22T05:48:35.500Z"
+      },
+      "control": {
+        "observations": 1504,
+        "healthy": 858,
+        "stale": 608,
+        "peak": 10000,
+        "minimumEquity": 9938.3716,
+        "maxDrawdown": 61.6283999999996,
+        "maxDrawdownRate": 0.00616283999999996,
+        "maxLossFromInitial": 61.6283999999996,
+        "maxExposure": 0.10300510069559894,
+        "warningSnapshots": 0,
+        "firstWarning": null,
+        "lastWarning": null,
+        "dailyStartEquity": 9969.571600000001,
+        "dailyLastEquity": 9940.171600000001,
+        "maxDrawdownAt": "2026-10-22T05:47:33.314Z"
+      },
+      "verifiedSequence": 1551,
+      "stateHash": "4ef3049bf094caaaef7886c8aa7513cddc1ab8056ecff52e6866d85d90c7afb0",
+      "lastTickHash": "68fae81c488b938a6f85f1c34ff85d1e08a08a6b0af497ab893bb9aaffa3562a",
+      "latestHealth": {
+        "ok": false,
+        "reason": "quote_collection_incomplete",
+        "historyOk": true
+      }
+    }
+  },
+  "auditBindingPending": true,
+  "limitations": [
+    "Public raw daily close is a reference, not exchange-certified execution.",
+    "Only observed samples are included. Stale valuations are retained and counted.",
+    "Future sell fees are not yet incurred. No probability or loss guarantee."
+  ]
+}

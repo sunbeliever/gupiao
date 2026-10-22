@@ -1,0 +1,241 @@
+{
+  "at": "2026-10-22T08:39:30.487Z",
+  "status": 200,
+  "headers": {
+    "cacheControl": "no-store"
+  },
+  "view": {
+    "strategy": {
+      "maximumNewInvestment": 12500,
+      "maximumExposure": 0.25,
+      "stopLossRate": 0.04,
+      "minEstimatedNetReturn": 0.01,
+      "targetExitEnabled": false,
+      "horizon": 20,
+      "profile": "capital50k-risk500-v1"
+    },
+    "activity": {
+      "available": true,
+      "updatedAt": "2026-10-22T08:38:40.899Z",
+      "entries": [
+        {
+          "at": "2026-10-22T08:38:40.899Z",
+          "kind": "maintenance",
+          "status": "completed",
+          "title": "10月22日收盘：主模拟累计亏515.47元",
+          "detail": "独立联网核验6只ETF当日不复权收盘价，与原账户终端估值一致。主账户权益49484.53元，累计净亏515.47元，较昨日收盘减少491.76元，已发生费用25元；独立对照累计亏405.55元，两者不相加。完整交易重放仍在核验。"
+        },
+        {
+          "at": "2026-10-22T08:38:40.899Z",
+          "kind": "research",
+          "status": "blocked",
+          "title": "风险要求未通过：最高观测峰谷604.46元",
+          "detail": "原记录观测最低权益49475.43元，相对本金最多亏524.57元，最高峰谷604.46元（约1.207%），均超过500元监测警戒。收盘仍持3只ETF；通信ETF止损后同刻重买的新仓最早10/23可卖。冷静期研究仍未部署，无70%盈利或保本证明。"
+        },
+        {
+          "at": "2026-10-22T05:36:05.318Z",
+          "kind": "maintenance",
+          "status": "completed",
+          "title": "午后文案修复与风险证据已推送Git",
+          "detail": "提交38d0f4d已推送研究分支并核对远端一致，工作区干净。保留原超限、止损同刻重买及恢复记录；实时交易账本未上传。"
+        },
+        {
+          "at": "2026-10-22T05:26:11.099Z",
+          "kind": "program",
+          "status": "completed",
+          "title": "警戒文案已区分当前快照与历史超限",
+          "detail": "风险栏现明确标注当前快照，并提示当前未达到不等于历史从未超限。仅纠正文案，不改变警戒计算、交易规则、账本或模型。12项目标及独立复审通过。"
+        },
+        {
+          "at": "2026-10-22T05:26:11.099Z",
+          "kind": "maintenance",
+          "status": "blocked",
+          "title": "午后核验：最高观测峰谷回撤559.86元",
+          "detail": "核对原主账户至13:22:41共841条已提交记录，哈希、输入及检查点一致；最差净亏479.97元，最高峰谷559.86元，已有60个快照达到警戒。仍未满足500元风险要求；未声称完成新一轮交易引擎全量重放。"
+        },
+        {
+          "at": "2026-10-22T05:26:11.099Z",
+          "kind": "maintenance",
+          "status": "completed",
+          "title": "旧1万元采集已恢复，上午缺口未回填",
+          "detail": "主机内存恢复后，原冻结驱动完整核验旧1468条记录并于13:20开始继续采集。原19池日线不完整时仍拒绝新单，保持原空仓和累计18.51元结果；它与5万元账户独立。"
+        },
+        {
+          "at": "2026-10-22T03:13:07.245Z",
+          "kind": "maintenance",
+          "status": "blocked",
+          "title": "历史500元警戒已触发，风险标准尚未达到",
+          "detail": "已核对至11:08：主账户最差净亏431.17元，最高观测峰谷回撤511.06元；10:50至10:58共有9个快照达到警戒。风险栏按当前快照计算，回落后显示未触发不代表历史未曾超限。10:53候选亏427.37元、独立对照亏350.25元，合计777.61元不能当作主账户亏损。"
+        },
+        {
+          "at": "2026-10-22T03:13:07.245Z",
+          "kind": "research",
+          "status": "pending",
+          "title": "通信ETF止损后同刻重买：需要独立验证退出后限制",
+          "detail": "10:07模拟止损卖出7700份，已实现亏179.76元；同一时刻又买入8400份，新增持仓最早10月23日可卖。当前规则存在明显风险薄弱点；冷静期或禁止当日重买仍待隔离验证，未擅改冻结账户、重置亏损或承诺保本。"
+        },
+        {
+          "at": "2026-10-22T01:45:38.470Z",
+          "kind": "maintenance",
+          "status": "completed",
+          "title": "代码与静态验证证据已推送Git",
+          "detail": "研究分支codex/entry-exit-research，提交8f0c354；远端指纹核对一致，工作区干净。真实运行账本未上传。"
+        },
+        {
+          "at": "2026-10-22T01:38:11.933Z",
+          "kind": "program",
+          "status": "completed",
+          "title": "策略与逐只持仓指示页面已发布",
+          "detail": "只读页面已更新，逐只显示观察、等待行情或退出条件；通过280项回归和独立复审。当前账户交易规则及运行模型保持冻结。"
+        },
+        {
+          "at": "2026-10-22T01:35:36.296Z",
+          "kind": "research",
+          "status": "pending",
+          "title": "8903个成熟样本的新训练候选",
+          "detail": "候选仍待独立前瞻验证，未替换当前运行模型，不能把训练误差当作赚钱概率。"
+        },
+        {
+          "at": "2026-10-22T01:35:36.296Z",
+          "kind": "maintenance",
+          "status": "completed",
+          "title": "5万元与小仓位实验已跨日恢复",
+          "detail": "沿用原本金、持仓和冻结规则，完整核验历史记录后采集今天输入；没有重开户或补造离线成交。"
+        },
+        {
+          "at": "2026-10-22T01:35:36.296Z",
+          "kind": "maintenance",
+          "status": "blocked",
+          "title": "旧1万元实验暂缓启动",
+          "detail": "主机可用内存不足。5万元与小仓位实验继续运行，旧实验的原始资料保留。"
+        },
+        {
+          "at": "2026-10-22T01:30:02.0107645Z",
+          "kind": "maintenance",
+          "status": "completed",
+          "title": "过期测试临时目录已清理",
+          "detail": "移除15个超过12小时的空测试目录，释放文件空间0字节；行情、模拟账本、原始响应和证据均保留。"
+        }
+      ]
+    },
+    "id": "paired-capital50k-20261021-pm-a",
+    "budget": 50000,
+    "at": "2026-10-22T08:09:57.102Z",
+    "sequence": 1164,
+    "startedAt": "2026-10-21T05:05:16.530Z",
+    "fresh": false,
+    "ageMs": 1773326,
+    "legs": {
+      "candidate": {
+        "cash": 37287.0324,
+        "equity": 49484.5324,
+        "netPnl": -515.4676000000036,
+        "fees": 25,
+        "marketValue": 12197.5,
+        "invested": 12533.205699999999,
+        "initialCapitalLoss": 515.4676000000036,
+        "drawdown": 595.3592999999964,
+        "warning": true,
+        "holdings": [
+          {
+            "directive": "paused",
+            "symbol": "sh588000",
+            "name": "科创50ETF",
+            "shares": 2900,
+            "entryPrice": 1.422421,
+            "lastPrice": 1.377,
+            "sourceTime": "2026-10-22 16:09:38",
+            "sellableDate": "2026-10-22",
+            "maturityDate": "2026-11-18",
+            "stopPrice": 1.3655241599999999,
+            "action": "报价过期或不完整，暂停买卖提示"
+          },
+          {
+            "directive": "paused",
+            "symbol": "sh512760",
+            "name": "芯片ETF",
+            "shares": 4600,
+            "entryPrice": 0.886886,
+            "lastPrice": 0.865,
+            "sourceTime": "2026-10-22 16:09:51",
+            "sellableDate": "2026-10-22",
+            "maturityDate": "2026-11-18",
+            "stopPrice": 0.8514105599999999,
+            "action": "报价过期或不完整，暂停买卖提示"
+          },
+          {
+            "directive": "paused",
+            "symbol": "sh515880",
+            "name": "通信ETF",
+            "shares": 8400,
+            "entryPrice": 0.513513,
+            "lastPrice": 0.503,
+            "sourceTime": "2026-10-22 16:09:47",
+            "sellableDate": "2026-10-23",
+            "maturityDate": "2026-11-19",
+            "stopPrice": 0.49297248,
+            "action": "报价过期或不完整，暂停买卖提示"
+          }
+        ]
+      },
+      "control": {
+        "cash": 37626.9543,
+        "equity": 49594.4543,
+        "netPnl": -405.5457000000024,
+        "fees": 15,
+        "marketValue": 11967.5,
+        "invested": 12373.045699999999,
+        "initialCapitalLoss": 405.5457000000024,
+        "drawdown": 464.5,
+        "warning": false,
+        "holdings": [
+          {
+            "directive": "paused",
+            "symbol": "sh512760",
+            "name": "芯片ETF",
+            "shares": 4600,
+            "entryPrice": 0.886886,
+            "lastPrice": 0.865,
+            "sourceTime": "2026-10-22 16:09:51",
+            "sellableDate": "2026-10-22",
+            "maturityDate": "2026-11-18",
+            "stopPrice": 0.8514105599999999,
+            "action": "报价过期或不完整，暂停买卖提示"
+          },
+          {
+            "directive": "paused",
+            "symbol": "sh588000",
+            "name": "科创50ETF",
+            "shares": 2900,
+            "entryPrice": 1.422421,
+            "lastPrice": 1.377,
+            "sourceTime": "2026-10-22 16:09:38",
+            "sellableDate": "2026-10-22",
+            "maturityDate": "2026-11-18",
+            "stopPrice": 1.3655241599999999,
+            "action": "报价过期或不完整，暂停买卖提示"
+          },
+          {
+            "directive": "paused",
+            "symbol": "sh515070",
+            "name": "人工智能ETF",
+            "shares": 4400,
+            "entryPrice": 0.9439429999999999,
+            "lastPrice": 0.908,
+            "sourceTime": "2026-10-22 16:09:49",
+            "sellableDate": "2026-10-22",
+            "maturityDate": "2026-11-18",
+            "stopPrice": 0.9061852799999999,
+            "action": "报价过期或不完整，暂停买卖提示"
+          }
+        ]
+      }
+    },
+    "warningAmount": 500,
+    "modelCutoff": "2024-12-31",
+    "modelHash": "f0b16e0c0922e3ae051015c3f73a66135c2a0b4ed478b5c0a3bfe6471ad0b0dd",
+    "investmentReady": false,
+    "verifiedProfitProbability": null,
+    "realOrdersAllowed": false
+  }
+}

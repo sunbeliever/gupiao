@@ -1,0 +1,127 @@
+{
+  "at": "2026-10-22T08:46:21.237Z",
+  "sensitivePatternScanPassed": true,
+  "scope": "Explicit static closing files only. No live ticks/state/cache/credentials copied.",
+  "files": [
+    {
+      "file": "activity-at-close.json",
+      "sha256": "6889203ed077a7451093715e003b807c18659ebe59c680221b7d8f3347e4ecc2"
+    },
+    {
+      "file": "activity-before-close.json",
+      "sha256": "238ca4c3e7c55a0a88638d6f0eed5a4480cb481e2a9e15e21bd554304f4f7203"
+    },
+    {
+      "file": "audit-paired-once.cjs",
+      "sha256": "5609b2ff3da9f9387dec0605fbbd87edd38d75eb2cb8bc56b163278bd7701fa4"
+    },
+    {
+      "file": "bounded-stops.json",
+      "sha256": "5c0d7e7c30c709cb3053910aa8494386f23019d988c8a5aa63f5d66679a36d64"
+    },
+    {
+      "file": "cache-cleanup.json",
+      "sha256": "7abce9a6542942193288bc2bf79c718fc7b94bb665e32329256ca747916aa42a"
+    },
+    {
+      "file": "capital50k-audit.log",
+      "sha256": "d952d33c17f2a0f2c5d5c62cd6e89232b09b41f760b2e0388dee027d056db0e7"
+    },
+    {
+      "file": "capital50k-full-audit.json",
+      "sha256": "c2e30910e502fe828921ade1e95fa8ac2d4962195de279f688299c207c71a5d5"
+    },
+    {
+      "file": "closing-risk-page.jpg",
+      "sha256": "0390126ce33730a6c2bf5a39bae3c763412c8d40f0b315470b7de24406465091"
+    },
+    {
+      "file": "daily-close-reference-raw-REJECTED-warning-count.json",
+      "sha256": "970dcb921fafe29d0ee56a7b0574f62d570372f4d8afc9985b08e3809cd9ad8e"
+    },
+    {
+      "file": "daily-close-reference-raw.json",
+      "sha256": "4903c9d715fc51b54ec520ea2da103833b53ffb77ab6e8b34b877750dd1dc8a9"
+    },
+    {
+      "file": "derive-raw-close-once-v2.cjs",
+      "sha256": "932417d75b0bab77d07dbdbcbb15e6da7c7c428a8a060cd7d4d361dd795f5314"
+    },
+    {
+      "file": "derive-raw-close-once.cjs",
+      "sha256": "07add93647d01239a918acbbbd53b6272ccaf00b3a15ded198a3ffe26dccc31d"
+    },
+    {
+      "file": "derive-raw-close.log",
+      "sha256": "d45a3e78c828556c6d178d0b2eff2e51055779e5d9d9724d1874df17c25870ab"
+    },
+    {
+      "file": "derive-warning-count-rejection.json",
+      "sha256": "44234d213e6be59aadce6d9044afe7a34082f3dbe17c1f48174de2229f47a84d"
+    },
+    {
+      "file": "fetch-raw-close-once.cjs",
+      "sha256": "68d6fae17e7fc58a5595f450e3c5322f56c58b511aabafe860ba0ac28f20af5d"
+    },
+    {
+      "file": "final-verification.json",
+      "sha256": "7bccce7d06b3cecf0998f980991339170df5a248b84ea8b97c4e80e4e199bea7"
+    },
+    {
+      "file": "live-view-closing-verification.json",
+      "sha256": "c569091660302db67ed7ed669ba645c5c13325bc4ddaec7e974374d9eb84c0a3"
+    },
+    {
+      "file": "lowcap-audit.log",
+      "sha256": "0001b47b2f75f1b1a05ecd54eddc76428bc3c6c00e66d9599b06ee8d3119f416"
+    },
+    {
+      "file": "lowcap-full-audit.json",
+      "sha256": "5663f81a1f6aa3bad6f8ad49621fe900bc1cf771edd74510aa5beeeb4af985e7"
+    },
+    {
+      "file": "native-raw-close/raw-close-history-proof.json",
+      "sha256": "448d3d8e454d348896aa61c27ff083634ed3881e6ca8ca4d2a54b2340189095c"
+    },
+    {
+      "file": "native-raw-close/response-0.json",
+      "sha256": "e25e1dcf7782e20fc6ddbda3eeaa78c38f9618a1f6d4d6bebe0196a399e578cb"
+    },
+    {
+      "file": "native-raw-close/response-1.json",
+      "sha256": "89bb7a265e4cfe95d67957bb7b77692c671564415c5f42d79e2345f7d2ff699f"
+    },
+    {
+      "file": "native-raw-close/response-2.json",
+      "sha256": "c118bde212e94d5280d4196a3260b4eeed8430b8a4c5ca987b7e8d621ae2c151"
+    },
+    {
+      "file": "native-raw-close/response-3.json",
+      "sha256": "004342a87ad32739698b2cabcbb5a02525ea485cae1b01ea20a26521b7d923fb"
+    },
+    {
+      "file": "native-raw-close/response-4.json",
+      "sha256": "b0f0136c196f9ee381411676aba2c2087b92651f9a7e53a68decf88b1e4ebecf"
+    },
+    {
+      "file": "native-raw-close/response-5.json",
+      "sha256": "0dc2ec8a939c29677ae054e62a057262f807fee81079cb679f74d25c3caa5fba"
+    },
+    {
+      "file": "original-final-report.html",
+      "sha256": "7005161c4a54d481ce544adcb8ece9bb28a817036966fe3de9b45c3e42c67b85"
+    },
+    {
+      "file": "original-final-report.json",
+      "sha256": "fdb482ebc6f60df53d181a493f62fdf1bdaa1def6b1e4184b4be5d435d92ef18"
+    },
+    {
+      "file": "original-stream-report.log",
+      "sha256": "90ea900c78e18c9a9e7a81b21591eb7e94488120c646baf51e5e6b23558cb25e"
+    },
+    {
+      "file": "process-verification.json",
+      "sha256": "12bf365c76c618d2650e49af10f14b5a21c57ed1fa6fcffcbce425f85ba31eeb"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "at": "2026-10-22T08:45:25.856Z",
+  "checks": [
+    {
+      "label": "capital50k",
+      "ticks": 1164,
+      "stateHash": "d5221b7fd166e359676f1b9f2a210c8618c66c11ce8a33b3b0845725c2507d59",
+      "manifestHash": "29935f3137b05610a10e6d00337329fe0434f19203ae6f7fbd0b1704f7246f8e",
+      "completeIndependentStepReplay": true,
+      "rawResponsesVerified": true
+    },
+    {
+      "label": "lowcap",
+      "ticks": 1551,
+      "stateHash": "4ef3049bf094caaaef7886c8aa7513cddc1ab8056ecff52e6866d85d90c7afb0",
+      "manifestHash": "001893648e6b73b370ff88e094a253c58f11652d163e671ceb6fa5cb8c48067a",
+      "completeIndependentStepReplay": true,
+      "rawResponsesVerified": true
+    }
+  ],
+  "original": {
+    "ticks": 1786,
+    "hashChainVerified": true,
+    "accountingVerified": true,
+    "independentStepReplay": false
+  },
+  "rawCloseReferenceHash": "4903c9d715fc51b54ec520ea2da103833b53ffb77ab6e8b34b877750dd1dc8a9",
+  "referenceAuditBindingCompleted": true,
+  "productionCodeChanges": false,
+  "modelChanged": false,
+  "rulesChanged": false,
+  "ledgerWrites": false
+}

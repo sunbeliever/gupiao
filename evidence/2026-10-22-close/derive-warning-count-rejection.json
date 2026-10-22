@@ -1,0 +1,5 @@
+{
+  "at": "2026-10-22T08:37:05.518Z",
+  "reason": "Derived warning count read non-existing warning field and reported zero; monetary drawdown calculations unaffected. Recalculate threshold explicitly; preserve rejected derivation.",
+  "ledgerWrites": false
+}

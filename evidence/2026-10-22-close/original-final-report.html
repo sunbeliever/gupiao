@@ -1,0 +1,850 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>持续模拟账户核对</title><style>body{font:15px/1.7 "Microsoft YaHei",sans-serif;background:#f3f5f7;color:#152331;margin:0;padding:28px}main{max-width:1440px;margin:auto}h1{margin:0}h2{font-size:19px}p{margin:8px 0}.note{background:#fff1d4;padding:16px;border-left:4px solid #b17606}article,.box{background:white;padding:18px;margin:18px 0;border:1px solid #dde4e8;border-radius:8px}.table{overflow-x:auto}table{width:100%;border-collapse:collapse;white-space:nowrap}th,td{padding:10px;border-bottom:1px solid #e1e7eb;text-align:right}th:first-child,td:first-child{text-align:left}thead{background:#eaf0f4}pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:12px}.muted{color:#526274}summary{cursor:pointer}</style><main><h1>独立模拟账户 · 只读核对报告</h1><p>实验 continuous-etf-audit-20261020-1100 · 截至 2026-10-22T08:09:58.338Z · 前瞻模拟记录，成交未获真实盘口验证</p><div class="note">所有交易均为虚拟模拟。20日准确率仍未评分，不以半小时浮盈或空仓证明赚钱能力。已知历史研究不属于新的盲测。不同账户独立核算，不能将其收益合并。</div><p class="muted">本报告只读完整追加记录中的末个快照，不读取另一个可能正在更新的 state.json。完整记录 1786 条；忽略末尾未完成内容 0 字节。哈希链核对：通过。</p><section class="box"><h2>同本金、同费率版本的独立对照</h2><div class="table"><table><thead><tr><th>账户</th><th>初始本金</th><th>实际 / 上限只数</th><th>总权益</th><th>扣费净盈亏 / 收益</th><th>已实现</th><th>未实现</th><th>已付费用</th><th>观测回撤</th><th>双边总换手</th><th>当前 / 样本均值暴露</th></tr></thead><tbody><tr><th>当前模型</th><td>10000.00</td><td>0 / 3</td><td>10018.51</td><td>18.51 / 0.19%</td><td>18.51</td><td>0.00</td><td>10.00</td><td>1.55%</td><td>199.92%</td><td>0.00% / 38.60%</td></tr><tr><th>现金对照</th><td>10000.00</td><td>0 / —</td><td>10000.00</td><td>0.00 / 0.00%</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00%</td><td>0.00%</td><td>0.00% / 0.00%</td></tr><tr><th>指定科技ETF持有20日</th><td>10000.00</td><td>1 / 1</td><td>9663.04</td><td>-336.96 / -3.37%</td><td>0.00</td><td>-336.96</td><td>5.00</td><td>4.76%</td><td>99.71%</td><td>99.75% / 99.76%</td></tr><tr><th>科技ETF等权持有20日</th><td>10000.00</td><td>6 / 6</td><td>9672.50</td><td>-327.50 / -3.28%</td><td>0.00</td><td>-327.50</td><td>30.00</td><td>4.37%</td><td>97.11%</td><td>97.32% / 97.38%</td></tr></tbody></table></div><p>各账户的仓位上限、笔数、已付费用和实际风险暴露不同，不能声称风险限制完全相同。双边总换手 = 已模拟成交买入和卖出的金额合计 ÷ 初始本金，拒单、拆分和分红不计。暴露 = 持仓市值 ÷ 权益；均值按采集样本计算，含过期价格并单独标明，不能替代时间加权平均。回撤只覆盖已采集估值。</p></section><article><h2>当前模型</h2><p>现金 10018.51 + 持仓市值 0.00 + 应收分红 0.00 = 权益 10018.51；冻结资金 0.00。账务恒等式：一致。</p><p>佣金 10.00，税费 0.00，过户费 0.00，另计成交价中滑点影响 19.99。1762 个样本，其中 343 个含过期估值；已成交买/卖 1/1 笔。</p><p>拒单：{}；退出阻止：{}。</p><details><summary>过期持仓与冻结指纹</summary><pre>{
+  &quot;stalePositions&quot;: [],
+  &quot;pendingExits&quot;: [],
+  &quot;fingerprint&quot;: {
+    &quot;strategy_id&quot;: &quot;ridge11-tech-etf-continuous-v1&quot;,
+    &quot;model_hash&quot;: &quot;786a236dd6e4207ed2724ef8f91e7d1f131794dcc57817e5d68615b295b79127&quot;,
+    &quot;universe_version&quot;: &quot;sha256:59014dc1bd250b69beefce3306f8f4d1b3f682b94daff9146616371244149d4e&quot;,
+    &quot;rules_hash&quot;: &quot;1df270dd373a2ab8fa811e86e0273a369a30425c7862df1311e6343c4ed161a2&quot;,
+    &quot;data_hash&quot;: &quot;eccd26c9f4373bd3cba2dbb6a119cfd2c1069880a0fcdf04484a65f62e2180c1&quot;,
+    &quot;fee_profile&quot;: {
+      &quot;assumptionLabel&quot;: &quot;最低5元为模拟假设，以合同为准&quot;,
+      &quot;commissionRate&quot;: 0.0003,
+      &quot;minFee&quot;: 5,
+      &quot;slippage&quot;: 0.001,
+      &quot;stockSellStampRate&quot;: 0.0005,
+      &quot;stockTransferRate&quot;: 0.00001,
+      &quot;version&quot;: &quot;cn-paper-fees-v1&quot;
+    },
+    &quot;budget&quot;: 10000,
+    &quot;risk_limits&quot;: {
+      &quot;investableLimit&quot;: 10000,
+      &quot;maxExposure&quot;: 1,
+      &quot;maxPositions&quot;: 3,
+      &quot;maxThemeWeight&quot;: 1
+    },
+    &quot;execution_mode&quot;: &quot;continuous_forward_native_http&quot;
+  }
+}</pre></details></article><article><h2>现金对照</h2><p>现金 10000.00 + 持仓市值 0.00 + 应收分红 0.00 = 权益 10000.00；冻结资金 0.00。账务恒等式：一致。</p><p>佣金 0.00，税费 0.00，过户费 0.00，另计成交价中滑点影响 0.00。1762 个样本，其中 0 个含过期估值；已成交买/卖 0/0 笔。</p><p>拒单：{}；退出阻止：{}。</p><details><summary>过期持仓与冻结指纹</summary><pre>{
+  &quot;stalePositions&quot;: [],
+  &quot;pendingExits&quot;: [],
+  &quot;fingerprint&quot;: {
+    &quot;strategy_id&quot;: &quot;cash-hold-v1&quot;,
+    &quot;model_hash&quot;: &quot;793f5f8573a4dc3b5b48e0b547d8885d5a7b846fdb222b7a605f4626909b662c&quot;,
+    &quot;universe_version&quot;: &quot;sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945&quot;,
+    &quot;rules_hash&quot;: &quot;9b699e026cecf88afc444b7c3302d53729d81c6056d5d50c298147833b19444e&quot;,
+    &quot;data_hash&quot;: &quot;0c371e1f4ec46625ee3d96506d1942bf9c1a243a70b601c2067700987c9943ef&quot;,
+    &quot;fee_profile&quot;: {
+      &quot;assumptionLabel&quot;: &quot;最低5元为模拟假设，以合同为准&quot;,
+      &quot;commissionRate&quot;: 0.0003,
+      &quot;minFee&quot;: 5,
+      &quot;slippage&quot;: 0.001,
+      &quot;stockSellStampRate&quot;: 0.0005,
+      &quot;stockTransferRate&quot;: 0.00001,
+      &quot;version&quot;: &quot;cn-paper-fees-v1&quot;
+    },
+    &quot;budget&quot;: 10000,
+    &quot;risk_limits&quot;: {
+      &quot;investableLimit&quot;: 0,
+      &quot;maxExposure&quot;: 0
+    },
+    &quot;execution_mode&quot;: &quot;continuous_forward_native_http&quot;
+  }
+}</pre></details></article><article><h2>指定科技ETF持有20日</h2><p>现金 24.04 + 持仓市值 9639.00 + 应收分红 0.00 = 权益 9663.04；冻结资金 0.00。账务恒等式：一致。</p><p>佣金 5.00，税费 0.00，过户费 0.00，另计成交价中滑点影响 9.96。1762 个样本，其中 751 个含过期估值；已成交买/卖 1/0 笔。</p><p>拒单：{}；退出阻止：{}。</p><details><summary>过期持仓与冻结指纹</summary><pre>{
+  &quot;stalePositions&quot;: [],
+  &quot;pendingExits&quot;: [],
+  &quot;fingerprint&quot;: {
+    &quot;strategy_id&quot;: &quot;technology-hold_etf-hold20-v1&quot;,
+    &quot;model_hash&quot;: &quot;bff67ea03d52eb354ab0c0e0cfbcc1ba6fb2ce6c9f4ce6c08e6cb98a2055211d&quot;,
+    &quot;universe_version&quot;: &quot;sha256:e08874867a29c2f9acc1446c9800d3c94a14cb043cf9360e2536553c4b08739f&quot;,
+    &quot;rules_hash&quot;: &quot;60492b7e3534f4e4082cf74c9f50ed6f8ec09a591f39292529b737fe1e172b70&quot;,
+    &quot;data_hash&quot;: &quot;3b534203bd17fd35c92507752e175829877116eced20ea2eafa2d02eb0761f19&quot;,
+    &quot;fee_profile&quot;: {
+      &quot;assumptionLabel&quot;: &quot;最低5元为模拟假设，以合同为准&quot;,
+      &quot;commissionRate&quot;: 0.0003,
+      &quot;minFee&quot;: 5,
+      &quot;slippage&quot;: 0.001,
+      &quot;stockSellStampRate&quot;: 0.0005,
+      &quot;stockTransferRate&quot;: 0.00001,
+      &quot;version&quot;: &quot;cn-paper-fees-v1&quot;
+    },
+    &quot;budget&quot;: 10000,
+    &quot;risk_limits&quot;: {
+      &quot;investableLimit&quot;: 10000,
+      &quot;maxExposure&quot;: 1,
+      &quot;maxPositions&quot;: 1,
+      &quot;maxThemeWeight&quot;: 1
+    },
+    &quot;execution_mode&quot;: &quot;continuous_forward_native_http&quot;
+  }
+}</pre></details></article><article><h2>科技ETF等权持有20日</h2><p>现金 259.30 + 持仓市值 9413.20 + 应收分红 0.00 = 权益 9672.50；冻结资金 0.00。账务恒等式：一致。</p><p>佣金 30.00，税费 0.00，过户费 0.00，另计成交价中滑点影响 9.70。1762 个样本，其中 752 个含过期估值；已成交买/卖 6/0 笔。</p><p>拒单：{}；退出阻止：{}。</p><details><summary>过期持仓与冻结指纹</summary><pre>{
+  &quot;stalePositions&quot;: [],
+  &quot;pendingExits&quot;: [],
+  &quot;fingerprint&quot;: {
+    &quot;strategy_id&quot;: &quot;technology-equal_weight-hold20-v1&quot;,
+    &quot;model_hash&quot;: &quot;d99a2047372a90c9632218eeb685bc313efa0db79b58b499b2fac80005462d6e&quot;,
+    &quot;universe_version&quot;: &quot;sha256:a5f1c542f33c4f24cd4ee4ae5468a02fa7c0285c7d7580585775351afe182e8c&quot;,
+    &quot;rules_hash&quot;: &quot;9d56d59c67cfc565e581915b5da7d105ea69a3aa1917ff1a333de887dd24d4a7&quot;,
+    &quot;data_hash&quot;: &quot;3b534203bd17fd35c92507752e175829877116eced20ea2eafa2d02eb0761f19&quot;,
+    &quot;fee_profile&quot;: {
+      &quot;assumptionLabel&quot;: &quot;最低5元为模拟假设，以合同为准&quot;,
+      &quot;commissionRate&quot;: 0.0003,
+      &quot;minFee&quot;: 5,
+      &quot;slippage&quot;: 0.001,
+      &quot;stockSellStampRate&quot;: 0.0005,
+      &quot;stockTransferRate&quot;: 0.00001,
+      &quot;version&quot;: &quot;cn-paper-fees-v1&quot;
+    },
+    &quot;budget&quot;: 10000,
+    &quot;risk_limits&quot;: {
+      &quot;investableLimit&quot;: 10000,
+      &quot;maxExposure&quot;: 1,
+      &quot;maxPositions&quot;: 6,
+      &quot;maxThemeWeight&quot;: 1
+    },
+    &quot;execution_mode&quot;: &quot;continuous_forward_native_http&quot;
+  }
+}</pre></details></article><section class="box"><h2>冻结退出价的扣费情景</h2><p>这些是假设到价且能成交的情景，不是收益保证或盈利概率；跳空、卖不出及未知未来公司行动可能使亏损更大。</p><div class="table"><table><thead><tr><th>代码</th><th>到目标价的净盈亏</th><th>到风险价的净盈亏</th><th>情景盈亏比</th><th>提示</th></tr></thead><tbody></tbody></table></div></section><section class="box"><h2>逐日收盘后 / 盘中快照</h2><div class="table"><table><thead><tr><th>日期</th><th>截止时间</th><th>性质</th><th>日线</th><th>估值输入</th><th>模型权益</th><th>模型净盈亏</th><th>累计观测回撤</th><th>累计双边换手</th></tr></thead><tbody><tr><th>2026-10-20</th><td>2026-10-20T08:09:51.641Z</td><td>收盘后快照</td><td>缺失或过期</td><td>不完整</td><td>9975.33</td><td>-24.67</td><td>1.55%</td><td>99.82%</td></tr><tr><th>2026-10-21</th><td>2026-10-21T08:09:50.306Z</td><td>收盘后快照</td><td>缺失或过期</td><td>不完整</td><td>10018.51</td><td>18.51</td><td>1.55%</td><td>199.92%</td></tr><tr><th>2026-10-22</th><td>2026-10-22T08:09:58.338Z</td><td>收盘后快照</td><td>缺失或过期</td><td>不完整</td><td>10018.51</td><td>18.51</td><td>1.55%</td><td>199.92%</td></tr></tbody></table></div></section><section class="box"><h2>完整模拟订单（含拒单）</h2><div class="table"><table><thead><tr><th>订单ID</th><th>账户</th><th>源时刻</th><th>实际接收</th><th>决策时刻</th><th>代码</th><th>方向</th><th>份额</th><th>模拟成交价</th><th>费用</th><th>状态</th><th>原因</th></tr></thead><tbody><tr><td>continuous-etf-audit-20261020-1100:1</td><td>当前模型</td><td>2026-10-20 11:00:02</td><td>2026-10-20T03:00:06.055Z</td><td>2026-10-20T03:00:06.056Z</td><td>sh512720</td><td>buy</td><td>9700</td><td>1.03</td><td>5.00</td><td>hypothetical_fill</td><td>frozen_software_selection</td></tr><tr><td>continuous-etf-audit-20261020-1100:2</td><td>指定科技ETF持有20日</td><td>2026-10-20 11:00:02</td><td>2026-10-20T03:00:06.055Z</td><td>2026-10-20T03:00:06.056Z</td><td>sh588000</td><td>buy</td><td>7000</td><td>1.42</td><td>5.00</td><td>hypothetical_fill</td><td>frozen_software_selection</td></tr><tr><td>continuous-etf-audit-20261020-1100:3</td><td>科技ETF等权持有20日</td><td>2026-10-20 11:00:02</td><td>2026-10-20T03:00:06.055Z</td><td>2026-10-20T03:00:06.056Z</td><td>sh588000</td><td>buy</td><td>1100</td><td>1.42</td><td>5.00</td><td>hypothetical_fill</td><td>frozen_software_selection</td></tr><tr><td>continuous-etf-audit-20261020-1100:4</td><td>科技ETF等权持有20日</td><td>2026-10-20 11:00:01</td><td>2026-10-20T03:00:06.055Z</td><td>2026-10-20T03:00:06.056Z</td><td>sh512760</td><td>buy</td><td>1800</td><td>0.89</td><td>5.00</td><td>hypothetical_fill</td><td>frozen_software_selection</td></tr><tr><td>continuous-etf-audit-20261020-1100:5</td><td>科技ETF等权持有20日</td><td>2026-10-20 11:00:02</td><td>2026-10-20T03:00:06.055Z</td><td>2026-10-20T03:00:06.056Z</td><td>sh515070</td><td>buy</td><td>1700</td><td>0.94</td><td>5.00</td><td>hypothetical_fill</td><td>frozen_software_selection</td></tr><tr><td>continuous-etf-audit-20261020-1100:6</td><td>科技ETF等权持有20日</td><td>2026-10-20 11:00:02</td><td>2026-10-20T03:00:06.055Z</td><td>2026-10-20T03:00:06.056Z</td><td>sh512720</td><td>buy</td><td>1600</td><td>1.03</td><td>5.00</td><td>hypothetical_fill</td><td>frozen_software_selection</td></tr><tr><td>continuous-etf-audit-20261020-1100:7</td><td>科技ETF等权持有20日</td><td>2026-10-20 11:00:03</td><td>2026-10-20T03:00:06.055Z</td><td>2026-10-20T03:00:06.056Z</td><td>sh515880</td><td>buy</td><td>3100</td><td>0.53</td><td>5.00</td><td>hypothetical_fill</td><td>frozen_software_selection</td></tr><tr><td>continuous-etf-audit-20261020-1100:8</td><td>科技ETF等权持有20日</td><td>2026-10-20 11:00:03</td><td>2026-10-20T03:00:06.055Z</td><td>2026-10-20T03:00:06.056Z</td><td>sz159852</td><td>buy</td><td>2600</td><td>0.63</td><td>5.00</td><td>hypothetical_fill</td><td>frozen_software_selection</td></tr><tr><td>continuous-etf-audit-20261020-1100:9</td><td>当前模型</td><td>2026-10-21 09:30:35</td><td>2026-10-21T01:30:42.518Z</td><td>2026-10-21T01:30:42.519Z</td><td>sh512720</td><td>sell</td><td>9700</td><td>1.03</td><td>5.00</td><td>hypothetical_fill</td><td>frozen_target</td></tr></tbody></table></div></section><section class="box"><h2>账本截止与发布指纹</h2><pre>{
+  &quot;snapshot&quot;: {
+    &quot;sequence&quot;: 1786,
+    &quot;decisionAt&quot;: &quot;2026-10-22T08:09:58.338Z&quot;,
+    &quot;tickHash&quot;: &quot;89d3f73bf75212deabdc63735c926be7fd018d630ae115b3b33e3ac7e6ced7d3&quot;,
+    &quot;checkpointDigest&quot;: &quot;d16200bae9cd724ffc51b933ac736fa40a1df3b74a26aafdde4af5b452e0ba08&quot;,
+    &quot;sessionIntegrityHash&quot;: &quot;945144959d7335ab91856869a82c7a3aadfefbbb52dc4b32caf9fe3d05bf73fc&quot;,
+    &quot;partialTailBytes&quot;: 0,
+    &quot;completePrefixBytes&quot;: 531289527,
+    &quot;cutoff&quot;: &quot;last fully captured newline-terminated tick and its embedded account checkpoint; separate state.json is never used&quot;,
+    &quot;tailIgnored&quot;: false
+  },
+  &quot;fingerprints&quot;: {
+    &quot;manifestHash&quot;: &quot;ca57134dc1ddc15dab9f5112ad8c77ebe1858c972a6043cff3f1d96d73e2c430&quot;,
+    &quot;lastTickHash&quot;: &quot;89d3f73bf75212deabdc63735c926be7fd018d630ae115b3b33e3ac7e6ced7d3&quot;,
+    &quot;sourceHashes&quot;: {
+      &quot;paper-engine.js&quot;: &quot;9d3963e8eeeeb38b6363bbd7680fbb9dcecad142bc36f55963ab9f248464264f&quot;,
+      &quot;paper-account.js&quot;: &quot;0810c7701346a3e9c9bd416707ebe1119ea8bc81984bc389643e8895cd5e7e1e&quot;,
+      &quot;trading-calendar.js&quot;: &quot;0e4e80be62ff1a1ac308445f22f057368bc0fc726d8f8d77472573b1a7b416c2&quot;,
+      &quot;fee-profile.js&quot;: &quot;52de02c0ccd6939e906acd4094c477632f07bf983f6e9f7e64b2fa32ab2d8abf&quot;,
+      &quot;audit-identity.js&quot;: &quot;2e2c5de43e45287e991062dee4476a46f861aa0e058fc4a90770756a80557859&quot;,
+      &quot;corporate-actions.js&quot;: &quot;a9e2d9b53f24d2c3ca45f1afff8a5393694c0ed3745498e639e56c6a308b0f4b&quot;,
+      &quot;corporate-events.js&quot;: &quot;e01116e00bb34620f8fa07446990048c49c08c5f3a0bda202ab5d8b9270f3550&quot;,
+      &quot;analysis.js&quot;: &quot;ecbb66231d2276de365b6e1a3d657e2931ade29049c590ef6e5701a4dc7255cd&quot;,
+      &quot;market.js&quot;: &quot;9a1da1a3114a47f0786270da30db3da5792a43ae3f4ce47342b14d71282ab199&quot;,
+      &quot;news-facts.js&quot;: &quot;3f7d886eeb1a3a2d5a354fd1a40043894d6127d7c25ed975e9fb3d3666154990&quot;,
+      &quot;seed.js&quot;: &quot;56847db2db3968fb391568e6af244595323c0b442c083babae315641fbdb3e84&quot;
+    },
+    &quot;exeSha256&quot;: &quot;05a2ccca7cec4dd99073284e9d903b127e435ca2b443733b77c72b01efb1956c&quot;,
+    &quot;driverHash&quot;: &quot;4dff33b3722884d6829dcb72221df7760a1ba669ae9cb763548c0c24c2cc644e&quot;,
+    &quot;strategy&quot;: {
+      &quot;strategy_id&quot;: &quot;ridge11-tech-etf-continuous-v1&quot;,
+      &quot;model_hash&quot;: &quot;786a236dd6e4207ed2724ef8f91e7d1f131794dcc57817e5d68615b295b79127&quot;,
+      &quot;universe_version&quot;: &quot;sha256:59014dc1bd250b69beefce3306f8f4d1b3f682b94daff9146616371244149d4e&quot;,
+      &quot;rules_hash&quot;: &quot;1df270dd373a2ab8fa811e86e0273a369a30425c7862df1311e6343c4ed161a2&quot;,
+      &quot;data_hash&quot;: &quot;eccd26c9f4373bd3cba2dbb6a119cfd2c1069880a0fcdf04484a65f62e2180c1&quot;,
+      &quot;fee_profile&quot;: {
+        &quot;assumptionLabel&quot;: &quot;最低5元为模拟假设，以合同为准&quot;,
+        &quot;commissionRate&quot;: 0.0003,
+        &quot;minFee&quot;: 5,
+        &quot;slippage&quot;: 0.001,
+        &quot;stockSellStampRate&quot;: 0.0005,
+        &quot;stockTransferRate&quot;: 0.00001,
+        &quot;version&quot;: &quot;cn-paper-fees-v1&quot;
+      },
+      &quot;budget&quot;: 10000,
+      &quot;risk_limits&quot;: {
+        &quot;investableLimit&quot;: 10000,
+        &quot;maxExposure&quot;: 1,
+        &quot;maxPositions&quot;: 3,
+        &quot;maxThemeWeight&quot;: 1
+      },
+      &quot;execution_mode&quot;: &quot;continuous_forward_native_http&quot;
+    },
+    &quot;comparisons&quot;: {
+      &quot;cash&quot;: {
+        &quot;strategy_id&quot;: &quot;cash-hold-v1&quot;,
+        &quot;model_hash&quot;: &quot;793f5f8573a4dc3b5b48e0b547d8885d5a7b846fdb222b7a605f4626909b662c&quot;,
+        &quot;universe_version&quot;: &quot;sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945&quot;,
+        &quot;rules_hash&quot;: &quot;9b699e026cecf88afc444b7c3302d53729d81c6056d5d50c298147833b19444e&quot;,
+        &quot;data_hash&quot;: &quot;0c371e1f4ec46625ee3d96506d1942bf9c1a243a70b601c2067700987c9943ef&quot;,
+        &quot;fee_profile&quot;: {
+          &quot;assumptionLabel&quot;: &quot;最低5元为模拟假设，以合同为准&quot;,
+          &quot;commissionRate&quot;: 0.0003,
+          &quot;minFee&quot;: 5,
+          &quot;slippage&quot;: 0.001,
+          &quot;stockSellStampRate&quot;: 0.0005,
+          &quot;stockTransferRate&quot;: 0.00001,
+          &quot;version&quot;: &quot;cn-paper-fees-v1&quot;
+        },
+        &quot;budget&quot;: 10000,
+        &quot;risk_limits&quot;: {
+          &quot;investableLimit&quot;: 0,
+          &quot;maxExposure&quot;: 0
+        },
+        &quot;execution_mode&quot;: &quot;continuous_forward_native_http&quot;
+      },
+      &quot;hold_etf&quot;: {
+        &quot;strategy_id&quot;: &quot;technology-hold_etf-hold20-v1&quot;,
+        &quot;model_hash&quot;: &quot;bff67ea03d52eb354ab0c0e0cfbcc1ba6fb2ce6c9f4ce6c08e6cb98a2055211d&quot;,
+        &quot;universe_version&quot;: &quot;sha256:e08874867a29c2f9acc1446c9800d3c94a14cb043cf9360e2536553c4b08739f&quot;,
+        &quot;rules_hash&quot;: &quot;60492b7e3534f4e4082cf74c9f50ed6f8ec09a591f39292529b737fe1e172b70&quot;,
+        &quot;data_hash&quot;: &quot;3b534203bd17fd35c92507752e175829877116eced20ea2eafa2d02eb0761f19&quot;,
+        &quot;fee_profile&quot;: {
+          &quot;assumptionLabel&quot;: &quot;最低5元为模拟假设，以合同为准&quot;,
+          &quot;commissionRate&quot;: 0.0003,
+          &quot;minFee&quot;: 5,
+          &quot;slippage&quot;: 0.001,
+          &quot;stockSellStampRate&quot;: 0.0005,
+          &quot;stockTransferRate&quot;: 0.00001,
+          &quot;version&quot;: &quot;cn-paper-fees-v1&quot;
+        },
+        &quot;budget&quot;: 10000,
+        &quot;risk_limits&quot;: {
+          &quot;investableLimit&quot;: 10000,
+          &quot;maxExposure&quot;: 1,
+          &quot;maxPositions&quot;: 1,
+          &quot;maxThemeWeight&quot;: 1
+        },
+        &quot;execution_mode&quot;: &quot;continuous_forward_native_http&quot;
+      },
+      &quot;equal_weight&quot;: {
+        &quot;strategy_id&quot;: &quot;technology-equal_weight-hold20-v1&quot;,
+        &quot;model_hash&quot;: &quot;d99a2047372a90c9632218eeb685bc313efa0db79b58b499b2fac80005462d6e&quot;,
+        &quot;universe_version&quot;: &quot;sha256:a5f1c542f33c4f24cd4ee4ae5468a02fa7c0285c7d7580585775351afe182e8c&quot;,
+        &quot;rules_hash&quot;: &quot;9d56d59c67cfc565e581915b5da7d105ea69a3aa1917ff1a333de887dd24d4a7&quot;,
+        &quot;data_hash&quot;: &quot;3b534203bd17fd35c92507752e175829877116eced20ea2eafa2d02eb0761f19&quot;,
+        &quot;fee_profile&quot;: {
+          &quot;assumptionLabel&quot;: &quot;最低5元为模拟假设，以合同为准&quot;,
+          &quot;commissionRate&quot;: 0.0003,
+          &quot;minFee&quot;: 5,
+          &quot;slippage&quot;: 0.001,
+          &quot;stockSellStampRate&quot;: 0.0005,
+          &quot;stockTransferRate&quot;: 0.00001,
+          &quot;version&quot;: &quot;cn-paper-fees-v1&quot;
+        },
+        &quot;budget&quot;: 10000,
+        &quot;risk_limits&quot;: {
+          &quot;investableLimit&quot;: 10000,
+          &quot;maxExposure&quot;: 1,
+          &quot;maxPositions&quot;: 6,
+          &quot;maxThemeWeight&quot;: 1
+        },
+        &quot;execution_mode&quot;: &quot;continuous_forward_native_http&quot;
+      }
+    }
+  },
+  &quot;nativeTransportEvidence&quot;: {
+    &quot;verified&quot;: true,
+    &quot;required&quot;: true,
+    &quot;descriptor&quot;: {
+      &quot;kind&quot;: &quot;dotnet-desktop-http-v1&quot;,
+      &quot;exeSha256&quot;: &quot;e0f80930a8fcd6f86e4ae4dfbd898104308e41e66aa24380730cb2926252e761&quot;,
+      &quot;sourceHashes&quot;: {
+        &quot;DesktopServices.cs&quot;: &quot;292ee994ae931d5b22c0ec13a62c97b5f7daf12b6c84aa19bd517380793df742&quot;,
+        &quot;MarketTransport.cs&quot;: &quot;3fcf051cec577ccff061c7c0ab527d9af804a35e00929abdcdd0117aa81d64ae&quot;
+      }
+    }
+  },
+  &quot;collection&quot;: {
+    &quot;tickCount&quot;: 1786,
+    &quot;collectionFailures&quot;: 1550,
+    &quot;lastRunStatus&quot;: &quot;account_continues&quot;,
+    &quot;lastCollectionReason&quot;: &quot;history_incomplete_or_stale&quot;,
+    &quot;lastDataHealth&quot;: {
+      &quot;ok&quot;: false,
+      &quot;collectionOk&quot;: false,
+      &quot;historyOk&quot;: false,
+      &quot;entryQuoteComplete&quot;: false,
+      &quot;valuationQuoteComplete&quot;: false,
+      &quot;quotePoolComplete&quot;: false,
+      &quot;expectedAsOf&quot;: &quot;2026-10-22&quot;,
+      &quot;history&quot;: {
+        &quot;ok&quot;: false,
+        &quot;expectedAsOf&quot;: &quot;2026-10-22&quot;,
+        &quot;rows&quot;: [
+          {
+            &quot;symbol&quot;: &quot;sz002230&quot;,
+            &quot;dataAsOf&quot;: &quot;2026-10-22&quot;,
+            &quot;expectedAsOf&quot;: &quot;2026-10-22&quot;,
+            &quot;stale&quot;: false,
+            &quot;reason&quot;: null
+          },
+          {
+            &quot;symbol&quot;: &quot;sz300308&quot;,
+            &quot;dataAsOf&quot;: &quot;2026-10-22&quot;,
+            &quot;expectedAsOf&quot;: &quot;2026-10-22&quot;,
+            &quot;stale&quot;: false,
+            &quot;reason&quot;: null
+          },
+          {
+            &quot;symbol&quot;: &quot;sz300502&quot;,
+            &quot;dataAsOf&quot;: &quot;2026-10-22&quot;,
+            &quot;expectedAsOf&quot;: &quot;2026-10-22&quot;,
+            &quot;stale&quot;: false,
+            &quot;reason&quot;: null
+          },
+          {
+            &quot;symbol&quot;: &quot;sh688981&quot;,
+            &quot;dataAsOf&quot;: &quot;2026-10-22&quot;,
+            &quot;expectedAsOf&quot;: &quot;2026-10-22&quot;,
+            &quot;stale&quot;: false,
+            &quot;reason&quot;: null
+          },
+          {
+            &quot;symbol&quot;: &quot;sh603019&quot;,
+            &quot;dataAsOf&quot;: &quot;2026-10-22&quot;,
+            &quot;expectedAsOf&quot;: &quot;2026-10-22&quot;,
+            &quot;stale&quot;: false,
+            &quot;reason&quot;: null
+          },
+          {
+            &quot;symbol&quot;: &quot;sz000977&quot;,
+            &quot;dataAsOf&quot;: &quot;2026-10-22&quot;,
+            &quot;expectedAsOf&quot;: &quot;2026-10-22&quot;,
+            &quot;stale&quot;: false,
+            &quot;reason&quot;: null
+          },
+          {
+            &quot;symbol&quot;: &quot;sz002415&quot;,
+            &quot;dataAsOf&quot;: &quot;2026-09-30&quot;,
+            &quot;expectedAsOf&quot;: &quot;2026-10-22&quot;,
+            &quot;stale&quot;: true,
+            &quot;reason&quot;: &quot;daily_stale&quot;
+          },
+          {
+            &quot;symbol&quot;: &quot;sh688256&quot;,
+            &quot;dataAsOf&quot;: &quot;2026-10-22&quot;,
+            &quot;expectedAsOf&quot;: &quot;2026-10-22&quot;,
+            &quot;stale&quot;: false,
+            &quot;reason&quot;: null
+          },
+          {
+            &quot;symbol&quot;: &quot;sh600406&quot;,
+            &quot;dataAsOf&quot;: &quot;2026-10-22&quot;,
+            &quot;expectedAsOf&quot;: &quot;2026-10-22&quot;,
+            &quot;stale&quot;: false,
+            &quot;reason&quot;: null
+          },
+          {
+            &quot;symbol&quot;: &quot;sz002371&quot;,
+            &quot;dataAsOf&quot;: &quot;2026-10-22&quot;,
+            &quot;expectedAsOf&quot;: &quot;2026-10-22&quot;,
+            &quot;stale&quot;: false,
+            &quot;reason&quot;: null
+          },
+          {
+            &quot;symbol&quot;: &quot;sh600703&quot;,
+            &quot;dataAsOf&quot;: &quot;2026-10-22&quot;,
+            &quot;expectedAsOf&quot;: &quot;2026-10-22&quot;,
+            &quot;stale&quot;: false,
+            &quot;reason&quot;: null
+          },
+          {
+            &quot;symbol&quot;: &quot;sh688111&quot;,
+            &quot;dataAsOf&quot;: &quot;2026-10-22&quot;,
+            &quot;expectedAsOf&quot;: &quot;2026-10-22&quot;,
+            &quot;stale&quot;: false,
+            &quot;reason&quot;: null
+          },
+          {
+            &quot;symbol&quot;: &quot;sh600570&quot;,
+            &quot;dataAsOf&quot;: &quot;2026-10-22&quot;,
+            &quot;expectedAsOf&quot;: &quot;2026-10-22&quot;,
+            &quot;stale&quot;: false,
+            &quot;reason&quot;: null
+          },
+          {
+            &quot;symbol&quot;: &quot;sh588000&quot;,
+            &quot;dataAsOf&quot;: &quot;2026-10-22&quot;,
+            &quot;expectedAsOf&quot;: &quot;2026-10-22&quot;,
+            &quot;stale&quot;: false,
+            &quot;reason&quot;: null
+          },
+          {
+            &quot;symbol&quot;: &quot;sh512760&quot;,
+            &quot;dataAsOf&quot;: &quot;2026-10-22&quot;,
+            &quot;expectedAsOf&quot;: &quot;2026-10-22&quot;,
+            &quot;stale&quot;: false,
+            &quot;reason&quot;: null
+          },
+          {
+            &quot;symbol&quot;: &quot;sh515070&quot;,
+            &quot;dataAsOf&quot;: &quot;2026-10-22&quot;,
+            &quot;expectedAsOf&quot;: &quot;2026-10-22&quot;,
+            &quot;stale&quot;: false,
+            &quot;reason&quot;: null
+          },
+          {
+            &quot;symbol&quot;: &quot;sh512720&quot;,
+            &quot;dataAsOf&quot;: &quot;2026-10-22&quot;,
+            &quot;expectedAsOf&quot;: &quot;2026-10-22&quot;,
+            &quot;stale&quot;: false,
+            &quot;reason&quot;: null
+          },
+          {
+            &quot;symbol&quot;: &quot;sh515880&quot;,
+            &quot;dataAsOf&quot;: &quot;2026-09-30&quot;,
+            &quot;expectedAsOf&quot;: &quot;2026-10-22&quot;,
+            &quot;stale&quot;: true,
+            &quot;reason&quot;: &quot;daily_stale&quot;
+          },
+          {
+            &quot;symbol&quot;: &quot;sz159852&quot;,
+            &quot;dataAsOf&quot;: &quot;2026-10-22&quot;,
+            &quot;expectedAsOf&quot;: &quot;2026-10-22&quot;,
+            &quot;stale&quot;: false,
+            &quot;reason&quot;: null
+          }
+        ],
+        &quot;reason&quot;: &quot;history_pool_incomplete&quot;,
+        &quot;calendarVersion&quot;: &quot;sse-sessions-2023-2026-v1&quot;
+      },
+      &quot;historyStatuses&quot;: [
+        {
+          &quot;symbol&quot;: &quot;sz002230&quot;,
+          &quot;ok&quot;: false,
+          &quot;stale&quot;: true,
+          &quot;dataAsOf&quot;: null,
+          &quot;expectedAsOf&quot;: &quot;2026-10-22&quot;,
+          &quot;fetchedAt&quot;: null,
+          &quot;sourceTime&quot;: null,
+          &quot;source&quot;: null,
+          &quot;errors&quot;: [],
+          &quot;reason&quot;: &quot;daily_stale&quot;,
+          &quot;calendarVersion&quot;: &quot;sse-sessions-2023-2026-v1&quot;
+        },
+        {
+          &quot;symbol&quot;: &quot;sz300308&quot;,
+          &quot;ok&quot;: false,
+          &quot;stale&quot;: true,
+          &quot;dataAsOf&quot;: null,
+          &quot;expectedAsOf&quot;: &quot;2026-10-22&quot;,
+          &quot;fetchedAt&quot;: null,
+          &quot;sourceTime&quot;: null,
+          &quot;source&quot;: null,
+          &quot;errors&quot;: [],
+          &quot;reason&quot;: &quot;daily_stale&quot;,
+          &quot;calendarVersion&quot;: &quot;sse-sessions-2023-2026-v1&quot;
+        },
+        {
+          &quot;symbol&quot;: &quot;sz300502&quot;,
+          &quot;ok&quot;: false,
+          &quot;stale&quot;: true,
+          &quot;dataAsOf&quot;: null,
+          &quot;expectedAsOf&quot;: &quot;2026-10-22&quot;,
+          &quot;fetchedAt&quot;: null,
+          &quot;sourceTime&quot;: null,
+          &quot;source&quot;: null,
+          &quot;errors&quot;: [],
+          &quot;reason&quot;: &quot;daily_stale&quot;,
+          &quot;calendarVersion&quot;: &quot;sse-sessions-2023-2026-v1&quot;
+        },
+        {
+          &quot;symbol&quot;: &quot;sh688981&quot;,
+          &quot;ok&quot;: false,
+          &quot;stale&quot;: true,
+          &quot;dataAsOf&quot;: null,
+          &quot;expectedAsOf&quot;: &quot;2026-10-22&quot;,
+          &quot;fetchedAt&quot;: null,
+          &quot;sourceTime&quot;: null,
+          &quot;source&quot;: null,
+          &quot;errors&quot;: [],
+          &quot;reason&quot;: &quot;daily_stale&quot;,
+          &quot;calendarVersion&quot;: &quot;sse-sessions-2023-2026-v1&quot;
+        },
+        {
+          &quot;symbol&quot;: &quot;sh603019&quot;,
+          &quot;ok&quot;: false,
+          &quot;stale&quot;: true,
+          &quot;dataAsOf&quot;: null,
+          &quot;expectedAsOf&quot;: &quot;2026-10-22&quot;,
+          &quot;fetchedAt&quot;: null,
+          &quot;sourceTime&quot;: null,
+          &quot;source&quot;: null,
+          &quot;errors&quot;: [],
+          &quot;reason&quot;: &quot;daily_stale&quot;,
+          &quot;calendarVersion&quot;: &quot;sse-sessions-2023-2026-v1&quot;
+        },
+        {
+          &quot;symbol&quot;: &quot;sz000977&quot;,
+          &quot;ok&quot;: false,
+          &quot;stale&quot;: true,
+          &quot;dataAsOf&quot;: null,
+          &quot;expectedAsOf&quot;: &quot;2026-10-22&quot;,
+          &quot;fetchedAt&quot;: null,
+          &quot;sourceTime&quot;: null,
+          &quot;source&quot;: null,
+          &quot;errors&quot;: [],
+          &quot;reason&quot;: &quot;daily_stale&quot;,
+          &quot;calendarVersion&quot;: &quot;sse-sessions-2023-2026-v1&quot;
+        },
+        {
+          &quot;symbol&quot;: &quot;sz002415&quot;,
+          &quot;ok&quot;: false,
+          &quot;stale&quot;: true,
+          &quot;dataAsOf&quot;: null,
+          &quot;expectedAsOf&quot;: &quot;2026-10-22&quot;,
+          &quot;fetchedAt&quot;: null,
+          &quot;sourceTime&quot;: null,
+          &quot;source&quot;: null,
+          &quot;errors&quot;: [],
+          &quot;reason&quot;: &quot;daily_stale&quot;,
+          &quot;calendarVersion&quot;: &quot;sse-sessions-2023-2026-v1&quot;
+        },
+        {
+          &quot;symbol&quot;: &quot;sh688256&quot;,
+          &quot;ok&quot;: false,
+          &quot;stale&quot;: true,
+          &quot;dataAsOf&quot;: null,
+          &quot;expectedAsOf&quot;: &quot;2026-10-22&quot;,
+          &quot;fetchedAt&quot;: null,
+          &quot;sourceTime&quot;: null,
+          &quot;source&quot;: null,
+          &quot;errors&quot;: [],
+          &quot;reason&quot;: &quot;daily_stale&quot;,
+          &quot;calendarVersion&quot;: &quot;sse-sessions-2023-2026-v1&quot;
+        },
+        {
+          &quot;symbol&quot;: &quot;sh600406&quot;,
+          &quot;ok&quot;: false,
+          &quot;stale&quot;: true,
+          &quot;dataAsOf&quot;: null,
+          &quot;expectedAsOf&quot;: &quot;2026-10-22&quot;,
+          &quot;fetchedAt&quot;: null,
+          &quot;sourceTime&quot;: null,
+          &quot;source&quot;: null,
+          &quot;errors&quot;: [],
+          &quot;reason&quot;: &quot;daily_stale&quot;,
+          &quot;calendarVersion&quot;: &quot;sse-sessions-2023-2026-v1&quot;
+        },
+        {
+          &quot;symbol&quot;: &quot;sz002371&quot;,
+          &quot;ok&quot;: false,
+          &quot;stale&quot;: true,
+          &quot;dataAsOf&quot;: null,
+          &quot;expectedAsOf&quot;: &quot;2026-10-22&quot;,
+          &quot;fetchedAt&quot;: null,
+          &quot;sourceTime&quot;: null,
+          &quot;source&quot;: null,
+          &quot;errors&quot;: [],
+          &quot;reason&quot;: &quot;daily_stale&quot;,
+          &quot;calendarVersion&quot;: &quot;sse-sessions-2023-2026-v1&quot;
+        },
+        {
+          &quot;symbol&quot;: &quot;sh600703&quot;,
+          &quot;ok&quot;: false,
+          &quot;stale&quot;: true,
+          &quot;dataAsOf&quot;: null,
+          &quot;expectedAsOf&quot;: &quot;2026-10-22&quot;,
+          &quot;fetchedAt&quot;: null,
+          &quot;sourceTime&quot;: null,
+          &quot;source&quot;: null,
+          &quot;errors&quot;: [],
+          &quot;reason&quot;: &quot;daily_stale&quot;,
+          &quot;calendarVersion&quot;: &quot;sse-sessions-2023-2026-v1&quot;
+        },
+        {
+          &quot;symbol&quot;: &quot;sh688111&quot;,
+          &quot;ok&quot;: false,
+          &quot;stale&quot;: true,
+          &quot;dataAsOf&quot;: null,
+          &quot;expectedAsOf&quot;: &quot;2026-10-22&quot;,
+          &quot;fetchedAt&quot;: null,
+          &quot;sourceTime&quot;: null,
+          &quot;source&quot;: null,
+          &quot;errors&quot;: [],
+          &quot;reason&quot;: &quot;daily_stale&quot;,
+          &quot;calendarVersion&quot;: &quot;sse-sessions-2023-2026-v1&quot;
+        },
+        {
+          &quot;symbol&quot;: &quot;sh600570&quot;,
+          &quot;ok&quot;: false,
+          &quot;stale&quot;: true,
+          &quot;dataAsOf&quot;: null,
+          &quot;expectedAsOf&quot;: &quot;2026-10-22&quot;,
+          &quot;fetchedAt&quot;: null,
+          &quot;sourceTime&quot;: null,
+          &quot;source&quot;: null,
+          &quot;errors&quot;: [],
+          &quot;reason&quot;: &quot;daily_stale&quot;,
+          &quot;calendarVersion&quot;: &quot;sse-sessions-2023-2026-v1&quot;
+        },
+        {
+          &quot;symbol&quot;: &quot;sh588000&quot;,
+          &quot;ok&quot;: false,
+          &quot;stale&quot;: true,
+          &quot;dataAsOf&quot;: null,
+          &quot;expectedAsOf&quot;: &quot;2026-10-22&quot;,
+          &quot;fetchedAt&quot;: null,
+          &quot;sourceTime&quot;: null,
+          &quot;source&quot;: null,
+          &quot;errors&quot;: [],
+          &quot;reason&quot;: &quot;daily_stale&quot;,
+          &quot;calendarVersion&quot;: &quot;sse-sessions-2023-2026-v1&quot;
+        },
+        {
+          &quot;symbol&quot;: &quot;sh512760&quot;,
+          &quot;ok&quot;: false,
+          &quot;stale&quot;: true,
+          &quot;dataAsOf&quot;: null,
+          &quot;expectedAsOf&quot;: &quot;2026-10-22&quot;,
+          &quot;fetchedAt&quot;: null,
+          &quot;sourceTime&quot;: null,
+          &quot;source&quot;: null,
+          &quot;errors&quot;: [],
+          &quot;reason&quot;: &quot;daily_stale&quot;,
+          &quot;calendarVersion&quot;: &quot;sse-sessions-2023-2026-v1&quot;
+        },
+        {
+          &quot;symbol&quot;: &quot;sh515070&quot;,
+          &quot;ok&quot;: false,
+          &quot;stale&quot;: true,
+          &quot;dataAsOf&quot;: null,
+          &quot;expectedAsOf&quot;: &quot;2026-10-22&quot;,
+          &quot;fetchedAt&quot;: null,
+          &quot;sourceTime&quot;: null,
+          &quot;source&quot;: null,
+          &quot;errors&quot;: [],
+          &quot;reason&quot;: &quot;daily_stale&quot;,
+          &quot;calendarVersion&quot;: &quot;sse-sessions-2023-2026-v1&quot;
+        },
+        {
+          &quot;symbol&quot;: &quot;sh512720&quot;,
+          &quot;ok&quot;: false,
+          &quot;stale&quot;: true,
+          &quot;dataAsOf&quot;: null,
+          &quot;expectedAsOf&quot;: &quot;2026-10-22&quot;,
+          &quot;fetchedAt&quot;: null,
+          &quot;sourceTime&quot;: null,
+          &quot;source&quot;: null,
+          &quot;errors&quot;: [],
+          &quot;reason&quot;: &quot;daily_stale&quot;,
+          &quot;calendarVersion&quot;: &quot;sse-sessions-2023-2026-v1&quot;
+        },
+        {
+          &quot;symbol&quot;: &quot;sh515880&quot;,
+          &quot;ok&quot;: false,
+          &quot;stale&quot;: true,
+          &quot;dataAsOf&quot;: null,
+          &quot;expectedAsOf&quot;: &quot;2026-10-22&quot;,
+          &quot;fetchedAt&quot;: null,
+          &quot;sourceTime&quot;: null,
+          &quot;source&quot;: null,
+          &quot;errors&quot;: [],
+          &quot;reason&quot;: &quot;daily_stale&quot;,
+          &quot;calendarVersion&quot;: &quot;sse-sessions-2023-2026-v1&quot;
+        },
+        {
+          &quot;symbol&quot;: &quot;sz159852&quot;,
+          &quot;ok&quot;: false,
+          &quot;stale&quot;: true,
+          &quot;dataAsOf&quot;: null,
+          &quot;expectedAsOf&quot;: &quot;2026-10-22&quot;,
+          &quot;fetchedAt&quot;: null,
+          &quot;sourceTime&quot;: null,
+          &quot;source&quot;: null,
+          &quot;errors&quot;: [],
+          &quot;reason&quot;: &quot;daily_stale&quot;,
+          &quot;calendarVersion&quot;: &quot;sse-sessions-2023-2026-v1&quot;
+        }
+      ],
+      &quot;quoteRows&quot;: [
+        {
+          &quot;symbol&quot;: &quot;sz002230&quot;,
+          &quot;ok&quot;: false,
+          &quot;entryOk&quot;: false,
+          &quot;valuationOk&quot;: false,
+          &quot;mode&quot;: null,
+          &quot;reason&quot;: &quot;quote_expired_or_invalid_phase&quot;
+        },
+        {
+          &quot;symbol&quot;: &quot;sz300308&quot;,
+          &quot;ok&quot;: false,
+          &quot;entryOk&quot;: false,
+          &quot;valuationOk&quot;: false,
+          &quot;mode&quot;: null,
+          &quot;reason&quot;: &quot;quote_expired_or_invalid_phase&quot;
+        },
+        {
+          &quot;symbol&quot;: &quot;sz300502&quot;,
+          &quot;ok&quot;: false,
+          &quot;entryOk&quot;: false,
+          &quot;valuationOk&quot;: false,
+          &quot;mode&quot;: null,
+          &quot;reason&quot;: &quot;quote_expired_or_invalid_phase&quot;
+        },
+        {
+          &quot;symbol&quot;: &quot;sh688981&quot;,
+          &quot;ok&quot;: false,
+          &quot;entryOk&quot;: false,
+          &quot;valuationOk&quot;: false,
+          &quot;mode&quot;: null,
+          &quot;reason&quot;: &quot;quote_expired_or_invalid_phase&quot;
+        },
+        {
+          &quot;symbol&quot;: &quot;sh603019&quot;,
+          &quot;ok&quot;: false,
+          &quot;entryOk&quot;: false,
+          &quot;valuationOk&quot;: false,
+          &quot;mode&quot;: null,
+          &quot;reason&quot;: &quot;quote_expired_or_invalid_phase&quot;
+        },
+        {
+          &quot;symbol&quot;: &quot;sz000977&quot;,
+          &quot;ok&quot;: false,
+          &quot;entryOk&quot;: false,
+          &quot;valuationOk&quot;: false,
+          &quot;mode&quot;: null,
+          &quot;reason&quot;: &quot;quote_expired_or_invalid_phase&quot;
+        },
+        {
+          &quot;symbol&quot;: &quot;sz002415&quot;,
+          &quot;ok&quot;: false,
+          &quot;entryOk&quot;: false,
+          &quot;valuationOk&quot;: false,
+          &quot;mode&quot;: null,
+          &quot;reason&quot;: &quot;quote_expired_or_invalid_phase&quot;
+        },
+        {
+          &quot;symbol&quot;: &quot;sh688256&quot;,
+          &quot;ok&quot;: false,
+          &quot;entryOk&quot;: false,
+          &quot;valuationOk&quot;: false,
+          &quot;mode&quot;: null,
+          &quot;reason&quot;: &quot;quote_expired_or_invalid_phase&quot;
+        },
+        {
+          &quot;symbol&quot;: &quot;sh600406&quot;,
+          &quot;ok&quot;: false,
+          &quot;entryOk&quot;: false,
+          &quot;valuationOk&quot;: false,
+          &quot;mode&quot;: null,
+          &quot;reason&quot;: &quot;quote_expired_or_invalid_phase&quot;
+        },
+        {
+          &quot;symbol&quot;: &quot;sz002371&quot;,
+          &quot;ok&quot;: false,
+          &quot;entryOk&quot;: false,
+          &quot;valuationOk&quot;: false,
+          &quot;mode&quot;: null,
+          &quot;reason&quot;: &quot;quote_expired_or_invalid_phase&quot;
+        },
+        {
+          &quot;symbol&quot;: &quot;sh600703&quot;,
+          &quot;ok&quot;: false,
+          &quot;entryOk&quot;: false,
+          &quot;valuationOk&quot;: false,
+          &quot;mode&quot;: null,
+          &quot;reason&quot;: &quot;quote_expired_or_invalid_phase&quot;
+        },
+        {
+          &quot;symbol&quot;: &quot;sh688111&quot;,
+          &quot;ok&quot;: false,
+          &quot;entryOk&quot;: false,
+          &quot;valuationOk&quot;: false,
+          &quot;mode&quot;: null,
+          &quot;reason&quot;: &quot;quote_expired_or_invalid_phase&quot;
+        },
+        {
+          &quot;symbol&quot;: &quot;sh600570&quot;,
+          &quot;ok&quot;: false,
+          &quot;entryOk&quot;: false,
+          &quot;valuationOk&quot;: false,
+          &quot;mode&quot;: null,
+          &quot;reason&quot;: &quot;quote_expired_or_invalid_phase&quot;
+        },
+        {
+          &quot;symbol&quot;: &quot;sh588000&quot;,
+          &quot;ok&quot;: false,
+          &quot;entryOk&quot;: false,
+          &quot;valuationOk&quot;: false,
+          &quot;mode&quot;: null,
+          &quot;reason&quot;: &quot;quote_expired_or_invalid_phase&quot;
+        },
+        {
+          &quot;symbol&quot;: &quot;sh512760&quot;,
+          &quot;ok&quot;: false,
+          &quot;entryOk&quot;: false,
+          &quot;valuationOk&quot;: false,
+          &quot;mode&quot;: null,
+          &quot;reason&quot;: &quot;quote_expired_or_invalid_phase&quot;
+        },
+        {
+          &quot;symbol&quot;: &quot;sh515070&quot;,
+          &quot;ok&quot;: false,
+          &quot;entryOk&quot;: false,
+          &quot;valuationOk&quot;: false,
+          &quot;mode&quot;: null,
+          &quot;reason&quot;: &quot;quote_expired_or_invalid_phase&quot;
+        },
+        {
+          &quot;symbol&quot;: &quot;sh512720&quot;,
+          &quot;ok&quot;: false,
+          &quot;entryOk&quot;: false,
+          &quot;valuationOk&quot;: false,
+          &quot;mode&quot;: null,
+          &quot;reason&quot;: &quot;quote_expired_or_invalid_phase&quot;
+        },
+        {
+          &quot;symbol&quot;: &quot;sh515880&quot;,
+          &quot;ok&quot;: false,
+          &quot;entryOk&quot;: false,
+          &quot;valuationOk&quot;: false,
+          &quot;mode&quot;: null,
+          &quot;reason&quot;: &quot;quote_expired_or_invalid_phase&quot;
+        },
+        {
+          &quot;symbol&quot;: &quot;sz159852&quot;,
+          &quot;ok&quot;: false,
+          &quot;entryOk&quot;: false,
+          &quot;valuationOk&quot;: false,
+          &quot;mode&quot;: null,
+          &quot;reason&quot;: &quot;quote_expired_or_invalid_phase&quot;
+        }
+      ],
+      &quot;reason&quot;: &quot;history_incomplete_or_stale&quot;
+    },
+    &quot;firstPredictionPublishedAt&quot;: &quot;2026-10-20T02:47:53.234Z&quot;,
+    &quot;firstPredictionReceivedAt&quot;: &quot;2026-10-20T02:47:53.234Z&quot;
+  },
+  &quot;attemptOutcome&quot;: &quot;ongoing_paper_account&quot;,
+  &quot;supplementalControlRecords&quot;: [
+    {
+      &quot;file&quot;: &quot;run-stopped-2026-10-20T08-10-00-015Z.json&quot;,
+      &quot;sha256&quot;: &quot;63646ec3722b560bd1350d72b075244a7ee28d7f3b9e50fb132b28d2d18e08d6&quot;,
+      &quot;provenance&quot;: &quot;supplemental process control record, separate from the tick hash chain&quot;,
+      &quot;value&quot;: {
+        &quot;at&quot;: &quot;2026-10-20T08:10:00.016Z&quot;,
+        &quot;reason&quot;: &quot;bounded_until&quot;,
+        &quot;accountId&quot;: &quot;continuous-etf-audit-20261020-1100&quot;,
+        &quot;accountContinues&quot;: true,
+        &quot;lastTickHash&quot;: &quot;3b0ccafe2841b5d1924851d17d292059b2b98b908d3561c2cecf76c079ec1fb6&quot;,
+        &quot;noCapitalReset&quot;: true
+      }
+    },
+    {
+      &quot;file&quot;: &quot;run-stopped-2026-10-21T08-10-00-000Z.json&quot;,
+      &quot;sha256&quot;: &quot;46da89999c92e0a1ce554df0ec88765621887a382272f220fd47dbbdb0492394&quot;,
+      &quot;provenance&quot;: &quot;supplemental process control record, separate from the tick hash chain&quot;,
+      &quot;value&quot;: {
+        &quot;at&quot;: &quot;2026-10-21T08:10:00.006Z&quot;,
+        &quot;reason&quot;: &quot;bounded_until&quot;,
+        &quot;accountId&quot;: &quot;continuous-etf-audit-20261020-1100&quot;,
+        &quot;accountContinues&quot;: true,
+        &quot;lastTickHash&quot;: &quot;9d8cbea76f3d1ffb93718cf73d9da8071268cd3c9dd303c661f3898e7b5f77a1&quot;,
+        &quot;noCapitalReset&quot;: true
+      }
+    },
+    {
+      &quot;file&quot;: &quot;run-stopped-2026-10-22T08-10-00-010Z.json&quot;,
+      &quot;sha256&quot;: &quot;e83a8ec3a148115518c6f6ed5fce774864ff740cb9fbc7aab6c1f6409f05b807&quot;,
+      &quot;provenance&quot;: &quot;supplemental process control record, separate from the tick hash chain&quot;,
+      &quot;value&quot;: {
+        &quot;at&quot;: &quot;2026-10-22T08:10:00.011Z&quot;,
+        &quot;reason&quot;: &quot;bounded_until&quot;,
+        &quot;accountId&quot;: &quot;continuous-etf-audit-20261020-1100&quot;,
+        &quot;accountContinues&quot;: true,
+        &quot;lastTickHash&quot;: &quot;89d3f73bf75212deabdc63735c926be7fd018d630ae115b3b33e3ac7e6ced7d3&quot;,
+        &quot;noCapitalReset&quot;: true
+      }
+    }
+  ]
+}</pre><p>完整事件链、各账户逐日指标及逐笔指纹同时保存在同名JSON中。本报告不会改变任何模拟决定、成交、本金或旧记录。</p></section></main></html>

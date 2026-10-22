@@ -1,0 +1,120 @@
+{
+  "at": "2026-10-22T08:33:40.712Z",
+  "kind": "independent_raw_daily_close_only_no_account",
+  "helperHash": "e0f80930a8fcd6f86e4ae4dfbd898104308e41e66aa24380730cb2926252e761",
+  "marketSourceHash": "9a1da1a3114a47f0786270da30db3da5792a43ae3f4ce47342b14d71282ab199",
+  "rows": [
+    {
+      "symbol": "sh588000",
+      "name": "科创50ETF",
+      "adjustment": "none_raw",
+      "bar": {
+        "date": "2026-10-22",
+        "open": 1.422,
+        "close": 1.377,
+        "high": 1.425,
+        "low": 1.376,
+        "volume": 9840622000
+      },
+      "receivedAt": "2026-10-22T08:33:40.6681774Z"
+    },
+    {
+      "symbol": "sh512760",
+      "name": "芯片ETF",
+      "adjustment": "none_raw",
+      "bar": {
+        "date": "2026-10-22",
+        "open": 0.887,
+        "close": 0.865,
+        "high": 0.89,
+        "low": 0.859,
+        "volume": 349583600
+      },
+      "receivedAt": "2026-10-22T08:33:40.6614697Z"
+    },
+    {
+      "symbol": "sh515070",
+      "name": "人工智能ETF",
+      "adjustment": "none_raw",
+      "bar": {
+        "date": "2026-10-22",
+        "open": 0.938,
+        "close": 0.908,
+        "high": 0.94,
+        "low": 0.908,
+        "volume": 116157200
+      },
+      "receivedAt": "2026-10-22T08:33:40.6670324Z"
+    },
+    {
+      "symbol": "sh512720",
+      "name": "计算机ETF",
+      "adjustment": "none_raw",
+      "bar": {
+        "date": "2026-10-22",
+        "open": 1.038,
+        "close": 1.015,
+        "high": 1.042,
+        "low": 1.011,
+        "volume": 17662300
+      },
+      "receivedAt": "2026-10-22T08:33:40.6764570Z"
+    },
+    {
+      "symbol": "sh515880",
+      "name": "通信ETF",
+      "adjustment": "none_raw",
+      "bar": {
+        "date": "2026-10-22",
+        "open": 0.532,
+        "close": 0.503,
+        "high": 0.536,
+        "low": 0.503,
+        "volume": 5618462800
+      },
+      "receivedAt": "2026-10-22T08:33:40.6515598Z"
+    },
+    {
+      "symbol": "sz159852",
+      "name": "软件ETF",
+      "adjustment": "none_raw",
+      "bar": {
+        "date": "2026-10-22",
+        "open": 0.637,
+        "close": 0.621,
+        "high": 0.638,
+        "low": 0.621,
+        "volume": 395330500
+      },
+      "receivedAt": "2026-10-22T08:33:40.6614697Z"
+    }
+  ],
+  "responses": [
+    {
+      "file": "response-4.json",
+      "sha256": "b0f0136c196f9ee381411676aba2c2087b92651f9a7e53a68decf88b1e4ebecf"
+    },
+    {
+      "file": "response-1.json",
+      "sha256": "89bb7a265e4cfe95d67957bb7b77692c671564415c5f42d79e2345f7d2ff699f"
+    },
+    {
+      "file": "response-5.json",
+      "sha256": "0dc2ec8a939c29677ae054e62a057262f807fee81079cb679f74d25c3caa5fba"
+    },
+    {
+      "file": "response-0.json",
+      "sha256": "e25e1dcf7782e20fc6ddbda3eeaa78c38f9618a1f6d4d6bebe0196a399e578cb"
+    },
+    {
+      "file": "response-2.json",
+      "sha256": "c118bde212e94d5280d4196a3260b4eeed8430b8a4c5ca987b7e8d621ae2c151"
+    },
+    {
+      "file": "response-3.json",
+      "sha256": "004342a87ad32739698b2cabcbb5a02525ea485cae1b01ea20a26521b7d923fb"
+    }
+  ],
+  "passed": true,
+  "ledgerWrites": false
+}

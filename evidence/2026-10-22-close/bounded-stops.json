@@ -1,0 +1,49 @@
+{
+  "at": "2026-10-22T08:42:09.818Z",
+  "entries": [
+    {
+      "label": "capital50k",
+      "file": "run-stopped-2026-10-22T08-10-00-010Z.json",
+      "value": {
+        "at": "2026-10-22T08:10:00.010Z",
+        "sequence": 1164,
+        "startedAt": "2026-10-21T05:05:16.530Z",
+        "accountIds": [
+          "paired-capital50k-20261021-pm-a-candidate",
+          "paired-capital50k-20261021-pm-a-control"
+        ],
+        "lastTickHash": "8c6a0cb218ed0391879c20f3fb97bc1857c64baacd2afbcb8a826a2f731d425d",
+        "noCapitalReset": true
+      }
+    },
+    {
+      "label": "lowcap",
+      "file": "run-stopped-2026-10-22T08-10-00-011Z.json",
+      "value": {
+        "at": "2026-10-22T08:10:00.010Z",
+        "sequence": 1551,
+        "startedAt": "2026-10-21T02:00:07.177Z",
+        "accountIds": [
+          "paired-lowcap-20261021-1000-b-candidate",
+          "paired-lowcap-20261021-1000-b-control"
+        ],
+        "lastTickHash": "68fae81c488b938a6f85f1c34ff85d1e08a08a6b0af497ab893bb9aaffa3562a",
+        "noCapitalReset": true
+      }
+    },
+    {
+      "label": "original",
+      "file": "run-stopped-2026-10-22T08-10-00-010Z.json",
+      "value": {
+        "at": "2026-10-22T08:10:00.011Z",
+        "reason": "bounded_until",
+        "accountId": "continuous-etf-audit-20261020-1100",
+        "accountContinues": true,
+        "lastTickHash": "89d3f73bf75212deabdc63735c926be7fd018d630ae115b3b33e3ac7e6ced7d3",
+        "noCapitalReset": true
+      }
+    }
+  ],
+  "allBoundedAt1610": true,
+  "resumedAfterClose": false
+}
