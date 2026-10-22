@@ -1,0 +1,13 @@
+{
+  "at": "2026-10-22T05:19:43.8103945Z",
+  "pid": 57028,
+  "mode": "explicit original frozen resume",
+  "until": "2026-10-22T16:10:00+08:00",
+  "out": "D:/techno/validation/daily-20261022/original-afternoon-resume-20261022T051943786Z.out.log",
+  "err": "D:/techno/validation/daily-20261022/original-afternoon-resume-20261022T051943786Z.err.log",
+  "heapLimitMB": 2048,
+  "freePhysicalMemoryKB": 2699928,
+  "freeVirtualMemoryKB": 5189432,
+  "noCapitalReset": true,
+  "noOfflineFills": true
+}

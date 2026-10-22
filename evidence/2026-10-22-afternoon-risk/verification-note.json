@@ -1,0 +1,11 @@
+{
+  "initialImmediateActivityAvailabilityAssertionFailed": true,
+  "activityWriteCompleted": true,
+  "laterHostHttpVerificationPassed": true,
+  "initialCauseNotEstablished": true,
+  "financialCalculationsUnchanged": true,
+  "independentFullPaperReplay": false,
+  "sourceHashesVerified": 20,
+  "targetedTests": 12,
+  "baselineFullTests": 280
+}

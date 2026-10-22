@@ -1,0 +1,21 @@
+{
+  "verifiedAt": "2026-10-22T05:27:08.805Z",
+  "http200": true,
+  "currentSnapshotLabelVerified": true,
+  "historicalCaveatVerified": true,
+  "readOnly": true,
+  "quoteFresh": true,
+  "sequence": 849,
+  "netPnl": -462.36760000000504,
+  "currentDrawdown": 542.2592999999979,
+  "fees": 25,
+  "activityRecords": 11,
+  "viewerPid": 40744,
+  "collectorPidsUnchanged": [
+    3644,
+    55576,
+    57028
+  ],
+  "targetedTests": 12,
+  "baselineFullTests": 280
+}

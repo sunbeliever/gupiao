@@ -1,0 +1,11 @@
+{
+  "at": "2026-10-22T05:19:43.064Z",
+  "id": "continuous-etf-audit-20261020-1100",
+  "manifestHash": "ca57134dc1ddc15dab9f5112ad8c77ebe1858c972a6043cff3f1d96d73e2c430",
+  "frozenSourceNativeGateDriverVerified": true,
+  "claimPreserved": true,
+  "sequenceBeforeResume": 1468,
+  "journalBytes": 412712686,
+  "fullChainWillBeCheckedByOriginalDriverBeforeNewInput": true,
+  "archiveRecoveryRecordsPreserved": true
+}

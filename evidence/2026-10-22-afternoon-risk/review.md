@@ -1,0 +1,1 @@
+Independent review_entry_exit: no important findings. The only production difference is risk heading and explanatory wording; financial logic, warning boolean, frozen trading rules and capital are unchanged. Reviewer did not operate services or accounts.

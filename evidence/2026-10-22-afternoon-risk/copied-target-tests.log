@@ -1,0 +1,20 @@
+✔ read-only view shows 50k accounting, real allocation and next sellable date from the same snapshot (80.2987ms)
+✔ expired or mismatched status suppresses actionable guidance and never hides expired data as live (62.7067ms)
+✔ pending T+1 stop is explicit and a tampered state or claim is refused (149.0608ms)
+✔ HTML escapes names and does not emit order, reset or private filesystem controls (56.3414ms)
+✔ reader uses only configured files and missing snapshots are errors, never new funded accounts (1.1492ms)
+✔ local viewer exposes only GET snapshots and never accepts an order or reset action (92.3693ms)
+✔ viewer read failures expose no stale investment recommendation or local file path (6.1352ms)
+✔ page rechecks quote age at display time rather than trusting earlier collection health (101.5605ms)
+✔ malformed request target returns 400 without escaping the HTTP callback (0.2912ms)
+✔ strategy and per-holding directives are bound to the frozen account and pause when quotes expire (66.1984ms)
+✔ activity reloads the configured file without caching or writing accounts and rejects a foreign model (103.7704ms)
+✔ activity never presents future or oversized records and escapes research text (107.6179ms)
+ℹ tests 12
+ℹ suites 0
+ℹ pass 12
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 902.3789

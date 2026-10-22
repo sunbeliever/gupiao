@@ -1,0 +1,60 @@
+{
+  "at": "2026-10-22T05:22:51.715Z",
+  "id": "paired-capital50k-20261021-pm-a",
+  "limitSequence": 841,
+  "checkedTicks": 841,
+  "hashAndCheckpointVerified": true,
+  "independentFullPaperReplay": false,
+  "all": {
+    "candidate": {
+      "netPnl": -479.9676000000036,
+      "at": "2026-10-22T05:17:31.636Z",
+      "sequence": 831,
+      "valuationComplete": true,
+      "fees": 25
+    },
+    "control": {
+      "netPnl": -388.7456999999995,
+      "at": "2026-10-22T05:18:02.619Z",
+      "sequence": 832,
+      "valuationComplete": true,
+      "fees": 15
+    }
+  },
+  "valid": {
+    "candidate": {
+      "netPnl": -479.9676000000036,
+      "at": "2026-10-22T05:17:31.636Z",
+      "sequence": 831,
+      "valuationComplete": true,
+      "fees": 25
+    },
+    "control": {
+      "netPnl": -388.7456999999995,
+      "at": "2026-10-22T05:18:02.619Z",
+      "sequence": 832,
+      "valuationComplete": true,
+      "fees": 15
+    }
+  },
+  "warningCount": 60,
+  "firstWarning": {
+    "at": "2026-10-22T02:50:13.787Z",
+    "sequence": 546,
+    "loss": 431.1676000000007,
+    "drawdown": 511.0592999999935
+  },
+  "lastWarning": {
+    "at": "2026-10-22T05:22:41.338Z",
+    "sequence": 841,
+    "loss": 464.06760000000213,
+    "drawdown": 543.959299999995
+  },
+  "maxDrawdown": {
+    "amount": 559.8592999999964,
+    "at": "2026-10-22T05:17:31.636Z",
+    "sequence": 831,
+    "valuationComplete": true
+  },
+  "finalTickHash": "d7031ae4b9097b344582abd87b37caa08c46e1f0fc6cbf2dabff255db0daba2c"
+}
