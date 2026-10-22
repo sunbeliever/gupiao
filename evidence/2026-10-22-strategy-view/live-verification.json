@@ -1,0 +1,28 @@
+{
+  "verifiedAt": "2026-10-22T01:38:12.044Z",
+  "http200": true,
+  "noStore": true,
+  "postRejected": 405,
+  "resetAbsent": 404,
+  "activityHotReloadVerified": true,
+  "activeProfile": {
+    "maximumNewInvestment": 12500,
+    "maximumExposure": 0.25,
+    "stopLossRate": 0.04,
+    "minEstimatedNetReturn": 0.01,
+    "targetExitEnabled": false,
+    "horizon": 20,
+    "profile": "capital50k-risk500-v1"
+  },
+  "sequence": 406,
+  "quoteFresh": true,
+  "actualNetPnl": -130.7083000000057,
+  "collectorPidsUnchanged": [
+    3644,
+    55576
+  ],
+  "viewerPid": 47156,
+  "fullTests": 280,
+  "independentTargetTests": 12,
+  "independentReview": "no important findings"
+}

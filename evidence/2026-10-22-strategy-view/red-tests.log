@@ -1,0 +1,78 @@
+✔ read-only view shows 50k accounting, real allocation and next sellable date from the same snapshot (88.489ms)
+✔ expired or mismatched status suppresses actionable guidance and never hides expired data as live (64.1658ms)
+✔ pending T+1 stop is explicit and a tampered state or claim is refused (165.6525ms)
+✔ HTML escapes names and does not emit order, reset or private filesystem controls (67.1751ms)
+✔ reader uses only configured files and missing snapshots are errors, never new funded accounts (1.3955ms)
+✔ local viewer exposes only GET snapshots and never accepts an order or reset action (108.5964ms)
+✔ viewer read failures expose no stale investment recommendation or local file path (5.2133ms)
+✔ page rechecks quote age at display time rather than trusting earlier collection health (106.9801ms)
+✔ malformed request target returns 400 without escaping the HTTP callback (0.2832ms)
+✖ strategy and per-holding directives are bound to the frozen account and pause when quotes expire (52.7629ms)
+✖ activity reloads the configured file without caching or writing accounts and rejects a foreign model (65.9237ms)
+✖ activity never presents future or oversized records and escapes research text (61.3418ms)
+ℹ tests 12
+ℹ suites 0
+ℹ pass 9
+ℹ fail 3
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 965.884
+
+✖ failing tests:
+
+test at tests\research-account-view.test.js:17:1
+✖ strategy and per-holding directives are bound to the frozen account and pause when quotes expire (52.7629ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+  + undefined
+  - {
+  -   horizon: 20,
+  -   maximumExposure: 0.25,
+  -   maximumNewInvestment: 12500,
+  -   minEstimatedNetReturn: 0.01,
+  -   profile: 'capital50k-risk500-v1',
+  -   stopLossRate: 0.04,
+  -   targetExitEnabled: false
+  - }
+  
+      at TestContext.<anonymous> (C:\Users\lqp07\.codex\worktrees\stock-entry-exit\techno\tests\research-account-view.test.js:17:215)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1325:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:911:18)
+      at Test.postRun (node:internal/test_runner/test:1465:19)
+      at Test.run (node:internal/test_runner/test:1390:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:911:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: { maximumNewInvestment: 12500, maximumExposure: 0.25, stopLossRate: 0.04, minEstimatedNetReturn: 0.01, targetExitEnabled: false, horizon: 20, profile: 'capital50k-risk500-v1' },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests\research-account-view.test.js:22:1
+✖ activity reloads the configured file without caching or writing accounts and rejects a foreign model (65.9237ms)
+  TypeError: Cannot read properties of undefined (reading 'available')
+      at TestContext.<anonymous> (C:\Users\lqp07\.codex\worktrees\stock-entry-exit\techno\tests\research-account-view.test.js:22:554)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1325:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:911:18)
+      at Test.postRun (node:internal/test_runner/test:1465:19)
+      at Test.run (node:internal/test_runner/test:1390:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:911:7)
+
+test at tests\research-account-view.test.js:24:1
+✖ activity never presents future or oversized records and escapes research text (61.3418ms)
+  TypeError: Cannot read properties of undefined (reading 'available')
+      at TestContext.<anonymous> (C:\Users\lqp07\.codex\worktrees\stock-entry-exit\techno\tests\research-account-view.test.js:24:433)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1325:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:911:18)
+      at Test.postRun (node:internal/test_runner/test:1465:19)
+      at Test.run (node:internal/test_runner/test:1390:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:911:7)

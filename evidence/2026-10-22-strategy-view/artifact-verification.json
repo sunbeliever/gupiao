@@ -1,0 +1,70 @@
+{
+  "at": "2026-10-22T01:43:00.966Z",
+  "kind": "immutable-view-only-evidence",
+  "completeRuntimeJournalsIncluded": false,
+  "runOrResumeCopiedAccounts": false,
+  "sourceZipAll20HashesVerified": true,
+  "initialPackageFailurePreserved": "D:/techno/validation/daily-20261022/source-package-attempt-failure.json",
+  "files": [
+    {
+      "name": "activity.jpg",
+      "bytes": 52314,
+      "sha256": "14902f51a7d76f43def2f3e55d538fffa4b306bd659a788dd54cf942f722a3ae"
+    },
+    {
+      "name": "cache-cleanup.json",
+      "bytes": 1239,
+      "sha256": "70c0e44400dc3bb71b234520929d42580b105a16074eebde6d5959a57a63765d"
+    },
+    {
+      "name": "full-tests.log",
+      "bytes": 29365,
+      "sha256": "6dbd7ceb477addf6eeabe30f6a3071ad374326c1654ac42f50e690000ef63d4c"
+    },
+    {
+      "name": "initial-activity.json",
+      "bytes": 1767,
+      "sha256": "0efd6823900c3460095c5a90d07c1794d8a82fa676438b30b4b3be7a3dffb2d9"
+    },
+    {
+      "name": "instructions.jpg",
+      "bytes": 34833,
+      "sha256": "ea924d7c234b399019b7c90b4672c75bb536111bace3c04211ffa2d7316b86c3"
+    },
+    {
+      "name": "live-verification.json",
+      "bytes": 663,
+      "sha256": "d239aa0e07007e4fe97a62121d592b56f1638c16b1d59aebec461d43a55940a6"
+    },
+    {
+      "name": "red-tests.log",
+      "bytes": 4578,
+      "sha256": "86d14f3f0d0997622a456a989eb64a62cffda09e6aea7a2ade86009ff51ede20"
+    },
+    {
+      "name": "review.md",
+      "bytes": 321,
+      "sha256": "47f60422d40f31ac982a007173da34ea486e9efdf3443a969eceab93cb8f6ec9"
+    },
+    {
+      "name": "source-package.zip",
+      "bytes": 956971,
+      "sha256": "199bc8d3137e10135b90f313f917ea18e1c53a197c424e85a2f3df42d383b482"
+    },
+    {
+      "name": "target-tests.log",
+      "bytes": 1369,
+      "sha256": "21b8f01d3087f4a247829b701b142597fa07c36b3d11c9e5eca4976cce64b58d"
+    },
+    {
+      "name": "top.jpg",
+      "bytes": 38355,
+      "sha256": "8794e8c7b3c8e3fa03438460e09f47853d528bd65344b4071c1629f0c823497e"
+    },
+    {
+      "name": "viewer-manifest.json",
+      "bytes": 2697,
+      "sha256": "08121737dff629d79c63cba8517e09a06b6227652a53039a99d92ac204e3beb9"
+    }
+  ]
+}

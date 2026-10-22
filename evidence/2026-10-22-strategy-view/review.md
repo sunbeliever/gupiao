@@ -1,0 +1,1 @@
+Independent reviewer review_entry_exit: no important findings. Independently ran 12 targeted tests. Checked frozen strategy provenance, per-request activity reload, account/model binding, future-time rejection, escaping, stale-quote priority, and read-only behavior. No runtime account changes were made by the reviewer.
