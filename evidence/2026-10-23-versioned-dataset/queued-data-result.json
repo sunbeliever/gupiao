@@ -1,0 +1,103 @@
+{
+  "id": "register-six-etf-baseline-20261023-c",
+  "policyHash": "234b94f54b8e2094f0cb59480af91967139672e40a77d464aa78c7401cd10bcf",
+  "at": "2026-10-23T01:42:10.471Z",
+  "resultHash": "f1fd64dc9fc2b47030400abb2b7a10f5c13249de7e2a89020e3c2bfb0cba14bf",
+  "result": {
+    "kind": "versioned_daily_dataset",
+    "accepted": true,
+    "id": "six-etf-baseline-20261023-c",
+    "datasetHash": "7aa4d94f41abd32624292146406cb4a7ee16e3f180afed2b48296cd8aa2465a7",
+    "manifestHash": "2aa2a4becfa01156fc59bb2c59adfc80b08711a2dbaa3261416e71791822154a",
+    "series": [
+      {
+        "symbol": "sh588000",
+        "adjustment": "raw",
+        "count": 192,
+        "start": "2026-01-05",
+        "end": "2026-10-22"
+      },
+      {
+        "symbol": "sh588000",
+        "adjustment": "hfq",
+        "count": 192,
+        "start": "2026-01-05",
+        "end": "2026-10-22"
+      },
+      {
+        "symbol": "sh512760",
+        "adjustment": "raw",
+        "count": 192,
+        "start": "2026-01-05",
+        "end": "2026-10-22"
+      },
+      {
+        "symbol": "sh512760",
+        "adjustment": "hfq",
+        "count": 192,
+        "start": "2026-01-05",
+        "end": "2026-10-22"
+      },
+      {
+        "symbol": "sh515070",
+        "adjustment": "raw",
+        "count": 192,
+        "start": "2026-01-05",
+        "end": "2026-10-22"
+      },
+      {
+        "symbol": "sh515070",
+        "adjustment": "hfq",
+        "count": 192,
+        "start": "2026-01-05",
+        "end": "2026-10-22"
+      },
+      {
+        "symbol": "sh512720",
+        "adjustment": "raw",
+        "count": 192,
+        "start": "2026-01-05",
+        "end": "2026-10-22"
+      },
+      {
+        "symbol": "sh512720",
+        "adjustment": "hfq",
+        "count": 192,
+        "start": "2026-01-05",
+        "end": "2026-10-22"
+      },
+      {
+        "symbol": "sh515880",
+        "adjustment": "raw",
+        "count": 192,
+        "start": "2026-01-05",
+        "end": "2026-10-22"
+      },
+      {
+        "symbol": "sh515880",
+        "adjustment": "hfq",
+        "count": 192,
+        "start": "2026-01-05",
+        "end": "2026-10-22"
+      },
+      {
+        "symbol": "sz159852",
+        "adjustment": "raw",
+        "count": 192,
+        "start": "2026-01-05",
+        "end": "2026-10-22"
+      },
+      {
+        "symbol": "sz159852",
+        "adjustment": "hfq",
+        "count": 192,
+        "start": "2026-01-05",
+        "end": "2026-10-22"
+      }
+    ],
+    "valuationAdjustment": "raw",
+    "trainingAdjustment": "hfq",
+    "historicalFirstAvailabilityKnown": false,
+    "investmentReady": false
+  }
+}

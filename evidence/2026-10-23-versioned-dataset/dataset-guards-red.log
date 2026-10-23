@@ -1,0 +1,27 @@
+✔ raw and hfq fields remain distinct, unfinished day excluded with provenance (1.2395ms)
+✔ invalid, duplicated, out-of-order and missing completed bars are rejected rather than cleaned away (0.2199ms)
+✔ accepted dual-adjustment dataset is immutable and raw-response tampering is detected (55.2885ms)
+✔ partial data failure retains raw evidence without accepted manifest (3.824ms)
+✔ collector itself rejects a cutoff beyond completed session (3.4735ms)
+✖ explicit alternate adjusted feed is parsed without falling back to raw as hfq (0.209ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 5
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 120.2099
+
+✖ failing tests:
+
+test at tests\research-dataset.test.js:10:1
+✖ explicit alternate adjusted feed is parsed without falling back to raw as hfq (0.209ms)
+  TypeError: D.parseEast is not a function
+      at TestContext.<anonymous> (C:\Users\lqp07\.codex\worktrees\stock-entry-exit\techno\tests\research-dataset.test.js:10:174)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1325:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:911:18)
+      at Test.postRun (node:internal/test_runner/test:1465:19)
+      at Test.run (node:internal/test_runner/test:1390:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:911:7)

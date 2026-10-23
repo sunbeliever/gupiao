@@ -1,0 +1,11 @@
+{
+  "id": "six-etf-baseline-20261023-c",
+  "expectedAsOf": "2026-10-22",
+  "years": [
+    2026
+  ],
+  "root": "D:/techno/validation/autonomous-research/datasets",
+  "sourceAccount": "D:/techno/validation/forward-comparison/paired-capital50k-20261021-pm-a",
+  "minBars": 60,
+  "previousFailure": "A missing hfq rejected. B accepted public data before explicit alternate identity/source code binding; preserved as exploratory archive. C binds source bytes and validates instrument code/market."
+}

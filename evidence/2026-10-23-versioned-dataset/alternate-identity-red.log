@@ -1,0 +1,36 @@
+✔ raw and hfq fields remain distinct, unfinished day excluded with provenance (1.6279ms)
+✔ invalid, duplicated, out-of-order and missing completed bars are rejected rather than cleaned away (0.2188ms)
+✔ accepted dual-adjustment dataset is immutable and raw-response tampering is detected (62.8542ms)
+✔ partial data failure retains raw evidence without accepted manifest (5.9294ms)
+✔ collector itself rejects a cutoff beyond completed session (1.0068ms)
+✔ explicit alternate adjusted feed is parsed without falling back to raw as hfq (0.2185ms)
+✖ alternate feed must identify the requested instrument (0.4412ms)
+✔ missing adjusted field preserves primary and validated alternate evidence end to end (34.2759ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 7
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 167.1066
+
+✖ failing tests:
+
+test at tests\research-dataset.test.js:12:1
+✖ alternate feed must identify the requested instrument (0.4412ms)
+  AssertionError [ERR_ASSERTION]: Missing expected exception.
+      at TestContext.<anonymous> (C:\Users\lqp07\.codex\worktrees\stock-entry-exit\techno\tests\research-dataset.test.js:12:155)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1325:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:911:18)
+      at Test.postRun (node:internal/test_runner/test:1465:19)
+      at Test.run (node:internal/test_runner/test:1390:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:911:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: undefined,
+    operator: 'throws',
+    diff: 'simple'
+  }

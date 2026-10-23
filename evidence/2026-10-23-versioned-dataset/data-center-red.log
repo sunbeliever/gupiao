@@ -1,0 +1,35 @@
+✔ invalid or missing research never corrupts account and future data is refused (3.4536ms)
+✔ render distinguishes actual case attribution from validated profitability and escapes text (0.2695ms)
+✔ malformed nested research cannot disable the account page (2.6726ms)
+✖ completed dataset is visible as data readiness, not model profitability (3.3492ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 3
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 63.2651
+
+✖ failing tests:
+
+test at tests\research-center-view.test.js:7:1
+✖ completed dataset is visible as data readiness, not model profitability (3.3492ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(html.includes('数据版本'))
+  
+      at TestContext.<anonymous> (C:\Users\lqp07\.codex\worktrees\stock-entry-exit\techno\tests\research-center-view.test.js:7:385)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1325:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:911:18)
+      at Test.postRun (node:internal/test_runner/test:1465:19)
+      at Test.run (node:internal/test_runner/test:1390:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:911:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }

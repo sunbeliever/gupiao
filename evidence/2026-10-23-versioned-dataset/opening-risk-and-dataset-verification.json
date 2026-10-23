@@ -1,0 +1,423 @@
+{
+  "at": "2026-10-23T01:44:01.210Z",
+  "scope": "current checkpoint and published view; not new full step replay",
+  "bookAt": "2026-10-23T01:43:41.549Z",
+  "sequence": 1218,
+  "stateHash": "2befecad83108aa9490deb84d0c6c426fc60fe9189699d5b7bddd1a5e7738d00",
+  "modelOrders": [
+    {
+      "id": "paired-capital50k-20261021-pm-a-candidate:13",
+      "account": "model",
+      "symbol": "sh588000",
+      "side": "sell",
+      "shares": 2900,
+      "reason": "risk_stop",
+      "sourceTime": "2026-10-23 09:30:08",
+      "receivedAt": "2026-10-23T01:30:10.527Z",
+      "decisionAt": "2026-10-23T01:30:10.528Z",
+      "orderAt": "2026-10-23T01:30:10.528Z",
+      "fillAssumption": "last_price_adverse_slippage_unverified",
+      "status": "hypothetical_fill",
+      "fingerprint": {
+        "strategy_id": "ridge11-tech-etf-continuous-v1",
+        "model_hash": "f0b16e0c0922e3ae051015c3f73a66135c2a0b4ed478b5c0a3bfe6471ad0b0dd",
+        "universe_version": "sha256:a5f1c542f33c4f24cd4ee4ae5468a02fa7c0285c7d7580585775351afe182e8c",
+        "rules_hash": "417c9e32ed340190cac7009bff39aa4d6d10ecbf8ab98ae02e13b3461c74790c",
+        "data_hash": "3ecd2b780f9b32a281303f92fe7f2d858d1f0efe13d84e5a24eefea8751b4566",
+        "fee_profile": {
+          "assumptionLabel": "最低5元为模拟假设，以合同为准",
+          "commissionRate": 0.0003,
+          "minFee": 5,
+          "slippage": 0.001,
+          "stockSellStampRate": 0.0005,
+          "stockTransferRate": 0.00001,
+          "version": "cn-paper-fees-v1"
+        },
+        "budget": 50000,
+        "risk_limits": {
+          "investableLimit": 12500,
+          "maxExposure": 0.25,
+          "maxPositions": 3,
+          "maxThemeWeight": 1
+        },
+        "execution_mode": "paired_forward_research"
+      },
+      "fillAt": "2026-10-23T01:30:10.528Z",
+      "price": 1.3576409999999999,
+      "notional": 3937.1588999999994,
+      "fees": {
+        "commission": 5,
+        "tax": 0,
+        "transferFee": 0,
+        "total": 5
+      },
+      "executionVerified": false,
+      "realizedPnl": -197.86200000000008
+    },
+    {
+      "id": "paired-capital50k-20261021-pm-a-candidate:14",
+      "account": "model",
+      "symbol": "sh512760",
+      "side": "sell",
+      "shares": 4600,
+      "reason": "risk_stop",
+      "sourceTime": "2026-10-23 09:30:07",
+      "receivedAt": "2026-10-23T01:30:10.527Z",
+      "decisionAt": "2026-10-23T01:30:10.528Z",
+      "orderAt": "2026-10-23T01:30:10.528Z",
+      "fillAssumption": "last_price_adverse_slippage_unverified",
+      "status": "hypothetical_fill",
+      "fingerprint": {
+        "strategy_id": "ridge11-tech-etf-continuous-v1",
+        "model_hash": "f0b16e0c0922e3ae051015c3f73a66135c2a0b4ed478b5c0a3bfe6471ad0b0dd",
+        "universe_version": "sha256:a5f1c542f33c4f24cd4ee4ae5468a02fa7c0285c7d7580585775351afe182e8c",
+        "rules_hash": "417c9e32ed340190cac7009bff39aa4d6d10ecbf8ab98ae02e13b3461c74790c",
+        "data_hash": "a90e034d8556e0de3330af15d1e9b799a564aa053c36669ef6e8b92e405b5bb9",
+        "fee_profile": {
+          "assumptionLabel": "最低5元为模拟假设，以合同为准",
+          "commissionRate": 0.0003,
+          "minFee": 5,
+          "slippage": 0.001,
+          "stockSellStampRate": 0.0005,
+          "stockTransferRate": 0.00001,
+          "version": "cn-paper-fees-v1"
+        },
+        "budget": 50000,
+        "risk_limits": {
+          "investableLimit": 12500,
+          "maxExposure": 0.25,
+          "maxPositions": 3,
+          "maxThemeWeight": 1
+        },
+        "execution_mode": "paired_forward_research"
+      },
+      "fillAt": "2026-10-23T01:30:10.528Z",
+      "price": 0.8461529999999999,
+      "notional": 3892.3037999999997,
+      "fees": {
+        "commission": 5,
+        "tax": 0,
+        "transferFee": 0,
+        "total": 5
+      },
+      "executionVerified": false,
+      "realizedPnl": -197.3717999999999
+    },
+    {
+      "id": "paired-capital50k-20261021-pm-a-candidate:15",
+      "account": "model",
+      "symbol": "sh588000",
+      "side": "buy",
+      "shares": 2900,
+      "reason": "frozen_software_selection",
+      "sourceTime": "2026-10-23 09:30:08",
+      "receivedAt": "2026-10-23T01:30:10.527Z",
+      "decisionAt": "2026-10-23T01:30:10.528Z",
+      "orderAt": "2026-10-23T01:30:10.528Z",
+      "fillAssumption": "last_price_adverse_slippage_unverified",
+      "status": "hypothetical_fill",
+      "fingerprint": {
+        "strategy_id": "ridge11-tech-etf-continuous-v1",
+        "model_hash": "f0b16e0c0922e3ae051015c3f73a66135c2a0b4ed478b5c0a3bfe6471ad0b0dd",
+        "universe_version": "sha256:a5f1c542f33c4f24cd4ee4ae5468a02fa7c0285c7d7580585775351afe182e8c",
+        "rules_hash": "417c9e32ed340190cac7009bff39aa4d6d10ecbf8ab98ae02e13b3461c74790c",
+        "data_hash": "51d91e2ebaea3691bd771c1af1cbcd168528f9ff884e829f82d5f2fcd38815cf",
+        "fee_profile": {
+          "assumptionLabel": "最低5元为模拟假设，以合同为准",
+          "commissionRate": 0.0003,
+          "minFee": 5,
+          "slippage": 0.001,
+          "stockSellStampRate": 0.0005,
+          "stockTransferRate": 0.00001,
+          "version": "cn-paper-fees-v1"
+        },
+        "budget": 50000,
+        "risk_limits": {
+          "investableLimit": 12500,
+          "maxExposure": 0.25,
+          "maxPositions": 3,
+          "maxThemeWeight": 1
+        },
+        "execution_mode": "paired_forward_research"
+      },
+      "fillAt": "2026-10-23T01:30:10.528Z",
+      "price": 1.3603589999999999,
+      "notional": 3945.0410999999995,
+      "fees": {
+        "commission": 5,
+        "tax": 0,
+        "transferFee": 0,
+        "total": 5
+      },
+      "executionVerified": false
+    },
+    {
+      "id": "paired-capital50k-20261021-pm-a-candidate:16",
+      "account": "model",
+      "symbol": "sh512760",
+      "side": "buy",
+      "shares": 4800,
+      "reason": "frozen_software_selection",
+      "sourceTime": "2026-10-23 09:30:07",
+      "receivedAt": "2026-10-23T01:30:10.527Z",
+      "decisionAt": "2026-10-23T01:30:10.528Z",
+      "orderAt": "2026-10-23T01:30:10.528Z",
+      "fillAssumption": "last_price_adverse_slippage_unverified",
+      "status": "hypothetical_fill",
+      "fingerprint": {
+        "strategy_id": "ridge11-tech-etf-continuous-v1",
+        "model_hash": "f0b16e0c0922e3ae051015c3f73a66135c2a0b4ed478b5c0a3bfe6471ad0b0dd",
+        "universe_version": "sha256:a5f1c542f33c4f24cd4ee4ae5468a02fa7c0285c7d7580585775351afe182e8c",
+        "rules_hash": "417c9e32ed340190cac7009bff39aa4d6d10ecbf8ab98ae02e13b3461c74790c",
+        "data_hash": "68e5c9b2af864acbfe4fb17fbea026c88c41dbbf5905e8b4a098438644061ca7",
+        "fee_profile": {
+          "assumptionLabel": "最低5元为模拟假设，以合同为准",
+          "commissionRate": 0.0003,
+          "minFee": 5,
+          "slippage": 0.001,
+          "stockSellStampRate": 0.0005,
+          "stockTransferRate": 0.00001,
+          "version": "cn-paper-fees-v1"
+        },
+        "budget": 50000,
+        "risk_limits": {
+          "investableLimit": 12500,
+          "maxExposure": 0.25,
+          "maxPositions": 3,
+          "maxThemeWeight": 1
+        },
+        "execution_mode": "paired_forward_research"
+      },
+      "fillAt": "2026-10-23T01:30:10.528Z",
+      "price": 0.8478469999999999,
+      "notional": 4069.6655999999994,
+      "fees": {
+        "commission": 5,
+        "tax": 0,
+        "transferFee": 0,
+        "total": 5
+      },
+      "executionVerified": false
+    },
+    {
+      "id": "paired-capital50k-20261021-pm-a-candidate:17",
+      "account": "model",
+      "symbol": "sh515880",
+      "side": "sell",
+      "shares": 8400,
+      "reason": "risk_stop",
+      "sourceTime": "2026-10-23 09:30:37",
+      "receivedAt": "2026-10-23T01:30:41.611Z",
+      "decisionAt": "2026-10-23T01:30:41.612Z",
+      "orderAt": "2026-10-23T01:30:41.612Z",
+      "fillAssumption": "last_price_adverse_slippage_unverified",
+      "status": "hypothetical_fill",
+      "fingerprint": {
+        "strategy_id": "ridge11-tech-etf-continuous-v1",
+        "model_hash": "f0b16e0c0922e3ae051015c3f73a66135c2a0b4ed478b5c0a3bfe6471ad0b0dd",
+        "universe_version": "sha256:a5f1c542f33c4f24cd4ee4ae5468a02fa7c0285c7d7580585775351afe182e8c",
+        "rules_hash": "417c9e32ed340190cac7009bff39aa4d6d10ecbf8ab98ae02e13b3461c74790c",
+        "data_hash": "6add73da8bfdd3e799e154f2e99c7b6e75ab9221607f4e103161c35bafe3203a",
+        "fee_profile": {
+          "assumptionLabel": "最低5元为模拟假设，以合同为准",
+          "commissionRate": 0.0003,
+          "minFee": 5,
+          "slippage": 0.001,
+          "stockSellStampRate": 0.0005,
+          "stockTransferRate": 0.00001,
+          "version": "cn-paper-fees-v1"
+        },
+        "budget": 50000,
+        "risk_limits": {
+          "investableLimit": 12500,
+          "maxExposure": 0.25,
+          "maxPositions": 3,
+          "maxThemeWeight": 1
+        },
+        "execution_mode": "paired_forward_research"
+      },
+      "fillAt": "2026-10-23T01:30:41.612Z",
+      "price": 0.48951,
+      "notional": 4111.884,
+      "fees": {
+        "commission": 5,
+        "tax": 0,
+        "transferFee": 0,
+        "total": 5
+      },
+      "executionVerified": false,
+      "realizedPnl": -211.6252000000004
+    },
+    {
+      "id": "paired-capital50k-20261021-pm-a-candidate:18",
+      "account": "model",
+      "symbol": "sh515880",
+      "side": "buy",
+      "shares": 8800,
+      "reason": "frozen_software_selection",
+      "sourceTime": "2026-10-23 09:30:37",
+      "receivedAt": "2026-10-23T01:30:41.611Z",
+      "decisionAt": "2026-10-23T01:30:41.612Z",
+      "orderAt": "2026-10-23T01:30:41.612Z",
+      "fillAssumption": "last_price_adverse_slippage_unverified",
+      "status": "hypothetical_fill",
+      "fingerprint": {
+        "strategy_id": "ridge11-tech-etf-continuous-v1",
+        "model_hash": "f0b16e0c0922e3ae051015c3f73a66135c2a0b4ed478b5c0a3bfe6471ad0b0dd",
+        "universe_version": "sha256:a5f1c542f33c4f24cd4ee4ae5468a02fa7c0285c7d7580585775351afe182e8c",
+        "rules_hash": "417c9e32ed340190cac7009bff39aa4d6d10ecbf8ab98ae02e13b3461c74790c",
+        "data_hash": "54e03562cdd4ef8adfaf79d933519f4a80622557eb05e98486b931a28b86d641",
+        "fee_profile": {
+          "assumptionLabel": "最低5元为模拟假设，以合同为准",
+          "commissionRate": 0.0003,
+          "minFee": 5,
+          "slippage": 0.001,
+          "stockSellStampRate": 0.0005,
+          "stockTransferRate": 0.00001,
+          "version": "cn-paper-fees-v1"
+        },
+        "budget": 50000,
+        "risk_limits": {
+          "investableLimit": 12500,
+          "maxExposure": 0.25,
+          "maxPositions": 3,
+          "maxThemeWeight": 1
+        },
+        "execution_mode": "paired_forward_research"
+      },
+      "fillAt": "2026-10-23T01:30:41.612Z",
+      "price": 0.4904899999999999,
+      "notional": 4316.311999999999,
+      "fees": {
+        "commission": 5,
+        "tax": 0,
+        "transferFee": 0,
+        "total": 5
+      },
+      "executionVerified": false
+    }
+  ],
+  "netPnl": -814.4395999999979,
+  "fees": 55,
+  "holdings": [
+    {
+      "symbol": "sh588000",
+      "shares": 2900
+    },
+    {
+      "symbol": "sh512760",
+      "shares": 4800
+    },
+    {
+      "symbol": "sh515880",
+      "shares": 8800
+    }
+  ],
+  "httpStatus": 200,
+  "researchAvailable": true,
+  "dataTask": {
+    "id": "register-six-etf-baseline-20261023-c",
+    "kind": "data_collect",
+    "status": "completed",
+    "attempts": 1,
+    "updatedAt": "2026-10-23T01:42:10.471Z",
+    "reason": null,
+    "result": {
+      "kind": "versioned_daily_dataset",
+      "accepted": true,
+      "id": "six-etf-baseline-20261023-c",
+      "datasetHash": "7aa4d94f41abd32624292146406cb4a7ee16e3f180afed2b48296cd8aa2465a7",
+      "manifestHash": "2aa2a4becfa01156fc59bb2c59adfc80b08711a2dbaa3261416e71791822154a",
+      "series": [
+        {
+          "symbol": "sh588000",
+          "adjustment": "raw",
+          "count": 192,
+          "start": "2026-01-05",
+          "end": "2026-10-22"
+        },
+        {
+          "symbol": "sh588000",
+          "adjustment": "hfq",
+          "count": 192,
+          "start": "2026-01-05",
+          "end": "2026-10-22"
+        },
+        {
+          "symbol": "sh512760",
+          "adjustment": "raw",
+          "count": 192,
+          "start": "2026-01-05",
+          "end": "2026-10-22"
+        },
+        {
+          "symbol": "sh512760",
+          "adjustment": "hfq",
+          "count": 192,
+          "start": "2026-01-05",
+          "end": "2026-10-22"
+        },
+        {
+          "symbol": "sh515070",
+          "adjustment": "raw",
+          "count": 192,
+          "start": "2026-01-05",
+          "end": "2026-10-22"
+        },
+        {
+          "symbol": "sh515070",
+          "adjustment": "hfq",
+          "count": 192,
+          "start": "2026-01-05",
+          "end": "2026-10-22"
+        },
+        {
+          "symbol": "sh512720",
+          "adjustment": "raw",
+          "count": 192,
+          "start": "2026-01-05",
+          "end": "2026-10-22"
+        },
+        {
+          "symbol": "sh512720",
+          "adjustment": "hfq",
+          "count": 192,
+          "start": "2026-01-05",
+          "end": "2026-10-22"
+        },
+        {
+          "symbol": "sh515880",
+          "adjustment": "raw",
+          "count": 192,
+          "start": "2026-01-05",
+          "end": "2026-10-22"
+        },
+        {
+          "symbol": "sh515880",
+          "adjustment": "hfq",
+          "count": 192,
+          "start": "2026-01-05",
+          "end": "2026-10-22"
+        },
+        {
+          "symbol": "sz159852",
+          "adjustment": "raw",
+          "count": 192,
+          "start": "2026-01-05",
+          "end": "2026-10-22"
+        },
+        {
+          "symbol": "sz159852",
+          "adjustment": "hfq",
+          "count": 192,
+          "start": "2026-01-05",
+          "end": "2026-10-22"
+        }
+      ],
+      "valuationAdjustment": "raw",
+      "trainingAdjustment": "hfq",
+      "historicalFirstAvailabilityKnown": false,
+      "investmentReady": false
+    }
+  }
+}

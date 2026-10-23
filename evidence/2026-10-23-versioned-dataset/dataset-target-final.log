@@ -1,0 +1,42 @@
+✔ durable idempotent declaration rejects changed policy and forbidden handler (27.2839ms)
+✔ one transactional writer and failed results retained (31.2322ms)
+✔ dead running job recovers with bounded attempts and durable restart (39.8981ms)
+✔ resource gate does not consume attempt or invent training (0.1403ms)
+✔ case study isolates saved commission and foregone inventory without claiming full backtest (0.8479ms)
+✔ claim selected runnable job without taking blocked training first (28.7874ms)
+✔ stale recovery CAS cannot steal a newly claimed live generation (28.1866ms)
+✔ stale execution cannot finish a recovered job (34.7491ms)
+✔ real audit order schema is normalized before case execution (26.132ms)
+✔ data collection is an explicit allowlisted handler (24.8855ms)
+✔ read-only view shows 50k accounting, real allocation and next sellable date from the same snapshot (80.4084ms)
+✔ expired or mismatched status suppresses actionable guidance and never hides expired data as live (64.0327ms)
+✔ pending T+1 stop is explicit and a tampered state or claim is refused (148.6621ms)
+✔ HTML escapes names and does not emit order, reset or private filesystem controls (56.2517ms)
+✔ reader uses only configured files and missing snapshots are errors, never new funded accounts (1.0957ms)
+✔ local viewer exposes only GET snapshots and never accepts an order or reset action (120.7943ms)
+✔ viewer read failures expose no stale investment recommendation or local file path (4.7383ms)
+✔ page rechecks quote age at display time rather than trusting earlier collection health (391.2847ms)
+✔ malformed request target returns 400 without escaping the HTTP callback (0.5293ms)
+✔ strategy and per-holding directives are bound to the frozen account and pause when quotes expire (122.7678ms)
+✔ activity reloads the configured file without caching or writing accounts and rejects a foreign model (123.5936ms)
+✔ activity never presents future or oversized records and escapes research text (157.9744ms)
+✔ invalid or missing research never corrupts account and future data is refused (6.7733ms)
+✔ render distinguishes actual case attribution from validated profitability and escapes text (0.2715ms)
+✔ malformed nested research cannot disable the account page (2.5728ms)
+✔ completed dataset is visible as data readiness, not model profitability (0.6417ms)
+✔ raw and hfq fields remain distinct, unfinished day excluded with provenance (1.3732ms)
+✔ invalid, duplicated, out-of-order and missing completed bars are rejected rather than cleaned away (0.2339ms)
+✔ accepted dual-adjustment dataset is immutable and raw-response tampering is detected (69.5721ms)
+✔ partial data failure retains raw evidence without accepted manifest (5.0086ms)
+✔ collector itself rejects a cutoff beyond completed session (1.0371ms)
+✔ explicit alternate adjusted feed is parsed without falling back to raw as hfq (0.2177ms)
+✔ alternate feed must identify the requested instrument (0.1876ms)
+✔ missing adjusted field preserves primary and validated alternate evidence end to end (37.206ms)
+ℹ tests 34
+ℹ suites 0
+ℹ pass 34
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1359.018
