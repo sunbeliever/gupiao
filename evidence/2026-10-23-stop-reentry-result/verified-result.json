@@ -1,0 +1,137 @@
+{
+  "payload": {
+    "directory": "D:/techno/validation/strategy-research/stop-reentry-20261023-a",
+    "manifestSha256": "a0ddaae9f28a8b72788cb53e325f4ef2ac61c81de63cd09683429553b531f87f",
+    "comparisonSha256": "0f0538ea465a4b6b8e6f900ce43046cacafeb92457106d8378548b288bbd9b5e"
+  },
+  "result": {
+    "kind": "full_strategy_comparison",
+    "experimentId": "stop-reentry-20261023-a",
+    "budget": 50000,
+    "modelHash": "f0b16e0c0922e3ae051015c3f73a66135c2a0b4ed478b5c0a3bfe6471ad0b0dd",
+    "period": [
+      "2025-01-02",
+      "2026-09-30"
+    ],
+    "manifestHash": "dc132af4ab753d24ad69ff29a362d0ccfb5ab28dd824ece735ed7cf6dbcc5f30",
+    "comparisonSha256": "0f0538ea465a4b6b8e6f900ce43046cacafeb92457106d8378548b288bbd9b5e",
+    "verifiedAt": "2026-10-23T05:24:57.154Z",
+    "verificationScope": "Frozen source/input hashes, complete result hashes and summary/metric derivation; no additional Paper replay during import",
+    "fullDailyAccountReplay": true,
+    "independentOutOfSample": false,
+    "paths": [
+      {
+        "id": "baseline",
+        "netPnl": 6411.778999999995,
+        "netReturn": 0.1282355799999999,
+        "fees": 345,
+        "buyCount": 36,
+        "sellCount": 33,
+        "turnover": 10.164522032,
+        "meanExposure": 0.14150455187938504,
+        "annual": [
+          {
+            "year": "2025",
+            "asOf": "2025-12-31",
+            "startEquity": 50000,
+            "endEquity": 57994.14230000001,
+            "netReturn": 0.15988284600000013,
+            "annualized": false
+          },
+          {
+            "year": "2026",
+            "asOf": "2026-09-30",
+            "startEquity": 57994.14230000001,
+            "endEquity": 56411.778999999995,
+            "netReturn": -0.027284881493971347,
+            "annualized": false
+          }
+        ],
+        "observations": 424,
+        "annualizedReturn": 0.07434377633111722,
+        "maxDrawdownAmount": 4771.361700000009,
+        "maxDrawdown": 0.07798490965665661,
+        "sharpe": 1.0751427763943076,
+        "calmar": 0.9533097705495823,
+        "assumption": "Daily observed equity, 252 sessions/year, zero risk-free rate; excludes unobserved intraday extrema"
+      },
+      {
+        "id": "stop-next-session",
+        "netPnl": 4961.053600000028,
+        "netReturn": 0.09922107200000063,
+        "fees": 290,
+        "buyCount": 30,
+        "sellCount": 28,
+        "turnover": 9.53505864,
+        "meanExposure": 0.1414780386578613,
+        "annual": [
+          {
+            "year": "2025",
+            "asOf": "2025-12-31",
+            "startEquity": 50000,
+            "endEquity": 57994.14230000001,
+            "netReturn": 0.15988284600000013,
+            "annualized": false
+          },
+          {
+            "year": "2026",
+            "asOf": "2026-09-30",
+            "startEquity": 57994.14230000001,
+            "endEquity": 54961.05360000003,
+            "netReturn": -0.05229991477949625,
+            "annualized": false
+          }
+        ],
+        "observations": 424,
+        "annualizedReturn": 0.05783631062032546,
+        "maxDrawdownAmount": 6222.087099999975,
+        "maxDrawdown": 0.10169610498599291,
+        "sharpe": 0.8436446610285903,
+        "calmar": 0.5687170676624393,
+        "assumption": "Daily observed equity, 252 sessions/year, zero risk-free rate; excludes unobserved intraday extrema"
+      },
+      {
+        "id": "fixed-three",
+        "netPnl": 6878.8070000000735,
+        "netReturn": 0.1375761400000015,
+        "fees": 1015,
+        "buyCount": 103,
+        "sellCount": 100,
+        "turnover": 16.401922024000005,
+        "meanExposure": 0.23817030217639534,
+        "annual": [
+          {
+            "year": "2025",
+            "asOf": "2025-12-31",
+            "startEquity": 50000,
+            "endEquity": 54519.53010000003,
+            "netReturn": 0.09039060200000071,
+            "annualized": false
+          },
+          {
+            "year": "2026",
+            "asOf": "2026-09-30",
+            "startEquity": 54519.53010000003,
+            "endEquity": 56878.80700000007,
+            "netReturn": 0.04327397715410686,
+            "annualized": false
+          }
+        ],
+        "observations": 424,
+        "annualizedReturn": 0.07962122494555057,
+        "maxDrawdownAmount": 4602.314599999976,
+        "maxDrawdown": 0.0749197460803136,
+        "sharpe": 0.9049617570125171,
+        "calmar": 1.0627535344313235,
+        "assumption": "Daily observed equity, 252 sessions/year, zero risk-free rate; excludes unobserved intraday extrema"
+      }
+    ],
+    "decision": "rejected",
+    "netPnlDifference": -1450.7253999999666,
+    "feeDifference": -55,
+    "drawdownAmountDifference": 1450.7253999999666,
+    "promoted": false,
+    "investmentReady": false,
+    "verifiedProfitProbability": null
+  }
+}

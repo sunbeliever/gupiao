@@ -1,0 +1,11 @@
+{
+  "at": "2026-10-23T05:29:31.115Z",
+  "archive": "D:/techno/dist/科技观察-冷静期完整策略失败证据-20261023.zip",
+  "archiveSha256": "dd58f78cd929fb6503a30e4a41a290b8dc4558f0cca3eeb9d53dc9890601fd5e",
+  "bytes": 3885245,
+  "independentUnzipVerified": true,
+  "experimentId": "stop-reentry-20261023-a",
+  "decision": "rejected",
+  "comparisonSha256": "0f0538ea465a4b6b8e6f900ce43046cacafeb92457106d8378548b288bbd9b5e",
+  "note": "Static evidence only; never run or resume this copied directory"
+}

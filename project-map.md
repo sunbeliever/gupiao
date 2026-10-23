@@ -1,3 +1,8 @@
+# 2026-10-23 13:27 冷静期完整结果：淘汰并入库
+- 最新docs/stop-reentry-results-2026-10-23.md；stop-reentry-20261023-a已11:03完成，三路径完整结果/hash/metrics核验，不再run/resume。候选净4961.05元/日线峰谷6222.09，比原基线6411.78/4771.36更差；少费55但少赚1450.73，三个均不满足500/1%筛选，未晋级。已见历史探索，不是今日收益。
+- 新strategy_result核验与研发中心比较交付；317正式/22目标/冻结22/独立33通过。持久release20261023-c共33源hash，13:25定时任务结果0、job完成；viewer62520，HTTP200/比较rejected，浏览器安全策略阻止目视核验，未绕过。主12520/小62748冻结规则不改。
+- 下一轮沿docs/自主研发路线图.md做固定5/20/60日成熟标签滚动研究，非12个月预测；自动训练/晋级/账户独立守护仍未实现。16:20核自动日线与收盘，无重复训练或第三阈值凑收益。
+
 # 2026-10-23 10:53 冷静期完整策略验证进行中
 - 最新docs/stop-reentry-full-research-2026-10-23.md。310正式/20目标及独立复审；新增显式next_session候选，默认100真实状态hash兼容。原冻结账户/模型不改。
 - 新ID stop-reentry-20261023-a 位于D:/techno/validation/strategy-research；10:50隐藏PID12136、512MB/BelowNormal，每次20分钟。10:52 baseline400日，尚无完整结果；先查真实PID与progress/comparison/failure，不重复run，有活写者不resume。当前研究是独立冻结驱动，尚未接入SQLite处理器。

@@ -1,0 +1,30 @@
+✔ durable idempotent declaration rejects changed policy and forbidden handler (24.8179ms)
+✔ one transactional writer and failed results retained (27.8781ms)
+✔ dead running job recovers with bounded attempts and durable restart (45.9903ms)
+✔ resource gate does not consume attempt or invent training (0.1592ms)
+✔ case study isolates saved commission and foregone inventory without claiming full backtest (0.92ms)
+✔ claim selected runnable job without taking blocked training first (34.8873ms)
+✔ stale recovery CAS cannot steal a newly claimed live generation (35.8829ms)
+✔ stale execution cannot finish a recovered job (38.5414ms)
+✔ real audit order schema is normalized before case execution (33.1743ms)
+✔ data collection is an explicit allowlisted handler (27.0871ms)
+✔ training blocker states missing executor even during trading hours (0.2128ms)
+✔ invalid or missing research never corrupts account and future data is refused (4.6818ms)
+✔ render distinguishes actual case attribution from validated profitability and escapes text (0.2845ms)
+✔ malformed nested research cannot disable the account page (3.0414ms)
+✔ completed dataset is visible as data readiness, not model profitability (0.1341ms)
+✔ strategy comparison displays failed candidate and distinguishes daily exploration (0.7013ms)
+✔ malformed comparison annual rows hide research conclusion without throwing (1.8504ms)
+✔ full strategy evidence has a dedicated immutable queue kind (30.2013ms)
+✔ inferior historical candidate is rejected without promotion or probability (0.3019ms)
+✔ even favorable historical evidence cannot promote (0.1052ms)
+✔ result import rejects changed declarations before opening any result (1.2804ms)
+✔ complete declared result binding rejects source, result and summary tampering (22.1816ms)
+ℹ tests 22
+ℹ suites 0
+ℹ pass 22
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 507.1273

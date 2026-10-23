@@ -1,0 +1,21 @@
+{
+  "at": "2026-10-23T05:28:22.479Z",
+  "formalTests": 317,
+  "targetTests": 22,
+  "independentReview": {
+    "targetTests": 33,
+    "importantIssues": 0,
+    "scope": "Read-only manifest/source/input/claim/full result hashes, summary/metrics, UI schema; no additional Paper replay during import"
+  },
+  "browserVisualVerification": {
+    "passed": false,
+    "reason": "Browser URL policy rejected acquisition of localhost tab; no alternate browser/CDP/screenshot workaround attempted"
+  },
+  "httpVerification": {
+    "status": 200,
+    "researchAvailable": true,
+    "decision": "rejected",
+    "viewerPid": 62520
+  },
+  "frozenAccountSourcesChanged": false
+}
