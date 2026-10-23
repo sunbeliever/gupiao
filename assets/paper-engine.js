@@ -170,5 +170,5 @@
   const s={universe:input.universe||[],quoteWatermarks:input.quoteWatermarks||{},model:input.model||{},signals:input.predictions||{}};
   return Continuous.inspect(s,input.quotes||{},now,{predictions:s.signals,dataHealth:input.dataHealth,model:s.model},core);
  }
- return {inspectExecution,start,mark,trading,sourceMs,plan,bindSignal,startAuto,stepAuto,startContinuous:startAuto,resume:Continuous.resume,observe:Continuous.observe,replay:(session,ticks)=>ticks.reduce((s,t)=>stepAuto(s,t.quotes,t.at,t.context),Continuous.resume(session)),legacyStartAuto,legacyStepAuto};
+ return {inspectExecution,start,mark,trading,sourceMs,plan,bindSignal,startAuto,stepAuto,startContinuous:startAuto,resume:Continuous.resume,observe:Continuous.observe,replay:(session,ticks,options={})=>ticks.reduce((s,t)=>{if(options.deadlineMs!==undefined&&Date.now()>options.deadlineMs)throw Error('Replay execution deadline reached');return stepAuto(s,t.quotes,t.at,t.context);},Continuous.resume(session)),legacyStartAuto,legacyStepAuto};
 });

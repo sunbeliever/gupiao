@@ -1,0 +1,206 @@
+{
+  "schema": 1,
+  "id": "stop-reentry-20261023-a",
+  "declaredAt": "2026-10-23T02:48:36.687Z",
+  "kind": "previously_seen_historical_exploration_not_blind",
+  "sources": {
+    "assets/paper-engine.js": "6c60f13addb0443e85e931be1dd3a7a4bab031fcf13256ce1591d85e6ef7d691",
+    "assets/paper-account.js": "a3cb78863ef990c850d35aff910ae028bd446c5bfcd52f97cb48830faf485575",
+    "assets/trading-calendar.js": "9fc9f436ddc2980cf062cb85cc48ddfb1b99e1674db085c9d01d84cf6dfb9619",
+    "assets/fee-profile.js": "558cc293378a4d93d01c8c9cf41f40b77e1a313f048cfe5c95e1bfaf1d51f96a",
+    "assets/audit-identity.js": "f0b01165c4a94c731ebbd8bf09a9ebf2659106d630ca78b9d2e89f243249a1ab",
+    "assets/corporate-actions.js": "a9e2d9b53f24d2c3ca45f1afff8a5393694c0ed3745498e639e56c6a308b0f4b",
+    "assets/corporate-events.js": "e01116e00bb34620f8fa07446990048c49c08c5f3a0bda202ab5d8b9270f3550",
+    "assets/analysis.js": "ecbb66231d2276de365b6e1a3d657e2931ade29049c590ef6e5701a4dc7255cd",
+    "assets/market.js": "9a1da1a3114a47f0786270da30db3da5792a43ae3f4ce47342b14d71282ab199",
+    "assets/news-facts.js": "473acd26924e02c9f6c3f485c040b50eeafd6179eb6cea901972cbbcf4832de2",
+    "scripts/executable-research.js": "063b6f259eefffad96d6da1937e57e30889ba8bd300027598cfd4b11c597e15e",
+    "scripts/stop-reentry-research.js": "27d99df56aeb05a6e66e54a406819e0be601dca40836d589ca7c6d94f4145e84"
+  },
+  "policy": {
+    "start": "2025-01-02",
+    "end": "2026-09-30",
+    "trainCutoff": "2024-12-31",
+    "budget": 50000,
+    "universe": [
+      {
+        "symbol": "sh588000",
+        "name": "科创50ETF",
+        "sector": "科创",
+        "type": "etf"
+      },
+      {
+        "symbol": "sh512760",
+        "name": "芯片ETF",
+        "sector": "半导体",
+        "type": "etf"
+      },
+      {
+        "symbol": "sh515070",
+        "name": "人工智能ETF",
+        "sector": "人工智能",
+        "type": "etf"
+      },
+      {
+        "symbol": "sh512720",
+        "name": "计算机ETF",
+        "sector": "软件",
+        "type": "etf"
+      },
+      {
+        "symbol": "sh515880",
+        "name": "通信ETF",
+        "sector": "通信",
+        "type": "etf"
+      },
+      {
+        "symbol": "sz159852",
+        "name": "软件ETF",
+        "sector": "软件",
+        "type": "etf"
+      }
+    ],
+    "feeProfile": {
+      "version": "cn-paper-fees-v1",
+      "commissionRate": 0.0003,
+      "minFee": 5,
+      "slippage": 0.001,
+      "stockSellStampRate": 0.0005,
+      "stockTransferRate": 0.00001,
+      "assumptionLabel": "最低5元为模拟假设，以合同为准"
+    },
+    "corporateEvents": [
+      {
+        "id": "sh512760-split-20200910",
+        "symbol": "sh512760",
+        "type": "split",
+        "recordDate": "2020-09-08",
+        "exDate": "2020-09-10",
+        "ratio": 2,
+        "announcedAt": "2020-08-31",
+        "source": "https://pdf.dfcfw.com/pdf/H2_AN202008311404432880_1.pdf"
+      },
+      {
+        "id": "sh512720-div-20230925",
+        "symbol": "sh512720",
+        "type": "dividend",
+        "recordDate": "2023-09-22",
+        "exDate": "2023-09-25",
+        "payDate": "2023-09-28",
+        "cashPerShare": 0.048,
+        "announcedAt": "2023-09-21",
+        "source": "https://www.sse.com.cn/disclosure/fund/announcement/c/new/2023-09-21/512720_20230921_7RNP.pdf"
+      },
+      {
+        "id": "sh512720-div-20231225",
+        "symbol": "sh512720",
+        "type": "dividend",
+        "recordDate": "2023-12-22",
+        "exDate": "2023-12-25",
+        "payDate": "2023-12-28",
+        "cashPerShare": 0.048,
+        "announcedAt": "2023-12-21",
+        "source": "https://www.sse.com.cn/disclosure/fund/announcement/c/new/2023-12-21/512720_20231221_8S3H.pdf"
+      },
+      {
+        "id": "sh515880-split-20260203",
+        "symbol": "sh515880",
+        "type": "split",
+        "recordDate": "2026-02-02",
+        "exDate": "2026-02-03",
+        "ratio": 3,
+        "announcedAt": "2026-01-28",
+        "source": "https://www.sse.com.cn/disclosure/fund/announcement/c/new/2026-01-28/515880_20260128_CJ9L.pdf"
+      },
+      {
+        "id": "sh512760-split-20260327",
+        "symbol": "sh512760",
+        "type": "split",
+        "recordDate": "2026-03-26",
+        "exDate": "2026-03-27",
+        "ratio": 2,
+        "announcedAt": "2026-03-23",
+        "source": "https://www.sse.com.cn/disclosure/fund/announcement/c/new/2026-03-23/512760_20260323_B2SJ.pdf"
+      },
+      {
+        "id": "sh515880-split-20260706",
+        "symbol": "sh515880",
+        "type": "split",
+        "recordDate": "2026-07-03",
+        "exDate": "2026-07-06",
+        "ratio": 2,
+        "announcedAt": "2026-06-30",
+        "source": "https://vip.stock.finance.sina.com.cn/fund/go.php/vAkFundInfo_JJGKXX/q/5328301.phtml"
+      },
+      {
+        "id": "sh515070-split-20260706",
+        "symbol": "sh515070",
+        "type": "split",
+        "recordDate": "2026-07-03",
+        "exDate": "2026-07-06",
+        "ratio": 2,
+        "announcedAt": "2026-06-30",
+        "source": "https://www.95579.com/main/a/20260630/39021.shtml"
+      }
+    ],
+    "stopLossRate": 0.04,
+    "maxDrawdownLimit": 0.01,
+    "capitalProfile": "capital50k-risk500-v1",
+    "targetExitEnabled": false,
+    "minEstimatedNetReturn": 0.01,
+    "riskLimits": {
+      "investableLimit": 12500,
+      "maxExposure": 0.25,
+      "maxPositions": 3,
+      "maxThemeWeight": 1
+    }
+  },
+  "modelHash": "f0b16e0c0922e3ae051015c3f73a66135c2a0b4ed478b5c0a3bfe6471ad0b0dd",
+  "dataHash": "115e4cfdd3f758b50a3bf1fff0baf2568ca2736813f047154eb0ba68c4f56368",
+  "files": {
+    "prices.json": "23e5d75148f8fa4ceea0ec360d6ed7f9befbb7538775ab3df4e966f97944d5a5",
+    "model.json": "f5900387827d701337a43a548ddaa2ea9a8d9b6d20bd83a72d1f3cfce5a5ddc8",
+    "legacy-parity-input.json": "2211bebc8c13a12e45edd3622432e01f338e5980e080b442785ae06b111661c3"
+  },
+  "paths": [
+    {
+      "id": "baseline",
+      "selector": "ridge",
+      "override": {}
+    },
+    {
+      "id": "stop-next-session",
+      "selector": "ridge",
+      "override": {
+        "stopReentryPolicy": "next_session"
+      }
+    },
+    {
+      "id": "fixed-three",
+      "selector": "equal_three",
+      "override": {
+        "minEstimatedNetReturn": 0
+      }
+    }
+  ],
+  "promotion": {
+    "eligible": false,
+    "requires": [
+      "Independent future validation",
+      "Risk acceptable in amount and ratio",
+      "Positive cost-adjusted excess and stability"
+    ],
+    "exploratoryScreen": {
+      "maximumDrawdownAmount": 500,
+      "maximumDrawdownRatio": 0.01,
+      "positiveNetReturn": true,
+      "nonNegativeAnnualChanges": true
+    }
+  },
+  "notes": [
+    "No retraining or modification to prior research IDs/accounts.",
+    "One candidate plus original baseline and fixed-three control.",
+    "Daily open/close observations miss intraday stop opportunities; known corporate action coverage incomplete.",
+    "A historical improvement cannot authorize live investment or promotion."
+  ]
+}

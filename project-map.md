@@ -1,3 +1,8 @@
+# 2026-10-23 10:53 冷静期完整策略验证进行中
+- 最新docs/stop-reentry-full-research-2026-10-23.md。310正式/20目标及独立复审；新增显式next_session候选，默认100真实状态hash兼容。原冻结账户/模型不改。
+- 新ID stop-reentry-20261023-a 位于D:/techno/validation/strategy-research；10:50隐藏PID12136、512MB/BelowNormal，每次20分钟。10:52 baseline400日，尚无完整结果；先查真实PID与progress/comparison/failure，不重复run，有活写者不resume。当前研究是独立冻结驱动，尚未接入SQLite处理器。
+- 2025至2026-09已看历史、固定f0/50k/25%/4%/T+1/同费，唯一候选和原基线/固定三ETF；结果需完整公开回放一致，未晋级。当前持久release20261023-b未改，训练/晋级未实现。
+
 # 2026-10-23 09:45 数据版本化与开盘风险
 - 最新docs/versioned-data-and-opening-risk-2026-10-23.md；302完整/34目标/独立复审。稳定release20261023-b，Windows任务已换27项源并实际运行结果0，viewer29188。data_collect仅在交易日16:20后自动声明；今日收盘未来运行待验证。
 - 正式数据six-etf-baseline-20261023-c（原价/后复权各6分区、各192日、截至10/22），13原响应与helper/C#/collector/calendar指纹；A缺hfq失败、B探索存档保留，C正式，模型未变。
