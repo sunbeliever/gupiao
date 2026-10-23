@@ -1,0 +1,32 @@
+✔ durable idempotent declaration rejects changed policy and forbidden handler (27.3557ms)
+✔ one transactional writer and failed results retained (32.3192ms)
+✔ dead running job recovers with bounded attempts and durable restart (48.1673ms)
+✔ resource gate does not consume attempt or invent training (0.1742ms)
+✔ case study isolates saved commission and foregone inventory without claiming full backtest (0.9036ms)
+✔ claim selected runnable job without taking blocked training first (33.8855ms)
+✔ stale recovery CAS cannot steal a newly claimed live generation (29.4893ms)
+✔ stale execution cannot finish a recovered job (33.9932ms)
+✖ real audit order schema is normalized before case execution (24.8882ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 8
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 299.0943
+
+✖ failing tests:
+
+test at tests\autonomous-research.test.js:17:1
+✖ real audit order schema is normalized before case execution (24.8882ms)
+  Error: Invalid raw price/cost
+      at lossCase (C:\Users\lqp07\.codex\worktrees\stock-entry-exit\techno\scripts\autonomous-research.js:18:399)
+      at Object.execute (C:\Users\lqp07\.codex\worktrees\stock-entry-exit\techno\scripts\autonomous-research.js:23:395)
+      at TestContext.<anonymous> (C:\Users\lqp07\.codex\worktrees\stock-entry-exit\techno\tests\autonomous-research.test.js:17:896)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1325:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:911:18)
+      at Test.postRun (node:internal/test_runner/test:1465:19)
+      at Test.run (node:internal/test_runner/test:1390:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:911:7)

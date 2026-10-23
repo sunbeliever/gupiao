@@ -1,0 +1,40 @@
+✔ durable idempotent declaration rejects changed policy and forbidden handler (28.3146ms)
+✔ one transactional writer and failed results retained (29.3177ms)
+✔ dead running job recovers with bounded attempts and durable restart (41.9246ms)
+✔ resource gate does not consume attempt or invent training (0.1724ms)
+✔ case study isolates saved commission and foregone inventory without claiming full backtest (0.2945ms)
+✔ claim selected runnable job without taking blocked training first (31.3289ms)
+✖ stale recovery CAS cannot steal a newly claimed live generation (31.1783ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 6
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 227.6527
+
+✖ failing tests:
+
+test at tests\autonomous-research.test.js:13:1
+✖ stale recovery CAS cannot steal a newly claimed live generation (31.1783ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + 'queued'
+  - 'running'
+  
+      at TestContext.<anonymous> (C:\Users\lqp07\.codex\worktrees\stock-entry-exit\techno\tests\autonomous-research.test.js:13:258)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1325:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:911:18)
+      at Test.postRun (node:internal/test_runner/test:1465:19)
+      at Test.run (node:internal/test_runner/test:1390:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:911:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'queued',
+    expected: 'running',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

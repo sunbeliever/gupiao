@@ -1,0 +1,37 @@
+{
+  "id": "cooldown-case-20261023-a",
+  "policyHash": "e29c4a3b1f84cf0777efbafa9fcb2d96ff4c12e54e24a895634b94cbbb92f8bd",
+  "at": "2026-10-23T01:16:57.981Z",
+  "resultHash": "e1bf5b918a3800bc2655bd4d589f04079e19821cdb6550f8c9fedfdf7c69a306",
+  "result": {
+    "kind": "exploratory_fixed_trade_case_attribution",
+    "sameTickReentries": 1,
+    "actualNetPnl": -515.4676000000036,
+    "conditionalNetPnl": -422.158400000003,
+    "conditionalDifference": 93.3092000000006,
+    "avoidedBuyFees": 5,
+    "cases": [
+      {
+        "symbol": "sh515880",
+        "at": "2026-10-22T02:07:14.746Z",
+        "shares": 8400,
+        "avoidedPurchaseCost": 4318.5092,
+        "foregoneClosingInventory": 4225.2
+      }
+    ],
+    "independentOutOfSample": false,
+    "fullStrategyReplay": false,
+    "promoted": false,
+    "investmentReady": false,
+    "profitProbability": null,
+    "sharpe": null,
+    "calmar": null,
+    "maxDrawdown": null,
+    "decision": "保留禁止当日重买候选，待完整策略回放和独立未来验证；未晋级",
+    "assumptions": [
+      "只删除已见止损当日的同刻重买；其余实际交易固定不变。",
+      "仅比较已见当日收盘库存和费用，不模拟释放资金后的其他选择。",
+      "当日行情已查看，属于探索病例，不能作为样本外收益优势。"
+    ]
+  }
+}

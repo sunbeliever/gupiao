@@ -1,0 +1,29 @@
+{
+  "id": "cooldown-case-20261023-a",
+  "declaredAt": "2026-10-23T01:16:46.026Z",
+  "kind": "exploratory_known_case",
+  "question": "10/22止损同刻重买的库存和费用影响是多少？",
+  "candidate": "禁止止损当日重买；固定其余已见交易，仅终点归因",
+  "dataAlreadySeen": true,
+  "candidates": 1,
+  "promotionAllowed": false,
+  "missingValidation": [
+    "完整Paper策略回放",
+    "独立未来样本",
+    "风险与成本稳定性"
+  ],
+  "input": {
+    "audit": {
+      "file": "D:/techno/validation/autonomous-research/inputs/cooldown-case-20261023-a/capital50k-full-audit.json",
+      "sha256": "c2e30910e502fe828921ade1e95fa8ac2d4962195de279f688299c207c71a5d5"
+    },
+    "close": {
+      "file": "D:/techno/validation/autonomous-research/inputs/cooldown-case-20261023-a/daily-close-reference-raw.json",
+      "sha256": "4903c9d715fc51b54ec520ea2da103833b53ffb77ab6e8b34b877750dd1dc8a9"
+    }
+  },
+  "sourceHashes": {
+    "scripts/autonomous-research.js": "2fc9be0233cd309dbb295b2bc7d6d2c8f497af785aa987a50bbdd4b18da18105",
+    "scripts/run-autonomous-research.js": "8bc9b4cca549bce1476d4eb67f005aec04c930551ba06c34df268a1ebf022fb7"
+  }
+}

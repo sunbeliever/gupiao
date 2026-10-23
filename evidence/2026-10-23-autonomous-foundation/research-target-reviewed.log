@@ -1,0 +1,32 @@
+✔ durable idempotent declaration rejects changed policy and forbidden handler (27.9475ms)
+✔ one transactional writer and failed results retained (34.4552ms)
+✔ dead running job recovers with bounded attempts and durable restart (43.6373ms)
+✔ resource gate does not consume attempt or invent training (0.1728ms)
+✔ case study isolates saved commission and foregone inventory without claiming full backtest (0.3058ms)
+✔ claim selected runnable job without taking blocked training first (32.8983ms)
+✔ stale recovery CAS cannot steal a newly claimed live generation (31.2826ms)
+✔ stale execution cannot finish a recovered job (34.0082ms)
+✔ real audit order schema is normalized before case execution (28.1723ms)
+✔ read-only view shows 50k accounting, real allocation and next sellable date from the same snapshot (90.5877ms)
+✔ expired or mismatched status suppresses actionable guidance and never hides expired data as live (72.1198ms)
+✔ pending T+1 stop is explicit and a tampered state or claim is refused (166.2219ms)
+✔ HTML escapes names and does not emit order, reset or private filesystem controls (64.8435ms)
+✔ reader uses only configured files and missing snapshots are errors, never new funded accounts (1.259ms)
+✔ local viewer exposes only GET snapshots and never accepts an order or reset action (129.6545ms)
+✔ viewer read failures expose no stale investment recommendation or local file path (5.8771ms)
+✔ page rechecks quote age at display time rather than trusting earlier collection health (121.9182ms)
+✔ malformed request target returns 400 without escaping the HTTP callback (0.7735ms)
+✔ strategy and per-holding directives are bound to the frozen account and pause when quotes expire (87.1242ms)
+✔ activity reloads the configured file without caching or writing accounts and rejects a foreign model (105.7345ms)
+✔ activity never presents future or oversized records and escapes research text (124.9535ms)
+✔ invalid or missing research never corrupts account and future data is refused (5.5722ms)
+✔ render distinguishes actual case attribution from validated profitability and escapes text (0.2659ms)
+✔ malformed nested research cannot disable the account page (2.417ms)
+ℹ tests 24
+ℹ suites 0
+ℹ pass 24
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1057.3789

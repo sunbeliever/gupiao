@@ -1,0 +1,17 @@
+{
+  "schema": 1,
+  "at": "2026-10-23T01:16:46.026Z",
+  "champion": {
+    "hash": "f0b16e0c0922e3ae051015c3f73a66135c2a0b4ed478b5c0a3bfe6471ad0b0dd",
+    "horizon": 20,
+    "cutoff": "2024-12-31",
+    "status": "frozen_research_baseline_not_investment_approved"
+  },
+  "challenger": {
+    "hash": "a39d5f70f5e0f0eaf92190ffe71a53cc4605a4a68c0ef559f757cddc82cd2ae9",
+    "matureSamples": 8903,
+    "status": "trained_not_deployed",
+    "independentReturnEvidence": null
+  },
+  "automaticPromotion": "blocked_until_full_prospective_evidence"
+}

@@ -1,0 +1,22 @@
+{
+  "at": "2026-10-23T01:22:23.517Z",
+  "source": "static result/config/test snapshots; no live database or account ledger",
+  "files": {
+    "actual-schema-red.log": "a08b78d04430e1fd94e0c8a4206b063a60c3cb6cecfb5de92fa200eb2ff524a9",
+    "bootstrap.cjs": "17cda6201cad746af3ea42b5f9e493c02722596363f7e43518df024e8cbc782f",
+    "case-policy.json": "628547211f5a2dc3abed18c5c059b7ac0815b7768d6bc694da77dbc2a66915cf",
+    "case-result.json": "27adf889fee6ba411fd5fc149738e2dddcb624a04841e11a811b25cc23c1e664",
+    "center-http-verification.json": "4a7f10cc0b43b609142fcd640fe050984e05f12fc3113fd45b5adb2002d4b465",
+    "center-schema-red.log": "7659e16294a63c86977d046f0d1c54b70b36d3ae8383784fdc6706ff0d680642",
+    "full-research-final-tests.log": "d059d75927c2dc535bb2238273959d1e0b07df4065d5fc458f9dea1b958cfecb",
+    "independent-review.md": "34cb3a0f9f65ec83d842fd4387d60f7a2744029cd23d1f4667df82584ed3cbec",
+    "model-registry.json": "350b4bfb41fd13fbc571580b1d0356e9025210b964d0fc97729b14ed15a3e806",
+    "recovery-race-red.log": "75bfb232ce9935befabf859e2286c416b3daa20c9560a2f80c7f39f204f62b9b",
+    "release-manifest.json": "311f7b2243dc7ddedc150c82df2b2da0c504fe5e935ee9c2854208b86c87dcda",
+    "research-center-page.jpg": "9ccd8897977e86ef6aef8b84efe8025e475c25139390f0d0e5f71c884783a4c9",
+    "research-summary.json": "59d4b735f12db1de2ab07b66ae5198a46dafaffa0e52a0a04911983926fb63c1",
+    "research-target-reviewed.log": "0ed97b26eb4e348c7c726b8bc10a057291514314668b84ec618977a133e987dd",
+    "scheduler-last.json": "2bbe62953635eaefef1dae5a336d347895b5f64892d85a446fd8fd40e24d291e",
+    "scheduler-registration.xml": "24fbac194600a1df39fcdc6866c91b444f3f703366f562e45b910851ff79c744"
+  }
+}
