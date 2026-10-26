@@ -1,0 +1,166 @@
+{
+  "verifiedAt": "2026-10-26T01:14:47.663Z",
+  "id": "preopen-data-2026-10-26-a",
+  "datasetHash": "2ddfed611415306e863d0f137aefc3d33ed687cdc5cdf53b2aff7ca9c4047389",
+  "manifestHash": "394ea4970d32f730d97a648b2bcea2ac654171d72579a35c1fbbc4c7ec4e50fa",
+  "policy": {
+    "id": "preopen-data-2026-10-26-a",
+    "expectedAsOf": "2026-10-23",
+    "years": [
+      2026
+    ],
+    "startDate": "2026-01-01",
+    "minBars": 60,
+    "helperHash": "e0f80930a8fcd6f86e4ae4dfbd898104308e41e66aa24380730cb2926252e761",
+    "symbols": [
+      "sh588000",
+      "sh512760",
+      "sh515070",
+      "sh512720",
+      "sh515880",
+      "sz159852"
+    ],
+    "adjustments": [
+      "",
+      "hfq"
+    ],
+    "sourceBinding": {
+      "sourceAccount": "D:/techno/validation/forward-comparison/paired-capital50k-20261021-pm-a",
+      "manifestHash": "29935f3137b05610a10e6d00337329fe0434f19203ae6f7fbd0b1704f7246f8e",
+      "nativeTransport": {
+        "kind": "dotnet-desktop-http-v1",
+        "exeSha256": "e0f80930a8fcd6f86e4ae4dfbd898104308e41e66aa24380730cb2926252e761",
+        "sourceHashes": {
+          "DesktopServices.cs": "292ee994ae931d5b22c0ec13a62c97b5f7daf12b6c84aa19bd517380793df742",
+          "MarketTransport.cs": "3fcf051cec577ccff061c7c0ab527d9af804a35e00929abdcdd0117aa81d64ae"
+        }
+      }
+    },
+    "collectorSourceSha256": "4dec8bf5ed7e3dc4a159d30ebe7847ec095862ca6182306dd8a7533c5196927c",
+    "calendarSourceSha256": "9fc9f436ddc2980cf062cb85cc48ddfb1b99e1674db085c9d01d84cf6dfb9619"
+  },
+  "series": [
+    {
+      "symbol": "sh588000",
+      "adjustment": "raw",
+      "file": "series/raw/sh588000.json",
+      "sha256": "e46898e88896c51ae65cbca3232164d8788b774c1ee30f2169769ead597ba6b1",
+      "count": 193,
+      "start": "2026-01-05",
+      "end": "2026-10-23",
+      "excludedUncompleted": 0
+    },
+    {
+      "symbol": "sh588000",
+      "adjustment": "hfq",
+      "file": "series/hfq/sh588000.json",
+      "sha256": "a1edab1f4b79a83b630a6657ad318c51272a2b8330ccb77b6e97e8f14e378367",
+      "count": 193,
+      "start": "2026-01-05",
+      "end": "2026-10-23",
+      "excludedUncompleted": 0
+    },
+    {
+      "symbol": "sh512760",
+      "adjustment": "raw",
+      "file": "series/raw/sh512760.json",
+      "sha256": "d3359bed6e429445395c42fee0cc5d364019ca157d16da750c4dbac31015f8ed",
+      "count": 193,
+      "start": "2026-01-05",
+      "end": "2026-10-23",
+      "excludedUncompleted": 0
+    },
+    {
+      "symbol": "sh512760",
+      "adjustment": "hfq",
+      "file": "series/hfq/sh512760.json",
+      "sha256": "436b48c0200ee0b55e468bfb7d0f00b71be347df48a4666ae63654c00e5370c5",
+      "count": 193,
+      "start": "2026-01-05",
+      "end": "2026-10-23",
+      "excludedUncompleted": 0
+    },
+    {
+      "symbol": "sh515070",
+      "adjustment": "raw",
+      "file": "series/raw/sh515070.json",
+      "sha256": "545e4b8f130432758352d0e6976777ae7ff5d713b9b3c57f7cf419bb3a0e3ed4",
+      "count": 193,
+      "start": "2026-01-05",
+      "end": "2026-10-23",
+      "excludedUncompleted": 0
+    },
+    {
+      "symbol": "sh515070",
+      "adjustment": "hfq",
+      "file": "series/hfq/sh515070.json",
+      "sha256": "0c0b86795185d8d61d03f988b1572a3934c60fd55f4da5d1a250e8ef2caee40d",
+      "count": 193,
+      "start": "2026-01-05",
+      "end": "2026-10-23",
+      "excludedUncompleted": 0
+    },
+    {
+      "symbol": "sh512720",
+      "adjustment": "raw",
+      "file": "series/raw/sh512720.json",
+      "sha256": "c08f06f434f4f799f8128f71de5d7786a72047dda8db288d4ba99c97c7ed2cf2",
+      "count": 193,
+      "start": "2026-01-05",
+      "end": "2026-10-23",
+      "excludedUncompleted": 0
+    },
+    {
+      "symbol": "sh512720",
+      "adjustment": "hfq",
+      "file": "series/hfq/sh512720.json",
+      "sha256": "b38279c24b4f439efcdc4e629ad416bc83ceb484c713c90798a127d87767e08c",
+      "count": 193,
+      "start": "2026-01-05",
+      "end": "2026-10-23",
+      "excludedUncompleted": 0
+    },
+    {
+      "symbol": "sh515880",
+      "adjustment": "raw",
+      "file": "series/raw/sh515880.json",
+      "sha256": "cfec3044da2222c2ecfa12d3139b0d79bf702fa55d833ad2ee8b12a42ac84e13",
+      "count": 193,
+      "start": "2026-01-05",
+      "end": "2026-10-23",
+      "excludedUncompleted": 0
+    },
+    {
+      "symbol": "sh515880",
+      "adjustment": "hfq",
+      "file": "series/hfq/sh515880.json",
+      "sha256": "f4ad036b88bbeb39be2b96995cb740e5a214d4050ca06453de5cff6f9131e1e0",
+      "count": 193,
+      "start": "2026-01-05",
+      "end": "2026-10-23",
+      "excludedUncompleted": 0
+    },
+    {
+      "symbol": "sz159852",
+      "adjustment": "raw",
+      "file": "series/raw/sz159852.json",
+      "sha256": "139a56a66957a93fae9c25eaf864f36091f3d515b3882e386d4a03bb05ae9dc5",
+      "count": 193,
+      "start": "2026-01-05",
+      "end": "2026-10-23",
+      "excludedUncompleted": 0
+    },
+    {
+      "symbol": "sz159852",
+      "adjustment": "hfq",
+      "file": "series/hfq/sz159852.json",
+      "sha256": "883f2d34302231167a8836fc96b186aabf01f4de31803bb86c6d9cf4893970d6",
+      "count": 193,
+      "start": "2026-01-05",
+      "end": "2026-10-23",
+      "excludedUncompleted": 0
+    }
+  ],
+  "rawResponseCount": 13,
+  "historicalFirstAvailabilityKnown": false
+}

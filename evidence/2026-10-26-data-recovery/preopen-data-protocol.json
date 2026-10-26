@@ -1,0 +1,22 @@
+{
+  "declaredAt": "2026-10-26T01:13:07.239Z",
+  "question": "At new-session preopen, is last completed session now available consistently in raw and hfq?",
+  "noNewSourceParameters": true,
+  "cutoff": "2026-10-23",
+  "availability": "Captured on 2026-10-26; never backfilled as available on 2026-10-23",
+  "failedIdsPreserved": [
+    "daily-data-2026-10-23",
+    "daily-data-2026-10-23-cutoff-b"
+  ],
+  "noTrainingOrAccountChange": true,
+  "policy": {
+    "id": "preopen-data-2026-10-26-a",
+    "expectedAsOf": "2026-10-23",
+    "years": [
+      2026
+    ],
+    "root": "D:/techno/validation/autonomous-research/datasets",
+    "sourceAccount": "D:/techno/validation/forward-comparison/paired-capital50k-20261021-pm-a",
+    "minBars": 60
+  }
+}

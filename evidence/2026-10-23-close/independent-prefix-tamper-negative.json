@@ -1,0 +1,16 @@
+{
+  "at": "2026-10-26T01:24:55.892Z",
+  "accepted": true,
+  "paperReplay": false,
+  "accountWrites": false,
+  "sequence": 11,
+  "originalTickHash": "c75ed24b743e921ec27b99f524105ed4802bb19dbb379e1a729416b54fff7c69",
+  "change": {
+    "field": "summaries.candidate.equity",
+    "before": 49972.691699999996,
+    "after": 49971.691699999996
+  },
+  "originalAccepted": true,
+  "modifiedRejected": true,
+  "verifierSha256": "6cc814bdbd2561a69829ca0b68a2f18a4f4992057548f155b458f477854ef061"
+}

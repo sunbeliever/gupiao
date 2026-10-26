@@ -1,0 +1,129 @@
+{
+  "at": "2026-10-26T01:18:28.137Z",
+  "id": "multiyear-six-etf-20261026-a",
+  "datasetHash": "05f0d2e45de30d261c4418c5e122b58532ccca1420afc157274b8899a26d9c39",
+  "manifestHash": "dd029cf7e8cae055b33b105d7651173481169953f9e25b5d08de0dcdbcf7d3da",
+  "series": [
+    {
+      "symbol": "sh588000",
+      "adjustment": "raw",
+      "file": "series/raw/sh588000.json",
+      "sha256": "43636cb3afdcbbef7c81b82cef59eeccaca54910f9defdb354e89ed6ec29caaa",
+      "count": 920,
+      "start": "2023-01-03",
+      "end": "2026-10-23",
+      "excludedUncompleted": 0
+    },
+    {
+      "symbol": "sh588000",
+      "adjustment": "hfq",
+      "file": "series/hfq/sh588000.json",
+      "sha256": "a6cbfd0f05a6afc9cb50980bdd88b177b8d05f30e423569d99852ebc207fa946",
+      "count": 920,
+      "start": "2023-01-03",
+      "end": "2026-10-23",
+      "excludedUncompleted": 0
+    },
+    {
+      "symbol": "sh512760",
+      "adjustment": "raw",
+      "file": "series/raw/sh512760.json",
+      "sha256": "84c8718b2baca1bc6bdd3b60691a130b3982679baa690899224e354e2fbb6417",
+      "count": 920,
+      "start": "2023-01-03",
+      "end": "2026-10-23",
+      "excludedUncompleted": 0
+    },
+    {
+      "symbol": "sh512760",
+      "adjustment": "hfq",
+      "file": "series/hfq/sh512760.json",
+      "sha256": "de530e493b6c74892976967ced2c9c10cbab793d27a94dce3f5aac93a604bb24",
+      "count": 920,
+      "start": "2023-01-03",
+      "end": "2026-10-23",
+      "excludedUncompleted": 0
+    },
+    {
+      "symbol": "sh515070",
+      "adjustment": "raw",
+      "file": "series/raw/sh515070.json",
+      "sha256": "3ab5f96f2a93236eaee4e7fa1f2f992d2bb9c39141438fae5a53680ba3bec436",
+      "count": 920,
+      "start": "2023-01-03",
+      "end": "2026-10-23",
+      "excludedUncompleted": 0
+    },
+    {
+      "symbol": "sh515070",
+      "adjustment": "hfq",
+      "file": "series/hfq/sh515070.json",
+      "sha256": "98c6d3367e1bd2f205744ed0ebcb4a4dac8bf193423efd5d11b8ff702e32cd94",
+      "count": 920,
+      "start": "2023-01-03",
+      "end": "2026-10-23",
+      "excludedUncompleted": 0
+    },
+    {
+      "symbol": "sh512720",
+      "adjustment": "raw",
+      "file": "series/raw/sh512720.json",
+      "sha256": "3eb4ddc6c44b721fa070ceab3ff5fbbeedc013f1921ea5ef971ffb165083701e",
+      "count": 920,
+      "start": "2023-01-03",
+      "end": "2026-10-23",
+      "excludedUncompleted": 0
+    },
+    {
+      "symbol": "sh512720",
+      "adjustment": "hfq",
+      "file": "series/hfq/sh512720.json",
+      "sha256": "a1c0168b6010eb135a0d751e4c7350a338a4d6b7356239bfabf9c5af21bcd334",
+      "count": 920,
+      "start": "2023-01-03",
+      "end": "2026-10-23",
+      "excludedUncompleted": 0
+    },
+    {
+      "symbol": "sh515880",
+      "adjustment": "raw",
+      "file": "series/raw/sh515880.json",
+      "sha256": "cc22510236ae347ae168e93795ac33ca5086885838eeb086f7f23a04c85de35a",
+      "count": 920,
+      "start": "2023-01-03",
+      "end": "2026-10-23",
+      "excludedUncompleted": 0
+    },
+    {
+      "symbol": "sh515880",
+      "adjustment": "hfq",
+      "file": "series/hfq/sh515880.json",
+      "sha256": "6df263fa91a7ea78378eee0bdd7629c0936138b6e7a84b0cc4fa71b28ab02adb",
+      "count": 920,
+      "start": "2023-01-03",
+      "end": "2026-10-23",
+      "excludedUncompleted": 0
+    },
+    {
+      "symbol": "sz159852",
+      "adjustment": "raw",
+      "file": "series/raw/sz159852.json",
+      "sha256": "b773061da2e63b11a246669b163ab440ceef52cafd6657101513dcaf5a39665b",
+      "count": 920,
+      "start": "2023-01-03",
+      "end": "2026-10-23",
+      "excludedUncompleted": 0
+    },
+    {
+      "symbol": "sz159852",
+      "adjustment": "hfq",
+      "file": "series/hfq/sz159852.json",
+      "sha256": "a5df033b58668d026584876a80aaa3164e558282971dafc1e4838098d442eb99",
+      "count": 920,
+      "start": "2023-01-03",
+      "end": "2026-10-23",
+      "excludedUncompleted": 0
+    }
+  ],
+  "responseCount": 52
+}

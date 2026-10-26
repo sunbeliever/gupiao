@@ -1,0 +1,39 @@
+✔ durable idempotent declaration rejects changed policy and forbidden handler (28.526ms)
+✔ one transactional writer and failed results retained (24.7602ms)
+✔ dead running job recovers with bounded attempts and durable restart (44.4222ms)
+✔ resource gate does not consume attempt or invent training (0.1773ms)
+✔ case study isolates saved commission and foregone inventory without claiming full backtest (0.3639ms)
+✔ claim selected runnable job without taking blocked training first (29.2942ms)
+✔ stale recovery CAS cannot steal a newly claimed live generation (30.2771ms)
+✔ stale execution cannot finish a recovered job (39.5371ms)
+✔ real audit order schema is normalized before case execution (30.1757ms)
+✔ data collection is an explicit allowlisted handler (28.3405ms)
+✔ training blocker states missing executor even during trading hours (0.5636ms)
+✔ invalid or missing research never corrupts account and future data is refused (3.91ms)
+✔ render distinguishes actual case attribution from validated profitability and escapes text (0.3569ms)
+✔ malformed nested research cannot disable the account page (3.7936ms)
+✔ completed dataset is visible as data readiness, not model profitability (0.2018ms)
+✔ strategy comparison displays failed candidate and distinguishes daily exploration (0.4291ms)
+✔ malformed comparison annual rows hide research conclusion without throwing (2.3482ms)
+✔ raw and hfq fields remain distinct, unfinished day excluded with provenance (2.366ms)
+✔ invalid, duplicated, out-of-order and missing completed bars are rejected rather than cleaned away (0.2246ms)
+✔ accepted dual-adjustment dataset is immutable and raw-response tampering is detected (68.5378ms)
+✔ partial data failure retains raw evidence without accepted manifest (5.9498ms)
+✔ collector itself rejects a cutoff beyond completed session (1.1693ms)
+✔ explicit alternate adjusted feed is parsed without falling back to raw as hfq (0.2682ms)
+✔ alternate feed must identify the requested instrument (0.2442ms)
+✔ missing adjusted field preserves primary and validated alternate evidence end to end (43.4518ms)
+✔ all current-year primary and fallback requests end at the completed cutoff (41.3555ms)
+✔ full strategy evidence has a dedicated immutable queue kind (33.603ms)
+✔ inferior historical candidate is rejected without promotion or probability (0.3231ms)
+✔ even favorable historical evidence cannot promote (0.1143ms)
+✔ result import rejects changed declarations before opening any result (1.6983ms)
+✔ complete declared result binding rejects source, result and summary tampering (25.3464ms)
+ℹ tests 31
+ℹ suites 0
+ℹ pass 31
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 979.2103

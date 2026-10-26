@@ -1,0 +1,27 @@
+{
+  "declaredAt": "2026-10-26T01:16:03.134Z",
+  "id": "multiyear-six-etf-20261026-a",
+  "question": "Can the existing strictly versioned raw/hfq pipeline provide multi-year calendar-complete inputs for the already planned 5/20/60-session rolling studies?",
+  "policy": {
+    "id": "multiyear-six-etf-20261026-a",
+    "expectedAsOf": "2026-10-23",
+    "years": [
+      2023,
+      2024,
+      2025,
+      2026
+    ],
+    "startDate": "2023-01-01",
+    "root": "D:/techno/validation/autonomous-research/datasets",
+    "sourceAccount": "D:/techno/validation/forward-comparison/paired-capital50k-20261021-pm-a",
+    "minBars": 650
+  },
+  "scope": "Data acquisition and quality only; no training or strategy selection",
+  "lookedHistory": true,
+  "independentBlindTest": false,
+  "noUniverseExpansion": true,
+  "noModelDeployment": true,
+  "failedCaptureRule": "Preserve claim, raw responses and failure; do not repeat same ID",
+  "availability": "Capture time is now, not historic first disclosure",
+  "researchFollowup": "Separate preregistered simple baselines, matured labels and purged chronological folds; 60 sessions does not represent 12-month forecasting"
+}

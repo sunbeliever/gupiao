@@ -1,0 +1,151 @@
+{
+  "schema": 1,
+  "id": "multi-horizon-protocol-20261026-a",
+  "declaredAt": "2026-10-26T01:18:28.135Z",
+  "status": "declared_not_implemented_or_trained",
+  "question": "Do fixed simple prediction baselines improve historical chronological out-of-fold results and net account risk relative to controls across 5/20/60-session horizons?",
+  "data": {
+    "id": "multiyear-six-etf-20261026-a",
+    "datasetHash": "05f0d2e45de30d261c4418c5e122b58532ccca1420afc157274b8899a26d9c39",
+    "manifestHash": "dd029cf7e8cae055b33b105d7651173481169953f9e25b5d08de0dcdbcf7d3da",
+    "start": "2023-01-03",
+    "end": "2026-10-23",
+    "sessionsPerPartition": 920,
+    "capturedAt": "2026-10-26T01:16:25.243Z",
+    "historicalFirstAvailabilityKnown": false,
+    "survivorSelectedSixETF": true
+  },
+  "families": [
+    {
+      "horizonSessions": 5,
+      "candidates": [
+        {
+          "id": "ridge-alpha1-h5",
+          "algorithm": "standardized ridge",
+          "alpha": 1,
+          "features": "reuse authoritative existing 11 factors; training-only scaling"
+        },
+        {
+          "id": "mean-return-h5",
+          "algorithm": "training label mean constant",
+          "features": "intercept only"
+        }
+      ],
+      "label": "next session open to horizon sessions later open; hfq only for research labels",
+      "minimumTrainingSignalSessions": 252,
+      "featureLookbackSessions": 60,
+      "testBlockSessions": 63,
+      "expandingWindow": true,
+      "purge": "Training label end must be known before each model freeze; no test labels or same-day close in open decisions",
+      "maturityCutoff": "2026-10-23",
+      "championComparison": "no existing champion at this horizon; explicitly unavailable"
+    },
+    {
+      "horizonSessions": 20,
+      "candidates": [
+        {
+          "id": "ridge-alpha1-h20",
+          "algorithm": "standardized ridge",
+          "alpha": 1,
+          "features": "reuse authoritative existing 11 factors; training-only scaling"
+        },
+        {
+          "id": "mean-return-h20",
+          "algorithm": "training label mean constant",
+          "features": "intercept only"
+        }
+      ],
+      "label": "next session open to horizon sessions later open; hfq only for research labels",
+      "minimumTrainingSignalSessions": 252,
+      "featureLookbackSessions": 60,
+      "testBlockSessions": 63,
+      "expandingWindow": true,
+      "purge": "Training label end must be known before each model freeze; no test labels or same-day close in open decisions",
+      "maturityCutoff": "2026-10-23",
+      "championComparison": "f0 frozen 2024 model as additional control"
+    },
+    {
+      "horizonSessions": 60,
+      "candidates": [
+        {
+          "id": "ridge-alpha1-h60",
+          "algorithm": "standardized ridge",
+          "alpha": 1,
+          "features": "reuse authoritative existing 11 factors; training-only scaling"
+        },
+        {
+          "id": "mean-return-h60",
+          "algorithm": "training label mean constant",
+          "features": "intercept only"
+        }
+      ],
+      "label": "next session open to horizon sessions later open; hfq only for research labels",
+      "minimumTrainingSignalSessions": 252,
+      "featureLookbackSessions": 60,
+      "testBlockSessions": 63,
+      "expandingWindow": true,
+      "purge": "Training label end must be known before each model freeze; no test labels or same-day close in open decisions",
+      "maturityCutoff": "2026-10-23",
+      "championComparison": "no existing champion at this horizon; explicitly unavailable"
+    }
+  ],
+  "portfolio": {
+    "budget": 50000,
+    "maxNewInvestment": 12500,
+    "maxNewExposure": 0.25,
+    "maxPositions": 3,
+    "stopLossRate": 0.04,
+    "minEstimatedNetReturn": 0.01,
+    "targetExitEnabled": false,
+    "stopReentryPolicy": "unrestricted",
+    "Tplus1": true,
+    "lotSize": 100,
+    "fees": "existing versioned Paper fee profile",
+    "execution": "authoritative Paper engine with incremental/public replay parity; raw executable prices, known actions only",
+    "controls": [
+      "same-horizon fixed three ETF selector",
+      "same-horizon designated ETF control",
+      "cash"
+    ],
+    "exposureComparison": "Report actual exposure and cash periods; equal limits do not imply equal risk"
+  },
+  "metrics": [
+    "net return",
+    "annualized return",
+    "max observed drawdown amount and proportion",
+    "Sharpe",
+    "Calmar",
+    "turnover",
+    "paid costs",
+    "closed trade count and profit factor",
+    "all fixed non-overlapping horizon block outcomes including cash",
+    "per-fold and market-period stability",
+    "forecast error and uncertainty (not profit probability)"
+  ],
+  "historicalScreen": {
+    "drawdownProportionLimit": 0.01,
+    "positiveNetPnl": true,
+    "positiveExcessAgainstCorrespondingRiskControl": true,
+    "nonnegativeAnnualChanges": true,
+    "cashOnlyPass": false,
+    "maximumDrawdownAmountLimit": 500
+  },
+  "promotion": {
+    "allowed": false,
+    "reason": "Historical chronology remains explored history; separate future simulation protocol and implementation required before any promotion"
+  },
+  "resource": {
+    "maxMinutesPerRun": 25,
+    "trainingPriority": "do not compete with frozen live simulation recovery",
+    "checkpointRequired": true
+  },
+  "notImplemented": [
+    "label/fold builder",
+    "candidate trainer",
+    "rolling fee-account evaluation",
+    "future independent validation"
+  ],
+  "noGridSearch": true,
+  "noFrozenAccountReplacement": true,
+  "executionDataLimit": "Corporate-action coverage and historical tradable prices remain incomplete; price-only backtest cannot by itself certify economic total return"
+}

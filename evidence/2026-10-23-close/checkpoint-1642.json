@@ -1,0 +1,69 @@
+{
+  "at": "2026-10-23T08:43:16.789Z",
+  "roundBoundaryReached": true,
+  "mainAudit": {
+    "complete": true,
+    "ticks": 1961,
+    "stateHash": "7204b38c9d0c0cc237e7273a668f331489d9ee75197c362f82bc7db4028879fd",
+    "lastDecisionAt": "2026-10-23T08:09:44.049Z",
+    "legs": {
+      "candidate": {
+        "equity": 49791.16039999999,
+        "netPnl": -208.8396000000066,
+        "realizedPnl": -786.6208999999999,
+        "unrealizedPnl": 577.7812999999933,
+        "fees": 55,
+        "changeFromYesterday": 306.627999999997
+      },
+      "control": {
+        "equity": 49982.7267,
+        "netPnl": -17.273300000000745,
+        "realizedPnl": -633.3121999999998,
+        "unrealizedPnl": 616.0388999999991,
+        "fees": 45,
+        "changeFromYesterday": 388.27240000000165
+      }
+    }
+  },
+  "lowcapAudit": {
+    "complete": true,
+    "ticks": 2341
+  },
+  "data": {
+    "oldId": "daily-data-2026-10-23",
+    "oldStatus": "failed_missing_completed_day",
+    "newId": "daily-data-2026-10-23-cutoff-b",
+    "newStatus": "failed_hfq_588000_latest_2026-10-22_while_raw_latest_2026-10-23",
+    "next": "Keep both failures; investigate explicitly versioned hfq backup/latency, do not rerun these IDs"
+  },
+  "code": {
+    "developmentRoot": "C:/Users/lqp07/.codex/worktrees/stock-entry-exit/techno",
+    "modified": [
+      "scripts/research-dataset.js",
+      "tests/research-dataset.test.js"
+    ],
+    "tests": 318,
+    "targets": 31,
+    "independentTargets": 9,
+    "hostFrozenTargets": 9,
+    "uncommitted": true,
+    "notPushed": true
+  },
+  "runtime": {
+    "schedulerRelease": "D:/techno/validation/autonomous-research/releases/20261023-d",
+    "viewerRelease": "20261023-c",
+    "viewerPidAtLastCheck": 62520,
+    "ruleChanges": false
+  },
+  "limitations": [
+    "Overall closing drawdown statistics and raw reference still pending, not fully finished closing audit.",
+    "Two automatic approval reviews timed out; host task switch later succeeded; final six-raw reference fetch still unverified after timeout then sandbox helper execution failure.",
+    "Original1100 was not started today, no backfill or claimed daily trading."
+  ],
+  "nextSteps": [
+    "Finish existing lowcap audit then verify six raw closing references and full-period risk statistics with no new trades.",
+    "Inspect final fetch-raw-close.log/failure and avoid rerunning write-once raw reference directory without explicit new probe declaration.",
+    "Record docs/Git/push after checkpoint; preserve uncommitted cutoff fix, tests and all failed data.",
+    "Source request end-date fix is correct but not a complete solution for delayed adjusted daily feed."
+  ]
+}

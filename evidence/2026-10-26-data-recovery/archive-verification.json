@@ -1,0 +1,13 @@
+{
+  "at": "2026-10-26T01:22:11.568Z",
+  "archive": "D:/techno/dist/科技观察-六ETF多年数据证据-20261026.zip",
+  "sha256": "befb4cd7e106da4cfa3b2672120ef4782e38b8ee72b833abbdd83ca18b450bc5",
+  "bytes": 448860,
+  "independentUnzipVerified": true,
+  "datasetHash": "05f0d2e45de30d261c4418c5e122b58532ccca1420afc157274b8899a26d9c39",
+  "manifestHash": "dd029cf7e8cae055b33b105d7651173481169953f9e25b5d08de0dcdbcf7d3da",
+  "partitions": 12,
+  "sessionsPerPartition": 920,
+  "rawResponses": 52,
+  "scope": "Static immutable data evidence; not an account backup or historical first-availability proof"
+}

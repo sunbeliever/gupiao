@@ -1,0 +1,15 @@
+{
+  "decisionAt": "2026-10-23T02:29:26.089Z",
+  "sequence": 1306,
+  "tickHash": "7cedd9e810b944310d65f7de0b5b4da6aab8ea7cc5ba39f455d01573e74c4bb8",
+  "health": {
+    "ok": true,
+    "reason": null,
+    "historyOk": true
+  },
+  "summary": {
+    "equity": 48892.0604,
+    "stalePositions": [],
+    "accountingBalanced": true
+  }
+}

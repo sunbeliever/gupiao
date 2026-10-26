@@ -1,0 +1,5 @@
+{
+  "at": "2026-10-26T01:19:27.485Z",
+  "reason": "Correct field name minimumDrawdownAmountLimit to maximumDrawdownAmountLimit before any training; 500 is an upper bound, economic criteria unchanged",
+  "resultsSeen": false
+}

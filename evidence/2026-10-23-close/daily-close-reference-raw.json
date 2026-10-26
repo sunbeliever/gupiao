@@ -1,0 +1,1145 @@
+{
+  "date": "2026-10-23",
+  "at": "2026-10-26T01:13:44.488Z",
+  "kind": "read_only_closing_reference_and_full_ledger_statistics",
+  "accepted": true,
+  "adjustment": "raw",
+  "dataset": {
+    "id": "preopen-data-2026-10-26-a",
+    "manifestHash": "394ea4970d32f730d97a648b2bcea2ac654171d72579a35c1fbbc4c7ec4e50fa",
+    "datasetHash": "2ddfed611415306e863d0f137aefc3d33ed687cdc5cdf53b2aff7ca9c4047389",
+    "series": [
+      {
+        "symbol": "sh588000",
+        "adjustment": "raw",
+        "file": "series/raw/sh588000.json",
+        "sha256": "e46898e88896c51ae65cbca3232164d8788b774c1ee30f2169769ead597ba6b1",
+        "count": 193,
+        "start": "2026-01-05",
+        "end": "2026-10-23",
+        "excludedUncompleted": 0
+      },
+      {
+        "symbol": "sh588000",
+        "adjustment": "hfq",
+        "file": "series/hfq/sh588000.json",
+        "sha256": "a1edab1f4b79a83b630a6657ad318c51272a2b8330ccb77b6e97e8f14e378367",
+        "count": 193,
+        "start": "2026-01-05",
+        "end": "2026-10-23",
+        "excludedUncompleted": 0
+      },
+      {
+        "symbol": "sh512760",
+        "adjustment": "raw",
+        "file": "series/raw/sh512760.json",
+        "sha256": "d3359bed6e429445395c42fee0cc5d364019ca157d16da750c4dbac31015f8ed",
+        "count": 193,
+        "start": "2026-01-05",
+        "end": "2026-10-23",
+        "excludedUncompleted": 0
+      },
+      {
+        "symbol": "sh512760",
+        "adjustment": "hfq",
+        "file": "series/hfq/sh512760.json",
+        "sha256": "436b48c0200ee0b55e468bfb7d0f00b71be347df48a4666ae63654c00e5370c5",
+        "count": 193,
+        "start": "2026-01-05",
+        "end": "2026-10-23",
+        "excludedUncompleted": 0
+      },
+      {
+        "symbol": "sh515070",
+        "adjustment": "raw",
+        "file": "series/raw/sh515070.json",
+        "sha256": "545e4b8f130432758352d0e6976777ae7ff5d713b9b3c57f7cf419bb3a0e3ed4",
+        "count": 193,
+        "start": "2026-01-05",
+        "end": "2026-10-23",
+        "excludedUncompleted": 0
+      },
+      {
+        "symbol": "sh515070",
+        "adjustment": "hfq",
+        "file": "series/hfq/sh515070.json",
+        "sha256": "0c0b86795185d8d61d03f988b1572a3934c60fd55f4da5d1a250e8ef2caee40d",
+        "count": 193,
+        "start": "2026-01-05",
+        "end": "2026-10-23",
+        "excludedUncompleted": 0
+      },
+      {
+        "symbol": "sh512720",
+        "adjustment": "raw",
+        "file": "series/raw/sh512720.json",
+        "sha256": "c08f06f434f4f799f8128f71de5d7786a72047dda8db288d4ba99c97c7ed2cf2",
+        "count": 193,
+        "start": "2026-01-05",
+        "end": "2026-10-23",
+        "excludedUncompleted": 0
+      },
+      {
+        "symbol": "sh512720",
+        "adjustment": "hfq",
+        "file": "series/hfq/sh512720.json",
+        "sha256": "b38279c24b4f439efcdc4e629ad416bc83ceb484c713c90798a127d87767e08c",
+        "count": 193,
+        "start": "2026-01-05",
+        "end": "2026-10-23",
+        "excludedUncompleted": 0
+      },
+      {
+        "symbol": "sh515880",
+        "adjustment": "raw",
+        "file": "series/raw/sh515880.json",
+        "sha256": "cfec3044da2222c2ecfa12d3139b0d79bf702fa55d833ad2ee8b12a42ac84e13",
+        "count": 193,
+        "start": "2026-01-05",
+        "end": "2026-10-23",
+        "excludedUncompleted": 0
+      },
+      {
+        "symbol": "sh515880",
+        "adjustment": "hfq",
+        "file": "series/hfq/sh515880.json",
+        "sha256": "f4ad036b88bbeb39be2b96995cb740e5a214d4050ca06453de5cff6f9131e1e0",
+        "count": 193,
+        "start": "2026-01-05",
+        "end": "2026-10-23",
+        "excludedUncompleted": 0
+      },
+      {
+        "symbol": "sz159852",
+        "adjustment": "raw",
+        "file": "series/raw/sz159852.json",
+        "sha256": "139a56a66957a93fae9c25eaf864f36091f3d515b3882e386d4a03bb05ae9dc5",
+        "count": 193,
+        "start": "2026-01-05",
+        "end": "2026-10-23",
+        "excludedUncompleted": 0
+      },
+      {
+        "symbol": "sz159852",
+        "adjustment": "hfq",
+        "file": "series/hfq/sz159852.json",
+        "sha256": "883f2d34302231167a8836fc96b186aabf01f4de31803bb86c6d9cf4893970d6",
+        "count": 193,
+        "start": "2026-01-05",
+        "end": "2026-10-23",
+        "excludedUncompleted": 0
+      }
+    ],
+    "responses": [
+      {
+        "file": "responses/0.json",
+        "sha256": "4146168780414274c1992d86abe665f23dd149d43b3486db5d91339ab6d57732"
+      },
+      {
+        "file": "responses/1.json",
+        "sha256": "b82d082e4120165495a707818f620d3dafb33e0a619d6497cdcb7be08a3313f0"
+      },
+      {
+        "file": "responses/2.json",
+        "sha256": "bdd07dbc5281a03372a0f60d9f5a1b7912889a3141c5ac62961e2def4123eac7"
+      },
+      {
+        "file": "responses/3.json",
+        "sha256": "36f693dcba637faff683a8128472caaf94213c85c37e16d344d48ec3d46660df"
+      },
+      {
+        "file": "responses/4.json",
+        "sha256": "aef7e9c51df2dc210cd0703110368e4c9379b11b561adad43e9f9ddce5bd9cf8"
+      },
+      {
+        "file": "responses/5.json",
+        "sha256": "456e68100e1fe78fa0456cfa50f331c5251b57f394de10b5b4a84e0df2ca483b"
+      },
+      {
+        "file": "responses/6.json",
+        "sha256": "9992560f158dde28a716a42e9c834beaf616df9b944649a906bd5a80b2eedd5c"
+      },
+      {
+        "file": "responses/7.json",
+        "sha256": "821542ea158fcee65615a9f96f92e3af8b7cf1e27a9c14964aea3db112c121e7"
+      },
+      {
+        "file": "responses/8.json",
+        "sha256": "98a6c9136e9ed52696cb08854eaf6b3b40075280f2d436cb9d99dc0580fab945"
+      },
+      {
+        "file": "responses/9.json",
+        "sha256": "7e994581d2d1e7584cfa461ddd9f8f59f50d4eda578a107661a3ecb5b43fb286"
+      },
+      {
+        "file": "responses/10.json",
+        "sha256": "1b5e46af04862848535f1e42ec56131b3f9098310286b68f5b50fe7f898a92ed"
+      },
+      {
+        "file": "responses/11.json",
+        "sha256": "8b4838fd98b0bd7390ffb81462b1698c700d1dfb6c7249fb1d66e3d92dbb6568"
+      },
+      {
+        "file": "responses/12-alternate.json",
+        "sha256": "714df029648f353261392a8a21a0c55a180d6cacb03987b5263c06dba1523586"
+      }
+    ]
+  },
+  "prices": {
+    "sh588000": 1.422,
+    "sh512760": 0.891,
+    "sh515070": 0.947,
+    "sh512720": 1.057,
+    "sh515880": 0.514,
+    "sz159852": 0.661
+  },
+  "accountWrites": false,
+  "verifiedProfitProbability": null,
+  "investmentReady": false,
+  "legs": {
+    "capital50k": {
+      "candidate": {
+        "budget": 50000,
+        "equity": 49791.16039999999,
+        "netPnl": -208.8396000000066,
+        "cash": 36867.3604,
+        "marketValue": 12923.8,
+        "receivables": 0,
+        "realizedPnl": -786.6208999999999,
+        "unrealizedPnl": 577.7812999999933,
+        "feesPaid": 55,
+        "slippageCost": 44.839599999997816,
+        "frozenFunds": 0,
+        "referenceDifference": 0,
+        "exposure": 0.25956012866894346,
+        "turnover": 0.8970526559999997,
+        "rejections": 0,
+        "holdings": [
+          {
+            "symbol": "sh588000",
+            "name": "科创50ETF",
+            "shares": 2900,
+            "rawClose": 1.422,
+            "sellableSession": "2026-10-26",
+            "maturitySession": "2026-11-20",
+            "stopPrice": 1.3059446399999999
+          },
+          {
+            "symbol": "sh512760",
+            "name": "芯片ETF",
+            "shares": 4800,
+            "rawClose": 0.891,
+            "sellableSession": "2026-10-26",
+            "maturitySession": "2026-11-20",
+            "stopPrice": 0.8139331199999998
+          },
+          {
+            "symbol": "sh515880",
+            "name": "通信ETF",
+            "shares": 8800,
+            "rawClose": 0.514,
+            "sellableSession": "2026-10-26",
+            "maturitySession": "2026-11-20",
+            "stopPrice": 0.4708703999999999
+          }
+        ],
+        "orders": [
+          {
+            "symbol": "sh588000",
+            "side": "buy",
+            "shares": 2900,
+            "status": "hypothetical_fill",
+            "price": 1.422421,
+            "fees": 5,
+            "fillAt": "2026-10-21T05:05:16.530Z",
+            "decisionAt": "2026-10-21T05:05:16.530Z",
+            "reason": "frozen_software_selection"
+          },
+          {
+            "symbol": "sh512760",
+            "side": "buy",
+            "shares": 4600,
+            "status": "hypothetical_fill",
+            "price": 0.886886,
+            "fees": 5,
+            "fillAt": "2026-10-21T05:05:16.530Z",
+            "decisionAt": "2026-10-21T05:05:16.530Z",
+            "reason": "frozen_software_selection"
+          },
+          {
+            "symbol": "sh515880",
+            "side": "buy",
+            "shares": 7700,
+            "status": "hypothetical_fill",
+            "price": 0.534534,
+            "fees": 5,
+            "fillAt": "2026-10-21T05:05:16.530Z",
+            "decisionAt": "2026-10-21T05:05:16.530Z",
+            "reason": "frozen_software_selection"
+          },
+          {
+            "symbol": "sh515880",
+            "side": "sell",
+            "shares": 7700,
+            "status": "hypothetical_fill",
+            "price": 0.512487,
+            "fees": 5,
+            "fillAt": "2026-10-22T02:07:14.746Z",
+            "decisionAt": "2026-10-22T02:07:14.746Z",
+            "reason": "risk_stop",
+            "realizedPnl": -179.7618999999995
+          },
+          {
+            "symbol": "sh515880",
+            "side": "buy",
+            "shares": 8400,
+            "status": "hypothetical_fill",
+            "price": 0.513513,
+            "fees": 5,
+            "fillAt": "2026-10-22T02:07:14.746Z",
+            "decisionAt": "2026-10-22T02:07:14.746Z",
+            "reason": "frozen_software_selection"
+          },
+          {
+            "symbol": "sh588000",
+            "side": "sell",
+            "shares": 2900,
+            "status": "hypothetical_fill",
+            "price": 1.3576409999999999,
+            "fees": 5,
+            "fillAt": "2026-10-23T01:30:10.528Z",
+            "decisionAt": "2026-10-23T01:30:10.528Z",
+            "reason": "risk_stop",
+            "realizedPnl": -197.86200000000008
+          },
+          {
+            "symbol": "sh512760",
+            "side": "sell",
+            "shares": 4600,
+            "status": "hypothetical_fill",
+            "price": 0.8461529999999999,
+            "fees": 5,
+            "fillAt": "2026-10-23T01:30:10.528Z",
+            "decisionAt": "2026-10-23T01:30:10.528Z",
+            "reason": "risk_stop",
+            "realizedPnl": -197.3717999999999
+          },
+          {
+            "symbol": "sh588000",
+            "side": "buy",
+            "shares": 2900,
+            "status": "hypothetical_fill",
+            "price": 1.3603589999999999,
+            "fees": 5,
+            "fillAt": "2026-10-23T01:30:10.528Z",
+            "decisionAt": "2026-10-23T01:30:10.528Z",
+            "reason": "frozen_software_selection"
+          },
+          {
+            "symbol": "sh512760",
+            "side": "buy",
+            "shares": 4800,
+            "status": "hypothetical_fill",
+            "price": 0.8478469999999999,
+            "fees": 5,
+            "fillAt": "2026-10-23T01:30:10.528Z",
+            "decisionAt": "2026-10-23T01:30:10.528Z",
+            "reason": "frozen_software_selection"
+          },
+          {
+            "symbol": "sh515880",
+            "side": "sell",
+            "shares": 8400,
+            "status": "hypothetical_fill",
+            "price": 0.48951,
+            "fees": 5,
+            "fillAt": "2026-10-23T01:30:41.612Z",
+            "decisionAt": "2026-10-23T01:30:41.612Z",
+            "reason": "risk_stop",
+            "realizedPnl": -211.6252000000004
+          },
+          {
+            "symbol": "sh515880",
+            "side": "buy",
+            "shares": 8800,
+            "status": "hypothetical_fill",
+            "price": 0.4904899999999999,
+            "fees": 5,
+            "fillAt": "2026-10-23T01:30:41.612Z",
+            "decisionAt": "2026-10-23T01:30:41.612Z",
+            "reason": "frozen_software_selection"
+          }
+        ]
+      },
+      "control": {
+        "budget": 50000,
+        "equity": 49982.7267,
+        "netPnl": -17.273300000000745,
+        "cash": 37178.4267,
+        "marketValue": 12804.3,
+        "receivables": 0,
+        "realizedPnl": -633.3121999999998,
+        "unrealizedPnl": 616.0388999999991,
+        "feesPaid": 45,
+        "slippageCost": 36.2732999999987,
+        "frozenFunds": 0,
+        "referenceDifference": 0,
+        "exposure": 0.25617449957967176,
+        "turnover": 0.725720806,
+        "rejections": 0,
+        "holdings": [
+          {
+            "symbol": "sh512760",
+            "name": "芯片ETF",
+            "shares": 4800,
+            "rawClose": 0.891,
+            "sellableSession": "2026-10-26",
+            "maturitySession": "2026-11-20",
+            "stopPrice": 0.8139331199999998
+          },
+          {
+            "symbol": "sh588000",
+            "name": "科创50ETF",
+            "shares": 3000,
+            "rawClose": 1.422,
+            "sellableSession": "2026-10-26",
+            "maturitySession": "2026-11-20",
+            "stopPrice": 1.3059446399999999
+          },
+          {
+            "symbol": "sh515070",
+            "name": "人工智能ETF",
+            "shares": 4500,
+            "rawClose": 0.947,
+            "sellableSession": "2026-10-26",
+            "maturitySession": "2026-11-20",
+            "stopPrice": 0.8581372799999999
+          }
+        ],
+        "orders": [
+          {
+            "symbol": "sh512760",
+            "side": "buy",
+            "shares": 4600,
+            "status": "hypothetical_fill",
+            "price": 0.886886,
+            "fees": 5,
+            "fillAt": "2026-10-21T05:05:16.530Z",
+            "decisionAt": "2026-10-21T05:05:16.530Z",
+            "reason": "frozen_software_selection"
+          },
+          {
+            "symbol": "sh588000",
+            "side": "buy",
+            "shares": 2900,
+            "status": "hypothetical_fill",
+            "price": 1.422421,
+            "fees": 5,
+            "fillAt": "2026-10-21T05:05:16.530Z",
+            "decisionAt": "2026-10-21T05:05:16.530Z",
+            "reason": "frozen_software_selection"
+          },
+          {
+            "symbol": "sh515070",
+            "side": "buy",
+            "shares": 4400,
+            "status": "hypothetical_fill",
+            "price": 0.9439429999999999,
+            "fees": 5,
+            "fillAt": "2026-10-21T05:05:16.530Z",
+            "decisionAt": "2026-10-21T05:05:16.530Z",
+            "reason": "frozen_software_selection"
+          },
+          {
+            "symbol": "sh512760",
+            "side": "sell",
+            "shares": 4600,
+            "status": "hypothetical_fill",
+            "price": 0.8461529999999999,
+            "fees": 5,
+            "fillAt": "2026-10-23T01:30:10.528Z",
+            "decisionAt": "2026-10-23T01:30:10.528Z",
+            "reason": "risk_stop",
+            "realizedPnl": -197.3717999999999
+          },
+          {
+            "symbol": "sh588000",
+            "side": "sell",
+            "shares": 2900,
+            "status": "hypothetical_fill",
+            "price": 1.3576409999999999,
+            "fees": 5,
+            "fillAt": "2026-10-23T01:30:10.528Z",
+            "decisionAt": "2026-10-23T01:30:10.528Z",
+            "reason": "risk_stop",
+            "realizedPnl": -197.86200000000008
+          },
+          {
+            "symbol": "sh515070",
+            "side": "sell",
+            "shares": 4400,
+            "status": "hypothetical_fill",
+            "price": 0.892107,
+            "fees": 5,
+            "fillAt": "2026-10-23T01:30:10.528Z",
+            "decisionAt": "2026-10-23T01:30:10.528Z",
+            "reason": "risk_stop",
+            "realizedPnl": -238.07839999999987
+          },
+          {
+            "symbol": "sh512760",
+            "side": "buy",
+            "shares": 4800,
+            "status": "hypothetical_fill",
+            "price": 0.8478469999999999,
+            "fees": 5,
+            "fillAt": "2026-10-23T01:30:10.528Z",
+            "decisionAt": "2026-10-23T01:30:10.528Z",
+            "reason": "frozen_software_selection"
+          },
+          {
+            "symbol": "sh588000",
+            "side": "buy",
+            "shares": 3000,
+            "status": "hypothetical_fill",
+            "price": 1.3603589999999999,
+            "fees": 5,
+            "fillAt": "2026-10-23T01:30:10.528Z",
+            "decisionAt": "2026-10-23T01:30:10.528Z",
+            "reason": "frozen_software_selection"
+          },
+          {
+            "symbol": "sh515070",
+            "side": "buy",
+            "shares": 4500,
+            "status": "hypothetical_fill",
+            "price": 0.8938929999999999,
+            "fees": 5,
+            "fillAt": "2026-10-23T01:30:10.528Z",
+            "decisionAt": "2026-10-23T01:30:10.528Z",
+            "reason": "frozen_software_selection"
+          }
+        ]
+      }
+    },
+    "lowcap": {
+      "candidate": {
+        "budget": 10000,
+        "equity": 9979.448,
+        "netPnl": -20.55199999999968,
+        "cash": 8841.848,
+        "marketValue": 1137.6,
+        "receivables": 0,
+        "realizedPnl": 0,
+        "unrealizedPnl": -20.55199999999968,
+        "feesPaid": 5,
+        "slippageCost": 1.1519999999999087,
+        "frozenFunds": 0,
+        "referenceDifference": 0,
+        "exposure": 0.11399428104640656,
+        "turnover": 0.11531519999999998,
+        "rejections": 0,
+        "holdings": [
+          {
+            "symbol": "sh588000",
+            "name": "科创50ETF",
+            "shares": 800,
+            "rawClose": 1.422,
+            "sellableSession": "2026-10-22",
+            "maturitySession": "2026-11-18",
+            "stopPrice": 1.3261247999999999
+          }
+        ],
+        "orders": [
+          {
+            "symbol": "sh588000",
+            "side": "buy",
+            "shares": 800,
+            "status": "hypothetical_fill",
+            "price": 1.4414399999999998,
+            "fees": 5,
+            "fillAt": "2026-10-21T02:00:07.177Z",
+            "decisionAt": "2026-10-21T02:00:07.177Z",
+            "reason": "frozen_software_selection"
+          }
+        ]
+      },
+      "control": {
+        "budget": 10000,
+        "equity": 9975.171600000001,
+        "netPnl": -24.82839999999851,
+        "cash": 8955.571600000001,
+        "marketValue": 1019.5999999999999,
+        "receivables": 0,
+        "realizedPnl": 0,
+        "unrealizedPnl": -24.82839999999851,
+        "feesPaid": 15,
+        "slippageCost": 1.0283999999999072,
+        "frozenFunds": 0,
+        "referenceDifference": 0,
+        "exposure": 0.10221378046268395,
+        "turnover": 0.10294283999999998,
+        "rejections": 0,
+        "holdings": [
+          {
+            "symbol": "sh512760",
+            "name": "芯片ETF",
+            "shares": 400,
+            "rawClose": 0.891,
+            "sellableSession": "2026-10-22",
+            "maturitySession": "2026-11-18",
+            "stopPrice": 0.82974892
+          },
+          {
+            "symbol": "sh588000",
+            "name": "科创50ETF",
+            "shares": 200,
+            "rawClose": 1.422,
+            "sellableSession": "2026-10-22",
+            "maturitySession": "2026-11-18",
+            "stopPrice": 1.3261247999999999
+          },
+          {
+            "symbol": "sh515070",
+            "name": "人工智能ETF",
+            "shares": 400,
+            "rawClose": 0.947,
+            "sellableSession": "2026-10-22",
+            "maturitySession": "2026-11-18",
+            "stopPrice": 0.8748739999999999
+          }
+        ],
+        "orders": [
+          {
+            "symbol": "sh512760",
+            "side": "buy",
+            "shares": 400,
+            "status": "hypothetical_fill",
+            "price": 0.901901,
+            "fees": 5,
+            "fillAt": "2026-10-21T02:00:07.177Z",
+            "decisionAt": "2026-10-21T02:00:07.177Z",
+            "reason": "frozen_software_selection"
+          },
+          {
+            "symbol": "sh588000",
+            "side": "buy",
+            "shares": 200,
+            "status": "hypothetical_fill",
+            "price": 1.4414399999999998,
+            "fees": 5,
+            "fillAt": "2026-10-21T02:00:07.177Z",
+            "decisionAt": "2026-10-21T02:00:07.177Z",
+            "reason": "frozen_software_selection"
+          },
+          {
+            "symbol": "sh515070",
+            "side": "buy",
+            "shares": 400,
+            "status": "hypothetical_fill",
+            "price": 0.9509499999999999,
+            "fees": 5,
+            "fillAt": "2026-10-21T02:00:07.177Z",
+            "decisionAt": "2026-10-21T02:00:07.177Z",
+            "reason": "frozen_software_selection"
+          }
+        ]
+      }
+    }
+  },
+  "stats": {
+    "capital50k": {
+      "stateHash": "7204b38c9d0c0cc237e7273a668f331489d9ee75197c362f82bc7db4028879fd",
+      "auditSha256": "7f107854f905c757e8023d237222bc670a409af43e191541942fd9b5b0d9d037",
+      "verifiedTicks": 1961,
+      "candidate": {
+        "observations": 1951,
+        "healthy": 1130,
+        "stale": 762,
+        "peak": 50079.89169999999,
+        "minimumEquity": 48892.0604,
+        "maxDrawdown": 1187.8312999999907,
+        "maxDrawdownRate": 0.02371872741090594,
+        "maxLossFromInitial": 1107.9395999999979,
+        "maxExposure": 0.2607404813913393,
+        "warningSnapshots": 845,
+        "todayWarningSnapshots": 561,
+        "todayObservations": 797,
+        "firstWarning": "2026-10-22T02:50:13.787Z",
+        "lastWarning": "2026-10-23T06:07:24.296Z",
+        "minimumAt": "2026-10-23T02:29:26.089Z",
+        "maxDrawdownAt": "2026-10-23T02:29:26.089Z"
+      },
+      "control": {
+        "observations": 1951,
+        "healthy": 1130,
+        "stale": 762,
+        "peak": 50058.9543,
+        "minimumEquity": 49100.7267,
+        "maxDrawdown": 958.2275999999983,
+        "maxDrawdownRate": 0.019141981957062144,
+        "maxLossFromInitial": 899.2733000000007,
+        "maxExposure": 0.2571108633736754,
+        "warningSnapshots": 463,
+        "todayWarningSnapshots": 463,
+        "todayObservations": 797,
+        "firstWarning": "2026-10-23T01:16:09.780Z",
+        "lastWarning": "2026-10-23T05:21:39.027Z",
+        "minimumAt": "2026-10-23T02:17:27.603Z",
+        "maxDrawdownAt": "2026-10-23T02:17:27.603Z"
+      },
+      "lastTickHash": "2d14e5d7c53b37e10ac478114e4c1417e6cd7c202d86f1d4cd91b6566fbc2b8f",
+      "terminalHealth": {
+        "ok": false,
+        "collectionOk": false,
+        "historyOk": true,
+        "entryQuoteComplete": false,
+        "valuationQuoteComplete": false,
+        "quotePoolComplete": false,
+        "expectedAsOf": "2026-10-23",
+        "history": {
+          "ok": true,
+          "expectedAsOf": "2026-10-23",
+          "rows": [
+            {
+              "symbol": "sh588000",
+              "dataAsOf": "2026-10-23",
+              "expectedAsOf": "2026-10-23",
+              "stale": false,
+              "reason": null
+            },
+            {
+              "symbol": "sh512760",
+              "dataAsOf": "2026-10-23",
+              "expectedAsOf": "2026-10-23",
+              "stale": false,
+              "reason": null
+            },
+            {
+              "symbol": "sh515070",
+              "dataAsOf": "2026-10-23",
+              "expectedAsOf": "2026-10-23",
+              "stale": false,
+              "reason": null
+            },
+            {
+              "symbol": "sh512720",
+              "dataAsOf": "2026-10-23",
+              "expectedAsOf": "2026-10-23",
+              "stale": false,
+              "reason": null
+            },
+            {
+              "symbol": "sh515880",
+              "dataAsOf": "2026-10-23",
+              "expectedAsOf": "2026-10-23",
+              "stale": false,
+              "reason": null
+            },
+            {
+              "symbol": "sz159852",
+              "dataAsOf": "2026-10-23",
+              "expectedAsOf": "2026-10-23",
+              "stale": false,
+              "reason": null
+            }
+          ],
+          "reason": null,
+          "calendarVersion": "sse-sessions-2023-2026-v1"
+        },
+        "historyStatuses": [
+          {
+            "symbol": "sh588000",
+            "ok": true,
+            "stale": false,
+            "dataAsOf": "2026-10-23",
+            "expectedAsOf": "2026-10-23",
+            "fetchedAt": "2026-10-23T08:00:20.954Z",
+            "sourceTime": null,
+            "source": "东方财富公开日线",
+            "errors": [
+              "sh588000 2026 primary_stale: 2026-10-22 expected 2026-10-23"
+            ],
+            "reason": null,
+            "calendarVersion": "sse-sessions-2023-2026-v1"
+          },
+          {
+            "symbol": "sh512760",
+            "ok": true,
+            "stale": false,
+            "dataAsOf": "2026-10-23",
+            "expectedAsOf": "2026-10-23",
+            "fetchedAt": "2026-10-23T08:05:33.556Z",
+            "sourceTime": null,
+            "source": "东方财富公开日线",
+            "errors": [
+              "sh512760 2026 primary_stale: 2026-10-22 expected 2026-10-23"
+            ],
+            "reason": null,
+            "calendarVersion": "sse-sessions-2023-2026-v1"
+          },
+          {
+            "symbol": "sh515070",
+            "ok": true,
+            "stale": false,
+            "dataAsOf": "2026-10-23",
+            "expectedAsOf": "2026-10-23",
+            "fetchedAt": "2026-10-23T08:05:33.551Z",
+            "sourceTime": null,
+            "source": "东方财富公开日线",
+            "errors": [
+              "sh515070 2026 primary_stale: 2026-10-22 expected 2026-10-23"
+            ],
+            "reason": null,
+            "calendarVersion": "sse-sessions-2023-2026-v1"
+          },
+          {
+            "symbol": "sh512720",
+            "ok": true,
+            "stale": false,
+            "dataAsOf": "2026-10-23",
+            "expectedAsOf": "2026-10-23",
+            "fetchedAt": "2026-10-23T08:00:20.957Z",
+            "sourceTime": null,
+            "source": "东方财富公开日线",
+            "errors": [
+              "sh512720 2026 primary_stale: 2026-10-22 expected 2026-10-23"
+            ],
+            "reason": null,
+            "calendarVersion": "sse-sessions-2023-2026-v1"
+          },
+          {
+            "symbol": "sh515880",
+            "ok": true,
+            "stale": false,
+            "dataAsOf": "2026-10-23",
+            "expectedAsOf": "2026-10-23",
+            "fetchedAt": "2026-10-23T08:00:21.323Z",
+            "sourceTime": null,
+            "source": "东方财富公开日线",
+            "errors": [
+              "sh515880 2026 primary_stale: 2026-10-22 expected 2026-10-23"
+            ],
+            "reason": null,
+            "calendarVersion": "sse-sessions-2023-2026-v1"
+          },
+          {
+            "symbol": "sz159852",
+            "ok": true,
+            "stale": false,
+            "dataAsOf": "2026-10-23",
+            "expectedAsOf": "2026-10-23",
+            "fetchedAt": "2026-10-23T08:00:21.071Z",
+            "sourceTime": null,
+            "source": "东方财富公开日线",
+            "errors": [
+              "sz159852 2026 腾讯日线失败: 复权日线字段缺失"
+            ],
+            "reason": null,
+            "calendarVersion": "sse-sessions-2023-2026-v1"
+          }
+        ],
+        "quoteRows": [
+          {
+            "symbol": "sh588000",
+            "ok": false,
+            "entryOk": false,
+            "valuationOk": false,
+            "mode": null,
+            "reason": "quote_expired_or_invalid_phase"
+          },
+          {
+            "symbol": "sh512760",
+            "ok": false,
+            "entryOk": false,
+            "valuationOk": false,
+            "mode": null,
+            "reason": "quote_expired_or_invalid_phase"
+          },
+          {
+            "symbol": "sh515070",
+            "ok": false,
+            "entryOk": false,
+            "valuationOk": false,
+            "mode": null,
+            "reason": "quote_expired_or_invalid_phase"
+          },
+          {
+            "symbol": "sh512720",
+            "ok": false,
+            "entryOk": false,
+            "valuationOk": false,
+            "mode": null,
+            "reason": "quote_expired_or_invalid_phase"
+          },
+          {
+            "symbol": "sh515880",
+            "ok": false,
+            "entryOk": false,
+            "valuationOk": false,
+            "mode": null,
+            "reason": "quote_expired_or_invalid_phase"
+          },
+          {
+            "symbol": "sz159852",
+            "ok": false,
+            "entryOk": false,
+            "valuationOk": false,
+            "mode": null,
+            "reason": "quote_expired_or_invalid_phase"
+          }
+        ],
+        "reason": "quote_collection_incomplete"
+      }
+    },
+    "lowcap": {
+      "stateHash": "d907e4a125f17a14487694aeb61d3b2d85107f82de0ba1ac2329d23cf99e626e",
+      "auditSha256": "dd96c36a65475e8da77012d9fa95bb4732a811b00ed014bcde4bf4d8f3907d7f",
+      "verifiedTicks": 2341,
+      "candidate": {
+        "observations": 2294,
+        "healthy": 1313,
+        "stale": 922,
+        "peak": 10000,
+        "minimumEquity": 9905.048,
+        "maxDrawdown": 94.95199999999932,
+        "maxDrawdownRate": 0.009495199999999931,
+        "maxLossFromInitial": 94.95199999999932,
+        "maxExposure": 0.11534173089437467,
+        "warningSnapshots": 0,
+        "todayWarningSnapshots": 0,
+        "todayObservations": 790,
+        "firstWarning": null,
+        "lastWarning": null,
+        "minimumAt": "2026-10-23T02:17:34.464Z",
+        "maxDrawdownAt": "2026-10-23T02:17:34.464Z"
+      },
+      "control": {
+        "observations": 2294,
+        "healthy": 1313,
+        "stale": 924,
+        "peak": 10000,
+        "minimumEquity": 9904.771600000002,
+        "maxDrawdown": 95.22839999999815,
+        "maxDrawdownRate": 0.009522839999999814,
+        "maxLossFromInitial": 95.22839999999815,
+        "maxExposure": 0.10300510069559894,
+        "warningSnapshots": 0,
+        "todayWarningSnapshots": 0,
+        "todayObservations": 790,
+        "firstWarning": null,
+        "lastWarning": null,
+        "minimumAt": "2026-10-23T02:20:10.516Z",
+        "maxDrawdownAt": "2026-10-23T02:20:10.516Z"
+      },
+      "lastTickHash": "26bc518454689d8fe5368716db7453e1d160c7661c8a82857f2a78980bc9a580",
+      "terminalHealth": {
+        "ok": false,
+        "collectionOk": false,
+        "historyOk": true,
+        "entryQuoteComplete": false,
+        "valuationQuoteComplete": false,
+        "quotePoolComplete": false,
+        "expectedAsOf": "2026-10-23",
+        "history": {
+          "ok": true,
+          "expectedAsOf": "2026-10-23",
+          "rows": [
+            {
+              "symbol": "sh588000",
+              "dataAsOf": "2026-10-23",
+              "expectedAsOf": "2026-10-23",
+              "stale": false,
+              "reason": null
+            },
+            {
+              "symbol": "sh512760",
+              "dataAsOf": "2026-10-23",
+              "expectedAsOf": "2026-10-23",
+              "stale": false,
+              "reason": null
+            },
+            {
+              "symbol": "sh515070",
+              "dataAsOf": "2026-10-23",
+              "expectedAsOf": "2026-10-23",
+              "stale": false,
+              "reason": null
+            },
+            {
+              "symbol": "sh512720",
+              "dataAsOf": "2026-10-23",
+              "expectedAsOf": "2026-10-23",
+              "stale": false,
+              "reason": null
+            },
+            {
+              "symbol": "sh515880",
+              "dataAsOf": "2026-10-23",
+              "expectedAsOf": "2026-10-23",
+              "stale": false,
+              "reason": null
+            },
+            {
+              "symbol": "sz159852",
+              "dataAsOf": "2026-10-23",
+              "expectedAsOf": "2026-10-23",
+              "stale": false,
+              "reason": null
+            }
+          ],
+          "reason": null,
+          "calendarVersion": "sse-sessions-2023-2026-v1"
+        },
+        "historyStatuses": [
+          {
+            "symbol": "sh588000",
+            "ok": true,
+            "stale": false,
+            "dataAsOf": "2026-10-23",
+            "expectedAsOf": "2026-10-23",
+            "fetchedAt": "2026-10-23T08:00:27.020Z",
+            "sourceTime": null,
+            "source": "东方财富公开日线",
+            "errors": [
+              "sh588000 2026 primary_stale: 2026-10-22 expected 2026-10-23"
+            ],
+            "reason": null,
+            "calendarVersion": "sse-sessions-2023-2026-v1"
+          },
+          {
+            "symbol": "sh512760",
+            "ok": true,
+            "stale": false,
+            "dataAsOf": "2026-10-23",
+            "expectedAsOf": "2026-10-23",
+            "fetchedAt": "2026-10-23T08:00:26.888Z",
+            "sourceTime": null,
+            "source": "东方财富公开日线",
+            "errors": [
+              "sh512760 2026 primary_stale: 2026-10-22 expected 2026-10-23"
+            ],
+            "reason": null,
+            "calendarVersion": "sse-sessions-2023-2026-v1"
+          },
+          {
+            "symbol": "sh515070",
+            "ok": true,
+            "stale": false,
+            "dataAsOf": "2026-10-23",
+            "expectedAsOf": "2026-10-23",
+            "fetchedAt": "2026-10-23T08:00:26.917Z",
+            "sourceTime": null,
+            "source": "东方财富公开日线",
+            "errors": [
+              "sh515070 2026 primary_stale: 2026-10-22 expected 2026-10-23"
+            ],
+            "reason": null,
+            "calendarVersion": "sse-sessions-2023-2026-v1"
+          },
+          {
+            "symbol": "sh512720",
+            "ok": true,
+            "stale": false,
+            "dataAsOf": "2026-10-23",
+            "expectedAsOf": "2026-10-23",
+            "fetchedAt": "2026-10-23T08:00:26.883Z",
+            "sourceTime": null,
+            "source": "东方财富公开日线",
+            "errors": [
+              "sh512720 2026 primary_stale: 2026-10-22 expected 2026-10-23"
+            ],
+            "reason": null,
+            "calendarVersion": "sse-sessions-2023-2026-v1"
+          },
+          {
+            "symbol": "sh515880",
+            "ok": true,
+            "stale": false,
+            "dataAsOf": "2026-10-23",
+            "expectedAsOf": "2026-10-23",
+            "fetchedAt": "2026-10-23T08:00:27.008Z",
+            "sourceTime": null,
+            "source": "东方财富公开日线",
+            "errors": [
+              "sh515880 2026 primary_stale: 2026-10-22 expected 2026-10-23"
+            ],
+            "reason": null,
+            "calendarVersion": "sse-sessions-2023-2026-v1"
+          },
+          {
+            "symbol": "sz159852",
+            "ok": true,
+            "stale": false,
+            "dataAsOf": "2026-10-23",
+            "expectedAsOf": "2026-10-23",
+            "fetchedAt": "2026-10-23T08:00:27.024Z",
+            "sourceTime": null,
+            "source": "东方财富公开日线",
+            "errors": [
+              "sz159852 2026 腾讯日线失败: 复权日线字段缺失"
+            ],
+            "reason": null,
+            "calendarVersion": "sse-sessions-2023-2026-v1"
+          }
+        ],
+        "quoteRows": [
+          {
+            "symbol": "sh588000",
+            "ok": false,
+            "entryOk": false,
+            "valuationOk": false,
+            "mode": null,
+            "reason": "quote_expired_or_invalid_phase"
+          },
+          {
+            "symbol": "sh512760",
+            "ok": false,
+            "entryOk": false,
+            "valuationOk": false,
+            "mode": null,
+            "reason": "quote_expired_or_invalid_phase"
+          },
+          {
+            "symbol": "sh515070",
+            "ok": false,
+            "entryOk": false,
+            "valuationOk": false,
+            "mode": null,
+            "reason": "quote_expired_or_invalid_phase"
+          },
+          {
+            "symbol": "sh512720",
+            "ok": false,
+            "entryOk": false,
+            "valuationOk": false,
+            "mode": null,
+            "reason": "quote_expired_or_invalid_phase"
+          },
+          {
+            "symbol": "sh515880",
+            "ok": false,
+            "entryOk": false,
+            "valuationOk": false,
+            "mode": null,
+            "reason": "quote_expired_or_invalid_phase"
+          },
+          {
+            "symbol": "sz159852",
+            "ok": false,
+            "entryOk": false,
+            "valuationOk": false,
+            "mode": null,
+            "reason": "quote_expired_or_invalid_phase"
+          }
+        ],
+        "reason": "quote_collection_incomplete"
+      }
+    }
+  },
+  "limitations": [
+    "Only observed snapshots; stale observations retained, unknown intraday extrema not reconstructed.",
+    "Raw public daily close is a reference, not certified executable exchange prices; independent data-provider verification not claimed.",
+    "Future sell fees not yet incurred. No new orders or account resets."
+  ]
+}

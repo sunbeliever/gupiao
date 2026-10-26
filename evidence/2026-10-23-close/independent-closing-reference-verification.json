@@ -1,0 +1,57 @@
+{
+  "at": "2026-10-26T01:26:12.456Z",
+  "accepted": true,
+  "accountWrites": false,
+  "paperReplay": false,
+  "valuationDate": "2026-10-23",
+  "receivedVersionCreatedAt": "2026-10-26T01:13:16.529Z",
+  "sourceKnownOnFriday": false,
+  "datasetManifestHash": "394ea4970d32f730d97a648b2bcea2ac654171d72579a35c1fbbc4c7ec4e50fa",
+  "datasetHash": "2ddfed611415306e863d0f137aefc3d33ed687cdc5cdf53b2aff7ca9c4047389",
+  "prices": {
+    "sh588000": 1.422,
+    "sh512760": 0.891,
+    "sh515070": 0.947,
+    "sh512720": 1.057,
+    "sh515880": 0.514,
+    "sz159852": 0.661
+  },
+  "checks": [
+    {
+      "label": "capital50k",
+      "leg": "candidate",
+      "equity": 49791.16039999999,
+      "netPnl": -208.8396000000066,
+      "fees": 55,
+      "marketValue": 12923.8,
+      "referenceDifference": 0
+    },
+    {
+      "label": "capital50k",
+      "leg": "control",
+      "equity": 49982.7267,
+      "netPnl": -17.273300000000745,
+      "fees": 45,
+      "marketValue": 12804.3,
+      "referenceDifference": 0
+    },
+    {
+      "label": "lowcap",
+      "leg": "candidate",
+      "equity": 9979.448,
+      "netPnl": -20.55199999999968,
+      "fees": 5,
+      "marketValue": 1137.6,
+      "referenceDifference": 0
+    },
+    {
+      "label": "lowcap",
+      "leg": "control",
+      "equity": 9975.171600000001,
+      "netPnl": -24.82839999999851,
+      "fees": 15,
+      "marketValue": 1019.5999999999999,
+      "referenceDifference": 0
+    }
+  ]
+}

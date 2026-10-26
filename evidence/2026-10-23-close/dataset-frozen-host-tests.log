@@ -1,0 +1,17 @@
+✔ raw and hfq fields remain distinct, unfinished day excluded with provenance (1.3865ms)
+✔ invalid, duplicated, out-of-order and missing completed bars are rejected rather than cleaned away (0.2094ms)
+✔ accepted dual-adjustment dataset is immutable and raw-response tampering is detected (58.2113ms)
+✔ partial data failure retains raw evidence without accepted manifest (4.5288ms)
+✔ collector itself rejects a cutoff beyond completed session (1.2243ms)
+✔ explicit alternate adjusted feed is parsed without falling back to raw as hfq (0.3812ms)
+✔ alternate feed must identify the requested instrument (0.2193ms)
+✔ missing adjusted field preserves primary and validated alternate evidence end to end (31.1019ms)
+✔ all current-year primary and fallback requests end at the completed cutoff (33.0623ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 9
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 195.2183

@@ -1,0 +1,44 @@
+{
+  "at": "2026-10-26T01:24:06.718Z",
+  "kind": "date_index_maturity_readiness_only_no_model_training",
+  "dataset": "multiyear-six-etf-20261026-a",
+  "manifestHash": "dd029cf7e8cae055b33b105d7651173481169953f9e25b5d08de0dcdbcf7d3da",
+  "rows": [
+    {
+      "horizon": 5,
+      "featureLookback": 60,
+      "perAssetEligibleSignalCount": 855,
+      "totalAcrossSix": 5130,
+      "firstSignal": "2023-04-03",
+      "lastSignal": "2026-10-15",
+      "lastEntry": "2026-10-16",
+      "lastLabelEnd": "2026-10-23",
+      "unknownFutureLabelsExcluded": true
+    },
+    {
+      "horizon": 20,
+      "featureLookback": 60,
+      "perAssetEligibleSignalCount": 840,
+      "totalAcrossSix": 5040,
+      "firstSignal": "2023-04-03",
+      "lastSignal": "2026-09-16",
+      "lastEntry": "2026-09-17",
+      "lastLabelEnd": "2026-10-23",
+      "unknownFutureLabelsExcluded": true
+    },
+    {
+      "horizon": 60,
+      "featureLookback": 60,
+      "perAssetEligibleSignalCount": 800,
+      "totalAcrossSix": 4800,
+      "firstSignal": "2023-04-03",
+      "lastSignal": "2026-07-22",
+      "lastEntry": "2026-07-23",
+      "lastLabelEnd": "2026-10-23",
+      "unknownFutureLabelsExcluded": true
+    }
+  ],
+  "foldBuilderImplemented": false,
+  "historicalFirstAvailabilityKnown": false,
+  "notProfitProbability": true
+}

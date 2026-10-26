@@ -1,0 +1,45 @@
+✔ raw and hfq fields remain distinct, unfinished day excluded with provenance (1.3772ms)
+✔ invalid, duplicated, out-of-order and missing completed bars are rejected rather than cleaned away (0.2163ms)
+✔ accepted dual-adjustment dataset is immutable and raw-response tampering is detected (59.0967ms)
+✔ partial data failure retains raw evidence without accepted manifest (5.5375ms)
+✔ collector itself rejects a cutoff beyond completed session (1.0621ms)
+✔ explicit alternate adjusted feed is parsed without falling back to raw as hfq (0.2678ms)
+✔ alternate feed must identify the requested instrument (0.1779ms)
+✔ missing adjusted field preserves primary and validated alternate evidence end to end (30.8771ms)
+✖ all current-year primary and fallback requests end at the completed cutoff (4.0258ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 8
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 168.1174
+
+✖ failing tests:
+
+test at tests\research-dataset.test.js:15:1
+✖ all current-year primary and fallback requests end at the completed cutoff (4.0258ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + '2026-12-31'
+  - '2026-10-22'
+           ^
+  
+      at request (C:\Users\lqp07\.codex\worktrees\stock-entry-exit\techno\tests\research-dataset.test.js:15:599)
+      at Object.collect (C:\Users\lqp07\.codex\worktrees\stock-entry-exit\techno\scripts\research-dataset.js:22:326)
+      at TestContext.<anonymous> (C:\Users\lqp07\.codex\worktrees\stock-entry-exit\techno\tests\research-dataset.test.js:15:782)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1325:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:911:18)
+      at Test.postRun (node:internal/test_runner/test:1465:19)
+      at Test.run (node:internal/test_runner/test:1390:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:911:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: '2026-12-31',
+    expected: '2026-10-22',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
