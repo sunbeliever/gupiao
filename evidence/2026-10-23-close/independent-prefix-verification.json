@@ -1,0 +1,102 @@
+{
+  "startedAt": "2026-10-26T01:23:43.138Z",
+  "mode": "read_only_hash_chain_and_derived_statistics",
+  "paperReplay": false,
+  "accountWrites": false,
+  "legs": [
+    {
+      "id": "paired-capital50k-20261021-pm-a",
+      "label": "capital50k",
+      "verifiedTicks": 1961,
+      "manifestHash": "29935f3137b05610a10e6d00337329fe0434f19203ae6f7fbd0b1704f7246f8e",
+      "claimHash": "2c5b91c65911b1a484b6bc960c17fde0faa4d4a5863016d3cc1abe93aaf777d9",
+      "auditSha256": "7f107854f905c757e8023d237222bc670a409af43e191541942fd9b5b0d9d037",
+      "stateHash": "7204b38c9d0c0cc237e7273a668f331489d9ee75197c362f82bc7db4028879fd",
+      "lastTickHash": "2d14e5d7c53b37e10ac478114e4c1417e6cd7c202d86f1d4cd91b6566fbc2b8f",
+      "lastDecisionAt": "2026-10-23T08:09:44.049Z",
+      "statistics": {
+        "candidate": {
+          "observations": 1951,
+          "peak": 50079.89169999999,
+          "minimumEquity": 48892.0604,
+          "maxDrawdown": 1187.8312999999907,
+          "maxDrawdownRate": 0.02371872741090594,
+          "maxLossFromInitial": 1107.9395999999979,
+          "maxExposure": 0.2607404813913393,
+          "warningSnapshots": 845,
+          "todayWarningSnapshots": 561,
+          "stale": 762
+        },
+        "control": {
+          "observations": 1951,
+          "peak": 50058.9543,
+          "minimumEquity": 49100.7267,
+          "maxDrawdown": 958.2275999999983,
+          "maxDrawdownRate": 0.019141981957062144,
+          "maxLossFromInitial": 899.2733000000007,
+          "maxExposure": 0.2571108633736754,
+          "warningSnapshots": 463,
+          "todayWarningSnapshots": 463,
+          "stale": 762
+        }
+      },
+      "maximumRiskSample": {
+        "sequence": 1306,
+        "decisionAt": "2026-10-23T02:29:26.089Z",
+        "tickHash": "7cedd9e810b944310d65f7de0b5b4da6aab8ea7cc5ba39f455d01573e74c4bb8",
+        "health": {
+          "ok": true,
+          "reason": null,
+          "historyOk": true
+        },
+        "equity": 48892.0604,
+        "stalePositions": [],
+        "accountingBalanced": true
+      }
+    },
+    {
+      "id": "paired-lowcap-20261021-1000-b",
+      "label": "lowcap",
+      "verifiedTicks": 2341,
+      "manifestHash": "001893648e6b73b370ff88e094a253c58f11652d163e671ceb6fa5cb8c48067a",
+      "claimHash": "8df8a92f363b8e19490697f124bcff7ecb9ae7d5eda9dfe0899ef3914e9e877e",
+      "auditSha256": "dd96c36a65475e8da77012d9fa95bb4732a811b00ed014bcde4bf4d8f3907d7f",
+      "stateHash": "d907e4a125f17a14487694aeb61d3b2d85107f82de0ba1ac2329d23cf99e626e",
+      "lastTickHash": "26bc518454689d8fe5368716db7453e1d160c7661c8a82857f2a78980bc9a580",
+      "lastDecisionAt": "2026-10-23T08:09:49.622Z",
+      "statistics": {
+        "candidate": {
+          "observations": 2294,
+          "peak": 10000,
+          "minimumEquity": 9905.048,
+          "maxDrawdown": 94.95199999999932,
+          "maxDrawdownRate": 0.009495199999999931,
+          "maxLossFromInitial": 94.95199999999932,
+          "maxExposure": 0.11534173089437467,
+          "warningSnapshots": 0,
+          "todayWarningSnapshots": 0,
+          "stale": 922
+        },
+        "control": {
+          "observations": 2294,
+          "peak": 10000,
+          "minimumEquity": 9904.771600000002,
+          "maxDrawdown": 95.22839999999815,
+          "maxDrawdownRate": 0.009522839999999814,
+          "maxLossFromInitial": 95.22839999999815,
+          "maxExposure": 0.10300510069559894,
+          "warningSnapshots": 0,
+          "todayWarningSnapshots": 0,
+          "stale": 924
+        }
+      },
+      "maximumRiskSample": null
+    }
+  ],
+  "limitations": [
+    "No Paper.step, Paper.replay or Core.recover invoked. This verifies archived prefix integrity and independently derives observed statistics; it does not repeat financial execution."
+  ],
+  "accepted": true,
+  "finishedAt": "2026-10-26T01:32:25.182Z",
+  "verifierSha256": "ad1a004466eb526c50e79e3183a84db3d3bfba392d58adc670b973afb31baf82"
+}
