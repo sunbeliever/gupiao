@@ -1,0 +1,41 @@
+{
+  "at": "2026-10-26T06:46:57.626Z",
+  "file": "D:/techno/validation/strategy-research/decision-engine-protocol-20261026-a/reproducible-case-1792997218001.json",
+  "inputHash": "8b3d044d028f2149278bab99ee19a940a2812a382cf72074b0649d169dc40281",
+  "outputHash": "42d3dbd6714509bb62a2b2313fb88caf5d168d7934618746cc5e3072289c9c3c",
+  "recomputedEqual": true,
+  "noOrdersExecuted": true,
+  "selected": [],
+  "candidateActions": [
+    {
+      "symbol": "sz159852",
+      "action": "observe",
+      "desiredShares": 0
+    },
+    {
+      "symbol": "sh512720",
+      "action": "observe",
+      "desiredShares": 0
+    },
+    {
+      "symbol": "sh515070",
+      "action": "observe",
+      "desiredShares": 0
+    },
+    {
+      "symbol": "sh512760",
+      "action": "exit",
+      "desiredShares": 0
+    },
+    {
+      "symbol": "sh588000",
+      "action": "exit",
+      "desiredShares": 0
+    },
+    {
+      "symbol": "sh515880",
+      "action": "exit",
+      "desiredShares": 0
+    }
+  ]
+}

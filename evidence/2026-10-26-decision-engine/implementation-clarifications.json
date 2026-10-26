@@ -1,0 +1,8 @@
+{
+  "at": "2026-10-26T06:49:48.192Z",
+  "policyUnchanged": true,
+  "volatilityDisplay": "population SD of20 daily log returns times sqrt252; annualized",
+  "selectionNote": "For ordinary positive volatility, common annualization scale preserves rank and normalized inverse-vol weights; zero variance uses1e-12 numerical guard. No historical profit or parameter selection claimed.",
+  "executionState": "read-only candidate, no fee-account experiment started",
+  "knownScope": "This implementation is not selected/promoted until prior six-path fees comparison and a separate prospective protocol."
+}

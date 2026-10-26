@@ -1,0 +1,12 @@
+{
+  "at": "2026-10-26T06:42:15.330Z",
+  "earlierCases": [
+    "readonly-case-1792995800993.json"
+  ],
+  "status": "retained_pre_review_exploration_only",
+  "reasons": [
+    "quote content had only timestamp binding",
+    "unfilled position slot constraint incomplete"
+  ],
+  "replacement": "new case after independent safety fixes; no historical profit claim"
+}

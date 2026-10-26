@@ -1,0 +1,105 @@
+{
+  "at": "2026-10-26T06:44:46.634Z",
+  "sourceRelease": "D:\\techno\\validation\\autonomous-research\\releases\\20261026-f",
+  "sourceHashesVerified": true,
+  "htmlCandidate": true,
+  "candidateAvailable": true,
+  "candidateReady": "candidate_ready",
+  "candidateExecuted": false,
+  "realAccountModelUnchanged": true,
+  "candidateRows": [
+    {
+      "symbol": "sz159852",
+      "action": "observe",
+      "desiredShares": 0
+    },
+    {
+      "symbol": "sh512720",
+      "action": "observe",
+      "desiredShares": 0
+    },
+    {
+      "symbol": "sh515070",
+      "action": "observe",
+      "desiredShares": 0
+    },
+    {
+      "symbol": "sh512760",
+      "action": "exit",
+      "desiredShares": 0
+    },
+    {
+      "symbol": "sh588000",
+      "action": "exit",
+      "desiredShares": 0
+    },
+    {
+      "symbol": "sh515880",
+      "action": "exit",
+      "desiredShares": 0
+    }
+  ],
+  "actualFrozenFees": 55,
+  "actualFrozenActions": [
+    {
+      "symbol": "sh588000",
+      "directive": "hold"
+    },
+    {
+      "symbol": "sh512760",
+      "directive": "hold"
+    },
+    {
+      "symbol": "sh515880",
+      "directive": "hold"
+    }
+  ],
+  "costTasks": [
+    {
+      "id": "rolling-h20-20261026-a-compare",
+      "status": "queued",
+      "attempts": 0
+    },
+    {
+      "id": "rolling-h20-20261026-a-cash",
+      "status": "queued",
+      "attempts": 0
+    },
+    {
+      "id": "rolling-h20-20261026-a-fixed-single",
+      "status": "queued",
+      "attempts": 0
+    },
+    {
+      "id": "rolling-h20-20261026-a-fixed-three",
+      "status": "queued",
+      "attempts": 0
+    },
+    {
+      "id": "rolling-h20-20261026-a-frozen-f0",
+      "status": "queued",
+      "attempts": 0
+    },
+    {
+      "id": "rolling-h20-20261026-a-rolling-mean",
+      "status": "queued",
+      "attempts": 0
+    },
+    {
+      "id": "rolling-h20-20261026-a-rolling-ridge",
+      "status": "queued",
+      "attempts": 0
+    }
+  ],
+  "inputIdentity": {
+    "accountId": "paired-capital50k-20261021-pm-a",
+    "sequence": 2194,
+    "stateHash": "42b739c1aaefc6326445a5dc6c7648a9fcd9a1d655d85e8609c26ae7b2608383",
+    "committedTickHash": "dc9e26e71e175985be6d6ce64665b123c8576da2b27ec035418aadc0a6101fb3",
+    "committedInputHash": "d01c5588c642abe9a77ea4fcf6b8477e6e2c4d20ec08edd25028f40f75882ba3",
+    "protocolHash": "61329165fa4dbb6554ab54505a392a54260a73dbb69b4fa2e601f33e9b285026",
+    "historyHash": "eb5b6cd304c33f301867c8fe833af4bb35d7c0786d052764acdd1d8f2495dc6a",
+    "quotesHash": "8e8961949d4df2cb978a0f5bdb765f357fe4c4bf87ddd43c880796f51b9f9afd",
+    "asOf": "2026-10-26T06:44:38.258Z"
+  }
+}

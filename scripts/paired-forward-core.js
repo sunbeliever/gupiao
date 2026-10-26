@@ -90,9 +90,9 @@ function* storedTicks(directory,{inflateHistories=true}={}){
  try{let length;while((length=fs.readSync(fd,buffer,0,buffer.length,offset))>0){offset+=length;const data=Buffer.concat([pending,buffer.subarray(0,length)]);let start=0,split;while((split=data.indexOf(10,start))>=0){const line=data.subarray(start,split).toString('utf8');if(!line.trim())throw Error('Empty tick inside append-only ledger');const record=JSON.parse(line);yield inflateHistories?inflateTick(record,directory,cache):record;start=split+1;}pending=Buffer.from(data.subarray(start));}if(pending.length)throw Error('Incomplete tick tail; preserved for explicit recovery');}
  finally{fs.closeSync(fd);}
 }
-function lastTick(directory){
- const file=path.join(directory,'ticks.jsonl');if(!fs.existsSync(file))return null;const fd=fs.openSync(file,'r');try{const size=fs.fstatSync(fd).size;if(!size)return null;const end=Buffer.alloc(1);fs.readSync(fd,end,0,1,size-1);if(end[0]!==10)throw Error('Incomplete tick tail; never overwrite it');let pos=size-1,parts=[];
-  while(pos>0){const start=Math.max(0,pos-65536),part=Buffer.alloc(pos-start);fs.readSync(fd,part,0,part.length,start);const split=part.lastIndexOf(10);if(split>=0){parts.unshift(part.subarray(split+1));return inflateTick(JSON.parse(Buffer.concat(parts).toString('utf8')),directory);}parts.unshift(part);pos=start;}
+function lastTick(directory,{maxBytes=Infinity}={}){
+ const file=path.join(directory,'ticks.jsonl');if(!fs.existsSync(file))return null;const fd=fs.openSync(file,'r');try{const size=fs.fstatSync(fd).size;if(!size)return null;const end=Buffer.alloc(1);fs.readSync(fd,end,0,1,size-1);if(end[0]!==10)throw Error('Incomplete tick tail; never overwrite it');let pos=size-1,parts=[],bytes=0;
+  while(pos>0){const start=Math.max(0,pos-65536),part=Buffer.alloc(pos-start);fs.readSync(fd,part,0,part.length,start);const split=part.lastIndexOf(10);if(split>=0){const tail=part.subarray(split+1);bytes+=tail.length;if(bytes>maxBytes)throw Error('Latest tick exceeds read bound');parts.unshift(tail);return inflateTick(JSON.parse(Buffer.concat(parts).toString('utf8')),directory);}bytes+=part.length;if(bytes>maxBytes)throw Error('Latest tick exceeds read bound');parts.unshift(part);pos=start;}
   return inflateTick(JSON.parse(Buffer.concat(parts).toString('utf8')),directory);
  }finally{fs.closeSync(fd);}
 }
@@ -113,4 +113,4 @@ function recover(directory,protocol,runtime){
  if(!state.sequence)throw Error('Permanent claim has no committed paired ledger; never reset accounts');
  if(!savedMatches)throw Error('Checkpoint ahead of or inconsistent with committed ledger');return state;
 }
-module.exports={defineProtocol,initialState,advance,replay,claim,persist,recover,storedTicks,acquireLease:Monitor.acquireLease};
+module.exports={lastTick,checkTick,defineProtocol,initialState,advance,replay,claim,persist,recover,storedTicks,acquireLease:Monitor.acquireLease};

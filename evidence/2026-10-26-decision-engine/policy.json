@@ -1,0 +1,27 @@
+{
+  "id": "decision-engine-protocol-20261026-a",
+  "declaredAt": "2026-10-26T06:12:42.000Z",
+  "scope": "implementation_only_no_historical_execution_or_account_replacement",
+  "candidate": "trend-relative20-risk-v1",
+  "symbols": [
+    "sh588000",
+    "sh512760",
+    "sh515070",
+    "sh512720",
+    "sh515880",
+    "sz159852"
+  ],
+  "entry": "Only previous completed-session HFQ mom20>0 and close/MA60>1; rank mom20/dailyVol20, max3",
+  "allocation": "inverse dailyVol20; min12500/equity25percent/risk500div4percent; lots100; adverse slippage and real fee profile; no unfilled sale proceeds",
+  "hold": "retain only when completed-session trend thesis remains valid and target size supports holding",
+  "exit": "existing pendingExit/frozen raw stop/maturity first, then failed trend or lost selected rank; T+1 and executable quotes retained",
+  "accountWarning": "drawdown>=500 forbids additional buying, not forced guaranteed liquidation or capital guarantee",
+  "knownDataBoundary": "HFQ for scale-free completed-session indicators; raw quote for shares/cash/risk. Never compare raw live price to HFQ MA.",
+  "status": "not_selected_for_fee_research_or_deployment",
+  "tradingEnabled": false,
+  "investmentReady": false,
+  "profitabilityVerified": false,
+  "profitProbability": null,
+  "nextGate": "Wait existing six-path fee results; choose next independently preregistered historical/forward candidate only then; no rerun of completed model experiments",
+  "oldFrozenRulesUnchanged": true
+}

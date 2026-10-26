@@ -1,0 +1,25 @@
+✔ decision input is bound to the same verified state and all six cached histories (134.1425ms)
+✔ cache edits and quotes newer than committed state cannot become candidate decisions (333.4664ms)
+✔ same-time quote edits cannot replace the sealed collector input (91.4107ms)
+✔ latest committed tick read is bounded and incomplete tails are retained (67.7542ms)
+✔ fixed candidate uses HFQ trend and original raw fees without inventing expected profit (12.1515ms)
+✔ any missing future stale or gapped pool data suppresses every target (2.739ms)
+✔ pending exits retain T plus one intent and occupied capital without spending future proceeds (3.2898ms)
+✔ drawdown warning only blocks increases while preserving valid holdings and exits (5.6216ms)
+✔ trend failure and rank exclusion are explicit research exits (5.5248ms)
+✔ cash and fees cannot force a minimum investment or use blocked sales (5.995ms)
+✔ schema and future holding dates fail closed and lower equity reduces the portfolio cap (3.0439ms)
+✔ adverse slippage and original minimum fees are included and stop loss is only a scenario (3.0983ms)
+✔ sell rejection preserves intended exit and current exposure while buy rejection cannot create a position (5.9074ms)
+✔ stop and maturity use original raw contracts and remain independent from trend ranks (5.2415ms)
+✔ unfilled T plus one exits occupy cap even when cash is available and valid selected holdings can add or reduce (7.5228ms)
+✔ unfilled existing positions retain the three-position limit through T plus one rejected and merely intended sales (8.7862ms)
+✔ adding an existing selected position consumes no new slot and full existing portfolios cannot open another symbol (2.6714ms)
+ℹ tests 17
+ℹ suites 0
+ℹ pass 17
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 706.7813
