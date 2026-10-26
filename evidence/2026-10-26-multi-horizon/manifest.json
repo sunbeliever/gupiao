@@ -1,0 +1,26 @@
+{
+  "schema": 1,
+  "id": "multi-horizon-forecast-20261026-a",
+  "declaredAt": "2026-10-26T01:49:53.784Z",
+  "datasetId": "multiyear-six-etf-20261026-a",
+  "datasetManifestHash": "dd029cf7e8cae055b33b105d7651173481169953f9e25b5d08de0dcdbcf7d3da",
+  "sourceHashes": {
+    "assets/analysis.js": "ecbb66231d2276de365b6e1a3d657e2931ade29049c590ef6e5701a4dc7255cd",
+    "assets/audit-identity.js": "f0b01165c4a94c731ebbd8bf09a9ebf2659106d630ca78b9d2e89f243249a1ab",
+    "assets/trading-calendar.js": "9fc9f436ddc2980cf062cb85cc48ddfb1b99e1674db085c9d01d84cf6dfb9619",
+    "assets/fee-profile.js": "558cc293378a4d93d01c8c9cf41f40b77e1a313f048cfe5c95e1bfaf1d51f96a",
+    "assets/paper-engine.js": "6c60f13addb0443e85e931be1dd3a7a4bab031fcf13256ce1591d85e6ef7d691",
+    "assets/paper-account.js": "a3cb78863ef990c850d35aff910ae028bd446c5bfcd52f97cb48830faf485575",
+    "assets/market.js": "9a1da1a3114a47f0786270da30db3da5792a43ae3f4ce47342b14d71282ab199",
+    "scripts/research-dataset.js": "4dec8bf5ed7e3dc4a159d30ebe7847ec095862ca6182306dd8a7533c5196927c",
+    "scripts/multi-horizon-forecast.js": "ca46fbed2330f18f72ac68ef0c99666aaad8037daf8079932c482da6aa613182"
+  },
+  "files": {
+    "histories.json": "df0d7b5eb98bf81fa3034ec46839d1bd3e8f7556b79584ada03a65babf2bb3e1",
+    "protocol.json": "fbff24058cd76a68178faac162ede2ab2a705ac80d5aaeede1a377e47196d8e4",
+    "champion.json": "f5900387827d701337a43a548ddaa2ea9a8d9b6d20bd83a72d1f3cfce5a5ddc8"
+  },
+  "protocolSha256": "3f77b86d49b7d9c303f6993a8ee5c262132aaae00d00d92e8b0d1f81f861786c",
+  "promotionAllowed": false,
+  "stage": "forecast_only_account_validation_pending"
+}

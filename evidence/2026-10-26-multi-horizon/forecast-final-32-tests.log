@@ -1,0 +1,40 @@
+✔ durable idempotent declaration rejects changed policy and forbidden handler (34.2605ms)
+✔ one transactional writer and failed results retained (32.3795ms)
+✔ dead running job recovers with bounded attempts and durable restart (47.1766ms)
+✔ resource gate does not consume attempt or invent training (0.1583ms)
+✔ case study isolates saved commission and foregone inventory without claiming full backtest (0.3098ms)
+✔ claim selected runnable job without taking blocked training first (34.2444ms)
+✔ stale recovery CAS cannot steal a newly claimed live generation (27.6843ms)
+✔ stale execution cannot finish a recovered job (33.8579ms)
+✔ real audit order schema is normalized before case execution (29.1498ms)
+✔ data collection is an explicit allowlisted handler (22.8226ms)
+✔ training blocker states missing executor even during trading hours (0.2098ms)
+✔ forecast queue accepts registered studies but defers training during market hours (23.87ms)
+✔ forecast import rejects a changed frozen manifest instead of reporting improvement (3.9953ms)
+✔ forecast tasks require a declared 64-character manifest identity (0.19ms)
+✔ features need 61 bars and labels use next-open to horizon-later-open (6.9043ms)
+✔ fold models never depend on future bars or not-yet-mature labels (12.2513ms)
+✔ rolling ridge and mean are evaluated on identical mature rows with no promotion (58.7468ms)
+✔ forecast adapter equals the authoritative prediction and empty tests do not invent success (6.9013ms)
+✔ study lease serializes ownership and explicit recovery never steals a live writer (34.6717ms)
+✔ publication preserves abandoned files, is read-back verified and never overwrites a result (7.9571ms)
+✔ wrong champion identity and orphan recovery lock fail closed with explicit recovery evidence (1.0186ms)
+✔ import binds claim and all forecast summary metrics to complete checkpoint results (8.2692ms)
+✔ invalid or missing research never corrupts account and future data is refused (3.8165ms)
+✔ render distinguishes actual case attribution from validated profitability and escapes text (0.8223ms)
+✔ malformed nested research cannot disable the account page (4.8003ms)
+✔ completed dataset is visible as data readiness, not model profitability (0.1497ms)
+✔ strategy comparison displays failed candidate and distinguishes daily exploration (0.3769ms)
+✔ malformed comparison annual rows hide research conclusion without throwing (1.8823ms)
+✔ forecast comparisons render actual 5 20 60 day errors without claiming account profits (1.9534ms)
+✔ forecast champion comparison uses only the disclosed common sample and escapes identity (1.7182ms)
+✔ invalid forecast metrics and false profitability claims isolate only research display (64.6455ms)
+✔ forecast summaries enforce bounded arrays, complete horizons and common sample integrity (11.0331ms)
+ℹ tests 32
+ℹ suites 0
+ℹ pass 32
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 354.0114

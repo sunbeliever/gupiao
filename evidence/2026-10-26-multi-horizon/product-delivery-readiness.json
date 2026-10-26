@@ -1,0 +1,295 @@
+{
+  "schema": 1,
+  "generatedAt": "2026-10-26T01:45:17.1893267Z",
+  "auditType": "bounded_product_delivery_source_readiness",
+  "repository": "C:/Users/lqp07/.codex/worktrees/stock-entry-exit/techno",
+  "evidencePath": "D:/techno/validation/daily-20261026/product-delivery-readiness.json",
+  "constraints": {
+    "sourceReadOnly": true,
+    "sourceModified": false,
+    "gitModifiedByAudit": false,
+    "accountActions": false,
+    "brokerActions": false,
+    "trainingStartedByAudit": false,
+    "blockedBrowserTabAccessed": false,
+    "buildsOrRuntimeTestsRun": false,
+    "note": "审查仅核对文档、符号、必要代码与构建依赖文件；主线程同期训练改动不纳入本静态时点结论。"
+  },
+  "userTarget": {
+    "target": "首个完整可用AI股票经理研究版，目标接下来1—2周；产品交付和策略研发并行，不等长期盈利验证才交付。",
+    "priorities": [
+      "投资经理首页",
+      "每只ETF投资分析",
+      "模拟组合与持仓风险",
+      "模型研发比较"
+    ],
+    "label": "研究版；投资优势尚未验证；预测不是可靠盈利概率；不自动晋级。",
+    "fullInstructionRead": "C:/Users/lqp07/.codex/attachments/bd39f773-fff4-4802-8779-87b7d31aa1fb/已粘贴的文本.txt"
+  },
+  "reusableDesktopPath": {
+    "startupChain": [
+      "windows/Program.cs:26 Main、36 ExtractPayload、67 DesktopHost.Run",
+      "windows/DesktopForm.cs:54 Initialize、60 本地资源映射、72 index.html导航",
+      "assets/index.html:17 五页容器；32—48 共享金融/行情/展示脚本"
+    ],
+    "buildCommand": "& ./scripts/build-windows.ps1",
+    "buildOutput": "dist/TechScope-Windows.exe",
+    "launcher": "双击现有EXE；隔离验收使用 --data-root 指定新验证目录，不能打开或复用原冻结账户作夹具。",
+    "packagedRelease": "releases/v1.6.0.1/科技观察-持续账户审计版.exe",
+    "documentedReleaseIdentity": {
+      "version": "1.6.0.1",
+      "sha256": "0fc73902b2d509a32046ddfaea4740fb792fac6a0bd4dc2b6f0b564805334193",
+      "note": "来自README现有发布身份；本轮没有重新计算EXE哈希或声明新构建通过。"
+    },
+    "existsChecked": [
+      "tools/webview2/sdk/lib/net462/Microsoft.Web.WebView2.Core.dll",
+      "tools/webview2/sdk/lib/net462/Microsoft.Web.WebView2.WinForms.dll",
+      "tools/webview2/sdk/runtimes/win-x64/native/WebView2Loader.dll",
+      "C:/Windows/Microsoft.NET/Framework64/v4.0.30319/csc.exe",
+      "dist/TechScope-Windows.exe",
+      "releases/v1.6.0.1/科技观察-持续账户审计版.exe"
+    ],
+    "outputMetadata": [
+      {
+        "path": "dist/TechScope-Windows.exe",
+        "bytes": 1331200,
+        "lastWriteUtc": "2026-10-20T08:39:29.7529985Z"
+      },
+      {
+        "path": "releases/v1.6.0.1/科技观察-持续账户审计版.exe",
+        "bytes": 1317888,
+        "lastWriteUtc": "2026-10-20T06:19:07.147223Z"
+      }
+    ],
+    "runtimePrerequisite": "Windows x64与WebView2；本轮未重新启动EXE验证运行时。",
+    "focusedAcceptanceCommandAfterChange": "& ./scripts/test-desktop.ps1 -Executable ./dist/TechScope-Windows.exe -Live -VerificationRoot <新的隔离验证目录>",
+    "acceptanceCaution": "旧验收数字不能代替新版本验收；按改动补窄测试并在隔离配置完成真实桌面启动、中文路径、恢复与数据失效展示。"
+  },
+  "productCapabilityMatrix": [
+    {
+      "area": "首页投资经理",
+      "implemented": [
+        "观察列表、ETF强弱/板块涨跌、20日研究估计与残差区间",
+        "TradeGuidance模拟买入候选、费用/整手情景、等待原因及持仓退出意图",
+        "只读5万元页有现金、成本、净盈亏、持仓逐只指示和500元快照警戒"
+      ],
+      "missing": [
+        "统一首屏账户及模型身份",
+        "市场状态分类器",
+        "由持有理由/失效证据驱动的加仓、减仓、换仓及动态风险仓位",
+        "校准的不确定性和可信程度"
+      ],
+      "evidence": [
+        "assets/ui.js:128 renderObserve",
+        "assets/assurance-ui.js:193 render",
+        "assets/trade-guidance.js:36 build、60 render",
+        "scripts/research-account-view.js:7 build、26 render"
+      ],
+      "boundary": "旧桌面TradeGuidance默认1万元/1250元预案、19池部署模型；5万元只读页绑定另一冻结协议，不可拼接成同一账户。"
+    },
+    {
+      "area": "ETF分析",
+      "implemented": [
+        "原价/后复权区分、60/120/250日K线、MA5/20/60",
+        "11因子参数/贡献、当前20日研究估计、源时刻和风险说明",
+        "预测日记及成熟后评分基础"
+      ],
+      "missing": [
+        "5/20/60日多周期结果展示与模型来源",
+        "逐标的持有理由和明确失效条件",
+        "按周期成熟样本的误差/覆盖/局限汇总"
+      ],
+      "evidence": [
+        "assets/ui.js:177 renderDetail",
+        "assets/assurance-ui.js:193 render（journal.refresh）",
+        "docs/现有系统能力与缺口审查.md:6 长期能力"
+      ],
+      "boundary": "20日预测不得冒作60日或12个月预测；60日研究也不是3—12个月验证能力。"
+    },
+    {
+      "area": "组合与持仓风险",
+      "implemented": [
+        "共享Paper持续账务、整手费用、现金/市值/已实现和未实现盈亏",
+        "T+1、到期/风险退出、拒单、原账户恢复和历史亏损保留",
+        "最近80笔订单理由及完整本机账本",
+        "5万元页当前快照本金亏损/历史峰值回撤及同限额对照"
+      ],
+      "missing": [
+        "统一用户可读资金分配与风险预算视图",
+        "5万元完整交易/权益时间序列的只读展示适配",
+        "实际组合收益曲线（现有回测曲线不是当前账户净值）",
+        "独立的持有逻辑生命周期"
+      ],
+      "evidence": [
+        "assets/assurance-ui.js:79 continuousMarkup",
+        "assets/ui.js:228 renderBacktest",
+        "scripts/research-account-view.js:7 build、26 render"
+      ],
+      "boundary": "500元仅风险监测；不能保证止损成交或最大亏损；历史回测曲线不得顶替当前账户曲线。"
+    },
+    {
+      "area": "研发比较",
+      "implemented": [
+        "独立SQLite持久任务/版本化数据/候选记录",
+        "只读任务阶段、失败/阻塞、已见病例归因",
+        "冷静期三路径完整历史指标和淘汰原因",
+        "模型与样本外/实投未验证的区分"
+      ],
+      "missing": [
+        "新多模型/多周期结果的版本化展示schema",
+        "由注册记录驱动的Champion/Challenger状态（当前说明有硬编码）",
+        "统一桌面入口",
+        "自动晋级的完整风险收益与未来证据门槛"
+      ],
+      "evidence": [
+        "scripts/research-center-view.js:2 read、3 validComparison、4 comparisonHtml、5 render",
+        "docs/自主研发路线图.md:第6—8项与10/26检查点"
+      ],
+      "boundary": "当前validComparison只认baseline/stop-next-session/fixed-three三路径；新5/20/60结果不能直接套旧schema。"
+    }
+  ],
+  "concreteBlockers": [
+    {
+      "id": "desktop_snapshot_integration",
+      "severity": "必须开发，非现有打包依赖缺失",
+      "fact": "build-windows.ps1仅打包assets白名单；research-account-view/research-center-view/serve-research-view在scripts且依赖Node/fs，不在EXE内。",
+      "consequence": "已发布EXE没有新增研发中心与5万元只读账户入口。",
+      "requiredResolution": "保留Program/DesktopForm壳与共享assets；增加固定声明路径、只读、大小/身份/时间/快照完整性校验的摘要桥接或稳定摘要导入。首次读取不得写入/接管冻结账户。",
+      "evidence": [
+        "scripts/build-windows.ps1:9 资产白名单",
+        "scripts/research-account-view.js:23 read",
+        "scripts/serve-research-view.js:10 main"
+      ]
+    },
+    {
+      "id": "desktop_security_boundary",
+      "severity": "集成约束",
+      "fact": "桌面CSP connect-src 'none'；WebView2拒绝非trusted page资源和导航。",
+      "consequence": "不能靠嵌入127.0.0.1:58659或开放任意文件/网络来完成集成。",
+      "requiredResolution": "使用受控只读摘要接口；不要改变全局安全权限或放开任意本机URL。",
+      "evidence": [
+        "scripts/build-windows.ps1:12 CSP",
+        "windows/DesktopForm.cs:60—67 本地资源/桥接限制"
+      ]
+    },
+    {
+      "id": "identity_and_policy",
+      "severity": "金融展示正确性",
+      "fact": "桌面默认1万元/1250元预案使用19池部署模型；5万元页冻结六ETF20日模型/25%/4%条件，来源和规则不同。",
+      "consequence": "直接拼UI可能把同一标的不同账户的建议、收益和风险条件错配。",
+      "requiredResolution": "所有首页/ETF/组合/研究视图显式绑定accountId/modelHash/policy/数据截止，无法绑定时禁用可执行提示。",
+      "evidence": [
+        "assets/trade-guidance.js:36—58",
+        "assets/assurance-ui.js:79—97",
+        "scripts/research-account-view.js:7—17"
+      ]
+    },
+    {
+      "id": "decision_and_model_outputs",
+      "severity": "核心能力仍在研发",
+      "fact": "当前可读产品实现只有冻结20日规则与技术因子预测；短/长周期有效输出、市场状态分类、逻辑失效与动态仓位尚未接通到产品。",
+      "consequence": "研究版可以先交付，但应对未就绪周期显示无有效信号，不能编造加/减仓理由。",
+      "requiredResolution": "与主线程并行接入有来源的多周期结果和明确可审查的研究决策合同，保留未验证状态。",
+      "evidence": [
+        "scripts/research-center-view.js:5 render",
+        "docs/现有系统能力与缺口审查.md",
+        "docs/自主研发路线图.md:10/26检查点"
+      ]
+    },
+    {
+      "id": "acceptance",
+      "severity": "发布前必须完成",
+      "fact": "当前任务只做源码审查，未重建或实测新UI；右侧本机tab已被浏览器政策阻止，本轮没有访问。",
+      "requiredResolution": "新版本通过改动相关窄测试、隔离桌面真实启动与人工可见布局验收；不要把旧报告或Node HTTP成功当新EXE验收。"
+    }
+  ],
+  "boundedFirstRelease": {
+    "estimate": "约6—10个工作日的产品工作量，可争取1—2周研究版；这是范围估计而非承诺完成日。",
+    "assumptions": [
+      "复用现Windows壳、行情、K线与Paper账务",
+      "研究训练由另一条线并行提供固定schema结果",
+      "不引入券商、付费服务、全市场选股、LLM或大型模型",
+      "只维护六ETF研究入口；原账户只读且身份独立"
+    ],
+    "sequence": [
+      {
+        "estimate": "1—2日",
+        "deliverable": "统一只读产品摘要/账户身份、经理首页与四区导航；数据时刻/研究版标记/无效状态"
+      },
+      {
+        "estimate": "2—3日",
+        "deliverable": "ETF详情复用K线/因子，接5/20/60模型输出或明确无信号；持有理由/失效条件/期限展示"
+      },
+      {
+        "estimate": "1—2日",
+        "deliverable": "组合资金、逐笔理由、当前与历史风险、当前账户净值曲线；不将回测当当前收益"
+      },
+      {
+        "estimate": "1—2日",
+        "deliverable": "研发中心支持多周期/多模型schema与失败候选、来源及晋级状态"
+      },
+      {
+        "estimate": "1—2日",
+        "deliverable": "聚焦回归、隔离真实EXE验收、单文件包与使用说明；可与前项交错"
+      }
+    ],
+    "note": "条目可并行和交错，总量不是简单相加；依赖输出或原生集成失败应立即更新预期。长期独立盈利验证不作为研究版交付阻塞。",
+    "acceptance": [
+      "打开即见当前模拟账户、资金、今日研究判断和下一步，注明来源/截止/未验证。",
+      "六ETF可逐只查看行情趋势、对应周期结果/无信号、依据、失效条件及已知局限。",
+      "能分清当前持仓与新候选、T+1/退出障碍、风险警戒、当前与历史收益。",
+      "Champion、候选、失败原因和比较指标来自同版可追溯结果，缺失指标显示缺失并阻止晋级。",
+      "双击EXE可运行、中文路径可用、离线/坏快照降级清晰；不重置本金、不影响原冻结账户。"
+    ],
+    "notRequiredToClaimResearchRelease": [
+      "成熟实投模型",
+      "可靠70%盈利概率",
+      "12个月预测",
+      "自动无限算法搜索或自动晋级",
+      "券商实单"
+    ]
+  },
+  "nextSmallestUIIncrement": {
+    "title": "在现有只读页首屏增加“研究版投资经理”摘要",
+    "estimate": "0.5—1日，先交付可见增量，再接桌面摘要桥。",
+    "files": [
+      "scripts/research-account-view.js",
+      "tests/research-account-view.test.js"
+    ],
+    "inputs": [
+      "现有已校验v.legs.candidate、v.strategy、v.fresh、v.modelHash、v.research；不增加账户写入"
+    ],
+    "behavior": [
+      "首屏一行给出本次结论：无新鲜行情→等待核验；存在退出意图→退出待执行；T+1→暂不可卖；持仓正常→按冻结规则持有研究；空仓→观望（不能凭空新增买入信号）。",
+      "同时显示账户总权益/现金/实际投入比例、模型及数据时刻、当前风险警戒和“研究版·投资优势未验证”。",
+      "以锚点提供“经理总览/持仓风险/策略依据/研发比较”四入口；ETF分析入口须待真实逐只数据适配后启用，不能伪装已实现。",
+      "逐只理由完全使用已有directive与冻结条件；不把界面整理宣称为新算法或自动股票经理已经成熟。"
+    ],
+    "acceptance": [
+      "失效快照不显示可执行提示",
+      "摘要权益/暴露与现表一致",
+      "T+1/待退出优先级正确",
+      "转义不可信文本",
+      "GET只读/账户指纹和原收益不变"
+    ],
+    "immediateFollowOn": "把同一摘要schema通过受控只读桥接接入assets首页，复用旧详情/K线；否则仍只是网页交付，不能称新EXE已完成。"
+  },
+  "evidenceRead": [
+    "project-map.md 顶部与Windows入口/现有功能段",
+    "README.md",
+    "docs/自主研发路线图.md",
+    "docs/现有系统能力与缺口审查.md",
+    "docs/制作与验证步骤.md 第1—7节",
+    "Serena符号概览/指定函数体：assets/ui.js、assurance-ui.js、trade-guidance.js",
+    "Serena符号概览/指定函数体：scripts/research-account-view.js、research-center-view.js、serve-research-view.js",
+    "scripts/build-windows.ps1与Windows入口/桥接必要片段",
+    "tests/research-account-view.test.js、research-center-view.test.js现有测试名称"
+  ],
+  "validation": {
+    "sourceEvidenceOnly": true,
+    "dependencyFileExistence": "passed",
+    "sourcePolicyBoundaryInspected": "passed",
+    "artifactJsonParse": "passed",
+    "noInvestmentReadinessClaim": true
+  }
+}

@@ -19,3 +19,8 @@ test('real audit order schema is normalized before case execution',t=>{const s=s
 test('data collection is an explicit allowlisted handler',t=>{const s=store(t);assert.equal(s.enqueue('collect-a','data_collect',{file:'declared.json',sha256:'x'}).kind,'data_collect');s.close();});
 
 test('training blocker states missing executor even during trading hours',()=>{assert.match(R.canRun({kind:'train'},{freeMB:3000,trading:true}).reason,/尚未|未接入/);});
+
+test('forecast queue accepts registered studies but defers training during market hours',t=>{const s=store(t),j=s.enqueue('forecast-a','forecast_study',{directory:'not-yet-declared',manifestHash:'a'.repeat(64)});assert.equal(R.canRun(j,{freeMB:1024,trading:true}).ok,false);assert.equal(R.canRun(j,{freeMB:1024,trading:false}).ok,true);assert.equal(R.canRun(j,{freeMB:400,trading:false}).ok,false);s.close();});
+test('forecast import rejects a changed frozen manifest instead of reporting improvement',t=>{const d=fs.mkdtempSync(path.join(os.tmpdir(),'forecast-job-'));t.after(()=>fs.rmSync(d,{recursive:true,force:true}));fs.writeFileSync(d+'/manifest.json',JSON.stringify({sourceHashes:{},files:{}}));const payload={directory:d,manifestHash:'0'.repeat(64)},job={kind:'forecast_study',payload:JSON.stringify(payload),policyHash:R.hash({kind:'forecast_study',payload})};assert.throws(()=>R.execute(job),/manifest changed/);});
+
+test('forecast tasks require a declared 64-character manifest identity',()=>{for(const manifestHash of [undefined,null,'','bad']){const payload={directory:'unused',manifestHash},job={kind:'forecast_study',payload:JSON.stringify(payload),policyHash:R.hash({kind:'forecast_study',payload})};assert.throws(()=>R.execute(job),/manifest identity required/);}});

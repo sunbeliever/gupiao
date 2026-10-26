@@ -1,0 +1,21 @@
+{
+  "at": "2026-10-26T01:53:27.977Z",
+  "status": 200,
+  "noStore": "no-store",
+  "forecastJobs": [
+    {
+      "id": "train-multi-horizon-forecast-20261026-a",
+      "status": "completed"
+    }
+  ],
+  "comparisons": 1,
+  "htmlHasForecast": true,
+  "htmlShowsNotPromoted": true,
+  "scheduler": {
+    "at": "2026-10-26T01:53:05.690Z",
+    "pid": 47596,
+    "release": "D:\\techno\\validation\\autonomous-research\\releases\\20261026-a",
+    "sourceHashesVerified": true,
+    "outcome": "train-multi-horizon-forecast-20261026-a 已完成"
+  }
+}
