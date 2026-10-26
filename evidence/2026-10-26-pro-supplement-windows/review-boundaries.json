@@ -1,0 +1,20 @@
+{
+  "at": "2026-10-26T05:49:07.222Z",
+  "externalZipSha256": "f151d3cd5ff958c96ac08433444880fc41ebb3c51f0b0970bbd34450b6f44dc6",
+  "externalTrainingNotRerun": true,
+  "onlyAggregateRecomputed": true,
+  "external13FeaturesNotOriginal11": true,
+  "guardianIndependentTargets": 9,
+  "bridgeBoundaryTargets": 14,
+  "desktopActualChecks": 45,
+  "workerFrozenTargets": 53,
+  "originalAccountGapRetained": true,
+  "costOutcomesNotYetAvailable": true,
+  "unimplemented": [
+    "pure buy-and-hold additional benchmark",
+    "validated market-wide stock selection",
+    "investment thesis invalidation model",
+    "validated dynamic sizing",
+    "5/60 day fee-account contract"
+  ]
+}

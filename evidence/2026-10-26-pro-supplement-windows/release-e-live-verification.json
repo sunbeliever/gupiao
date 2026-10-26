@@ -1,0 +1,36 @@
+{
+  "at": "2026-10-26T05:43:31.267Z",
+  "htmlExternalCandidate": true,
+  "htmlManager": true,
+  "researchAvailable": true,
+  "benchmarks": 1,
+  "importJob": "completed",
+  "desktopEnvelopeIdentity": "paired-capital50k-20261021-pm-a",
+  "desktopSnapshotAt": "2026-10-26T05:42:49.056Z",
+  "desktopExporterAt": "2026-10-26T05:43:03.250Z",
+  "desktopFresh": true,
+  "guardian": {
+    "at": "2026-10-26T05:42:31.387Z",
+    "status": "checked",
+    "accounts": [
+      {
+        "id": "paired-capital50k-20261021-pm-a",
+        "status": "reused",
+        "pids": [
+          67684
+        ]
+      },
+      {
+        "id": "paired-lowcap-20261021-1000-b",
+        "status": "reused",
+        "pids": [
+          48860
+        ]
+      }
+    ]
+  },
+  "release": "D:\\techno\\validation\\autonomous-research\\releases\\20261026-e",
+  "account": "paired-capital50k-20261021-pm-a",
+  "sequence": 2076,
+  "viewAt": "2026-10-26T05:43:20.185Z"
+}

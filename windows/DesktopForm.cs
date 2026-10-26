@@ -18,6 +18,7 @@ namespace TechScope.Desktop {
   [DispId(3)]void Request(string id,string url);
   [DispId(4)]void OpenUrl(string url);
   [DispId(5)]void SetBackground(bool enabled);
+  [DispId(6)]string ReadManagerSummary();
  }
  [ComVisible(true),ClassInterface(ClassInterfaceType.None),ComDefaultInterface(typeof(IDesktopBridge))]
  public sealed class DesktopBridge : IDesktopBridge {
@@ -32,6 +33,42 @@ namespace TechScope.Desktop {
   }
   public void OpenUrl(string url){if(!DesktopPolicy.ExternalHttps(url)||Program.VerificationPath!=null)return;try{Process.Start(new ProcessStartInfo(url){UseShellExecute=true});}catch{}}
   public void SetBackground(bool enabled){form.SetWatching(enabled);}
+  public string ReadManagerSummary(){return DesktopManagerSummary.Read();}
+ }
+
+
+ internal static class DesktopManagerSummary {
+  const string Account="paired-capital50k-20261021-pm-a",Model="f0b16e0c0922e3ae051015c3f73a66135c2a0b4ed478b5c0a3bfe6471ad0b0dd";
+  const string SummaryPath=@"D:\techno\validation\operations\manager-desktop-summary.json";
+  const string Unavailable="{\"available\":false,\"message\":\"5万元研究摘要暂不可核验，请等待刷新。\"}";
+  static readonly string[] Codes={"wait_verification","exit_pending","t_plus_one","hold","observe"};
+  static Dictionary<string,object> Obj(object x){return x as Dictionary<string,object>;}
+  static object Get(Dictionary<string,object> d,string key){object x;return d!=null&&d.TryGetValue(key,out x)?x:null;}
+  static bool Text(Dictionary<string,object> d,string key,string expected){return Get(d,key) as string==expected;}
+  static bool Short(object x){return x is string&&((string)x).Length<=1200;}
+  static bool Flag(Dictionary<string,object> d,string key,bool value){object x=Get(d,key);return x is bool&&(bool)x==value;}
+  static bool Num(object x,out double value){value=0;if(!(x is int||x is long||x is double||x is decimal))return false;value=Convert.ToDouble(x,System.Globalization.CultureInfo.InvariantCulture);return !double.IsNaN(value)&&!double.IsInfinity(value);}
+  static bool Equal(Dictionary<string,object> d,string key,double expected){double n;return Num(Get(d,key),out n)&&n==expected;}
+  static bool Clock(object x,DateTimeOffset now,out DateTimeOffset time){time=default(DateTimeOffset);string s=x as string;if(s==null||!s.EndsWith("Z",StringComparison.Ordinal)||!DateTimeOffset.TryParse(s,System.Globalization.CultureInfo.InvariantCulture,System.Globalization.DateTimeStyles.None,out time))return false;double age=(now-time).TotalSeconds;return age>=0&&age<=90;}
+  internal static bool Validate(string json,DateTimeOffset now){try{
+   if(string.IsNullOrEmpty(json)||json.Length>65536)return false;var p=Obj(Program.Json.DeserializeObject(json));DateTimeOffset at,exported;
+   if(p==null||!Equal(p,"schema",1)||!Text(p,"accountId",Account)||!Text(p,"modelHash",Model)||!Equal(p,"budget",50000)||!Clock(Get(p,"at"),now,out at)||!Clock(Get(p,"exportedAt"),now,out exported)||exported<at)return false;
+   var s=Obj(Get(p,"summary"));var model=Obj(Get(s,"model"));var a=Obj(Get(s,"action"));
+   if(s==null||!Flag(s,"available",true)||!(Get(s,"fresh") is bool)||!Text(s,"id",Account)||!Equal(s,"budget",50000)||!Text(s,"at",(string)Get(p,"at"))||!Text(model,"hash",Model)||!Short(Get(model,"cutoff"))||!Flag(s,"investmentReady",false)||!Flag(s,"realOrdersAllowed",false)||!s.ContainsKey("verifiedProfitProbability")||Get(s,"verifiedProfitProbability")!=null)return false;
+   double equity,cash,market,exposure,horizon;if(!Num(Get(model,"horizon"),out horizon)||horizon<1||horizon!=Math.Floor(horizon)||!Num(Get(s,"equity"),out equity)||equity<0||!Num(Get(s,"cash"),out cash)||cash<0||!Num(Get(s,"marketValue"),out market)||market<0||cash+market>equity+.005)return false;
+   if(equity==0?Get(s,"exposure")!=null:!Num(Get(s,"exposure"),out exposure)||Math.Abs(exposure-market/equity)>1e-9)return false;
+   string code=Get(a,"code") as string;if(Array.IndexOf(Codes,code)<0||!Short(Get(a,"label"))||!Short(Get(a,"reason"))||(!(bool)Get(s,"fresh")&&code!="wait_verification"))return false;
+   var holdings=Get(s,"holdings") as object[];if(holdings==null||holdings.Length>20)return false;
+   foreach(var item in holdings){var h=Obj(item);var ha=Obj(Get(h,"action"));string hc=Get(ha,"code") as string;if(!Short(Get(h,"name"))||!Short(Get(h,"symbol"))||Array.IndexOf(Codes,hc)<0||!Short(Get(ha,"label"))||!Short(Get(ha,"detail"))||(!(bool)Get(s,"fresh")&&hc!="wait_verification"))return false;}
+   if(!s.ContainsKey("risk"))return false;var risk=Get(s,"risk");if(risk!=null){var r=Obj(risk);double net,draw;if(!Num(Get(r,"netPnl"),out net)||!Num(Get(r,"drawdown"),out draw)||draw<0||!(Get(r,"warning") is bool)||!Equal(r,"warningAmount",500))return false;}
+   return true;
+  }catch{return false;}}
+  internal static string Read(){try{
+   var file=new FileInfo(SummaryPath);if(!file.Exists||(file.Attributes&FileAttributes.ReparsePoint)!=0)return Unavailable;
+   for(var d=file.Directory;d!=null;d=d.Parent)if((d.Attributes&FileAttributes.ReparsePoint)!=0)return Unavailable;
+   byte[] bytes=new byte[65537];int count=0;using(var stream=new FileStream(SummaryPath,FileMode.Open,FileAccess.Read,FileShare.ReadWrite|FileShare.Delete)){while(count<bytes.Length){int n=stream.Read(bytes,count,bytes.Length-count);if(n==0)break;count+=n;}}
+   if(count>65536)return Unavailable;string json=new UTF8Encoding(false,true).GetString(bytes,0,count);return Validate(json,DateTimeOffset.UtcNow)?json:Unavailable;
+  }catch{return Unavailable;}}
  }
 
  internal sealed class DesktopForm : Form {
@@ -64,7 +101,7 @@ namespace TechScope.Desktop {
    core.AddWebResourceRequestedFilter("*",CoreWebView2WebResourceContext.All);
    core.WebResourceRequested+=delegate(object sender,CoreWebView2WebResourceRequestedEventArgs e){if(!DesktopPolicy.TrustedPage(e.Request.Uri))e.Response=environment.CreateWebResourceResponse(new MemoryStream(),403,"Blocked","Content-Type: text/plain");};
    bridge=new DesktopBridge(this,store,http);core.AddHostObjectToScript("Desktop",bridge);
-   await core.AddScriptToExecuteOnDocumentCreatedAsync("(function(){const h=chrome.webview.hostObjects.sync.Desktop;window.Native={read:k=>h.Read(k),write:(k,v)=>h.Write(k,v),request:(id,url)=>h.Request(id,url),openUrl:u=>h.OpenUrl(u),setBackground:e=>h.SetBackground(!!e)};})();");
+   await core.AddScriptToExecuteOnDocumentCreatedAsync("(function(){const h=chrome.webview.hostObjects.sync.Desktop;window.Native={read:k=>h.Read(k),write:(k,v)=>h.Write(k,v),request:(id,url)=>h.Request(id,url),openUrl:u=>h.OpenUrl(u),readManagerSummary:()=>h.ReadManagerSummary(),setBackground:e=>h.SetBackground(!!e)};})();");
    core.NavigationCompleted+=async delegate(object sender,CoreWebView2NavigationCompletedEventArgs e){
     if(!e.IsSuccess){Fail(new IOException("界面打开失败："+e.WebErrorStatus));return;}
     loading.Visible=false;if(Program.VerificationPath!=null&&!verified){verified=true;try{await Verify();}catch(Exception error){Fail(error);}}
@@ -92,6 +129,8 @@ namespace TechScope.Desktop {
   async Task Verify(){
    var checks=new List<string>();verificationChecks=checks;await Wait("document.querySelector('#page-observe').textContent.length>100",20000);
    await Check("location.origin==='https://app.techscope.local'","trusted desktop window",checks);
+   await Check("typeof Native.readManagerSummary==='function'&&typeof DesktopManagerSummary==='object'&&!!document.getElementById('desktop-manager-summary')","AI manager typed bridge and live DOM panel loaded",checks);
+   await Check("(function(){var p=JSON.parse(Native.readManagerSummary());return p.available===false||DesktopManagerSummary.validate(p);})()","AI manager payload is validated or safely unavailable",checks);
    await Eval("window.__legacyPaperBefore=JSON.stringify(Market.read('paper.current'));window.__previousVerify=Market.read('verify.continuous.saved');window.__previousVerifyNonce=Market.read('verify.continuous.nonce');window.__priorResume=null;window.__previousSnapshotValid=!__previousVerifyNonce;if(__previousVerify){try{__priorResume=Paper.resume(__previousVerify.snapshot);__previousSnapshotValid=__previousVerify.nonce===__previousVerifyNonce;}catch(e){__previousSnapshotValid=false;}}window.__persistenceEvidence={mode:'synthetic_restart_persistence',prevSnapshotSeen:!!__previousVerify,previousNonce:__previousVerifyNonce||null,previousAccountId:__priorResume?__priorResume.accountId:null,previousEquity:__priorResume?__priorResume.account.equity:null,previousCash:__priorResume?__priorResume.account.cash:null,previousIntegrityHash:__priorResume?__priorResume.integrityHash:null};");
    await Check("__previousSnapshotValid&&(!__previousVerify||__priorResume.accountType==='continuous_paper'&&__priorResume.integrityHash===__previousVerify.snapshot.integrityHash)","previous native snapshot and nonce read before overwrite and resumed with integrity validation",checks);
    await Eval("document.querySelector('[data-tab=model]').click();var t=document.querySelector('#auto-sync-toggle');t.checked=false;t.dispatchEvent(new Event('change',{bubbles:true}));");
