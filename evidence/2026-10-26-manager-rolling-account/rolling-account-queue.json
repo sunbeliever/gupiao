@@ -1,0 +1,40 @@
+{
+  "at": "2026-10-26T02:19:32.310Z",
+  "records": [
+    {
+      "id": "rolling-h20-20261026-a-rolling-ridge",
+      "status": "queued",
+      "attempts": 0
+    },
+    {
+      "id": "rolling-h20-20261026-a-rolling-mean",
+      "status": "queued",
+      "attempts": 0
+    },
+    {
+      "id": "rolling-h20-20261026-a-frozen-f0",
+      "status": "queued",
+      "attempts": 0
+    },
+    {
+      "id": "rolling-h20-20261026-a-fixed-three",
+      "status": "queued",
+      "attempts": 0
+    },
+    {
+      "id": "rolling-h20-20261026-a-fixed-single",
+      "status": "queued",
+      "attempts": 0
+    },
+    {
+      "id": "rolling-h20-20261026-a-cash",
+      "status": "queued",
+      "attempts": 0
+    },
+    {
+      "id": "rolling-h20-20261026-a-compare",
+      "status": "queued",
+      "attempts": 0
+    }
+  ]
+}

@@ -22,3 +22,48 @@ function activityFixture(f){return {schema:1,accountId:f.manifest.id,sourceModel
 test('activity reloads the configured file without caching or writing accounts and rejects a foreign model',()=>{const dir=fs.mkdtempSync(path.join(os.tmpdir(),'research-view-'));try{const f=fixture();writeViewFixture(dir,f);const file=path.join(dir,'activity.json'),doc=activityFixture(f);fs.writeFileSync(file,JSON.stringify(doc));const before=Object.fromEntries(['state.json','manifest.json','status.json','experiment.claim'].map(n=>[n,fs.readFileSync(path.join(dir,n),'utf8')]));let v=V.read(dir,'2026-10-21T01:30:05Z',file);assert.equal(v.activity.available,true);assert.equal(v.activity.entries[0].title,doc.entries[0].title);doc.entries[0].title='维护记录已更新';fs.writeFileSync(file,JSON.stringify(doc));v=V.read(dir,'2026-10-21T01:30:05Z',file);assert.equal(v.activity.entries[0].title,'维护记录已更新');doc.sourceModelHash='foreign-model';fs.writeFileSync(file,JSON.stringify(doc));v=V.read(dir,'2026-10-21T01:30:05Z',file);assert.equal(v.activity.available,false);assert.equal(v.activity.entries.length,0);assert.equal(v.fresh,true);for(const[n,text]of Object.entries(before))assert.equal(fs.readFileSync(path.join(dir,n),'utf8'),text);}finally{fs.rmSync(dir,{recursive:true,force:true});}});
 
 test('activity never presents future or oversized records and escapes research text',()=>{const dir=fs.mkdtempSync(path.join(os.tmpdir(),'research-view-'));try{const f=fixture();writeViewFixture(dir,f);const file=path.join(dir,'activity.json'),doc=activityFixture(f);doc.entries[0].title='<img src=x onerror=alert(1)>';fs.writeFileSync(file,JSON.stringify(doc));let v=V.read(dir,'2026-10-21T01:30:05Z',file);assert.equal(v.activity.available,true);const html=V.render(v);assert.ok(html.includes('&lt;img'));assert.ok(!html.includes('<img src=x'));doc.entries[0].at='2026-10-22T01:30:00Z';fs.writeFileSync(file,JSON.stringify(doc));assert.equal(V.read(dir,'2026-10-21T01:30:05Z',file).activity.available,false);fs.writeFileSync(file,' '.repeat(65537));assert.equal(V.read(dir,'2026-10-21T01:30:05Z',file).activity.available,false);assert.equal(V.read(dir,'2026-10-21T01:30:05Z',path.join(dir,'missing.json')).activity.available,false);}finally{fs.rmSync(dir,{recursive:true,force:true});}});
+
+
+test('manager overview is above the account and uses the same verified numbers without mutations',()=> {
+  const f=fixture(),v=V.build(f,'2026-10-21T01:30:05Z'),before=structuredClone(v),html=V.render(v);
+  const managerAt=html.indexOf('id="manager-overview"'),accountAt=html.indexOf('<h1>5万元模拟账户</h1>');
+  assert.ok(managerAt>=0,'manager first-screen summary missing');
+  assert.ok(managerAt<accountAt,'manager summary must precede existing account blocks');
+  const M=require('../scripts/manager-overview.js'),summary=M.build(v),account=f.state.legs.candidate.session.account;
+  assert.equal(summary.equity,account.equity);
+  assert.equal(summary.cash,account.cash);
+  assert.equal(summary.marketValue,account.marketValue);
+  assert.equal(summary.exposure,account.marketValue/account.equity);
+  assert.equal(v.legs.candidate.netPnl,account.equity-50000);
+  assert.deepEqual(v,before);
+  assert.ok(html.includes('http-equiv="refresh" content="15"'));
+  assert.ok(html.includes('本页只读当前快照'));
+  assert.ok(html.includes('持仓与退出条件'));
+});
+
+test('manager exit priority uses structured pending exit while T plus one remains explicit',()=> {
+  const f=fixture(),r=C.advance(f.state,f.input('2026-10-21T01:31:00Z',.9),f.manifest.protocol,f.runtime);
+  f.state=r.state;f.status={at:r.state.lastDecisionAt,sequence:r.state.sequence,dataHealth:{ok:true}};
+  const v=V.build(f,'2026-10-21T01:31:05Z'),holdings=v.legs.candidate.holdings;
+  assert.ok(holdings.some(h=>h.exitRequested===true&&h.directive==='t_plus_one'),'pending exits must be explicit in the view');
+  assert.ok(holdings.every(h=>typeof h.exitRequested==='boolean'));
+  const M=require('../scripts/manager-overview.js');
+  assert.equal(M.build(v).action.code,'exit_pending');
+  const html=V.render(v),start=html.indexOf('id="manager-overview"'),top=html.slice(start,html.indexOf('</section>',start));
+  assert.ok(top.includes('退出待执行'));
+  assert.ok(top.includes('今日不可卖'));
+  assert.ok(top.includes('不表示已经成交'));
+});
+
+test('manager overview on expired data waits for verification and retains historical account numbers',()=> {
+  const f=fixture(),v=V.build(f,'2026-10-21T01:40:00Z'),before=structuredClone(v),html=V.render(v);
+  const start=html.indexOf('id="manager-overview"');
+  assert.ok(start>=0,'manager first-screen summary missing');
+  const top=html.slice(start,html.indexOf('</section>',start));
+  assert.ok(top.includes('等待核验'));
+  assert.ok(top.includes('历史估值'));
+  assert.ok(!top.includes('本次行情已通过'));
+  assert.equal(require('../scripts/manager-overview.js').build(v).action.code,'wait_verification');
+  assert.equal(v.legs.candidate.cash,f.state.legs.candidate.session.account.cash);
+  assert.deepEqual(v,before);
+});

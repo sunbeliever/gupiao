@@ -43,14 +43,15 @@ function validatePolicy(policy){
  else if(policy.budget!==10000||policy.capitalProfile!==undefined)throw Error('Research requires legacy 10000 or explicit 50000 profile');
  if(!policy.universe.length||policy.universe.some(u=>u.type!=='etf'))throw Error('ETF universe required');
 }
-function runReplay({data,policy,model,selector,onProgress,deadlineMs}){
+function runReplay({data,policy,model,selector,onProgress,deadlineMs,openingProvider}){
  validatePolicy(policy);if(!SELECTORS.includes(selector))throw Error('Undeclared selector');
  if(model.cutoff>policy.trainCutoff)throw Error('Model cutoff exceeds declared training boundary');
  const accountModel={...copy(model),researchSelector:selector},riskLimits={investableLimit:policy.budget,maxExposure:1,maxPositions:3,maxThemeWeight:1,...copy(policy.riskLimits||{})};
  const researchIdentity=Audit.fingerprint({strategyId:'historical-'+selector+'-shared-account-v1',model:accountModel,universe:policy.universe,rules:{...policy,selector,observation:'daily_open_then_close',baselinePriorityNotForecast:selector!=='ridge'},data:{pricesHash:Audit.hash(data)},feeProfile:Fee.resolve(policy),budget:policy.budget,riskLimits,executionMode:'historical_daily_shared_account'});
  let session,initialSession;const events=[],daily=[],warnings=[];
  for(let date=policy.start;date<=policy.end;date=Calendar.nextSession(date)){if(deadlineMs!==undefined&&Date.now()>deadlineMs)throw Error('Research execution budget reached');
-  const opening=openInput(data,policy,accountModel,date,selector);
+  const opening=openingProvider?openingProvider(date,accountModel):openInput(data,policy,accountModel,date,selector);
+  if(opening.at!==at(date,'09:30:00')||Audit.hash(opening.context.model)!==Audit.hash(accountModel))throw Error('Historical provider identity/time mismatch');
   // Compare raw and adjusted overnight ratios before any ex-date sale. Unknown
   // adjustment evidence invalidates readiness, never changes historic prices.
   const prior=Calendar.previousSession(date);

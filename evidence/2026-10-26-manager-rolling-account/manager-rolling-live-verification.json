@@ -1,0 +1,64 @@
+{
+  "at": "2026-10-26T02:19:58.264Z",
+  "http": 200,
+  "header": "no-store",
+  "managerAvailable": true,
+  "action": "hold",
+  "fresh": true,
+  "equity": 49353.66039999999,
+  "netPnl": -646.3396000000066,
+  "drawdown": 726.2312999999995,
+  "warning": true,
+  "modelUnchanged": true,
+  "queued": [
+    {
+      "id": "rolling-h20-20261026-a-compare",
+      "status": "queued",
+      "attempts": 0,
+      "reason": "等待六条固定路径完成，未进行成本比较"
+    },
+    {
+      "id": "rolling-h20-20261026-a-cash",
+      "status": "queued",
+      "attempts": 0,
+      "reason": "扣费账户历史回放等待非交易时段，优先真实行情采集"
+    },
+    {
+      "id": "rolling-h20-20261026-a-fixed-single",
+      "status": "queued",
+      "attempts": 0,
+      "reason": "扣费账户历史回放等待非交易时段，优先真实行情采集"
+    },
+    {
+      "id": "rolling-h20-20261026-a-fixed-three",
+      "status": "queued",
+      "attempts": 0,
+      "reason": "扣费账户历史回放等待非交易时段，优先真实行情采集"
+    },
+    {
+      "id": "rolling-h20-20261026-a-frozen-f0",
+      "status": "queued",
+      "attempts": 0,
+      "reason": "扣费账户历史回放等待非交易时段，优先真实行情采集"
+    },
+    {
+      "id": "rolling-h20-20261026-a-rolling-mean",
+      "status": "queued",
+      "attempts": 0,
+      "reason": "扣费账户历史回放等待非交易时段，优先真实行情采集"
+    },
+    {
+      "id": "rolling-h20-20261026-a-rolling-ridge",
+      "status": "queued",
+      "attempts": 0,
+      "reason": "扣费账户历史回放等待非交易时段，优先真实行情采集"
+    }
+  ],
+  "scheduler": {
+    "at": "2026-10-26T02:19:32.584Z",
+    "pid": 21536,
+    "release": "D:\\techno\\validation\\autonomous-research\\releases\\20261026-c",
+    "sourceHashesVerified": true,
+    "outcome": "研发任务已排队，当前门槛未满足；原因见任务列表"
+  }
+}
