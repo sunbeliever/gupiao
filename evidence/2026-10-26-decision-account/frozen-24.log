@@ -1,0 +1,32 @@
+✔ decision declaration binds manifest and protocol claim and refuses redeclaration (60.6708ms)
+✔ decision result rejects summary tampering even after an attacker recomputes resultHash (238.9625ms)
+✔ decision result and claim remain bound to the exact path and declared manifest (69.391ms)
+✔ unfinished original six-path comparison blocks both baseline access and new strategy comparison (45.1868ms)
+✔ completed frozen decision run is immutable before baseline replay and cannot acquire a new lease (71.7654ms)
+✔ full observed risk metrics cannot be reduced by changing the summary and recomputing outer resultHash (94.4624ms)
+✔ same-symbol research lots aggregate shares weighted raw entry and conservative original exit conditions (11.2436ms)
+✔ research opening cannot read current-day raw or HFQ high low close volume and never supplies automatic entries (4.6782ms)
+✔ isolated candidate replay completes an auditable buy hold sell cycle using HFQ thesis rather than raw-price trend (6187.2956ms)
+✔ true fixed-three buy hold crosses original maturity and risk thresholds without exits or reentry (2391.5388ms)
+✔ opening drawdown remains visible above the registered risk limit after closes recover (385.2667ms)
+✔ malformed or not-yet-declared decision jobs stay blocked without disrupting queue selection (0.9637ms)
+✔ decision jobs cannot bypass the resource reserve (0.0905ms)
+✔ failed prerequisites are explicit and never silently wait as ordinary pending work (7.6355ms)
+✔ registered research API buys independently sealed lots and reduces only sellable FIFO costs (75.4738ms)
+✔ same day full exit sells old lots and retains new T plus one lots pending without resetting capital (39.4208ms)
+✔ research API rejects live policy time and corporate mismatches and replay matches full state hash (34.6882ms)
+✔ all research lots exit on one fresh observation for risk maturity and existing pending intents (145.2682ms)
+✔ one declared symbol sale across two lots pays one minimum commission and allocates its full realized loss (47.9221ms)
+✔ FIFO partial sale apportions entry and exit fees and later holding marks preserve the remaining contract (49.7144ms)
+✔ same-session FIFO follows lot creation order when textual order IDs cross a decimal boundary (104.6871ms)
+✔ only bounded transient account failures retry and each failed attempt remains immutable (57.9792ms)
+✔ identity or data failures are retained without automatic retry (38.9621ms)
+✔ permanent evidence failures take precedence over embedded timeout text (40.1546ms)
+ℹ tests 24
+ℹ suites 0
+ℹ pass 24
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 9071.0988

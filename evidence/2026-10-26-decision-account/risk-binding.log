@@ -1,0 +1,19 @@
+✔ decision declaration binds manifest and protocol claim and refuses redeclaration (45.6784ms)
+✔ decision result rejects summary tampering even after an attacker recomputes resultHash (199.2829ms)
+✔ decision result and claim remain bound to the exact path and declared manifest (45.9026ms)
+✔ unfinished original six-path comparison blocks both baseline access and new strategy comparison (33.9961ms)
+✔ completed frozen decision run is immutable before baseline replay and cannot acquire a new lease (54.5493ms)
+✔ full observed risk metrics cannot be reduced by changing the summary and recomputing outer resultHash (83.0228ms)
+✔ same-symbol research lots aggregate shares weighted raw entry and conservative original exit conditions (6.9812ms)
+✔ research opening cannot read current-day raw or HFQ high low close volume and never supplies automatic entries (3.7948ms)
+✔ isolated candidate replay completes an auditable buy hold sell cycle using HFQ thesis rather than raw-price trend (6068.5409ms)
+✔ true fixed-three buy hold crosses original maturity and risk thresholds without exits or reentry (2335.1495ms)
+✔ opening drawdown remains visible above the registered risk limit after closes recover (392.5935ms)
+ℹ tests 11
+ℹ suites 0
+ℹ pass 11
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 8881.2167

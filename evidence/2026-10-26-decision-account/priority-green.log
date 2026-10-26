@@ -1,0 +1,33 @@
+✔ durable idempotent declaration rejects changed policy and forbidden handler (41.0653ms)
+✔ one transactional writer and failed results retained (44.4398ms)
+✔ dead running job recovers with bounded attempts and durable restart (68.0989ms)
+✔ resource gate does not consume attempt or invent training (0.2773ms)
+✔ case study isolates saved commission and foregone inventory without claiming full backtest (0.2775ms)
+✔ claim selected runnable job without taking blocked training first (36.2016ms)
+✔ stale recovery CAS cannot steal a newly claimed live generation (30.6801ms)
+✔ stale execution cannot finish a recovered job (34.6541ms)
+✔ real audit order schema is normalized before case execution (29.338ms)
+✔ data collection is an explicit allowlisted handler (25.6579ms)
+✔ training blocker states missing executor even during trading hours (0.3901ms)
+✔ forecast queue accepts registered studies but defers training during market hours (28.0658ms)
+✔ forecast import rejects a changed frozen manifest instead of reporting improvement (6.2371ms)
+✔ forecast tasks require a declared 64-character manifest identity (0.2085ms)
+✔ rolling account study tasks wait for non-market time and retain the memory reserve (23.9806ms)
+✔ rolling account tasks reject undeclared identities and selectors (0.1782ms)
+✔ malformed account jobs cannot crash queue selection or block valid research (0.367ms)
+✔ supplied candidate result is a read-only handler, never an automatic trainer (27.597ms)
+✔ malformed or not-yet-declared decision jobs stay blocked without disrupting queue selection (0.8899ms)
+✔ decision jobs cannot bypass the resource reserve (0.0825ms)
+✔ failed prerequisites are explicit and never silently wait as ordinary pending work (5.3789ms)
+✔ only bounded transient account failures retry and each failed attempt remains immutable (69.7568ms)
+✔ identity or data failures are retained without automatic retry (45.1228ms)
+✔ permanent evidence failures take precedence over embedded timeout text (51.5148ms)
+✔ finite original fee studies run before dependent decisions and maintenance work (0.3577ms)
+ℹ tests 25
+ℹ suites 0
+ℹ pass 25
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 456.5867

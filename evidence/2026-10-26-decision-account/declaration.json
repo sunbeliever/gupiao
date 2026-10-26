@@ -1,0 +1,23 @@
+{
+  "at": "2026-10-26T08:12:36.570Z",
+  "directory": "D:/techno/validation/strategy-research/decision-account-20261026-a",
+  "manifestHash": "bf532a98a929f76fba9bc8c702bc3734a913e70a22defd84debdc209ce04ef9c",
+  "protocolHash": "9be3609742d0eed64c154a7eb98ecd2d7df1fac4641bf9fabb0bea025155fbb0",
+  "sourceCount": 17,
+  "paths": [
+    "decision_thesis",
+    "true_buy_hold_three"
+  ],
+  "executed": false,
+  "dependencies": {
+    "directory": "D:/techno/validation/strategy-research/rolling-account-h20-20261026-a",
+    "manifestHash": "0756f3df36b5c1634539b05a5b16e2e593b1da653c76dc670c4e7d54efa97ac9",
+    "reusePaths": [
+      "frozen_f0",
+      "fixed_three",
+      "fixed_single",
+      "cash"
+    ],
+    "mustCompleteFirst": true
+  }
+}

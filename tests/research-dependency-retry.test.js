@@ -1,0 +1,10 @@
+'use strict';
+const test=require('node:test'),assert=require('node:assert/strict'),fs=require('fs'),os=require('os'),path=require('path'),R=require('../scripts/autonomous-research.js');
+function fixture(t){const dir=fs.mkdtempSync(path.join(os.tmpdir(),'research-retry-'));t.after(()=>fs.rmSync(dir,{recursive:true,force:true}));return new R.Store(dir);}
+test('only bounded transient account failures retry and each failed attempt remains immutable',t=>{const s=fixture(t);s.enqueue('cost-a','account_study',{directory:'declared',manifestHash:'a'.repeat(64),path:'cash'});for(let i=1;i<=3;i++){const j=s.claim(process.pid,'cost-a');assert.equal(j.attempts,i);s.finish(j.id,'failed',{error:'spawnSync ETIMEDOUT'},j.ownerToken);const ids=s.retryTransient();assert.deepEqual(ids,i<3?['cost-a']:[]);assert.equal(fs.existsSync(path.join(s.dir,'attempts','cost-a-'+i+'.json')),true);}assert.equal(s.get('cost-a').status,'failed');s.close();});
+test('identity or data failures are retained without automatic retry',t=>{const s=fixture(t);s.enqueue('bad-a','account_study',{});const j=s.claim(process.pid,'bad-a');s.finish(j.id,'failed',{error:'Frozen source changed'},j.ownerToken);assert.deepEqual(s.retryTransient(),[]);assert.equal(s.get(j.id).status,'failed');s.close();});
+
+
+test('permanent evidence failures take precedence over embedded timeout text',t=>{const s=fixture(t);s.enqueue('mixed-a','account_study',{});const j=s.claim(process.pid,'mixed-a');s.finish(j.id,'failed',{error:'Frozen source hash mismatch; prior transport ETIMEDOUT'},j.ownerToken);assert.deepEqual(s.retryTransient(),[]);assert.equal(s.get(j.id).status,'failed');s.close();});
+
+test('finite original fee studies run before dependent decisions and maintenance work',()=>{const jobs=[{id:'report',kind:'daily_report'},{id:'decision',kind:'decision_study'},{id:'original',kind:'account_study'},{id:'data',kind:'data_collect'}];assert.deepEqual(R.prioritize(jobs).map(j=>j.id),['original','decision','data','report']);assert.equal(jobs[0].id,'report');});

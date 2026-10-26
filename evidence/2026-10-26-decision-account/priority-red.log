@@ -1,0 +1,25 @@
+✔ only bounded transient account failures retry and each failed attempt remains immutable (39.8354ms)
+✔ identity or data failures are retained without automatic retry (31.1103ms)
+✔ permanent evidence failures take precedence over embedded timeout text (36.561ms)
+✖ finite original fee studies run before dependent decisions and maintenance work (0.2408ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 3
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 168.3909
+
+✖ failing tests:
+
+test at tests\research-dependency-retry.test.js:10:1
+✖ finite original fee studies run before dependent decisions and maintenance work (0.2408ms)
+  TypeError: R.prioritize is not a function
+      at TestContext.<anonymous> (C:\Users\lqp07\.codex\worktrees\stock-entry-exit\techno\tests\research-dependency-retry.test.js:10:266)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1325:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:911:18)
+      at Test.postRun (node:internal/test_runner/test:1465:19)
+      at Test.run (node:internal/test_runner/test:1390:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:911:7)

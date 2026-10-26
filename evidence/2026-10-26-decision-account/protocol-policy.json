@@ -1,0 +1,146 @@
+{
+  "schema": 1,
+  "id": "decision-account-protocol-20261026-a",
+  "declaredAt": "2026-10-26T07:28:21.388Z",
+  "question": "Does the fixed six-ETF trend/relative-strength/inverse-volatility thesis decision policy improve a complete net-cost buy-hold-reduce-exit account over the original frozen f0 and fixed controls without tuning the already inspected history?",
+  "candidateId": "trend-relative20-risk-v1",
+  "paths": [
+    "decision_thesis",
+    "true_buy_hold_three"
+  ],
+  "baselineStudy": {
+    "directory": "D:/techno/validation/strategy-research/rolling-account-h20-20261026-a",
+    "manifestHash": "0756f3df36b5c1634539b05a5b16e2e593b1da653c76dc670c4e7d54efa97ac9",
+    "reusePaths": [
+      "frozen_f0",
+      "fixed_three",
+      "fixed_single",
+      "cash"
+    ],
+    "mustCompleteFirst": true
+  },
+  "datasetManifestHash": "dd029cf7e8cae055b33b105d7651173481169953f9e25b5d08de0dcdbcf7d3da",
+  "policy": {
+    "start": "2025-01-03",
+    "end": "2026-10-23",
+    "trainCutoff": "2024-12-31",
+    "budget": 50000,
+    "universe": [
+      {
+        "symbol": "sh588000",
+        "name": "科创50ETF",
+        "sector": "科创",
+        "type": "etf"
+      },
+      {
+        "symbol": "sh512760",
+        "name": "芯片ETF",
+        "sector": "半导体",
+        "type": "etf"
+      },
+      {
+        "symbol": "sh515070",
+        "name": "人工智能ETF",
+        "sector": "人工智能",
+        "type": "etf"
+      },
+      {
+        "symbol": "sh512720",
+        "name": "计算机ETF",
+        "sector": "软件",
+        "type": "etf"
+      },
+      {
+        "symbol": "sh515880",
+        "name": "通信ETF",
+        "sector": "通信",
+        "type": "etf"
+      },
+      {
+        "symbol": "sz159852",
+        "name": "软件ETF",
+        "sector": "软件",
+        "type": "etf"
+      }
+    ],
+    "feeProfile": {
+      "version": "cn-paper-fees-v1",
+      "commissionRate": 0.0003,
+      "minFee": 5,
+      "slippage": 0.001,
+      "stockSellStampRate": 0.0005,
+      "stockTransferRate": 0.00001,
+      "assumptionLabel": "最低5元为模拟假设，以合同为准"
+    },
+    "corporateEvents": [],
+    "stopLossRate": 0.04,
+    "maxDrawdownLimit": 0.01,
+    "capitalProfile": "capital50k-risk500-v1",
+    "targetExitEnabled": false,
+    "minEstimatedNetReturn": 0.01,
+    "riskLimits": {
+      "investableLimit": 12500,
+      "maxExposure": 0.25,
+      "maxPositions": 3,
+      "maxThemeWeight": 1
+    },
+    "signalStart": "2025-01-02",
+    "signalEnd": "2026-09-16"
+  },
+  "fixedCandidate": {
+    "trend": "previous completed HFQ close > MA60 and momentum20 > 0",
+    "ranking": "momentum20 / annualized population volatility20; symbol tie break",
+    "allocation": "top 3, inverse annualized volatility; 100-share lots; original Fee default and adverse slippage",
+    "increaseWarning": 500,
+    "planBudget": "no unfilled sale proceeds or slots; <=12500 and <=25% equity; retain T1 lots",
+    "exit": "original raw 4% risk /20 sessions/pending exit then thesis invalid or rank/target reduction; no predictive profit target",
+    "addLots": "separate original fees and next-session availability, inherit earliest remaining maturity",
+    "afterSignalEnd": "no new entries/increases; continue existing fixed risk/maturity exits and thesis invalid/reductions"
+  },
+  "buyHoldControl": {
+    "symbols": [
+      "sh588000",
+      "sh512760",
+      "sh515070"
+    ],
+    "initialAllocation": "equal share of 12500, original costs and whole lots; first common legal input only",
+    "laterEntries": false,
+    "maturityExit": false,
+    "riskExit": false,
+    "endLiquidation": false,
+    "riskEquivalent": false
+  },
+  "marketStates": {
+    "asOf": "previous completed session only",
+    "up": "at least 4/6 symbols pass the fixed trend",
+    "down": "at most 2/6 symbols pass the fixed trend",
+    "mixed": "3/6 symbols pass the fixed trend",
+    "highVolatility": "mean annualized volatility20 >= 0.30; diagnostic only, not used for signals",
+    "aggregation": "group actual daily net return samples; never reset capital by state"
+  },
+  "diagnostics": [
+    "cash days and no-positive-trend signal days",
+    "positive equal-six raw open-to-close basket days when candidate has no exposure; descriptive missed participation, not hypothetical achievable profit",
+    "daily exposure, rank changes, target changes, trade counts, fees, stop/maturity/thesis exit reasons",
+    "per-year and predefined previous-session state net changes, no resetting or dropping unfavorable days"
+  ],
+  "riskScreen": {
+    "maxDrawdownAmount": 500,
+    "maxDrawdownProportion": 0.01,
+    "positiveNet": true,
+    "positiveExcessVsFixedControls": true,
+    "nonnegativeYears": true,
+    "unresolvedCorporateActionsBlockReadiness": true,
+    "promotionAllowed": false,
+    "sharpeNotBelowF0": true,
+    "positiveExcessVsF0AndFixedControls": true
+  },
+  "executionGate": "after original six comparison is complete, nontrading time, >=1024MB free; frozen source child <=512MB and <=20min per path; no current account changes",
+  "evidenceKind": "already inspected historical exploration, not new blind or future validation",
+  "limitations": [
+    "unknown corporate actions/first availability/tradability and public data revisions",
+    "raw open hypothetical fills; only raw 16:00 close valuation, no intraday extrema coverage",
+    "cash is not profitable performance and unsold end positions remain ownership",
+    "no threshold changes after path results; negative outcomes retained; no deployment from historical results"
+  ]
+}

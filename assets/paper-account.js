@@ -11,13 +11,13 @@
  function observedQuote(q,now,core){const t=core.sourceMs(q),received=q?.receivedAt?ms(q.receivedAt):now;return !!(q&&Number.isFinite(q.price)&&q.price>0&&!q.cached&&Number.isFinite(t)&&Number.isFinite(received)&&received<=now&&now-t>=-30000&&now-t<=180000&&Calendar.sessionOf(t)===Calendar.sessionOf(now));}
  function fresh(q,now,core){return observedQuote(q,now,core)&&Calendar.isTradingTime(core.sourceMs(q));}
  function holdingMark(s,a,quotes,now,core,label){
-  const date=Calendar.sessionOf(now),beforeCash=a.cash,priorShares=Object.fromEntries(a.holdings.map(h=>[h.symbol,h.shares])),priorDividends=Object.fromEntries(a.holdings.map(h=>[h.symbol,h.dividendIncome||0]));
+  const date=Calendar.sessionOf(now),beforeCash=a.cash,priorShares=Object.fromEntries(a.holdings.map(h=>[h.researchLotId||h.symbol,h.shares])),priorDividends=Object.fromEntries(a.holdings.map(h=>[h.researchLotId||h.symbol,h.dividendIncome||0]));
   Corporate.applyAccount(a,s.corporateEvents,date,(h,e)=>{const q=quotes[h.symbol],t=core.sourceMs(q);return Number.isFinite(q?.price)&&q.price>0&&Number.isFinite(t)&&t<=now+30000&&t>core.sourceMs({sourceTime:h.lastSourceTime})&&(!q.receivedAt||ms(q.receivedAt)<=now)&&Calendar.sessionOf(t)>=e.exDate;});
   const paid=a.cash-beforeCash;a.paidDividends=(a.paidDividends||0)+paid;
   if(paid)record(s,{type:'dividend_paid',account:label,amount:paid});
   for(const h of a.holdings){
-   if(priorShares[h.symbol]!==h.shares){const ratio=h.shares/priorShares[h.symbol];h.exitPlan.targetPrice/=ratio;h.exitPlan.stopPrice/=ratio;if(h.pendingExit)h.pendingExit.shares=h.shares;record(s,{type:'corporate_split',account:label,symbol:h.symbol,ratio,shares:h.shares,originalEntryPrice:h.originalEntryPrice});}
-   const income=(h.dividendIncome||0)-priorDividends[h.symbol];if(income){const perShare=income/h.shares;h.exitPlan.targetPrice=Math.max(0,h.exitPlan.targetPrice-perShare);h.exitPlan.stopPrice=Math.max(0,h.exitPlan.stopPrice-perShare);record(s,{type:'dividend_entitlement',account:label,symbol:h.symbol,amount:income,perShare,corporateActions:clone(h.appliedCorporateActions||[]),totalReturnThresholdAdjustment:true});}
+   if(priorShares[h.researchLotId||h.symbol]!==h.shares){const ratio=h.shares/priorShares[h.researchLotId||h.symbol];h.exitPlan.targetPrice/=ratio;h.exitPlan.stopPrice/=ratio;if(h.pendingExit)h.pendingExit.shares=h.shares;record(s,{type:'corporate_split',account:label,symbol:h.symbol,ratio,shares:h.shares,originalEntryPrice:h.originalEntryPrice});}
+   const income=(h.dividendIncome||0)-priorDividends[h.researchLotId||h.symbol];if(income){const perShare=income/h.shares;h.exitPlan.targetPrice=Math.max(0,h.exitPlan.targetPrice-perShare);h.exitPlan.stopPrice=Math.max(0,h.exitPlan.stopPrice-perShare);record(s,{type:'dividend_entitlement',account:label,symbol:h.symbol,amount:income,perShare,corporateActions:clone(h.appliedCorporateActions||[]),totalReturnThresholdAdjustment:true});}
    const q=quotes[h.symbol],t=core.sourceMs(q),last=core.sourceMs({sourceTime:h.lastSourceTime});
    const usable=Number.isFinite(q?.price)&&q.price>0&&Number.isFinite(t)&&t<=now+30000&&t>=last&&(!q.receivedAt||ms(q.receivedAt)<=now);
    if(usable&&t>last){h.lastPrice=q.price;h.lastSourceTime=q.sourceTime;h.lastReceivedAt=q.receivedAt||iso(now);}
@@ -47,7 +47,7 @@
   a.cash+=(side==='buy'?-notional-fees.total:notional-fees.total);a.feesPaid+=fees.total;a.slippageCost+=Math.abs(price-q.price)*shares;s.orders.push(item);record(s,{type:'hypothetical_fill',account:item.account,symbol:item.symbol,order:clone(item)});return item;
  }
  function buy(s,a,u,q,row,now,core,label){
-  const o=order(s,a,u,q,'buy',row.shares,'frozen_software_selection',now,core,{account:label});if(o.status!=='hypothetical_fill')return false;
+  const o=order(s,a,u,q,'buy',row.shares,row.researchOrderReason||'frozen_software_selection',now,core,{account:label});if(o.status!=='hypothetical_fill')return false;
   const entrySession=Calendar.sessionOf(now),maturitySession=row.maturitySession||Calendar.maturitySession(entrySession,20);
   a.holdings.push({symbol:u.symbol,name:u.name,type:u.type,theme:u.theme||u.sector||'technology',shares:row.shares,entryPrice:o.price,entryFee:o.fees.total,entryCosts:o.fees,entrySourceTime:q.sourceTime,entryDate:entrySession,lastPrice:q.price,lastSourceTime:q.sourceTime,lastReceivedAt:q.receivedAt||iso(now),stale:false,signalDate:row.signalDate||null,entrySession,referenceOpen:row.referenceOpen??q.open??null,horizon:20,maturitySession,sellableSession:Calendar.nextSession(entrySession),predicted20DayReturn:row.expectedReturn??null,exitPlan:{version:'expiry-risk-target-v1',maturitySession,stopLossRate:label==='model'?s.rules.stopLossRate:0,stopPrice:label==='model'?o.price*(1-s.rules.stopLossRate):0,targetPrice:label==='model'?row.referenceOpen*(1+row.expectedReturn):Number.MAX_VALUE,...(label==='model'&&s.rules.targetExitEnabled!==undefined?{targetExitEnabled:s.rules.targetExitEnabled}:{}),ruleFrozenAt:s.startedAt,dividendPolicy:'total_return_threshold_adjustment',unfilledPolicy:'retain_position_and_retry_on_next_legal_fresh_quote'},pendingExit:null});
   return true;
@@ -56,11 +56,11 @@
   const date=Calendar.sessionOf(now);
   for(const h of [...a.holdings]){
    const q=quotes[h.symbol],valid=fresh(q,now,core)&&core.sourceMs(q)>=(s.quoteWatermarks[h.symbol]||0);
-   const reason=h.pendingExit?.reason||(date>=h.exitPlan.maturitySession?'maturity':valid&&q.price<=h.exitPlan.stopPrice?'risk_stop':valid&&h.exitPlan.targetExitEnabled!==false&&q.price>=h.exitPlan.targetPrice?'frozen_target':null);if(!reason)continue;
+   const reason=h.pendingExit?.reason||(h.exitPlan.maturityExitEnabled!==false&&date>=h.exitPlan.maturitySession?'maturity':valid&&h.exitPlan.riskExitEnabled!==false&&q.price<=h.exitPlan.stopPrice?'risk_stop':valid&&h.exitPlan.targetExitEnabled!==false&&q.price>=h.exitPlan.targetPrice?'frozen_target':null);if(!reason)continue;
    if(!h.pendingExit){h.pendingExit={reason,requestedAt:iso(now),shares:h.shares};record(s,{type:'exit_intent',account:label,symbol:h.symbol,reason,sourceTime:q?.sourceTime||null,receivedAt:q?.receivedAt||null,sellableSession:h.sellableSession});}
    if(date<h.sellableSession){noteOnce(s,label+':t1:'+h.symbol+':'+date,{type:'exit_blocked',account:label,symbol:h.symbol,reason:'t_plus_one',sellableSession:h.sellableSession});continue;}
    if(!Calendar.isTradingTime(now))continue;
-   const attemptKey=label+':exit:'+h.symbol+':'+date+':'+(q?.sourceTime||'missing')+':'+(blocked(q,'sell')||'available');if(s.recordedDecisions[attemptKey])continue;s.recordedDecisions[attemptKey]=true;
+   const attemptKey=label+':exit:'+h.symbol+(h.researchLotId?':'+h.researchLotId:'')+':'+date+':'+(q?.sourceTime||'missing')+':'+(blocked(q,'sell')||'available');if(s.recordedDecisions[attemptKey])continue;s.recordedDecisions[attemptKey]=true;
    const u=s.universe.find(u=>u.symbol===h.symbol),o=order(s,a,u,q,'sell',h.shares,reason,now,core,{account:label});
    if(o.status==='hypothetical_fill'){const pnl=o.notional-o.fees.total-h.shares*h.entryPrice-h.entryFee;a.closedPnl+=pnl;o.realizedPnl=pnl;a.holdings=a.holdings.filter(x=>x!==h);s.closedPositions.push({...clone(h),account:label,exitOrderId:o.id,exitPrice:o.price,exitAt:iso(now),realizedPnl:pnl});record(s,{type:'position_closed',account:label,symbol:h.symbol,exitOrderId:o.id,realizedPnl:pnl});}
   }
@@ -129,10 +129,58 @@
   exitPositions(s,s.account,quotes,now,core,'model');for(const [name,account]of Object.entries(s.comparisons))exitPositions(s,account,quotes,now,core,name);
   entries(s,quotes,now,context,core);watermarks(s,quotes,now,core);sync(s,now);return seal(s);
  }
+
+ function applyResearchDecision(value,quotes,at,context,core){
+  const s=resume(value),now=ms(at),plan=context?.plan,policyHash=context?.policyHash,m=s.model,a=s.account;
+  if(s.automation.mode!=='historical_replay'||m.kind!=='registered-decision-research-v1'||!/^[a-f0-9]{64}$/.test(policyHash||'')||m.decisionPolicyHash!==policyHash||!plan||m.candidateId!==plan.candidateId||plan.researchOnly!==true||plan.executable!==false||plan.investmentReady!==false||iso(now)!==s.observedAt||plan.asOf!==s.observedAt||!Calendar.isTradingTime(now))throw Error('Registered historical decision identity or time mismatch');
+  if(s.corporateEvents.length||a.receivables.length)throw Error('Research lot corporate actions require separate validation');
+  if(!Array.isArray(plan.rows)||plan.rows.length>s.universe.length||new Set(plan.rows.map(r=>r.symbol)).size!==plan.rows.length||plan.rows.some(r=>!s.universe.some(u=>u.symbol===r.symbol&&u.type==='etf')||!Number.isSafeInteger(r.buyShares)||r.buyShares<0||r.buyShares%100||!Number.isSafeInteger(r.sellShares)||r.sellShares<0||r.sellShares%100||r.buyShares&&r.sellShares))throw Error('Invalid historical decision quantities');
+  const key='research_decision:'+s.observedAt+':'+Audit.hash(plan);
+  if(s.recordedDecisions[key])return s;
+  if(Object.keys(s.recordedDecisions).some(k=>k.startsWith('research_decision:'+s.observedAt+':')))throw Error('Only one frozen research decision per observation');
+  if(plan.accountHash!==Audit.hash(a)||plan.quotesHash!==Audit.hash(quotes)||!poolHealth(s,quotes,now,{dataHealth:plan.dataHealth},core).ok)throw Error('Historical decision input binding or health mismatch');
+  const prior=clone(a.holdings),occupied=new Set(prior.map(h=>h.symbol)),beforeCash=a.cash,beforeMarket=a.marketValue,beforeEquity=a.equity;
+  const maturities=Object.fromEntries([...occupied].map(symbol=>[symbol,prior.filter(h=>h.symbol===symbol).map(h=>h.maturitySession).sort()[0]]));
+  let spent=0;const date=Calendar.sessionOf(now);
+  s.recordedDecisions[key]=true;
+  record(s,{type:'research_decision',policyHash,candidateId:plan.candidateId,plan:clone(plan),sourceAccountHash:plan.accountHash,sourceQuotesHash:plan.quotesHash});
+  for(const row of plan.rows){
+   let remaining=row.sellShares;if(!remaining)continue;
+   const lots=a.holdings.filter(h=>h.symbol===row.symbol);
+   if(remaining>lots.reduce((n,h)=>n+h.shares,0))throw Error('Research sale exceeds ownership');
+   const fullExit=row.intendedAction==='exit',eligible=lots.filter(h=>date>=h.sellableSession),quantity=Math.min(remaining,eligible.reduce((n,h)=>n+h.shares,0));
+   for(const h of lots.filter(h=>date<h.sellableSession)){if(fullExit&&!h.pendingExit)h.pendingExit={reason:'research_logic_invalid',requestedAt:iso(now),shares:h.shares};record(s,{type:'exit_blocked',account:'model',symbol:h.symbol,reason:'t_plus_one',sellableSession:h.sellableSession});}
+   if(!quantity)continue;
+   const u=s.universe.find(u=>u.symbol===row.symbol),o=order(s,a,u,quotes[row.symbol],'sell',quantity,fullExit?'research_logic_invalid':'research_target_reduce',now,core,{account:'model',researchPolicyHash:policyHash});
+   if(o.status!=='hypothetical_fill'){if(fullExit)for(const h of lots)if(!h.pendingExit)h.pendingExit={reason:'research_logic_invalid',requestedAt:iso(now),shares:h.shares};continue;}
+   let left=quantity,totalPnl=0;
+   for(const h of eligible){
+    if(!left)break;
+    const shares=Math.min(left,h.shares),originalShares=h.shares,entryFee=h.entryFee*shares/originalShares,exitFee=o.fees.total*shares/quantity,closed={...clone(h),shares,entryFee,entryCosts:Object.fromEntries(Object.entries(h.entryCosts).map(([k,v])=>[k,v*shares/originalShares]))},pnl=shares*o.price-exitFee-shares*h.entryPrice-entryFee;
+    a.closedPnl+=pnl;totalPnl+=pnl;s.closedPositions.push({...closed,account:'model',exitOrderId:o.id,exitPrice:o.price,exitAt:iso(now),allocatedExitFee:exitFee,realizedPnl:pnl});
+    if(shares===originalShares)a.holdings=a.holdings.filter(x=>x!==h);else{h.shares-=shares;h.entryFee-=entryFee;h.entryCosts=Object.fromEntries(Object.entries(h.entryCosts).map(([k,v])=>[k,v*(originalShares-shares)/originalShares]));}
+    record(s,{type:'position_closed',account:'model',symbol:h.symbol,exitOrderId:o.id,realizedPnl:pnl,partial:shares<originalShares});left-=shares;
+   }
+   o.realizedPnl=totalPnl;
+  }
+  for(const row of plan.rows){
+   if(!row.buyShares)continue;
+   const u=s.universe.find(u=>u.symbol===row.symbol),q=quotes[row.symbol],newSymbol=!occupied.has(row.symbol),cost=row.buyShares*Fee.executionPrice(q.price,'buy',s.feeProfile)+Fee.costs(u,row.buyShares*Fee.executionPrice(q.price,'buy',s.feeProfile),'buy',s.feeProfile).total;
+   if((newSymbol&&occupied.size>=s.riskLimits.maxPositions)||cost+spent>beforeCash+1e-8||beforeMarket+spent+cost>Math.min(s.riskLimits.investableLimit,s.riskLimits.maxExposure*beforeEquity)+1e-8)throw Error('Research buy exceeds pre-sale cash exposure or position budget');
+   if(buy(s,a,u,q,{researchOrderReason:'research_target_buy',shares:row.buyShares,expectedReturn:null,referenceOpen:q.open||q.price,maturitySession:maturities[row.symbol]||null,signalDate:plan.signalAsOf||Calendar.expectedCompletedSession(now)},now,core,'model')){
+    const h=a.holdings.at(-1);h.researchLotId=s.orders.at(-1).id;h.exitPlan.targetExitEnabled=false;
+    if(m.researchExitMode==='buy_hold'){h.exitPlan.riskExitEnabled=false;h.exitPlan.maturityExitEnabled=false;}
+    occupied.add(row.symbol);spent+=cost;
+   }
+  }
+  recalc(a,s.budget);watermarks(s,quotes,now,core);sync(s,now);return seal(s);
+ }
+
+
  function observe(value,input={}){const s=resume(value),now=input.now===undefined?Date.now():ms(input.now);if(now<ms(s.observedAt))throw Error('Observation cannot move backward');s.observedAt=iso(now);s.observationHistory=s.observationHistory||[];s.observationHistory.push(clone(s.automation));s.automation={...s.automation,windowEnded:false,done:false,historicalComplete:false,observationStartedAt:iso(now),elapsedMs:0,validObservations:0,dataFailureTicks:0,maxGapMs:0,lastEvaluatedAt:iso(now),plannedEndAt:iso(now+1800000)};record(s,{type:'observation_started',equity:s.account.equity,cash:s.account.cash,noCapitalReset:true});return seal(s);}
  function inspect(s,quotes,now,context,core){
   const health=poolHealth(s,quotes,now,context,core),rows=s.universe.map(u=>{const q=quotes[u.symbol],valid=fresh(q,now,core)&&core.sourceMs(q)>=(s.quoteWatermarks[u.symbol]||0);return {symbol:u.symbol,valid,buyBlock:blocked(q,'buy'),sellBlock:blocked(q,'sell')};});
   return {health,rows};
  }
- return {create,step,resume,observe,inspect};
+ return {create,step,resume,observe,inspect,applyResearchDecision};
 });

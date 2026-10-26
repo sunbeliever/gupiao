@@ -1,0 +1,14 @@
+✔ malformed or not-yet-declared decision jobs stay blocked without disrupting queue selection (0.9106ms)
+✔ decision jobs cannot bypass the resource reserve (0.0884ms)
+✔ failed prerequisites are explicit and never silently wait as ordinary pending work (5.2736ms)
+✔ only bounded transient account failures retry and each failed attempt remains immutable (53.1526ms)
+✔ identity or data failures are retained without automatic retry (31.2009ms)
+✔ permanent evidence failures take precedence over embedded timeout text (32.0836ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 183.336
