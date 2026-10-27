@@ -24,7 +24,7 @@
  function fresh(q,now,core){return observedQuote(q,now,core)&&Calendar.isTradingTime(core.sourceMs(q));}
  function holdingMark(s,a,quotes,now,core,label){
   const date=Calendar.sessionOf(now),beforeCash=a.cash,priorShares=Object.fromEntries(a.holdings.map(h=>[h.researchLotId||h.symbol,h.shares])),priorDividends=Object.fromEntries(a.holdings.map(h=>[h.researchLotId||h.symbol,h.dividendIncome||0]));
-  Corporate.applyAccount(a,s.corporateEvents,date,(h,e)=>{const q=quotes[h.symbol],t=core.sourceMs(q);return (!s.researchCorporateActionPolicy||fresh(q,now,core))&&Number.isFinite(q?.price)&&q.price>0&&Number.isFinite(t)&&t<=now+30000&&t>core.sourceMs({sourceTime:h.lastSourceTime})&&(!q.receivedAt||ms(q.receivedAt)<=now)&&Calendar.sessionOf(t)>=e.exDate;});
+  Corporate.applyAccount(a,s.corporateEvents,date,(h,e)=>{const q=quotes[h.symbol],t=core.sourceMs(q);return (!s.researchCorporateActionPolicy||observedQuote(q,now,core))&&Number.isFinite(q?.price)&&q.price>0&&Number.isFinite(t)&&t<=now+30000&&t>core.sourceMs({sourceTime:h.lastSourceTime})&&(!q.receivedAt||ms(q.receivedAt)<=now)&&Calendar.sessionOf(t)>=e.exDate;});
   const paid=a.cash-beforeCash;a.paidDividends=(a.paidDividends||0)+paid;
   if(paid)record(s,{type:'dividend_paid',account:label,amount:paid});
   for(const h of a.holdings){
