@@ -1,0 +1,30 @@
+{
+  "at": "2026-10-27T01:22:43.843Z",
+  "resultHash": "95bcdcc57c139effc39c97a7379d74cda1b073faba69f837725826b31e61824b",
+  "decisions": 435,
+  "entryWindowDecisions": 415,
+  "firstObservedWarning": {
+    "date": "2025-02-28",
+    "drawdownWarning": true,
+    "sourceAccountHash": "8bc9d3ab4ec2604721d53f9db97aac7c67935f9eadd75bd986a24dba2d4d6148"
+  },
+  "riskWarningDecisions": 401,
+  "riskWarningInsideEntryWindow": 381,
+  "daysExplicitIncreaseBlocked": 280,
+  "cashWithEligibleSignalInsideEntryWindow": 271,
+  "cashAndBlockedIncreaseInsideEntryWindow": 271,
+  "noEligibleSignalInsideEntryWindow": 119,
+  "zeroExposureDays": 410,
+  "positiveRawEqualSixIntradayBasketDaysWhenFlat": 224,
+  "observedSellOrderReasons": {
+    "research_target_reduce": 23,
+    "research_logic_invalid": 4,
+    "risk_stop": 4,
+    "maturity": 3
+  },
+  "realizedPnl": 737.3342000000034,
+  "endingUnrealizedPnl": -2.0463630789890885e-11,
+  "cashDaysAfterFirstWarning": 397,
+  "interpretation": "Counts overlap. A risk warning persisting while flat prevents equity recovering and therefore may block all future increases; this is an explored policy tradeoff, not evidence that all later market signals were unprofitable. No parameter changes or counterfactual return replay.",
+  "metadataCorrection": "The source equityAtDecision field in the first derived file contained an account hash, not equity. Original derived file retained; this corrected field is sourceAccountHash. No financial result changed."
+}

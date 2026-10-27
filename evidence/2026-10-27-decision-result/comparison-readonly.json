@@ -1,0 +1,684 @@
+{
+  "schema": 1,
+  "id": "decision-account-20261026-a",
+  "at": "2026-10-27T01:20:23.310Z",
+  "kind": "historical_decision_fee_account_comparison",
+  "manifestHash": "bf532a98a929f76fba9bc8c702bc3734a913e70a22defd84debdc209ce04ef9c",
+  "baselineManifestHash": "0756f3df36b5c1634539b05a5b16e2e593b1da653c76dc670c4e7d54efa97ac9",
+  "results": [
+    {
+      "path": "decision_thesis",
+      "resultHash": "95bcdcc57c139effc39c97a7379d74cda1b073faba69f837725826b31e61824b",
+      "budget": 50000,
+      "equity": 50737.33419999998,
+      "netPnl": 737.334199999983,
+      "netReturn": 0.014746683999999677,
+      "feesPaid": 260,
+      "cash": 50737.33419999998,
+      "realizedPnl": 737.3342000000034,
+      "unrealizedPnl": -2.0463630789890885e-11,
+      "maxDrawdownAmount": 962.3121000000101,
+      "maxDrawdownProportion": 0.018689551831911122,
+      "annualizedReturn": 0.008516590869074747,
+      "sharpe": 0.39470111056464097,
+      "calmar": 0.455687270923921,
+      "grossTurnover": 1.7652942879999993,
+      "buyCount": 18,
+      "sellCount": 34,
+      "closedTradeCount": 41,
+      "closedTradeWinFraction": 0.6585365853658537,
+      "profitFactor": 2.427006600779467,
+      "meanExposure": 0.01262339585293422,
+      "openPositions": [],
+      "annual": [
+        {
+          "year": "2025",
+          "startEquity": 50000,
+          "endEquity": 50737.33419999998,
+          "netReturn": 0.014746683999999677,
+          "annualized": false
+        },
+        {
+          "year": "2026",
+          "startEquity": 50737.33419999998,
+          "endEquity": 50737.33419999998,
+          "netReturn": 0,
+          "annualized": false
+        }
+      ],
+      "minimumObservedDailyEquity": 49586.9873,
+      "daysBelowInitialCapital": 10,
+      "period": [
+        "2025-01-03",
+        "2026-10-23"
+      ],
+      "policyHash": "16014d72eec40ec43d5132a4080362b5f5a952941ebefd4095d312f374f04e3e",
+      "candidateId": "trend-relative20-risk-v1",
+      "parityVerified": true,
+      "finalStateHash": "847335b82aa720125bc0a00097ab80cea4b7964543074e9056f70bdac4836d84",
+      "maximumOpenCloseObservedDrawdown": 1017.7123000000065,
+      "maximumOpenCloseObservedDrawdownProportion": 0.019761323878912163,
+      "diagnostics": {
+        "cashDays": 410,
+        "noSignalDays": 134,
+        "cashPositiveBasketDays": 224,
+        "rankChanges": 273,
+        "targetChanges": 282,
+        "states": {
+          "down_normal_vol": {
+            "days": 83,
+            "netChange": 0,
+            "fees": 0,
+            "positiveDays": 0
+          },
+          "down_high_vol": {
+            "days": 156,
+            "netChange": 73.34870000000228,
+            "fees": 45,
+            "positiveDays": 3
+          },
+          "up_high_vol": {
+            "days": 128,
+            "netChange": 663.9854999999807,
+            "fees": 215,
+            "positiveDays": 12
+          },
+          "mixed_high_vol": {
+            "days": 15,
+            "netChange": 0,
+            "fees": 0,
+            "positiveDays": 0
+          },
+          "up_normal_vol": {
+            "days": 46,
+            "netChange": 0,
+            "fees": 0,
+            "positiveDays": 0
+          },
+          "mixed_normal_vol": {
+            "days": 7,
+            "netChange": 0,
+            "fees": 0,
+            "positiveDays": 0
+          }
+        },
+        "decisionUnavailableDays": 0
+      },
+      "warnings": [
+        {
+          "date": "2026-02-03",
+          "symbol": "sh515880",
+          "reason": "unreconciled_raw_adjusted_overnight_ratio"
+        },
+        {
+          "date": "2026-03-27",
+          "symbol": "sh512760",
+          "reason": "unreconciled_raw_adjusted_overnight_ratio"
+        },
+        {
+          "date": "2026-07-06",
+          "symbol": "sh515070",
+          "reason": "unreconciled_raw_adjusted_overnight_ratio"
+        },
+        {
+          "date": "2026-07-06",
+          "symbol": "sh515880",
+          "reason": "unreconciled_raw_adjusted_overnight_ratio"
+        }
+      ],
+      "expectedReturn": null,
+      "verifiedProfitProbability": null,
+      "independentOutOfSample": false,
+      "investmentReady": false,
+      "promoted": false,
+      "sameInitialBudgetFeesAndExecution": true,
+      "riskControlEquivalentToOriginal": false,
+      "riskDifferences": [
+        "500 observed-drawdown warning blocks increases",
+        "daily thesis and target changes"
+      ],
+      "limitations": [
+        "Already inspected history, unknown first availability and corporate actions; no blind or forward performance claim",
+        "Raw opening hypothetical fills; daily close is valuation only; no intraday risk coverage",
+        "Unsold end positions remain invested; no future sell fees charged",
+        "Cash and missed positive basket days are descriptive, not reliable profit or tradable counterfactual returns",
+        "Buy hold intentionally disables risk/expiry/reentry; compare actual exposure and risk, not identical risk control"
+      ]
+    },
+    {
+      "path": "true_buy_hold_three",
+      "resultHash": "789996d4ce07f2fd131d5534c54d24a12ee0a334c609eccf2920c6e98ab0a751",
+      "budget": 50000,
+      "equity": 50334.0415,
+      "netPnl": 334.04149999999936,
+      "netReturn": 0.006680830000000082,
+      "feesPaid": 15,
+      "cash": 37614.1415,
+      "realizedPnl": 0,
+      "unrealizedPnl": 334.04149999999936,
+      "maxDrawdownAmount": 13749.199999999997,
+      "maxDrawdownProportion": 0.21599342455766468,
+      "annualizedReturn": 0.0038648522581230527,
+      "sharpe": 0.09854384940949093,
+      "calmar": 0.017893379236140757,
+      "grossTurnover": 0.24741716999999996,
+      "buyCount": 3,
+      "sellCount": 0,
+      "closedTradeCount": 0,
+      "closedTradeWinFraction": null,
+      "profitFactor": null,
+      "meanExposure": 0.30506159313474757,
+      "openPositions": [
+        {
+          "symbol": "sh588000",
+          "name": "科创50ETF",
+          "type": "etf",
+          "theme": "科创",
+          "shares": 4100,
+          "entryPrice": 1.0100089999999997,
+          "entryFee": 5,
+          "entryCosts": {
+            "commission": 5,
+            "tax": 0,
+            "transferFee": 0,
+            "total": 5
+          },
+          "entrySourceTime": "2025-01-03 09:30:00",
+          "entryDate": "2025-01-03",
+          "lastPrice": 1.422,
+          "lastSourceTime": "2026-10-23 15:00:00",
+          "lastReceivedAt": "2026-10-23T08:00:00.000Z",
+          "stale": false,
+          "signalDate": "2025-01-02",
+          "entrySession": "2025-01-03",
+          "referenceOpen": 1.009,
+          "horizon": 20,
+          "maturitySession": "2025-02-10",
+          "sellableSession": "2025-01-06",
+          "predicted20DayReturn": null,
+          "exitPlan": {
+            "version": "expiry-risk-target-v1",
+            "maturitySession": "2025-02-10",
+            "stopLossRate": 0.04,
+            "stopPrice": 0.9696086399999997,
+            "targetPrice": 1.009,
+            "targetExitEnabled": false,
+            "ruleFrozenAt": "2025-01-03T01:30:00.000Z",
+            "dividendPolicy": "total_return_threshold_adjustment",
+            "unfilledPolicy": "retain_position_and_retry_on_next_legal_fresh_quote",
+            "riskExitEnabled": false,
+            "maturityExitEnabled": false
+          },
+          "pendingExit": null,
+          "researchLotId": "decision-true_buy_hold_three-133fafa577c7:8",
+          "appliedCorporateActions": [],
+          "staleReason": null,
+          "valuationAgeMs": 3600000
+        },
+        {
+          "symbol": "sh512760",
+          "name": "芯片ETF",
+          "type": "etf",
+          "theme": "半导体",
+          "shares": 3800,
+          "entryPrice": 1.076075,
+          "entryFee": 5,
+          "entryCosts": {
+            "commission": 5,
+            "tax": 0,
+            "transferFee": 0,
+            "total": 5
+          },
+          "entrySourceTime": "2025-01-03 09:30:00",
+          "entryDate": "2025-01-03",
+          "lastPrice": 0.891,
+          "lastSourceTime": "2026-10-23 15:00:00",
+          "lastReceivedAt": "2026-10-23T08:00:00.000Z",
+          "stale": false,
+          "signalDate": "2025-01-02",
+          "entrySession": "2025-01-03",
+          "referenceOpen": 1.075,
+          "horizon": 20,
+          "maturitySession": "2025-02-10",
+          "sellableSession": "2025-01-06",
+          "predicted20DayReturn": null,
+          "exitPlan": {
+            "version": "expiry-risk-target-v1",
+            "maturitySession": "2025-02-10",
+            "stopLossRate": 0.04,
+            "stopPrice": 1.033032,
+            "targetPrice": 1.075,
+            "targetExitEnabled": false,
+            "ruleFrozenAt": "2025-01-03T01:30:00.000Z",
+            "dividendPolicy": "total_return_threshold_adjustment",
+            "unfilledPolicy": "retain_position_and_retry_on_next_legal_fresh_quote",
+            "riskExitEnabled": false,
+            "maturityExitEnabled": false
+          },
+          "pendingExit": null,
+          "researchLotId": "decision-true_buy_hold_three-133fafa577c7:9",
+          "appliedCorporateActions": [],
+          "staleReason": null,
+          "valuationAgeMs": 3600000
+        },
+        {
+          "symbol": "sh515070",
+          "name": "人工智能ETF",
+          "type": "etf",
+          "theme": "人工智能",
+          "shares": 3700,
+          "entryPrice": 1.119118,
+          "entryFee": 5,
+          "entryCosts": {
+            "commission": 5,
+            "tax": 0,
+            "transferFee": 0,
+            "total": 5
+          },
+          "entrySourceTime": "2025-01-03 09:30:00",
+          "entryDate": "2025-01-03",
+          "lastPrice": 0.947,
+          "lastSourceTime": "2026-10-23 15:00:00",
+          "lastReceivedAt": "2026-10-23T08:00:00.000Z",
+          "stale": false,
+          "signalDate": "2025-01-02",
+          "entrySession": "2025-01-03",
+          "referenceOpen": 1.118,
+          "horizon": 20,
+          "maturitySession": "2025-02-10",
+          "sellableSession": "2025-01-06",
+          "predicted20DayReturn": null,
+          "exitPlan": {
+            "version": "expiry-risk-target-v1",
+            "maturitySession": "2025-02-10",
+            "stopLossRate": 0.04,
+            "stopPrice": 1.07435328,
+            "targetPrice": 1.118,
+            "targetExitEnabled": false,
+            "ruleFrozenAt": "2025-01-03T01:30:00.000Z",
+            "dividendPolicy": "total_return_threshold_adjustment",
+            "unfilledPolicy": "retain_position_and_retry_on_next_legal_fresh_quote",
+            "riskExitEnabled": false,
+            "maturityExitEnabled": false
+          },
+          "pendingExit": null,
+          "researchLotId": "decision-true_buy_hold_three-133fafa577c7:10",
+          "appliedCorporateActions": [],
+          "staleReason": null,
+          "valuationAgeMs": 3600000
+        }
+      ],
+      "annual": [
+        {
+          "year": "2025",
+          "startEquity": 50000,
+          "endEquity": 56772.4415,
+          "netReturn": 0.13544883000000008,
+          "annualized": false
+        },
+        {
+          "year": "2026",
+          "startEquity": 56772.4415,
+          "endEquity": 50334.0415,
+          "netReturn": -0.11340713610141284,
+          "annualized": false
+        }
+      ],
+      "minimumObservedDailyEquity": 49528.7415,
+      "daysBelowInitialCapital": 7,
+      "period": [
+        "2025-01-03",
+        "2026-10-23"
+      ],
+      "policyHash": "133fafa577c78bc95434407a1eead8f2e7eecde57a28822fd34c2efa9ea21616",
+      "candidateId": "trend-relative20-risk-v1",
+      "parityVerified": true,
+      "finalStateHash": "e79270a16f47fb2639aee9ca866a10b5b9b88b58ef33a72ee07a8cbee513554c",
+      "maximumOpenCloseObservedDrawdown": 13962.099999999999,
+      "maximumOpenCloseObservedDrawdownProportion": 0.21927046794160965,
+      "diagnostics": {
+        "cashDays": 0,
+        "noSignalDays": 0,
+        "cashPositiveBasketDays": 0,
+        "rankChanges": 0,
+        "targetChanges": 0,
+        "states": {
+          "unknown": {
+            "days": 435,
+            "netChange": 334.04149999999936,
+            "fees": 15,
+            "positiveDays": 225
+          }
+        },
+        "decisionUnavailableDays": 0
+      },
+      "warnings": [
+        {
+          "date": "2026-02-03",
+          "symbol": "sh515880",
+          "reason": "unreconciled_raw_adjusted_overnight_ratio"
+        },
+        {
+          "date": "2026-03-27",
+          "symbol": "sh512760",
+          "reason": "unreconciled_raw_adjusted_overnight_ratio"
+        },
+        {
+          "date": "2026-07-06",
+          "symbol": "sh515070",
+          "reason": "unreconciled_raw_adjusted_overnight_ratio"
+        },
+        {
+          "date": "2026-07-06",
+          "symbol": "sh515880",
+          "reason": "unreconciled_raw_adjusted_overnight_ratio"
+        }
+      ],
+      "expectedReturn": null,
+      "verifiedProfitProbability": null,
+      "independentOutOfSample": false,
+      "investmentReady": false,
+      "promoted": false,
+      "sameInitialBudgetFeesAndExecution": true,
+      "riskControlEquivalentToOriginal": false,
+      "riskDifferences": [
+        "No risk or expiry exit; no reentry"
+      ],
+      "limitations": [
+        "Already inspected history, unknown first availability and corporate actions; no blind or forward performance claim",
+        "Raw opening hypothetical fills; daily close is valuation only; no intraday risk coverage",
+        "Unsold end positions remain invested; no future sell fees charged",
+        "Cash and missed positive basket days are descriptive, not reliable profit or tradable counterfactual returns",
+        "Buy hold intentionally disables risk/expiry/reentry; compare actual exposure and risk, not identical risk control"
+      ]
+    }
+  ],
+  "baselineResults": [
+    {
+      "path": "rolling_ridge",
+      "resultHash": "52327e6f9b55de09f658fe8c8388afbf511feb0134312bd8e10c0de6846b4c63",
+      "profitFactor": 1.2180497360740377,
+      "netPnl": 2564.6909000000305,
+      "netReturn": 0.05129381800000066,
+      "feesPaid": 620,
+      "realizedPnl": 2564.6909000000396,
+      "unrealizedPnl": -9.094947017729282e-12,
+      "buyCount": 62,
+      "sellCount": 62,
+      "maxDrawdownAmount": 3571.1197999999713,
+      "maxDrawdownProportion": 0.06393468967746008,
+      "sharpe": 0.422565357122894,
+      "calmar": 0.45987533006469405,
+      "annualizedReturn": 0.02940198651800574,
+      "annual": [
+        {
+          "year": "2025",
+          "asOf": "2025-12-31",
+          "startEquity": 50000,
+          "endEquity": 51599.880900000004,
+          "netReturn": 0.031997618000000116,
+          "annualized": false
+        },
+        {
+          "year": "2026",
+          "asOf": "2026-10-23",
+          "startEquity": 51599.880900000004,
+          "endEquity": 52564.69090000003,
+          "netReturn": 0.01869791137444321,
+          "annualized": false
+        }
+      ],
+      "grossTurnover": 14.488103817999992,
+      "closedTradeCount": 62,
+      "closedTradeWinFraction": 0.3225806451612903,
+      "meanExposure": 0.1842636966743759,
+      "openPositions": [],
+      "unresolvedPriceEvents": 4,
+      "parityVerified": true
+    },
+    {
+      "path": "rolling_mean",
+      "resultHash": "d0316c938b0afb2d5d541532087bdf0dea16e28b4e2f0ca5cbb1cc232dff20da",
+      "profitFactor": 0.9283867396500636,
+      "netPnl": -608.7242999999798,
+      "netReturn": -0.012174485999999596,
+      "feesPaid": 420,
+      "realizedPnl": -608.724299999983,
+      "unrealizedPnl": 3.183231456205249e-12,
+      "buyCount": 42,
+      "sellCount": 42,
+      "maxDrawdownAmount": 5808.192700000014,
+      "maxDrawdownProportion": 0.1067111557318462,
+      "sharpe": -0.06760608345043058,
+      "calmar": -0.06626272244203982,
+      "annualizedReturn": -0.0070709716937286116,
+      "annual": [
+        {
+          "year": "2025",
+          "asOf": "2025-12-31",
+          "startEquity": 50000,
+          "endEquity": 50143.60680000001,
+          "netReturn": 0.002872136000000136,
+          "annualized": false
+        },
+        {
+          "year": "2026",
+          "asOf": "2026-10-23",
+          "startEquity": 50143.60680000001,
+          "endEquity": 49391.27570000002,
+          "netReturn": -0.015003529821871253,
+          "annualized": false
+        }
+      ],
+      "grossTurnover": 7.732482042000003,
+      "closedTradeCount": 42,
+      "closedTradeWinFraction": 0.30952380952380953,
+      "meanExposure": 0.10988140774487919,
+      "openPositions": [],
+      "unresolvedPriceEvents": 4,
+      "parityVerified": true
+    },
+    {
+      "path": "frozen_f0",
+      "resultHash": "ec54437449a54809399ee9e97221293642c579cd471d9eb09052ac52f864c105",
+      "profitFactor": 2.1794430186352036,
+      "netPnl": 6616.159799999994,
+      "netReturn": 0.13232319599999998,
+      "feesPaid": 330,
+      "realizedPnl": 6616.159800000029,
+      "unrealizedPnl": -3.456079866737127e-11,
+      "buyCount": 33,
+      "sellCount": 33,
+      "maxDrawdownAmount": 4738.459999999992,
+      "maxDrawdownProportion": 0.07744715203873132,
+      "sharpe": 1.098080811825464,
+      "calmar": 0.9638374097369723,
+      "annualizedReturn": 0.07464646241251627,
+      "annual": [
+        {
+          "year": "2025",
+          "asOf": "2025-12-31",
+          "startEquity": 50000,
+          "endEquity": 57994.14230000001,
+          "netReturn": 0.15988284600000013,
+          "annualized": false
+        },
+        {
+          "year": "2026",
+          "asOf": "2026-10-23",
+          "startEquity": 57994.14230000001,
+          "endEquity": 56616.159799999994,
+          "netReturn": -0.02376071867520335,
+          "annualized": false
+        }
+      ],
+      "grossTurnover": 9.916655160000001,
+      "closedTradeCount": 33,
+      "closedTradeWinFraction": 0.3939393939393939,
+      "meanExposure": 0.13675974794909102,
+      "openPositions": [],
+      "unresolvedPriceEvents": 4,
+      "parityVerified": true
+    },
+    {
+      "path": "fixed_three",
+      "resultHash": "8a45e2d4b946556f334aa373554fc92883dfc1828e635c6704742c4355b26eba",
+      "profitFactor": 1.1166017302452602,
+      "netPnl": 2056.513100000033,
+      "netReturn": 0.041130262000000695,
+      "feesPaid": 1000,
+      "realizedPnl": 2056.5131000000424,
+      "unrealizedPnl": -9.549694368615746e-12,
+      "buyCount": 100,
+      "sellCount": 100,
+      "maxDrawdownAmount": 7981.009599999976,
+      "maxDrawdownProportion": 0.13293369281540945,
+      "sharpe": 0.278949786235189,
+      "calmar": 0.17771989877130492,
+      "annualizedReturn": 0.023624962430450314,
+      "annual": [
+        {
+          "year": "2025",
+          "asOf": "2025-12-31",
+          "startEquity": 50000,
+          "endEquity": 55062.687399999995,
+          "netReturn": 0.10125374799999998,
+          "annualized": false
+        },
+        {
+          "year": "2026",
+          "asOf": "2026-10-23",
+          "startEquity": 55062.687399999995,
+          "endEquity": 52056.51310000003,
+          "netReturn": -0.05459548819624016,
+          "annualized": false
+        }
+      ],
+      "grossTurnover": 16.179660690000002,
+      "closedTradeCount": 100,
+      "closedTradeWinFraction": 0.39,
+      "meanExposure": 0.23308066347960013,
+      "openPositions": [],
+      "unresolvedPriceEvents": 4,
+      "parityVerified": true
+    },
+    {
+      "path": "fixed_single",
+      "resultHash": "1b76ccb70dc6d43a7fb9ea524da4a623d955eeede25995a9c6334d0d44e80345",
+      "profitFactor": 1.4377220534813742,
+      "netPnl": 5755.287000000048,
+      "netReturn": 0.11510574000000084,
+      "feesPaid": 340,
+      "realizedPnl": 5755.287000000049,
+      "unrealizedPnl": -1.8189894035458565e-12,
+      "buyCount": 34,
+      "sellCount": 34,
+      "maxDrawdownAmount": 5509.42119999999,
+      "maxDrawdownProportion": 0.08992813908481145,
+      "sharpe": 0.7585273591797438,
+      "calmar": 0.7244647882218251,
+      "annualizedReturn": 0.06514977023726076,
+      "annual": [
+        {
+          "year": "2025",
+          "asOf": "2025-12-31",
+          "startEquity": 50000,
+          "endEquity": 54130.42110000003,
+          "netReturn": 0.08260842200000051,
+          "annualized": false
+        },
+        {
+          "year": "2026",
+          "asOf": "2026-10-23",
+          "startEquity": 54130.42110000003,
+          "endEquity": 55755.28700000005,
+          "netReturn": 0.03001761055947183,
+          "annualized": false
+        }
+      ],
+      "grossTurnover": 17.010121084,
+      "closedTradeCount": 34,
+      "closedTradeWinFraction": 0.38235294117647056,
+      "meanExposure": 0.2337465314177405,
+      "openPositions": [],
+      "unresolvedPriceEvents": 4,
+      "parityVerified": true
+    },
+    {
+      "path": "cash",
+      "resultHash": "b2d8f63e356e37bd8e39a6f12b06318d94fc3be61b44ebb0e68cdcb90b6d8812",
+      "profitFactor": null,
+      "netPnl": 0,
+      "netReturn": 0,
+      "feesPaid": 0,
+      "realizedPnl": 0,
+      "unrealizedPnl": 0,
+      "buyCount": 0,
+      "sellCount": 0,
+      "maxDrawdownAmount": 0,
+      "maxDrawdownProportion": 0,
+      "sharpe": null,
+      "calmar": null,
+      "annualizedReturn": 0,
+      "annual": [
+        {
+          "year": "2025",
+          "asOf": "2025-12-31",
+          "startEquity": 50000,
+          "endEquity": 50000,
+          "netReturn": 0,
+          "annualized": false
+        },
+        {
+          "year": "2026",
+          "asOf": "2026-10-23",
+          "startEquity": 50000,
+          "endEquity": 50000,
+          "netReturn": 0,
+          "annualized": false
+        }
+      ],
+      "grossTurnover": 0,
+      "closedTradeCount": 0,
+      "closedTradeWinFraction": null,
+      "meanExposure": 0,
+      "openPositions": [],
+      "unresolvedPriceEvents": 4,
+      "parityVerified": true
+    }
+  ],
+  "differencesVsF0": [
+    {
+      "path": "decision_thesis",
+      "netPnl": -5878.825600000011,
+      "maxDrawdownAmount": -3776.1478999999817,
+      "feesPaid": -70,
+      "grossTurnover": -8.151360872000001
+    },
+    {
+      "path": "true_buy_hold_three",
+      "netPnl": -6282.118299999995,
+      "maxDrawdownAmount": 9010.740000000005,
+      "feesPaid": -315,
+      "grossTurnover": -9.669237990000001
+    }
+  ],
+  "decision": {
+    "historicalScreenPassed": false,
+    "reasons": [
+      "drawdown_amount_over_limit",
+      "drawdown_proportion_over_limit",
+      "no_positive_excess_vs_frozen_f0",
+      "no_positive_excess_vs_fixed_three",
+      "no_positive_excess_vs_fixed_single",
+      "no_risk_adjusted_improvement_vs_f0",
+      "unreconciled_raw_adjusted_events"
+    ],
+    "promoted": false
+  },
+  "independentOutOfSample": false,
+  "investmentReady": false,
+  "promoted": false,
+  "verifiedProfitProbability": null,
+  "verificationScope": "Completed immutable sources/inputs/claims/results and complete observed-curve financial metrics verified read-only. Reused each published replay parity, no new full strategy replay. No queue completion or publication forced during protected market window."
+}

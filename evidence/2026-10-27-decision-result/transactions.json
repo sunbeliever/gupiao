@@ -1,0 +1,10 @@
+{
+  "at": "2026-10-27T01:27:23.343Z",
+  "resultHash": "95bcdcc57c139effc39c97a7379d74cda1b073faba69f837725826b31e61824b",
+  "sameObservationRiskReentries": 0,
+  "reentries": [],
+  "feesPaid": 260,
+  "slippageCost": 88.2657999999978,
+  "orders": 52,
+  "meaning": "Observational diagnosis only; next-session stop-reentry family previously failed and was not silently adopted. No new strategy or modified return."
+}
