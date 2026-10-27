@@ -1,0 +1,11 @@
+{
+  "allPassed": true,
+  "checkedSplitEvents": [
+    "sh515880-split-20260203",
+    "sh512760-split-20260327",
+    "sh515880-split-20260706",
+    "sh515070-split-20260706"
+  ],
+  "maximumTolerance": 1e-12,
+  "realTradingOrHistoricalProfitResearchPerformed": false
+}

@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-27T06:40:31.283109+00:00",
+  "protocolId": "corporate-action-lot-protocol-20261027-a",
+  "originalProtocolSha256": "9389c30079191dbf9cbf6bd492a90698bd035cad6a3dacccd874dc7250866997",
+  "protocolUnmodified": true,
+  "engineSourceCommit": "bcb55cb58a3acfbc29b19195be0173df6c34233b",
+  "engineRawSourceSha256": "2e8856224694983b6e92f26b9155b0ab2a6fadd37694c1bc7ba3d69c7d72359a",
+  "testRawSourceSha256": "0ae4286bca1015e6beb6bee0120346931f584333c18544448fab26ce792a7848",
+  "status": "synthetic_accounting_contract_passed_no_financial_runner_enabled",
+  "authorRelatedTests": 53,
+  "authoritativeIntegrationTests": 20,
+  "independentRegressionCases": 5,
+  "independentDefaultCompatibilityCases": 1,
+  "newFinancialPaths": 0,
+  "newModelFits": 0,
+  "historicalFirstPublicVerified": false,
+  "fullActionInventoryComplete": false,
+  "dailyOpenAt0930ExecutableVerified": false,
+  "workerChanged": false,
+  "windowsExeChanged": false,
+  "oldFinancialResultsChanged": false,
+  "fixedReviewFinding": "Closing quote was wrongly excluded from share-unit conversion by the trading-session gate; red preserved, action-only gate corrected, order timing unchanged",
+  "independentReviewOriginalSha256": "2df308aa293ecc95ad7367723309fcf3cf95178e6e9921c6a0648761bb777f42",
+  "limits": [
+    "Only explicit new historical registered-decision sessions with the sealed fixed policy and registered 2/3 integer split events",
+    "Unknown dividends/receivables/events remain rejected",
+    "Evidence hash binds declared upstream evidence, not a universal source authenticity proof",
+    "No claim of profit advantage or full financial/corporate-action coverage"
+  ],
+  "next": "Implement isolated financial-driver opt-in only after complete action inventory and new financial protocol/source/input seal; preserve old studies and all live frozen accounts"
+}

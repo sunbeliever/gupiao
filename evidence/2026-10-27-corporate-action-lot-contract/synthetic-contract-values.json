@@ -1,0 +1,437 @@
+{
+  "scope": "fixed synthetic accounting contracts, no historical financial path",
+  "rows": [
+    {
+      "event": {
+        "id": "sh515880-split-20260203",
+        "ratio": 3,
+        "recordDate": "2026-02-02",
+        "exDate": "2026-02-03"
+      },
+      "before": {
+        "cash": 49694.7,
+        "fees": 5,
+        "equity": 49994.7,
+        "holding": {
+          "symbol": "sh515880",
+          "name": "sh515880",
+          "type": "etf",
+          "theme": "technology",
+          "shares": 100,
+          "entryPrice": 3.0029999999999997,
+          "entryFee": 5,
+          "entryCosts": {
+            "commission": 5,
+            "tax": 0,
+            "transferFee": 0,
+            "total": 5
+          },
+          "entrySourceTime": "2026-01-30T02:00:00Z",
+          "entryDate": "2026-01-30",
+          "lastPrice": 3,
+          "lastSourceTime": "2026-01-30T02:00:00Z",
+          "lastReceivedAt": "2026-01-30T02:00:00Z",
+          "stale": false,
+          "signalDate": "2026-01-29",
+          "entrySession": "2026-01-30",
+          "referenceOpen": 3,
+          "horizon": 20,
+          "maturitySession": "2026-03-09",
+          "sellableSession": "2026-02-02",
+          "predicted20DayReturn": null,
+          "exitPlan": {
+            "version": "expiry-risk-target-v1",
+            "maturitySession": "2026-03-09",
+            "stopLossRate": 0.04,
+            "stopPrice": 2.8828799999999997,
+            "targetPrice": 3,
+            "targetExitEnabled": false,
+            "ruleFrozenAt": "2026-01-30T02:00:00.000Z",
+            "dividendPolicy": "total_return_threshold_adjustment",
+            "unfilledPolicy": "retain_position_and_retry_on_next_legal_fresh_quote"
+          },
+          "pendingExit": null,
+          "researchLotId": "paper-3ace95f3a0aadd3a4148:8"
+        }
+      },
+      "after": {
+        "cash": 49694.7,
+        "fees": 5,
+        "equity": 49994.7,
+        "holding": {
+          "symbol": "sh515880",
+          "name": "sh515880",
+          "type": "etf",
+          "theme": "technology",
+          "shares": 300,
+          "entryPrice": 1.001,
+          "entryFee": 5,
+          "entryCosts": {
+            "commission": 5,
+            "tax": 0,
+            "transferFee": 0,
+            "total": 5
+          },
+          "entrySourceTime": "2026-01-30T02:00:00Z",
+          "entryDate": "2026-01-30",
+          "lastPrice": 1,
+          "lastSourceTime": "2026-02-03T02:00:00Z",
+          "lastReceivedAt": "2026-02-03T02:00:00Z",
+          "stale": false,
+          "signalDate": "2026-01-29",
+          "entrySession": "2026-01-30",
+          "referenceOpen": 3,
+          "horizon": 20,
+          "maturitySession": "2026-03-09",
+          "sellableSession": "2026-02-02",
+          "predicted20DayReturn": null,
+          "exitPlan": {
+            "version": "expiry-risk-target-v1",
+            "maturitySession": "2026-03-09",
+            "stopLossRate": 0.04,
+            "stopPrice": 0.9609599999999999,
+            "targetPrice": 1,
+            "targetExitEnabled": false,
+            "ruleFrozenAt": "2026-01-30T02:00:00.000Z",
+            "dividendPolicy": "total_return_threshold_adjustment",
+            "unfilledPolicy": "retain_position_and_retry_on_next_legal_fresh_quote"
+          },
+          "pendingExit": null,
+          "researchLotId": "paper-3ace95f3a0aadd3a4148:8",
+          "appliedCorporateActions": [
+            "sh515880-split-20260203"
+          ],
+          "originalEntryPrice": 3.0029999999999997,
+          "originalEntryShares": 100,
+          "staleReason": null,
+          "valuationAgeMs": 0
+        }
+      },
+      "sourcePITVerified": false
+    },
+    {
+      "event": {
+        "id": "sh512760-split-20260327",
+        "ratio": 2,
+        "recordDate": "2026-03-26",
+        "exDate": "2026-03-27"
+      },
+      "before": {
+        "cash": 49694.7,
+        "fees": 5,
+        "equity": 49994.7,
+        "holding": {
+          "symbol": "sh512760",
+          "name": "sh512760",
+          "type": "etf",
+          "theme": "technology",
+          "shares": 100,
+          "entryPrice": 3.0029999999999997,
+          "entryFee": 5,
+          "entryCosts": {
+            "commission": 5,
+            "tax": 0,
+            "transferFee": 0,
+            "total": 5
+          },
+          "entrySourceTime": "2026-03-25T02:00:00Z",
+          "entryDate": "2026-03-25",
+          "lastPrice": 3,
+          "lastSourceTime": "2026-03-25T02:00:00Z",
+          "lastReceivedAt": "2026-03-25T02:00:00Z",
+          "stale": false,
+          "signalDate": "2026-03-24",
+          "entrySession": "2026-03-25",
+          "referenceOpen": 3,
+          "horizon": 20,
+          "maturitySession": "2026-04-23",
+          "sellableSession": "2026-03-26",
+          "predicted20DayReturn": null,
+          "exitPlan": {
+            "version": "expiry-risk-target-v1",
+            "maturitySession": "2026-04-23",
+            "stopLossRate": 0.04,
+            "stopPrice": 2.8828799999999997,
+            "targetPrice": 3,
+            "targetExitEnabled": false,
+            "ruleFrozenAt": "2026-03-25T02:00:00.000Z",
+            "dividendPolicy": "total_return_threshold_adjustment",
+            "unfilledPolicy": "retain_position_and_retry_on_next_legal_fresh_quote"
+          },
+          "pendingExit": null,
+          "researchLotId": "paper-a1c81c27653ff27ba375:8"
+        }
+      },
+      "after": {
+        "cash": 49694.7,
+        "fees": 5,
+        "equity": 49994.7,
+        "holding": {
+          "symbol": "sh512760",
+          "name": "sh512760",
+          "type": "etf",
+          "theme": "technology",
+          "shares": 200,
+          "entryPrice": 1.5014999999999998,
+          "entryFee": 5,
+          "entryCosts": {
+            "commission": 5,
+            "tax": 0,
+            "transferFee": 0,
+            "total": 5
+          },
+          "entrySourceTime": "2026-03-25T02:00:00Z",
+          "entryDate": "2026-03-25",
+          "lastPrice": 1.5,
+          "lastSourceTime": "2026-03-27T02:00:00Z",
+          "lastReceivedAt": "2026-03-27T02:00:00Z",
+          "stale": false,
+          "signalDate": "2026-03-24",
+          "entrySession": "2026-03-25",
+          "referenceOpen": 3,
+          "horizon": 20,
+          "maturitySession": "2026-04-23",
+          "sellableSession": "2026-03-26",
+          "predicted20DayReturn": null,
+          "exitPlan": {
+            "version": "expiry-risk-target-v1",
+            "maturitySession": "2026-04-23",
+            "stopLossRate": 0.04,
+            "stopPrice": 1.4414399999999998,
+            "targetPrice": 1.5,
+            "targetExitEnabled": false,
+            "ruleFrozenAt": "2026-03-25T02:00:00.000Z",
+            "dividendPolicy": "total_return_threshold_adjustment",
+            "unfilledPolicy": "retain_position_and_retry_on_next_legal_fresh_quote"
+          },
+          "pendingExit": null,
+          "researchLotId": "paper-a1c81c27653ff27ba375:8",
+          "appliedCorporateActions": [
+            "sh512760-split-20260327"
+          ],
+          "originalEntryPrice": 3.0029999999999997,
+          "originalEntryShares": 100,
+          "staleReason": null,
+          "valuationAgeMs": 0
+        }
+      },
+      "sourcePITVerified": false
+    },
+    {
+      "event": {
+        "id": "sh515880-split-20260706",
+        "ratio": 2,
+        "recordDate": "2026-07-03",
+        "exDate": "2026-07-06"
+      },
+      "before": {
+        "cash": 49694.7,
+        "fees": 5,
+        "equity": 49994.7,
+        "holding": {
+          "symbol": "sh515880",
+          "name": "sh515880",
+          "type": "etf",
+          "theme": "technology",
+          "shares": 100,
+          "entryPrice": 3.0029999999999997,
+          "entryFee": 5,
+          "entryCosts": {
+            "commission": 5,
+            "tax": 0,
+            "transferFee": 0,
+            "total": 5
+          },
+          "entrySourceTime": "2026-07-02T02:00:00Z",
+          "entryDate": "2026-07-02",
+          "lastPrice": 3,
+          "lastSourceTime": "2026-07-02T02:00:00Z",
+          "lastReceivedAt": "2026-07-02T02:00:00Z",
+          "stale": false,
+          "signalDate": "2026-07-01",
+          "entrySession": "2026-07-02",
+          "referenceOpen": 3,
+          "horizon": 20,
+          "maturitySession": "2026-07-30",
+          "sellableSession": "2026-07-03",
+          "predicted20DayReturn": null,
+          "exitPlan": {
+            "version": "expiry-risk-target-v1",
+            "maturitySession": "2026-07-30",
+            "stopLossRate": 0.04,
+            "stopPrice": 2.8828799999999997,
+            "targetPrice": 3,
+            "targetExitEnabled": false,
+            "ruleFrozenAt": "2026-07-02T02:00:00.000Z",
+            "dividendPolicy": "total_return_threshold_adjustment",
+            "unfilledPolicy": "retain_position_and_retry_on_next_legal_fresh_quote"
+          },
+          "pendingExit": null,
+          "researchLotId": "paper-23ed13018d102c85a613:8"
+        }
+      },
+      "after": {
+        "cash": 49694.7,
+        "fees": 5,
+        "equity": 49994.7,
+        "holding": {
+          "symbol": "sh515880",
+          "name": "sh515880",
+          "type": "etf",
+          "theme": "technology",
+          "shares": 200,
+          "entryPrice": 1.5014999999999998,
+          "entryFee": 5,
+          "entryCosts": {
+            "commission": 5,
+            "tax": 0,
+            "transferFee": 0,
+            "total": 5
+          },
+          "entrySourceTime": "2026-07-02T02:00:00Z",
+          "entryDate": "2026-07-02",
+          "lastPrice": 1.5,
+          "lastSourceTime": "2026-07-06T02:00:00Z",
+          "lastReceivedAt": "2026-07-06T02:00:00Z",
+          "stale": false,
+          "signalDate": "2026-07-01",
+          "entrySession": "2026-07-02",
+          "referenceOpen": 3,
+          "horizon": 20,
+          "maturitySession": "2026-07-30",
+          "sellableSession": "2026-07-03",
+          "predicted20DayReturn": null,
+          "exitPlan": {
+            "version": "expiry-risk-target-v1",
+            "maturitySession": "2026-07-30",
+            "stopLossRate": 0.04,
+            "stopPrice": 1.4414399999999998,
+            "targetPrice": 1.5,
+            "targetExitEnabled": false,
+            "ruleFrozenAt": "2026-07-02T02:00:00.000Z",
+            "dividendPolicy": "total_return_threshold_adjustment",
+            "unfilledPolicy": "retain_position_and_retry_on_next_legal_fresh_quote"
+          },
+          "pendingExit": null,
+          "researchLotId": "paper-23ed13018d102c85a613:8",
+          "appliedCorporateActions": [
+            "sh515880-split-20260706"
+          ],
+          "originalEntryPrice": 3.0029999999999997,
+          "originalEntryShares": 100,
+          "staleReason": null,
+          "valuationAgeMs": 0
+        }
+      },
+      "sourcePITVerified": false
+    },
+    {
+      "event": {
+        "id": "sh515070-split-20260706",
+        "ratio": 2,
+        "recordDate": "2026-07-03",
+        "exDate": "2026-07-06"
+      },
+      "before": {
+        "cash": 49694.7,
+        "fees": 5,
+        "equity": 49994.7,
+        "holding": {
+          "symbol": "sh515070",
+          "name": "sh515070",
+          "type": "etf",
+          "theme": "technology",
+          "shares": 100,
+          "entryPrice": 3.0029999999999997,
+          "entryFee": 5,
+          "entryCosts": {
+            "commission": 5,
+            "tax": 0,
+            "transferFee": 0,
+            "total": 5
+          },
+          "entrySourceTime": "2026-07-02T02:00:00Z",
+          "entryDate": "2026-07-02",
+          "lastPrice": 3,
+          "lastSourceTime": "2026-07-02T02:00:00Z",
+          "lastReceivedAt": "2026-07-02T02:00:00Z",
+          "stale": false,
+          "signalDate": "2026-07-01",
+          "entrySession": "2026-07-02",
+          "referenceOpen": 3,
+          "horizon": 20,
+          "maturitySession": "2026-07-30",
+          "sellableSession": "2026-07-03",
+          "predicted20DayReturn": null,
+          "exitPlan": {
+            "version": "expiry-risk-target-v1",
+            "maturitySession": "2026-07-30",
+            "stopLossRate": 0.04,
+            "stopPrice": 2.8828799999999997,
+            "targetPrice": 3,
+            "targetExitEnabled": false,
+            "ruleFrozenAt": "2026-07-02T02:00:00.000Z",
+            "dividendPolicy": "total_return_threshold_adjustment",
+            "unfilledPolicy": "retain_position_and_retry_on_next_legal_fresh_quote"
+          },
+          "pendingExit": null,
+          "researchLotId": "paper-18bdd7f9e6c25b53a383:8"
+        }
+      },
+      "after": {
+        "cash": 49694.7,
+        "fees": 5,
+        "equity": 49994.7,
+        "holding": {
+          "symbol": "sh515070",
+          "name": "sh515070",
+          "type": "etf",
+          "theme": "technology",
+          "shares": 200,
+          "entryPrice": 1.5014999999999998,
+          "entryFee": 5,
+          "entryCosts": {
+            "commission": 5,
+            "tax": 0,
+            "transferFee": 0,
+            "total": 5
+          },
+          "entrySourceTime": "2026-07-02T02:00:00Z",
+          "entryDate": "2026-07-02",
+          "lastPrice": 1.5,
+          "lastSourceTime": "2026-07-06T02:00:00Z",
+          "lastReceivedAt": "2026-07-06T02:00:00Z",
+          "stale": false,
+          "signalDate": "2026-07-01",
+          "entrySession": "2026-07-02",
+          "referenceOpen": 3,
+          "horizon": 20,
+          "maturitySession": "2026-07-30",
+          "sellableSession": "2026-07-03",
+          "predicted20DayReturn": null,
+          "exitPlan": {
+            "version": "expiry-risk-target-v1",
+            "maturitySession": "2026-07-30",
+            "stopLossRate": 0.04,
+            "stopPrice": 1.4414399999999998,
+            "targetPrice": 1.5,
+            "targetExitEnabled": false,
+            "ruleFrozenAt": "2026-07-02T02:00:00.000Z",
+            "dividendPolicy": "total_return_threshold_adjustment",
+            "unfilledPolicy": "retain_position_and_retry_on_next_legal_fresh_quote"
+          },
+          "pendingExit": null,
+          "researchLotId": "paper-18bdd7f9e6c25b53a383:8",
+          "appliedCorporateActions": [
+            "sh515070-split-20260706"
+          ],
+          "originalEntryPrice": 3.0029999999999997,
+          "originalEntryShares": 100,
+          "staleReason": null,
+          "valuationAgeMs": 0
+        }
+      },
+      "sourcePITVerified": false
+    }
+  ]
+}

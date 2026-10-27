@@ -1,0 +1,61 @@
+{
+  "reviewedAt": "2026-10-27T06:36:10.382Z",
+  "scope": "Independent corporate-action lot contract review; final follow-up limited to P2 observedQuote fix, own five cases and default compatibility",
+  "worktree": "C:/Users/lqp07/.codex/worktrees/desktop-manager-build/techno",
+  "reviewedFixCommit": "6a791fd1dad83bb292707ec264f554825d4299d5",
+  "protocolHash": "9389c30079191dbf9cbf6bd492a90698bd035cad6a3dacccd874dc7250866997",
+  "claimProtocolHash": "9389c30079191dbf9cbf6bd492a90698bd035cad6a3dacccd874dc7250866997",
+  "protocolHashBound": true,
+  "sourceSha256": "2e8856224694983b6e92f26b9155b0ab2a6fadd37694c1bc7ba3d69c7d72359a",
+  "P1": [],
+  "P2Open": [],
+  "P2Closed": [
+    {
+      "file": "assets/paper-account.js",
+      "line": 27,
+      "title": "Valid ex-date closing quote blocked from converting split units by continuous trading clock",
+      "before": "100 shares and lastPrice3 persisted for valid15:00 exdate new-unit quote1; incomplete valuation.",
+      "fix": "Only opt-in corporate conversion gate fresh→observedQuote; order execution fresh/trading-time checks and default old behavior unchanged.",
+      "after": "300 shares × lastPrice1; marketValue300 and equity49994.7 equal pre-action equity. No new-unit price multiplied by old share quantity or old price by new share quantity.",
+      "redLog": "D:\\techno\\validation\\corporate-action-lot-independent-20261027/pre-fix-red.log",
+      "greenLog": "D:\\techno\\validation\\corporate-action-lot-independent-20261027/post-fix.log"
+    }
+  ],
+  "tests": {
+    "initialAuthorTargetIndependentlyRun": {
+      "passed": 8,
+      "failed": 0
+    },
+    "independentFinal": {
+      "passed": 5,
+      "failed": 0,
+      "log": "D:\\techno\\validation\\corporate-action-lot-independent-20261027/post-fix.log",
+      "coverage": [
+        "All four registered events preserve 2x/3x shares, basis, cash and fees",
+        "Limit-up, limit-down, halted, suspended flags do not block effective units",
+        "Future receive/source, cross-day and cached quotes retain old units AND old mark",
+        "Policy hash mutation and unknown comparison receivables reject",
+        "Closing quote converts and marks paired units/value without synthetic gain"
+      ]
+    },
+    "defaultCompatibility": {
+      "passed": 1,
+      "failed": 0,
+      "log": "D:\\techno\\validation\\corporate-action-lot-independent-20261027/default-compat.log",
+      "meaning": "Absent option full state/hash matches1bc53e2 and context cannot enable opt-in"
+    },
+    "authorReported53": "Not independently rerun as full suite; latest scope requested own five and default only"
+  },
+  "postCloseValuationNote": "valuationComplete remains false at15:00 under existing Calendar completed-session/time rules; share conversion and lastPrice/marketValue are correct. This review does not claim a legal execution or complete end-of-day signal.",
+  "fixedPolicyBoundaries": [
+    "Historical-replay registered research sessions only; explicit policy frozen at create in rules/fingerprint/session",
+    "Missing opt-in adds zero fields and preserves old complete state/hash; late context cannot activate",
+    "Known registered integer splits only, exact source event hash, no unknown dividends/actions/receivables",
+    "Per-lot cost/entry fee/stop/target/pending quantity/T1/maturity/FIFO/idempotence/record-date behavior covered by initial targets and independent checks"
+  ],
+  "harnessNote": "Author inserted new first test above helper declarations. Initial post-fix harness prefix extraction then lacked helper functions; fixed own loader only, preserved harness-layout-change.log. Those ReferenceErrors were not product failures.",
+  "noDeployment": true,
+  "noProductionAccountOrSharedDbWrites": true,
+  "noCompletedFinancialStudyRun": true,
+  "sourceEditedByReviewer": false
+}

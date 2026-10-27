@@ -1,3 +1,8 @@
+# 2026-10-27 14时 新鲜原生验收与显式会计合同
+- 最新 docs/native-fresh-acceptance-2026-10-27.md：真实EXE新鲜提交seq2698、六ETF完整字段与DOM一致，原生7/独立8通过；候选不执行，原账户仍独立原规则。
+- docs/corporate-action-lot-contract-2026-10-27.md：新历史session显式注册split-lot开关已实现，53相关/主线20/独立5+默认1通过；收盘单位转换P2已红绿关闭。旧默认状态兼容，protocol/claim未改。
+- 无新收益/模型/EXE/worker发布；财务驱动原CA保护未移除、尚无新handler，完整事件/分红/权益/成交/PIT仍待核。下一步独立驱动与新财务协议，不重跑旧ID。原中心页WIP保留。
+
 # 2026-10-27 13时 公司行动证据与恢复阻断
 - 最新 docs/corporate-action-readiness-2026-10-27.md：四处既有拆分配置均补齐官方实施/结果8PDF，3/2/2/2及raw-HFQ单位一致；不是完整权益/PIT认证，2026排名仍阻断。
 - 已明确旧研究协议拒非空corporateEvents、多lot引擎要求单独验证；新corporate-action-lot-protocol-20261027-a仅事前登记，pending实现，无收益回放。
