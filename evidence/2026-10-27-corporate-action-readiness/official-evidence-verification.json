@@ -1,0 +1,38 @@
+{
+  "verifiedAtUtc": "2026-10-27T05:35:55.704789+00:00",
+  "eventCount": 4,
+  "pdfCount": 8,
+  "officialEvidenceChecks": [
+    {
+      "id": "sh515880-split-20260203",
+      "pdfHashesMatched": 2,
+      "reportedFundAggregateSharesArithmeticMatched": true,
+      "reportedNavFourDecimalHalfUpMatched": true,
+      "accountEntitlementReconciliationComplete": false
+    },
+    {
+      "id": "sh512760-split-20260327",
+      "pdfHashesMatched": 2,
+      "reportedFundAggregateSharesArithmeticMatched": true,
+      "reportedNavFourDecimalHalfUpMatched": true,
+      "accountEntitlementReconciliationComplete": false
+    },
+    {
+      "id": "sh515880-split-20260706",
+      "pdfHashesMatched": 2,
+      "reportedFundAggregateSharesArithmeticMatched": true,
+      "reportedNavFourDecimalHalfUpMatched": true,
+      "accountEntitlementReconciliationComplete": false
+    },
+    {
+      "id": "sh515070-split-20260706",
+      "pdfHashesMatched": 2,
+      "reportedFundAggregateSharesArithmeticMatched": true,
+      "reportedNavFourDecimalHalfUpMatched": true,
+      "accountEntitlementReconciliationComplete": false
+    }
+  ],
+  "configurationSnapshotUnchanged": true,
+  "accountingOrProfitExperimentRun": false,
+  "accountEntitlementReconciliationComplete": false
+}

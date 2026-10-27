@@ -1,3 +1,8 @@
+# 2026-10-27 13时 公司行动证据与恢复阻断
+- 最新 docs/corporate-action-readiness-2026-10-27.md：四处既有拆分配置均补齐官方实施/结果8PDF，3/2/2/2及raw-HFQ单位一致；不是完整权益/PIT认证，2026排名仍阻断。
+- 已明确旧研究协议拒非空corporateEvents、多lot引擎要求单独验证；新corporate-action-lot-protocol-20261027-a仅事前登记，pending实现，无收益回放。
+- 主采集13:17持久化rename EPERM退出，13:19原守护唯一PID46044恢复，仍在消耗CPU但13:39未有新快照；不重复启动/不改冻结源。原生有效候选验收未完成，增加14:20盘中唤醒。
+
 # 2026-10-27 Windows desktop1 已实际交付
 - 最新 docs/windows-desktop1-delivery-2026-10-27.md；EXE1.8.0.0/ZIP已生成并原生首次/重启/重复抑制7项通过，三区及静态18路径可离线查看。
 - 只读动态候选/实际账户因旧快照正确等候，未声称真实有效新建议；策略不晋级、冻结账户不变。worker新版20261027-desktop1/69源实际任务核验与HTTP通过，旧i保留。

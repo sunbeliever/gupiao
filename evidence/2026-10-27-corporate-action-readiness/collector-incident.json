@@ -1,0 +1,39 @@
+{
+  "lockOwnerKnown": false,
+  "newValidNativeCandidateVerified": false,
+  "observedStderrLastWrite": "2026-10-27T05:17:21.2706937Z",
+  "duplicateWriterStarted": false,
+  "failedPid": 39460,
+  "error": "EPERM rename state.json.39460.tmp to state.json",
+  "account": "paired-capital50k-20261021-pm-a",
+  "offlineGapBackfilled": false,
+  "user100ns": 5552968750,
+  "guardian": {
+    "at": "2026-10-27T05:29:14.937Z",
+    "status": "checked",
+    "accounts": [
+      {
+        "id": "paired-capital50k-20261021-pm-a",
+        "status": "reused",
+        "pids": [
+          46044
+        ]
+      },
+      {
+        "id": "paired-lowcap-20261021-1000-b",
+        "status": "reused",
+        "pids": [
+          43716
+        ]
+      }
+    ]
+  },
+  "recordedAt": "2026-10-27T05:29:27.8739594Z",
+  "currentCreated": "2026-10-27T13:19:16.45943+08:00",
+  "stdoutBytes": 0,
+  "frozenSourceChanged": false,
+  "readBytes": 1898128656,
+  "phase": "Core.persist",
+  "currentPid": 46044,
+  "errorSha256": "6f660eaa4fd392189f0622dfa90544d7396f16c38aa9491752730a7ce2e68208"
+}

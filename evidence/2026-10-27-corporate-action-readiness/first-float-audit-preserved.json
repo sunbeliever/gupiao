@@ -1,0 +1,134 @@
+{
+  "at": "2026-10-27T05:35:57.360337+00:00",
+  "registrySha256": "9e5e2fb575565b704bdd6cfb9ed098b6007a916f8cdc21c62194c9c836be7b92",
+  "inputSha256": "e6dd8f21041a11954f3189ef81e0bb36d7c6cb3ddb2e39d6d83dedfb9bc11b6b",
+  "officialDocumentsRehashed": 8,
+  "events": [
+    {
+      "symbol": "sh515880",
+      "effectiveDate": "2026-02-03",
+      "previousSession": "2026-02-02",
+      "rawPreviousClose": 3.16,
+      "rawOpen": 1.074,
+      "hfqPreviousClose": 3.16,
+      "hfqOpen": 3.222,
+      "rawOvernightReturn": -0.660126582278481,
+      "hfqOvernightReturn": 0.019620253164556845,
+      "officialRatioVerified": true,
+      "historicalLedgerReconciled": false,
+      "automaticCorrectionAllowed": false,
+      "ratioNewSharesPerOld": 3,
+      "firstCapturedAt": "2026-10-27T05:31:51.1058751+00:00",
+      "historicalFirstPublicAt": null,
+      "sourceHashes": [
+        "6dbf89de8a08ed48d5894807255b8ff2d7bb64c2c4dac6cfa7854ca6cc09a10f",
+        "3d9475100f63697e5c6f3fb82668f0fb84502d6cc4767d1417776561e3c717d9"
+      ],
+      "sourceUrls": [
+        "https://www.sse.com.cn/disclosure/fund/announcement/c/new/2026-01-28/515880_20260128_CJ9L.pdf",
+        "https://www.sse.com.cn/disclosure/fund/announcement/c/new/2026-02-03/515880_20260203_8390.pdf"
+      ],
+      "unitNormalizedOvernightReturn": 0.019620253164557067,
+      "rawHfqReturnResidual": 2.220446049250313e-16,
+      "fundTotalsAndRoundedNavPassed": true,
+      "existingConfigurationConfirmed": true,
+      "syntheticNoMarketMoveValueInvariant": false
+    },
+    {
+      "symbol": "sh512760",
+      "effectiveDate": "2026-03-27",
+      "previousSession": "2026-03-26",
+      "rawPreviousClose": 1.588,
+      "rawOpen": 0.775,
+      "hfqPreviousClose": 3.176,
+      "hfqOpen": 3.1,
+      "rawOvernightReturn": -0.5119647355163728,
+      "hfqOvernightReturn": -0.023929471032745564,
+      "officialRatioVerified": true,
+      "historicalLedgerReconciled": false,
+      "automaticCorrectionAllowed": false,
+      "ratioNewSharesPerOld": 2,
+      "firstCapturedAt": "2026-10-27T05:27:25.7155866+00:00",
+      "historicalFirstPublicAt": null,
+      "sourceHashes": [
+        "01dab6993b41f7759c115134ff0e2f8b9141d3e55ad51eb82ede00eba6481007",
+        "af7b86f8e3634ff9eecdb8617ddc50f1b90d653bb30d1ebd5eacdbfff05cff4b"
+      ],
+      "sourceUrls": [
+        "https://www.sse.com.cn/disclosure/fund/announcement/c/new/2026-03-23/512760_20260323_B2SJ.pdf",
+        "https://www.sse.com.cn/disclosure/fund/announcement/c/new/2026-03-27/512760_20260327_2DS9.pdf"
+      ],
+      "unitNormalizedOvernightReturn": -0.023929471032745564,
+      "rawHfqReturnResidual": 0.0,
+      "fundTotalsAndRoundedNavPassed": true,
+      "existingConfigurationConfirmed": true,
+      "syntheticNoMarketMoveValueInvariant": true
+    },
+    {
+      "symbol": "sh515880",
+      "effectiveDate": "2026-07-06",
+      "previousSession": "2026-07-03",
+      "rawPreviousClose": 1.579,
+      "rawOpen": 0.798,
+      "hfqPreviousClose": 4.737,
+      "hfqOpen": 4.788,
+      "rawOvernightReturn": -0.4946168461051298,
+      "hfqOvernightReturn": 0.010766307789740415,
+      "officialRatioVerified": true,
+      "historicalLedgerReconciled": false,
+      "automaticCorrectionAllowed": false,
+      "ratioNewSharesPerOld": 2,
+      "firstCapturedAt": "2026-10-27T05:31:52.1359867+00:00",
+      "historicalFirstPublicAt": null,
+      "sourceHashes": [
+        "3efba48cc0063c4905a4d00dc219ccbc02201df713dddaa20531e90d3425d455",
+        "10a7f8e70a7633d00882d8cba128a5db18d136dd4db1ae2244d2a6c65a90fab4"
+      ],
+      "sourceUrls": [
+        "https://www.sse.com.cn/disclosure/fund/announcement/c/new/2026-06-30/515880_20260630_NHF1.pdf",
+        "https://www.sse.com.cn/disclosure/fund/announcement/c/new/2026-07-06/515880_20260706_PYMW.pdf"
+      ],
+      "unitNormalizedOvernightReturn": 0.010766307789740415,
+      "rawHfqReturnResidual": 0.0,
+      "fundTotalsAndRoundedNavPassed": true,
+      "existingConfigurationConfirmed": true,
+      "syntheticNoMarketMoveValueInvariant": true
+    },
+    {
+      "symbol": "sh515070",
+      "effectiveDate": "2026-07-06",
+      "previousSession": "2026-07-03",
+      "rawPreviousClose": 2.584,
+      "rawOpen": 1.306,
+      "hfqPreviousClose": 2.584,
+      "hfqOpen": 2.612,
+      "rawOvernightReturn": -0.4945820433436533,
+      "hfqOvernightReturn": 0.010835913312693402,
+      "officialRatioVerified": true,
+      "historicalLedgerReconciled": false,
+      "automaticCorrectionAllowed": false,
+      "ratioNewSharesPerOld": 2,
+      "firstCapturedAt": "2026-10-27T05:29:44.7224966+00:00",
+      "historicalFirstPublicAt": null,
+      "sourceHashes": [
+        "b2ad52e7aefeecdbf7b55c9a783c909eb27f377a556a3bf9c5c6130189fee292",
+        "9b2c8ac92fa1c209c96b967393362b9fac53400d0200eaa0562c66996b53c189"
+      ],
+      "sourceUrls": [
+        "https://www.chinaamc.com.cn/upload/resources/file/2026/06/30/a010907a778c4eb6bbab0384e22789ae.pdf",
+        "https://www.chinaamc.com.cn/upload/resources/file/2026/07/06/70989adba6e24ef5908debed36020f92.pdf"
+      ],
+      "unitNormalizedOvernightReturn": 0.010835913312693402,
+      "rawHfqReturnResidual": 0.0,
+      "fundTotalsAndRoundedNavPassed": true,
+      "existingConfigurationConfirmed": true,
+      "syntheticNoMarketMoveValueInvariant": true
+    }
+  ],
+  "novelty": "Independent primary-source strengthening of previously configured corporate actions, not a newly discovered model signal",
+  "researchEngineGate": "Existing decision and L drivers reject nonempty corporateEvents; PaperAccount research-lot decision explicitly requires separate validation",
+  "historicalFinancialRankingAllowed": false,
+  "oldInputsOrLedgersChanged": false,
+  "newProfitExperimentsRun": 0,
+  "pnlImprovementClaim": false
+}

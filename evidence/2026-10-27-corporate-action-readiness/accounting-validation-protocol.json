@@ -1,0 +1,65 @@
+{
+  "schema": 1,
+  "id": "corporate-action-lot-protocol-20261027-a",
+  "declaredAt": "2026-10-27T05:35:57.360337+00:00",
+  "question": "Validate share-split-aware multi-lot accounting under explicit new research opt-in before any corrected historical financial comparison",
+  "stage": "accounting_contract_validation_only",
+  "executionStatus": "pending_implementation_no_worker_handler_registered",
+  "sameRoadmap": true,
+  "sourceCommit": "7f343123dd1adf3bfe090f35a8e77d931cbc887d",
+  "sourceHashes": {
+    "assets/corporate-events.js": "e01116e00bb34620f8fa07446990048c49c08c5f3a0bda202ab5d8b9270f3550",
+    "assets/corporate-actions.js": "a9e2d9b53f24d2c3ca45f1afff8a5393694c0ed3745498e639e56c6a308b0f4b",
+    "assets/paper-account.js": "52ef5b31c6b875e9a94b7ac2b87bcb66607006ebee4a0fb50729514586c292ce",
+    "assets/paper-engine.js": "38313137c6165b5a12e0d2fd1a042ca59a3c9fc4df7234111c670191c40ee9cb",
+    "scripts/decision-account-study.js": "e95be43402cb2ed182f2eb6b1508b7b4488931c5a2ad8e1fc14e95146ec83f17"
+  },
+  "rawHfqInputSha256": "e6dd8f21041a11954f3189ef81e0bb36d7c6cb3ddb2e39d6d83dedfb9bc11b6b",
+  "officialRegistrySha256": "9e5e2fb575565b704bdd6cfb9ed098b6007a916f8cdc21c62194c9c836be7b92",
+  "officialEvidenceCapturedAt": "2026-10-27, not historical prediction availability",
+  "fixedCases": [
+    "single-lot 1:2 and 1:3 unit conservation",
+    "mixed T1 multiple lots, partial FIFO and original entry-fee allocation",
+    "pending exits and stop/target price scaling without changing maturity or sellable dates",
+    "entitlement requires record-date ownership; purchases on ex-date excluded",
+    "idempotent action application and repeated observations",
+    "stale or pre-ex-date quotes cannot apply action early; valid late quotes catch up exactly once",
+    "unknown dividends or corporate types reject rather than being silently skipped",
+    "source/PIT metadata remains unverified for historical prediction"
+  ],
+  "passCriteria": {
+    "cashConservedAcrossSplit": true,
+    "sharesTimesEntryPriceConserved": true,
+    "entryFeeTotalUnchanged": true,
+    "stopAndTargetScaledByRatio": true,
+    "pendingExitSharesReconciled": true,
+    "lotFifoAndT1Preserved": true,
+    "zeroNewTradeFeesForNonTradeUnitConversion": true,
+    "replayHashAndIndependentArithmeticAgree": true,
+    "rawToHfqUnitResidualMax": 1e-12,
+    "legacyDefaultHashCompatibility": true,
+    "allCasesMustPass": true
+  },
+  "limits": {
+    "maxMinutesPerRun": 20,
+    "memoryMB": 256,
+    "productionAccountWrites": false,
+    "completedStudyRunOrResume": false,
+    "strategyParameterSearch": false,
+    "newFinancialPathsNow": 0,
+    "maxFinancialCandidatesPerLaterFamily": 2
+  },
+  "financialStageGate": [
+    "complete action inventory beyond four large gaps, including small dividends",
+    "new implementation source and inputs sealed under a fresh run ID",
+    "all fixed accounting contracts and independent review pass",
+    "declare separate financial protocol before reading new results; use original Paper fees/slippage/T1/quotes with common periods"
+  ],
+  "notAuthorizedByThisProtocol": [
+    "hot patching any frozen account or claim",
+    "rewriting K/L or completed full-2026 PnL",
+    "backdating firstCapturedAt",
+    "changing secondary-market lot size from ETF creation/redemption unit figures",
+    "declaring profit advantage from a pure accounting correction"
+  ]
+}

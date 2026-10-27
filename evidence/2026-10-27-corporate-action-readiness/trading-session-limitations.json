@@ -1,0 +1,351 @@
+{
+  "schema": 1,
+  "id": "20261027-512760-trading-session-addendum",
+  "createdAtUtc": "2026-10-27T05:39:33.824231+00:00",
+  "scope": "Only the existing eight sealed PDF-derived text files; no new web search or source download",
+  "originalIndexSha256": "9e5e2fb575565b704bdd6cfb9ed098b6007a916f8cdc21c62194c9c836be7b92",
+  "originalEvidenceManifestSha256": "91bd2c3e31248242a35d69bcbcaf8f0d9239df43ef0c6893885d17667e4344d2",
+  "pdfCount": 8,
+  "scannedPageCount": 21,
+  "normalization": "NFKC plus removal of layout whitespace, no OCR inference or date/time guessing",
+  "keywordsChecked": [
+    "停牌",
+    "复牌",
+    "复市",
+    "开市",
+    "开盘",
+    "9:30",
+    "09:30",
+    "10:30",
+    "九点三十",
+    "十点三十",
+    "9时30分",
+    "10时30分"
+  ],
+  "events": [
+    {
+      "id": "sh515880-split-20260203",
+      "symbol": "sh515880",
+      "exDate": "2026-02-03",
+      "tradingHalt": null,
+      "resumeTime": null,
+      "secondaryMarketHaltOrResumeTimeVerified": false,
+      "haltMeaning": "unknown; these eight PDFs do not establish a secondary-market trading halt or its absence",
+      "dailyBarOpenAt0930ExecutableVerified": false,
+      "actualOpeningClockTime": null,
+      "conditionalRepurchaseBusiness": {
+        "businessType": "conditional repurchase securities transactions using the fund as underlying security",
+        "suspendedFromDate": "2026-01-30",
+        "suspendedThroughDate": "2026-02-02",
+        "resumesFromDate": "2026-02-03",
+        "resumeTime": null,
+        "timePrecision": "day",
+        "source": {
+          "localRelativePath": "515880-implementation-20260128.pdf",
+          "sha256": "6dbf89de8a08ed48d5894807255b8ff2d7bb64c2c4dac6cfa7854ca6cc09a10f",
+          "page": 2,
+          "section": "三、其他相关业务安排",
+          "shortQuote": "约定购回式证券交易业务",
+          "quoteLayoutWhitespaceRemoved": true,
+          "url": "https://www.sse.com.cn/disclosure/fund/announcement/c/new/2026-01-28/515880_20260128_CJ9L.pdf"
+        },
+        "isSecondaryMarketEtfTradingHalt": false,
+        "isCreationRedemptionSuspension": false
+      },
+      "creationRedemptionSuspension": null,
+      "creationRedemptionMinimumUnitAdjustmentVerified": true,
+      "minimumUnitAdjustmentSource": {
+        "localRelativePath": "515880-implementation-20260128.pdf",
+        "page": 2,
+        "section": "最小申购、赎回单位调整",
+        "shortQuote": "最小申购、赎回单位调整",
+        "isSecondaryMarketLotSize": false
+      }
+    },
+    {
+      "id": "sh512760-split-20260327",
+      "symbol": "sh512760",
+      "exDate": "2026-03-27",
+      "tradingHalt": null,
+      "resumeTime": null,
+      "secondaryMarketHaltOrResumeTimeVerified": false,
+      "haltMeaning": "unknown; these eight PDFs do not establish a secondary-market trading halt or its absence",
+      "dailyBarOpenAt0930ExecutableVerified": false,
+      "actualOpeningClockTime": null,
+      "conditionalRepurchaseBusiness": {
+        "businessType": "conditional repurchase securities transactions using the fund as underlying security",
+        "suspendedFromDate": "2026-03-25",
+        "suspendedThroughDate": "2026-03-26",
+        "resumesFromDate": "2026-03-27",
+        "resumeTime": null,
+        "timePrecision": "day",
+        "source": {
+          "localRelativePath": "implementation-notice-20260323.pdf",
+          "sha256": "01dab6993b41f7759c115134ff0e2f8b9141d3e55ad51eb82ede00eba6481007",
+          "page": 2,
+          "section": "三、其他相关业务安排",
+          "shortQuote": "约定购回式证券交易业务",
+          "quoteLayoutWhitespaceRemoved": true,
+          "url": "https://www.sse.com.cn/disclosure/fund/announcement/c/new/2026-03-23/512760_20260323_B2SJ.pdf"
+        },
+        "isSecondaryMarketEtfTradingHalt": false,
+        "isCreationRedemptionSuspension": false
+      },
+      "creationRedemptionSuspension": null,
+      "creationRedemptionMinimumUnitAdjustmentVerified": true,
+      "minimumUnitAdjustmentSource": {
+        "localRelativePath": "implementation-notice-20260323.pdf",
+        "page": 2,
+        "section": "最小申购、赎回单位调整",
+        "shortQuote": "最小申购、赎回单位调整",
+        "isSecondaryMarketLotSize": false
+      }
+    },
+    {
+      "id": "sh515880-split-20260706",
+      "symbol": "sh515880",
+      "exDate": "2026-07-06",
+      "tradingHalt": null,
+      "resumeTime": null,
+      "secondaryMarketHaltOrResumeTimeVerified": false,
+      "haltMeaning": "unknown; these eight PDFs do not establish a secondary-market trading halt or its absence",
+      "dailyBarOpenAt0930ExecutableVerified": false,
+      "actualOpeningClockTime": null,
+      "conditionalRepurchaseBusiness": {
+        "businessType": "conditional repurchase securities transactions using the fund as underlying security",
+        "suspendedFromDate": "2026-07-02",
+        "suspendedThroughDate": "2026-07-03",
+        "resumesFromDate": "2026-07-06",
+        "resumeTime": null,
+        "timePrecision": "day",
+        "source": {
+          "localRelativePath": "515880-implementation-20260630.pdf",
+          "sha256": "3efba48cc0063c4905a4d00dc219ccbc02201df713dddaa20531e90d3425d455",
+          "page": 2,
+          "section": "三、其他相关业务安排",
+          "shortQuote": "约定购回式证券交易业务",
+          "quoteLayoutWhitespaceRemoved": true,
+          "url": "https://www.sse.com.cn/disclosure/fund/announcement/c/new/2026-06-30/515880_20260630_NHF1.pdf"
+        },
+        "isSecondaryMarketEtfTradingHalt": false,
+        "isCreationRedemptionSuspension": false
+      },
+      "creationRedemptionSuspension": null,
+      "creationRedemptionMinimumUnitAdjustmentVerified": true,
+      "minimumUnitAdjustmentSource": {
+        "localRelativePath": "515880-implementation-20260630.pdf",
+        "page": 2,
+        "section": "最小申购、赎回单位调整",
+        "shortQuote": "最小申购、赎回单位调整",
+        "isSecondaryMarketLotSize": false
+      }
+    },
+    {
+      "id": "sh515070-split-20260706",
+      "symbol": "sh515070",
+      "exDate": "2026-07-06",
+      "tradingHalt": null,
+      "resumeTime": null,
+      "secondaryMarketHaltOrResumeTimeVerified": false,
+      "haltMeaning": "unknown; these eight PDFs do not establish a secondary-market trading halt or its absence",
+      "dailyBarOpenAt0930ExecutableVerified": false,
+      "actualOpeningClockTime": null,
+      "conditionalRepurchaseBusiness": {
+        "businessType": "conditional repurchase securities transactions using the fund as underlying security",
+        "suspendedFromDate": "2026-07-02",
+        "suspendedThroughDate": "2026-07-03",
+        "resumesFromDate": "2026-07-06",
+        "resumeTime": null,
+        "timePrecision": "day",
+        "source": {
+          "localRelativePath": "515070-implementation-20260630.pdf",
+          "sha256": "b2ad52e7aefeecdbf7b55c9a783c909eb27f377a556a3bf9c5c6130189fee292",
+          "page": 2,
+          "section": "三、其他相关业务安排",
+          "shortQuote": "约定购回式证券交易业务",
+          "quoteLayoutWhitespaceRemoved": true,
+          "url": "https://www.chinaamc.com.cn/upload/resources/file/2026/06/30/a010907a778c4eb6bbab0384e22789ae.pdf"
+        },
+        "isSecondaryMarketEtfTradingHalt": false,
+        "isCreationRedemptionSuspension": false
+      },
+      "creationRedemptionSuspension": null,
+      "creationRedemptionMinimumUnitAdjustmentVerified": true,
+      "minimumUnitAdjustmentSource": {
+        "localRelativePath": "515070-implementation-20260630.pdf",
+        "page": 2,
+        "section": "最小申购、赎回单位调整",
+        "shortQuote": "最小申购、赎回单位调整",
+        "isSecondaryMarketLotSize": false
+      }
+    }
+  ],
+  "documentTextChecks": [
+    {
+      "localRelativePath": "515880-implementation-20260128.pdf",
+      "sha256": "6dbf89de8a08ed48d5894807255b8ff2d7bb64c2c4dac6cfa7854ca6cc09a10f",
+      "pageCount": 3,
+      "pages": [
+        {
+          "page": 1,
+          "secondaryMarketHaltOrClockTermHits": [],
+          "creationRedemptionSuspensionPatternHits": []
+        },
+        {
+          "page": 2,
+          "secondaryMarketHaltOrClockTermHits": [],
+          "creationRedemptionSuspensionPatternHits": []
+        },
+        {
+          "page": 3,
+          "secondaryMarketHaltOrClockTermHits": [],
+          "creationRedemptionSuspensionPatternHits": []
+        }
+      ]
+    },
+    {
+      "localRelativePath": "515880-result-20260203.pdf",
+      "sha256": "3d9475100f63697e5c6f3fb82668f0fb84502d6cc4767d1417776561e3c717d9",
+      "pageCount": 2,
+      "pages": [
+        {
+          "page": 1,
+          "secondaryMarketHaltOrClockTermHits": [],
+          "creationRedemptionSuspensionPatternHits": []
+        },
+        {
+          "page": 2,
+          "secondaryMarketHaltOrClockTermHits": [],
+          "creationRedemptionSuspensionPatternHits": []
+        }
+      ]
+    },
+    {
+      "localRelativePath": "implementation-notice-20260323.pdf",
+      "sha256": "01dab6993b41f7759c115134ff0e2f8b9141d3e55ad51eb82ede00eba6481007",
+      "pageCount": 3,
+      "pages": [
+        {
+          "page": 1,
+          "secondaryMarketHaltOrClockTermHits": [],
+          "creationRedemptionSuspensionPatternHits": []
+        },
+        {
+          "page": 2,
+          "secondaryMarketHaltOrClockTermHits": [],
+          "creationRedemptionSuspensionPatternHits": []
+        },
+        {
+          "page": 3,
+          "secondaryMarketHaltOrClockTermHits": [],
+          "creationRedemptionSuspensionPatternHits": []
+        }
+      ]
+    },
+    {
+      "localRelativePath": "result-notice-20260327.pdf",
+      "sha256": "af7b86f8e3634ff9eecdb8617ddc50f1b90d653bb30d1ebd5eacdbfff05cff4b",
+      "pageCount": 2,
+      "pages": [
+        {
+          "page": 1,
+          "secondaryMarketHaltOrClockTermHits": [],
+          "creationRedemptionSuspensionPatternHits": []
+        },
+        {
+          "page": 2,
+          "secondaryMarketHaltOrClockTermHits": [],
+          "creationRedemptionSuspensionPatternHits": []
+        }
+      ]
+    },
+    {
+      "localRelativePath": "515880-implementation-20260630.pdf",
+      "sha256": "3efba48cc0063c4905a4d00dc219ccbc02201df713dddaa20531e90d3425d455",
+      "pageCount": 3,
+      "pages": [
+        {
+          "page": 1,
+          "secondaryMarketHaltOrClockTermHits": [],
+          "creationRedemptionSuspensionPatternHits": []
+        },
+        {
+          "page": 2,
+          "secondaryMarketHaltOrClockTermHits": [],
+          "creationRedemptionSuspensionPatternHits": []
+        },
+        {
+          "page": 3,
+          "secondaryMarketHaltOrClockTermHits": [],
+          "creationRedemptionSuspensionPatternHits": []
+        }
+      ]
+    },
+    {
+      "localRelativePath": "515880-result-20260706.pdf",
+      "sha256": "10a7f8e70a7633d00882d8cba128a5db18d136dd4db1ae2244d2a6c65a90fab4",
+      "pageCount": 2,
+      "pages": [
+        {
+          "page": 1,
+          "secondaryMarketHaltOrClockTermHits": [],
+          "creationRedemptionSuspensionPatternHits": []
+        },
+        {
+          "page": 2,
+          "secondaryMarketHaltOrClockTermHits": [],
+          "creationRedemptionSuspensionPatternHits": []
+        }
+      ]
+    },
+    {
+      "localRelativePath": "515070-implementation-20260630.pdf",
+      "sha256": "b2ad52e7aefeecdbf7b55c9a783c909eb27f377a556a3bf9c5c6130189fee292",
+      "pageCount": 3,
+      "pages": [
+        {
+          "page": 1,
+          "secondaryMarketHaltOrClockTermHits": [],
+          "creationRedemptionSuspensionPatternHits": []
+        },
+        {
+          "page": 2,
+          "secondaryMarketHaltOrClockTermHits": [],
+          "creationRedemptionSuspensionPatternHits": []
+        },
+        {
+          "page": 3,
+          "secondaryMarketHaltOrClockTermHits": [],
+          "creationRedemptionSuspensionPatternHits": []
+        }
+      ]
+    },
+    {
+      "localRelativePath": "515070-result-20260706.pdf",
+      "sha256": "9b2c8ac92fa1c209c96b967393362b9fac53400d0200eaa0562c66996b53c189",
+      "pageCount": 3,
+      "pages": [
+        {
+          "page": 1,
+          "secondaryMarketHaltOrClockTermHits": [],
+          "creationRedemptionSuspensionPatternHits": []
+        },
+        {
+          "page": 2,
+          "secondaryMarketHaltOrClockTermHits": [],
+          "creationRedemptionSuspensionPatternHits": []
+        },
+        {
+          "page": 3,
+          "secondaryMarketHaltOrClockTermHits": [],
+          "creationRedemptionSuspensionPatternHits": []
+        }
+      ]
+    }
+  ],
+  "conclusion": "The notices suspend and resume conditional repurchase securities business; they do not certify secondary-market halt/resume hours or daily-bar open as an executable 09:30 trade. Creation/redemption minimum unit changes are distinct from a suspension of creation/redemption. Absence of a halt statement does not establish absence of an actual halt.",
+  "protocolConstraint": "Daily bar open remains an unverified execution-time assumption; do not infer a lawful 09:30 or 10:30 fill from these notices or split ratios.",
+  "accountEntitlementReconciliationComplete": false,
+  "originalIndexOrManifestModified": false,
+  "dataOrAccountWrites": false
+}
