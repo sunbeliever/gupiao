@@ -1,0 +1,66 @@
+[
+  {
+    "originalArtifactPath": "D:/techno/validation/data-reconciliation/20261027-512760/index.json",
+    "originalSha256": "9e5e2fb575565b704bdd6cfb9ed098b6007a916f8cdc21c62194c9c836be7b92",
+    "gitCopy": "official-evidence-index.json",
+    "gitCopySha256": "77e8d7c4a8d2cfad5c59844f20514e29bd41877f32c90b7864541d57aa601b26",
+    "normalization": "CRLF to LF only; raw protocol references bind the original D artifact",
+    "jsonContentEqual": true
+  },
+  {
+    "originalArtifactPath": "D:/techno/validation/data-reconciliation/20261027-512760/verification.json",
+    "originalSha256": "a32df4a36f207ab43bb27975e667266009e048590a1e7a96812cd7963fe0b872",
+    "gitCopy": "official-evidence-verification.json",
+    "gitCopySha256": "ac8f0c3ba57f7c1d59b9801b630b10735b3126c4a183eb007bb729a121902d1a",
+    "normalization": "CRLF to LF only; raw protocol references bind the original D artifact",
+    "jsonContentEqual": true
+  },
+  {
+    "originalArtifactPath": "D:/techno/validation/data-reconciliation/20261027-512760/trading-session-addendum.json",
+    "originalSha256": "833a90e25fb20b8af5204b60005f11e510960134e5f17cb8de75a9ef8d160de3",
+    "gitCopy": "trading-session-limitations.json",
+    "gitCopySha256": "346265bc2830ad080b2228920959662424ad5e204d86d4440914929b80c139c2",
+    "normalization": "CRLF to LF only; raw protocol references bind the original D artifact",
+    "jsonContentEqual": true
+  },
+  {
+    "originalArtifactPath": "D:/techno/validation/data-reconciliation/20261027-event-ledger/official-unit-reconciliation.json",
+    "originalSha256": "ed5a6787ce7794a52477704e0eb2e0fb19c36ccce12af8ad6e7743648d38384a",
+    "gitCopy": "first-float-audit-preserved.json",
+    "gitCopySha256": "ab52467052690b71dd187fcb645c52f9268aa2485ffbe7650bdbf2170f09e30c",
+    "normalization": "CRLF to LF only; raw protocol references bind the original D artifact",
+    "jsonContentEqual": true
+  },
+  {
+    "originalArtifactPath": "D:/techno/validation/data-reconciliation/20261027-event-ledger/official-unit-reconciliation-v2.json",
+    "originalSha256": "c6d948688596475fbc3c811cfc504700d6450553705447e2a500bb3dbd3cdaee",
+    "gitCopy": "exact-unit-reconciliation-v2.json",
+    "gitCopySha256": "57bb56c71e6adb825a77db90f605492772fb77addca8ccb18ee2f3dee4f8827d",
+    "normalization": "CRLF to LF only; raw protocol references bind the original D artifact",
+    "jsonContentEqual": true
+  },
+  {
+    "originalArtifactPath": "D:/techno/validation/strategy-research/corporate-action-lot-protocol-20261027-a/protocol.json",
+    "originalSha256": "9389c30079191dbf9cbf6bd492a90698bd035cad6a3dacccd874dc7250866997",
+    "gitCopy": "accounting-validation-protocol.json",
+    "gitCopySha256": "9389c30079191dbf9cbf6bd492a90698bd035cad6a3dacccd874dc7250866997",
+    "normalization": "CRLF to LF only; raw protocol references bind the original D artifact",
+    "jsonContentEqual": true
+  },
+  {
+    "originalArtifactPath": "D:/techno/validation/strategy-research/corporate-action-lot-protocol-20261027-a/protocol.claim",
+    "originalSha256": "659bec2585973be5306270d98a78676a2e02f1fd4f50d2fc64bb52bc81d2d9ad",
+    "gitCopy": "accounting-validation.claim",
+    "gitCopySha256": "659bec2585973be5306270d98a78676a2e02f1fd4f50d2fc64bb52bc81d2d9ad",
+    "normalization": "CRLF to LF only; raw protocol references bind the original D artifact",
+    "jsonContentEqual": true
+  },
+  {
+    "originalArtifactPath": "D:/techno/validation/daily-20261027/collector-persist-incident-1317/incident.json",
+    "originalSha256": "febbc3703b095d2579e28760c2f2a35c4f1b9a05a3f24abf6b8dbbc69ae0c560",
+    "gitCopy": "collector-incident.json",
+    "gitCopySha256": "71e1240fa69bb3f106bd363babc11771c5eecbf7dafd3a79aadcb3d28a0fda3b",
+    "normalization": "CRLF to LF only; raw protocol references bind the original D artifact",
+    "jsonContentEqual": true
+  }
+]
