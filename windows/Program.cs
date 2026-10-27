@@ -20,7 +20,7 @@ namespace TechScope.Desktop {
   [DllImport("user32.dll")]static extern bool SetForegroundWindow(IntPtr window);
   [DllImport("user32.dll")]static extern bool IsIconic(IntPtr window);
   [DllImport("user32.dll")]static extern bool ShowWindow(IntPtr window,int command);
-  internal const string WindowTitle="科技观察 · AI经理研究版 2026.10.26-e";
+  internal const string WindowTitle="科技观察 · AI经理研究版 2026.10.27-desktop1";
   internal static string DataRoot,RuntimeRoot,VerificationPath;
   internal static readonly JavaScriptSerializer Json=new JavaScriptSerializer{MaxJsonLength=32*1024*1024,RecursionLimit=128};
   [STAThread]static int Main(string[] args){
@@ -29,7 +29,7 @@ namespace TechScope.Desktop {
    DesktopInstance instance=null;
    try{
     try{SetProcessDpiAwarenessContext(new IntPtr(-4));}catch{SetProcessDPIAware();}
-    if(DataRoot==null)DataRoot=Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),"TechScopeDesktop","AIManagerResearch-20261026-e");
+    if(DataRoot==null)DataRoot=Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),"TechScopeDesktop","AIManagerResearch-20261027-desktop1");
     Directory.CreateDirectory(DataRoot);
     instance=new DesktopInstance(DataRoot);
     if(!instance.IsPrimary){if(VerificationPath!=null)return 0;IntPtr existing=FindWindow(null,WindowTitle);if(existing!=IntPtr.Zero){if(IsIconic(existing))ShowWindow(existing,9);SetForegroundWindow(existing);}return 0;}
