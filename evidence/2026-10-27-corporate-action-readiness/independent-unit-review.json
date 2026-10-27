@@ -1,0 +1,123 @@
+{
+  "schema": 1,
+  "id": "independent-review-unit-v2-20261027",
+  "reviewedAtUtc": "2026-10-27T05:41:32.264362+00:00",
+  "findings": [],
+  "conclusion": "Four exact decimal-rational unit checks and synthetic no-market-move value invariants pass; protocol is a permanent registration awaiting implementation, not a completed accounting or profit experiment.",
+  "v2Sha256": "c6d948688596475fbc3c811cfc504700d6450553705447e2a500bb3dbd3cdaee",
+  "observedDiscontinuitiesSha256": "3996ee38de728ee524238efaa719e35fc64797f081a049d0ef84572040c7a5b3",
+  "registrySha256": "9e5e2fb575565b704bdd6cfb9ed098b6007a916f8cdc21c62194c9c836be7b92",
+  "inputSha256Matched": true,
+  "events": [
+    {
+      "symbol": "sh515880",
+      "exDate": "2026-02-03",
+      "ratio": 3,
+      "decimalPriceFieldsUnchanged": true,
+      "exactReturnNumerator": 31,
+      "exactReturnDenominator": 1580,
+      "exactRawRatioAndHfqReturnsAgree": true,
+      "syntheticNoMarketMoveValueInvariant": true,
+      "v1BinaryFloatEqualityReproduced": false,
+      "sourceHashesAndCaptureTimestampMatchIndex": true,
+      "historicalLedgerReconciled": false
+    },
+    {
+      "symbol": "sh512760",
+      "exDate": "2026-03-27",
+      "ratio": 2,
+      "decimalPriceFieldsUnchanged": true,
+      "exactReturnNumerator": -19,
+      "exactReturnDenominator": 794,
+      "exactRawRatioAndHfqReturnsAgree": true,
+      "syntheticNoMarketMoveValueInvariant": true,
+      "v1BinaryFloatEqualityReproduced": true,
+      "sourceHashesAndCaptureTimestampMatchIndex": true,
+      "historicalLedgerReconciled": false
+    },
+    {
+      "symbol": "sh515880",
+      "exDate": "2026-07-06",
+      "ratio": 2,
+      "decimalPriceFieldsUnchanged": true,
+      "exactReturnNumerator": 17,
+      "exactReturnDenominator": 1579,
+      "exactRawRatioAndHfqReturnsAgree": true,
+      "syntheticNoMarketMoveValueInvariant": true,
+      "v1BinaryFloatEqualityReproduced": true,
+      "sourceHashesAndCaptureTimestampMatchIndex": true,
+      "historicalLedgerReconciled": false
+    },
+    {
+      "symbol": "sh515070",
+      "exDate": "2026-07-06",
+      "ratio": 2,
+      "decimalPriceFieldsUnchanged": true,
+      "exactReturnNumerator": 7,
+      "exactReturnDenominator": 646,
+      "exactRawRatioAndHfqReturnsAgree": true,
+      "syntheticNoMarketMoveValueInvariant": true,
+      "v1BinaryFloatEqualityReproduced": true,
+      "sourceHashesAndCaptureTimestampMatchIndex": true,
+      "historicalLedgerReconciled": false
+    }
+  ],
+  "v1Preserved": {
+    "path": "D:\\techno\\validation\\data-reconciliation\\20261027-event-ledger\\official-unit-reconciliation.json",
+    "sha256": "ed5a6787ce7794a52477704e0eb2e0fb19c36ccce12af8ad6e7743648d38384a",
+    "binaryFloatFalseIsRepresentationArtifact": true,
+    "noFinancialOutcomeChanged": true
+  },
+  "protocol": {
+    "id": "corporate-action-lot-protocol-20261027-a",
+    "claimAndProtocolHashMatched": true,
+    "protocolSha256": "9389c30079191dbf9cbf6bd492a90698bd035cad6a3dacccd874dc7250866997",
+    "declaredSourceCommit": "7f343123dd1adf3bfe090f35a8e77d931cbc887d",
+    "sourceFileHashesMatched": [
+      {
+        "path": "assets/corporate-events.js",
+        "sha256": "e01116e00bb34620f8fa07446990048c49c08c5f3a0bda202ab5d8b9270f3550",
+        "matched": true
+      },
+      {
+        "path": "assets/corporate-actions.js",
+        "sha256": "a9e2d9b53f24d2c3ca45f1afff8a5393694c0ed3745498e639e56c6a308b0f4b",
+        "matched": true
+      },
+      {
+        "path": "assets/paper-account.js",
+        "sha256": "52ef5b31c6b875e9a94b7ac2b87bcb66607006ebee4a0fb50729514586c292ce",
+        "matched": true
+      },
+      {
+        "path": "assets/paper-engine.js",
+        "sha256": "38313137c6165b5a12e0d2fd1a042ca59a3c9fc4df7234111c670191c40ee9cb",
+        "matched": true
+      },
+      {
+        "path": "scripts/decision-account-study.js",
+        "sha256": "e95be43402cb2ed182f2eb6b1508b7b4488931c5a2ad8e1fc14e95146ec83f17",
+        "matched": true
+      }
+    ],
+    "directoryFiles": [
+      "protocol.claim",
+      "protocol.json"
+    ],
+    "stage": "accounting_contract_validation_only",
+    "executionStatus": "pending_implementation_no_worker_handler_registered",
+    "fixedCaseCount": 8,
+    "newFinancialPathsNow": 0,
+    "workerRegistrationAbsenceIndependentlyInspected": false,
+    "note": "Pending status is verified from the registered contract; this review does not inspect running workers or shared DB."
+  },
+  "boundaries": {
+    "noPdfReread": true,
+    "noCompletedResearchRerun": true,
+    "accountEntitlementReconciliationComplete": false,
+    "historicalFirstAvailabilityComplete": false,
+    "dailyOpenIsCertified0930Fill": false,
+    "noInputOrRatioChanges": true,
+    "noProfitAdvantageClaim": true
+  }
+}
