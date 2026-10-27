@@ -22,10 +22,11 @@ namespace TechScope.Desktop {
   [DllImport("user32.dll")]static extern bool ShowWindow(IntPtr window,int command);
   internal const string WindowTitle="科技观察 · AI经理研究版 2026.10.27-desktop1";
   internal static string DataRoot,RuntimeRoot,VerificationPath;
+  internal static bool ManagerVerificationOnly;
   internal static readonly JavaScriptSerializer Json=new JavaScriptSerializer{MaxJsonLength=32*1024*1024,RecursionLimit=128};
   [STAThread]static int Main(string[] args){
    Application.EnableVisualStyles();Application.SetCompatibleTextRenderingDefault(false);
-   for(int i=0;i<args.Length;i++){if(args[i]=="--verify"&&i+1<args.Length)VerificationPath=Path.GetFullPath(args[++i]);else if(args[i]=="--data-root"&&i+1<args.Length)DataRoot=Path.GetFullPath(args[++i]);}
+   for(int i=0;i<args.Length;i++){if(args[i]=="--verify"&&i+1<args.Length)VerificationPath=Path.GetFullPath(args[++i]);else if(args[i]=="--data-root"&&i+1<args.Length)DataRoot=Path.GetFullPath(args[++i]);else if(args[i]=="--manager-only")ManagerVerificationOnly=true;}
    DesktopInstance instance=null;
    try{
     try{SetProcessDpiAwarenessContext(new IntPtr(-4));}catch{SetProcessDPIAware();}

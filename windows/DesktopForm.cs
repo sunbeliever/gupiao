@@ -126,6 +126,21 @@ namespace TechScope.Desktop {
   async Task<string> Eval(string script){return await view.ExecuteScriptAsync(script);}
   async Task Wait(string expression,int milliseconds){DateTime end=DateTime.UtcNow.AddMilliseconds(milliseconds);while(DateTime.UtcNow<end){if(await Eval("!!("+expression+")")=="true")return;await Task.Delay(120);}throw new TimeoutException("界面检查超时："+expression);}
   async Task Check(string expression,string name,List<string> checks){if(await Eval("!!("+expression+")")!="true")throw new Exception("检查未通过："+name);checks.Add(name);}
+  async Task VerifyManagerOnly(List<string> checks){
+   string nonce=Guid.NewGuid().ToString("N");
+   await Eval("window.__previousManagerVerification=Market.read('verify.manager.nonce');Market.write('verify.manager.nonce',{nonce:"+Program.Json.Serialize(nonce)+"});");
+   await Check("Market.read('verify.manager.nonce').nonce==="+Program.Json.Serialize(nonce),"manager-only native restart marker persists without opening a simulated account",checks);
+   string dir=Path.GetDirectoryName(Program.VerificationPath);Directory.CreateDirectory(dir);
+   foreach(string part in new[]{"actual-account","live-candidate","historical-evidence"}){
+    await Eval("document.getElementById('manager-"+part+"').scrollIntoView({block:'center'});");await Task.Delay(150);
+    using(var stream=File.Create(Path.Combine(dir,"manager-"+part+".png")))await view.CoreWebView2.CapturePreviewAsync(CoreWebView2CapturePreviewImageFormat.Png,stream);
+   }
+   var report=new Dictionary<string,object>{{"ok",true},{"verifiedAt",DateTime.UtcNow.ToString("o")},{"mode","manager_only_readonly_startup"},{"checks",checks},{"webviewVersion",view.CoreWebView2.Environment.BrowserVersionString},{"singleFile",true},{"origin",view.CoreWebView2.Source},{"strategyExecutionRequested",false}};
+   report.Add("nativeSummary",Program.Json.DeserializeObject(await Eval("JSON.parse(Native.readManagerSummary())")));
+   report.Add("managerResearch",Program.Json.DeserializeObject(await Eval("({actual:document.getElementById('manager-actual-account').textContent.slice(0,1200),candidate:document.getElementById('manager-live-candidate').textContent.slice(0,1600),history:document.getElementById('manager-historical-evidence').textContent.slice(0,5000),readOnly:true})")));
+   report.Add("managerPersistence",Program.Json.DeserializeObject(await Eval("({prevSnapshotSeen:!!__previousManagerVerification,previousNonce:__previousManagerVerification&&__previousManagerVerification.nonce||null,nonce:Market.read('verify.manager.nonce').nonce})")));
+   File.WriteAllText(Program.VerificationPath,Program.Json.Serialize(report),Encoding.UTF8);Close();
+  }
   async Task Verify(){
    var checks=new List<string>();verificationChecks=checks;await Wait("document.querySelector('#page-observe').textContent.length>100",20000);
    await Check("location.origin==='https://app.techscope.local'","trusted desktop window",checks);
@@ -134,6 +149,7 @@ namespace TechScope.Desktop {
    await Check("typeof ManagerResearchEvidence==='object'&&['manager-actual-account','manager-live-candidate','manager-historical-evidence'].every(id=>!!document.getElementById(id))","AI manager separates original account, live research candidate and immutable historical evidence",checks);
    await Check("(function(){var h=document.getElementById('manager-historical-evidence').textContent;return h.includes('已核L历史表现')&&h.includes('两年各自独立5万元')&&h.includes('2026公司行动尚未对账')&&h.includes('2024')&&h.includes('2025')&&h.includes('-180.26')&&h.includes('-1,865.83');})()","AI manager preserves failed 2024 results, separate annual capital and unresolved corporate actions",checks);
    await Check("(function(){var h=DesktopManagerSummary.render({available:false});return h.includes('manager-historical-evidence')&&h.includes('已核L历史表现')&&h.includes('等待核验')&&!document.querySelector('#manager-live-candidate button,#manager-live-candidate input,#manager-historical-evidence button,#manager-historical-evidence input');})()","AI manager unavailable live input waits safely while static history remains read-only",checks);
+   if(Program.ManagerVerificationOnly){await VerifyManagerOnly(checks);return;}
    await Eval("window.__legacyPaperBefore=JSON.stringify(Market.read('paper.current'));window.__previousVerify=Market.read('verify.continuous.saved');window.__previousVerifyNonce=Market.read('verify.continuous.nonce');window.__priorResume=null;window.__previousSnapshotValid=!__previousVerifyNonce;if(__previousVerify){try{__priorResume=Paper.resume(__previousVerify.snapshot);__previousSnapshotValid=__previousVerify.nonce===__previousVerifyNonce;}catch(e){__previousSnapshotValid=false;}}window.__persistenceEvidence={mode:'synthetic_restart_persistence',prevSnapshotSeen:!!__previousVerify,previousNonce:__previousVerifyNonce||null,previousAccountId:__priorResume?__priorResume.accountId:null,previousEquity:__priorResume?__priorResume.account.equity:null,previousCash:__priorResume?__priorResume.account.cash:null,previousIntegrityHash:__priorResume?__priorResume.integrityHash:null};");
    await Check("__previousSnapshotValid&&(!__previousVerify||__priorResume.accountType==='continuous_paper'&&__priorResume.integrityHash===__previousVerify.snapshot.integrityHash)","previous native snapshot and nonce read before overwrite and resumed with integrity validation",checks);
    await Eval("document.querySelector('[data-tab=model]').click();var t=document.querySelector('#auto-sync-toggle');t.checked=false;t.dispatchEvent(new Event('change',{bubbles:true}));");
