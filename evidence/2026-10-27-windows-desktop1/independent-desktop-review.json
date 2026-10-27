@@ -1,0 +1,26 @@
+{
+  "checkedAt": "2026-10-27T03:21:35.918Z",
+  "sourceHashes": {
+    "scripts/desktop-research-summary.js": "2da765ba727ea50edee13331f527428116a05c1da590344d0d6e1dc0db2b6f37",
+    "scripts/desktop-summary-export.js": "b3556aeb43b3239ec306de1fc6069cf9adfe078ee74afbadacd9ab40c4d618cd",
+    "scripts/serve-research-view.js": "da36552daf358e4f3446417842a8570fd538217356023488a99a5bb1914f1e7b",
+    "tests/desktop-research-summary.test.js": "903453cac70f3e8e9dc1bc441a3ff3e2dfec35cf71c05580e350332249e146c5",
+    "tests/desktop-research-export.test.js": "e4da3a0a428ed3266238a42fe7a33adec3648df9093d09b4c64952fe90fd2fa6"
+  },
+  "compact": {
+    "at": "2026-10-27T03:00:00.000Z",
+    "sequence": 2400,
+    "accountId": "paired-capital50k-20261021-pm-a",
+    "modelHash": "f0b16e0c0922e3ae051015c3f73a66135c2a0b4ed478b5c0a3bfe6471ad0b0dd",
+    "rowCount": 6,
+    "executable": false,
+    "investmentReady": false,
+    "newsConnected": false
+  },
+  "nearLimit": {
+    "actualSummaryBytes": 65500,
+    "file": "D:\\techno\\validation\\l-independent-desktop-20261027\\near-limit-output.json",
+    "optionalRejected": true,
+    "error": "Desktop summary exceeds bounded 64KB size"
+  }
+}
