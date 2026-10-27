@@ -1,0 +1,447 @@
+{
+  "id": "k-ml-review-20261027-a",
+  "allExecutedChecksPassed": true,
+  "checkCount": 10519,
+  "scope": {
+    "inputFolds": 27,
+    "modelHashes": 54,
+    "relevantPackageFiles": 121,
+    "predictionRows": 9888,
+    "originalBaselineRowsReconciled": true
+  },
+  "folds": [
+    {
+      "fold": 0,
+      "trainingSamples": 1512,
+      "testSamples": 378,
+      "labelEndMax": "2024-04-26",
+      "cutoff": "2024-04-26",
+      "firstSignal": "2024-04-29",
+      "horizon": 5,
+      "lastSignal": "2024-07-30",
+      "modelFiles": 2
+    },
+    {
+      "fold": 1,
+      "trainingSamples": 1890,
+      "testSamples": 378,
+      "labelEndMax": "2024-07-30",
+      "cutoff": "2024-07-30",
+      "firstSignal": "2024-07-31",
+      "horizon": 5,
+      "lastSignal": "2024-11-05",
+      "modelFiles": 2
+    },
+    {
+      "fold": 2,
+      "trainingSamples": 2268,
+      "testSamples": 378,
+      "labelEndMax": "2024-11-05",
+      "cutoff": "2024-11-05",
+      "firstSignal": "2024-11-06",
+      "horizon": 5,
+      "lastSignal": "2025-02-11",
+      "modelFiles": 2
+    },
+    {
+      "fold": 3,
+      "trainingSamples": 2646,
+      "testSamples": 378,
+      "labelEndMax": "2025-02-11",
+      "cutoff": "2025-02-11",
+      "firstSignal": "2025-02-12",
+      "horizon": 5,
+      "lastSignal": "2025-05-15",
+      "modelFiles": 2
+    },
+    {
+      "fold": 4,
+      "trainingSamples": 3024,
+      "testSamples": 378,
+      "labelEndMax": "2025-05-15",
+      "cutoff": "2025-05-15",
+      "firstSignal": "2025-05-16",
+      "horizon": 5,
+      "lastSignal": "2025-08-13",
+      "modelFiles": 2
+    },
+    {
+      "fold": 5,
+      "trainingSamples": 3402,
+      "testSamples": 378,
+      "labelEndMax": "2025-08-13",
+      "cutoff": "2025-08-13",
+      "firstSignal": "2025-08-14",
+      "horizon": 5,
+      "lastSignal": "2025-11-18",
+      "modelFiles": 2
+    },
+    {
+      "fold": 6,
+      "trainingSamples": 3780,
+      "testSamples": 378,
+      "labelEndMax": "2025-11-18",
+      "cutoff": "2025-11-18",
+      "firstSignal": "2025-11-19",
+      "horizon": 5,
+      "lastSignal": "2026-02-25",
+      "modelFiles": 2
+    },
+    {
+      "fold": 7,
+      "trainingSamples": 4158,
+      "testSamples": 378,
+      "labelEndMax": "2026-02-25",
+      "cutoff": "2026-02-25",
+      "firstSignal": "2026-02-26",
+      "horizon": 5,
+      "lastSignal": "2026-05-29",
+      "modelFiles": 2
+    },
+    {
+      "fold": 8,
+      "trainingSamples": 4536,
+      "testSamples": 378,
+      "labelEndMax": "2026-05-29",
+      "cutoff": "2026-05-29",
+      "firstSignal": "2026-06-01",
+      "horizon": 5,
+      "lastSignal": "2026-08-27",
+      "modelFiles": 2
+    },
+    {
+      "fold": 9,
+      "trainingSamples": 4914,
+      "testSamples": 174,
+      "labelEndMax": "2026-08-27",
+      "cutoff": "2026-08-27",
+      "firstSignal": "2026-08-28",
+      "horizon": 5,
+      "lastSignal": "2026-10-15",
+      "modelFiles": 2
+    },
+    {
+      "fold": 0,
+      "trainingSamples": 1512,
+      "testSamples": 378,
+      "labelEndMax": "2024-05-22",
+      "cutoff": "2024-05-22",
+      "firstSignal": "2024-05-23",
+      "horizon": 20,
+      "lastSignal": "2024-08-20",
+      "modelFiles": 2
+    },
+    {
+      "fold": 1,
+      "trainingSamples": 1890,
+      "testSamples": 378,
+      "labelEndMax": "2024-08-20",
+      "cutoff": "2024-08-20",
+      "firstSignal": "2024-08-21",
+      "horizon": 20,
+      "lastSignal": "2024-11-26",
+      "modelFiles": 2
+    },
+    {
+      "fold": 2,
+      "trainingSamples": 2268,
+      "testSamples": 378,
+      "labelEndMax": "2024-11-26",
+      "cutoff": "2024-11-26",
+      "firstSignal": "2024-11-27",
+      "horizon": 20,
+      "lastSignal": "2025-03-04",
+      "modelFiles": 2
+    },
+    {
+      "fold": 3,
+      "trainingSamples": 2646,
+      "testSamples": 378,
+      "labelEndMax": "2025-03-04",
+      "cutoff": "2025-03-04",
+      "firstSignal": "2025-03-05",
+      "horizon": 20,
+      "lastSignal": "2025-06-06",
+      "modelFiles": 2
+    },
+    {
+      "fold": 4,
+      "trainingSamples": 3024,
+      "testSamples": 378,
+      "labelEndMax": "2025-06-06",
+      "cutoff": "2025-06-06",
+      "firstSignal": "2025-06-09",
+      "horizon": 20,
+      "lastSignal": "2025-09-03",
+      "modelFiles": 2
+    },
+    {
+      "fold": 5,
+      "trainingSamples": 3402,
+      "testSamples": 378,
+      "labelEndMax": "2025-09-03",
+      "cutoff": "2025-09-03",
+      "firstSignal": "2025-09-04",
+      "horizon": 20,
+      "lastSignal": "2025-12-09",
+      "modelFiles": 2
+    },
+    {
+      "fold": 6,
+      "trainingSamples": 3780,
+      "testSamples": 378,
+      "labelEndMax": "2025-12-09",
+      "cutoff": "2025-12-09",
+      "firstSignal": "2025-12-10",
+      "horizon": 20,
+      "lastSignal": "2026-03-18",
+      "modelFiles": 2
+    },
+    {
+      "fold": 7,
+      "trainingSamples": 4158,
+      "testSamples": 378,
+      "labelEndMax": "2026-03-18",
+      "cutoff": "2026-03-18",
+      "firstSignal": "2026-03-19",
+      "horizon": 20,
+      "lastSignal": "2026-06-22",
+      "modelFiles": 2
+    },
+    {
+      "fold": 8,
+      "trainingSamples": 4536,
+      "testSamples": 372,
+      "labelEndMax": "2026-06-22",
+      "cutoff": "2026-06-22",
+      "firstSignal": "2026-06-23",
+      "horizon": 20,
+      "lastSignal": "2026-09-16",
+      "modelFiles": 2
+    },
+    {
+      "fold": 0,
+      "trainingSamples": 1512,
+      "testSamples": 378,
+      "labelEndMax": "2024-07-18",
+      "cutoff": "2024-07-18",
+      "firstSignal": "2024-07-19",
+      "horizon": 60,
+      "lastSignal": "2024-10-24",
+      "modelFiles": 2
+    },
+    {
+      "fold": 1,
+      "trainingSamples": 1890,
+      "testSamples": 378,
+      "labelEndMax": "2024-10-24",
+      "cutoff": "2024-10-24",
+      "firstSignal": "2024-10-25",
+      "horizon": 60,
+      "lastSignal": "2025-01-22",
+      "modelFiles": 2
+    },
+    {
+      "fold": 2,
+      "trainingSamples": 2268,
+      "testSamples": 378,
+      "labelEndMax": "2025-01-22",
+      "cutoff": "2025-01-22",
+      "firstSignal": "2025-01-23",
+      "horizon": 60,
+      "lastSignal": "2025-04-30",
+      "modelFiles": 2
+    },
+    {
+      "fold": 3,
+      "trainingSamples": 2646,
+      "testSamples": 378,
+      "labelEndMax": "2025-04-30",
+      "cutoff": "2025-04-30",
+      "firstSignal": "2025-05-06",
+      "horizon": 60,
+      "lastSignal": "2025-08-01",
+      "modelFiles": 2
+    },
+    {
+      "fold": 4,
+      "trainingSamples": 3024,
+      "testSamples": 378,
+      "labelEndMax": "2025-08-01",
+      "cutoff": "2025-08-01",
+      "firstSignal": "2025-08-04",
+      "horizon": 60,
+      "lastSignal": "2025-11-06",
+      "modelFiles": 2
+    },
+    {
+      "fold": 5,
+      "trainingSamples": 3402,
+      "testSamples": 378,
+      "labelEndMax": "2025-11-06",
+      "cutoff": "2025-11-06",
+      "firstSignal": "2025-11-07",
+      "horizon": 60,
+      "lastSignal": "2026-02-05",
+      "modelFiles": 2
+    },
+    {
+      "fold": 6,
+      "trainingSamples": 3780,
+      "testSamples": 378,
+      "labelEndMax": "2026-02-05",
+      "cutoff": "2026-02-05",
+      "firstSignal": "2026-02-06",
+      "horizon": 60,
+      "lastSignal": "2026-05-19",
+      "modelFiles": 2
+    },
+    {
+      "fold": 7,
+      "trainingSamples": 4158,
+      "testSamples": 270,
+      "labelEndMax": "2026-05-19",
+      "cutoff": "2026-05-19",
+      "firstSignal": "2026-05-20",
+      "horizon": 60,
+      "lastSignal": "2026-07-22",
+      "modelFiles": 2
+    }
+  ],
+  "summary": [
+    {
+      "horizon": 5,
+      "foldCount": 10,
+      "metrics": {
+        "mean": {
+          "samples": 3576,
+          "mae": 0.04275205224489591,
+          "rmse": 0.06384636759470227,
+          "directionAccuracy": 0.5162192393736018
+        },
+        "ridge": {
+          "samples": 3576,
+          "mae": 0.043404967798376944,
+          "rmse": 0.06467813876631955,
+          "directionAccuracy": 0.5181767337807607
+        },
+        "lightgbm-fixed-v1": {
+          "samples": 3576,
+          "mae": 0.044246450757159356,
+          "rmse": 0.06583362620556356,
+          "directionAccuracy": 0.5232102908277405
+        },
+        "xgboost-fixed-v1": {
+          "samples": 3576,
+          "mae": 0.04439678114674815,
+          "rmse": 0.0660465314474409,
+          "directionAccuracy": 0.5195749440715883
+        }
+      }
+    },
+    {
+      "horizon": 20,
+      "foldCount": 9,
+      "metrics": {
+        "mean": {
+          "samples": 3396,
+          "mae": 0.09582469705054415,
+          "rmse": 0.13689387859173413,
+          "directionAccuracy": 0.5273851590106007
+        },
+        "ridge": {
+          "samples": 3396,
+          "mae": 0.10055568299918927,
+          "rmse": 0.1426524690860916,
+          "directionAccuracy": 0.4929328621908127
+        },
+        "lightgbm-fixed-v1": {
+          "samples": 3396,
+          "mae": 0.10173246038626492,
+          "rmse": 0.14431162045986312,
+          "directionAccuracy": 0.5079505300353356
+        },
+        "xgboost-fixed-v1": {
+          "samples": 3396,
+          "mae": 0.10163334358116896,
+          "rmse": 0.1441216081963165,
+          "directionAccuracy": 0.5038280329799765
+        }
+      }
+    },
+    {
+      "horizon": 60,
+      "foldCount": 8,
+      "metrics": {
+        "mean": {
+          "samples": 2916,
+          "mae": 0.19800676762050914,
+          "rmse": 0.2741375329238581,
+          "directionAccuracy": 0.47976680384087794
+        },
+        "ridge": {
+          "samples": 2916,
+          "mae": 0.20086098829900237,
+          "rmse": 0.2781716157820255,
+          "directionAccuracy": 0.42386831275720166
+        },
+        "lightgbm-fixed-v1": {
+          "samples": 2916,
+          "mae": 0.2072656072166964,
+          "rmse": 0.28863057322200414,
+          "directionAccuracy": 0.3549382716049383
+        },
+        "xgboost-fixed-v1": {
+          "samples": 2916,
+          "mae": 0.208721495347154,
+          "rmse": 0.29049264570355543,
+          "directionAccuracy": 0.350480109739369
+        }
+      }
+    }
+  ],
+  "localDependencies": {
+    "pythonExecutable": "D:\\minforge\\python.exe",
+    "pythonVersion": "3.13.13 | packaged by conda-forge | (main, Apr  8 2026, 01:56:49) [MSC v.1944 64 bit (AMD64)]",
+    "packages": {
+      "numpy": {
+        "available": true,
+        "version": "2.5.2"
+      },
+      "scipy": {
+        "available": true,
+        "version": "1.18.1"
+      },
+      "scikit-learn": {
+        "available": false,
+        "version": null
+      },
+      "lightgbm": {
+        "available": false,
+        "version": null
+      },
+      "xgboost": {
+        "available": false,
+        "version": null
+      }
+    },
+    "probeKind": "metadata_and_module_discovery_only",
+    "backendImportVerified": false,
+    "realTrainingStarted": false
+  },
+  "trainingStarted": false,
+  "modelReloadPerformed": false,
+  "backendImportsPerformed": false,
+  "runnerProvenance": {
+    "trainingTimeSha256": "0cb248132ce208f466b6bde2af2bb8802384de7a5e6d6c8f56922d75a72d2ad0",
+    "deliveredSha256": "5127cc53297a511af33ed6017561da6c444cc72775a4a84de3419d272a083211",
+    "difference": "reproduction namespace and output identity only"
+  },
+  "limitations": [
+    "External execution cannot be established solely from self-contained files.",
+    "No backend reload: local LightGBM and XGBoost unavailable; no installation.",
+    "Same seen historical data, overlapping labels, not independent profit probability.",
+    "Model files do not independently prove all fit-time parameters or thread counts.",
+    "Real training runner is not resource-gated and must not be adopted into local scheduler."
+  ]
+}

@@ -1,0 +1,105 @@
+{
+  "reviewedAt": "2026-10-27T01:55:22.601Z",
+  "scope": "PR Review: engineering/data/progress only; no Windows build, real strategy execution, account/shared SQLite/frozen result mutation",
+  "package": "D:/techno/validation/incoming/k-0dad19879a6a",
+  "sourceHashes": {
+    "scripts/research-live-progress.js": "e2db15e2c8dad2f40219daa681e0ecfc5de48ff4038b83df44fc50634b03616e",
+    "scripts/historical-data-quality.js": "526be7645540a93f89d9408b37c57def087a534a0c415af1673cc10afe3108a0",
+    "scripts/research-verdict-k.js": "f802f9242fe192527edcb56348dcf856816285fc42b6a8dd5b5d8bf8211da89f",
+    "scripts/research-center-view.js": "810b460ed9a8e2cc6b21371516de309187977cc5d5b5f523b8659f9d821770d5",
+    "tests/research-live-progress.test.js": "708f12b0d9ee1f39ff80e9c9675bae4f018ceea138ac7e2f35c946b844ddc704",
+    "tests/k-improvements.test.js": "30e8e350d239d08f50fdd348cbf8abac30a039a976a5ba72a08adbb6ccfdddf8",
+    "tests/k-verdict.test.js": "94af1cd2fd4ec964d734e0e6af975bbde0ab7e6cc4bf23142b441f6b668c13fa"
+  },
+  "P1": [],
+  "P2": [
+    {
+      "file": "scripts/research-verdict-k.js",
+      "lines": [
+        20,
+        26
+      ],
+      "title": "Baseline evidence is not validated before economic comparison",
+      "reproduction": "Clean candidate versus same-period baseline with priceDiscontinuityGatePassed=false and nonempty events, or parityVerified=false, still returns exploratory_result_only and returnOptimized=true.",
+      "effect": "Unreconciled or unverified baseline may influence economic ranking despite candidate-side gate.",
+      "remedy": "Validate baseline parity, price-event evidence, complete finite/domain metrics and comparable identity before PnL/drawdown comparisons; add negative baseline regressions."
+    },
+    {
+      "file": "scripts/research-verdict-k.js",
+      "lines": [
+        12,
+        28
+      ],
+      "title": "Finite-only metric validation accepts impossible risk and fee values",
+      "reproduction": "maximumOpenCloseObservedDrawdown=-10, feesPaid=-1, meanExposure=2 yields exploratory_result_only and riskWarningPassed=true.",
+      "effect": "Malformed evidence can receive risk-pass classification.",
+      "remedy": "Require nonnegative drawdown/fees, 0<=meanExposure<=1, valid positive budget/period and warningAmount; apply validation to both inputs."
+    }
+  ],
+  "packageNarrowTests": {
+    "command": "node --test --test-reporter=spec tests/research-live-progress.test.js tests/research-center-view.test.js tests/k-improvements.test.js tests/k-verdict.test.js",
+    "passed": 33,
+    "failed": 0
+  },
+  "independentRegressions": {
+    "file": "D:\\techno\\validation\\k-engineering-independent-review-20261027/independent-regressions.test.js",
+    "log": "D:\\techno\\validation\\k-engineering-independent-review-20261027/independent-regressions.log",
+    "passed": 5,
+    "failed": 2,
+    "failuresAreConfirmedP2": true
+  },
+  "futureDateP2": "Fixed: date must not exceed completed session of progress.at or now, registered policy byte hash and exact session count. Independent inside-policy future-date and earlier-at regressions pass.",
+  "liveReadOnly": "DatabaseSync readOnly:true plus PRAGMA query_only; SELECT only. Fixed direct child strategy root and allowed paths; manifest/claim/policy hash, size, canonical/reparse checks. No important issue found in reviewed scope.",
+  "integration": "K source/research-center-view.js omits root WIP live integration. Do not overwrite root view. Independent root integration synthetic corrupt-SQLite case passes and retains/renders original financial comparison.",
+  "dataAudits": [
+    {
+      "start": "2025-01-03",
+      "end": "2025-12-31",
+      "priceDiscontinuityGatePassed": true,
+      "events": [],
+      "firstAvailabilityVerified": false,
+      "corporateActionCoverageVerified": false,
+      "investmentReady": false
+    },
+    {
+      "start": "2026-01-05",
+      "end": "2026-10-23",
+      "priceDiscontinuityGatePassed": false,
+      "events": [
+        {
+          "symbol": "sh512760",
+          "date": "2026-03-27"
+        },
+        {
+          "symbol": "sh515070",
+          "date": "2026-07-06"
+        },
+        {
+          "symbol": "sh515880",
+          "date": "2026-02-03"
+        },
+        {
+          "symbol": "sh515880",
+          "date": "2026-07-06"
+        }
+      ],
+      "firstAvailabilityVerified": false,
+      "corporateActionCoverageVerified": false,
+      "investmentReady": false
+    }
+  ],
+  "cash": "Zero cash netPnl rejected; no automatic promotion/investmentReady flags enabled.",
+  "adoptable": [
+    "research-live-progress.js leaf module + six tests, preserve root view integration",
+    "historical-data-quality.js + diagnostic tests, explicitly retain exploratory/PIT/corporate-action limitations"
+  ],
+  "conditional": [
+    "research-verdict-k.js only after two P2 input-evidence fixes"
+  ],
+  "notVerified": [
+    "No real historical strategy re-run",
+    "No Windows build/EXE/UI execution",
+    "No full 461-test claim reproduced",
+    "No package runner or scheduling invoked"
+  ]
+}

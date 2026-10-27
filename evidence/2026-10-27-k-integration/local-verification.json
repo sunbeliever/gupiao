@@ -1,0 +1,52 @@
+{
+  "at": "2026-10-27T02:01:06.121172+00:00",
+  "packageSha256": "0dad19879a6ae3ddd3040495f9fd80063419b17891131b2e187a4b2d4047afcb",
+  "baseCommit": "80bce0026cdf3c229b70f6018353e5b6a8eaa695",
+  "packageBaseCommit": "919b187d4598dfd683db7f4036b45aac2f0522ef",
+  "independentLedgerVerification": {
+    "command": "python VERIFY-RESULTS.py",
+    "exitCode": 0,
+    "allPassed": true,
+    "experiments": 11,
+    "sessions": 3241,
+    "modelFills": 268,
+    "retrained": false,
+    "reranPaperReplay": false
+  },
+  "integrationTests": {
+    "related": 69,
+    "passed": 69,
+    "failed": 0,
+    "nativeHashAndFeeIndependent": 20,
+    "mlNode": 4,
+    "mlPython": 6,
+    "fullSuiteRerun": false
+  },
+  "localFixes": [
+    "validate baseline parity, quality and required metrics",
+    "reject negative drawdown/fees and invalid unlevered exposure, budget, interval and warning amount"
+  ],
+  "originalPackagePreserved": true,
+  "frozenAccountsChanged": false,
+  "modelsPromoted": false,
+  "newWindowsExeBuilt": false,
+  "notMerged": [
+    "offline and recovery study executors",
+    "training runner with unresolved provenance entry validation",
+    "benchmark claims are package workload only"
+  ],
+  "logs": {
+    "verdict-red.log": {
+      "sha256": "a491ac813c963d6e8d3ae4b67736ca55653eb1847f08cf2941d216a496183868",
+      "path": "D:\\techno\\validation\\k-integration-20261027\\verdict-red.log"
+    },
+    "verdict-green-and-related.log": {
+      "sha256": "a36f206bc750220db2bc9f25362509c8f301406f564a2b4638b95eb883284750",
+      "path": "D:\\techno\\validation\\k-integration-20261027\\verdict-green-and-related.log"
+    },
+    "final-engineering-targets.log": {
+      "sha256": "a405c13fe1ffa1de134894c21d5ef723a37b2332ca65e2cc16f82e76b78ed8a7",
+      "path": "D:\\techno\\validation\\k-integration-20261027\\final-engineering-targets.log"
+    }
+  }
+}

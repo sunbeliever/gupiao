@@ -14,7 +14,7 @@ function evaluate(input){try{
  if(!input||!Array.isArray(input.universe)||input.universe.length!==6||new Set(input.universe.map(u=>u?.symbol)).size!==6||input.universe.some(u=>!u||!SYMBOLS.includes(u.symbol)||u.type!=='etf'))return wait('invalid_fixed_universe');
  const now=typeof input.now==='number'?input.now:Date.parse(input.now),a=input.account;
  if(!finite(now)||!Calendar.isTradingTime(now)||!a||a.budget!==50000||!finite(a.equity)||a.equity<0||!finite(a.cash)||a.cash<0||a.cash>a.equity+.005||!finite(a.drawdown)||a.drawdown<0||!Array.isArray(a.holdings)||a.holdings.length>6||new Set(a.holdings.map(h=>h?.symbol)).size!==a.holdings.length)return wait('invalid_account_or_time');
- const today=Calendar.sessionOf(now),expectedAsOf=Calendar.expectedCompletedSession(now),profile=Fee.resolve(),holdings=new Map();
+ const today=Calendar.sessionOf(now),expectedAsOf=Calendar.expectedCompletedSession(now),profile=Fee.resolve(input.feeProfile === undefined ? {} : {feeProfile: input.feeProfile}),holdings=new Map();
  for(const h of a.holdings){if(!h||!SYMBOLS.includes(h.symbol)||!Number.isSafeInteger(h.shares)||h.shares<=0||!positive(h.entryPrice)||!positive(h.stopPrice)||!Calendar.isSession(h.sellableSession)||!Calendar.isSession(h.maturitySession)||h.maturitySession<h.sellableSession||(h.pendingExit!==undefined&&h.pendingExit!==null&&typeof h.pendingExit!=='boolean'&&(typeof h.pendingExit!=='object'||Array.isArray(h.pendingExit))))return wait('invalid_holding');holdings.set(h.symbol,h);}
  if(input.baselinePredictions!==undefined&&(!input.baselinePredictions||typeof input.baselinePredictions!=='object'||Array.isArray(input.baselinePredictions)))return wait('invalid_baseline_reference');
  const rows=[];

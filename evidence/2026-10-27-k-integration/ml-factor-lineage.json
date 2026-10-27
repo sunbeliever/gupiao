@@ -1,0 +1,36 @@
+{
+  "id": "k-ml-review-20261027-a",
+  "trainingCalls": 0,
+  "rawAndHfqSeriesReconciled": 12,
+  "sessionsPerSeries": 920,
+  "datasetManifestHash": "dd029cf7e8cae055b33b105d7651173481169953f9e25b5d08de0dcdbcf7d3da",
+  "dataHash": "05f0d2e45de30d261c4418c5e122b58532ccca1420afc157274b8899a26d9c39",
+  "results": [
+    {
+      "horizon": 5,
+      "folds": 10,
+      "factorTrainingRowOccurrences": 32130,
+      "factorTestRows": 3576,
+      "exactAuthoritativeFactorAndLabelEquality": true,
+      "exactOriginalBaselineEquality": true
+    },
+    {
+      "horizon": 20,
+      "folds": 9,
+      "factorTrainingRowOccurrences": 27216,
+      "factorTestRows": 3396,
+      "exactAuthoritativeFactorAndLabelEquality": true,
+      "exactOriginalBaselineEquality": true
+    },
+    {
+      "horizon": 60,
+      "folds": 8,
+      "factorTrainingRowOccurrences": 22680,
+      "factorTestRows": 2916,
+      "exactAuthoritativeFactorAndLabelEquality": true,
+      "exactOriginalBaselineEquality": true
+    }
+  ],
+  "independentFirstAvailabilityVerified": false,
+  "note": "Chronological factor/label isolation checked. Historical first availability, revisions and economic adjustment correctness remain unverified."
+}

@@ -33,7 +33,11 @@
   }
   return h.map(x=>x.toString(16).padStart(8,'0')).join('');
  }
- function hash(value){return sha256(canonical(value));}
+ // Node uses native SHA-256; browsers keep the original audited fallback.
+ // Canonical serialization, validation and every existing digest remain unchanged.
+ let nativeCreateHash=null;
+ try{if(typeof module==='object'&&module.exports&&typeof require==='function')nativeCreateHash=require('node:crypto').createHash;}catch(e){}
+ function hash(value){const text=canonical(value);return nativeCreateHash?nativeCreateHash('sha256').update(text,'utf8').digest('hex'):sha256(text);}
  function fingerprint(input){
   if(!input||typeof input.strategyId!=='string'||!input.strategyId)throw new Error('Missing strategyId');
   return {strategy_id:input.strategyId,model_hash:hash(input.model===undefined?{}:input.model),universe_version:input.universeVersion||'sha256:'+hash(input.universe===undefined?[]:input.universe),rules_hash:hash(input.rules===undefined?{}:input.rules),data_hash:hash(input.data===undefined?{}:input.data),fee_profile:JSON.parse(canonical(input.feeProfile===undefined?{}:input.feeProfile)),budget:input.budget===undefined?null:input.budget,risk_limits:JSON.parse(canonical(input.riskLimits===undefined?{}:input.riskLimits)),execution_mode:input.executionMode||'paper-research'};
