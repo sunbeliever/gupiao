@@ -1,0 +1,88 @@
+{
+  "at": "2026-10-27T02:47:24.364214+00:00",
+  "packageSha256": "5c8f2c660d842f392a7b469d8abcbb4abd06e9f118c692a50e17741b81721602",
+  "filesVerified": 1079,
+  "baseCommit": "9680be3718252f78a6719f6eaeae7782901db9ee",
+  "pathsVerified": 18,
+  "sessionsVerified": 4346,
+  "fillsVerified": 911,
+  "newStrategyRuns": 0,
+  "newModelFits": 0,
+  "newPaperReplays": 0,
+  "tests": {
+    "lRelatedIncludingNewRegressions": 71,
+    "withExistingCompatibility": 79,
+    "independentProduct": 8,
+    "independentEvidenceFix": 7
+  },
+  "realSnapshotTrial": {
+    "passed": true,
+    "rows": 6,
+    "committedSnapshotVerified": true,
+    "executable": false,
+    "newsConnected": false,
+    "accountUnchanged": true,
+    "proof": "D:/techno/validation/l-live-brief-20261027/proof.json"
+  },
+  "localFixes": [
+    "unbound headline excluded from analysis; retained only as labelled unverified metadata",
+    "same-body dedup retains previously uncovered instruments; uniqueContentCount is not accepted-record count"
+  ],
+  "notAdopted": [
+    "offline/training/batch executors",
+    "automatic feedback or promotion",
+    "new Windows build",
+    "production deployment of monitor-only or regime-band"
+  ],
+  "limitations": [
+    "2024 and 2025 start independent accounts but are not statistically independent blind tests",
+    "first-seen timestamps, archive authenticity and symbol attribution need trusted collection",
+    "4 unreconciled 2026 raw/hfq discontinuities still block reliable ranking",
+    "read-only ledger verifier requires explicit UTF8 on Windows; not adopted as a runner"
+  ],
+  "packageNavigationMetadata": "Serena generated local navigation metadata during review; declared 1079 original files and ZIP unchanged, see independent reports",
+  "evidence": [
+    {
+      "file": "package-verification.json",
+      "originalPath": "D:/techno/validation/l-package-verification.json",
+      "originalSha256": "797ea94a622cbf82716085dbef79c2eb7bc0908fb06f934fa3e88bba5c08bf0d",
+      "gitCopyLineEndings": "LF"
+    },
+    {
+      "file": "ledger-binding-audit.json",
+      "originalPath": "D:/techno/validation/l-independent-ledger-20261027/binding-audit.json",
+      "originalSha256": "4d64884befa2a774e5d9704f17b551d0728cf03759c960cf8e0009eea0147704",
+      "gitCopyLineEndings": "LF"
+    },
+    {
+      "file": "independent-costbasis.json",
+      "originalPath": "D:/techno/validation/l-independent-ledger-20261027/independent-costbasis-and-table.json",
+      "originalSha256": "c3b7596e4de944e987bc8e4efb9662382f3e62440e7c72a8fc871eaf512d501a",
+      "gitCopyLineEndings": "LF"
+    },
+    {
+      "file": "python-ledger-audit.json",
+      "originalPath": "D:/techno/validation/l-independent-ledger-20261027/python-ledger-audit.json",
+      "originalSha256": "07042fe2fa318ff34b301975a0cf93d25c8cefd9abe2e2a3b3da6f8763bb39a1",
+      "gitCopyLineEndings": "LF"
+    },
+    {
+      "file": "independent-product-review.json",
+      "originalPath": "D:/techno/validation/l-independent-product-20261027/review.json",
+      "originalSha256": "45fe5961dcd7b5308e9997f82a9a0773bae52cce175dbadc756bfa11fb278d33",
+      "gitCopyLineEndings": "LF"
+    },
+    {
+      "file": "independent-evidence-recheck.json",
+      "originalPath": "D:/techno/validation/l-independent-news-20261027/fixed-observations.json",
+      "originalSha256": "8c3a28ef046fb724e30aab1e4035f8f7f3df49d2862e2e3aa25ff5a9da937a27",
+      "gitCopyLineEndings": "LF"
+    },
+    {
+      "file": "external-historical-results.json",
+      "originalPath": "D:/techno/validation/incoming/l-5c8f2c660d84/evidence-l/dashboard-data.json",
+      "originalSha256": "22b9d1a6177c71b041b398f54bee59d74d249b27173c9101e2f52b4dfe46486f",
+      "gitCopyLineEndings": "LF"
+    }
+  ]
+}

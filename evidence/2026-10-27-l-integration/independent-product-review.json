@@ -1,0 +1,117 @@
+{
+  "id": "l-independent-product-20261027",
+  "reviewedAt": "2026-10-27T02:42:50.364Z",
+  "scope": "PR Review: four L product/evidence/committed/execution modules and four corresponding tests; read-only package/main tree",
+  "sourceIntegrity": [
+    {
+      "file": "scripts/evidence-gate-l.js",
+      "actual": "9a0ad34e0bb78bae58185ba157919bcfc18baa900ffe8269c78bfe835d6904cb",
+      "expected": "9a0ad34e0bb78bae58185ba157919bcfc18baa900ffe8269c78bfe835d6904cb",
+      "matched": true
+    },
+    {
+      "file": "scripts/manager-brief-l.js",
+      "actual": "578d6b22e888f1a01420353cde818bb1a071696e60436d030f9518b1f2690ed8",
+      "expected": "578d6b22e888f1a01420353cde818bb1a071696e60436d030f9518b1f2690ed8",
+      "matched": true
+    },
+    {
+      "file": "scripts/committed-manager-view-l.js",
+      "actual": "c35353387d07862fe904d923e3829e6ad4f30f9ea0a3e9527016c43a70d5204d",
+      "expected": "c35353387d07862fe904d923e3829e6ad4f30f9ea0a3e9527016c43a70d5204d",
+      "matched": true
+    },
+    {
+      "file": "scripts/execution-adapter-l.js",
+      "actual": "c97afbdefae9a3b940b9b0494ab1f24633a9af4182e4aaf750a0a524a0b5ce54",
+      "expected": "c97afbdefae9a3b940b9b0494ab1f24633a9af4182e4aaf750a0a524a0b5ce54",
+      "matched": true
+    },
+    {
+      "file": "tests/l-evidence.test.js",
+      "actual": "d576a64d0c7676e471b1a037e469a8544e6d14276e1a66279c3e9f71a1828856",
+      "expected": "d576a64d0c7676e471b1a037e469a8544e6d14276e1a66279c3e9f71a1828856",
+      "matched": true
+    },
+    {
+      "file": "tests/l-manager-brief.test.js",
+      "actual": "f851f32f2b2ec9e20f4ad03f1258617f271b03cba3f073c0d2d8f8e9ae48b044",
+      "expected": "f851f32f2b2ec9e20f4ad03f1258617f271b03cba3f073c0d2d8f8e9ae48b044",
+      "matched": true
+    },
+    {
+      "file": "tests/l-committed-view.test.js",
+      "actual": "d8992e8f32761080db0d69c372a53a3fea08bada65321c1cf71f97d556093182",
+      "expected": "d8992e8f32761080db0d69c372a53a3fea08bada65321c1cf71f97d556093182",
+      "matched": true
+    },
+    {
+      "file": "tests/l-execution-adapter.test.js",
+      "actual": "1d9fe382d25b9150d092cbd5526772801643d55ed454e4f25aa2e81e69e7eefb",
+      "expected": "1d9fe382d25b9150d092cbd5526772801643d55ed454e4f25aa2e81e69e7eefb",
+      "matched": true
+    }
+  ],
+  "P1": [],
+  "P2": [
+    {
+      "id": "L-EVIDENCE-TITLE",
+      "file": "scripts/evidence-gate-l.js",
+      "line": 28,
+      "consumer": "scripts/manager-brief-l.js:10",
+      "title": "Title affects news sentiment without capture hash binding",
+      "symptom": "Changing title alone from negative to positive leaves body contentSha256 admitted but flips NewsFacts sentiment. Market inputHash and planHash remain unchanged; no separate full evidence version hash binds title.",
+      "consequence": "Untrusted altered metadata can change the displayed news interpretation under the same captured body identity.",
+      "remedy": "Bind all consumed source fields, especially title, to an immutable document/evidence version hash; keep price-plan hash independent.",
+      "confirmedBy": "Product review identified; independent news agent reproduced using real buildBrief",
+      "proof": "D:/techno/validation/l-independent-news-20261027/observations.json#titleMutation"
+    },
+    {
+      "id": "L-EVIDENCE-SYMBOL-DEDUPE",
+      "file": "scripts/evidence-gate-l.js",
+      "line": 51,
+      "title": "Global body-hash dedupe loses cross-instrument coverage",
+      "symptom": "Two admitted documents with identical body but distinct valid ETF associations retain only first symbol. Reversing input order switches coverage.",
+      "consequence": "An ETF can incorrectly display no admissible news depending solely on input order.",
+      "remedy": "Deduplicate source/vote identity while preserving validated symbol associations and citation bindings.",
+      "confirmedBy": "Independent news agent red regression; reused shared evidence to avoid rerunning duplicate work",
+      "proof": "D:/techno/validation/l-independent-news-20261027/observations.json#crossInstrumentDedupe"
+    }
+  ],
+  "productExecutionFindings": "No additional P1/P2 found in reviewed scope. Two evidence P2 are shared with news review, not duplicate new findings.",
+  "verifiedBoundaries": {
+    "standalone": "Extra asserted committed flags cannot turn standalone brief into committedSnapshotVerified=true.",
+    "committed": "Reuses Original.prepare. Tick/checkpoint/inputHash/history/quote/status/future/stale mutations rejected in synthetic cases. This is commit consistency, not external news truth or profitable-model certification.",
+    "lots": "Mixed old/new lots expose only mature shares. Missing/mismatched lots fail closed. Sell-limit blocks hypothetical executable quantity; row.orderPermission=false.",
+    "unfilledFunds": "No proposed sell proceeds credited; zero cash allows no buying. Three existing unfilled symbols retain all slots even with exit intentions.",
+    "candidate": "researchOnly=true, executable=false, investmentReady=false; news cannot alter planHash; expectedReturn/profitProbability remain null; no orders.",
+    "waitData": "Stale quote returns wait_data, no buys, desiredShares all null."
+  },
+  "tests": {
+    "packageTargets": {
+      "passed": 45,
+      "failed": 0,
+      "log": "D:\\techno\\validation\\l-independent-product-20261027/package-targets.log",
+      "command": "node --test --test-reporter=spec tests/l-evidence.test.js tests/l-manager-brief.test.js tests/l-committed-view.test.js tests/l-execution-adapter.test.js"
+    },
+    "independentProduct": {
+      "passed": 8,
+      "failed": 0,
+      "test": "D:\\techno\\validation\\l-independent-product-20261027/independent-product.test.js",
+      "log": "D:\\techno\\validation\\l-independent-product-20261027/independent-product.log"
+    },
+    "initialFixtureError": {
+      "log": "D:\\techno\\validation\\l-independent-product-20261027/fixture-anchor-mismatch.log",
+      "note": "Own test originally supplied Oct26 anchor to Oct21 fixture. Corrected to registered default Jan3; not a production defect or TDD red proof."
+    },
+    "newsNegativeRegression": "D:/techno/validation/l-independent-news-20261027/independent-negative-tests.log"
+  },
+  "adoption": "Can stage read-only committed bridge and execution adapter with deterministic dependencies as unpromoted research UI. Fix two evidence P2 before treating the news panel as complete. Preserve original frozen f0 accounting and source validator; no live execution wiring.",
+  "notPerformed": [
+    "No bootstrap, scheduling, broker or account operation",
+    "No real historical research or training",
+    "No Windows build or launch",
+    "No package or main source/test edits"
+  ],
+  "runtimeMetadata": "Serena activation generated .serena tooling metadata. It was moved after review into this output directory/serena-runtime-generated; original package source path restored without that generated directory."
+}

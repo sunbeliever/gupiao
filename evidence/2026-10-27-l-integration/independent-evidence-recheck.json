@@ -1,0 +1,207 @@
+{
+  "checkedAt": "2026-10-27T02:42:39.369Z",
+  "root": "C:/Users/lqp07/.codex/worktrees/l-engineering-review/techno",
+  "synthetic": true,
+  "sourceHashes": {
+    "scripts/evidence-gate-l.js": "decfe126d145f2e158ee1ca2e450741686bf65efa94081504349a895d3282b70",
+    "scripts/manager-brief-l.js": "0e94ead8caf4b3a857a664489325292a8755f0cd9c50a1a5e1bf73777bd19c2a"
+  },
+  "titles": [
+    {
+      "accepted": 1,
+      "title": "",
+      "sentiment": "中性",
+      "unverifiedTitle": "公司业绩亏损风险",
+      "titleEvidenceVerified": false,
+      "planHash": "97a248c6cbc3a5af48dbaaccb3c705e2fa465ef99eb3266d51179617bcdf409a"
+    },
+    {
+      "accepted": 1,
+      "title": "",
+      "sentiment": "中性",
+      "unverifiedTitle": "公司业绩增长超预期",
+      "titleEvidenceVerified": false,
+      "planHash": "97a248c6cbc3a5af48dbaaccb3c705e2fa465ef99eb3266d51179617bcdf409a"
+    }
+  ],
+  "forward": {
+    "accepted": [
+      {
+        "accepted": true,
+        "id": "a",
+        "kind": "news",
+        "url": "https://www.example.org/a",
+        "title": "",
+        "unverifiedTitle": "仅独立测试",
+        "titleEvidenceVerified": false,
+        "symbols": [
+          "sh512760",
+          "sh515880"
+        ],
+        "text": "测试夹具：三只科技ETF共同发布报告。",
+        "contentSha256": "63c99c5a9ca9f55085f90666a92c1f4216094f5631ebad733f18d016124e395e",
+        "publishedAt": "2026-10-25T08:00:00Z",
+        "firstSeenAt": "2026-10-25T08:01:00Z",
+        "availableAt": "2026-10-25T08:01:00.000Z",
+        "availabilityBasis": "observed_snapshot",
+        "usedInPrediction": false,
+        "sourceTruthVerified": false,
+        "sourceAttributionOnly": true
+      },
+      {
+        "accepted": true,
+        "id": "b",
+        "kind": "news",
+        "url": "https://www.example.org/b",
+        "title": "",
+        "unverifiedTitle": "仅独立测试",
+        "titleEvidenceVerified": false,
+        "symbols": [
+          "sh588000"
+        ],
+        "text": "测试夹具：三只科技ETF共同发布报告。",
+        "contentSha256": "63c99c5a9ca9f55085f90666a92c1f4216094f5631ebad733f18d016124e395e",
+        "publishedAt": "2026-10-25T08:00:00Z",
+        "firstSeenAt": "2026-10-25T08:01:00Z",
+        "availableAt": "2026-10-25T08:01:00.000Z",
+        "availabilityBasis": "observed_snapshot",
+        "usedInPrediction": false,
+        "sourceTruthVerified": false,
+        "sourceAttributionOnly": true
+      }
+    ],
+    "rejected": [],
+    "acceptedCount": 2,
+    "uniqueContentCount": 1,
+    "rejectedCount": 0,
+    "usedInPrediction": false
+  },
+  "reverse": {
+    "accepted": [
+      {
+        "accepted": true,
+        "id": "b",
+        "kind": "news",
+        "url": "https://www.example.org/b",
+        "title": "",
+        "unverifiedTitle": "仅独立测试",
+        "titleEvidenceVerified": false,
+        "symbols": [
+          "sh515880",
+          "sh588000"
+        ],
+        "text": "测试夹具：三只科技ETF共同发布报告。",
+        "contentSha256": "63c99c5a9ca9f55085f90666a92c1f4216094f5631ebad733f18d016124e395e",
+        "publishedAt": "2026-10-25T08:00:00Z",
+        "firstSeenAt": "2026-10-25T08:01:00Z",
+        "availableAt": "2026-10-25T08:01:00.000Z",
+        "availabilityBasis": "observed_snapshot",
+        "usedInPrediction": false,
+        "sourceTruthVerified": false,
+        "sourceAttributionOnly": true
+      },
+      {
+        "accepted": true,
+        "id": "a",
+        "kind": "news",
+        "url": "https://www.example.org/a",
+        "title": "",
+        "unverifiedTitle": "仅独立测试",
+        "titleEvidenceVerified": false,
+        "symbols": [
+          "sh512760"
+        ],
+        "text": "测试夹具：三只科技ETF共同发布报告。",
+        "contentSha256": "63c99c5a9ca9f55085f90666a92c1f4216094f5631ebad733f18d016124e395e",
+        "publishedAt": "2026-10-25T08:00:00Z",
+        "firstSeenAt": "2026-10-25T08:01:00Z",
+        "availableAt": "2026-10-25T08:01:00.000Z",
+        "availabilityBasis": "observed_snapshot",
+        "usedInPrediction": false,
+        "sourceTruthVerified": false,
+        "sourceAttributionOnly": true
+      }
+    ],
+    "rejected": [],
+    "acceptedCount": 2,
+    "uniqueContentCount": 1,
+    "rejectedCount": 0,
+    "usedInPrediction": false
+  },
+  "late": {
+    "accepted": [
+      {
+        "accepted": true,
+        "id": "a",
+        "kind": "news",
+        "url": "https://www.example.org/a",
+        "title": "",
+        "unverifiedTitle": "仅独立测试",
+        "titleEvidenceVerified": false,
+        "symbols": [
+          "sh512760",
+          "sh515880"
+        ],
+        "text": "测试夹具：三只科技ETF共同发布报告。",
+        "contentSha256": "63c99c5a9ca9f55085f90666a92c1f4216094f5631ebad733f18d016124e395e",
+        "publishedAt": "2026-10-25T08:00:00Z",
+        "firstSeenAt": "2026-10-25T08:01:00Z",
+        "availableAt": "2026-10-25T08:01:00.000Z",
+        "availabilityBasis": "observed_snapshot",
+        "usedInPrediction": false,
+        "sourceTruthVerified": false,
+        "sourceAttributionOnly": true
+      }
+    ],
+    "rejected": [
+      {
+        "accepted": false,
+        "reason": "not_available_at_decision",
+        "id": "b",
+        "usedInPrediction": false
+      }
+    ],
+    "acceptedCount": 1,
+    "uniqueContentCount": 1,
+    "rejectedCount": 1,
+    "usedInPrediction": false
+  },
+  "archived": {
+    "accepted": [
+      {
+        "accepted": true,
+        "id": "a",
+        "kind": "news",
+        "url": "https://www.example.org/a",
+        "title": "",
+        "unverifiedTitle": "仅独立测试",
+        "titleEvidenceVerified": false,
+        "symbols": [
+          "sh512760",
+          "sh515880"
+        ],
+        "text": "测试夹具：三只科技ETF共同发布报告。",
+        "contentSha256": "63c99c5a9ca9f55085f90666a92c1f4216094f5631ebad733f18d016124e395e",
+        "publishedAt": "2026-10-25T08:00:00Z",
+        "firstSeenAt": "2026-10-27T02:00:00Z",
+        "availableAt": "2026-10-25T08:02:00.000Z",
+        "availabilityBasis": "externally_verified_archive_supplied_by_operator",
+        "usedInPrediction": false,
+        "sourceTruthVerified": false,
+        "sourceAttributionOnly": true
+      }
+    ],
+    "rejected": [
+      {
+        "accepted": false,
+        "reason": "not_available_at_decision",
+        "id": "b",
+        "usedInPrediction": false
+      }
+    ],
+    "acceptedCount": 1,
+    "uniqueContentCount": 1,
+    "rejectedCount": 1,
+    "usedInPrediction": false
+  }
+}

@@ -1,0 +1,1001 @@
+{
+  "validator": "L-wrapper-of-independent-python-cash-FIFO-audit",
+  "expectedExperiments": 18,
+  "completedVerified": 18,
+  "missing": [],
+  "totalSessions": 4346,
+  "totalModelFills": 911,
+  "allPassed": true,
+  "experiments": [
+    {
+      "experiment": "decision_thesis-2025-normal",
+      "passed": true,
+      "sessions": 242,
+      "modelFillsAudited": 52,
+      "cashShareReconciliation": true,
+      "nextOpenAndSlippage": true,
+      "perOrderFees": true,
+      "T1AndFIFO": true,
+      "halfYear": [
+        {
+          "period": "2025-H1",
+          "sessions": 116,
+          "startEquity": 50000,
+          "endEquity": 50737.33419999998,
+          "netChange": 737.334199999983,
+          "return": 0.014746683999999677,
+          "annualized": false
+        },
+        {
+          "period": "2025-H2",
+          "sessions": 126,
+          "startEquity": 50737.33419999998,
+          "endEquity": 50737.33419999998,
+          "netChange": 0.0,
+          "return": 0.0,
+          "annualized": false
+        }
+      ],
+      "lastBuyDate": "2025-02-25",
+      "lastSellDate": "2025-03-06",
+      "finalConsecutiveCashSessions": 204,
+      "economicValidityConfirmed": false,
+      "limitations": "Arithmetic consistency with supplied prices is not proof of complete corporate actions, tradability, or profitability.",
+      "firstWarningDate": "2025-02-28",
+      "warningDaysWithEligibleETF": 148,
+      "actualIncreaseBlockDays": 208,
+      "realizedByRecordedSellReason": {
+        "research_target_reduce": {
+          "orders": 23,
+          "realizedPnl": 316.86739010267866,
+          "sellFees": 115.0
+        },
+        "research_logic_invalid": {
+          "orders": 4,
+          "realizedPnl": 184.87416283850067,
+          "sellFees": 20.0
+        },
+        "risk_stop": {
+          "orders": 4,
+          "realizedPnl": -71.23059999999995,
+          "sellFees": 20.0
+        },
+        "maturity": {
+          "orders": 3,
+          "realizedPnl": 306.823247058824,
+          "sellFees": 15.0
+        }
+      },
+      "attributionCausalClaim": false
+    },
+    {
+      "experiment": "decision_thesis-2025-double",
+      "passed": true,
+      "sessions": 242,
+      "modelFillsAudited": 39,
+      "cashShareReconciliation": true,
+      "nextOpenAndSlippage": true,
+      "perOrderFees": true,
+      "T1AndFIFO": true,
+      "halfYear": [
+        {
+          "period": "2025-H1",
+          "sessions": 116,
+          "startEquity": 50000,
+          "endEquity": 50512.87719999999,
+          "netChange": 512.8771999999881,
+          "return": 0.010257543999999674,
+          "annualized": false
+        },
+        {
+          "period": "2025-H2",
+          "sessions": 126,
+          "startEquity": 50512.87719999999,
+          "endEquity": 50512.87719999999,
+          "netChange": 0.0,
+          "return": 0.0,
+          "annualized": false
+        }
+      ],
+      "lastBuyDate": "2025-02-25",
+      "lastSellDate": "2025-03-06",
+      "finalConsecutiveCashSessions": 204,
+      "economicValidityConfirmed": false,
+      "limitations": "Arithmetic consistency with supplied prices is not proof of complete corporate actions, tradability, or profitability.",
+      "firstWarningDate": "2025-01-24",
+      "warningDaysWithEligibleETF": 150,
+      "actualIncreaseBlockDays": 210,
+      "realizedByRecordedSellReason": {
+        "research_target_reduce": {
+          "orders": 17,
+          "realizedPnl": 186.5451287155363,
+          "sellFees": 170.0
+        },
+        "research_logic_invalid": {
+          "orders": 4,
+          "realizedPnl": 89.82349481387504,
+          "sellFees": 40.0
+        },
+        "risk_stop": {
+          "orders": 3,
+          "realizedPnl": -77.3106,
+          "sellFees": 30.0
+        },
+        "maturity": {
+          "orders": 2,
+          "realizedPnl": 313.8191764705882,
+          "sellFees": 20.0
+        }
+      },
+      "attributionCausalClaim": false
+    },
+    {
+      "experiment": "monitor_only-2025-normal",
+      "passed": true,
+      "sessions": 242,
+      "modelFillsAudited": 84,
+      "cashShareReconciliation": true,
+      "nextOpenAndSlippage": true,
+      "perOrderFees": true,
+      "T1AndFIFO": true,
+      "halfYear": [
+        {
+          "period": "2025-H1",
+          "sessions": 116,
+          "startEquity": 50000,
+          "endEquity": 51142.2762,
+          "netChange": 1142.2762000000002,
+          "return": 0.02284552400000006,
+          "annualized": false
+        },
+        {
+          "period": "2025-H2",
+          "sessions": 126,
+          "startEquity": 51142.2762,
+          "endEquity": 55172.346300000005,
+          "netChange": 4030.0701000000045,
+          "return": 0.07880114847136976,
+          "annualized": false
+        }
+      ],
+      "lastBuyDate": "2025-12-23",
+      "lastSellDate": "2025-12-30",
+      "finalConsecutiveCashSessions": 0,
+      "economicValidityConfirmed": false,
+      "limitations": "Arithmetic consistency with supplied prices is not proof of complete corporate actions, tradability, or profitability.",
+      "firstWarningDate": "2025-02-28",
+      "warningDaysWithEligibleETF": 86,
+      "actualIncreaseBlockDays": 0,
+      "realizedByRecordedSellReason": {
+        "research_logic_invalid": {
+          "orders": 20,
+          "realizedPnl": 1360.038420104061,
+          "sellFees": 100.0
+        },
+        "risk_stop": {
+          "orders": 11,
+          "realizedPnl": -2852.6520999999952,
+          "sellFees": 55.0
+        },
+        "research_target_reduce": {
+          "orders": 8,
+          "realizedPnl": 2062.9926494562333,
+          "sellFees": 40.0
+        },
+        "maturity": {
+          "orders": 6,
+          "realizedPnl": 4422.077597371357,
+          "sellFees": 30.0
+        }
+      },
+      "attributionCausalClaim": false
+    },
+    {
+      "experiment": "monitor_only-2025-double",
+      "passed": true,
+      "sessions": 242,
+      "modelFillsAudited": 86,
+      "cashShareReconciliation": true,
+      "nextOpenAndSlippage": true,
+      "perOrderFees": true,
+      "T1AndFIFO": true,
+      "halfYear": [
+        {
+          "period": "2025-H1",
+          "sessions": 116,
+          "startEquity": 50000,
+          "endEquity": 50903.679,
+          "netChange": 903.6789999999964,
+          "return": 0.018073580000000034,
+          "annualized": false
+        },
+        {
+          "period": "2025-H2",
+          "sessions": 126,
+          "startEquity": 50903.679,
+          "endEquity": 53675.18879999999,
+          "netChange": 2771.5097999999925,
+          "return": 0.05444615898980487,
+          "annualized": false
+        }
+      ],
+      "lastBuyDate": "2025-12-23",
+      "lastSellDate": "2025-12-30",
+      "finalConsecutiveCashSessions": 0,
+      "economicValidityConfirmed": false,
+      "limitations": "Arithmetic consistency with supplied prices is not proof of complete corporate actions, tradability, or profitability.",
+      "firstWarningDate": "2025-02-28",
+      "warningDaysWithEligibleETF": 93,
+      "actualIncreaseBlockDays": 0,
+      "realizedByRecordedSellReason": {
+        "research_logic_invalid": {
+          "orders": 20,
+          "realizedPnl": 948.729640208106,
+          "sellFees": 200.0
+        },
+        "risk_stop": {
+          "orders": 13,
+          "realizedPnl": -3543.9676000000018,
+          "sellFees": 130.0
+        },
+        "research_target_reduce": {
+          "orders": 6,
+          "realizedPnl": 1575.7805658389311,
+          "sellFees": 60.0
+        },
+        "maturity": {
+          "orders": 6,
+          "realizedPnl": 4657.593225531915,
+          "sellFees": 60.0
+        }
+      },
+      "attributionCausalClaim": false
+    },
+    {
+      "experiment": "regime_band-2025-normal",
+      "passed": true,
+      "sessions": 242,
+      "modelFillsAudited": 81,
+      "cashShareReconciliation": true,
+      "nextOpenAndSlippage": true,
+      "perOrderFees": true,
+      "T1AndFIFO": true,
+      "halfYear": [
+        {
+          "period": "2025-H1",
+          "sessions": 116,
+          "startEquity": 50000,
+          "endEquity": 50306.53340000001,
+          "netChange": 306.53340000000753,
+          "return": 0.006130668000000172,
+          "annualized": false
+        },
+        {
+          "period": "2025-H2",
+          "sessions": 126,
+          "startEquity": 50306.53340000001,
+          "endEquity": 54341.15869999999,
+          "netChange": 4034.625299999985,
+          "return": 0.08020082139072593,
+          "annualized": false
+        }
+      ],
+      "lastBuyDate": "2025-12-30",
+      "lastSellDate": "2025-12-17",
+      "finalConsecutiveCashSessions": 0,
+      "economicValidityConfirmed": false,
+      "limitations": "Arithmetic consistency with supplied prices is not proof of complete corporate actions, tradability, or profitability.",
+      "firstWarningDate": "2025-02-28",
+      "warningDaysWithEligibleETF": 97,
+      "actualIncreaseBlockDays": 0,
+      "realizedByRecordedSellReason": {
+        "research_logic_invalid": {
+          "orders": 19,
+          "realizedPnl": 1116.987284084886,
+          "sellFees": 95.0
+        },
+        "research_target_reduce": {
+          "orders": 4,
+          "realizedPnl": 1234.5197452191485,
+          "sellFees": 20.0
+        },
+        "risk_stop": {
+          "orders": 12,
+          "realizedPnl": -1641.215199999997,
+          "sellFees": 60.0
+        },
+        "maturity": {
+          "orders": 6,
+          "realizedPnl": 3547.102470695974,
+          "sellFees": 30.0
+        }
+      },
+      "attributionCausalClaim": false
+    },
+    {
+      "experiment": "regime_band-2025-double",
+      "passed": true,
+      "sessions": 242,
+      "modelFillsAudited": 53,
+      "cashShareReconciliation": true,
+      "nextOpenAndSlippage": true,
+      "perOrderFees": true,
+      "T1AndFIFO": true,
+      "halfYear": [
+        {
+          "period": "2025-H1",
+          "sessions": 116,
+          "startEquity": 50000,
+          "endEquity": 50064.652200000004,
+          "netChange": 64.65220000000409,
+          "return": 0.0012930440000000765,
+          "annualized": false
+        },
+        {
+          "period": "2025-H2",
+          "sessions": 126,
+          "startEquity": 50064.652200000004,
+          "endEquity": 53362.8094,
+          "netChange": 3298.157199999994,
+          "return": 0.06587796089792852,
+          "annualized": false
+        }
+      ],
+      "lastBuyDate": "2025-12-30",
+      "lastSellDate": "2025-12-17",
+      "finalConsecutiveCashSessions": 0,
+      "economicValidityConfirmed": false,
+      "limitations": "Arithmetic consistency with supplied prices is not proof of complete corporate actions, tradability, or profitability.",
+      "firstWarningDate": "2025-02-28",
+      "warningDaysWithEligibleETF": 100,
+      "actualIncreaseBlockDays": 0,
+      "realizedByRecordedSellReason": {
+        "research_logic_invalid": {
+          "orders": 10,
+          "realizedPnl": 883.669060377361,
+          "sellFees": 100.0
+        },
+        "risk_stop": {
+          "orders": 10,
+          "realizedPnl": -1551.3018000000004,
+          "sellFees": 100.0
+        },
+        "maturity": {
+          "orders": 5,
+          "realizedPnl": 3410.4854,
+          "sellFees": 50.0
+        },
+        "research_target_reduce": {
+          "orders": 1,
+          "realizedPnl": 614.6115396226418,
+          "sellFees": 10.0
+        }
+      },
+      "attributionCausalClaim": false
+    },
+    {
+      "experiment": "true_buy_hold_three-2025-normal",
+      "passed": true,
+      "sessions": 242,
+      "modelFillsAudited": 3,
+      "cashShareReconciliation": true,
+      "nextOpenAndSlippage": true,
+      "perOrderFees": true,
+      "T1AndFIFO": true,
+      "halfYear": [
+        {
+          "period": "2025-H1",
+          "sessions": 116,
+          "startEquity": 50000,
+          "endEquity": 50910.0415,
+          "netChange": 910.0414999999994,
+          "return": 0.018200830000000057,
+          "annualized": false
+        },
+        {
+          "period": "2025-H2",
+          "sessions": 126,
+          "startEquity": 50910.0415,
+          "endEquity": 56772.4415,
+          "netChange": 5862.4000000000015,
+          "return": 0.11515213555659742,
+          "annualized": false
+        }
+      ],
+      "lastBuyDate": "2025-01-03",
+      "lastSellDate": null,
+      "finalConsecutiveCashSessions": 0,
+      "economicValidityConfirmed": false,
+      "limitations": "Arithmetic consistency with supplied prices is not proof of complete corporate actions, tradability, or profitability.",
+      "firstWarningDate": null,
+      "warningDaysWithEligibleETF": 0,
+      "actualIncreaseBlockDays": 0,
+      "realizedByRecordedSellReason": {},
+      "attributionCausalClaim": false
+    },
+    {
+      "experiment": "true_buy_hold_three-2025-double",
+      "passed": true,
+      "sessions": 242,
+      "modelFillsAudited": 3,
+      "cashShareReconciliation": true,
+      "nextOpenAndSlippage": true,
+      "perOrderFees": true,
+      "T1AndFIFO": true,
+      "halfYear": [
+        {
+          "period": "2025-H1",
+          "sessions": 116,
+          "startEquity": 50000,
+          "endEquity": 50882.683000000005,
+          "netChange": 882.6830000000045,
+          "return": 0.017653660000000126,
+          "annualized": false
+        },
+        {
+          "period": "2025-H2",
+          "sessions": 126,
+          "startEquity": 50882.683000000005,
+          "endEquity": 56745.083,
+          "netChange": 5862.399999999994,
+          "return": 0.11521405032828147,
+          "annualized": false
+        }
+      ],
+      "lastBuyDate": "2025-01-03",
+      "lastSellDate": null,
+      "finalConsecutiveCashSessions": 0,
+      "economicValidityConfirmed": false,
+      "limitations": "Arithmetic consistency with supplied prices is not proof of complete corporate actions, tradability, or profitability.",
+      "firstWarningDate": null,
+      "warningDaysWithEligibleETF": 0,
+      "actualIncreaseBlockDays": 0,
+      "realizedByRecordedSellReason": {},
+      "attributionCausalClaim": false
+    },
+    {
+      "experiment": "decision_thesis-2024-normal",
+      "passed": true,
+      "sessions": 241,
+      "modelFillsAudited": 63,
+      "cashShareReconciliation": true,
+      "nextOpenAndSlippage": true,
+      "perOrderFees": true,
+      "T1AndFIFO": true,
+      "halfYear": [
+        {
+          "period": "2024-H1",
+          "sessions": 116,
+          "startEquity": 50000,
+          "endEquity": 50288.369300000006,
+          "netChange": 288.36930000000575,
+          "return": 0.005767386000000041,
+          "annualized": false
+        },
+        {
+          "period": "2024-H2",
+          "sessions": 125,
+          "startEquity": 50288.369300000006,
+          "endEquity": 50288.369300000006,
+          "netChange": 0.0,
+          "return": 0.0,
+          "annualized": false
+        }
+      ],
+      "lastBuyDate": "2024-03-26",
+      "lastSellDate": "2024-03-28",
+      "finalConsecutiveCashSessions": 186,
+      "economicValidityConfirmed": false,
+      "limitations": "Arithmetic consistency with supplied prices is not proof of complete corporate actions, tradability, or profitability.",
+      "firstWarningDate": "2024-02-29",
+      "warningDaysWithEligibleETF": 122,
+      "actualIncreaseBlockDays": 188,
+      "realizedByRecordedSellReason": {
+        "research_target_reduce": {
+          "orders": 18,
+          "realizedPnl": 399.74385835068415,
+          "sellFees": 90.0
+        },
+        "risk_stop": {
+          "orders": 9,
+          "realizedPnl": -652.249214814815,
+          "sellFees": 45.0
+        },
+        "research_logic_invalid": {
+          "orders": 8,
+          "realizedPnl": 540.8746564641391,
+          "sellFees": 40.0
+        }
+      },
+      "attributionCausalClaim": false
+    },
+    {
+      "experiment": "decision_thesis-2024-double",
+      "passed": true,
+      "sessions": 241,
+      "modelFillsAudited": 59,
+      "cashShareReconciliation": true,
+      "nextOpenAndSlippage": true,
+      "perOrderFees": true,
+      "T1AndFIFO": true,
+      "halfYear": [
+        {
+          "period": "2024-H1",
+          "sessions": 116,
+          "startEquity": 50000,
+          "endEquity": 50047.10680000002,
+          "netChange": 47.10680000002321,
+          "return": 0.0009421360000003709,
+          "annualized": false
+        },
+        {
+          "period": "2024-H2",
+          "sessions": 125,
+          "startEquity": 50047.10680000002,
+          "endEquity": 50047.10680000002,
+          "netChange": 0.0,
+          "return": 0.0,
+          "annualized": false
+        }
+      ],
+      "lastBuyDate": "2024-03-22",
+      "lastSellDate": "2024-03-27",
+      "finalConsecutiveCashSessions": 187,
+      "economicValidityConfirmed": false,
+      "limitations": "Arithmetic consistency with supplied prices is not proof of complete corporate actions, tradability, or profitability.",
+      "firstWarningDate": "2024-02-29",
+      "warningDaysWithEligibleETF": 123,
+      "actualIncreaseBlockDays": 189,
+      "realizedByRecordedSellReason": {
+        "research_target_reduce": {
+          "orders": 18,
+          "realizedPnl": 276.74819153129346,
+          "sellFees": 180.0
+        },
+        "risk_stop": {
+          "orders": 8,
+          "realizedPnl": -728.08782962963,
+          "sellFees": 80.0
+        },
+        "research_logic_invalid": {
+          "orders": 7,
+          "realizedPnl": 498.4464380983368,
+          "sellFees": 70.0
+        }
+      },
+      "attributionCausalClaim": false
+    },
+    {
+      "experiment": "monitor_only-2024-normal",
+      "passed": true,
+      "sessions": 241,
+      "modelFillsAudited": 86,
+      "cashShareReconciliation": true,
+      "nextOpenAndSlippage": true,
+      "perOrderFees": true,
+      "T1AndFIFO": true,
+      "halfYear": [
+        {
+          "period": "2024-H1",
+          "sessions": 116,
+          "startEquity": 50000,
+          "endEquity": 49975.32900000001,
+          "netChange": -24.670999999987544,
+          "return": -0.0004934199999997446,
+          "annualized": false
+        },
+        {
+          "period": "2024-H2",
+          "sessions": 125,
+          "startEquity": 49975.32900000001,
+          "endEquity": 54578.86160000002,
+          "netChange": 4603.532600000006,
+          "return": 0.09211610392800029,
+          "annualized": false
+        }
+      ],
+      "lastBuyDate": "2024-12-31",
+      "lastSellDate": "2024-12-26",
+      "finalConsecutiveCashSessions": 0,
+      "economicValidityConfirmed": false,
+      "limitations": "Arithmetic consistency with supplied prices is not proof of complete corporate actions, tradability, or profitability.",
+      "firstWarningDate": "2024-02-29",
+      "warningDaysWithEligibleETF": 94,
+      "actualIncreaseBlockDays": 0,
+      "realizedByRecordedSellReason": {
+        "research_target_reduce": {
+          "orders": 7,
+          "realizedPnl": 5009.706753323318,
+          "sellFees": 35.0
+        },
+        "research_logic_invalid": {
+          "orders": 26,
+          "realizedPnl": 378.8676800100304,
+          "sellFees": 130.0
+        },
+        "risk_stop": {
+          "orders": 9,
+          "realizedPnl": -2199.4118333333245,
+          "sellFees": 45.0
+        },
+        "maturity": {
+          "orders": 3,
+          "realizedPnl": 1568.5776000000014,
+          "sellFees": 15.0
+        }
+      },
+      "attributionCausalClaim": false
+    },
+    {
+      "experiment": "monitor_only-2024-double",
+      "passed": true,
+      "sessions": 241,
+      "modelFillsAudited": 82,
+      "cashShareReconciliation": true,
+      "nextOpenAndSlippage": true,
+      "perOrderFees": true,
+      "T1AndFIFO": true,
+      "halfYear": [
+        {
+          "period": "2024-H1",
+          "sessions": 116,
+          "startEquity": 50000,
+          "endEquity": 49533.259000000005,
+          "netChange": -466.74099999999453,
+          "return": -0.009334819999999855,
+          "annualized": false
+        },
+        {
+          "period": "2024-H2",
+          "sessions": 125,
+          "startEquity": 49533.259000000005,
+          "endEquity": 53599.22380000003,
+          "netChange": 4065.9648000000234,
+          "return": 0.08208554983228589,
+          "annualized": false
+        }
+      ],
+      "lastBuyDate": "2024-12-31",
+      "lastSellDate": "2024-12-26",
+      "finalConsecutiveCashSessions": 0,
+      "economicValidityConfirmed": false,
+      "limitations": "Arithmetic consistency with supplied prices is not proof of complete corporate actions, tradability, or profitability.",
+      "firstWarningDate": "2024-02-29",
+      "warningDaysWithEligibleETF": 98,
+      "actualIncreaseBlockDays": 0,
+      "realizedByRecordedSellReason": {
+        "research_target_reduce": {
+          "orders": 5,
+          "realizedPnl": 4703.327744621313,
+          "sellFees": 50.0
+        },
+        "research_logic_invalid": {
+          "orders": 26,
+          "realizedPnl": -146.37423997996802,
+          "sellFees": 260.0
+        },
+        "risk_stop": {
+          "orders": 9,
+          "realizedPnl": -2446.246199999998,
+          "sellFees": 90.0
+        },
+        "maturity": {
+          "orders": 2,
+          "realizedPnl": 1694.173695358651,
+          "sellFees": 20.0
+        }
+      },
+      "attributionCausalClaim": false
+    },
+    {
+      "experiment": "regime_band-2024-normal",
+      "passed": true,
+      "sessions": 241,
+      "modelFillsAudited": 81,
+      "cashShareReconciliation": true,
+      "nextOpenAndSlippage": true,
+      "perOrderFees": true,
+      "T1AndFIFO": true,
+      "halfYear": [
+        {
+          "period": "2024-H1",
+          "sessions": 116,
+          "startEquity": 50000,
+          "endEquity": 49616.90429999998,
+          "netChange": -383.09570000001986,
+          "return": -0.0076619140000003805,
+          "annualized": false
+        },
+        {
+          "period": "2024-H2",
+          "sessions": 125,
+          "startEquity": 49616.90429999998,
+          "endEquity": 49819.74069999998,
+          "netChange": 202.83640000000014,
+          "return": 0.004088050289747791,
+          "annualized": false
+        }
+      ],
+      "lastBuyDate": "2024-12-31",
+      "lastSellDate": "2024-12-26",
+      "finalConsecutiveCashSessions": 0,
+      "economicValidityConfirmed": false,
+      "limitations": "Arithmetic consistency with supplied prices is not proof of complete corporate actions, tradability, or profitability.",
+      "firstWarningDate": "2024-06-17",
+      "warningDaysWithEligibleETF": 76,
+      "actualIncreaseBlockDays": 0,
+      "realizedByRecordedSellReason": {
+        "research_logic_invalid": {
+          "orders": 28,
+          "realizedPnl": -231.19759999999474,
+          "sellFees": 140.0
+        },
+        "risk_stop": {
+          "orders": 8,
+          "realizedPnl": -967.7504999999974,
+          "sellFees": 40.0
+        },
+        "research_target_reduce": {
+          "orders": 1,
+          "realizedPnl": 412.07280000000014,
+          "sellFees": 5.0
+        },
+        "maturity": {
+          "orders": 2,
+          "realizedPnl": 728.7569000000008,
+          "sellFees": 10.0
+        }
+      },
+      "attributionCausalClaim": false
+    },
+    {
+      "experiment": "regime_band-2024-double",
+      "passed": true,
+      "sessions": 241,
+      "modelFillsAudited": 52,
+      "cashShareReconciliation": true,
+      "nextOpenAndSlippage": true,
+      "perOrderFees": true,
+      "T1AndFIFO": true,
+      "halfYear": [
+        {
+          "period": "2024-H1",
+          "sessions": 116,
+          "startEquity": 50000,
+          "endEquity": 49295.58379999998,
+          "netChange": -704.4162000000215,
+          "return": -0.014088324000000485,
+          "annualized": false
+        },
+        {
+          "period": "2024-H2",
+          "sessions": 125,
+          "startEquity": 49295.58379999998,
+          "endEquity": 48134.172000000006,
+          "netChange": -1161.4117999999726,
+          "return": -0.02356015915567622,
+          "annualized": false
+        }
+      ],
+      "lastBuyDate": "2024-12-24",
+      "lastSellDate": "2024-12-26",
+      "finalConsecutiveCashSessions": 0,
+      "economicValidityConfirmed": false,
+      "limitations": "Arithmetic consistency with supplied prices is not proof of complete corporate actions, tradability, or profitability.",
+      "firstWarningDate": "2024-05-27",
+      "warningDaysWithEligibleETF": 100,
+      "actualIncreaseBlockDays": 0,
+      "realizedByRecordedSellReason": {
+        "research_logic_invalid": {
+          "orders": 17,
+          "realizedPnl": -926.0985999999994,
+          "sellFees": 170.0
+        },
+        "risk_stop": {
+          "orders": 7,
+          "realizedPnl": -1065.8561999999995,
+          "sellFees": 70.0
+        },
+        "maturity": {
+          "orders": 1,
+          "realizedPnl": 197.28520000000026,
+          "sellFees": 10.0
+        }
+      },
+      "attributionCausalClaim": false
+    },
+    {
+      "experiment": "true_buy_hold_three-2024-normal",
+      "passed": true,
+      "sessions": 241,
+      "modelFillsAudited": 3,
+      "cashShareReconciliation": true,
+      "nextOpenAndSlippage": true,
+      "perOrderFees": true,
+      "T1AndFIFO": true,
+      "halfYear": [
+        {
+          "period": "2024-H1",
+          "sessions": 116,
+          "startEquity": 50000,
+          "endEquity": 48850.595199999996,
+          "netChange": -1149.404800000004,
+          "return": -0.02298809600000007,
+          "annualized": false
+        },
+        {
+          "period": "2024-H2",
+          "sessions": 125,
+          "startEquity": 48850.595199999996,
+          "endEquity": 52875.1952,
+          "netChange": 4024.600000000006,
+          "return": 0.08238589486008974,
+          "annualized": false
+        }
+      ],
+      "lastBuyDate": "2024-01-03",
+      "lastSellDate": null,
+      "finalConsecutiveCashSessions": 0,
+      "economicValidityConfirmed": false,
+      "limitations": "Arithmetic consistency with supplied prices is not proof of complete corporate actions, tradability, or profitability.",
+      "firstWarningDate": null,
+      "warningDaysWithEligibleETF": 0,
+      "actualIncreaseBlockDays": 0,
+      "realizedByRecordedSellReason": {},
+      "attributionCausalClaim": false
+    },
+    {
+      "experiment": "true_buy_hold_three-2024-double",
+      "passed": true,
+      "sessions": 241,
+      "modelFillsAudited": 3,
+      "cashShareReconciliation": true,
+      "nextOpenAndSlippage": true,
+      "perOrderFees": true,
+      "T1AndFIFO": true,
+      "halfYear": [
+        {
+          "period": "2024-H1",
+          "sessions": 116,
+          "startEquity": 50000,
+          "endEquity": 48837.2672,
+          "netChange": -1162.732799999998,
+          "return": -0.023254655999999985,
+          "annualized": false
+        },
+        {
+          "period": "2024-H2",
+          "sessions": 125,
+          "startEquity": 48837.2672,
+          "endEquity": 52831.8672,
+          "netChange": 3994.5999999999985,
+          "return": 0.08179409350734512,
+          "annualized": false
+        }
+      ],
+      "lastBuyDate": "2024-01-03",
+      "lastSellDate": null,
+      "finalConsecutiveCashSessions": 0,
+      "economicValidityConfirmed": false,
+      "limitations": "Arithmetic consistency with supplied prices is not proof of complete corporate actions, tradability, or profitability.",
+      "firstWarningDate": null,
+      "warningDaysWithEligibleETF": 0,
+      "actualIncreaseBlockDays": 0,
+      "realizedByRecordedSellReason": {},
+      "attributionCausalClaim": false
+    },
+    {
+      "experiment": "recovery_cost-2024-normal",
+      "passed": true,
+      "sessions": 241,
+      "modelFillsAudited": 45,
+      "cashShareReconciliation": true,
+      "nextOpenAndSlippage": true,
+      "perOrderFees": true,
+      "T1AndFIFO": true,
+      "halfYear": [
+        {
+          "period": "2024-H1",
+          "sessions": 116,
+          "startEquity": 50000,
+          "endEquity": 50330.5893,
+          "netChange": 330.58929999999964,
+          "return": 0.006611785999999897,
+          "annualized": false
+        },
+        {
+          "period": "2024-H2",
+          "sessions": 125,
+          "startEquity": 50330.5893,
+          "endEquity": 49646.18539999999,
+          "netChange": -684.4039000000121,
+          "return": -0.013598169811216865,
+          "annualized": false
+        }
+      ],
+      "lastBuyDate": "2024-12-31",
+      "lastSellDate": "2024-12-26",
+      "finalConsecutiveCashSessions": 0,
+      "economicValidityConfirmed": false,
+      "limitations": "Arithmetic consistency with supplied prices is not proof of complete corporate actions, tradability, or profitability.",
+      "firstWarningDate": "2024-02-29",
+      "warningDaysWithEligibleETF": 88,
+      "actualIncreaseBlockDays": 126,
+      "realizedByRecordedSellReason": {
+        "research_target_reduce": {
+          "orders": 2,
+          "realizedPnl": 372.07548739495934,
+          "sellFees": 10.0
+        },
+        "research_logic_invalid": {
+          "orders": 14,
+          "realizedPnl": 159.06211260504728,
+          "sellFees": 70.0
+        },
+        "risk_stop": {
+          "orders": 6,
+          "realizedPnl": -787.720599999999,
+          "sellFees": 30.0
+        }
+      },
+      "attributionCausalClaim": false
+    },
+    {
+      "experiment": "recovery_cost-2024-double",
+      "passed": true,
+      "sessions": 241,
+      "modelFillsAudited": 36,
+      "cashShareReconciliation": true,
+      "nextOpenAndSlippage": true,
+      "perOrderFees": true,
+      "T1AndFIFO": true,
+      "halfYear": [
+        {
+          "period": "2024-H1",
+          "sessions": 116,
+          "startEquity": 50000,
+          "endEquity": 50219.2004,
+          "netChange": 219.20040000000154,
+          "return": 0.004384007999999939,
+          "annualized": false
+        },
+        {
+          "period": "2024-H2",
+          "sessions": 125,
+          "startEquity": 50219.2004,
+          "endEquity": 49693.99700000002,
+          "netChange": -525.203399999984,
+          "return": -0.010458219083870235,
+          "annualized": false
+        }
+      ],
+      "lastBuyDate": "2024-12-31",
+      "lastSellDate": "2024-12-26",
+      "finalConsecutiveCashSessions": 0,
+      "economicValidityConfirmed": false,
+      "limitations": "Arithmetic consistency with supplied prices is not proof of complete corporate actions, tradability, or profitability.",
+      "firstWarningDate": "2024-02-29",
+      "warningDaysWithEligibleETF": 91,
+      "actualIncreaseBlockDays": 127,
+      "realizedByRecordedSellReason": {
+        "research_target_reduce": {
+          "orders": 2,
+          "realizedPnl": 339.15097478991726,
+          "sellFees": 20.0
+        },
+        "research_logic_invalid": {
+          "orders": 12,
+          "realizedPnl": 51.154225210082075,
+          "sellFees": 120.0
+        },
+        "risk_stop": {
+          "orders": 4,
+          "realizedPnl": -596.4037999999996,
+          "sellFees": 40.0
+        }
+      },
+      "attributionCausalClaim": false
+    }
+  ],
+  "economicValidityConfirmed": false
+}

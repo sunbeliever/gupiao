@@ -1,0 +1,321 @@
+{
+  "rows": [
+    {
+      "id": "decision_thesis-2025-normal",
+      "year": "2025",
+      "cost": "normal",
+      "netPnl": 737.334199999983,
+      "fees": 260,
+      "observedDrawdown": 1017.7123000000065,
+      "observedDrawdownProportion": 0.019761323878912163,
+      "buyCount": 18,
+      "sellCount": 34,
+      "independentRecordedLotEntryCostsAndPnL": true,
+      "separateAnnualInitialCapital": true,
+      "riskDifferences": [
+        "500 observed-drawdown warning blocks increases",
+        "daily thesis and target changes"
+      ],
+      "parityVerifiedReported": true
+    },
+    {
+      "id": "decision_thesis-2025-double",
+      "year": "2025",
+      "cost": "double",
+      "netPnl": 512.8771999999881,
+      "fees": 390,
+      "observedDrawdown": 1055.9320000000007,
+      "observedDrawdownProportion": 0.020574663107846947,
+      "buyCount": 13,
+      "sellCount": 26,
+      "independentRecordedLotEntryCostsAndPnL": true,
+      "separateAnnualInitialCapital": true,
+      "riskDifferences": [
+        "500 observed-drawdown warning blocks increases",
+        "daily thesis and target changes"
+      ],
+      "parityVerifiedReported": true
+    },
+    {
+      "id": "monitor_only-2025-normal",
+      "year": "2025",
+      "cost": "normal",
+      "netPnl": 5172.346300000005,
+      "fees": 420,
+      "observedDrawdown": 2132.225000000006,
+      "observedDrawdownProportion": 0.03753491641931894,
+      "buyCount": 39,
+      "sellCount": 45,
+      "independentRecordedLotEntryCostsAndPnL": true,
+      "separateAnnualInitialCapital": true,
+      "riskDifferences": [
+        "500 warning monitor only, no global entry lock"
+      ],
+      "parityVerifiedReported": true
+    },
+    {
+      "id": "monitor_only-2025-double",
+      "year": "2025",
+      "cost": "double",
+      "netPnl": 3675.188799999989,
+      "fees": 860,
+      "observedDrawdown": 2726.381800000003,
+      "observedDrawdownProportion": 0.048397344710524925,
+      "buyCount": 41,
+      "sellCount": 45,
+      "independentRecordedLotEntryCostsAndPnL": true,
+      "separateAnnualInitialCapital": true,
+      "riskDifferences": [
+        "500 warning monitor only, no global entry lock"
+      ],
+      "parityVerifiedReported": true
+    },
+    {
+      "id": "regime_band-2025-normal",
+      "year": "2025",
+      "cost": "normal",
+      "netPnl": 4341.158699999993,
+      "fees": 405,
+      "observedDrawdown": 1177.3213000000105,
+      "observedDrawdownProportion": 0.021262130843857863,
+      "buyCount": 40,
+      "sellCount": 41,
+      "independentRecordedLotEntryCostsAndPnL": true,
+      "separateAnnualInitialCapital": true,
+      "riskDifferences": [
+        "500 warning monitor only, no global entry lock",
+        "breadth and volatility budget, no-trade band"
+      ],
+      "parityVerifiedReported": true
+    },
+    {
+      "id": "regime_band-2025-double",
+      "year": "2025",
+      "cost": "double",
+      "netPnl": 3362.8093999999983,
+      "fees": 530,
+      "observedDrawdown": 1508.8542000000016,
+      "observedDrawdownProportion": 0.02750787515904518,
+      "buyCount": 27,
+      "sellCount": 26,
+      "independentRecordedLotEntryCostsAndPnL": true,
+      "separateAnnualInitialCapital": true,
+      "riskDifferences": [
+        "500 warning monitor only, no global entry lock",
+        "breadth and volatility budget, no-trade band"
+      ],
+      "parityVerifiedReported": true
+    },
+    {
+      "id": "true_buy_hold_three-2025-normal",
+      "year": "2025",
+      "cost": "normal",
+      "netPnl": 6772.441500000001,
+      "fees": 15,
+      "observedDrawdown": 3367.5,
+      "observedDrawdownProportion": 0.06121096698457962,
+      "buyCount": 3,
+      "sellCount": 0,
+      "independentRecordedLotEntryCostsAndPnL": true,
+      "separateAnnualInitialCapital": true,
+      "riskDifferences": [
+        "No risk or expiry exit; no reentry"
+      ],
+      "parityVerifiedReported": true
+    },
+    {
+      "id": "true_buy_hold_three-2025-double",
+      "year": "2025",
+      "cost": "double",
+      "netPnl": 6745.082999999999,
+      "fees": 30,
+      "observedDrawdown": 3367.5,
+      "observedDrawdownProportion": 0.061242847536930545,
+      "buyCount": 3,
+      "sellCount": 0,
+      "independentRecordedLotEntryCostsAndPnL": true,
+      "separateAnnualInitialCapital": true,
+      "riskDifferences": [
+        "No risk or expiry exit; no reentry"
+      ],
+      "parityVerifiedReported": true
+    },
+    {
+      "id": "decision_thesis-2024-normal",
+      "year": "2024",
+      "cost": "normal",
+      "netPnl": 288.36930000000575,
+      "fees": 315,
+      "observedDrawdown": 776.9251000000004,
+      "observedDrawdownProportion": 0.015214346830437542,
+      "buyCount": 28,
+      "sellCount": 35,
+      "independentRecordedLotEntryCostsAndPnL": true,
+      "separateAnnualInitialCapital": true,
+      "riskDifferences": [
+        "500 observed-drawdown warning blocks increases",
+        "daily thesis and target changes"
+      ],
+      "parityVerifiedReported": true
+    },
+    {
+      "id": "decision_thesis-2024-double",
+      "year": "2024",
+      "cost": "double",
+      "netPnl": 47.10680000002321,
+      "fees": 590,
+      "observedDrawdown": 795.7583999999842,
+      "observedDrawdownProportion": 0.01565132879253983,
+      "buyCount": 26,
+      "sellCount": 33,
+      "independentRecordedLotEntryCostsAndPnL": true,
+      "separateAnnualInitialCapital": true,
+      "riskDifferences": [
+        "500 observed-drawdown warning blocks increases",
+        "daily thesis and target changes"
+      ],
+      "parityVerifiedReported": true
+    },
+    {
+      "id": "monitor_only-2024-normal",
+      "year": "2024",
+      "cost": "normal",
+      "netPnl": 4578.861600000018,
+      "fees": 430,
+      "observedDrawdown": 2309.975999999995,
+      "observedDrawdownProportion": 0.04508907518400507,
+      "buyCount": 41,
+      "sellCount": 45,
+      "independentRecordedLotEntryCostsAndPnL": true,
+      "separateAnnualInitialCapital": true,
+      "riskDifferences": [
+        "500 warning monitor only, no global entry lock"
+      ],
+      "parityVerifiedReported": true
+    },
+    {
+      "id": "monitor_only-2024-double",
+      "year": "2024",
+      "cost": "double",
+      "netPnl": 3599.223800000029,
+      "fees": 820,
+      "observedDrawdown": 2655.1924,
+      "observedDrawdownProportion": 0.05204126324216973,
+      "buyCount": 40,
+      "sellCount": 42,
+      "independentRecordedLotEntryCostsAndPnL": true,
+      "separateAnnualInitialCapital": true,
+      "riskDifferences": [
+        "500 warning monitor only, no global entry lock"
+      ],
+      "parityVerifiedReported": true
+    },
+    {
+      "id": "regime_band-2024-normal",
+      "year": "2024",
+      "cost": "normal",
+      "netPnl": -180.25930000001972,
+      "fees": 405,
+      "observedDrawdown": 969.1223000000246,
+      "observedDrawdownProportion": 0.019262201131570622,
+      "buyCount": 42,
+      "sellCount": 39,
+      "independentRecordedLotEntryCostsAndPnL": true,
+      "separateAnnualInitialCapital": true,
+      "riskDifferences": [
+        "500 warning monitor only, no global entry lock",
+        "breadth and volatility budget, no-trade band"
+      ],
+      "parityVerifiedReported": true
+    },
+    {
+      "id": "regime_band-2024-double",
+      "year": "2024",
+      "cost": "double",
+      "netPnl": -1865.827999999994,
+      "fees": 520,
+      "observedDrawdown": 1865.827999999994,
+      "observedDrawdownProportion": 0.03731655999999983,
+      "buyCount": 27,
+      "sellCount": 25,
+      "independentRecordedLotEntryCostsAndPnL": true,
+      "separateAnnualInitialCapital": true,
+      "riskDifferences": [
+        "500 warning monitor only, no global entry lock",
+        "breadth and volatility budget, no-trade band"
+      ],
+      "parityVerifiedReported": true
+    },
+    {
+      "id": "true_buy_hold_three-2024-normal",
+      "year": "2024",
+      "cost": "normal",
+      "netPnl": 2875.195200000002,
+      "fees": 15,
+      "observedDrawdown": 2859.604800000001,
+      "observedDrawdownProportion": 0.05719209599999997,
+      "buyCount": 3,
+      "sellCount": 0,
+      "independentRecordedLotEntryCostsAndPnL": true,
+      "separateAnnualInitialCapital": true,
+      "riskDifferences": [
+        "No risk or expiry exit; no reentry"
+      ],
+      "parityVerifiedReported": true
+    },
+    {
+      "id": "true_buy_hold_three-2024-double",
+      "year": "2024",
+      "cost": "double",
+      "netPnl": 2831.8672000000006,
+      "fees": 30,
+      "observedDrawdown": 2868.4328000000023,
+      "observedDrawdownProportion": 0.05736865600000007,
+      "buyCount": 3,
+      "sellCount": 0,
+      "independentRecordedLotEntryCostsAndPnL": true,
+      "separateAnnualInitialCapital": true,
+      "riskDifferences": [
+        "No risk or expiry exit; no reentry"
+      ],
+      "parityVerifiedReported": true
+    },
+    {
+      "id": "recovery_cost-2024-normal",
+      "year": "2024",
+      "cost": "normal",
+      "netPnl": -353.81460000001243,
+      "fees": 225,
+      "observedDrawdown": 1421.1322,
+      "observedDrawdownProportion": 0.02792648826957056,
+      "buyCount": 23,
+      "sellCount": 22,
+      "independentRecordedLotEntryCostsAndPnL": true,
+      "separateAnnualInitialCapital": true,
+      "riskDifferences": [
+        "K finite-cooldown half-budget recovery"
+      ],
+      "parityVerifiedReported": true
+    },
+    {
+      "id": "recovery_cost-2024-double",
+      "year": "2024",
+      "cost": "double",
+      "netPnl": -306.0029999999824,
+      "fees": 360,
+      "observedDrawdown": 1315.6199999999808,
+      "observedDrawdownProportion": 0.025874691200304722,
+      "buyCount": 18,
+      "sellCount": 18,
+      "independentRecordedLotEntryCostsAndPnL": true,
+      "separateAnnualInitialCapital": true,
+      "riskDifferences": [
+        "K finite-cooldown half-budget recovery"
+      ],
+      "parityVerifiedReported": true
+    }
+  ],
+  "allPassed": true,
+  "freshPaperReplayPerformed": false,
+  "economicValidityConfirmed": false
+}

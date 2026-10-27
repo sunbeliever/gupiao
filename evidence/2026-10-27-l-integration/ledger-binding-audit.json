@@ -1,0 +1,179 @@
+{
+  "allPassed": true,
+  "paths": 18,
+  "sessions": 4346,
+  "modelFills": 911,
+  "protocolSha256": "6f4901a6897776827f51771a08882bd0a31f72bc62af3f011df77d537a3f4218",
+  "dataSha256": "e6dd8f21041a11954f3189ef81e0bb36d7c6cb3ddb2e39d6d83dedfb9bc11b6b",
+  "sourceFiles": 27,
+  "rows": [
+    {
+      "id": "decision_thesis-2025-normal",
+      "registrationHash": "e0da53e02545017f69b5597476484fa0d289ecdbf5c0b60bca31582231c405d2",
+      "resultHash": "8e91603733d7431227e5e17343eacea4b44d3cf9d3582b52fe337ee4215cdf43",
+      "completeCurveBound": true,
+      "registeredAt": "2026-10-27T01:52:00.504Z",
+      "completedAt": "2026-10-27T01:56:15.625Z",
+      "registeredTimestampIndependentlyAttested": false
+    },
+    {
+      "id": "decision_thesis-2025-double",
+      "registrationHash": "531030011db91486d52846c32a1ab72475d6ccc9c20e34376e8a07e8cfbb921e",
+      "resultHash": "da9c672a8e15ab094751e050f9fd0e471f8f40b45eb846f6d8843d647a0489ea",
+      "completeCurveBound": true,
+      "registeredAt": "2026-10-27T01:52:00.528Z",
+      "completedAt": "2026-10-27T01:56:07.097Z",
+      "registeredTimestampIndependentlyAttested": false
+    },
+    {
+      "id": "monitor_only-2025-normal",
+      "registrationHash": "33d39870dad7e018ae3fd509419561b966ee08cc894b0d18bd83da0ed9a056e1",
+      "resultHash": "034d7032048a85183007d6d9211f7898a6f4000dcf25a70e4663d6ceb28a16d4",
+      "completeCurveBound": true,
+      "registeredAt": "2026-10-27T01:56:07.763Z",
+      "completedAt": "2026-10-27T01:59:10.298Z",
+      "registeredTimestampIndependentlyAttested": false
+    },
+    {
+      "id": "monitor_only-2025-double",
+      "registrationHash": "55b7bbf62f9ad25b2390a3eaf4b72621516cacd64850e360873c51e700f0cd96",
+      "resultHash": "90c0d40e3b341efa08fdfc533b816cf43b4f2f52329e72716dab0bdab659929c",
+      "completeCurveBound": true,
+      "registeredAt": "2026-10-27T01:56:16.254Z",
+      "completedAt": "2026-10-27T01:59:13.317Z",
+      "registeredTimestampIndependentlyAttested": false
+    },
+    {
+      "id": "regime_band-2025-normal",
+      "registrationHash": "b4153b12a4cc90a57c9546aeb7b9dd682645c5f564472acdebcde66c0c77be9c",
+      "resultHash": "e72173bd738c83e0ff6e89c2c63c6935b8703dc1c346d371a0f17f50ce4a958f",
+      "completeCurveBound": true,
+      "registeredAt": "2026-10-27T01:59:11.042Z",
+      "completedAt": "2026-10-27T02:02:30.631Z",
+      "registeredTimestampIndependentlyAttested": false
+    },
+    {
+      "id": "regime_band-2025-double",
+      "registrationHash": "df7a8e5608b8179321807216bae4cf9a6d409ac6e644712026c2c8f6d98c0834",
+      "resultHash": "701cf1ea9562cc171b862e19b6ba3b35b2d4152329bb2aac8eb53f9a94c68b25",
+      "completeCurveBound": true,
+      "registeredAt": "2026-10-27T01:59:13.945Z",
+      "completedAt": "2026-10-27T02:02:35.240Z",
+      "registeredTimestampIndependentlyAttested": false
+    },
+    {
+      "id": "true_buy_hold_three-2025-normal",
+      "registrationHash": "e68dda0906711467e9b070bf0059ffc57b1980185258feca4f364f383e81f63a",
+      "resultHash": "1c6f0c28af7563560a91093efe51e2de83147fa5e774b0dfc78b2ba60fde8de9",
+      "completeCurveBound": true,
+      "registeredAt": "2026-10-27T02:02:31.307Z",
+      "completedAt": "2026-10-27T02:03:06.120Z",
+      "registeredTimestampIndependentlyAttested": false
+    },
+    {
+      "id": "true_buy_hold_three-2025-double",
+      "registrationHash": "36590bb5bc5aae4f1ba51e1e6730f938c8e2e1bab008cdb28a92cbfdcfa60d2f",
+      "resultHash": "db8ccdf48824f2d8587242fc70d9ec107793af9293d2d6ce5b4c66b43258b70f",
+      "completeCurveBound": true,
+      "registeredAt": "2026-10-27T02:02:35.933Z",
+      "completedAt": "2026-10-27T02:03:12.671Z",
+      "registeredTimestampIndependentlyAttested": false
+    },
+    {
+      "id": "decision_thesis-2024-normal",
+      "registrationHash": "891883b5a90f218c61b7b452fc2481a9634a40971773e55a28153bf566cff627",
+      "resultHash": "34aa4ef54d051ba0d226e97d50e37628b390599dee63751f70cddf3ba1d78de7",
+      "completeCurveBound": true,
+      "registeredAt": "2026-10-27T02:03:06.415Z",
+      "completedAt": "2026-10-27T02:06:06.981Z",
+      "registeredTimestampIndependentlyAttested": false
+    },
+    {
+      "id": "decision_thesis-2024-double",
+      "registrationHash": "2ebde3136c817c5ff3be8136fc098e1a426610dfcd400ec7b63895be37f6166d",
+      "resultHash": "a296acab81b81a5c866155bbb457703c4aaccbe61dd1869851021abdea5f0526",
+      "completeCurveBound": true,
+      "registeredAt": "2026-10-27T02:03:12.896Z",
+      "completedAt": "2026-10-27T02:06:23.142Z",
+      "registeredTimestampIndependentlyAttested": false
+    },
+    {
+      "id": "monitor_only-2024-normal",
+      "registrationHash": "f60d773219f4f464b4262ed1e800de9efc10592f70594b9852ec0633316aaed5",
+      "resultHash": "f47c5343203f2b66bcc6ddc291ad8b3524039b12a3560a98a2f07d46807336f5",
+      "completeCurveBound": true,
+      "registeredAt": "2026-10-27T02:06:07.693Z",
+      "completedAt": "2026-10-27T02:09:39.558Z",
+      "registeredTimestampIndependentlyAttested": false
+    },
+    {
+      "id": "monitor_only-2024-double",
+      "registrationHash": "cf2517d03df9bb5636d263a94996d53700713ffd099a6dc48e93ebb86e5d87e0",
+      "resultHash": "337cd16bb2e4072616fcb0bb53768f1c21558d4b1c5dc131a598a50e081f3402",
+      "completeCurveBound": true,
+      "registeredAt": "2026-10-27T02:06:24.064Z",
+      "completedAt": "2026-10-27T02:10:00.622Z",
+      "registeredTimestampIndependentlyAttested": false
+    },
+    {
+      "id": "regime_band-2024-normal",
+      "registrationHash": "f93e6b149b0a78d7bad867770fac0b626c56fc4a4210ad0e03014fec63799fdc",
+      "resultHash": "31112c9177004e358015e90b5e3157160e7141539ddf2b92e1a31549720e12ea",
+      "completeCurveBound": true,
+      "registeredAt": "2026-10-27T02:09:40.216Z",
+      "completedAt": "2026-10-27T02:12:56.670Z",
+      "registeredTimestampIndependentlyAttested": false
+    },
+    {
+      "id": "regime_band-2024-double",
+      "registrationHash": "0c4e854596b8f73fc2bf34101127b429b5b3a6f6804d96e4622c20981be168f2",
+      "resultHash": "f7e5c58bf32678999d4f41b494d6b9c2df3c68625e32d143466d7ebdebf5c016",
+      "completeCurveBound": true,
+      "registeredAt": "2026-10-27T02:10:01.329Z",
+      "completedAt": "2026-10-27T02:13:19.001Z",
+      "registeredTimestampIndependentlyAttested": false
+    },
+    {
+      "id": "true_buy_hold_three-2024-normal",
+      "registrationHash": "88e6286b577206b6ce62684006cd8039d6d2a930d2edd5bf7438ed74a9b9302c",
+      "resultHash": "e08ac0974dc9031c29843c1da9b5f015e5a054eb52506b5f98cdfd03c6905455",
+      "completeCurveBound": true,
+      "registeredAt": "2026-10-27T02:12:57.392Z",
+      "completedAt": "2026-10-27T02:13:39.517Z",
+      "registeredTimestampIndependentlyAttested": false
+    },
+    {
+      "id": "true_buy_hold_three-2024-double",
+      "registrationHash": "013224168d7244bf81919470eff525bb3d500626e797b2d8e9a7eb5da3b43282",
+      "resultHash": "d285f3af95e0447f68cc30cc2498f3d6e17ebe254b9799b7692c615f5e8984ab",
+      "completeCurveBound": true,
+      "registeredAt": "2026-10-27T02:13:19.734Z",
+      "completedAt": "2026-10-27T02:13:56.486Z",
+      "registeredTimestampIndependentlyAttested": false
+    },
+    {
+      "id": "recovery_cost-2024-normal",
+      "registrationHash": "cdbf9d8b58f6fc54a072693d450ec3a7cf689d3019c4194a23448ac3c35e97ed",
+      "resultHash": "08eb3e5e2d87aa3dc5d24385df3856b9817071cfe2ec21dd4d9bd443275c2579",
+      "completeCurveBound": true,
+      "registeredAt": "2026-10-27T02:13:39.929Z",
+      "completedAt": "2026-10-27T02:17:21.207Z",
+      "registeredTimestampIndependentlyAttested": false
+    },
+    {
+      "id": "recovery_cost-2024-double",
+      "registrationHash": "0cd4aa5f3b612e9a73215d89d94cb0d7428d61d8cebdf44921514d107e708aa1",
+      "resultHash": "224cc6f413cfe49e1bd0636457ed1b432c2a4b420d3b6a86746d8f5a7c58460f",
+      "completeCurveBound": true,
+      "registeredAt": "2026-10-27T02:13:56.744Z",
+      "completedAt": "2026-10-27T02:17:33.681Z",
+      "registeredTimestampIndependentlyAttested": false
+    }
+  ],
+  "limitations": [
+    "No Paper replay, training or strategy execution performed",
+    "Package timestamps are internally ordered, not independently time-attested",
+    "Corporate action completeness, original first availability and future profitability remain unverified"
+  ],
+  "serenaMetadataNote": "Serena activate_project created new source/.serena navigation metadata at 2026-10-27 10:34:38; no pre-existing package file was modified; these extra metadata are outside protocol sources and were retained."
+}
