@@ -1,0 +1,156 @@
+{
+  "schema": 1,
+  "accountId": "paired-capital50k-20261021-pm-a",
+  "modelHash": "f0b16e0c0922e3ae051015c3f73a66135c2a0b4ed478b5c0a3bfe6471ad0b0dd",
+  "previousClose": {
+    "at": "2026-10-27T08:09:30.788Z",
+    "equity": 48828.960399999996,
+    "auditHash": "00e2ebb151d831cd185eefb4c40aacaab07996ba06503271382288c777d47c3f"
+  },
+  "rows": [
+    {
+      "experimentId": "rolling-account-h20-20261026-a",
+      "path": "rolling_ridge",
+      "netPnl": 2564.6909000000305,
+      "drawdown": 3571.1197999999713,
+      "fees": 620,
+      "trades": 124,
+      "exposure": 0.1842636966743759,
+      "resultHash": "52327e6f9b55de09f658fe8c8388afbf511feb0134312bd8e10c0de6846b4c63",
+      "comparisonHash": "dafb64ffe1aa9954851e0259e7745977e1811d75a7b84c431d50e9ef780e810d",
+      "period": [
+        "2025-01-03",
+        "2026-10-23"
+      ],
+      "status": "completed_not_promoted",
+      "rankingBlocked": true,
+      "drawdownBasis": "daily_close"
+    },
+    {
+      "experimentId": "rolling-account-h20-20261026-a",
+      "path": "rolling_mean",
+      "netPnl": -608.7242999999798,
+      "drawdown": 5808.192700000014,
+      "fees": 420,
+      "trades": 84,
+      "exposure": 0.10988140774487919,
+      "resultHash": "d0316c938b0afb2d5d541532087bdf0dea16e28b4e2f0ca5cbb1cc232dff20da",
+      "comparisonHash": "dafb64ffe1aa9954851e0259e7745977e1811d75a7b84c431d50e9ef780e810d",
+      "period": [
+        "2025-01-03",
+        "2026-10-23"
+      ],
+      "status": "completed_not_promoted",
+      "rankingBlocked": true,
+      "drawdownBasis": "daily_close"
+    },
+    {
+      "experimentId": "rolling-account-h20-20261026-a",
+      "path": "frozen_f0",
+      "netPnl": 6616.159799999994,
+      "drawdown": 4738.459999999992,
+      "fees": 330,
+      "trades": 66,
+      "exposure": 0.13675974794909102,
+      "resultHash": "ec54437449a54809399ee9e97221293642c579cd471d9eb09052ac52f864c105",
+      "comparisonHash": "dafb64ffe1aa9954851e0259e7745977e1811d75a7b84c431d50e9ef780e810d",
+      "period": [
+        "2025-01-03",
+        "2026-10-23"
+      ],
+      "status": "completed_not_promoted",
+      "rankingBlocked": true,
+      "drawdownBasis": "daily_close"
+    },
+    {
+      "experimentId": "rolling-account-h20-20261026-a",
+      "path": "fixed_three",
+      "netPnl": 2056.513100000033,
+      "drawdown": 7981.009599999976,
+      "fees": 1000,
+      "trades": 200,
+      "exposure": 0.23308066347960013,
+      "resultHash": "8a45e2d4b946556f334aa373554fc92883dfc1828e635c6704742c4355b26eba",
+      "comparisonHash": "dafb64ffe1aa9954851e0259e7745977e1811d75a7b84c431d50e9ef780e810d",
+      "period": [
+        "2025-01-03",
+        "2026-10-23"
+      ],
+      "status": "completed_not_promoted",
+      "rankingBlocked": true,
+      "drawdownBasis": "daily_close"
+    },
+    {
+      "experimentId": "rolling-account-h20-20261026-a",
+      "path": "fixed_single",
+      "netPnl": 5755.287000000048,
+      "drawdown": 5509.42119999999,
+      "fees": 340,
+      "trades": 68,
+      "exposure": 0.2337465314177405,
+      "resultHash": "1b76ccb70dc6d43a7fb9ea524da4a623d955eeede25995a9c6334d0d44e80345",
+      "comparisonHash": "dafb64ffe1aa9954851e0259e7745977e1811d75a7b84c431d50e9ef780e810d",
+      "period": [
+        "2025-01-03",
+        "2026-10-23"
+      ],
+      "status": "completed_not_promoted",
+      "rankingBlocked": true,
+      "drawdownBasis": "daily_close"
+    },
+    {
+      "experimentId": "rolling-account-h20-20261026-a",
+      "path": "cash",
+      "netPnl": 0,
+      "drawdown": 0,
+      "fees": 0,
+      "trades": 0,
+      "exposure": 0,
+      "resultHash": "b2d8f63e356e37bd8e39a6f12b06318d94fc3be61b44ebb0e68cdcb90b6d8812",
+      "comparisonHash": "dafb64ffe1aa9954851e0259e7745977e1811d75a7b84c431d50e9ef780e810d",
+      "period": [
+        "2025-01-03",
+        "2026-10-23"
+      ],
+      "status": "completed_not_promoted",
+      "rankingBlocked": true,
+      "drawdownBasis": "daily_close"
+    },
+    {
+      "experimentId": "decision-account-20261026-a",
+      "path": "decision_thesis",
+      "netPnl": 737.334199999983,
+      "drawdown": 1017.7123000000065,
+      "fees": 260,
+      "trades": 52,
+      "exposure": 0.01262339585293422,
+      "resultHash": "95bcdcc57c139effc39c97a7379d74cda1b073faba69f837725826b31e61824b",
+      "comparisonHash": "2b3683136ded0df6130601af3a5ba29d8273dc60f176f1afc7c87c9457a63d51",
+      "period": [
+        "2025-01-03",
+        "2026-10-23"
+      ],
+      "status": "completed_not_promoted",
+      "rankingBlocked": true,
+      "drawdownBasis": "open_close"
+    },
+    {
+      "experimentId": "decision-account-20261026-a",
+      "path": "true_buy_hold_three",
+      "netPnl": 334.04149999999936,
+      "drawdown": 13962.099999999999,
+      "fees": 15,
+      "trades": 3,
+      "exposure": 0.30506159313474757,
+      "resultHash": "789996d4ce07f2fd131d5534c54d24a12ee0a334c609eccf2920c6e98ab0a751",
+      "comparisonHash": "2b3683136ded0df6130601af3a5ba29d8273dc60f176f1afc7c87c9457a63d51",
+      "period": [
+        "2025-01-03",
+        "2026-10-23"
+      ],
+      "status": "completed_not_promoted",
+      "rankingBlocked": true,
+      "drawdownBasis": "open_close"
+    }
+  ]
+}
