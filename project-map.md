@@ -1,3 +1,8 @@
+# 2026-10-29 14时 一次性采集中断恢复修复已部署
+- 4bc95ac修复data_collect死亡owner转blocked保留证据，22相关+10独立断言通过。新release20261029-recovery1/71源仅core一文件变化，原任务14:20实际0/核源通过，权限/触发/电源设置不变。
+- 首次stable-daily-data-2026-10-29已失败attempt2：09:04留下12主响应/11分区，最后sz159852缺hfqday；中断原因未知。24原文件hash未变，不重跑/删claim/换ID追抓，不称新数据成功。详docs/one-shot-data-recovery-2026-10-29.md及D:/techno/validation/daily-20261029/stable-first-capture-incident。
+- 原账户/策略/Windows1.8不变，原center WIP保留未部署。用户最新要求优先经理决策与策略有效性，不为展示进度增加功能。
+
 # 2026-10-28 17时 未来次日日线采集已部署
 - 最新 docs/stable-data-release-2026-10-28.md：稳定协议的计划/父执行器/真实CLI已统一admit，两层P1关闭。42相关及独立22边界过，延期固定cutoff/真实receivedAt保留；普通任务门槛不放宽。
 - 新worker20261028-stable-data1/71源（仅4个采集相关变化），原任务17:39实际0/核源通过，权限/设置/触发器不变，viewer/原账户/Paper/EXE不改。今天plan=null/无新stable任务，旧daily-data-28失败及claim/2响应未变。
