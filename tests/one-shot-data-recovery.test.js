@@ -1,0 +1,8 @@
+'use strict';
+const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),os=require('node:os');
+const R=require('../scripts/autonomous-research.js');
+function fixture(t){const dir=fs.mkdtempSync(path.join(os.tmpdir(),'one-shot-recovery-'));const s=new R.Store(dir);t.after(()=>{s.close();fs.rmSync(dir,{recursive:true,force:true});});return s;}
+test('dead one-shot collection is blocked with ownership and failure evidence retained',t=>{const s=fixture(t);s.enqueue('data-a','data_collect',{file:'fixture',sha256:'fixture'});const first=s.claim(99999999);s.recover(()=>false);const j=s.get('data-a');assert.equal(j.status,'blocked');assert.equal(j.attempts,1);assert.equal(j.ownerToken,first.ownerToken);assert.match(JSON.parse(j.result).error,/interrupted.*manual review/i);assert.equal(s.claim(process.pid,'data-a'),null);});
+test('alive one-shot owner remains running',t=>{const s=fixture(t);s.enqueue('data-a','data_collect',{});s.claim(99999999);s.recover(()=>true);assert.equal(s.get('data-a').status,'running');});
+test('one-shot recovery CAS cannot block a different live generation',t=>{const s=fixture(t);s.enqueue('data-a','data_collect',{});s.claim(99999999);s.recover(()=>{s.db.prepare("UPDATE jobs SET pid=42,attempts=2 WHERE id='data-a'").run();return false;});assert.equal(s.get('data-a').status,'running');assert.equal(s.get('data-a').pid,42);});
+test('other recoverable jobs keep their original queue behavior',t=>{const s=fixture(t);s.enqueue('report-a','daily_report',{});s.claim(99999999);s.recover(()=>false);assert.equal(s.get('report-a').status,'queued');});
