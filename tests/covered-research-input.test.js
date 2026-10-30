@@ -1,0 +1,9 @@
+'use strict';
+const test=require('node:test'),assert=require('node:assert/strict');
+const C=require('../assets/trading-calendar.js'),P=require('../scripts/covered-research-input.js');
+function fixture(){const dates=[];for(let t=Date.parse('2025-01-01');t<=Date.parse('2025-06-30');t+=86400000){const d=new Date(t).toISOString().slice(0,10);if(C.isSession(d))dates.push(d);}const data={raw:{},histories:{}};for(const s of P.SYMBOLS)for(const k of ['raw','histories'])data[k][s]=dates.map(date=>({date,open:1,close:1,high:1,low:1,volume:100}));return data;}
+test('covered slice caps future rows, retains 61 prior sessions and clones bars',()=>{const d=fixture(),r=P.slice(d,{start:'2025-05-06',end:'2025-05-30'});assert.equal(r.data.histories[P.SYMBOLS[0]].filter(b=>b.date<'2025-05-06').length,61);assert.equal(r.data.raw[P.SYMBOLS[0]].at(-1).date,'2025-05-30');r.data.raw[P.SYMBOLS[0]][0].close=9;assert.equal(d.raw[P.SYMBOLS[0]][0].close,1);assert.equal(r.financialExecutionAuthorized,false);});
+test('missing session, duplicate and invalid OHLC are rejected',()=>{for(const mode of ['missing','duplicate','bad']){const d=fixture(),a=d.raw[P.SYMBOLS[0]];if(mode==='missing')a.splice(a.findIndex(b=>b.date==='2025-05-08'),1);if(mode==='duplicate')a.splice(70,0,{...a[70]});if(mode==='bad')a[70].open=-1;assert.throws(()=>P.slice(d,{start:'2025-05-06',end:'2025-05-30'}));}});
+test('H2, unknown calendar, invalid date and inadequate warmup fail closed',()=>{const d=fixture();for(const req of [{start:'2026-07-01',end:'2026-07-02'},{start:'2027-01-04',end:'2027-01-05'},{start:'2025-02-30',end:'2025-05-30'},{start:'2025-01-02',end:'2025-01-03'}])assert.throws(()=>P.slice(d,req));});
+
+test('registered universe cannot be reduced by mutation of exported symbols',()=>{assert.equal(P.SYMBOLS.length,6);assert.throws(()=>P.SYMBOLS.splice(1),TypeError);assert.equal(P.SYMBOLS.length,6);});
