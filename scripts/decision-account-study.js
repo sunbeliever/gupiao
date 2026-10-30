@@ -25,6 +25,17 @@ function runReplay(input){
  if(input?.policy?.corporateEvents?.length||input?.policy?.researchCorporateActionPolicy!==undefined)throw Error('Invalid fixed decision-account policy');
  return replay(input,false);
 }
+function runRegisteredFinancial(input){
+ const {onProgress,...request}=input||{};if(onProgress!==undefined&&typeof onProgress!=='function')throw Error('Invalid financial progress callback');
+ const snapshot=clone(request),declaration=require('./financial-research-admission.js').admit(snapshot);
+ const now=Date.now(),minutes=(new Date(now).getUTCHours()*60+new Date(now).getUTCMinutes()+480)%1440;
+ if(C.isSession(new Date(now+480*60000).toISOString().slice(0,10))&&minutes>=540&&minutes<=980)throw Error('Financial replay deferred during market hours');
+ if(require('node:os').freemem()<1024*1048576||!Number.isFinite(snapshot.deadlineMs)||snapshot.deadlineMs<=now||snapshot.deadlineMs>now+20*60000)throw Error('Financial replay resource/deadline admission failed');
+ const result=replay({...snapshot,onProgress},true);
+ result.summary.registeredFinancialDeclaration=declaration;result.summary.financialRankingReady=false;result.summary.economicPerformanceClaimAllowed=false;
+ result.summary.limitations.push('Explicit registered historical financial study; approval assertions require independently reviewed evidence and are not source-truth certification.');
+ return result;
+}
 function runSplitContract(input){
  if(input?.contractId!=='corporate-action-driver-contract-20261028-a'||input.validationOnly!==true||input.data?.provenance?.kind!=='synthetic-contract')throw Error('Only the declared synthetic driver contract is supported; financial execution is not authorized');
  if(!input.policy?.researchCorporateActionPolicy||!input.policy?.corporateEvents?.length)throw Error('Registered split contract policy and events required');
@@ -74,5 +85,5 @@ function replay({data,policy,kind,deadlineMs,onProgress},splitContract=false){
  const summary={...metrics(daily,session,policy.budget),path:kind,period:[policy.start,policy.end],policyHash,candidateId:E.CANDIDATE_ID,parityVerified:true,finalStateHash:session.integrityHash,maximumOpenCloseObservedDrawdown:observedMaxDrawdown,maximumOpenCloseObservedDrawdownProportion:observedMaxDrawdownProportion,diagnostics,warnings,expectedReturn:null,verifiedProfitProbability:null,independentOutOfSample:false,investmentReady:false,promoted:false,sameInitialBudgetFeesAndExecution:true,riskControlEquivalentToOriginal:false,riskDifferences:kind==='decision_thesis'?['500 observed-drawdown warning blocks increases','daily thesis and target changes'] : ['No risk or expiry exit; no reentry'],limitations:['Already inspected history, unknown first availability and corporate actions; no blind or forward performance claim','Raw opening hypothetical fills; daily close is valuation only; no intraday risk coverage','Unsold end positions remain invested; no future sell fees charged','Cash and missed positive basket days are descriptive, not reliable profit or tradable counterfactual returns','Buy hold intentionally disables risk/expiry/reentry; compare actual exposure and risk, not identical risk control']};
  return{summary,session,initialSession,events,daily,decisions,parityVerified:true};
 }
-module.exports={KINDS,opening,aggregateHoldings,metrics,runReplay,runSplitContract};
+module.exports={KINDS,opening,aggregateHoldings,metrics,runReplay,runSplitContract,runRegisteredFinancial};
 
