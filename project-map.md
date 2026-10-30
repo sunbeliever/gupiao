@@ -1,3 +1,9 @@
+# 2026-10-30 17时 并行事件采集与持久IO整合（未准启动）
+- 独立native worktree forward-event-watch与forward-journal均基于2ff1620，未带原center WIP。已审最终内容整合主线：新事件组件9测试、日志25测试（含6核夹具），整合34通过，未部署/启动新账户。
+- 真实新抓10/24–10/30六官方目录各1条，完整分页/身份和body SHA已留D:/techno/validation/daily-20261030/forward-event-watch-dev/attempt-Aod0hB；评估仍unknown。SSE actionErrors/fieldErrors遗漏及重复分页P2已红绿修，旧反例/commit保留。历史基线闭包、全文/未来生效日与基线新鲜度未齐，不能发布生产event-status或把空匹配当ready。
+- Journal：pending含已准备nextState，轻量event+内容寻址histories/packet，原子checkpoint，PID+nonce持有；非整数seq/null-state/跨活进程读nonce释放锁三项独审边界已修。死亡进程锁/未完成pending只manual_review_required，暂无host-death审查adoption；audit仅hash链，paperReplay=false/accountingReplay=false。每append全链扫描也尚待生产规模优化，不能带当前性能假设启动。
+- 下一直接补事件闭包/全文/可核查生效日；IO需显式死亡审查恢复与只读Paper/账务重放，以及摊还成本的追加而非每tick全审。实际ledger须STUDY/journal子目录（协议根已有protocol，不可直接acquire根）。最终冻结全源/独审/追加不可变启动批准后才可在11/2后窗口启动，不改原protocol或策略参数。原账户/71源/Windows1.8不变。
+
 # 2026-10-30 16时 前瞻来源只读适配
 - docs/forward-pair-source-2026-10-30.md：固定原main manifest/claim/state/status+有界committed tick，复用原prepare，剥原钱包；4目标+26独立IO边界通过。未部署/启动；闭市真实capture只暂停。
 - 事件声明须当前日/六ETF/30min内/非空证据/明确no-known；真实事件producer仍缺，不可伪填文件启动。持久journal/lease/恢复/审计仍待做。
