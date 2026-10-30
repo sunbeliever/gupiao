@@ -1,3 +1,8 @@
+# 2026-10-30 15时 两固定候选前瞻配对协议与纯内核
+- docs/forward-paired-protocol-core-2026-10-30.md：事前forward-manager-paired-20261102-a SHA f264ee8a14164a6d9ad3e768e9fd90535d398cf1b6875e5a38bb783657b0917d，11/2起至12/31，固定trend与L monitor，两独立50k，同日09:35–09:40一次/错过不补/不导原仓。
+- pure advance已独审，6目标+14独立及11事件根断言过；显式公司行动被忽略P2关闭，未知/非空事件暂停。source47816b1e...。尚无可信tick adapter、事件监督、持久journal/lease/恢复和只读回放，不能启动或宣称已有未来收益。
+- 下一16:20新目录收盘；之后接原提交tick只读adapter和单写者IO并独审/冻结后追加启动批准，原协议不重声明/不改参数。当前accountLaunchAuthorized=false，原账户/71源/EXE1.8不变。
+
 # 2026-10-30 14时 显式未来模拟决策账务合同
 - docs/forward-decision-engine-contract-2026-10-30.md：新forward-only显式会话/API，live真实时钟≤90秒/不接受未来，不伪历史；固定6ETF/50k/25%/原费/4%，默认不自动买入，复用原批次/T1/受阻卖出资金约束。
 - buy_hold跨模式禁退出P2先红后修，7目标/独立边界/默认完整字节通过，原拒绝与默认目标2过。事前implementation合同及源前保留。尚未启动新账户、消费者、队列、部署或新收益。
