@@ -1,0 +1,11 @@
+# 前瞻原提交行情的只读适配（2026-10-30）
+
+新增forward-pair-source.capture，只从原5万账户固定目录读取manifest/claim/state/status和有界已提交tick，manifest固定29935f3137b05610a10e6d00337329fe0434f19203ae6f7fbd0b1704f7246f8e。复用原View.build及Decision.prepare的同份快照/完整报价内容/历史/提交hash/新鲜度校验，不读取mutable行情缓存，不自行抓取另一套行情。
+
+输出包只保六ETF历史、报价和来源证据，剥离原账户现金、权益、亏损和持仓；原f0预测不变成两个候选的建议。纯packetFromValidatedInput仅做已校验输入的复制与绑定，不认证调用者数据事实，生产入口必须用固定capture。
+
+新固定研究目录event-status.json必须有当前交易日、全部六ETF范围、已发生且30分钟内的检查时间、非空证据摘要、明确no_known_pending_event和空事件列表。缺失、unknown、非空事件、只检查单ETF、未来/陈旧声明均拒绝，不能凭文件不存在填无事件。摘要绑定只能防改动，事件真实事实仍需独立监督producer；该producer目前没有实现，也没有生成生产event-status文件。
+
+4目标与26独立IO/边界检查通过，无重要缺陷。固定来源5文件/manifest pin/同快照/缺tick/符号链接/读后增长超限/闭市/事件未知都核过；独立VM的IO及既有validator替身只验证接线，不认证市场或事件事实。实际闭市capture返回available=false，无账户/网络写入。
+
+最终源SHA94d6f382493ccc264c368eb0a6fa49bce616175f2f3ed7ba4793383b30d01144。未部署、未开始新候选、没有收益。下一仍须事件监督producer、持久journal/lease/失败恢复、只读账务审计，冻结全源且独审通过后追加启动批准；当前forward-manager-paired-20261102-a启动授权仍false。

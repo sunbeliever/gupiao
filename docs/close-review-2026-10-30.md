@@ -12,7 +12,7 @@
 
 候选终仓AI515070×4700、软件159852×6800、科创50×3100；对照芯片512760×5300、科创50×3200、AI515070×4500，当前暴露24.4811%/24.4945%。全部今日新仓，11/02满足T+1，11/27到期，无pendingExit。末总体health=false、6项过期/阶段无效，持仓估值完整且stale为空，不冒称可立即卖出。
 
-主4404/4404、17冻结源、5070响应、17历史快照通过；全ticks2811463202字节，SHA45bda584f4a7c9eb43fb97568a04d030d9031b995a3e5c01b7b4400344b5afd3。报告main-prefix-audit/audit-report.json；主比较请用close-comparison-corrected-v2.json及audit-summary-supplement.json。首版close-comparison.json因PowerShell自动日期解析误报今日0成交，原错误输出保留，原完整审计不受影响；家长层另核现金+市值-本金和已实现+未实现净额等式一致。
+主4404/4404、17冻结源、5070响应、17历史快照通过；全ticks2811463202字节，SHA45bda584f4a7c9eb43fb97568a04d030d9031b995a3e5c01b7b4400344b5afd3。报告main-prefix-audit/audit-report.json；主比较请用close-comparison-corrected-v2.json及audit-summary-supplement.json。首版close-comparison.json因PowerShell自动日期解析误报今日0成交，原错误输出保留，原完整审计不受影响；主协调层另核现金+市值-本金和已实现+未实现净额等式一致。
 
 ## 小仓独立记录
 
