@@ -1,3 +1,7 @@
+# 2026-10-30 09时 次日完整日线首次实际通过
+- docs/stable-first-accepted-2026-10-30.md：stable-daily-data-2026-10-30首次attempt completed，12raw/hfq分区各197日截止10/29，13响应含既有备用调整源；完整manifest/原claim与证据hash只读核验通过。10/29失败仍failed/attempt2，不重跑。
+- 这是新数据到齐，不是模型/策略改善或PIT认证，H2财务排名阻断保持。后台71源/Windows1.8不变，原center WIP保留。下一回到已覆盖时段独立财务driver与经理决策验证，不重复本轮hash审计。
+
 # 2026-10-29 14时 一次性采集中断恢复修复已部署
 - 4bc95ac修复data_collect死亡owner转blocked保留证据，22相关+10独立断言通过。新release20261029-recovery1/71源仅core一文件变化，原任务14:20实际0/核源通过，权限/触发/电源设置不变。
 - 首次stable-daily-data-2026-10-29已失败attempt2：09:04留下12主响应/11分区，最后sz159852缺hfqday；中断原因未知。24原文件hash未变，不重跑/删claim/换ID追抓，不称新数据成功。详docs/one-shot-data-recovery-2026-10-29.md及D:/techno/validation/daily-20261029/stable-first-capture-incident。
