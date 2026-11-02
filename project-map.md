@@ -1,3 +1,7 @@
+# 2026-11-02 前瞻消费者收尾与有界模拟发布
+- docs/forward-consumer-launch-2026-11-02.md：新单写者consumer/bootstrap、独立订单会计复算、真实6源事件publisher及固定基线已接通，source closure P2已关闭。发布与实际启动证据只看D:/techno/validation/daily-20261102/forward-launch，不把代码/待窗当已成交。
+- 原协议、4策略/费用封源、原冻结账户/原71源worker/Windows1.8不变，原center WIP保留。新研究只当前fresh tick，09:35–09:40共同窗口，不补买/不导旧仓。accountingReplay范围明确，paperReplay=false，未知事件暂停，死锁人工复核不抢。
+
 # 2026-10-30 17时 并行事件采集与持久IO整合（未准启动）
 - 独立native worktree forward-event-watch与forward-journal均基于2ff1620，未带原center WIP。已审最终内容整合主线：新事件组件9测试、日志25测试（含6核夹具），整合34通过，未部署/启动新账户。
 - 真实新抓10/24–10/30六官方目录各1条，完整分页/身份和body SHA已留D:/techno/validation/daily-20261030/forward-event-watch-dev/attempt-Aod0hB；评估仍unknown。SSE actionErrors/fieldErrors遗漏及重复分页P2已红绿修，旧反例/commit保留。历史基线闭包、全文/未来生效日与基线新鲜度未齐，不能发布生产event-status或把空匹配当ready。

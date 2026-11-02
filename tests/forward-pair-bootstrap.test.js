@@ -1,0 +1,4 @@
+'use strict';
+const test=require('node:test'),assert=require('node:assert/strict'),{admitBootstrap}=require('../scripts/forward-pair-bootstrap.js'),protocol=require('../evidence/2026-10-30-forward-pair/protocol.json');
+test('bootstrap permits only registered day resource and time envelope',()=>{assert.equal(admitBootstrap('2026-11-02T01:25:00Z',protocol,2000,false).start,true);for(const at of ['2026-11-02T00:59:00Z','2026-11-02T07:10:00Z','2026-11-01T01:25:00Z','2027-01-04T01:25:00Z'])assert.equal(admitBootstrap(at,protocol,2000,false).start,false);assert.equal(admitBootstrap('2026-11-02T01:25:00Z',protocol,1000,false).start,false);});
+test('existing owner lock is never stolen or bypassed by bootstrap',()=>{const result=admitBootstrap('2026-11-02T01:25:00Z',protocol,2000,true);assert.equal(result.start,false);assert.equal(result.reason,'existing_consumer_lock_requires_owner_review');});

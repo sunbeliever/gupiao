@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "mode": "PR Review",
+  "reviewedAtUtc": "2026-11-02T01:00:21.6969847Z",
+  "reviewer": "consumer_launch_review",
+  "repository": "C:/Users/lqp07/.codex/worktrees/stock-entry-exit/techno",
+  "scope": [
+    "scripts/forward-pair-consumer.js",
+    "scripts/forward-accounting-audit.js",
+    "scripts/forward-event-publisher.js",
+    "targeted journal/source call-chain inspection",
+    "scripts/forward-pair-bootstrap.js"
+  ],
+  "boundedApproved": true,
+  "approvalStatus": "bounded_simulation_only_approved",
+  "findings": [
+    {
+      "priority": "P2",
+      "file": "scripts/forward-pair-consumer.js",
+      "line": 25,
+      "symptom": "verifyRelease accepts a manifest containing only five required source files, omitting directly executed event publisher and transitive runtime dependencies",
+      "source": "required source list does not enforce complete local runtime dependency closure",
+      "consequence": "an omitted event publisher or calendar can change without source seal rejection",
+      "remedy": "require every runtime dependency in manifest or compute local dependency closure before verifying each hash",
+      "evidence": "Existing release source checks test constructs only five fixture source files and verifyRelease succeeds; tests passed independently",
+      "status": "closed",
+      "resolution": "Required direct entry files added; every statically required relative runtime dependency must appear in sealed sourceHashes and each source hash is verified.",
+      "verification": "Independent temporary fixture: omitted publisher rejected; missing transitive runtime rejected; sealed closure accepted."
+    }
+  ],
+  "checks": {
+    "exitCode": 0,
+    "command": "node --test tests/forward-pair-consumer.test.js tests/forward-pair-bootstrap.test.js tests/forward-accounting-audit.test.js tests/forward-event-publisher.test.js",
+    "passed": 35,
+    "tests": 35,
+    "failed": 0
+  },
+  "observations": [
+    "No source or frozen study files modified by reviewer",
+    "No production consumer/account created or launched by reviewer",
+    "Source unavailable or missed initial window does not acquire journal",
+    "Independent accounting runs before first durable claim",
+    "Consumer exclusive guard plus journal exclusive lease and CAS prevent observed double-write paths",
+    "Publisher pins baseline digest and rejects new or changed announcement identities; unknown pauses",
+    "Accounting explicitly limits scope to recorded model-order arithmetic, FIFO, T+1 and terminal valuation; paperReplay=false",
+    "Full history corporate-action absence was not claimed or independently certified in this review",
+    "Bootstrap reviewed: fixed study, known trading day 09:20-15:10, minimum free memory, existing lock never stolen, detached hidden process with heap bound and BelowNormal priority; unknown calendar fails admission"
+  ],
+  "limitations": [
+    "Read-only bounded simulation orchestration review, not exhaustive codebase or market evidence certification",
+    "Actual final release manifest and activation must pass verifyRelease against unchanged reviewed source hashes before startup",
+    "Local require closure verification covers current static relative CommonJS requires, not an arbitrary dynamic loader security boundary",
+    "Original frozen strategy/protocol/account unchanged; no window extension authorized"
+  ],
+  "sourceHashes": {
+    "scripts/forward-event-publisher.js": "1020ff3dd1c1a109c1f8d9725844d48a87ff7f44d3dd2c0ffad22dbcefa1efa8",
+    "scripts/forward-pair-consumer.js": "3f0ff2ad8f15064490cdfae3c5fda654692a702b0dba0cf621a789d1f06f7dc4",
+    "scripts/forward-accounting-audit.js": "81efa40441973aa69215340d95266893d6300ab63ac677132d27fefd8765cca9",
+    "scripts/forward-pair-bootstrap.js": "7919768867a9091c17d47729dc041bd0f46dd2596d35ec1a2e17da602f4a2b6d"
+  }
+}
