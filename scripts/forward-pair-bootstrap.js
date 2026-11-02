@@ -7,7 +7,7 @@ function admitBootstrap(at,protocol,freeMB,locked){const now=typeof at==='number
  if(locked)return {start:false,reason:'existing_consumer_lock_requires_owner_review'};
  return {start:true,day,until:day+'T07:10:00.000Z'};
 }
-function run(){const root=path.resolve(__dirname,'..'),Consumer=require('./forward-pair-consumer.js'),{protocol}=Consumer.verifyRelease(root),admission=admitBootstrap(Date.now(),protocol,os.freemem()/1048576,fs.existsSync(path.join(STUDY,'consumer.lock')));if(!admission.start)return admission;
+function run(){const root=path.resolve(__dirname,'..'),Consumer=require('./forward-pair-consumer.js'),{protocol,activation}=Consumer.verifyRelease(root),admission=admitBootstrap(Date.now(),protocol,os.freemem()/1048576,fs.existsSync(path.join(STUDY,activation.sourceBindingHash?'consumer-source-bound.lock':'consumer.lock')));if(!admission.start)return admission;
  const log=path.join(STUDY,'consumer-stdout.log'),err=path.join(STUDY,'consumer-stderr.log'),stdout=fs.openSync(log,'a'),stderr=fs.openSync(err,'a');let child;
  try{child=spawn(process.execPath,['--max-old-space-size='+protocol.resources.maxHeapMB,path.join(__dirname,'forward-pair-consumer.js'),'--watch',admission.until],{cwd:root,detached:true,windowsHide:true,stdio:['ignore',stdout,stderr]});}finally{fs.closeSync(stdout);fs.closeSync(stderr);}
  if(!Number.isSafeInteger(child.pid))throw Error('Consumer child did not start');try{os.setPriority(child.pid,os.constants.priority.PRIORITY_BELOW_NORMAL);}catch(error){child.kill();throw Error('Unable to enforce registered process priority: '+error.message);}child.unref();return {start:true,pid:child.pid,until:admission.until,realOrdersAllowed:false};
