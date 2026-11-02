@@ -1,3 +1,8 @@
+# 2026-11-02 10:04 原源恢复瓶颈与独立行情试采
+- docs/source-recovery-and-independent-feed-2026-11-02.md：09:35–09:40确实无有效源/无claim，今天初窗已错过不补；原两collector持有原lease、CPU涨、0新响应，冻结Core.recover同步全历史advance/hash后才采行情，原源/账户未改未重启。
+- 独立feed-only pilot实际两抓(09:57/09:58)，6quotes+每只prior61 HFQ到10/30/9响应已核；初判因quote整秒领先约1s拒，09:59:35第二packet在85.846s内只读补验true，现已过期，不能作当前fresh。初始pilot self-source metadata未封字段缺口明确。7目标/独立原始证据通过，但readyForProduction=false/不接原pair/无账户。
+- 下一将新行情源做生产级持久与严格时钟等候，若换source须另行pre-funding协议/独审，经济候选参数保持，旧从未开户study须明确处理；不能偷改原pair source/protocol或延长初窗。历史11:35队列照常，先要实际六路径表，绝不把baseline利润说新改善。
+
 # 2026-11-02 09:38 历史模拟已执行，首基准完成／新候选资源中断
 - docs/historical-reentry-first-execution-2026-11-02.md：2025 242日×两费用×0/1/5冷静期已预登记并真实执行。baseline normal已完整+5172.3463/DD2132.2250/费用420，Paper重放及独立算术一致；不是新候选盈利。
 - normal1真实9:23:58因free<1024MB失败，原claim/failure保留，仅批准同数据参数source的技术attempt2。其余未claimed分批队列21文件封存，11:35/16:35/20:35一次性普通任务已装，9:36真实0且盘中暂停不claim。只6个有效结果才完整比较。D:/techno/validation/strategy-research/historical-reentry-ablation-20261102-a；不要重复已完成结果/伪报新候选。

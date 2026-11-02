@@ -1,0 +1,26 @@
+{
+  "at": "2026-11-02T02:02:38.462Z",
+  "scope": "Read-only retrospective verification of actual capture and settled-clock audit, not a new live decision",
+  "observations": 2,
+  "rawResponsesVerified": 9,
+  "transportSourceFilesVerified": 17,
+  "initialCapturesWereRejected": true,
+  "revalidatedAt": "2026-11-02T01:59:35.317Z",
+  "revalidatedComplete": true,
+  "referenceObservationHash": "5770f1cf80385bc031fe623ae20fa5a4bb9ba82232bbf553b66bd0ac2992fb8f",
+  "revalidationDelayMs": 85846,
+  "quoteCount": 6,
+  "historyBars": {
+    "sh588000": 61,
+    "sh512760": 61,
+    "sh515070": 61,
+    "sh512720": 61,
+    "sh515880": 61,
+    "sz159852": 61
+  },
+  "currentFreshClaim": false,
+  "actualCaptureSelfSealPresent": false,
+  "readyForProduction": false,
+  "originalAccountWrites": false,
+  "originalPairSourceReplaced": false
+}
