@@ -1,5 +1,5 @@
 'use strict';
-const fs=require('fs'),path=require('path'),A=require('../assets/audit-identity.js'),C=require('../assets/trading-calendar.js'),Paper=require('../assets/paper-engine.js'),Core=require('./paired-forward-core.js'),View=require('./research-account-view.js');
+const fs=require('fs'),path=require('path'),A=require('../assets/audit-identity.js'),C=require('../assets/trading-calendar.js'),Paper=require('../assets/paper-engine.js'),Core=require('./paired-forward-core.js'),View=require('./research-account-snapshot.js');
 const ACCOUNT='paired-capital50k-20261021-pm-a',POLICY='decision-engine-protocol-20261026-a';
 function time(q){const s=q?.sourceTime;return typeof s==='string'&&/^\d{4}-\d\d-\d\d \d\d:\d\d:\d\d$/.test(s)?Date.parse(s.replace(' ','T')+'+08:00'):Date.parse(s);}
 function prepare(data,view,now=new Date().toISOString()){

@@ -1,5 +1,5 @@
 'use strict';
-const fs=require('node:fs'),path=require('node:path'),A=require('../assets/audit-identity.js'),C=require('../assets/trading-calendar.js'),Core=require('./paired-forward-core.js'),View=require('./research-account-view.js'),Decision=require('./decision-research-view.js');
+const fs=require('node:fs'),path=require('node:path'),A=require('../assets/audit-identity.js'),C=require('../assets/trading-calendar.js'),Core=require('./paired-forward-core.js'),View=require('./research-account-snapshot.js'),Decision=require('./decision-research-view.js');
 const ROOT='D:/techno/validation/forward-comparison/paired-capital50k-20261021-pm-a',MANIFEST='29935f3137b05610a10e6d00337329fe0434f19203ae6f7fbd0b1704f7246f8e',STUDY='forward-manager-paired-20261102-a',ASSESSMENT='D:/techno/validation/strategy-research/'+STUDY+'/event-status.json';
 const SYMBOLS=Object.freeze(['sh588000','sh512760','sh515070','sh512720','sh515880','sz159852']);
 const clone=x=>JSON.parse(JSON.stringify(x));
