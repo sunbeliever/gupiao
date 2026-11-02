@@ -1,0 +1,23 @@
+{
+  "schema": 1,
+  "at": "2026-11-02T01:07:39.947Z",
+  "studyId": "forward-manager-paired-20261102-a",
+  "sourceManifestSha256": "3fd090a9ce868fdfd932305a20cc69531735b43a62c1a8f49b6ba0097ab4374a",
+  "activationSha256": "a4ad1fc71d7552d9b8963335de35536f86e4bd7155a6c0df606881ad94573570",
+  "snapshotReviewSha256": "26b3431899b12e2ceb157b88ea8ed0b3d56435f02b92070a59fd8ee1eacbdc2e",
+  "consumerReviewSha256": "b1746975fec96f1ce52b8a98ca39645ee83b4f7c9dcf4ba93f5973c0cc5206e9",
+  "files": 30,
+  "sourceDependencyClosureComplete": true,
+  "presentationWipExcluded": true,
+  "originalTaskBeforeSha256": "acb3d88e2f51012ea97f54a1527faf5fdfda0920faea66795265561f38fdc22b",
+  "originalTaskAfterSha256": "acb3d88e2f51012ea97f54a1527faf5fdfda0920faea66795265561f38fdc22b",
+  "taskXmlSha256": "bed2e966952974d0f3283345cd2fe4d06841a31aea4a916557c851f61578d7af",
+  "taskFirstRealRun": {
+    "localTime": "2026-11-02 09:07:02 Asia/Shanghai",
+    "result": 0,
+    "nextRun": "2026-11-02 09:20:00 Asia/Shanghai"
+  },
+  "accountStarted": false,
+  "realOrdersAllowed": false,
+  "investmentReady": false
+}

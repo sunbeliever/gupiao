@@ -1,3 +1,8 @@
+# 2026-11-02 09:08 独立前瞻模拟已部署，尚待首有效窗口
+- 新任务Techno-Forward-Manager-Pair-v1已装，09:20起5min/登录，原普通用户/Settings/电源条件；09:07:02实际0且窗前未开户。发布20261102-forward-pair1/30源，manifest3fd090...，原任务XML前后相同。下一09:20先核实际CIM/consumer-status/fresh事件，不把任务0当已开仓。
+- 原9:35–9:40首共同窗口，错过不补，只新提交tick。D:/techno/validation/daily-20261102/forward-launch/deployment-checkpoint.json；docs/forward-consumer-launch-2026-11-02.md。source/activation/baseline封存已过独审；paperReplay仍false，独立accounting仅订单算术，不能宣未来利润。
+- 原f0账户、71源worker、EXE1.8、历史亏损/本金与策略参数不变；只有原scripts/research-center-view.js WIP保留，不部署。
+
 # 2026-11-02 前瞻消费者收尾与有界模拟发布
 - docs/forward-consumer-launch-2026-11-02.md：新单写者consumer/bootstrap、独立订单会计复算、真实6源事件publisher及固定基线已接通，source closure P2已关闭。发布与实际启动证据只看D:/techno/validation/daily-20261102/forward-launch，不把代码/待窗当已成交。
 - 原协议、4策略/费用封源、原冻结账户/原71源worker/Windows1.8不变，原center WIP保留。新研究只当前fresh tick，09:35–09:40共同窗口，不补买/不导旧仓。accountingReplay范围明确，paperReplay=false，未知事件暂停，死锁人工复核不抢。

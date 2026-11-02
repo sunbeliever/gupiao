@@ -1,0 +1,31 @@
+{
+  "schema": 1,
+  "reviewedAtUtc": "2026-11-02T01:05:40.978Z",
+  "reviewer": "consumer_launch_review",
+  "boundedApproved": true,
+  "scope": "Read-only snapshot extraction; no strategy, calendar or trade rule change",
+  "sourceCommit": "4496e22",
+  "comparisonCommit": "99d919c",
+  "bodyIdentical": true,
+  "normalizedFunctionSha256": "1c1f67f55dc87ee6d96c4a38346b07f2a1713a249f4eb4374e7ea1ec6ccc1c0e",
+  "runtimeFiles": 30,
+  "UIExcluded": true,
+  "containsSnapshot": true,
+  "tests": {
+    "passed": 9,
+    "failed": 0,
+    "command": "node --test tests/research-account-snapshot.test.js tests/forward-pair-source.test.js tests/decision-research-view.test.js"
+  },
+  "findings": [],
+  "sourceHashes": {
+    "scripts/research-account-snapshot.js": "84c3b6038a6c2d5f8e27b52f66a62facbc484c24dd32df6aca25aa1d33868af4",
+    "scripts/research-account-view.js": "a63c7841abb865fa3e040d7162bf60dd0fe422a0ae079bdca6cc00e83ba7fc4f",
+    "scripts/forward-pair-source.js": "d1369c50e4715f4a8cd0d485b8e4fa628d6ee3802aeb79f72b3073aa8121bc78",
+    "scripts/decision-research-view.js": "acffcbb8d6aa83e3c9b7585e72f125441d07e70d6aa08f7384bee9950329f4c6"
+  },
+  "limitations": [
+    "Static local CommonJS require closure only",
+    "Full final release still must pass verifyRelease before launch",
+    "Original UI WIP not approved for deployment"
+  ]
+}
