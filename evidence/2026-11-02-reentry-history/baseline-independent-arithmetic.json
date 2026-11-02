@@ -1,0 +1,19 @@
+{
+  "at": "2026-11-02T01:33:04.178Z",
+  "resultSha256": "8cdf36713f0b94578ee87e12c4b0dfb0cd5392ad8467fc9e02891228b73b0f5d",
+  "scope": "independent arithmetic from model orders, closed lots, terminal holdings and 726-point curve; not new strategy execution",
+  "netPnl": 5172.346300000005,
+  "maxObservedDrawdown": 2132.225000000006,
+  "feesPaid": 420,
+  "grossTurnover": 8.307098801999999,
+  "buyCount": 39,
+  "sellCount": 45,
+  "meanExposure": 0.12491755716552384,
+  "filledOrders": 84,
+  "curveObservations": 726,
+  "modelCashAndSharesBalanced": true,
+  "closedPnLChecked": true,
+  "parityFromDriver": true,
+  "financialRankingCertified": false,
+  "originalAccountWrites": false
+}

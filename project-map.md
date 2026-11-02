@@ -1,3 +1,8 @@
+# 2026-11-02 09:38 历史模拟已执行，首基准完成／新候选资源中断
+- docs/historical-reentry-first-execution-2026-11-02.md：2025 242日×两费用×0/1/5冷静期已预登记并真实执行。baseline normal已完整+5172.3463/DD2132.2250/费用420，Paper重放及独立算术一致；不是新候选盈利。
+- normal1真实9:23:58因free<1024MB失败，原claim/failure保留，仅批准同数据参数source的技术attempt2。其余未claimed分批队列21文件封存，11:35/16:35/20:35一次性普通任务已装，9:36真实0且盘中暂停不claim。只6个有效结果才完整比较。D:/techno/validation/strategy-research/historical-reentry-ablation-20261102-a；不要重复已完成结果/伪报新候选。
+- 9:34原两采集已原冻resume；9:35新consumer41404在等待coherent/fresh源，9:37原seq4404仍旧，CIM活不等于数据已恢复。不重复启动或回填错窗。原策略/费用/source freeze保持，原center WIP仍唯一旧修改。
+
 # 2026-11-02 09:08 独立前瞻模拟已部署，尚待首有效窗口
 - 新任务Techno-Forward-Manager-Pair-v1已装，09:20起5min/登录，原普通用户/Settings/电源条件；09:07:02实际0且窗前未开户。发布20261102-forward-pair1/30源，manifest3fd090...，原任务XML前后相同。下一09:20先核实际CIM/consumer-status/fresh事件，不把任务0当已开仓。
 - 原9:35–9:40首共同窗口，错过不补，只新提交tick。D:/techno/validation/daily-20261102/forward-launch/deployment-checkpoint.json；docs/forward-consumer-launch-2026-11-02.md。source/activation/baseline封存已过独审；paperReplay仍false，独立accounting仅订单算术，不能宣未来利润。
