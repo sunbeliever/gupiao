@@ -1,3 +1,6 @@
+# 2026-11-06 有界追加历史技术恢复（原自动开仓仍暂停）
+- docs/historical-reentry-additional-recovery-2026-11-06.md：原2025六路径4/6完成保持；旧一次恢复额度已耗尽，另追加明确技术补充而非复用旧批准。scripts/historical-reentry-recovery.js仅薄控制层，复用原冻结财务source/input/policy，normal1 attempt3与normal5 attempt2各最多一次，三次仅资源预检，单次财务总18min/192heap/1536与1024门槛不降。原失败及已完成结果不变，新收益尚待实际执行；不恢复原两自动任务/账户。
+
 # 2026-11-02 10:04 原源恢复瓶颈与独立行情试采
 - docs/source-recovery-and-independent-feed-2026-11-02.md：09:35–09:40确实无有效源/无claim，今天初窗已错过不补；原两collector持有原lease、CPU涨、0新响应，冻结Core.recover同步全历史advance/hash后才采行情，原源/账户未改未重启。
 - 独立feed-only pilot实际两抓(09:57/09:58)，6quotes+每只prior61 HFQ到10/30/9响应已核；初判因quote整秒领先约1s拒，09:59:35第二packet在85.846s内只读补验true，现已过期，不能作当前fresh。初始pilot self-source metadata未封字段缺口明确。7目标/独立原始证据通过，但readyForProduction=false/不接原pair/无账户。

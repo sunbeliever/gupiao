@@ -1,0 +1,15 @@
+# Explicit additional technical recovery — 2026-11-06
+
+The fixed 2025 reentry study remains four of six complete. Its original once-only recovery permission was exhausted by the failed `cooldown-1-normal/attempt2`; it is not reused as authority for further attempts.
+
+Under the user's existing instruction to finish historical simulations autonomously, root has separately recorded a bounded technical supplement for exactly `cooldown-1-normal` attempt 3 and `cooldown-5-normal` attempt 2. The supplement is not new human approval, a new strategy hypothesis, a financial-admission registry entry or evidence of complete corporate-event/PIT qualification. All prior failures and four completed results remain untouched.
+
+`scripts/historical-reentry-recovery.js` is a thin controller/worker around the original frozen `runReplay`. It keeps the original protocol, input slice, policy, fees and financial source unchanged. The old queue approval only verifies base admission; a separate externally pinned supplement binds the new runner, prior claim/failure/progress hashes, old runtime and completed-result hashes, and two exact nested output paths. It never replaces the old `destination()` or old approval files.
+
+Each job has at most one additional financial attempt. There are at most three resource-only preflights; passing a 30-second three-sample free-memory check writes one global financial `run-attempt`, after which later invocations only skip. Parent and children share a fixed 18-minute deadline including environment checks and preflight. Child V8 heap remains 192 MB, BelowNormal, initial free memory 1536 MB and ongoing floor 1024 MB. A full offline window is required, and disabled original tasks, absent old writer processes and absent old queue locks are checked. No locks are adopted and no unrelated processes are stopped.
+
+Each successful child must immediately pass completion/result/summary hashes, Paper parity and final state-root validation before the next job starts. A resource or other failure stops later jobs; incomplete claims/progress are preserved. The legacy baseline without a completion file is read and validated using its existing independent-arithmetic result hash, never rerun.
+
+The new frozen runner and additional approval are under `D:/techno/validation/strategy-research/historical-reentry-ablation-20261102-a/technical-recovery-20261106-a`. The approval SHA is `82e4d1992b5de0ca46490ce30f8900903deb0cf2c5e1cf94cd97e6f84935d10e`. Independent review closed the deadline-reset and premature-next-job P2 findings; syntax, read-only base/new admission and four-result comparison checks passed. No new financial result existed at registration.
+
+The ordinary Limited one-day task `Techno-Historical-Technical-Recovery-20261106-a` has 11:35, 16:35 and 20:35 resource-preflight triggers, IgnoreNew and a 20-minute outer limit. These triggers do not grant three financial reruns. Original automatic-entry tasks remain disabled and original accounts are not written. Actual readiness, failures and returns must be read from the new evidence before reporting completion.
