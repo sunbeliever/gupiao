@@ -1,5 +1,6 @@
 # 2026-11-06 有界追加历史技术恢复（原自动开仓仍暂停）
 - docs/historical-reentry-additional-recovery-2026-11-06.md：原2025六路径4/6完成保持；旧一次恢复额度已耗尽，另追加明确技术补充而非复用旧批准。scripts/historical-reentry-recovery.js仅薄控制层，复用原冻结财务source/input/policy，normal1 attempt3与normal5 attempt2各最多一次，三次仅资源预检，单次财务总18min/192heap/1536与1024门槛不降。原失败及已完成结果不变，新收益尚待实际执行；不恢复原两自动任务/账户。
+- scripts/audit-reentry-comparison.js 与 report-reentry-comparison.js 仅在六个distinct完整路径后做已记成交现金/费用/FIFO/T1、242日现金与记价暴露、726观察曲线的独立算术及新静态表；缺proof或数字/哈希不一致拒绝发布，不调用策略、不改原证据。11:35首次资源预检实际free约1105MB，已留preflight-failure-1且未创建financial run-attempt或新job claim；另两预检时点16:35/20:35，不保证能跑。
 
 # 2026-11-02 10:04 原源恢复瓶颈与独立行情试采
 - docs/source-recovery-and-independent-feed-2026-11-02.md：09:35–09:40确实无有效源/无claim，今天初窗已错过不补；原两collector持有原lease、CPU涨、0新响应，冻结Core.recover同步全历史advance/hash后才采行情，原源/账户未改未重启。
